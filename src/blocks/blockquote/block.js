@@ -25,6 +25,9 @@ const {
 // Extend component
 const { Fragment } = wp.element
 
+export const DYNAMIC_QUOTE_TEXT = 'descriptionText';
+export const DYNAMIC_QUOTE_AUTHOR = 'author';
+
 /**
  * Register: as Gutenberg Block.
  *

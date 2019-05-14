@@ -43,7 +43,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 * @since 1.6.0
 		 * @var instance
 		 */
-		public static $page_blocks;
+		public static $page_blocks = [];
 
 		/**
 		 * Google fonts to enqueue
@@ -497,12 +497,20 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 * @since 1.7.0
 		 */
 		public function _generate_stylesheet( $this_post ) {
+			$maybe_ct = get_post_meta( $this_post->ID, '_views_template', true );
+			if ( $maybe_ct ) {
+				global $post;
+				$_post = $post;
+				$post = get_post( $maybe_ct );
+				$this->_generate_stylesheet( $post );
+				$post = $_post;
+			}
 
 			if ( has_blocks( get_the_ID() ) ) {
 				if ( isset( $this_post->post_content ) ) {
 
 					$blocks            = $this->parse( $this_post->post_content );
-					self::$page_blocks = $blocks;
+					self::$page_blocks = array_merge( self::$page_blocks, $blocks );
 
 					if ( ! is_array( $blocks ) || empty( $blocks ) ) {
 						return;

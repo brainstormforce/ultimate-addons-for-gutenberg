@@ -132,7 +132,10 @@ const attributes = {
 	subHeadLoadGoogleFonts: {
 		type: "boolean",
 		default: false	
-	}
+	},
+	dynamic: {
+		type: 'object',
+	},
 }
 
 export default attributes

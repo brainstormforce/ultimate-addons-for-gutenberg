@@ -38,6 +38,12 @@ const {
 } = wp.components
 
 
+const {
+	EditWrapper, withToolsetDynamicField
+} = ToolsetDynamicSources;
+
+
+
 class UAGBSectionEdit extends Component {
 
 	constructor() {
@@ -47,6 +53,14 @@ class UAGBSectionEdit extends Component {
 		this.onRemoveImage = this.onRemoveImage.bind( this )
 		this.onSelectImage = this.onSelectImage.bind( this )
 		this.onSelectVideo = this.onSelectVideo.bind( this )
+
+		// It registers the block attribute that will support content from Dynamic Sources.
+		this.props.dynamicFieldsRegister( {
+			[ 'backgroundImage' ]: { // Attribute name
+				category: 'image', // Supported attribute content type (eg. "text", "url", "image" etc.)
+				label: __( 'Dynamic Background Image' ), // Label for the Dynamic Sources toggle for this attribute.
+			},
+		} );
 	}
 
 	componentDidMount() {
@@ -192,6 +206,8 @@ class UAGBSectionEdit extends Component {
 			tabletPaddingType,
 			desktopPaddingType,
 		} = attributes
+
+		const hasDynamicBackgroundImage = !! ( this.props.attributes.dynamic && this.props.attributes.dynamic[ 'backgroundImage' ] );
 
 		const CustomTag = `${tag}`
 
@@ -643,26 +659,31 @@ class UAGBSectionEdit extends Component {
 						) }
 						{ "image" == backgroundType &&
 							( <Fragment>
+
+								{ this.props.dynamicFieldControlRender( 'backgroundImage' ) }
+
+								{ !hasDynamicBackgroundImage &&
 								<BaseControl
 									className="editor-bg-image-control"
 									label={ __( "Background Image" ) }>
 									<MediaUpload
-										title={ __( "Select Background Image" ) }
-										onSelect={ this.onSelectImage }
-										allowedTypes={ [ "image" ] }
-										value={ backgroundImage }
-										render={ ( { open } ) => (
-											<Button isDefault onClick={ open }>
-												{ ! backgroundImage ? __( "Select Background Image" ) : __( "Replace image" ) }
+										title={__("Select Background Image")}
+										onSelect={this.onSelectImage}
+										allowedTypes={["image"]}
+										value={backgroundImage}
+										render={({open}) => (
+											<Button isDefault onClick={open}>
+												{!backgroundImage ? __("Select Background Image") : __("Replace image")}
 											</Button>
-										) }
+										)}
 									/>
-									{ backgroundImage &&
-										( <Button className="uagb-rm-btn" onClick={ this.onRemoveImage } isLink isDestructive>
-											{ __( "Remove Image" ) }
+									{backgroundImage &&
+										( <Button className="uagb-rm-btn" onClick={this.onRemoveImage} isLink isDestructive>
+										{__("Remove Image")}
 										</Button> )
 									}
 								</BaseControl>
+								}
 								{ backgroundImage &&
 									( <Fragment>
 										<SelectControl
@@ -971,33 +992,42 @@ class UAGBSectionEdit extends Component {
 						) }
 					</PanelBody>
 				</InspectorControls>
-				<CustomTag
-					className={ classnames(
-						className,
-						"uagb-section__wrap",
-						`uagb-section__background-${backgroundType}`,
-						`uagb-section__edit-${ active }`,
-						block_controls_class
-					) }
-					id={ `uagb-section-${this.props.clientId}` }
+
+
+				<EditWrapper
+					clientId={ this.props.clientId }
+					isSelected={ this.props.isSelected }
+					hasDynamicSource={ this.props.dynamicFieldGet( 'backgroundImage' ).isActive }
 				>
-					<div className="uagb-section__overlay"></div>
-					{ "video" == backgroundType &&
-						<div className="uagb-section__video-wrap">
-							{  backgroundVideo &&
-								<video src={ backgroundVideo.url } autoPlay loop muted></video>
-							}
+					<CustomTag
+						className={ classnames(
+							className,
+							"uagb-section__wrap",
+							`uagb-section__background-${backgroundType}`,
+							`uagb-section__edit-${ active }`,
+							block_controls_class
+						) }
+						id={ `uagb-section-${this.props.clientId}` }
+					>
+						<div className="uagb-section__overlay"></div>
+						{ "video" == backgroundType &&
+							<div className="uagb-section__video-wrap">
+								{  backgroundVideo &&
+									<video src={ backgroundVideo.url } autoPlay loop muted></video>
+								}
 
+							</div>
+						}
+						<div className="uagb-section__inner-wrap">
+							<InnerBlocks templateLock={false} />
 						</div>
-					}
-					<div className="uagb-section__inner-wrap">
-						<InnerBlocks templateLock={false} />
-					</div>
 
-				</CustomTag>
+					</CustomTag>
+				</EditWrapper>
 			</Fragment>
 		)
 	}
 }
 
-export default withNotices( UAGBSectionEdit )
+export default withToolsetDynamicField( withNotices( UAGBSectionEdit ) );
+

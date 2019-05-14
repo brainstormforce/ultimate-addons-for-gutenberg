@@ -327,7 +327,10 @@ const attributes = {
 	},
 	borderHoverColor: {
 		type: "string",
-	},			
+	},
+	dynamic: {
+		type: 'object',
+	},
 }
 
 export default attributes

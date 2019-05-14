@@ -97,6 +97,8 @@ if ( ! class_exists( 'UAGB_Loader' ) ) {
 			require_once UAGB_DIR . 'dist/blocks/post-timeline/index.php';
 			require_once UAGB_DIR . 'dist/blocks/cf7-styler/index.php';
 			require_once UAGB_DIR . 'dist/blocks/gf-styler/index.php';
+
+			require_once UAGB_DIR . 'ds.php';
 		}
 
 		/**

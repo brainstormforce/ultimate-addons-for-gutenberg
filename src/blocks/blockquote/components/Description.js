@@ -1,3 +1,5 @@
+import {DYNAMIC_QUOTE_TEXT} from "../block";
+
 const {
 	RichText,
 } = wp.editor
@@ -18,7 +20,19 @@ class Description extends React.Component {
 			props
 		} = this.props
 
-		if( setAttributes !== "not_set" ){
+		const hasDynamicQuoteText = !! ( props.attributes.dynamic && props.attributes.dynamic[ DYNAMIC_QUOTE_TEXT ] );
+
+		if( setAttributes !== 'not_set' && hasDynamicQuoteText ) {
+			return (
+				<div className="editor-rich-text">
+					<RichText.Content
+						tagName='div'
+						value={ attributes.descriptionText }
+						className='uagb-blockquote__content editor-rich-text__editable'
+					/>
+				</div>
+			)
+		} else if( setAttributes !== "not_set" ){
 			return (
 				<RichText
 	                tagName='div'
@@ -42,10 +56,12 @@ class Description extends React.Component {
 	            />
 			)
 		}else{
+			const dynamicQuoteText = props.attributes.dynamic && props.attributes.dynamic[ DYNAMIC_QUOTE_TEXT ] ? props.attributes.dynamic[ DYNAMIC_QUOTE_TEXT ] : {};
+			const quoteTextOrShortcode = ToolsetDynamicSources.getShortcodeOrStatic( dynamicQuoteText, attributes.descriptionText, { repeatableFieldShowOnly: 'first' } );
 			return (
 				<RichText.Content
 	                tagName='div'
-	                value={ attributes.descriptionText }
+	                value={ quoteTextOrShortcode }
 	                className='uagb-blockquote__content'
 	            />
 			)

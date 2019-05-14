@@ -1,3 +1,5 @@
+import {DYNAMIC_QUOTE_AUTHOR, DYNAMIC_QUOTE_TEXT} from "../block";
+
 const {
 	RichText,
 } = wp.editor
@@ -18,7 +20,19 @@ class AuthorText extends React.Component {
 			props
 		} = this.props
 
-		if( setAttributes !== "not_set" ){
+		const hasDynamicQuoteAuthor = !! ( props.attributes.dynamic && props.attributes.dynamic[ DYNAMIC_QUOTE_AUTHOR ] );
+
+		if( setAttributes !== 'not_set' && hasDynamicQuoteAuthor ) {
+			return (
+				<div className="editor-rich-text">
+					<RichText.Content
+						tagName='cite'
+						value={ attributes.author }
+						className='uagb-blockquote__author editor-rich-text__editable'
+					/>
+				</div>
+			);
+		}else if( setAttributes !== "not_set" ){
 			return (
 				<RichText
 	                tagName='div'
@@ -42,10 +56,13 @@ class AuthorText extends React.Component {
 	            />
 			)
 		}else{
+			const dynamicQuoteAuthor = props.attributes.dynamic && props.attributes.dynamic[ DYNAMIC_QUOTE_AUTHOR ] ? props.attributes.dynamic[ DYNAMIC_QUOTE_AUTHOR ] : {};
+			const quoteAuthorOrShortcode = ToolsetDynamicSources.getShortcodeOrStatic( dynamicQuoteAuthor, attributes.author, { repeatableFieldShowOnly: 'first' } );
+
 			return (
 				<RichText.Content
 	                tagName='cite'
-	                value={ attributes.author }
+	                value={ quoteAuthorOrShortcode }
 	                className='uagb-blockquote__author'
 	            />
 			)

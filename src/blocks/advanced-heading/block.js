@@ -19,6 +19,9 @@ const {
 	RichText
 } = wp.editor
 
+export const DYNAMIC_HEADING_TITLE = 'headingTitle';
+export const DYNAMIC_HEADING_DESC = 'headingDesc';
+
 
 registerBlockType( "uagb/advanced-heading", {
 
@@ -87,6 +90,12 @@ registerBlockType( "uagb/advanced-heading", {
 			headingId
 		} = props.attributes
 
+		const dynamicHeadingTitle = props.attributes.dynamic && props.attributes.dynamic[ DYNAMIC_HEADING_TITLE ] ? props.attributes.dynamic[ DYNAMIC_HEADING_TITLE ] : {};
+		const dynamicHeadingDesc = props.attributes.dynamic && props.attributes.dynamic[ DYNAMIC_HEADING_DESC ] ? props.attributes.dynamic[ DYNAMIC_HEADING_DESC ] : {};
+		const headingTitleOrShortcode = ToolsetDynamicSources.getShortcodeOrStatic( dynamicHeadingTitle, headingTitle, { repeatableFieldShowOnly: 'first' } );
+		const headingDescOrShortcode = ToolsetDynamicSources.getShortcodeOrStatic( dynamicHeadingDesc, headingDesc, { repeatableFieldShowOnly: 'first' } );
+
+
 		var seprator_output =  ""
 		if( seperatorStyle !== "none" ){
 			seprator_output = <div className="uagb-separator-wrap" ><div className="uagb-separator"></div></div>
@@ -95,14 +104,14 @@ registerBlockType( "uagb/advanced-heading", {
 			<div className={ props.className } id={ `uagb-adv-heading-${block_id}` }>
 				<RichText.Content
 					tagName={ headingTag }
-					value={ headingTitle }
+					value={ headingTitleOrShortcode }
 					className='uagb-heading-text'	
 					id = { headingId }				
 				/>
 				{seprator_output}
 				<RichText.Content
 					tagName="p"
-					value={ headingDesc }
+					value={ headingDescOrShortcode }
 					className='uagb-desc-text'					
 				/>
 			</div>

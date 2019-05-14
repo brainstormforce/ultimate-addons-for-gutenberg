@@ -87,13 +87,21 @@ function inlineStyles( props, isEditor ) {
 
 
 	if ( "image" === backgroundType ) {
-
-		style["background-image"] = ( backgroundImage ) ? `url(${ backgroundImage.url })` : null
+		style[ 'background-image' ] = null;
+		if ( !! backgroundImage ) {
+			if (
+				!! props.attributes.dynamic &&
+				props.attributes.dynamic[ 'backgroundImage' ]
+			) {
+				style[ 'background-image' ] = `url( ${ backgroundImage } )`;
+			} else {
+				style[ 'background-image' ] = `url( ${ backgroundImage.url } )`;
+			}
+		}
 		style["background-position"] = position
 		style["background-attachment"] = backgroundAttachment
 		style["background-repeat"] = backgroundRepeat
 		style["background-size"] = backgroundSize
-
 	}
 
 	return style

@@ -262,6 +262,9 @@ const attributes = {
 		type: "string",
 		default: "center center"
 	},
+	dynamic: {
+		type: 'object',
+	},
 }
 
 export default attributes

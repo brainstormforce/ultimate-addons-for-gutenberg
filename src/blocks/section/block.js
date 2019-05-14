@@ -49,6 +49,7 @@ registerBlockType( "uagb/section", {
 			block_id,
 			tag,
 			backgroundType,
+			backgroundImage,
 			backgroundVideo,
 			contentWidth,
 			align
@@ -65,6 +66,10 @@ registerBlockType( "uagb/section", {
 
 		const CustomTag = `${tag}`
 
+		const dynamicBackgroundImage = props.attributes.dynamic && props.attributes.dynamic[ 'backgroundImage' ] ? props.attributes.dynamic[ 'backgroundImage' ] : null;
+		const staticBackgroundImage = backgroundImage ? backgroundImage.url : null;
+		const dynamicBackgroundImageOrShortcode = ToolsetDynamicSources.getShortcodeOrStatic( dynamicBackgroundImage, staticBackgroundImage, { repeatableFieldShowOnly: 'first' } );
+
 		return (
 			<CustomTag
 				className={ classnames(
@@ -74,6 +79,14 @@ registerBlockType( "uagb/section", {
 					block_controls_class
 				) }
 				id={ `uagb-section-${block_id}` }
+				style={
+					!! dynamicBackgroundImageOrShortcode ?
+					{
+						backgroundImage: `url( ${ dynamicBackgroundImageOrShortcode } )`
+					} :
+					null
+				}
+				style={ { backgroundImage: `url( ${ dynamicBackgroundImageOrShortcode } )` } }
 			>
 				<div className="uagb-section__overlay"></div>
 				{ "video" == backgroundType &&

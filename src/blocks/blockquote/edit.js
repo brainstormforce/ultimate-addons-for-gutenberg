@@ -43,12 +43,29 @@ const {
 // Extend component
 const { Component, Fragment } = wp.element
 
+const {
+	EditWrapper, withToolsetDynamicField
+} = ToolsetDynamicSources;
+import { DYNAMIC_QUOTE_TEXT, DYNAMIC_QUOTE_AUTHOR } from './block';
+
 class UAGBBlockQuote extends Component {
 
 	constructor() {
 		super( ...arguments )
 		this.onSelectImage    = this.onSelectImage.bind( this )
 		this.onRemoveImage    = this.onRemoveImage.bind( this )
+
+		// It registers the block attribute that will support content from Dynamic Sources.
+		this.props.dynamicFieldsRegister( {
+			[ DYNAMIC_QUOTE_TEXT ]: { // Attribute name
+				category: 'text', // Supported attribute content type (eg. "text", "url", "image" etc.)
+				label: __( 'Dynamic Quote Text' ), // Label for the Dynamic Sources toggle for this attribute.
+			},
+			[ DYNAMIC_QUOTE_AUTHOR ]: { // Attribute name
+				category: 'text', // Supported attribute content type (eg. "text", "url", "image" etc.)
+				label: __( 'Dynamic Quote Author' ), // Label for the Dynamic Sources toggle for this attribute.
+			},
+		} );
 	}
 
 	/*
@@ -1110,11 +1127,21 @@ class UAGBBlockQuote extends Component {
 
 				</BlockControls>
 				<InspectorControls>
+					{/* In the "PanelBody" is the UI of the the Dynamic Sources API that will be rendered in the Inspector bar. */}
+					<PanelBody title={ __( 'Dynamic field' ) }>
+						{ this.props.dynamicFieldControlRender( DYNAMIC_QUOTE_TEXT ) }
+						{ this.props.dynamicFieldControlRender( DYNAMIC_QUOTE_AUTHOR ) }
+					</PanelBody>
 					{ skin_settings }
 					{ Typography }
 					{ twitter_settings }
 					{ spacing_settings }
 				</InspectorControls>
+				<EditWrapper
+					clientId={ this.props.clientId }
+					isSelected={ this.props.isSelected }
+					hasDynamicSource={ this.props.dynamicFieldGet( DYNAMIC_QUOTE_TEXT ).isActive || this.props.dynamicFieldGet( DYNAMIC_QUOTE_AUTHOR ).isActive }
+				>
 				<div
 					className = { classnames(
 						className,
@@ -1136,22 +1163,23 @@ class UAGBBlockQuote extends Component {
 							</span>	</div> }
 
 							<div className="uagb-blockquote__content-wrap">
-						   	{ <Description attributes={attributes} setAttributes = { setAttributes } props = { this.props }  /> }
+						    { <Description attributes={attributes} setAttributes = { setAttributes } props = { this.props }  /> }
 
 					   <footer>
-					   		<div className={ classnames(
+					        <div className={ classnames(
 										"uagb-blockquote__author-wrap",
 										( authorImage !== "" ) ? `uagb-blockquote__author-at-${authorImgPosition}` : "",
 									) }	>
-					      		{ <AuthorImage attributes={attributes} /> }
-					      		{ <AuthorText attributes={attributes} setAttributes = { setAttributes } props = { this.props } /> }
+					            { <AuthorImage attributes={attributes} /> }
+					            { <AuthorText attributes={attributes} setAttributes = { setAttributes } props = { this.props } /> }
 									</div>
-					      	{ enableTweet &&  <TweetButton attributes={attributes} /> }
+					        { enableTweet &&  <TweetButton attributes={attributes} /> }
 					   </footer>
 							</div>
 						</blockquote>
 					</div>
 				</div>
+				</EditWrapper>
 
 				{ loadDescGoogleFonts }
 				{ loadAuthorGoogleFonts }
@@ -1172,4 +1200,4 @@ class UAGBBlockQuote extends Component {
 	}
 }
 
-export default UAGBBlockQuote
+export default withToolsetDynamicField( UAGBBlockQuote );
