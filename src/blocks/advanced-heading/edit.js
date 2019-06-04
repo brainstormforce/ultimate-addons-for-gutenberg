@@ -14,10 +14,6 @@ import TypographyControl from "../../components/typography"
 // Import Web font loader for google fonts.
 import WebfontLoader from "../../components/typography/fontloader"
 
-const {
-	EditWrapper, withToolsetDynamicField
-} = ToolsetDynamicSources;
-import { DYNAMIC_HEADING_TITLE, DYNAMIC_HEADING_DESC } from './block';
 
 //  Import CSS.
 import "./style.scss"
@@ -53,24 +49,13 @@ const {
 
 const { Component, Fragment } = wp.element
 
-class UAGBAdvancedHeading extends Component {
+export default ToolsetDynamicSources.withToolsetDynamicField( class UAGBAdvancedHeading extends Component {
 
 	constructor() {
-		super( ...arguments );
+		super( ...arguments )
 
-		this.splitBlock = this.splitBlock.bind( this );
-
-		// It registers the block attribute that will support content from Dynamic Sources.
-		this.props.dynamicFieldsRegister( {
-			[ DYNAMIC_HEADING_TITLE ]: { // Attribute name
-				category: 'text', // Supported attribute content type (eg. "text", "url", "image" etc.)
-				label: __( 'Dynamic Heading Title' ), // Label for the Dynamic Sources toggle for this attribute.
-			},
-			[ DYNAMIC_HEADING_DESC ]: { // Attribute name
-				category: 'text', // Supported attribute content type (eg. "text", "url", "image" etc.)
-				label: __( 'Dynamic Heading Description' ), // Label for the Dynamic Sources toggle for this attribute.
-			},
-		} );
+		this.splitBlock = this.splitBlock.bind( this )
+		this.props.dynamicFieldsRegister( { [ 'headingTitle' ]: { category: 'text', label: __( 'Dynamic Heading Title' ) }, [ 'headingDesc' ]: { category: 'text', label: __( 'Dynamic Heading Description' ) }, } );
 	}
 
 	componentDidMount() {
@@ -167,9 +152,6 @@ class UAGBAdvancedHeading extends Component {
 			},
 		} = this.props
 
-		const hasDynamicHeadingTitle = !! ( this.props.attributes.dynamic && this.props.attributes.dynamic[ DYNAMIC_HEADING_TITLE ] );
-		const hasDynamicHeadingDesc = !! ( this.props.attributes.dynamic && this.props.attributes.dynamic[ DYNAMIC_HEADING_DESC ] );
-
 		var element = document.getElementById( "uagb-adv-heading-style-" + this.props.clientId )
 
 		if( null != element && "undefined" != typeof element ) {
@@ -237,11 +219,7 @@ class UAGBAdvancedHeading extends Component {
 							onChange={ value => setAttributes( { headingId: value } ) }
 							help={ __( "Note: Anchors lets you link directly to a section on a page." ) }
 						/>
-						{/* In the "PanelBody" is the UI of the the Dynamic Sources API that will be rendered in the Inspector bar. */}
-						<PanelBody title={ __( 'Dynamic field' ) }>
-							{ this.props.dynamicFieldControlRender( DYNAMIC_HEADING_TITLE ) }
-							{ this.props.dynamicFieldControlRender( DYNAMIC_HEADING_DESC ) }
-						</PanelBody>
+						<PanelBody title={ __( 'Dynamic field' ) }>{ this.props.dynamicFieldControlRender( 'headingTitle' ) }{ this.props.dynamicFieldControlRender( 'headingDesc' ) }</PanelBody>
 						<TypographyControl
 							label={ __( "Typography" ) }
 							attributes = { attributes }
@@ -365,74 +343,42 @@ class UAGBAdvancedHeading extends Component {
 						}
 					</PanelBody>
 				</InspectorControls>
-				<EditWrapper
-					clientId={ this.props.clientId }
-					isSelected={ this.props.isSelected }
-					hasDynamicSource={ this.props.dynamicFieldGet( DYNAMIC_HEADING_TITLE ).isActive || this.props.dynamicFieldGet( DYNAMIC_HEADING_DESC ).isActive }
-				>
-					<div className={ className } id={ `uagb-adv-heading-${this.props.clientId}` }>
-						{
-							hasDynamicHeadingTitle &&
-							<div class="editor-rich-text">
-								<RichText.Content
-									tagName={ headingTag }
-									value={ headingTitle }
-									className='uagb-heading-text'
-								/>
-							</div>
+				<div className={ className } id={ `uagb-adv-heading-${this.props.clientId}` }>
+					<RichText
+						tagName={ headingTag }
+						placeholder={ __( "Write a Heading" ) }
+						value={ headingTitle }
+						className='uagb-heading-text'
+						multiline={ false }
+						onChange={ ( value ) => {
+							setAttributes( { headingTitle: value } ) }
 						}
-						{
-							! hasDynamicHeadingTitle &&
-							<RichText
-								tagName={ headingTag }
-								placeholder={ __( "Write a Heading" ) }
-								value={ headingTitle }
-								className='uagb-heading-text'
-								multiline={ false }
-								onChange={ ( value ) => {
-									setAttributes( { headingTitle: value } ) }
-								}
-								onMerge={ mergeBlocks }
-								unstableOnSplit={
-									insertBlocksAfter ?
-										( before, after, ...blocks ) => {
-											setAttributes( { content: before } )
-											insertBlocksAfter( [
-												...blocks,
-												createBlock( "core/paragraph", { content: after } ),
-											] )
-										} :
-										undefined
-								}
-								onRemove={ () => onReplace( [] ) }
-							/>
+						onMerge={ mergeBlocks }
+						unstableOnSplit={
+							insertBlocksAfter ?
+								( before, after, ...blocks ) => {
+									setAttributes( { content: before } )
+									insertBlocksAfter( [
+										...blocks,
+										createBlock( "core/paragraph", { content: after } ),
+									] )
+								} :
+								undefined
 						}
-						{ seperatorStyle !== "none" && <div className="uagb-separator-wrap" ><div className="uagb-separator"></div></div> }
-						{
-							hasDynamicHeadingDesc &&
-							<div className="editor-rich-text">
-								<RichText.Content
-									tagName="p"
-									value={ headingDesc }
-									className='uagb-desc-text'
-								/>
-							</div>
-						}
-						{
-							! hasDynamicHeadingDesc &&
-							<RichText
-								tagName="p"
-								placeholder={ __( "Write a Description" ) }
-								value={ headingDesc }
-								className='uagb-desc-text'
-								onChange={ ( value ) => setAttributes( { headingDesc: value } ) }
-								onMerge={ mergeBlocks }
-								unstableOnSplit={ this.splitBlock }
-								onRemove={ () => onReplace( [] ) }
-							/>
-						}
-					</div>
-				</EditWrapper>
+						onRemove={ () => onReplace( [] ) }
+					/>
+					{ seperatorStyle !== "none" && <div className="uagb-separator-wrap" ><div className="uagb-separator"></div></div> }
+					<RichText
+						tagName="p"
+						placeholder={ __( "Write a Description" ) }
+						value={ headingDesc }
+						className='uagb-desc-text'
+						onChange={ ( value ) => setAttributes( { headingDesc: value } ) }
+						onMerge={ mergeBlocks }
+						unstableOnSplit={ this.splitBlock }
+						onRemove={ () => onReplace( [] ) }
+					/>
+				</div>
 				{ loadHeadingGoogleFonts }
 				{ loadSubHeadingGoogleFonts }
 
@@ -440,5 +386,4 @@ class UAGBAdvancedHeading extends Component {
 		)
 	}
 }
-
-export default withToolsetDynamicField( UAGBAdvancedHeading );
+);
