@@ -193,7 +193,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 			ob_start();
 			?>
-			<script type="text/javascript" id="uagb-script-frontend">( function( $ ) { <?php echo self::$script; ?> })(jQuery) </script>
+			<script type="text/javascript" id="uagb-script-frontend">document.addEventListener("DOMContentLoaded", function(){( function( $ ) { <?php echo self::$script; ?> })(jQuery)}) </script>
 			<?php
 			ob_end_flush();
 		}
