@@ -705,7 +705,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				$cached_wp_query = $wp_query;
 
 				foreach ( $cached_wp_query as $post ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-					$this->get_generated_stylesheet( $post );
+					$this->get_generated_stylesheet( apply_filters( 'uagb_post_for_stylesheet', $post ) );
 				}
 			}
 
