@@ -907,6 +907,27 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 			return $default;
 		}
+		/**
+		 * Get FAQ default array.
+		 *
+		 * @since 0.0.1
+		 */
+		public static function get_faq_defaults() {
+
+			$default = array();
+
+			for ( $i = 1; $i <= 2; $i++ ) {
+				array_push(
+					$default,
+					array(
+						'question' => 'What is FAQ?',	
+						'answer' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',	
+					)
+				);
+			}
+
+			return $default;
+		}
 
 		/**
 		 * Returns an option from the database for
