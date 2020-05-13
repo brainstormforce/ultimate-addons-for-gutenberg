@@ -60,7 +60,8 @@ class UAGBFaqChildEdit extends Component {
 			block_id,
 			question,
 			answer,
-			icon
+			icon,
+			iconActive
         } = attributes
 		var element = document.getElementById( "uagb-style-faq-child" + this.props.clientId )
 
@@ -97,6 +98,9 @@ class UAGBFaqChildEdit extends Component {
 						<div className="uagb-faq-questions-button uagb-faq-questions">
 							<div className="uagb-icon uagb-faq-icon-wrap">
 								{ renderSVG(icon) }
+							</div>
+							<div className="uagb-icon-active uagb-faq-icon-wrap">
+								{ renderSVG(iconActive) }
 							</div>
 							<div className="uagb-question">
 									{ question }

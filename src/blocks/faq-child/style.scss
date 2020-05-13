@@ -27,3 +27,15 @@
 .wp-block-uagb-faq-child .uagb-faq-item .uagb-content {
     display: none;
 }
+.wp-block-uagb-faq-child.uagb-faq-child__outer-wrap .uagb-faq-item .uagb-icon-active {
+    display: none;
+}
+.wp-block-uagb-faq-child.uagb-faq-child__outer-wrap .uagb-faq-item.uagb-faq-item-active .uagb-icon {
+    display: none;
+}
+.wp-block-uagb-faq-child.uagb-faq-child__outer-wrap .uagb-faq-item .uagb-icon {
+    display: block;
+}
+.wp-block-uagb-faq-child.uagb-faq-child__outer-wrap .uagb-faq-item.uagb-faq-item-active .uagb-icon-active {
+    display: block;
+}

@@ -86,6 +86,11 @@ function styling( props ) {
             "height" : generateCSSUnit( iconSize, 'px' ),
             "font-size" : generateCSSUnit( iconSize, 'px' )
         },
+        " .uagb-icon-active svg" : {
+            "width" : generateCSSUnit( iconSize, 'px' ),
+            "height" : generateCSSUnit( iconSize, 'px' ),
+            "font-size" : generateCSSUnit( iconSize, 'px' )
+        },
         " .uagb-faq-child__outer-wrap" : {
             "margin-bottom" : generateCSSUnit( rowsGap, 'px' ),
         },
@@ -123,7 +128,7 @@ function styling( props ) {
         " .uagb-faq-item .uagb-icon svg" : {
             "fill" : iconColor
         },
-        " .uagb-faq-item.uagb-faq-item-active .uagb-icon svg" : {
+        " .uagb-faq-item.uagb-faq-item-active .uagb-icon-active svg" : {
             "fill" : iconActiveColor
         },
         " .uagb-faq-item .uagb-faq-icon-wrap" : {
