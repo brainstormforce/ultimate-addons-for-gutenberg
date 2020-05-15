@@ -101,7 +101,7 @@ const attributes = {
 	},
 	borderWidth: {
 		type: "number",
-		default : 2
+		default : 1
 	},
 	borderRadius: {
 		type: "number",
@@ -109,15 +109,15 @@ const attributes = {
 	},
 	borderColor: {
 		type: "string",
-		default: "#eee"
+		default: "#313131"
 	},
 	questionTextColor: {
 		type: "string",
-		default: "#eee"
+		default: "#313131"
 	},
 	questionTextActiveColor: {
 		type: "string",
-		default: "#eee"
+		default: "#313131"
 	},
 	questionPaddingTypeMobile: {
 		type: "string",
@@ -157,7 +157,7 @@ const attributes = {
 	},
 	answerTextColor: {
 		type: "string",
-		default: "#eee"
+		default: "#313131"
 	},
 	answerPaddingTypeMobile: {
 		type: "string",
@@ -197,11 +197,11 @@ const attributes = {
 	},
 	iconColor: {
 		type: "string",
-		default: "#eee"
+		default: "#313131"
 	},
 	iconActiveColor: {
 		type: "string",
-		default: "#eee"
+		default: "#313131"
 	},
 	gapBtwIconQUestion: {
 		type: "number",
