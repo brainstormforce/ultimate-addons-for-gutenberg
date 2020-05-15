@@ -11,7 +11,6 @@ function styling( props ) {
         layout,
         inactiveOtherItems,
         expandFirstItem,
-        enableSchemaSupport,
         rowsGap,
         columnsGap,
         align,
@@ -45,10 +44,8 @@ function styling( props ) {
         iconColor,
         iconActiveColor,
         gapBtwIconQUestion,
-        questionloadGoogleFonts,
         questionfontFamily,
         questionfontWeight,
-        questionfontSubset,
         questionfontSizeType,
         questionfontSize,
         questionfontSizeMobile,
@@ -57,10 +54,8 @@ function styling( props ) {
         questionlineHeight,
         questionlineHeightMobile,
         questionlineHeightTablet,
-        answerloadGoogleFonts,
         answerfontFamily,
         answerfontWeight,
-        answerfontSubset,
         answerfontSizeType,
         answerfontSize,
         answerfontSizeMobile,
@@ -69,8 +64,6 @@ function styling( props ) {
         answerlineHeight,
         answerlineHeightMobile,
         answerlineHeightTablet,
-        icon,
-        iconActive,
         iconAlign,
         iconSize
     } = props.attributes
@@ -143,6 +136,18 @@ function styling( props ) {
         " .uagb-faq-icon-wrap" : {
             "float" : iconAlign
         },
+        " .uagb-faq-questions-button .uagb-question" : {
+            "font-size" : generateCSSUnit( questionfontSize, questionfontSizeType ),
+			"line-height" : generateCSSUnit( questionlineHeight, questionlineHeightType ),
+			"font-family": questionfontFamily,
+			"font-weight": questionfontWeight,
+        },
+        " .uagb-faq-item .uagb-content p" : {
+            "font-size" : generateCSSUnit( answerfontSize, answerfontSizeType ),
+			"line-height" : generateCSSUnit( answerlineHeight, answerlineHeightType ),
+			"font-family": answerfontFamily,
+			"font-weight": answerfontWeight,
+        },
     }
     
     tablet_selectors = {
@@ -158,6 +163,14 @@ function styling( props ) {
             "padding-right": generateCSSUnit( hanswerPaddingTablet, answerPaddingTypeTablet ),
             "padding-left": generateCSSUnit( hanswerPaddingTablet, answerPaddingTypeTablet ),
         },
+        " .uagb-faq-questions-button .uagb-question" : {
+            "font-size" : generateCSSUnit( questionfontSizeTablet, questionfontSizeType ),
+			"line-height" : generateCSSUnit( questionlineHeightTablet, questionlineHeightType ),
+        },
+        " .uagb-faq-item .uagb-content p" : {
+            "font-size" : generateCSSUnit( answerfontSizeTablet, answerfontSizeType ),
+			"line-height" : generateCSSUnit( answerlineHeightTablet, answerlineHeightType ),
+        },
     }
 
     mobile_selectors = {
@@ -172,6 +185,14 @@ function styling( props ) {
             "padding-bottom": generateCSSUnit( vanswerPaddingMobile, answerPaddingTypeMobile ),
             "padding-right": generateCSSUnit( hanswerPaddingMobile, answerPaddingTypeMobile ),
             "padding-left": generateCSSUnit( hanswerPaddingMobile, answerPaddingTypeMobile ),
+        },
+        " .uagb-faq-questions-button .uagb-question" : {
+            "font-size" : generateCSSUnit( questionfontSizeMobile, questionfontSizeType ),
+			"line-height" : generateCSSUnit( questionlineHeightMobile, questionlineHeightType ),
+        },
+        " .uagb-faq-item .uagb-content p" : {
+            "font-size" : generateCSSUnit( answerfontSizeMobile, answerfontSizeType ),
+			"line-height" : generateCSSUnit( answerlineHeightMobile, answerlineHeightType ),
         },
     }
 
