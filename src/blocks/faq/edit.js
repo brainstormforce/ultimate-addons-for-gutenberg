@@ -176,8 +176,34 @@ class UAGBFaqEdit extends Component {
 			iconSizeMobile,
 			iconSizeTablet,
 			iconSize,
-			columns
-        } = attributes
+			columns,
+			schemaJsonData
+		} = attributes
+///////// Code to create JSON-LD////////////////////////////////////  
+		var faq_data = {}
+		var json_data = {
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": []
+		}
+		const faqChildBlocks = select('core/block-editor').getBlocks( this.props.clientId );
+
+		faqChildBlocks.forEach((faqChild, key) => {
+
+			faq_data = {
+				"@type" : "Question",
+				"name" : faqChild.attributes.question,
+				"acceptedAnswer" : {
+					"@type" : "Answer",
+					"text" : faqChild.attributes.answer
+				}
+			}
+			json_data["mainEntity"][key] = faq_data;
+		});
+
+		setAttributes( { schemaJsonData: json_data } )
+		console.log(schemaJsonData)
+/////////////////////////////////////////////////////////////////////
 		var element = document.getElementById( "uagb-style-faq-" + this.props.clientId )
 
 		if( null != element && "undefined" != typeof element ) {

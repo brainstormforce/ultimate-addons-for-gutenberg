@@ -319,6 +319,9 @@ const attributes = {
 		type: "number",
 		default : 2
 	},
+	schemaJsonData: {
+		type: "array"
+	}
 }
 
 export default attributes

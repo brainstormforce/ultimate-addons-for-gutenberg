@@ -12,9 +12,10 @@ export default function save( props ) {
 	
 	const { className } = props
 	const {
-		block_id
+		block_id,
+		schemaJsonData
 	} = props.attributes
-
+	
 	return (
 		<div className={ classnames(
 			className,
@@ -22,6 +23,10 @@ export default function save( props ) {
 			`uagb-block-${ block_id }`
 		) }
 		>
+			
+			<script type="application/ld+json">
+				{ schemaJsonData }
+			</script>
 			<div className="uagb-faq__wrap uagb-buttons-layout-wrap">
 				<InnerBlocks.Content />
 			</div>
