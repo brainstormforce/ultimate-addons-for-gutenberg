@@ -1998,6 +1998,9 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 							'iconActive' => 'fas fa-minus',
 							'iconAlign' => 'left',
 							'iconSize' => 15,
+							'iconSizeMobile' => 15,
+							'iconSizeTablet' => 15,
+							'iconSizeType' => 'px',
 						),
 					),
 					'uagb/faq-child'        => array(

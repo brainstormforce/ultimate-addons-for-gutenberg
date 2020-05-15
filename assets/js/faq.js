@@ -5,7 +5,7 @@
 		init: function() {
 
 			$(".uagb-faq__wrap").find('.uagb-faq-child__outer-wrap:first-child').find('.uagb-faq-item').addClass('uagb-faq-item-active');
-
+			
 			$( document ).delegate( ".uagb-faq-questions-button", "click", UAGBFaq.faqButtonClick )
 		},
 		/**

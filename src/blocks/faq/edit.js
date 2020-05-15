@@ -171,7 +171,11 @@ class UAGBFaqEdit extends Component {
 			answerlineHeightTablet,
 			icon,
 			iconActive,
-			iconAlign
+			iconAlign,
+			iconSizeType,
+			iconSizeMobile,
+			iconSizeTablet,
+			iconSize
         } = attributes
 		var element = document.getElementById( "uagb-style-faq-" + this.props.clientId )
 
@@ -617,6 +621,85 @@ class UAGBFaqEdit extends Component {
 							<h2>{  __( " Icon Styling" ) }</h2>
 						
 							<hr className="uagb-editor__separator" />
+							<TabPanel className="uagb-size-type-field-tabs uagb-size-type-field__common-tabs uagb-inline-margin" activeClass="active-tab"
+							tabs={ [
+								{
+									name: "desktop",
+									title: <Dashicon icon="desktop" />,
+									className: "uagb-desktop-tab uagb-responsive-tabs",
+								},
+								{
+									name: "tablet",
+									title: <Dashicon icon="tablet" />,
+									className: "uagb-tablet-tab uagb-responsive-tabs",
+								},
+								{
+									name: "mobile",
+									title: <Dashicon icon="smartphone" />,
+									className: "uagb-mobile-tab uagb-responsive-tabs",
+								},
+							] }>
+							{
+								( tab ) => {
+									let tabout
+
+									if ( "mobile" === tab.name ) {
+										tabout = (
+											<Fragment>
+												<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
+													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "px" } aria-pressed={ iconSizeType === "px" } onClick={ () => setAttributes( { iconSizeType: "px" } ) }>{ "px" }</Button>
+													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "%" } aria-pressed={ iconSizeType === "%" } onClick={ () => setAttributes( { iconSizeType: "%" } ) }>{ "%" }</Button>
+												</ButtonGroup>
+												<h2>{ __( "Icon Size" ) }</h2>
+												<RangeControl
+													value={ iconSizeMobile }
+													onChange={ ( value ) => setAttributes( { iconSizeMobile: value } ) }
+													min={ 0 }
+													max={ 100 }
+													allowReset
+												/>
+											</Fragment>
+										)
+									} else if ( "tablet" === tab.name ) {
+										tabout = (
+											<Fragment>
+												<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
+													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "px" } aria-pressed={ iconSizeType === "px" } onClick={ () => setAttributes( { iconSizeType: "px" } ) }>{ "px" }</Button>
+													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "%" } aria-pressed={ iconSizeType === "%" } onClick={ () => setAttributes( { iconSizeType: "%" } ) }>{ "%" }</Button>
+												</ButtonGroup>
+												<h2>{ __( "Icon Size" ) }</h2>
+												<RangeControl
+													value={ iconSizeTablet }
+													onChange={ ( value ) => setAttributes( { iconSizeTablet: value } ) }
+													min={ 0 }
+													max={ 100 }
+													allowReset
+												/>
+											</Fragment>
+										)
+									} else {
+										tabout = (
+											<Fragment>
+												<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
+													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "px" } aria-pressed={ iconSizeType === "px" } onClick={ () => setAttributes( { iconSizeType: "px" } ) }>{ "px" }</Button>
+													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "%" } aria-pressed={ iconSizeType === "%" } onClick={ () => setAttributes( { iconSizeType: "%" } ) }>{ "%" }</Button>
+												</ButtonGroup>
+												<h2>{ __( "Icon Size" ) }</h2>
+												<RangeControl
+													value={ iconSize }
+													onChange={ ( value ) => setAttributes( { iconSize: value } ) }
+													min={ 0 }
+													max={ 100 }
+													allowReset
+												/>
+											</Fragment>
+										)
+									}
+
+									return <div>{ tabout }</div>
+								}
+							}
+						</TabPanel>
 							<p className="uagb-setting-label">{ __( "Icon Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: iconColor }} ></span></span></p>
 							<ColorPalette
 								value={ iconColor }

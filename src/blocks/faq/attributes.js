@@ -303,6 +303,18 @@ const attributes = {
 		type: "number",
 		default : 15
 	},
+	iconSizeTablet: {
+		type: "number",
+		default : 15
+	},
+	iconSizeMobile: {
+		type: "number",
+		default : 15
+	},
+	iconSizeType: {
+		type: "string",
+		default: "px"
+	},
 }
 
 export default attributes

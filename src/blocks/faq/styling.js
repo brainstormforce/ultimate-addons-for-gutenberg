@@ -65,7 +65,10 @@ function styling( props ) {
         answerlineHeightMobile,
         answerlineHeightTablet,
         iconAlign,
-        iconSize
+        iconSize,
+        iconSizeType,
+        iconSizeMobile,
+        iconSizeTablet,
     } = props.attributes
 
     var selectors = {}
@@ -75,14 +78,14 @@ function styling( props ) {
     selectors = {
 
 		" .uagb-icon svg" : {
-            "width" : generateCSSUnit( iconSize, 'px' ),
-            "height" : generateCSSUnit( iconSize, 'px' ),
-            "font-size" : generateCSSUnit( iconSize, 'px' )
+            "width" : generateCSSUnit( iconSize, iconSizeType ),
+            "height" : generateCSSUnit( iconSize, iconSizeType ),
+            "font-size" : generateCSSUnit( iconSize, iconSizeType )
         },
         " .uagb-icon-active svg" : {
-            "width" : generateCSSUnit( iconSize, 'px' ),
-            "height" : generateCSSUnit( iconSize, 'px' ),
-            "font-size" : generateCSSUnit( iconSize, 'px' )
+            "width" : generateCSSUnit( iconSize, iconSizeType ),
+            "height" : generateCSSUnit( iconSize, iconSizeType ),
+            "font-size" : generateCSSUnit( iconSize, iconSizeType )
         },
         " .uagb-faq-child__outer-wrap" : {
             "margin-bottom" : generateCSSUnit( rowsGap, 'px' ),
@@ -171,6 +174,16 @@ function styling( props ) {
             "font-size" : generateCSSUnit( answerfontSizeTablet, answerfontSizeType ),
 			"line-height" : generateCSSUnit( answerlineHeightTablet, answerlineHeightType ),
         },
+        " .uagb-icon svg" : {
+            "width" : generateCSSUnit( iconSizeTablet, iconSizeType ),
+            "height" : generateCSSUnit( iconSizeTablet, iconSizeType ),
+            "font-size" : generateCSSUnit( iconSizeTablet, iconSizeType )
+        },
+        " .uagb-icon-active svg" : {
+            "width" : generateCSSUnit( iconSizeTablet, iconSizeType ),
+            "height" : generateCSSUnit( iconSizeTablet, iconSizeType ),
+            "font-size" : generateCSSUnit( iconSizeTablet, iconSizeType )
+        },
     }
 
     mobile_selectors = {
@@ -193,6 +206,16 @@ function styling( props ) {
         " .uagb-faq-item .uagb-content p" : {
             "font-size" : generateCSSUnit( answerfontSizeMobile, answerfontSizeType ),
 			"line-height" : generateCSSUnit( answerlineHeightMobile, answerlineHeightType ),
+        },
+        " .uagb-icon svg" : {
+            "width" : generateCSSUnit( iconSizeMobile, iconSizeType ),
+            "height" : generateCSSUnit( iconSizeMobile, iconSizeType ),
+            "font-size" : generateCSSUnit( iconSizeMobile, iconSizeType )
+        },
+        " .uagb-icon-active svg" : {
+            "width" : generateCSSUnit( iconSizeMobile, iconSizeType ),
+            "height" : generateCSSUnit( iconSizeMobile, iconSizeType ),
+            "font-size" : generateCSSUnit( iconSizeMobile, iconSizeType )
         },
     }
 
