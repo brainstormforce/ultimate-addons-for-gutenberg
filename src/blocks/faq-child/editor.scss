@@ -1,22 +1,20 @@
 .uagb-faq-child__outer-wrap .uagb-faq-questions-button {
 
     cursor: pointer;
-    display: table;
+    display: block;
     padding: 15px;
+    width: 100%;
     .uagb-faq-icon-wrap {
 
-        display: table-cell;
+        display: inline-block;
         vertical-align: middle;
     }
     .uagb-question {
-
-        display: table-cell;
-        padding-left: 20px;
+        width: 100%;
     }
 }
 [data-type="uagb/faq-child"] .uagb-faq-child__outer-wrap .uagb-content p {
     margin: 0;
-    padding: 15px;
 }
 [data-type="uagb/faq-child"] .uagb-faq-child__outer-wrap .uagb-faq-item .uagb-content {
     display: none;
@@ -28,7 +26,7 @@
     display: none;
 }
 [data-type="uagb/faq-child"] .uagb-faq-child__outer-wrap .uagb-faq-item .uagb-icon {
-    display: block;
+    display: inline-block;
 }
 [data-type="uagb/faq-child"] .uagb-faq-child__outer-wrap .uagb-faq-item.uagb-faq-item-active .uagb-icon-active {
     display: block;

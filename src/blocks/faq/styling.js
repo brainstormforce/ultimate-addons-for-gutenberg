@@ -131,11 +131,17 @@ function styling( props ) {
         " .uagb-faq-item.uagb-faq-item-active .uagb-icon-active svg" : {
             "fill" : iconActiveColor
         },
-        " .uagb-faq-item .uagb-faq-icon-wrap" : {
+        ".uagb-faq-icon-left .uagb-faq-item .uagb-faq-icon-wrap" : {
             "margin-right" : generateCSSUnit( gapBtwIconQUestion, 'px' ),
+        },
+        ".uagb-faq-icon-right .uagb-faq-item .uagb-faq-icon-wrap" : {
+            "margin-left" : generateCSSUnit( gapBtwIconQUestion, 'px' ),
         },
         " .uagb-faq-item:hover .uagb-icon svg" : {
             "fill" : iconActiveColor
+        },
+        " .uagb-faq-icon-wrap" : {
+            "float" : iconAlign
         },
     }
     

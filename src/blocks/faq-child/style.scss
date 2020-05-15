@@ -1,22 +1,20 @@
 .wp-block-uagb-faq-child .uagb-faq-questions-button {
 
     cursor: pointer;
-    display: table;
+    display: block;
     padding: 15px;
+    width: 100%;
     .uagb-faq-icon-wrap {
 
-        display: table-cell;
+        display: inline-block;
         vertical-align: middle;
     }
     .uagb-question {
-
-        display: table-cell;
-        padding-left: 20px;
+        width: 100%;
     }
 }
 .wp-block-uagb-faq-child .uagb-content p {
     margin: 0;
-    padding: 15px;
 }
 .uagb-icon svg {
 

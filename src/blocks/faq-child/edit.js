@@ -96,15 +96,15 @@ class UAGBFaqChildEdit extends Component {
 				<div className="uagb-faq-child__wrapper">
 					<div className="uagb-faq-item">
 						<div className="uagb-faq-questions-button uagb-faq-questions">
-							<div className="uagb-icon uagb-faq-icon-wrap">
+							<span className="uagb-icon uagb-faq-icon-wrap">
 								{ renderSVG(icon) }
-							</div>
-							<div className="uagb-icon-active uagb-faq-icon-wrap">
+							</span>
+							<span className="uagb-icon-active uagb-faq-icon-wrap">
 								{ renderSVG(iconActive) }
-							</div>
-							<div className="uagb-question">
+							</span>
+							<span className="uagb-question">
 									{ question }
-							</div>
+							</span>
 						</div>
 						<div className="uagb-content">
 							<span>
