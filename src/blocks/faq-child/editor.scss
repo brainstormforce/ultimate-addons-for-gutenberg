@@ -16,8 +16,8 @@
 [data-type="uagb/faq-child"] .uagb-faq-child__outer-wrap .uagb-content p {
     margin: 0;
 }
-[data-type="uagb/faq-child"] .uagb-faq-child__outer-wrap .uagb-faq-item .uagb-content {
-    display: none;
+[data-type="uagb/faq-child"] .uagb-faq-child__outer-wrap .uagb-content {
+    border-width: 0px;
 }
 [data-type="uagb/faq-child"] .uagb-faq-child__outer-wrap .uagb-faq-item .uagb-icon-active {
     display: none;
@@ -29,5 +29,5 @@
     display: inline-block;
 }
 [data-type="uagb/faq-child"] .uagb-faq-child__outer-wrap .uagb-faq-item.uagb-faq-item-active .uagb-icon-active {
-    display: block;
+    display: inline-block;
 }

@@ -274,16 +274,18 @@ class UAGBFaqEdit extends Component {
 							max={ 50 }
 						/>
 					}
-					<SelectControl
-						label={ __( "Alignment" ) }
-						value={ align }
-						options={ [
-							{ value: "left", label: __( "Left" ) },
-							{ value: "right", label: __( "Right" ) },
-							{ value: "center", label: __( "Center" ) },
-						] }
-						onChange={ ( value ) => setAttributes( { align: value } ) }
-					/>
+					{ 'grid' === layout &&
+						<SelectControl
+							label={ __( "Alignment" ) }
+							value={ align }
+							options={ [
+								{ value: "left", label: __( "Left" ) },
+								{ value: "right", label: __( "Right" ) },
+								{ value: "center", label: __( "Center" ) },
+							] }
+							onChange={ ( value ) => setAttributes( { align: value } ) }
+						/>
+					}
 					<SelectControl
 						label={ __( "Enable Separator" ) }
 						value={ enableSeparator }

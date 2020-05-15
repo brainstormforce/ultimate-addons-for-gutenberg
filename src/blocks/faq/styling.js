@@ -174,6 +174,28 @@ function styling( props ) {
             "padding-left": generateCSSUnit( hanswerPaddingMobile, answerPaddingTypeMobile ),
         },
     }
+
+    if ( 'yes' === inactiveOtherItems ) {
+        
+        selectors[" .block-editor-block-list__layout .uagb-faq-child__outer-wrap .uagb-content "] = {
+            "display" : "none"
+        }
+    }
+    if ( 'yes' === expandFirstItem ) {
+        
+        selectors[" .block-editor-block-list__layout > div:first-child > .uagb-faq-child__outer-wrap .uagb-content "] = {
+            "display" : "block"
+        }
+    }
+    if ( 'yes' === enableSeparator ) {
+        
+        selectors[" .uagb-faq-child__outer-wrap .uagb-content "] = {
+            "border-style" : "solid",
+            "border-top-color" : borderColor,
+            "border-top-width" : generateCSSUnit( borderWidth, 'px' ),
+        }
+    }
+
     var styling_css = '';
     var id = `.uagb-block-${ props.clientId }`
 
