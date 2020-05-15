@@ -315,6 +315,10 @@ const attributes = {
 		type: "string",
 		default: "px"
 	},
+	columns: {
+		type: "number",
+		default : 2
+	},
 }
 
 export default attributes

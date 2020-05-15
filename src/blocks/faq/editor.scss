@@ -9,4 +9,6 @@
 
     display: block;
 }
-
+[data-type="uagb/faq"] .uagb-faq-layout-grid .block-editor-inner-blocks > .block-editor-block-list__layout {
+    display: grid;
+}

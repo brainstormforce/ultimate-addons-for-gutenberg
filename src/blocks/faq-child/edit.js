@@ -61,14 +61,27 @@ class UAGBFaqChildEdit extends Component {
 			question,
 			answer,
 			icon,
-			iconActive
+			iconActive,
+			layout
         } = attributes
 		var element = document.getElementById( "uagb-style-faq-child" + this.props.clientId )
 
 		if( null != element && "undefined" != typeof element ) {
 			element.innerHTML = styling( this.props )
 		}
-
+		const faqRenderIcon = () => {
+			
+			return (
+				<Fragment>
+					<span className="uagb-icon uagb-faq-icon-wrap">
+						{ renderSVG(icon) }
+					</span>
+					<span className="uagb-icon-active uagb-faq-icon-wrap">
+						{ renderSVG(iconActive) }
+					</span>
+				</Fragment>
+			)
+		}
 		const faqChildControls = () => {
 
 			return (
@@ -96,12 +109,7 @@ class UAGBFaqChildEdit extends Component {
 				<div className="uagb-faq-child__wrapper">
 					<div className="uagb-faq-item">
 						<div className="uagb-faq-questions-button uagb-faq-questions">
-							<span className="uagb-icon uagb-faq-icon-wrap">
-								{ renderSVG(icon) }
-							</span>
-							<span className="uagb-icon-active uagb-faq-icon-wrap">
-								{ renderSVG(iconActive) }
-							</span>
+							{ 'accordion' === layout && faqRenderIcon() }
 							<span className="uagb-question">
 									{ question }
 							</span>

@@ -2001,6 +2001,7 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 							'iconSizeMobile' => 15,
 							'iconSizeTablet' => 15,
 							'iconSizeType' => 'px',
+							'columns' => 2,
 						),
 					),
 					'uagb/faq-child'        => array(

@@ -175,7 +175,8 @@ class UAGBFaqEdit extends Component {
 			iconSizeType,
 			iconSizeMobile,
 			iconSizeTablet,
-			iconSize
+			iconSize,
+			columns
         } = attributes
 		var element = document.getElementById( "uagb-style-faq-" + this.props.clientId )
 
@@ -235,24 +236,28 @@ class UAGBFaqEdit extends Component {
 						] }
 						onChange={ (value) => this.onchangeLayout( value ) }
 					/>
-					<SelectControl
-						label={ __( "Inactive other items" ) }
-						value={ inactiveOtherItems }
-						options={ [
-							{ value: "yes", label: __( "Yes" ) },
-							{ value: "no", label: __( "No" ) },
-						] }
-						onChange={ ( value ) => setAttributes( { inactiveOtherItems: value } ) }
-					/>
-					<SelectControl
-						label={ __( "Expand First Item" ) }
-						value={ expandFirstItem }
-						options={ [
-							{ value: "yes", label: __( "Yes" ) },
-							{ value: "no", label: __( "No" ) },
-						] }
-						onChange={ ( value ) => setAttributes( { expandFirstItem: value } ) }
-					/>
+					{ 'accordion' === layout &&
+						<Fragment>
+							<SelectControl
+								label={ __( "Inactive other items" ) }
+								value={ inactiveOtherItems }
+								options={ [
+									{ value: "yes", label: __( "Yes" ) },
+									{ value: "no", label: __( "No" ) },
+								] }
+								onChange={ ( value ) => setAttributes( { inactiveOtherItems: value } ) }
+							/>
+							<SelectControl
+								label={ __( "Expand First Item" ) }
+								value={ expandFirstItem }
+								options={ [
+									{ value: "yes", label: __( "Yes" ) },
+									{ value: "no", label: __( "No" ) },
+								] }
+								onChange={ ( value ) => setAttributes( { expandFirstItem: value } ) }
+							/>
+						</Fragment>
+					}
 					<SelectControl
 						label={ __( "Enable Schema Support" ) }
 						value={ enableSchemaSupport }
@@ -269,6 +274,15 @@ class UAGBFaqEdit extends Component {
 						min={ 0 }
 						max={ 50 }
 					/>
+					{ 'grid' === layout &&
+						<RangeControl
+							label={ __( "Columns" ) }
+							value={ columns }
+							onChange={ ( value ) => setAttributes( { columns: value } ) }
+							min={ 0 }
+							max={ 6 }
+						/>
+					}
 					{ 'grid' === layout &&
 						<RangeControl
 							label={ __( "Columns Gap" ) }
@@ -822,7 +836,8 @@ class UAGBFaqEdit extends Component {
 				<div className={ classnames(
 					"uagb-faq__outer-wrap",
 					`uagb-block-${ this.props.clientId }`,
-					`uagb-faq-icon-${ this.props.attributes.iconAlign }`
+					`uagb-faq-icon-${ this.props.attributes.iconAlign }`,
+					`uagb-faq-layout-${ this.props.attributes.layout }`
 				) }
 				>
                     <InnerBlocks

@@ -9,6 +9,11 @@ const {
 	InnerBlocks
 } = wp.blockEditor
 
+const {
+	Component,
+	Fragment,
+} = wp.element
+
 export default function save( props ) {
 	
 	const { className } = props
@@ -17,21 +22,30 @@ export default function save( props ) {
 		question,
 		answer,
 		icon,
-		iconActive
+		iconActive,
+		layout
 	} = props.attributes
 
+	const faqRenderIcon = () => {
+			
+		return (
+			<Fragment>
+				<span className="uagb-icon uagb-faq-icon-wrap">
+					{ renderSVG(icon) }
+				</span>
+				<span className="uagb-icon-active uagb-faq-icon-wrap">
+					{ renderSVG(iconActive) }
+				</span>
+			</Fragment>
+		)
+	}
 	const faqRenderAccordion = () => {
 
 		return (
-			<div className="uagb-faq-child__wrapper">
+				<div className="uagb-faq-child__wrapper">
 					<div className="uagb-faq-item">
 						<div className="uagb-faq-questions-button uagb-faq-questions">
-							<span className="uagb-icon uagb-faq-icon-wrap">
-								{ renderSVG(icon) }
-							</span>
-							<span className="uagb-icon-active uagb-faq-icon-wrap">
-								{ renderSVG(iconActive) }
-							</span>
+							{ 'accordion' === layout && faqRenderIcon() }
 							<span className="uagb-question">
 									{ question }
 							</span>
@@ -45,7 +59,7 @@ export default function save( props ) {
 						</div>
 					</div>
 				</div>
-		)
+			)
 	}
 	return (
 		<div className={ classnames(

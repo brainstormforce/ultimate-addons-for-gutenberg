@@ -69,6 +69,7 @@ function styling( props ) {
         iconSizeType,
         iconSizeMobile,
         iconSizeTablet,
+        columns
     } = props.attributes
 
     var selectors = {}
@@ -89,6 +90,11 @@ function styling( props ) {
         },
         " .uagb-faq-child__outer-wrap" : {
             "margin-bottom" : generateCSSUnit( rowsGap, 'px' ),
+        },
+        ".uagb-faq-layout-grid .block-editor-inner-blocks .block-editor-block-list__layout" : {
+            "grid-column-gap": generateCSSUnit( columnsGap, 'px' ),
+            "grid-row-gap": generateCSSUnit( rowsGap, 'px' )
+        
         },
         " .uagb-faq-item" : {
             "background-color" : boxBgColor,
@@ -219,13 +225,13 @@ function styling( props ) {
         },
     }
 
-    if ( 'yes' === inactiveOtherItems ) {
+    if ( 'accordion' === layout && 'yes' === inactiveOtherItems ) {
         
         selectors[" .block-editor-block-list__layout .uagb-faq-child__outer-wrap .uagb-content "] = {
             "display" : "none"
         }
     }
-    if ( 'yes' === expandFirstItem ) {
+    if ( 'accordion' === layout && 'yes' === expandFirstItem ) {
         
         selectors[" .block-editor-block-list__layout > div:first-child > .uagb-faq-child__outer-wrap .uagb-content "] = {
             "display" : "block"
@@ -237,6 +243,15 @@ function styling( props ) {
             "border-style" : "solid",
             "border-top-color" : borderColor,
             "border-top-width" : generateCSSUnit( borderWidth, 'px' ),
+        }
+    }
+    if ( 'grid' === layout ) {
+        
+        selectors[" .block-editor-block-list__layout .uagb-faq-child__outer-wrap "] = {
+            "text-align" : align
+        }
+        selectors[".uagb-faq-layout-grid .block-editor-inner-blocks > .block-editor-block-list__layout "] = {
+            "grid-template-columns" : 'repeat(' + columns + ', 1fr)'
         }
     }
 
