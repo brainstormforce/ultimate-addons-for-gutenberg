@@ -202,7 +202,7 @@ class UAGBFaqEdit extends Component {
 		});
 
 		setAttributes( { schemaJsonData: json_data } )
-		console.log(schemaJsonData)
+		// console.log(schemaJsonData)
 /////////////////////////////////////////////////////////////////////
 		var element = document.getElementById( "uagb-style-faq-" + this.props.clientId )
 

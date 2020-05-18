@@ -15,7 +15,7 @@ export default function save( props ) {
 		block_id,
 		schemaJsonData
 	} = props.attributes
-	
+	console.log(schemaJsonData)
 	return (
 		<div className={ classnames(
 			className,
