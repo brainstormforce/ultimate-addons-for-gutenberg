@@ -15,15 +15,16 @@ export default function save( props ) {
 		block_id,
 		schemaJsonData
 	} = props.attributes
-	console.log(schemaJsonData)
+
 	return (
 		<div className={ classnames(
 			className,
 			"uagb-faq__outer-wrap",
-			`uagb-block-${ block_id }`
+			`uagb-block-${ block_id }`,
+			`uagb-faq-icon-${ props.attributes.iconAlign }`,
+			`uagb-faq-layout-${ props.attributes.layout }`
 		) }
 		>
-			
 			<script type="application/ld+json">
 				{ JSON.stringify( schemaJsonData ) }
 			</script>

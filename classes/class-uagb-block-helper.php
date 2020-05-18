@@ -4914,6 +4914,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 		public static function get_faq_css( $attr, $id ) {
 
 			$defaults = UAGB_Helper::$block_list['uagb/faq']['attributes'];
+
 			$attr = array_merge( $defaults, $attr );
 
 			$selectors = array(
@@ -4929,11 +4930,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 				" .uagb-faq-child__outer-wrap" => array(
 					"margin-bottom" => UAGB_Helper::get_css_value( $attr['rowsGap'], 'px' ),
-				),
-				".uagb-faq-layout-grid .block-editor-inner-blocks .block-editor-block-list__layout" => array(
-					"grid-column-gap"=> UAGB_Helper::get_css_value( $attr['columnsGap'], 'px' ),
-					"grid-row-gap"=> UAGB_Helper::get_css_value( $attr['rowsGap'], 'px' )
-				
 				),
 				" .uagb-faq-item" => array(
 					"background-color" => $attr['boxBgColor'],
@@ -4997,6 +4993,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					"font-weight"=> $attr['answerfontWeight'],
 				),
 			);
+
 			$t_selectors = array(
 				" .uagb-faq-questions-button" => array(
 					"padding-top"=> UAGB_Helper::get_css_value( $attr['vquestionPaddingTablet'], $attr['questionPaddingTypeTablet'] ),
@@ -5064,13 +5061,13 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			
 			if ( 'accordion' === $attr['layout'] && 'yes' === $attr['inactiveOtherItems'] ) {
         
-				$selectors[" .block-editor-block-list__layout .uagb-faq-child__outer-wrap .uagb-content "] = array(
+				$selectors[" .wp-block-uagb-faq-child.uagb-faq-child__outer-wrap .uagb-content "] = array(
 					"display" => "none"
 				);
 			}
 			if ( 'accordion' === $attr['layout'] && 'yes' === $attr['expandFirstItem'] ) {
 				
-				$selectors[" .block-editor-block-list__layout > div:first-child > .uagb-faq-child__outer-wrap .uagb-content "] = array(
+				$selectors[" .uagb-faq__wrap .uagb-buttons-layout-wrap > uagb-faq-child__outer-wrap:first-child > .uagb-faq-child__wrapper .uagb-content "] = array(
 					"display" => "block"
 				);
 			}
@@ -5084,11 +5081,14 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			}
 			if ( 'grid' === $attr['layout'] ) {
 				
-				$selectors[" .block-editor-block-list__layout .uagb-faq-child__outer-wrap "] = array(
+				$selectors[".uagb-faq-layout-grid .uagb-faq__wrap .uagb-faq-child__outer-wrap "] = array(
 					"text-align" => $attr['align']
 				);
-				$selectors[".uagb-faq-layout-grid .block-editor-inner-blocks > .block-editor-block-list__layout "] = array(
-					"grid-template-columns" => 'repeat(' . $attr['columns'] . ', 1fr)'
+				$selectors[".uagb-faq-layout-grid .uagb-faq__wrap.uagb-buttons-layout-wrap "] = array(
+					"grid-template-columns" => 'repeat(' . $attr['columns'] . ', 1fr)',
+					"grid-column-gap"=> UAGB_Helper::get_css_value( $attr['columnsGap'], 'px' ),
+					"grid-row-gap"=> UAGB_Helper::get_css_value( $attr['rowsGap'], 'px' ),
+					"display" => "grid"
 				);
 			}
 
