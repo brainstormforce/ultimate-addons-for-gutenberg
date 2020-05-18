@@ -494,6 +494,10 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					UAGB_Block_Helper::blocks_table_of_contents_gfont( $blockattr );
 					break;
 
+				case 'uagb/faq':
+					$css += UAGB_Block_Helper::get_faq_css( $blockattr, $block_id );
+					break;
+
                 default:
                     // Nothing to do here.
                     break;
