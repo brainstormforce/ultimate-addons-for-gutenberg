@@ -13,9 +13,23 @@ export default function save( props ) {
 	const { className } = props
 	const {
 		block_id,
-		schemaJsonData
+		schemaJsonData,
+		enableSchemaSupport
 	} = props.attributes
 
+	const renderSchema = () => {
+
+		if ( 'yes' === enableSchemaSupport ) {
+
+			return (
+				<script type="application/ld+json">
+					{ JSON.stringify( schemaJsonData ) }
+				</script>
+			)
+		}
+
+		return '';
+	}
 	return (
 		<div className={ classnames(
 			className,
@@ -25,9 +39,7 @@ export default function save( props ) {
 			`uagb-faq-layout-${ props.attributes.layout }`
 		) }
 		>
-			<script type="application/ld+json">
-				{ JSON.stringify( schemaJsonData ) }
-			</script>
+			{ renderSchema() }
 			<div className="uagb-faq__wrap uagb-buttons-layout-wrap">
 				<InnerBlocks.Content />
 			</div>

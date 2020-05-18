@@ -70,34 +70,33 @@ class UAGBFaqEdit extends Component {
 		document.head.appendChild( $style )
 	}
 
-	// componentDidUpdate() {
+	componentDidUpdate() {
 		
-	// 	const { setAttributes } = this.props
-	// 	var faq_data = {}
-	// 	var json_data = {
-	// 		"@context": "https://schema.org",
-	// 		"@type": "FAQPage",
-	// 		"mainEntity": []
-	// 	}
-	// 	const faqChildBlocks = select('core/block-editor').getBlocks( this.props.clientId );
+		const { setAttributes } = this.props
+		var faq_data = {}
+		var json_data = {
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": []
+		}
+		const faqChildBlocks = select('core/block-editor').getBlocks( this.props.clientId );
 
-	// 	faqChildBlocks.forEach((faqChild, key) => {
+		faqChildBlocks.forEach((faqChild, key) => {
 
-	// 		faq_data = {
-	// 			"@type" : "Question",
-	// 			"name" : faqChild.attributes.question,
-	// 			"acceptedAnswer" : {
-	// 				"@type" : "Answer",
-	// 				"text" : faqChild.attributes.answer
-	// 			}
-	// 		}
-	// 		json_data["mainEntity"][key] = faq_data;
-	// 	});
+			faq_data = {
+				"@type" : "Question",
+				"name" : faqChild.attributes.question,
+				"acceptedAnswer" : {
+					"@type" : "Answer",
+					"text" : faqChild.attributes.answer
+				}
+			}
+			json_data["mainEntity"][key] = faq_data;
+		});
 
-	// 	setAttributes( { schemaJsonData: json_data } )
-	// }
+		setAttributes( { schemaJsonData: json_data } )
+	}
 	onchangeIcon ( value ) {
-		const { replaceInnerBlocks } = dispatch( 'core/block-editor' );
 		const { setAttributes } = this.props
 		let getChildBlocks = select('core/block-editor').getBlocks( this.props.clientId );
 		getChildBlocks.forEach((faqChild, key) => {

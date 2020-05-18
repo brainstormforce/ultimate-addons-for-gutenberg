@@ -27,7 +27,8 @@ const {
 	BlockControls,
 	BlockAlignmentToolbar,
 	InspectorControls,
-	InnerBlocks
+	InnerBlocks,
+	RichText,
 } = wp.blockEditor
 
 const {
@@ -103,22 +104,31 @@ class UAGBFaqChildEdit extends Component {
 				</PanelBody>
 			)
 		}
-		const faqRenderAccordion = () => {
+		const faqRenderHtml = () => {
 
 			return (
 				<div className="uagb-faq-child__wrapper">
 					<div className="uagb-faq-item">
 						<div className="uagb-faq-questions-button uagb-faq-questions">
 							{ 'accordion' === layout && faqRenderIcon() }
-							<span className="uagb-question">
-									{ question }
-							</span>
+							<RichText
+								tagName="span"
+								value={ question }
+								onChange={ ( value ) => setAttributes( { question: value } ) }
+								className='uagb-question'
+								multiline={false}
+								allowedFormats={[ 'core/bold', 'core/italic', 'core/strikethrough' ]}
+							/>
 						</div>
 						<div className="uagb-content">
 							<span>
-								<p>
-									{ answer }
-								</p>
+								<RichText
+									tagName="p"
+									value={ answer }
+									onChange={ ( value ) => setAttributes( { answer: value } ) }
+									multiline={false}
+									allowedFormats={[ 'core/bold', 'core/italic', 'core/strikethrough' ]}
+								/>
 							</span>
 						</div>
 					</div>
@@ -135,7 +145,7 @@ class UAGBFaqChildEdit extends Component {
                         `uagb-block-${ block_id }`
                     ) }
                 >
-                    { faqRenderAccordion() }
+                    { faqRenderHtml() }
                 </div>
 			</Fragment>
 		)

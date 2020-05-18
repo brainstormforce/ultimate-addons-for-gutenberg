@@ -1,6 +1,5 @@
 .uagb-faq-child__outer-wrap .uagb-faq-questions-button {
 
-    cursor: pointer;
     display: block;
     padding: 15px;
     width: 100%;
@@ -30,4 +29,7 @@
 }
 [data-type="uagb/faq-child"] .uagb-faq-child__outer-wrap .uagb-faq-item.uagb-faq-item-active .uagb-icon-active {
     display: inline-block;
+}
+.uagb-faq-layout-accordion .uagb-faq-child__outer-wrap .uagb-faq-questions-button {
+    cursor: pointer;
 }
