@@ -25,7 +25,7 @@ export default function save( props ) {
 		>
 			
 			<script type="application/ld+json">
-				{ schemaJsonData }
+				{ JSON.stringify( schemaJsonData ) }
 			</script>
 			<div className="uagb-faq__wrap uagb-buttons-layout-wrap">
 				<InnerBlocks.Content />
