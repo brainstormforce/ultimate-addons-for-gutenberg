@@ -1375,6 +1375,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			$is_already_column    = false;
 			$is_already_icon_list = false;
 			$is_already_button    = false;
+			$is_already_faq       = false;
 
 			foreach ( UAGB_Config::$block_attributes as $key => $block ) {
 
@@ -1432,7 +1433,16 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					case 'restaurant-menu':
 						$combined[] = 'price-list';
 						break;
-
+					
+					case 'faq-child':
+					case 'faq':
+						if ( ! $is_already_faq ) {
+							$combined[]        = 'buttons';
+							$combined[]        = 'buttons-child';
+							$is_already_faq = true;
+						}
+						break;
+						
 					default:
 						$combined[] = $block_name;
 						break;
