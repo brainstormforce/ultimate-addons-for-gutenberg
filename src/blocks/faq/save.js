@@ -23,7 +23,7 @@ export default function save( props ) {
 
 			return (
 				<script type="application/ld+json">
-					{ JSON.stringify( schemaJsonData ) }
+					{ schemaJsonData }
 				</script>
 			)
 		}

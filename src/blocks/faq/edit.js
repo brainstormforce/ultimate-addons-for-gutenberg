@@ -19,7 +19,8 @@ import TypographyControl from "../../components/typography"
 import WebfontLoader from "../../components/typography/fontloader"
 
 const { __ } = wp.i18n
-const { select, dispatch } = wp.data;
+const { compose } = wp.compose
+const { select, withSelect } = wp.data;
 const {
 	Component,
 	Fragment,
@@ -70,31 +71,15 @@ class UAGBFaqEdit extends Component {
 		document.head.appendChild( $style )
 	}
 
-	componentDidUpdate() {
-		
-		const { setAttributes } = this.props
-		var faq_data = {}
-		var json_data = {
-			"@context": "https://schema.org",
-			"@type": "FAQPage",
-			"mainEntity": []
+	componentDidUpdate(prevProps, prevState) {
+		if (
+			JSON.stringify( this.props.schemaJsonData ) !==
+			JSON.stringify( prevProps.schemaJsonData )
+		) {
+			this.props.setAttributes({
+				schemaJsonData: JSON.stringify(this.props.schemaJsonData)
+			});
 		}
-		const faqChildBlocks = select('core/block-editor').getBlocks( this.props.clientId );
-
-		faqChildBlocks.forEach((faqChild, key) => {
-
-			faq_data = {
-				"@type" : "Question",
-				"name" : faqChild.attributes.question,
-				"acceptedAnswer" : {
-					"@type" : "Answer",
-					"text" : faqChild.attributes.answer
-				}
-			}
-			json_data["mainEntity"][key] = faq_data;
-		});
-
-		setAttributes( { schemaJsonData: json_data } )
 	}
 	onchangeIcon ( value ) {
 		const { setAttributes } = this.props
@@ -880,4 +865,32 @@ class UAGBFaqEdit extends Component {
 	}
 }
 
-export default UAGBFaqEdit
+export default compose(
+	withSelect( ( select, ownProps ) => {
+
+		var faq_data = {}
+		var json_data = {
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": []
+		}
+		const faqChildBlocks = select('core/block-editor').getBlocks( ownProps.clientId );
+
+		faqChildBlocks.forEach((faqChild, key) => {
+
+			faq_data = {
+				"@type" : "Question",
+				"name" : faqChild.attributes.question,
+				"acceptedAnswer" : {
+					"@type" : "Answer",
+					"text" : faqChild.attributes.answer
+				}
+			}
+			json_data["mainEntity"][key] = faq_data;
+		});
+
+		return {
+			schemaJsonData: json_data
+		};
+	} )
+) ( UAGBFaqEdit )
