@@ -72,14 +72,11 @@ class UAGBFaqEdit extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		if (
-			JSON.stringify( this.props.schemaJsonData ) !==
-			JSON.stringify( prevProps.schemaJsonData )
-		) {
-			this.props.setAttributes({
-				schemaJsonData: JSON.stringify(this.props.schemaJsonData)
-			});
-		}
+		
+		this.props.setAttributes({
+			schemaJsonData: JSON.stringify(this.props.schemaJsonData)
+		});
+		
 	}
 	onchangeIcon ( value ) {
 		const { setAttributes } = this.props
