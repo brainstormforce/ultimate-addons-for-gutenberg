@@ -149,13 +149,23 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 			$block_list_for_assets = self::$current_block_list;
 
+
+
+
 			$blocks = UAGB_Config::get_block_attributes();
 
+
+
 			foreach ( $block_list_for_assets as $key => $curr_block_name ) {
+
+				
+				
 
 				$js_assets = ( isset( $blocks[ $curr_block_name ]['js_assets'] ) ) ? $blocks[ $curr_block_name ]['js_assets'] : array();
 
 				$css_assets = ( isset( $blocks[ $curr_block_name ]['css_assets'] ) ) ? $blocks[ $curr_block_name ]['css_assets'] : array();
+
+				
 
 				foreach ( $js_assets as $asset_handle => $val ) {
 					// Scripts.
@@ -494,6 +504,10 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					UAGB_Block_Helper::blocks_table_of_contents_gfont( $blockattr );
 					break;
 
+				case 'uagb/faq':
+					$css += UAGB_Block_Helper::get_faq_css( $blockattr, $block_id );
+					break;
+
                 default:
                     // Nothing to do here.
                     break;
@@ -658,7 +672,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 					$id        = get_option( 'woocommerce_myaccount_page_id' );
 					$this_post = get_post( $id );
-
+					
 				} elseif ( is_checkout() ) {
 
 					$id        = get_option( 'woocommerce_checkout_page_id' );
@@ -698,7 +712,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 				$this->get_generated_stylesheet( $this_post );
 
-			} elseif ( is_archive() || is_home() || is_search() ) {
+			} elseif ( is_archive() || is_home() || is_search()  ) {
 
 				global $wp_query;
 				$cached_wp_query = $wp_query;
@@ -900,6 +914,27 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 						'lineHeight'       => '',
 						'lineHeightMobile' => '',
 						'lineHeightTablet' => '',
+					)
+				);
+			}
+
+			return $default;
+		}
+		/**
+		 * Get FAQ default array.
+		 *
+		 * @since 0.0.1
+		 */
+		public static function get_faq_defaults() {
+
+			$default = array();
+
+			for ( $i = 1; $i <= 2; $i++ ) {
+				array_push(
+					$default,
+					array(
+						'question' => 'What is FAQ?',	
+						'answer' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',	
 					)
 				);
 			}
@@ -1349,6 +1384,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			$is_already_column    = false;
 			$is_already_icon_list = false;
 			$is_already_button    = false;
+			$is_already_faq       = false;
 
 			foreach ( UAGB_Config::$block_attributes as $key => $block ) {
 
@@ -1406,7 +1442,16 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					case 'restaurant-menu':
 						$combined[] = 'price-list';
 						break;
-
+					
+					case 'faq-child':
+					case 'faq':
+						if ( ! $is_already_faq ) {
+							$combined[]        = 'buttons';
+							$combined[]        = 'buttons-child';
+							$is_already_faq = true;
+						}
+						break;
+						
 					default:
 						$combined[] = $block_name;
 						break;
@@ -1766,3 +1811,4 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 	 */
 	UAGB_Helper::get_instance();
 }
+
