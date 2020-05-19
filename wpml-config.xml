@@ -18,10 +18,13 @@
 			<key name="ctaText" />
 		</gutenberg-block>
 		<gutenberg-block type="uagb/section" translate="0"/>
-		<gutenberg-block type="uagb/buttons" translate="1">
-			<xpath>//a[@class="uagb-button__link"]</xpath>
-			<xpath>//a[@class="uagb-button__link"]/@href</xpath>
-		</gutenberg-block>
+		<gutenberg-block type="uagb/buttons" translate="0"/>
+		<gutenberg-block type="uagb/icon-list" translate="0"/>
+		<gutenberg-block type="uagb/columns" translate="0"/>
+		<gutenberg-block type="uagb/column" translate="0"/>
+		<gutenberg-block type="uagb/social-share" translate="0"/>
+		<gutenberg-block type="uagb/social-share-child" translate="0"/>
+		<gutenberg-block type="uagb/google-map" translate="0"/>
 		<gutenberg-block type="uagb/info-box" translate="1">
 			<xpath>//span[@class="uagb-ifb-title-prefix"]</xpath>
 			<xpath>//a/@href</xpath>
@@ -39,7 +42,7 @@
 			<xpath>//span[@class="uagb-team__prefix"]</xpath>
 			<xpath>//p[@class="uagb-team__desc"]</xpath>
 		</gutenberg-block>
-		<gutenberg-block type="uagb/icon-list" translate="1">
+		<gutenberg-block type="uagb/icon-list-child" translate="1">
 			<xpath>//span[@class="uagb-icon-list__label"]</xpath>
 		</gutenberg-block>
 		<gutenberg-block type="uagb/restaurant-menu" translate="1">
@@ -73,6 +76,10 @@
 			<xpath>//div[@class="uagb-toc__title"]</xpath>
 			<xpath>//p[@class="ub_table-of-contents-placeholder"]</xpath>
 			<xpath>//a</xpath>
+		</gutenberg-block>
+		<gutenberg-block type="uagb/buttons-child" translate="1">
+			<xpath>//a[@class="uagb-button__link"]</xpath>
+			<xpath>//a[@class="uagb-button__link"]/@href</xpath>
 		</gutenberg-block>
 	</gutenberg-blocks>
 </wpml-config>

@@ -1,6 +1,7 @@
 /**
  * BLOCK: UAGB - Columns Edit Class
  */
+import OptionSelectorControl from '../../components/option-selector-control'
 
 // Import classes
 import classnames from "classnames"
@@ -500,7 +501,7 @@ class UAGBColumns extends Component {
 
 		const reverse_tablet = ( reverseTablet ) ? "uagb-columns__reverse-tablet" : ""
 
-		const reverse_mobile = ( reverseMobile ) ? "uagb-columns__reverse-mobile" : ""
+		const reverse_mobile = ( reverseMobile ) ? "uagb-columns__reverse-mobile" : ""			
 
 		return (
 			<Fragment>
@@ -602,18 +603,18 @@ class UAGBColumns extends Component {
 								</Fragment>
 							 )
 						}
-						<SelectControl
+						<OptionSelectorControl
 							label={ __( "Column Gap" ) }
-							value={ columnGap }
-							onChange={ ( value ) => setAttributes( { columnGap: value } ) }
+							currentOption={ columnGap }
 							options={ [
-								{ value: "10", label: __( "Default (10px)" ) },
-								{ value: "0", label: __( "No Gap (0px)" ) },
-								{ value: "5", label: __( "Narrow (5px)" ) },
-								{ value: "15", label: __( "Extended (15px)" ) },
-								{ value: "20", label: __( "Wide (20px)" ) },
-								{ value: "30", label: __( "Wider (30px)" ) }
+								{ value: "10", label: __( "Default" ), tooltip: __( 'Default (10px)' ), },
+								{ value: "0", label: __( "None" ), tooltip: __( 'No Gap (0px)' ), },
+								{ value: "5", label: __( "S" ), tooltip: __( 'Narrow (5px)' ), },
+								{ value: "15", label: __( "M" ), tooltip: __( 'Extended (15px)' ), },
+								{ value: "20", label: __( "L" ), tooltip: __( 'Wide (20px)' ), },
+								{ value: "30", label: __( "XL" ), tooltip: __( 'Wider (30px)' ), }
 							] }
+							onChange={ ( columnGap ) => setAttributes( { columnGap } ) }
 							help={ __( "Note: The individual Column Gap can be managed from Column Settings." ) }
 						/>
 						<SelectControl

@@ -8,19 +8,8 @@ import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
 function styling( props ) {
 
 	const {
-		align,
-		className,
-		btn_count,
-		buttons,
-		gap,
-		stack,
-		loadGoogleFonts,
 		fontFamily,
 		fontWeight,
-		fontSubset,
-		label,
-		link,
-		target,
 		size,
 		vPadding,
 		hPadding,
@@ -40,13 +29,13 @@ function styling( props ) {
 		lineHeightType,
 		lineHeightMobile,
 		lineHeightTablet,
-		classMigrate
 	} = props.attributes;
-	var selectors = {}
+
 	var tablet_selectors = {}
 	var mobile_selectors = {}
 
-		selectors[" .uagb-buttons-repeater"] = {
+	var selectors = {
+		" .uagb-buttons-repeater" : {
 			"font-size" : generateCSSUnit( size, sizeType ),
 			"line-height" : generateCSSUnit( lineHeight, lineHeightType ),
 			"font-family": fontFamily,
@@ -56,48 +45,41 @@ function styling( props ) {
 			"border-color": borderColor,
 			"border-radius" : generateCSSUnit( borderRadius, "px" ),
 			"background": background
-		}
-
-		selectors[" .uagb-buttons-repeater" + ":hover"] = {
+		},
+		" .uagb-buttons-repeater:hover" : {
 			"background": hBackground,
 			"border-width": generateCSSUnit( borderWidth, "px" ),
 			"border-style": borderStyle,
 			"border-color": borderHColor,
-		}
-
-		selectors[" .uagb-buttons-repeater" + " a.uagb-button__link"] = {
+		},
+		" .uagb-buttons-repeater a.uagb-button__link" : {
 			"padding" : vPadding + "px " + hPadding + "px",
 			"color": color
-		}
-
-		selectors[" .uagb-buttons-repeater" + ":hover a.uagb-button__link"] = {
+		},
+		" .uagb-buttons-repeater:hover a.uagb-button__link" : {
 			"color": hColor
-		}
-
-		selectors[" .uagb-buttons-repeater" + " .uagb-button__link"] = {
+		},
+		" .uagb-buttons-repeater:hover .uagb-button__link": {
+			"color": hColor
+		},
+		" .uagb-buttons-repeater .uagb-button__link" : {
 			"padding" : vPadding + "px " + hPadding + "px",
 			"color": color
-		}
+		},
 
-		selectors[" .uagb-buttons-repeater" + ":hover .uagb-button__link"] = {
-			"color": hColor
-		}
-
-		mobile_selectors[" .uagb-buttons-repeater"] = {
-			"font-size" : generateCSSUnit( sizeMobile, sizeType ),
-			"line-height" : generateCSSUnit( lineHeightMobile, lineHeightType ),
-		}
-
-		tablet_selectors[" .uagb-buttons-repeater"] = {
-			"font-size" : generateCSSUnit( sizeTablet, sizeType ),
-			"line-height" : generateCSSUnit( lineHeightTablet, lineHeightType ),
-		}
-
-	var id = `#uagb-buttons-${ props.clientId }`
-	if ( classMigrate ) {
-		id = `.uagb-block-${ props.clientId }`
 	}
 
+	mobile_selectors[" .uagb-buttons-repeater"] = {
+		"font-size" : generateCSSUnit( sizeMobile, sizeType ),
+		"line-height" : generateCSSUnit( lineHeightMobile, lineHeightType ),
+	}
+
+	tablet_selectors[" .uagb-buttons-repeater"] = {
+		"font-size" : generateCSSUnit( sizeTablet, sizeType ),
+		"line-height" : generateCSSUnit( lineHeightTablet, lineHeightType ),
+	}
+
+	var id = `.uagb-block-${ props.clientId }`
 	var styling_css = generateCSS( selectors, id )
 
 	styling_css += generateCSS( tablet_selectors, id, true, "tablet" )

@@ -7,21 +7,8 @@
 .uagb-icon-list__outer-wrap {
 
 	.uagb-icon-list__wrap {
-		-js-display: flex;
-		display: -webkit-box;
-		display: -webkit-flex;
-		display: -moz-box;
-		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-align: flex-start;
-		-webkit-align-items: flex-start;
-		-moz-box-align: flex-start;
-		-ms-flex-align: flex-start;
 		align-items: flex-start;
-		-webkit-box-pack: flex-start;
-		-webkit-justify-content: flex-start;
-		-moz-box-pack: flex-start;
-		-ms-flex-pack: flex-start;
 		justify-content: flex-start;
 	}
 
@@ -44,8 +31,6 @@
 		padding: 0;
 	    margin-left: 5px;
 		margin-right: 5px;
-		-webkit-transition: all 0.2s;
-		-o-transition: all 0.2s;
 		transition: all 0.2s;
 		display: inline-flex;
 		text-align: center;
@@ -63,16 +48,7 @@
 	}
 	.uagb-icon-list__content-wrap {
 		color: #3a3a3a;
-		-js-display: flex;
-		display: -webkit-box;
-		display: -webkit-flex;
-		display: -moz-box;
-		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-align: center;
-		-webkit-align-items: center;
-		-moz-box-align: center;
-		-ms-flex-align: center;
 		align-items: center;
 	}
 
@@ -117,9 +93,7 @@
 	}
 
 	&.uagb-icon-list__icon-at-top .uagb-icon-list__source-wrap{
-		-ms-flex-item-align: flex-start;
 		align-self: flex-start;
-		margin-top: 5px;
 	}
 }
 

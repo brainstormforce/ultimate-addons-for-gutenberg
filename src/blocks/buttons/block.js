@@ -35,6 +35,9 @@ registerBlockType( "uagb/buttons", {
 	supports: {
 		anchor: true,
 	},
+	getEditWrapperProps( attributes ) {
+		return { "data-btn-width": attributes.align }
+	},
 	attributes,
 	edit,
 	save,

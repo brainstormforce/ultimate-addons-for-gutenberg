@@ -23,7 +23,6 @@ const {
 } = wp.element
 
 const {
-	BlockControls,
 	BlockAlignmentToolbar,
 	InspectorControls,
 	InnerBlocks
@@ -32,7 +31,8 @@ const {
 const {
 	PanelBody,
 	SelectControl,
-	RangeControl
+	RangeControl,
+	BaseControl
 } = wp.components
 
 const ALLOWED_BLOCKS = [ "uagb/buttons-child" ]
@@ -111,17 +111,23 @@ class UAGBMultiButtonEdit extends Component {
 		} )
 		return (
 			<Fragment>
-				<BlockControls>
-					<BlockAlignmentToolbar
-						value={ align }
-						onChange={ ( value ) => {
-							setAttributes( { align: value } )
-						} }
-						controls={ [ "left", "center", "right" ] }
-					/>
-				</BlockControls>
 				<InspectorControls>
 					<PanelBody title={ __( "General" ) } initialOpen={ true }>
+						<BaseControl>
+							<BaseControl.VisualLabel>
+								{ __( 'Alignment' ) }
+							</BaseControl.VisualLabel>
+							<BlockAlignmentToolbar
+								value={ align }
+								onChange={ ( value ) =>
+									setAttributes( {
+										align: value,
+									} )
+								}
+								controls={ [ 'left', 'center', 'right', 'full' ] }
+								isCollapsed={ false }
+							/>
+						</BaseControl>
 						<h2>{ __( "Spacing" ) }</h2>
 						<RangeControl
 							label={ __( "Gap Between Buttons" ) }
@@ -129,7 +135,7 @@ class UAGBMultiButtonEdit extends Component {
 							onChange={ ( value ) => setAttributes( { gap: value } ) }
 							help={ __( "Note: The gap between the buttons will seem larger in the editor, for better user edit experience. But at frontend the gap will be exactly what is set from here." ) }
 							min={ 0 }
-							max={ 50 }
+							max={ 500 }
 						/>
 						<hr className="uagb-editor__separator" />
 						<SelectControl

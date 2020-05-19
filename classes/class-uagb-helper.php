@@ -149,13 +149,23 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 			$block_list_for_assets = self::$current_block_list;
 
+
+
+
 			$blocks = UAGB_Config::get_block_attributes();
 
+
+
 			foreach ( $block_list_for_assets as $key => $curr_block_name ) {
+
+				
+				
 
 				$js_assets = ( isset( $blocks[ $curr_block_name ]['js_assets'] ) ) ? $blocks[ $curr_block_name ]['js_assets'] : array();
 
 				$css_assets = ( isset( $blocks[ $curr_block_name ]['css_assets'] ) ) ? $blocks[ $curr_block_name ]['css_assets'] : array();
+
+				
 
 				foreach ( $js_assets as $asset_handle => $val ) {
 					// Scripts.
@@ -662,7 +672,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 					$id        = get_option( 'woocommerce_myaccount_page_id' );
 					$this_post = get_post( $id );
-
+					
 				} elseif ( is_checkout() ) {
 
 					$id        = get_option( 'woocommerce_checkout_page_id' );
@@ -681,7 +691,6 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 				if ( is_object( $this_post ) ) {
 					$this->get_generated_stylesheet( $this_post );
-					return;
 				}
 			}
 
@@ -703,7 +712,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 				$this->get_generated_stylesheet( $this_post );
 
-			} elseif ( is_archive() || is_home() || is_search() ) {
+			} elseif ( is_archive() || is_home() || is_search()  ) {
 
 				global $wp_query;
 				$cached_wp_query = $wp_query;
@@ -1557,7 +1566,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 */
 		public static function file_write( $style_data, $type ) {
 
-			$post_timestamp = get_post_meta( get_the_ID(), 'uagb_style_timestamp-' . $type, true );
+			$post_timestamp = get_post_meta( get_the_ID(), 'uag_style_timestamp-' . $type, true );
 
 			$var = ( 'css' === $type ) ? 'css' : 'js';
 
@@ -1573,7 +1582,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					self::get_instance()->get_filesystem()->put_contents( $assets_info[ $var ], $style_data, FS_CHMOD_FILE );
 
 					// Update the post meta.
-					update_post_meta( get_the_ID(), 'uagb_style_timestamp-' . $type, $timestamp );
+					update_post_meta( get_the_ID(), 'uag_style_timestamp-' . $type, $timestamp );
 
 					if ( is_array( self::$css_file_handler ) ) {
 						self::$css_file_handler = array_merge( self::$css_file_handler, $assets_info );
@@ -1605,7 +1614,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 							self::get_instance()->get_filesystem()->put_contents( $new_assets_info[ $var ], $style_data, FS_CHMOD_FILE );
 
 							// Update the post meta.
-							update_post_meta( get_the_ID(), 'uagb_style_timestamp-' . $type, $new_timestamp );
+							update_post_meta( get_the_ID(), 'uag_style_timestamp-' . $type, $new_timestamp );
 
 							// Delete old file.
 							wp_delete_file( $assets_info[ $var ] );

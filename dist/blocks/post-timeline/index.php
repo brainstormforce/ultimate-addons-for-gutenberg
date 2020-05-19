@@ -441,7 +441,7 @@ function uagb_register_post_timeline() {
 				),
 				'readMoreText'            => array(
 					'type'    => 'string',
-					'default' => 'Read More',
+					'default' => __( 'Read More', 'ultimate-addons-for-gutenberg' ),
 				),
 				'block_id'                => array(
 					'type'    => 'string',
