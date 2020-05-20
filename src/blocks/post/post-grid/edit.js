@@ -70,31 +70,31 @@ class UAGBPostGrid extends Component {
 		const { setAttributes } = this.props
 
 		setAttributes( { postPagination: value } )
-		setAttributes( { paginationMarkup: "" } )
+		setAttributes( { paginationMarkup: "empty" } )
 	}
 	onChangePostsPerPage( value ) {
 		const { setAttributes } = this.props
 
 		setAttributes( { postsToShow: value } )
-		setAttributes( { paginationMarkup: "" } )
+		setAttributes( { paginationMarkup: "empty" } )
 	}
 	onChangePageLimit( value ) {
 		const { setAttributes } = this.props
 
 		setAttributes( { pageLimit: value } )
-		setAttributes( { paginationMarkup: "" } )
+		setAttributes( { paginationMarkup: "empty" } )
 	}
 	onChangePrevText( value ) {
 		const { setAttributes } = this.props
 
 		setAttributes( { paginationPrevText: value } )
-		setAttributes( { paginationMarkup: "" } )
+		setAttributes( { paginationMarkup: "empty" } )
 	}
 	onChangeNextText( value ) {
 		const { setAttributes } = this.props
 
 		setAttributes( { paginationNextText: value } )
-		setAttributes( { paginationMarkup: "" } )
+		setAttributes( { paginationMarkup: "empty" } )
 	}
 
 
@@ -1042,7 +1042,7 @@ export default withSelect( ( select, props ) => {
 	let categoriesList = []
 	let rest_base = ""
 
-	if ( true === postPagination && '' === paginationMarkup ) {
+	if ( true === postPagination && 'empty' === paginationMarkup ) {
 		$.ajax({
 			url: uagb_blocks_info.ajax_url,
 			data: {

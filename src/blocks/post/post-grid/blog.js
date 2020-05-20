@@ -66,7 +66,7 @@ class Blog extends React.Component {
 						</article>
 					) }
 				</div>
-				{ postPagination == true &&
+				{ postPagination == true && 'empty' !== paginationMarkup &&
 					<div dangerouslySetInnerHTML={ { __html: paginationMarkup } } className="uagb-post-pagination-wrap">
 					</div>
 				}

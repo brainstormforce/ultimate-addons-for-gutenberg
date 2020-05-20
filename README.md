@@ -155,7 +155,7 @@ When you use the Ultimate Addons for Gutenberg along with the free Astra theme, 
 
 ## Changelog ##
 
-### 1.14.11 ###
+### 1.14.11.1 ###
 * Fix: File Generation issue on WooCommerce Pages.
 * Fix: Advanced Columns - Handled background image attachment type on smaller devices.
 * Fix: Section - Handled background image attachment type on smaller devices.
@@ -165,6 +165,7 @@ When you use the Ultimate Addons for Gutenberg along with the free Astra theme, 
 * Fix: Multi Buttons - Full-Width feature glitch fixed.
 * Fix: Multi Buttons - Alignment option shifted to the side panel.
 * Fix: Table of Content - Extra space at the bottom in the Safari Browser when the Column count is more than 1.
+* Fix: Post Grid - Multiple AJAX requests generated if Pagination Markup is returned empty.
 * Improvement: Advanced Columns : UI Improvements (Column Gap option).
 
 ### 1.14.10 ###
