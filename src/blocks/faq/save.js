@@ -13,9 +13,10 @@ export default function save( props ) {
 	const { className } = props
 	const {
 		block_id,
-		schemaJsonData,
+		schema,
 		enableSchemaSupport,
 	} = props.attributes
+	console.log(schema);
 
 	const renderSchema = () => {
 
@@ -23,7 +24,7 @@ export default function save( props ) {
 
 			return (
 				<script type="application/ld+json">
-					{ schemaJsonData }
+					{ schema }
 				</script>
 			)
 		}

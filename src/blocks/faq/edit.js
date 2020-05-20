@@ -59,7 +59,7 @@ class UAGBFaqEdit extends Component {
 		// Assigning block_id in the attribute.
 		this.props.setAttributes( { block_id: this.props.clientId } )
 
-		this.props.setAttributes( { schemaJsonData: JSON.stringify( this.props.schemaJsonData ) } )
+		this.props.setAttributes( { schema: JSON.stringify( this.props.schemaJsonData ) } )
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
 		$style.setAttribute( "id", "uagb-style-faq-" + this.props.clientId )
@@ -72,7 +72,7 @@ class UAGBFaqEdit extends Component {
 			JSON.stringify( prevProps.schemaJsonData )
 		) {
 			this.props.setAttributes({
-				schemaJsonData: JSON.stringify(this.props.schemaJsonData)
+				schema: JSON.stringify(this.props.schemaJsonData)
 			});
 		}
 	}
@@ -108,7 +108,7 @@ class UAGBFaqEdit extends Component {
  
 	render() {
 
-		const { attributes, setAttributes } = this.props
+		const { attributes, setAttributes, schemaJsonData } = this.props
         const {
             faq,
 			faq_count,
@@ -180,8 +180,7 @@ class UAGBFaqEdit extends Component {
 			iconSizeMobile,
 			iconSizeTablet,
 			iconSize,
-			columns,
-			schemaJsonData
+			columns
 		} = attributes
 
 		var element = document.getElementById( "uagb-style-faq-" + this.props.clientId )

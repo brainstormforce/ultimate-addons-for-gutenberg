@@ -319,8 +319,9 @@ const attributes = {
 		type: "number",
 		default : 2
 	},
-	schemaJsonData: {
-		type: "array"
+	schema: {
+		type: "string",
+		default: ""
 	}
 }
 
