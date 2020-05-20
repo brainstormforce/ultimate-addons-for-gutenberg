@@ -843,7 +843,9 @@ class UAGBFaqEdit extends Component {
 					"uagb-faq__outer-wrap",
 					`uagb-block-${ this.props.clientId }`,
 					`uagb-faq-icon-${ this.props.attributes.iconAlign }`,
-					`uagb-faq-layout-${ this.props.attributes.layout }`
+					`uagb-faq-layout-${ this.props.attributes.layout }`,
+					`uagb-faq-expand-first-${ this.props.attributes.expandFirstItem }`,
+					`uagb-faq-inactive-other-${ this.props.attributes.inactiveOtherItems }`
 				) }
 				>
                     <InnerBlocks

@@ -5099,7 +5099,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			}
 			if ( 'accordion' === $attr['layout'] && 'yes' === $attr['expandFirstItem'] ) {
 
-				$selectors[' .uagb-faq__wrap .uagb-buttons-layout-wrap > uagb-faq-child__outer-wrap:first-child > .uagb-faq-child__wrapper .uagb-content '] = array(
+				$selectors[' .uagb-faq__wrap.uagb-buttons-layout-wrap > .uagb-faq-child__outer-wrap:first-child > .uagb-faq-child__wrapper .uagb-content '] = array(
 					'display' => 'block',
 				);
 			}

@@ -14,7 +14,7 @@ export default function save( props ) {
 	const {
 		block_id,
 		schemaJsonData,
-		enableSchemaSupport
+		enableSchemaSupport,
 	} = props.attributes
 
 	const renderSchema = () => {
@@ -36,7 +36,9 @@ export default function save( props ) {
 			"uagb-faq__outer-wrap",
 			`uagb-block-${ block_id }`,
 			`uagb-faq-icon-${ props.attributes.iconAlign }`,
-			`uagb-faq-layout-${ props.attributes.layout }`
+			`uagb-faq-layout-${ props.attributes.layout }`,
+			`uagb-faq-expand-first-${ props.attributes.expandFirstItem }`,
+			`uagb-faq-inactive-other-${ props.attributes.inactiveOtherItems }`
 		) }
 		>
 			{ renderSchema() }
