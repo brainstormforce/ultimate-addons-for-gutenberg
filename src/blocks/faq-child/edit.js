@@ -68,22 +68,7 @@ class UAGBFaqChildEdit extends Component {
 		const faqChildControls = () => {
 
 			return (
-				<PanelBody
-					title={ __( "General Settings" ) }
-					initialOpen={ true }
-					className="uagb__url-panel-body"
-				>
-					<TextControl
-						label="Title"
-						value={ question }
-						onChange={ ( question ) => setAttributes( { question: question } ) }
-					/>
-					<TextareaControl
-						label="Content"
-						value={ answer }
-						onChange={ ( answer ) => setAttributes( { answer: answer } ) }
-					/>
-				</PanelBody>
+				<p className="uagb-settings-notice">{ __( "For the styling options please select the Parent Block." ) }</p>
 			)
 		}
 		const faqRenderHtml = () => {
