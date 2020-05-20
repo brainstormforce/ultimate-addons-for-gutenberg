@@ -27,8 +27,6 @@ const {
 } = wp.element
 
 const {
-	BlockControls,
-	BlockAlignmentToolbar,
 	ColorPalette,
 	InspectorControls,
 	InnerBlocks
@@ -44,11 +42,6 @@ const {
 	Dashicon,
 } = wp.components
 
-const { 
-	withDispatch, 
-	useDispatch, 
-	useSelect 
-} = wp.data
 const ALLOWED_BLOCKS = [ "uagb/faq-child" ]
 
 let svg_icons = Object.keys( UAGBIcon )
