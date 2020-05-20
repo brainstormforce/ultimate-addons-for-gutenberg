@@ -6,11 +6,6 @@ import classnames from "classnames"
 import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
 
 const {
-	InnerBlocks
-} = wp.blockEditor
-
-const {
-	Component,
 	Fragment,
 } = wp.element
 

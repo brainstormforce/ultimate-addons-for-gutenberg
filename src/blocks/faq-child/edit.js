@@ -3,19 +3,9 @@
  */
 
 import classnames from "classnames"
-import times from "lodash/times"
-import map from "lodash/map"
 import styling from "./styling"
-import memoize from "memize"
-import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
-
-// Import all of our Text Options requirements.
-import TypographyControl from "../../components/typography"
-
-// Import Web font loader for google fonts.
-import WebfontLoader from "../../components/typography/fontloader"
 import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
-const { select } = wp.data;
+
 const { __ } = wp.i18n
 
 const {
@@ -24,10 +14,7 @@ const {
 } = wp.element
 
 const {
-	BlockControls,
-	BlockAlignmentToolbar,
 	InspectorControls,
-	InnerBlocks,
 	RichText,
 } = wp.blockEditor
 
