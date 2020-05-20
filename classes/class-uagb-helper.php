@@ -1436,8 +1436,8 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					case 'faq-child':
 					case 'faq':
 						if ( ! $is_already_faq ) {
-							$combined[]     = 'buttons';
-							$combined[]     = 'buttons-child';
+							$combined[]     = 'faq';
+							$combined[]     = 'faq-child';
 							$is_already_faq = true;
 						}
 						break;

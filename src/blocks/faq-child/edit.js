@@ -3,7 +3,6 @@
  */
 
 import classnames from "classnames"
-import styling from "./styling"
 import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
 
 const { __ } = wp.i18n
@@ -52,11 +51,7 @@ class UAGBFaqChildEdit extends Component {
 			iconActive,
 			layout
         } = attributes
-		var element = document.getElementById( "uagb-style-faq-child" + this.props.clientId )
-
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
+		
 		const faqRenderIcon = () => {
 			
 			return (

@@ -1,44 +1,42 @@
-.wp-block-uagb-faq-child .uagb-faq-questions-button {
+.wp-block-uagb-faq-child {
+    .uagb-faq-questions-button {
 
-    display: block;
-    padding: 15px;
-    width: 100%;
-    .uagb-faq-icon-wrap {
-
-        display: inline-block;
-        vertical-align: middle;
-    }
-    .uagb-question {
+        display: block;
+        padding: 15px;
         width: 100%;
+
+        .uagb-faq-icon-wrap {
+
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .uagb-question {
+            width: 100%;
+        }
+    }
+
+    .uagb-icon svg,
+    .uagb-icon-active svg {
+
+        width: 15px;
+        height: 15px;
+        font-size: 15px;
+    }
+
+    .uagb-content p {
+        margin: 0;
+    }
+
+    &.uagb-faq-child__outer-wrap .uagb-faq-item .uagb-icon-active,
+    &.uagb-faq-child__outer-wrap .uagb-faq-item.uagb-faq-item-active .uagb-icon {
+        display: none;
+    }
+
+    &.uagb-faq-child__outer-wrap .uagb-faq-item .uagb-icon,
+    &.uagb-faq-child__outer-wrap .uagb-faq-item.uagb-faq-item-active .uagb-icon-active {
+        display: inline-block;
     }
 }
-.wp-block-uagb-faq-child .uagb-content p {
-    margin: 0;
-}
-.uagb-icon svg {
-
-    width: 15px;
-    height: 15px;
-    font-size: 15px;
-}
-.uagb-icon-active svg {
-
-    width: 15px;
-    height: 15px;
-    font-size: 15px;
-}
-.wp-block-uagb-faq-child.uagb-faq-child__outer-wrap .uagb-faq-item .uagb-icon-active {
-    display: none;
-}
-.wp-block-uagb-faq-child.uagb-faq-child__outer-wrap .uagb-faq-item.uagb-faq-item-active .uagb-icon {
-    display: none;
-}
-.wp-block-uagb-faq-child.uagb-faq-child__outer-wrap .uagb-faq-item .uagb-icon {
-    display: inline-block;
-}
-.wp-block-uagb-faq-child.uagb-faq-child__outer-wrap .uagb-faq-item.uagb-faq-item-active .uagb-icon-active {
-    display: inline-block;
-}
-.uagb-faq-layout-accordion .uagb-faq-child__outer-wrap .uagb-faq-questions-button {
+.wp-block-uagb-faq.uagb-faq-layout-accordion .uagb-faq-child__outer-wrap .uagb-faq-questions-button {
     cursor: pointer;
 }
