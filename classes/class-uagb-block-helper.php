@@ -4796,6 +4796,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 				" .uagb-toc__list-wrap" => array(
 					'column-count' => $attr['tColumnsDesktop'],
+					'overflow' => 'hidden'
 				),
 				" .uagb-toc__list-wrap > ul.uagb-toc__list > li:first-child" => array(
 				    "padding-top" => 0
@@ -4856,6 +4857,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 				" .uagb-toc__list-wrap" => array(
 					'column-count' => $attr['tColumnsMobile'],
+					'overflow' => 'hidden'
 				),
 				" .uagb-toc__list-wrap > ul.uagb-toc__list > li:first-child" => array(
 				    "padding-top" => 0
@@ -4884,6 +4886,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 				" .uagb-toc__list-wrap" => array(
 					'column-count' => $attr['tColumnsTablet'],
+					'overflow' => 'hidden'
 				),
 				" .uagb-toc__list-wrap > ul.uagb-toc__list > li:first-child" => array(
 				    "padding-top" => 0
