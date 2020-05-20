@@ -33,7 +33,7 @@ const attributes = {
 	},
 	expandFirstItem: {
 		type: "string",
-		default : "yes"
+		default : "no"
 	},
 	enableSchemaSupport: {
 		type: "string",

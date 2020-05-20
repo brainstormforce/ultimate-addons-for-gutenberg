@@ -1926,7 +1926,7 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 							'faq'                        => UAGB_Helper::get_faq_defaults(),
 							'layout'                     => 'accordion',
 							'inactiveOtherItems'         => 'yes',
-							'expandFirstItem'            => 'yes',
+							'expandFirstItem'            => 'no',
 							'enableSchemaSupport'        => 'no',
 							'align'                      => 'left',
 							'enableSeparator'            => 'no',
