@@ -1923,7 +1923,7 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 						'attributes'  => array(
 							'block_id'                   => '',
 							'faq_count'                  => 2,
-							'faq'                        => UAGB_Helper::get_faq_defaults(),
+							'faq'                        => '',
 							'layout'                     => 'accordion',
 							'inactiveOtherItems'         => 'yes',
 							'expandFirstItem'            => 'no',
@@ -2012,8 +2012,8 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 						'default'     => true,
 						'attributes'  => array(
 							'block_id'   => '',
-							'question'   => 'What is FAQ?',
-							'answer'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+							'question'   => '',
+							'answer'     => '',
 							'icon'       => 'fas fa-plus',
 							'iconActive' => 'fas fa-minus',
 							'layout'     => 'accordion',
