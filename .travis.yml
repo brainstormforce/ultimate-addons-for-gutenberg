@@ -1,0 +1,32 @@
+sudo: false
+
+language: php
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+cache:
+  - $HOME/.composer/cache
+
+matrix:
+  include:
+    - php: 7.4snapshot
+      env: WP_TRAVISCI=phpcs
+
+dist: trusty
+
+before_script:
+  - |
+    if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
+      composer install
+    fi
+
+script:
+  - |
+    if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
+      vendor/bin/phpcs
+    fi
+  - if find . -name "*.php" ! -path "./vendor/*" ! -path "./admin/bsf-core/*" -exec php -l {} \; | grep "Errors parsing"; then exit 1; fi
+  

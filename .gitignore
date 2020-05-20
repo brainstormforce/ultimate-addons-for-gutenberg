@@ -13,15 +13,9 @@ node_modules/
 # Skip package file from versoning
 *.zip
 
-# ignore git inside subproject
-admin/bsf-core/.git
-
 # ignore PHPCS report files
 phpcs-summary.log
 phpcs-full.log
-
-# NPM log/lock files
-package-lock.json
 
 # Exclude OS specific files
 .DS_Store

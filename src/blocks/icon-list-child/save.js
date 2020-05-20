@@ -51,7 +51,7 @@ export default function save( props ) {
 			) }
 		>
 			{ ! disableLink &&
-				<a target={ target_val } rel="noopener noreferrer" href={ link_url }></a>
+				<a target={ target_val } aria-label={label} rel="noopener noreferrer" href={ link_url }></a>
 			}
 			<div className="uagb-icon-list__content-wrap">
 				<span className="uagb-icon-list__source-wrap">{image_icon_html}</span>

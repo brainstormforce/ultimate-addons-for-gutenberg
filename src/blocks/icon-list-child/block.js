@@ -8,6 +8,7 @@ import edit from "./edit"
 import save from "./save"
 import "./style.scss"
 import "./editor.scss"
+import deprecated from "./deprecated"
 
 
 const { __ } = wp.i18n
@@ -25,4 +26,5 @@ registerBlockType( "uagb/icon-list-child", {
 	attributes,
 	edit,
 	save,
+	deprecated,
 } )

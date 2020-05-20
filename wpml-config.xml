@@ -44,6 +44,7 @@
 		</gutenberg-block>
 		<gutenberg-block type="uagb/icon-list-child" translate="1">
 			<xpath>//span[@class="uagb-icon-list__label"]</xpath>
+			<xpath>//div[contains(@class, "wp-block-uagb-icon-list-child")]/a/@href</xpath>
 		</gutenberg-block>
 		<gutenberg-block type="uagb/restaurant-menu" translate="1">
 			<xpath>//*[self::h1 or self::h2 or self::h3 or self::h4 or self::h5 or self::h6]</xpath>
@@ -59,7 +60,7 @@
 		<gutenberg-block type="uagb/call-to-action" translate="1">
 			<xpath>//*[self::h1 or self::h2 or self::h3 or self::h4 or self::h5 or self::h6]</xpath>
 			<xpath>//p[@class="uagb-cta__desc"]</xpath>
-			<xpath>//a[@class="uagb-cta__block-link"]/@href</xpath>
+			<xpath>//a[contains(@class,"uagb-cta__block-link")]/@href</xpath>
 			<xpath>//span[@class="uagb-cta__link-content-inner"]/span</xpath>
 		</gutenberg-block>
 		<gutenberg-block type="uagb/blockquote" translate="1">
@@ -69,13 +70,13 @@
 		</gutenberg-block>
 		<gutenberg-block type="uagb/marketing-button" translate="1">
 			<xpath>//a[@class="uagb-marketing-btn__link"]/@href</xpath>
-			<xpath>//h6[@class="uagb-marketing-btn__title"]</xpath>
+			<xpath>//*[@class="uagb-marketing-btn__title"]</xpath>
 			<xpath>//p[@class="uagb-marketing-btn__prefix"]</xpath>
 		</gutenberg-block>
 		<gutenberg-block type="uagb/table-of-contents" translate="1">
 			<xpath>//div[@class="uagb-toc__title"]</xpath>
-			<xpath>//p[@class="ub_table-of-contents-placeholder"]</xpath>
-			<xpath>//a</xpath>
+			<xpath>//ul[@class="uagb-toc__list"]/li/a</xpath>
+			<xpath>//a/@href</xpath>
 		</gutenberg-block>
 		<gutenberg-block type="uagb/buttons-child" translate="1">
 			<xpath>//a[@class="uagb-button__link"]</xpath>
