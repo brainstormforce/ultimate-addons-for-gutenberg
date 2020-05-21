@@ -81,12 +81,14 @@ function styling( props ) {
 		" .uagb-icon svg" : {
             "width" : generateCSSUnit( iconSize, iconSizeType ),
             "height" : generateCSSUnit( iconSize, iconSizeType ),
-            "font-size" : generateCSSUnit( iconSize, iconSizeType )
+            "font-size" : generateCSSUnit( iconSize, iconSizeType ),
+            "fill" : iconColor
         },
         " .uagb-icon-active svg" : {
             "width" : generateCSSUnit( iconSize, iconSizeType ),
             "height" : generateCSSUnit( iconSize, iconSizeType ),
-            "font-size" : generateCSSUnit( iconSize, iconSizeType )
+            "font-size" : generateCSSUnit( iconSize, iconSizeType ),
+            "fill" : iconActiveColor
         },
         " .uagb-faq-child__outer-wrap" : {
             "margin-bottom" : generateCSSUnit( rowsGap, 'px' ),
@@ -124,15 +126,6 @@ function styling( props ) {
             "padding-right": generateCSSUnit( hanswerPaddingDesktop, answerPaddingTypeDesktop ),
             "padding-left": generateCSSUnit( hanswerPaddingDesktop, answerPaddingTypeDesktop ),
         },
-        " .uagb-content p" : {
-            "color" : answerTextColor,
-        },
-        " .uagb-faq-item .uagb-icon svg" : {
-            "fill" : iconColor
-        },
-        " .uagb-faq-item.uagb-faq-item-active .uagb-icon-active svg" : {
-            "fill" : iconActiveColor
-        },
         ".uagb-faq-icon-left .uagb-faq-item .uagb-faq-icon-wrap" : {
             "margin-right" : generateCSSUnit( gapBtwIconQUestion, 'px' ),
         },
@@ -155,7 +148,8 @@ function styling( props ) {
             "font-size" : generateCSSUnit( answerfontSize, answerfontSizeType ),
 			"line-height" : generateCSSUnit( answerlineHeight, answerlineHeightType ),
 			"font-family": answerfontFamily,
-			"font-weight": answerfontWeight,
+            "font-weight": answerfontWeight,
+            "color" : answerTextColor,
         },
     }
     

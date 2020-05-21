@@ -4939,7 +4939,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 		/**
 		 * Get FAQ CSS.
 		 *
-		 * @since 1.6.0
+		 * @since x.x.x
 		 * @param array  $attr The block attributes.
 		 * @param string $id The selector ID.
 		 */
@@ -4954,11 +4954,13 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'width'     => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
 					'height'    => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
 					'font-size' => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
+					'fill' => $attr['iconColor'],
 				),
 				' .uagb-icon-active svg'               => array(
 					'width'     => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
 					'height'    => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
 					'font-size' => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
+					'fill' => $attr['iconActiveColor'],
 				),
 				' .uagb-faq-child__outer-wrap'         => array(
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['rowsGap'], 'px' ),
@@ -4991,15 +4993,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'padding-right'  => UAGB_Helper::get_css_value( $attr['hanswerPaddingDesktop'], $attr['answerPaddingTypeDesktop'] ),
 					'padding-left'   => UAGB_Helper::get_css_value( $attr['hanswerPaddingDesktop'], $attr['answerPaddingTypeDesktop'] ),
 				),
-				' .uagb-content p'                     => array(
-					'color' => $attr['answerTextColor'],
-				),
-				' .uagb-faq-item .uagb-icon svg'       => array(
-					'fill' => $attr['iconColor'],
-				),
-				' .uagb-faq-item.uagb-faq-item-active .uagb-icon-active svg' => array(
-					'fill' => $attr['iconActiveColor'],
-				),
 				'.uagb-faq-icon-left .uagb-faq-item .uagb-faq-icon-wrap' => array(
 					'margin-right' => UAGB_Helper::get_css_value( $attr['gapBtwIconQUestion'], 'px' ),
 				),
@@ -5023,6 +5016,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'line-height' => UAGB_Helper::get_css_value( $attr['answerlineHeight'], $attr['answerlineHeightType'] ),
 					'font-family' => $attr['answerfontFamily'],
 					'font-weight' => $attr['answerfontWeight'],
+					'color' => $attr['answerTextColor'],
 				),
 			);
 

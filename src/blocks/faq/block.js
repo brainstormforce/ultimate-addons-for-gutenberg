@@ -60,6 +60,7 @@ registerBlockType( "uagb/faq", {
 		__( "faq" ),
 		__( "schema" ),
 		__( "uag" ),
+		__( "accordion" ),
 	],
 	attributes,
 	edit,
