@@ -56,10 +56,12 @@ function slideUp(el) {
 	var elem = el;
 	elem.classList.add('slider');
 	elem.classList.add('closed');
+	elem.classList.remove('open');
 }
 function slideDown(el) {
 	var elem = el;
 	elem.classList.add('slider');
+	elem.classList.add('open');
 	elem.classList.remove('closed');
 	elem.style.display = "block";
 }

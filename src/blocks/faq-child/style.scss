@@ -23,18 +23,30 @@
         font-size: 15px;
     }
 
+    .uagb-content span {
+        display: inline-block;
+    }
+
     .uagb-content p {
         margin: 0;
     }
 
     &.uagb-faq-child__outer-wrap .uagb-faq-item .uagb-icon-active,
     &.uagb-faq-child__outer-wrap .uagb-faq-item.uagb-faq-item-active .uagb-icon {
-        display: none;
+        //display: none;
+        visibility: hidden;
+        width: 0;
+        padding: 0;
+        height: 0;
+        margin: 0;
     }
 
     &.uagb-faq-child__outer-wrap .uagb-faq-item .uagb-icon,
     &.uagb-faq-child__outer-wrap .uagb-faq-item.uagb-faq-item-active .uagb-icon-active {
-        display: inline-block;
+        // display: inline-block;
+        visibility: visible;
+        width: auto;
+        height: auto;
     }
 }
 .wp-block-uagb-faq.uagb-faq-layout-accordion .uagb-faq-child__outer-wrap .uagb-faq-questions-button {

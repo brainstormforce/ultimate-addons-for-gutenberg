@@ -120,11 +120,11 @@ function styling( props ) {
             "padding-right": generateCSSUnit( hquestionPaddingDesktop, questionPaddingTypeDesktop ),
             "padding-left": generateCSSUnit( hquestionPaddingDesktop, questionPaddingTypeDesktop ),
         },
-        " .uagb-content" : {
-            "padding-top": generateCSSUnit( vanswerPaddingDesktop, answerPaddingTypeDesktop ),
-            "padding-bottom": generateCSSUnit( vanswerPaddingDesktop, answerPaddingTypeDesktop ),
-            "padding-right": generateCSSUnit( hanswerPaddingDesktop, answerPaddingTypeDesktop ),
-            "padding-left": generateCSSUnit( hanswerPaddingDesktop, answerPaddingTypeDesktop ),
+        " .uagb-content span" : {
+            "margin-top": generateCSSUnit( vanswerPaddingDesktop, answerPaddingTypeDesktop ),
+            "margin-bottom": generateCSSUnit( vanswerPaddingDesktop, answerPaddingTypeDesktop ),
+            "margin-right": generateCSSUnit( hanswerPaddingDesktop, answerPaddingTypeDesktop ),
+            "margin-left": generateCSSUnit( hanswerPaddingDesktop, answerPaddingTypeDesktop ),
         },
         ".uagb-faq-icon-left .uagb-faq-item .uagb-faq-icon-wrap" : {
             "margin-right" : generateCSSUnit( gapBtwIconQUestion, 'px' ),
@@ -160,11 +160,11 @@ function styling( props ) {
             "padding-right": generateCSSUnit( hquestionPaddingTablet, questionPaddingTypeTablet ),
             "padding-left": generateCSSUnit( hquestionPaddingTablet, questionPaddingTypeTablet ),
         },
-        " .uagb-content" : {
-            "padding-top": generateCSSUnit( vanswerPaddingTablet, answerPaddingTypeTablet ),
-            "padding-bottom": generateCSSUnit( vanswerPaddingTablet, answerPaddingTypeTablet ),
-            "padding-right": generateCSSUnit( hanswerPaddingTablet, answerPaddingTypeTablet ),
-            "padding-left": generateCSSUnit( hanswerPaddingTablet, answerPaddingTypeTablet ),
+        " .uagb-content span" : {
+            "margin-top": generateCSSUnit( vanswerPaddingTablet, answerPaddingTypeTablet ),
+            "margin-bottom": generateCSSUnit( vanswerPaddingTablet, answerPaddingTypeTablet ),
+            "margin-right": generateCSSUnit( hanswerPaddingTablet, answerPaddingTypeTablet ),
+            "margin-left": generateCSSUnit( hanswerPaddingTablet, answerPaddingTypeTablet ),
         },
         " .uagb-faq-questions-button .uagb-question" : {
             "font-size" : generateCSSUnit( questionfontSizeTablet, questionfontSizeType ),
@@ -193,11 +193,11 @@ function styling( props ) {
             "padding-right": generateCSSUnit( hquestionPaddingMobile, questionPaddingTypeMobile ),
             "padding-left": generateCSSUnit( hquestionPaddingMobile, questionPaddingTypeMobile ),
         },
-        " .uagb-content" : {
-            "padding-top": generateCSSUnit( vanswerPaddingMobile, answerPaddingTypeMobile ),
-            "padding-bottom": generateCSSUnit( vanswerPaddingMobile, answerPaddingTypeMobile ),
-            "padding-right": generateCSSUnit( hanswerPaddingMobile, answerPaddingTypeMobile ),
-            "padding-left": generateCSSUnit( hanswerPaddingMobile, answerPaddingTypeMobile ),
+        " .uagb-content span" : {
+            "margin-top": generateCSSUnit( vanswerPaddingMobile, answerPaddingTypeMobile ),
+            "margin-bottom": generateCSSUnit( vanswerPaddingMobile, answerPaddingTypeMobile ),
+            "margin-right": generateCSSUnit( hanswerPaddingMobile, answerPaddingTypeMobile ),
+            "margin-left": generateCSSUnit( hanswerPaddingMobile, answerPaddingTypeMobile ),
         },
         " .uagb-faq-questions-button .uagb-question" : {
             "font-size" : generateCSSUnit( questionfontSizeMobile, questionfontSizeType ),

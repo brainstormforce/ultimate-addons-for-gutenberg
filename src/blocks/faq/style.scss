@@ -8,9 +8,13 @@
         transition-duration: .3s;
         transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
     }
+
+    &.slider {
+        overflow-y: hidden;
+        max-height: 500px; /* approximate max height */
+    }
     
     &.slider.closed {
         max-height: 0;
-        padding: 0px;
     }
 }
