@@ -4954,13 +4954,13 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'width'     => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
 					'height'    => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
 					'font-size' => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
-					'fill' => $attr['iconColor'],
+					'fill'      => $attr['iconColor'],
 				),
 				' .uagb-icon-active svg'               => array(
 					'width'     => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
 					'height'    => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
 					'font-size' => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
-					'fill' => $attr['iconActiveColor'],
+					'fill'      => $attr['iconActiveColor'],
 				),
 				' .uagb-faq-child__outer-wrap'         => array(
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['rowsGap'], 'px' ),
@@ -5016,7 +5016,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'line-height' => UAGB_Helper::get_css_value( $attr['answerlineHeight'], $attr['answerlineHeightType'] ),
 					'font-family' => $attr['answerfontFamily'],
 					'font-weight' => $attr['answerfontWeight'],
-					'color' => $attr['answerTextColor'],
+					'color'       => $attr['answerTextColor'],
 				),
 			);
 

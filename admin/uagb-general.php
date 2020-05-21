@@ -83,9 +83,9 @@ $has_read_write_perms   = UAGB_Helper::has_read_write_permissions();
 									'icon-list-child',
 									'social-share-child',
 									'buttons-child',
-									'faq-child'
+									'faq-child',
 								);
-								
+
 								if ( in_array( $addon, $child_blocks, true ) ) {
 									continue;
 								}
