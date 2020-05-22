@@ -279,16 +279,33 @@ class UAGBFaqEdit extends Component {
 						/>
 					}
 					{ 'grid' === layout &&
-						<SelectControl
-							label={ __( "Alignment" ) }
-							value={ align }
-							options={ [
-								{ value: "left", label: __( "Left" ) },
-								{ value: "right", label: __( "Right" ) },
-								{ value: "center", label: __( "Center" ) },
-							] }
-							onChange={ ( value ) => setAttributes( { align: value } ) }
-						/>
+						<Fragment>
+							<h2> { __( "Alignment" ) }</h2>
+							<IconButton
+								key={ "left" }
+								icon="editor-alignleft"
+								label="Left"
+								onClick={ () => setAttributes( { align: "left" } ) }
+								aria-pressed = { "left" === align }
+								isPrimary = { "left" === align }
+							/>
+							<IconButton
+								key={ "center" }
+								icon="editor-aligncenter"
+								label="Right"
+								onClick={ () => setAttributes( { align: "center" } ) }
+								aria-pressed = { "center" === align }
+								isPrimary = { "center" === align }
+							/>
+							<IconButton
+								key={ "right" }
+								icon="editor-alignright"
+								label="Right"
+								onClick={ () => setAttributes( { align: "right" } ) }
+								aria-pressed = { "right" === align }
+								isPrimary = { "right" === align }
+							/>
+						</Fragment>
 					}
 					{ 'accordion' === layout && faqIconSettings() }
 				</PanelBody>
