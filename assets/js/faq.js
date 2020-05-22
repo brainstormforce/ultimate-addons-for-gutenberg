@@ -94,15 +94,15 @@ window.addEventListener(
 					var faqItem = this.parentElement;
 					if ( faqItem.classList.contains('uagb-faq-item-active') ) {
 						faqItem.classList.remove('uagb-faq-item-active');
-						slideUp( faqItem.getElementsByClassName( 'uagb-content' )[0], 500 );
+						slideUp( faqItem.getElementsByClassName( 'uagb-faq-content' )[0], 500 );
 					} else {
 						var parent = faqItem.parentElement.parentElement.parentElement.parentElement;
 						var faqToggle = "yes";
 						if ( parent.classList.contains( 'wp-block-uagb-faq' ) ) {
-							faqToggle = parent.getAttribute( 'data-faqToggle' );
+							faqToggle = parent.getAttribute( 'data-faqtoggle' );
 						}
 						faqItem.classList.add('uagb-faq-item-active');
-						slideDown( faqItem.getElementsByClassName( 'uagb-content' )[0], 500 );
+						slideDown( faqItem.getElementsByClassName( 'uagb-faq-content' )[0], 500 );
 						if( 'yes' === faqToggle ) {
 							for ( var buttonChild of questionButtons ) {
 								buttonItem = buttonChild.parentElement
@@ -110,7 +110,7 @@ window.addEventListener(
 									continue;
 								}
 								buttonItem.classList.remove('uagb-faq-item-active');
-								slideUp( buttonItem.getElementsByClassName( 'uagb-content' )[0], 500 );
+								slideUp( buttonItem.getElementsByClassName( 'uagb-faq-content' )[0], 500 );
 							}
 						}
 					}

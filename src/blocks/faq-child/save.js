@@ -45,7 +45,7 @@ export default function save( props ) {
 									{ question }
 							</span>
 						</div>
-						<div className="uagb-content">
+						<div className="uagb-faq-content">
 							<span>
 								<p>
 									{ answer }

@@ -4987,7 +4987,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'padding-right'  => UAGB_Helper::get_css_value( $attr['hquestionPaddingDesktop'], $attr['questionPaddingTypeDesktop'] ),
 					'padding-left'   => UAGB_Helper::get_css_value( $attr['hquestionPaddingDesktop'], $attr['questionPaddingTypeDesktop'] ),
 				),
-				' .uagb-content span'                  => array(
+				' .uagb-faq-content span'                  => array(
 					'margin-top'    => UAGB_Helper::get_css_value( $attr['vanswerPaddingDesktop'], $attr['answerPaddingTypeDesktop'] ),
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['vanswerPaddingDesktop'], $attr['answerPaddingTypeDesktop'] ),
 					'margin-right'  => UAGB_Helper::get_css_value( $attr['hanswerPaddingDesktop'], $attr['answerPaddingTypeDesktop'] ),
@@ -5011,7 +5011,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'font-family' => $attr['questionfontFamily'],
 					'font-weight' => $attr['questionfontWeight'],
 				),
-				' .uagb-faq-item .uagb-content p'      => array(
+				' .uagb-faq-item .uagb-faq-content p'      => array(
 					'font-size'   => UAGB_Helper::get_css_value( $attr['answerfontSize'], $attr['answerfontSizeType'] ),
 					'line-height' => UAGB_Helper::get_css_value( $attr['answerlineHeight'], $attr['answerlineHeightType'] ),
 					'font-family' => $attr['answerfontFamily'],
@@ -5027,7 +5027,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'padding-right'  => UAGB_Helper::get_css_value( $attr['hquestionPaddingTablet'], $attr['questionPaddingTypeTablet'] ),
 					'padding-left'   => UAGB_Helper::get_css_value( $attr['hquestionPaddingTablet'], $attr['questionPaddingTypeTablet'] ),
 				),
-				' .uagb-content span'             => array(
+				' .uagb-faq-content span'             => array(
 					'margin-top'    => UAGB_Helper::get_css_value( $attr['vanswerPaddingTablet'], $attr['answerPaddingTypeTablet'] ),
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['vanswerPaddingTablet'], $attr['answerPaddingTypeTablet'] ),
 					'margin-right'  => UAGB_Helper::get_css_value( $attr['hanswerPaddingTablet'], $attr['answerPaddingTypeTablet'] ),
@@ -5037,7 +5037,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'font-size'   => UAGB_Helper::get_css_value( $attr['questionfontSizeTablet'], $attr['questionfontSizeType'] ),
 					'line-height' => UAGB_Helper::get_css_value( $attr['questionlineHeightTablet'], $attr['questionlineHeightType'] ),
 				),
-				' .uagb-faq-item .uagb-content p' => array(
+				' .uagb-faq-item .uagb-faq-content p' => array(
 					'font-size'   => UAGB_Helper::get_css_value( $attr['answerfontSizeTablet'], $attr['answerfontSizeType'] ),
 					'line-height' => UAGB_Helper::get_css_value( $attr['answerlineHeightTablet'], $attr['answerlineHeightType'] ),
 				),
@@ -5059,7 +5059,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'padding-right'  => UAGB_Helper::get_css_value( $attr['hquestionPaddingMobile'], $attr['questionPaddingTypeMobile'] ),
 					'padding-left'   => UAGB_Helper::get_css_value( $attr['hquestionPaddingMobile'], $attr['questionPaddingTypeMobile'] ),
 				),
-				' .uagb-content span'             => array(
+				' .uagb-faq-content span'             => array(
 					'margin-top'    => UAGB_Helper::get_css_value( $attr['vanswerPaddingMobile'], $attr['answerPaddingTypeMobile'] ),
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['vanswerPaddingMobile'], $attr['answerPaddingTypeMobile'] ),
 					'margin-right'  => UAGB_Helper::get_css_value( $attr['hanswerPaddingMobile'], $attr['answerPaddingTypeMobile'] ),
@@ -5069,7 +5069,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'font-size'   => UAGB_Helper::get_css_value( $attr['questionfontSizeMobile'], $attr['questionfontSizeType'] ),
 					'line-height' => UAGB_Helper::get_css_value( $attr['questionlineHeightMobile'], $attr['questionlineHeightType'] ),
 				),
-				' .uagb-faq-item .uagb-content p' => array(
+				' .uagb-faq-item .uagb-faq-content p' => array(
 					'font-size'   => UAGB_Helper::get_css_value( $attr['answerfontSizeMobile'], $attr['answerfontSizeType'] ),
 					'line-height' => UAGB_Helper::get_css_value( $attr['answerlineHeightMobile'], $attr['answerlineHeightType'] ),
 				),
@@ -5087,19 +5087,19 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			if ( 'accordion' === $attr['layout'] && 'yes' === $attr['inactiveOtherItems'] ) {
 
-				$selectors[' .wp-block-uagb-faq-child.uagb-faq-child__outer-wrap .uagb-content '] = array(
+				$selectors[' .wp-block-uagb-faq-child.uagb-faq-child__outer-wrap .uagb-faq-content '] = array(
 					'display' => 'none',
 				);
 			}
 			if ( 'accordion' === $attr['layout'] && 'yes' === $attr['expandFirstItem'] ) {
 
-				$selectors[' .uagb-faq__wrap.uagb-buttons-layout-wrap > .uagb-faq-child__outer-wrap:first-child > .uagb-faq-child__wrapper .uagb-content '] = array(
+				$selectors[' .uagb-faq__wrap.uagb-buttons-layout-wrap > .uagb-faq-child__outer-wrap:first-child > .uagb-faq-child__wrapper .uagb-faq-content '] = array(
 					'display' => 'block',
 				);
 			}
 			if ( 'yes' === $attr['enableSeparator'] ) {
 
-				$selectors[' .uagb-faq-child__outer-wrap .uagb-content '] = array(
+				$selectors[' .uagb-faq-child__outer-wrap .uagb-faq-content '] = array(
 					'border-style'     => 'solid',
 					'border-top-color' => $attr['borderColor'],
 					'border-top-width' => UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' ),

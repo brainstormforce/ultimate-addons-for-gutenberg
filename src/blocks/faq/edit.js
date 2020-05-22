@@ -856,7 +856,7 @@ class UAGBFaqEdit extends Component {
 					`uagb-faq-expand-first-${ this.props.attributes.expandFirstItem }`,
 					`uagb-faq-inactive-other-${ this.props.attributes.inactiveOtherItems }`
 				) }
-				data-faqToggle = { this.props.attributes.enableToggle }
+				data-faqtoggle = { this.props.attributes.enableToggle }
 				>
                     <InnerBlocks
                         template={ getFaqChildTemplate( faq_count, faq ) }

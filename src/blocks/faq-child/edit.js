@@ -87,7 +87,7 @@ class UAGBFaqChildEdit extends Component {
 								allowedFormats={[ 'core/bold', 'core/italic', 'core/strikethrough' ]}
 							/>
 						</div>
-						<div className="uagb-content">
+						<div className="uagb-faq-content">
 							<span>
 								<RichText
 									tagName="p"
