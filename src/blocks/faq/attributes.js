@@ -297,7 +297,7 @@ const attributes = {
 	},
 	iconAlign: {
 		type: "string",
-		default : "left"
+		default : "row"
 	},
 	iconSize: {
 		type: "number",

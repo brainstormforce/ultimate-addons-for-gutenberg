@@ -132,17 +132,17 @@ function styling( props ) {
             "margin-right": generateCSSUnit( hanswerPaddingDesktop, answerPaddingTypeDesktop ),
             "margin-left": generateCSSUnit( hanswerPaddingDesktop, answerPaddingTypeDesktop ),
         },
-        ".uagb-faq-icon-left .uagb-faq-item .uagb-faq-icon-wrap" : {
+        ".uagb-faq-icon-row .uagb-faq-item .uagb-faq-icon-wrap" : {
             "margin-right" : generateCSSUnit( gapBtwIconQUestion, 'px' ),
         },
-        ".uagb-faq-icon-right .uagb-faq-item .uagb-faq-icon-wrap" : {
+        ".uagb-faq-icon-row-reverse .uagb-faq-item .uagb-faq-icon-wrap" : {
             "margin-left" : generateCSSUnit( gapBtwIconQUestion, 'px' ),
         },
         " .uagb-faq-item:hover .uagb-icon svg" : {
             "fill" : iconActiveColor
         },
-        " .uagb-faq-icon-wrap" : {
-            "float" : iconAlign
+        " .uagb-faq-item .uagb-faq-questions-button.uagb-faq-questions" : {
+            "flex-direction" : iconAlign
         },
         " .uagb-faq-questions-button .uagb-question" : {
             "font-size" : generateCSSUnit( questionfontSize, questionfontSizeType ),

@@ -509,8 +509,8 @@ class UAGBFaqEdit extends Component {
 						label={ __( "Icon Alignment" ) }
 						value={ iconAlign }
 						options={ [
-							{ value: "left", label: __( "Left" ) },
-							{ value: "right", label: __( "Right" ) },
+							{ value: "row", label: __( "Left" ) },
+							{ value: "row-reverse", label: __( "Right" ) },
 						] }
 						onChange={ ( value ) => setAttributes( { iconAlign: value } ) }
 					/>

@@ -1996,7 +1996,7 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 							'answerlineHeightMobile'     => '',
 							'icon'                       => 'fas fa-plus',
 							'iconActive'                 => 'fas fa-minus',
-							'iconAlign'                  => 'left',
+							'iconAlign'                  => 'row',
 							'iconSize'                   => 15,
 							'iconSizeMobile'             => 15,
 							'iconSizeTablet'             => 15,

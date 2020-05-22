@@ -4993,17 +4993,17 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'margin-right'  => UAGB_Helper::get_css_value( $attr['hanswerPaddingDesktop'], $attr['answerPaddingTypeDesktop'] ),
 					'margin-left'   => UAGB_Helper::get_css_value( $attr['hanswerPaddingDesktop'], $attr['answerPaddingTypeDesktop'] ),
 				),
-				'.uagb-faq-icon-left .uagb-faq-item .uagb-faq-icon-wrap' => array(
+				'.uagb-faq-icon-row .uagb-faq-item .uagb-faq-icon-wrap' => array(
 					'margin-right' => UAGB_Helper::get_css_value( $attr['gapBtwIconQUestion'], 'px' ),
 				),
-				'.uagb-faq-icon-right .uagb-faq-item .uagb-faq-icon-wrap' => array(
+				'.uagb-faq-icon-row-reverse .uagb-faq-item .uagb-faq-icon-wrap' => array(
 					'margin-left' => UAGB_Helper::get_css_value( $attr['gapBtwIconQUestion'], 'px' ),
 				),
 				' .uagb-faq-item:hover .uagb-icon svg' => array(
 					'fill' => $attr['iconActiveColor'],
 				),
-				' .uagb-faq-icon-wrap'                 => array(
-					'float' => $attr['iconAlign'],
+				' .uagb-faq-item .uagb-faq-questions-button.uagb-faq-questions'                 => array(
+					'flex-direction' => $attr['iconAlign'],
 				),
 				' .uagb-faq-questions-button .uagb-question' => array(
 					'font-size'   => UAGB_Helper::get_css_value( $attr['questionfontSize'], $attr['questionfontSizeType'] ),
