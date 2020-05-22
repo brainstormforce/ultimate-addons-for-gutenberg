@@ -5002,7 +5002,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				' .uagb-faq-item:hover .uagb-icon svg' => array(
 					'fill' => $attr['iconActiveColor'],
 				),
-				' .uagb-faq-item .uagb-faq-questions-button.uagb-faq-questions'                 => array(
+				' .uagb-faq-item .uagb-faq-questions-button.uagb-faq-questions' => array(
 					'flex-direction' => $attr['iconAlign'],
 				),
 				' .uagb-faq-questions-button .uagb-question' => array(
