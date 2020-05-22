@@ -298,7 +298,7 @@ class UAGBFaqEdit extends Component {
 			return (
 				<PanelBody
 					title={ __( "Styling" ) }
-					initialOpen={ true }
+					initialOpen={ false }
 					className="uagb__url-panel-body"
 				>
 					<p className="uagb-setting-label">{ __( "Background Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: boxBgColor }} ></span></span></p>
@@ -521,7 +521,7 @@ class UAGBFaqEdit extends Component {
 			return (
 				<PanelBody
 					title={ __( "Question" ) }
-					initialOpen={ true }
+					initialOpen={ false }
 					className="uagb__url-panel-body"
 				>
 					<TypographyControl
@@ -675,7 +675,7 @@ class UAGBFaqEdit extends Component {
 
 				<PanelBody
 					title={ __( "Answer" ) }
-					initialOpen={ true }
+					initialOpen={ false }
 					className="uagb__url-panel-body"
 				>
 					<TypographyControl
