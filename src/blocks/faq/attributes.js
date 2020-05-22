@@ -322,7 +322,11 @@ const attributes = {
 	schema: {
 		type: "string",
 		default: ""
-	}
+	},
+	enableToggle: {
+		type: "string",
+		default: "yes"	
+	},
 }
 
 export default attributes

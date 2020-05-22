@@ -41,6 +41,7 @@ export default function save( props ) {
 			`uagb-faq-expand-first-${ props.attributes.expandFirstItem }`,
 			`uagb-faq-inactive-other-${ props.attributes.inactiveOtherItems }`
 		) }
+		data-faqToggle = { props.attributes.enableToggle }
 		>
 			{ renderSchema() }
 			<div className="uagb-faq__wrap uagb-buttons-layout-wrap">

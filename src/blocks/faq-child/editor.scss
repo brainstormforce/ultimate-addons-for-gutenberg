@@ -24,6 +24,9 @@
     }
     .uagb-content {
         border-width: 0px;
+        span {
+            display: inline-block;
+        }
     }
     .uagb-faq-item .uagb-icon-active,
     .uagb-faq-item.uagb-faq-item-active .uagb-icon

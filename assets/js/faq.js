@@ -88,24 +88,30 @@ window.addEventListener(
 		let accordionElements = document.getElementsByClassName( 'uagb-faq-layout-accordion' );
 		for ( var item of accordionElements ) {
 			let questionButtons = item.querySelectorAll( '.uagb-faq-questions-button' );
-
+			
 			for ( var button of questionButtons ) {
 				button.addEventListener("click", function() {
 					var faqItem = this.parentElement;
-					
 					if ( faqItem.classList.contains('uagb-faq-item-active') ) {
 						faqItem.classList.remove('uagb-faq-item-active');
 						slideUp( faqItem.getElementsByClassName( 'uagb-content' )[0], 500 );
 					} else {
+						var parent = faqItem.parentElement.parentElement.parentElement.parentElement;
+						var faqToggle = "yes";
+						if ( parent.classList.contains( 'wp-block-uagb-faq' ) ) {
+							faqToggle = parent.getAttribute( 'data-faqToggle' );
+						}
 						faqItem.classList.add('uagb-faq-item-active');
 						slideDown( faqItem.getElementsByClassName( 'uagb-content' )[0], 500 );
-						for ( var buttonChild of questionButtons ) {
-							buttonItem = buttonChild.parentElement
-							if ( buttonItem === faqItem ) {
-								continue;
+						if( 'yes' === faqToggle ) {
+							for ( var buttonChild of questionButtons ) {
+								buttonItem = buttonChild.parentElement
+								if ( buttonItem === faqItem ) {
+									continue;
+								}
+								buttonItem.classList.remove('uagb-faq-item-active');
+								slideUp( buttonItem.getElementsByClassName( 'uagb-content' )[0], 500 );
 							}
-							buttonItem.classList.remove('uagb-faq-item-active');
-							slideUp( buttonItem.getElementsByClassName( 'uagb-content' )[0], 500 );
 						}
 					}
 				});

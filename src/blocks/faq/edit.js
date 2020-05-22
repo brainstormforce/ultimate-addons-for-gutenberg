@@ -180,7 +180,8 @@ class UAGBFaqEdit extends Component {
 			iconSizeMobile,
 			iconSizeTablet,
 			iconSize,
-			columns
+			columns,
+			enableToggle
 		} = attributes
 
 		var element = document.getElementById( "uagb-style-faq-" + this.props.clientId )
@@ -260,6 +261,15 @@ class UAGBFaqEdit extends Component {
 									{ value: "no", label: __( "No" ) },
 								] }
 								onChange={ ( value ) => setAttributes( { expandFirstItem: value } ) }
+							/>
+							<SelectControl
+								label={ __( "Enable Toggle" ) }
+								value={ enableToggle }
+								options={ [
+									{ value: "yes", label: __( "Yes" ) },
+									{ value: "no", label: __( "No" ) },
+								] }
+								onChange={ ( value ) => setAttributes( { enableToggle: value } ) }
 							/>
 						</Fragment>
 					}
@@ -846,6 +856,7 @@ class UAGBFaqEdit extends Component {
 					`uagb-faq-expand-first-${ this.props.attributes.expandFirstItem }`,
 					`uagb-faq-inactive-other-${ this.props.attributes.inactiveOtherItems }`
 				) }
+				data-faqToggle = { this.props.attributes.enableToggle }
 				>
                     <InnerBlocks
                         template={ getFaqChildTemplate( faq_count, faq ) }
