@@ -41,6 +41,7 @@ const {
 	Button,
 	Dashicon,
 	ToggleControl,
+	IconButton
 } = wp.components
 
 const ALLOWED_BLOCKS = [ "uagb/faq-child" ]
@@ -505,14 +506,22 @@ class UAGBFaqEdit extends Component {
 						isMulti={false}
 						noSelectedPlaceholder= { __( "Select Icon" ) }
 					/>
-					<SelectControl
-						label={ __( "Icon Alignment" ) }
-						value={ iconAlign }
-						options={ [
-							{ value: "row", label: __( "Left" ) },
-							{ value: "row-reverse", label: __( "Right" ) },
-						] }
-						onChange={ ( value ) => setAttributes( { iconAlign: value } ) }
+					<h2> { __( "Icon Alignment" ) }</h2>
+					<IconButton
+					 	key={ "row" }
+						icon="editor-alignleft"
+						label="Left"
+						onClick={ () => setAttributes( { iconAlign: "row" } ) }
+						aria-pressed = { "row" === iconAlign }
+						isPrimary = { "row" === iconAlign }
+					/>
+					<IconButton
+						key={ "row-reverse" }
+						icon="editor-alignright"
+						label="Right"
+						onClick={ () => setAttributes( { iconAlign: "row-reverse" } ) }
+						aria-pressed = { "row-reverse" === iconAlign }
+						isPrimary = { "row-reverse" === iconAlign }
 					/>
 				</Fragment>	
 				)
