@@ -99,6 +99,14 @@ window.addEventListener(
 					} else {
 						faqItem.classList.add('uagb-faq-item-active');
 						slideDown( faqItem.getElementsByClassName( 'uagb-content' )[0], 500 );
+						for ( var buttonChild of questionButtons ) {
+							buttonItem = buttonChild.parentElement
+							if ( buttonItem === faqItem ) {
+								continue;
+							}
+							buttonItem.classList.remove('uagb-faq-item-active');
+							slideUp( buttonItem.getElementsByClassName( 'uagb-content' )[0], 500 );
+						}
 					}
 				});
 			}
