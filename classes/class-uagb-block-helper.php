@@ -4987,7 +4987,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'padding-right'  => UAGB_Helper::get_css_value( $attr['hquestionPaddingDesktop'], $attr['questionPaddingTypeDesktop'] ),
 					'padding-left'   => UAGB_Helper::get_css_value( $attr['hquestionPaddingDesktop'], $attr['questionPaddingTypeDesktop'] ),
 				),
-				' .uagb-faq-content span'                  => array(
+				' .uagb-faq-content span'              => array(
 					'margin-top'    => UAGB_Helper::get_css_value( $attr['vanswerPaddingDesktop'], $attr['answerPaddingTypeDesktop'] ),
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['vanswerPaddingDesktop'], $attr['answerPaddingTypeDesktop'] ),
 					'margin-right'  => UAGB_Helper::get_css_value( $attr['hanswerPaddingDesktop'], $attr['answerPaddingTypeDesktop'] ),
@@ -5011,7 +5011,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'font-family' => $attr['questionfontFamily'],
 					'font-weight' => $attr['questionfontWeight'],
 				),
-				' .uagb-faq-item .uagb-faq-content p'      => array(
+				' .uagb-faq-item .uagb-faq-content p'  => array(
 					'font-size'   => UAGB_Helper::get_css_value( $attr['answerfontSize'], $attr['answerfontSizeType'] ),
 					'line-height' => UAGB_Helper::get_css_value( $attr['answerlineHeight'], $attr['answerlineHeightType'] ),
 					'font-family' => $attr['answerfontFamily'],
@@ -5021,7 +5021,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			);
 
 			$t_selectors = array(
-				' .uagb-faq-questions-button'     => array(
+				' .uagb-faq-questions-button'         => array(
 					'padding-top'    => UAGB_Helper::get_css_value( $attr['vquestionPaddingTablet'], $attr['questionPaddingTypeTablet'] ),
 					'padding-bottom' => UAGB_Helper::get_css_value( $attr['vquestionPaddingTablet'], $attr['questionPaddingTypeTablet'] ),
 					'padding-right'  => UAGB_Helper::get_css_value( $attr['hquestionPaddingTablet'], $attr['questionPaddingTypeTablet'] ),
@@ -5041,19 +5041,19 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'font-size'   => UAGB_Helper::get_css_value( $attr['answerfontSizeTablet'], $attr['answerfontSizeType'] ),
 					'line-height' => UAGB_Helper::get_css_value( $attr['answerlineHeightTablet'], $attr['answerlineHeightType'] ),
 				),
-				' .uagb-icon svg'                 => array(
+				' .uagb-icon svg'                     => array(
 					'width'     => UAGB_Helper::get_css_value( $attr['iconSizeTablet'], $attr['iconSizeType'] ),
 					'height'    => UAGB_Helper::get_css_value( $attr['iconSizeTablet'], $attr['iconSizeType'] ),
 					'font-size' => UAGB_Helper::get_css_value( $attr['iconSizeTablet'], $attr['iconSizeType'] ),
 				),
-				' .uagb-icon-active svg'          => array(
+				' .uagb-icon-active svg'              => array(
 					'width'     => UAGB_Helper::get_css_value( $attr['iconSizeTablet'], $attr['iconSizeType'] ),
 					'height'    => UAGB_Helper::get_css_value( $attr['iconSizeTablet'], $attr['iconSizeType'] ),
 					'font-size' => UAGB_Helper::get_css_value( $attr['iconSizeTablet'], $attr['iconSizeType'] ),
 				),
 			);
 			$m_selectors = array(
-				' .uagb-faq-questions-button'     => array(
+				' .uagb-faq-questions-button'         => array(
 					'padding-top'    => UAGB_Helper::get_css_value( $attr['vquestionPaddingMobile'], $attr['questionPaddingTypeMobile'] ),
 					'padding-bottom' => UAGB_Helper::get_css_value( $attr['vquestionPaddingMobile'], $attr['questionPaddingTypeMobile'] ),
 					'padding-right'  => UAGB_Helper::get_css_value( $attr['hquestionPaddingMobile'], $attr['questionPaddingTypeMobile'] ),
@@ -5073,12 +5073,12 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'font-size'   => UAGB_Helper::get_css_value( $attr['answerfontSizeMobile'], $attr['answerfontSizeType'] ),
 					'line-height' => UAGB_Helper::get_css_value( $attr['answerlineHeightMobile'], $attr['answerlineHeightType'] ),
 				),
-				' .uagb-icon svg'                 => array(
+				' .uagb-icon svg'                     => array(
 					'width'     => UAGB_Helper::get_css_value( $attr['iconSizeMobile'], $attr['iconSizeType'] ),
 					'height'    => UAGB_Helper::get_css_value( $attr['iconSizeMobile'], $attr['iconSizeType'] ),
 					'font-size' => UAGB_Helper::get_css_value( $attr['iconSizeMobile'], $attr['iconSizeType'] ),
 				),
-				' .uagb-icon-active svg'          => array(
+				' .uagb-icon-active svg'              => array(
 					'width'     => UAGB_Helper::get_css_value( $attr['iconSizeMobile'], $attr['iconSizeType'] ),
 					'height'    => UAGB_Helper::get_css_value( $attr['iconSizeMobile'], $attr['iconSizeType'] ),
 					'font-size' => UAGB_Helper::get_css_value( $attr['iconSizeMobile'], $attr['iconSizeType'] ),
