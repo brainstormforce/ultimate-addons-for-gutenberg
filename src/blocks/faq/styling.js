@@ -219,19 +219,34 @@ function styling( props ) {
         },
     }
 
-    if ( 'accordion' === layout && 'yes' === inactiveOtherItems ) {
+    if ( 'accordion' === layout && true === inactiveOtherItems ) {
         
         selectors[" .block-editor-block-list__layout .uagb-faq-child__outer-wrap .uagb-faq-content "] = {
             "display" : "none"
         }
     }
-    if ( 'accordion' === layout && 'yes' === expandFirstItem ) {
+    if ( 'accordion' === layout && false === inactiveOtherItems ) {
+        
+        selectors[" .block-editor-inner-blocks .uagb-faq-child__outer-wrap .uagb-faq-item .uagb-faq-questions-button .uagb-icon-active"] = {
+            "display" : "inline-block"
+        },
+        selectors[" .block-editor-inner-blocks .uagb-faq-child__outer-wrap .uagb-faq-item .uagb-faq-questions-button .uagb-icon"] = {
+            "display" : "none"
+        }
+    }
+    if ( 'accordion' === layout && true === expandFirstItem ) {
         
         selectors[" .block-editor-block-list__layout > div:first-child > .uagb-faq-child__outer-wrap .uagb-faq-content "] = {
             "display" : "block"
         }
+        selectors[" .block-editor-block-list__layout > div:first-child > .uagb-faq-child__outer-wrap .uagb-faq-item .uagb-faq-questions-button .uagb-icon-active "] = {
+            "display" : "inline-block"
+        },
+        selectors[" .block-editor-block-list__layout > div:first-child > .uagb-faq-child__outer-wrap .uagb-faq-item .uagb-faq-questions-button .uagb-icon "] = {
+            "display" : "none"
+        }
     }
-    if ( 'yes' === enableSeparator ) {
+    if ( true === enableSeparator ) {
         
         selectors[" .uagb-faq-child__outer-wrap .uagb-faq-content "] = {
             "border-style" : "solid",

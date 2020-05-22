@@ -64,8 +64,8 @@ let slideToggle = (target, duration = 500) => {
 }
 
 let setupFAQ = () => {
-	var expandFirstelements = document.getElementsByClassName( 'uagb-faq-expand-first-yes' );
-	var inactiveOtherelements = document.getElementsByClassName( 'uagb-faq-inactive-other-no' );
+	var expandFirstelements = document.getElementsByClassName( 'uagb-faq-expand-first-true' );
+	var inactiveOtherelements = document.getElementsByClassName( 'uagb-faq-inactive-other-false' );
 	
 	for ( var item of expandFirstelements ) { 
 		item.querySelectorAll( '.uagb-faq-child__outer-wrap' )[0].getElementsByClassName( 'uagb-faq-item' )[0].classList.add( 'uagb-faq-item-active' );
@@ -97,13 +97,13 @@ window.addEventListener(
 						slideUp( faqItem.getElementsByClassName( 'uagb-faq-content' )[0], 500 );
 					} else {
 						var parent = faqItem.parentElement.parentElement.parentElement.parentElement;
-						var faqToggle = "yes";
+						var faqToggle = 'true';
 						if ( parent.classList.contains( 'wp-block-uagb-faq' ) ) {
 							faqToggle = parent.getAttribute( 'data-faqtoggle' );
 						}
 						faqItem.classList.add('uagb-faq-item-active');
 						slideDown( faqItem.getElementsByClassName( 'uagb-faq-content' )[0], 500 );
-						if( 'yes' === faqToggle ) {
+						if( 'true' === faqToggle ) {
 							for ( var buttonChild of questionButtons ) {
 								buttonItem = buttonChild.parentElement
 								if ( buttonItem === faqItem ) {

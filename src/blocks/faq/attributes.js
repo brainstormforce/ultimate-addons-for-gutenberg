@@ -28,24 +28,24 @@ const attributes = {
 		default : "accordion"
 	},
 	inactiveOtherItems: {
-		type: "string",
-		default : "yes"
+		type: "boolean",
+		default : true
 	},
 	expandFirstItem: {
-		type: "string",
-		default : "no"
+		type: "boolean",
+		default : false
 	},
 	enableSchemaSupport: {
-		type: "string",
-		default : "no"
+		type: "boolean",
+		default : false
 	},
 	align: {
 		type: "string",
 		default : "left"
 	},
 	enableSeparator: {
-		type: "string",
-		default : "no"
+		type: "boolean",
+		default : false
 	},
 	rowsGap: {
 		type: "number",
@@ -324,8 +324,8 @@ const attributes = {
 		default: ""
 	},
 	enableToggle: {
-		type: "string",
-		default: "yes"	
+		type: "boolean",
+		default: true	
 	},
 }
 

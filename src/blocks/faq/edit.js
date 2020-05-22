@@ -40,6 +40,7 @@ const {
 	ButtonGroup,
 	Button,
 	Dashicon,
+	ToggleControl,
 } = wp.components
 
 const ALLOWED_BLOCKS = [ "uagb/faq-child" ]
@@ -244,43 +245,27 @@ class UAGBFaqEdit extends Component {
 					/>
 					{ 'accordion' === layout &&
 						<Fragment>
-							<SelectControl
+							<ToggleControl
 								label={ __( "Inactive other items" ) }
-								value={ inactiveOtherItems }
-								options={ [
-									{ value: "yes", label: __( "Yes" ) },
-									{ value: "no", label: __( "No" ) },
-								] }
-								onChange={ ( value ) => setAttributes( { inactiveOtherItems: value } ) }
+								checked={ inactiveOtherItems }
+								onChange={ ( value ) => setAttributes( { inactiveOtherItems: ! inactiveOtherItems } ) }
 							/>
-							<SelectControl
+							<ToggleControl
 								label={ __( "Expand First Item" ) }
-								value={ expandFirstItem }
-								options={ [
-									{ value: "yes", label: __( "Yes" ) },
-									{ value: "no", label: __( "No" ) },
-								] }
-								onChange={ ( value ) => setAttributes( { expandFirstItem: value } ) }
+								checked={ expandFirstItem }
+								onChange={ ( value ) => setAttributes( { expandFirstItem: ! expandFirstItem } ) }
 							/>
-							<SelectControl
+							<ToggleControl
 								label={ __( "Enable Toggle" ) }
-								value={ enableToggle }
-								options={ [
-									{ value: "yes", label: __( "Yes" ) },
-									{ value: "no", label: __( "No" ) },
-								] }
-								onChange={ ( value ) => setAttributes( { enableToggle: value } ) }
+								checked={ enableToggle }
+								onChange={ ( value ) => setAttributes( { enableToggle: ! enableToggle } ) }
 							/>
 						</Fragment>
 					}
-					<SelectControl
+					<ToggleControl
 						label={ __( "Enable Schema Support" ) }
-						value={ enableSchemaSupport }
-						options={ [
-							{ value: "yes", label: __( "Yes" ) },
-							{ value: "no", label: __( "No" ) },
-						] }
-						onChange={ ( value ) => setAttributes( { enableSchemaSupport: value } ) }
+						checked={ enableSchemaSupport }
+						onChange={ ( value ) => setAttributes( { enableSchemaSupport: ! enableSchemaSupport } ) }
 					/>
 					<RangeControl
 						label={ __( "Rows Gap" ) }
@@ -319,14 +304,10 @@ class UAGBFaqEdit extends Component {
 							onChange={ ( value ) => setAttributes( { align: value } ) }
 						/>
 					}
-					<SelectControl
+					<ToggleControl
 						label={ __( "Enable Separator" ) }
-						value={ enableSeparator }
-						options={ [
-							{ value: "yes", label: __( "Yes" ) },
-							{ value: "no", label: __( "No" ) },
-						] }
-						onChange={ ( value ) => setAttributes( { enableSeparator: value } ) }
+						checked={ enableSeparator }
+						onChange={ ( value ) => setAttributes( { enableSeparator: ! enableSeparator } ) }
 					/>
 				</PanelBody>
 			)

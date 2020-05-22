@@ -20,7 +20,7 @@ export default function save( props ) {
 
 	const renderSchema = () => {
 
-		if ( 'yes' === enableSchemaSupport ) {
+		if ( true === enableSchemaSupport ) {
 
 			return (
 				<script type="application/ld+json">

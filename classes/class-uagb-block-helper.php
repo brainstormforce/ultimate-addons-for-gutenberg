@@ -5085,19 +5085,19 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 
-			if ( 'accordion' === $attr['layout'] && 'yes' === $attr['inactiveOtherItems'] ) {
+			if ( 'accordion' === $attr['layout'] && true === $attr['inactiveOtherItems'] ) {
 
 				$selectors[' .wp-block-uagb-faq-child.uagb-faq-child__outer-wrap .uagb-faq-content '] = array(
 					'display' => 'none',
 				);
 			}
-			if ( 'accordion' === $attr['layout'] && 'yes' === $attr['expandFirstItem'] ) {
+			if ( 'accordion' === $attr['layout'] && true === $attr['expandFirstItem'] ) {
 
 				$selectors[' .uagb-faq__wrap.uagb-buttons-layout-wrap > .uagb-faq-child__outer-wrap:first-child > .uagb-faq-child__wrapper .uagb-faq-content '] = array(
 					'display' => 'block',
 				);
 			}
-			if ( 'yes' === $attr['enableSeparator'] ) {
+			if ( true === $attr['enableSeparator'] ) {
 
 				$selectors[' .uagb-faq-child__outer-wrap .uagb-faq-content '] = array(
 					'border-style'     => 'solid',
