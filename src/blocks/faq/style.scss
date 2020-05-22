@@ -1,20 +1,5 @@
-.uagb-content{
-
-    &.slider {
-        overflow-y: hidden;
-        max-height: 500px; /* approximate max height */
-
-        transition-property: all;
-        transition-duration: .3s;
-        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-    }
-
-    &.slider {
-        overflow-y: hidden;
-        max-height: 500px; /* approximate max height */
-    }
-    
-    &.slider.closed {
-        max-height: 0;
+.wp-block-uagb-faq {
+    &.uagb-faq-layout-accordion .uagb-faq-child__outer-wrap .uagb-faq-questions-button {
+        cursor: pointer;
     }
 }

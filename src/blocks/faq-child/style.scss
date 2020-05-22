@@ -33,7 +33,6 @@
 
     &.uagb-faq-child__outer-wrap .uagb-faq-item .uagb-icon-active,
     &.uagb-faq-child__outer-wrap .uagb-faq-item.uagb-faq-item-active .uagb-icon {
-        //display: none;
         visibility: hidden;
         width: 0;
         padding: 0;
@@ -43,12 +42,8 @@
 
     &.uagb-faq-child__outer-wrap .uagb-faq-item .uagb-icon,
     &.uagb-faq-child__outer-wrap .uagb-faq-item.uagb-faq-item-active .uagb-icon-active {
-        // display: inline-block;
         visibility: visible;
         width: auto;
         height: auto;
     }
-}
-.wp-block-uagb-faq.uagb-faq-layout-accordion .uagb-faq-child__outer-wrap .uagb-faq-questions-button {
-    cursor: pointer;
 }
