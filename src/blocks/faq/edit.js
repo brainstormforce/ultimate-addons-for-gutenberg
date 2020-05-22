@@ -267,13 +267,6 @@ class UAGBFaqEdit extends Component {
 						checked={ enableSchemaSupport }
 						onChange={ ( value ) => setAttributes( { enableSchemaSupport: ! enableSchemaSupport } ) }
 					/>
-					<RangeControl
-						label={ __( "Rows Gap" ) }
-						value={ rowsGap }
-						onChange={ ( value ) => setAttributes( { rowsGap: value } ) }
-						min={ 0 }
-						max={ 50 }
-					/>
 					{ 'grid' === layout &&
 						<RangeControl
 							label={ __( "Columns" ) }
@@ -281,15 +274,6 @@ class UAGBFaqEdit extends Component {
 							onChange={ ( value ) => setAttributes( { columns: value } ) }
 							min={ 0 }
 							max={ 6 }
-						/>
-					}
-					{ 'grid' === layout &&
-						<RangeControl
-							label={ __( "Columns Gap" ) }
-							value={ columnsGap }
-							onChange={ ( value ) => setAttributes( { columnsGap: value } ) }
-							min={ 0 }
-							max={ 50 }
 						/>
 					}
 					{ 'grid' === layout &&
@@ -304,11 +288,7 @@ class UAGBFaqEdit extends Component {
 							onChange={ ( value ) => setAttributes( { align: value } ) }
 						/>
 					}
-					<ToggleControl
-						label={ __( "Enable Separator" ) }
-						checked={ enableSeparator }
-						onChange={ ( value ) => setAttributes( { enableSeparator: ! enableSeparator } ) }
-					/>
+					{ 'accordion' === layout && faqIconSettings() }
 				</PanelBody>
 			)
 		}
@@ -321,14 +301,32 @@ class UAGBFaqEdit extends Component {
 					initialOpen={ true }
 					className="uagb__url-panel-body"
 				>
-					<hr className="uagb-editor__separator" />
-					<h2>{  __( " Box Styling" ) }</h2>
-					<hr className="uagb-editor__separator" />
 					<p className="uagb-setting-label">{ __( "Background Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: boxBgColor }} ></span></span></p>
 					<ColorPalette
 						value={ boxBgColor }
 						onChange={ ( value ) => setAttributes( { boxBgColor: value } ) }
 						allowReset
+					/>
+					<RangeControl
+						label={ __( "Rows Gap" ) }
+						value={ rowsGap }
+						onChange={ ( value ) => setAttributes( { rowsGap: value } ) }
+						min={ 0 }
+						max={ 50 }
+					/>
+					{ 'grid' === layout &&
+						<RangeControl
+							label={ __( "Columns Gap" ) }
+							value={ columnsGap }
+							onChange={ ( value ) => setAttributes( { columnsGap: value } ) }
+							min={ 0 }
+							max={ 50 }
+						/>
+					}
+					<ToggleControl
+						label={ __( "Enable Separator" ) }
+						checked={ enableSeparator }
+						onChange={ ( value ) => setAttributes( { enableSeparator: ! enableSeparator } ) }
 					/>
 					<hr className="uagb-editor__separator" />
 					<h2>{ __( "Border" ) }</h2>
@@ -368,146 +366,336 @@ class UAGBFaqEdit extends Component {
 							max={ 50 }
 						/>
 					}
-					<hr className="uagb-editor__separator" />
-					<p className="uagb-setting-label">{ __( "Border Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: borderColor }} ></span></span></p>
+					<p className="uagb-setting-label">{ __( "Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: borderColor }} ></span></span></p>
 					<ColorPalette
 						value={ borderColor }
 						onChange={ ( value ) => setAttributes( { borderColor: value } ) }
 						allowReset
 					/>
-					<hr className="uagb-editor__separator" />
-					<h2>{  __( " Questions Styling" ) }</h2>
-				
-					<hr className="uagb-editor__separator" />
-					<p className="uagb-setting-label">{ __( "Question Text Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: questionTextColor }} ></span></span></p>
-					<ColorPalette
-						value={ questionTextColor }
-						onChange={ ( value ) => setAttributes( { questionTextColor: value } ) }
-						allowReset
-					/>
-					<p className="uagb-setting-label">{ __( "Question Text Active/Hover Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: questionTextActiveColor }} ></span></span></p>
-					<ColorPalette
-						value={ questionTextActiveColor }
-						onChange={ ( value ) => setAttributes( { questionTextActiveColor: value } ) }
-						allowReset
-					/>
-					<TabPanel className="uagb-size-type-field-tabs uagb-size-type-field__common-tabs uagb-inline-margin" activeClass="active-tab"
-						tabs={ [
+	
+					{ 'accordion' === layout &&
+						<Fragment>
+							<hr className="uagb-editor__separator" />
+							<h2>{ __( "Icon" ) }</h2>
+							<TabPanel className="uagb-size-type-field-tabs uagb-size-type-field__common-tabs uagb-inline-margin" activeClass="active-tab"
+							tabs={ [
+								{
+									name: "desktop",
+									title: <Dashicon icon="desktop" />,
+									className: "uagb-desktop-tab uagb-responsive-tabs",
+								},
+								{
+									name: "tablet",
+									title: <Dashicon icon="tablet" />,
+									className: "uagb-tablet-tab uagb-responsive-tabs",
+								},
+								{
+									name: "mobile",
+									title: <Dashicon icon="smartphone" />,
+									className: "uagb-mobile-tab uagb-responsive-tabs",
+								},
+							] }>
 							{
-								name: "desktop",
-								title: <Dashicon icon="desktop" />,
-								className: "uagb-desktop-tab uagb-responsive-tabs",
-							},
-							{
-								name: "tablet",
-								title: <Dashicon icon="tablet" />,
-								className: "uagb-tablet-tab uagb-responsive-tabs",
-							},
-							{
-								name: "mobile",
-								title: <Dashicon icon="smartphone" />,
-								className: "uagb-mobile-tab uagb-responsive-tabs",
-							},
-						] }>
-						{
-							( tab ) => {
-								let tabout
+								( tab ) => {
+									let tabout
 
-								if ( "mobile" === tab.name ) {
-									tabout = (
-										<Fragment>
-											<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
-												<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeMobile === "px" } aria-pressed={ questionPaddingTypeMobile === "px" } onClick={ () => setAttributes( { questionPaddingTypeMobile: "px" } ) }>{ "px" }</Button>
-												<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeMobile === "%" } aria-pressed={ questionPaddingTypeMobile === "%" } onClick={ () => setAttributes( { questionPaddingTypeMobile: "%" } ) }>{ "%" }</Button>
-											</ButtonGroup>
-											<h2>{ __( "Padding" ) }</h2>
-											<RangeControl
-												label={ UAGB_Block_Icons.vertical_spacing }
-												className={ "uagb-margin-control" }
-												value={ vquestionPaddingMobile }
-												onChange={ ( value ) => setAttributes( { vquestionPaddingMobile: value } ) }
-												min={ 0 }
-												max={ 100 }
-												allowReset
-											/>
-											<RangeControl
-												label={ UAGB_Block_Icons.horizontal_spacing }
-												className={ "uagb-margin-control" }
-												value={ hquestionPaddingMobile }
-												onChange={ ( value ) => setAttributes( { hquestionPaddingMobile: value } ) }
-												min={ 0 }
-												max={ 100 }
-												allowReset
-											/>
-										</Fragment>
-									)
-								} else if ( "tablet" === tab.name ) {
-									tabout = (
-										<Fragment>
-											<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
-												<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeTablet === "px" } aria-pressed={ questionPaddingTypeTablet === "px" } onClick={ () => setAttributes( { questionPaddingTypeTablet: "px" } ) }>{ "px" }</Button>
-												<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeTablet === "%" } aria-pressed={ questionPaddingTypeTablet === "%" } onClick={ () => setAttributes( { questionPaddingTypeTablet: "%" } ) }>{ "%" }</Button>
-											</ButtonGroup>
-											<h2>{ __( "Padding" ) }</h2>
-											<RangeControl
-												label={ UAGB_Block_Icons.vertical_spacing }
-												className={ "uagb-margin-control" }
-												value={ vquestionPaddingTablet }
-												onChange={ ( value ) => setAttributes( { vquestionPaddingTablet: value } ) }
-												min={ 0 }
-												max={ 100 }
-												allowReset
-											/>
-											<RangeControl
-												label={ UAGB_Block_Icons.horizontal_spacing }
-												className={ "uagb-margin-control" }
-												value={ hquestionPaddingTablet }
-												onChange={ ( value ) => setAttributes( { hquestionPaddingTablet: value } ) }
-												min={ 0 }
-												max={ 100 }
-												allowReset
-											/>
-										</Fragment>
-									)
-								} else {
-									tabout = (
-										<Fragment>
-											<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
-												<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeDesktop === "px" } aria-pressed={ questionPaddingTypeDesktop === "px" } onClick={ () => setAttributes( { questionPaddingTypeDesktop: "px" } ) }>{ "px" }</Button>
-												<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeDesktop === "%" } aria-pressed={ questionPaddingTypeDesktop === "%" } onClick={ () => setAttributes( { questionPaddingTypeDesktop: "%" } ) }>{ "%" }</Button>
-											</ButtonGroup>
-											<h2>{ __( "Padding" ) }</h2>
-											<RangeControl
-												label={ UAGB_Block_Icons.vertical_spacing }
-												className={ "uagb-margin-control" }
-												value={ vquestionPaddingDesktop }
-												onChange={ ( value ) => setAttributes( { vquestionPaddingDesktop: value } ) }
-												min={ 0 }
-												max={ 100 }
-												allowReset
-											/>
-											<RangeControl
-												label={ UAGB_Block_Icons.horizontal_spacing }
-												className={ "uagb-margin-control" }
-												value={ hquestionPaddingDesktop }
-												onChange={ ( value ) => setAttributes( { hquestionPaddingDesktop: value } ) }
-												min={ 0 }
-												max={ 100 }
-												allowReset
-											/>
-										</Fragment>
-									)
+									if ( "mobile" === tab.name ) {
+										tabout = (
+											<Fragment>
+												<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
+													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "px" } aria-pressed={ iconSizeType === "px" } onClick={ () => setAttributes( { iconSizeType: "px" } ) }>{ "px" }</Button>
+													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "%" } aria-pressed={ iconSizeType === "%" } onClick={ () => setAttributes( { iconSizeType: "%" } ) }>{ "%" }</Button>
+												</ButtonGroup>
+												<h2>{ __( "Size" ) }</h2>
+												<RangeControl
+													value={ iconSizeMobile }
+													onChange={ ( value ) => setAttributes( { iconSizeMobile: value } ) }
+													min={ 0 }
+													max={ 100 }
+													allowReset
+												/>
+											</Fragment>
+										)
+									} else if ( "tablet" === tab.name ) {
+										tabout = (
+											<Fragment>
+												<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
+													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "px" } aria-pressed={ iconSizeType === "px" } onClick={ () => setAttributes( { iconSizeType: "px" } ) }>{ "px" }</Button>
+													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "%" } aria-pressed={ iconSizeType === "%" } onClick={ () => setAttributes( { iconSizeType: "%" } ) }>{ "%" }</Button>
+												</ButtonGroup>
+												<h2>{ __( "Size" ) }</h2>
+												<RangeControl
+													value={ iconSizeTablet }
+													onChange={ ( value ) => setAttributes( { iconSizeTablet: value } ) }
+													min={ 0 }
+													max={ 100 }
+													allowReset
+												/>
+											</Fragment>
+										)
+									} else {
+										tabout = (
+											<Fragment>
+												<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
+													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "px" } aria-pressed={ iconSizeType === "px" } onClick={ () => setAttributes( { iconSizeType: "px" } ) }>{ "px" }</Button>
+													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "%" } aria-pressed={ iconSizeType === "%" } onClick={ () => setAttributes( { iconSizeType: "%" } ) }>{ "%" }</Button>
+												</ButtonGroup>
+												<h2>{ __( "Size" ) }</h2>
+												<RangeControl
+													value={ iconSize }
+													onChange={ ( value ) => setAttributes( { iconSize: value } ) }
+													min={ 0 }
+													max={ 100 }
+													allowReset
+												/>
+											</Fragment>
+										)
+									}
+
+									return <div>{ tabout }</div>
 								}
-
-								return <div>{ tabout }</div>
 							}
-						}
-					</TabPanel>
-					<hr className="uagb-editor__separator" />
-					<h2>{  __( " Answer Styling" ) }</h2>
-				
-					<hr className="uagb-editor__separator" />
-					<p className="uagb-setting-label">{ __( "Answer Text Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: answerTextColor }} ></span></span></p>
+						</TabPanel>
+							<p className="uagb-setting-label">{ __( "Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: iconColor }} ></span></span></p>
+							<ColorPalette
+								value={ iconColor }
+								onChange={ ( value ) => setAttributes( { iconColor: value } ) }
+								allowReset
+							/>
+							<p className="uagb-setting-label">{ __( "Active/Hover Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: iconActiveColor }} ></span></span></p>
+							<ColorPalette
+								value={ iconActiveColor }
+								onChange={ ( value ) => setAttributes( { iconActiveColor: value } ) }
+								allowReset
+							/>
+							<RangeControl
+								label={ __( "Gap between Icon and Question" ) }
+								value={ gapBtwIconQUestion }
+								onChange={ ( value ) => setAttributes( { gapBtwIconQUestion: value } ) }
+								min={ 0 }
+								max={ 100 }
+							/>
+						</Fragment>
+					}
+				</PanelBody>
+			)
+		}
+		const faqIconSettings = () => {
+
+			return (
+				<Fragment>
+					<p className="components-base-control__label">{__( "Icon" )}</p>
+					<FontIconPicker
+						icons={svg_icons}
+						renderFunc= {renderSVG}
+						theme="default"
+						value={icon}
+						onChange={ (value) => this.onchangeIcon( value ) }
+						isMulti={false}
+						noSelectedPlaceholder= { __( "Select Icon" ) }
+					/>
+					<p className="components-base-control__label">{__( "Active Icon" )}</p>
+					<FontIconPicker
+						icons={svg_icons}
+						renderFunc= {renderSVG}
+						theme="default"
+						value={iconActive}
+						onChange={ (value) => this.onchangeActiveIcon( value ) }
+						isMulti={false}
+						noSelectedPlaceholder= { __( "Select Icon" ) }
+					/>
+					<SelectControl
+						label={ __( "Icon Alignment" ) }
+						value={ iconAlign }
+						options={ [
+							{ value: "left", label: __( "Left" ) },
+							{ value: "right", label: __( "Right" ) },
+						] }
+						onChange={ ( value ) => setAttributes( { iconAlign: value } ) }
+					/>
+				</Fragment>	
+				)
+		}
+		const faqQuestionSettings = () => {
+
+			return (
+				<PanelBody
+					title={ __( "Question" ) }
+					initialOpen={ true }
+					className="uagb__url-panel-body"
+				>
+					<TypographyControl
+						label={ __( "Typography" ) }
+						attributes = { attributes }
+						setAttributes = { setAttributes }
+						loadGoogleFonts = { { value: questionloadGoogleFonts, label: 'loadGoogleFonts'  } }
+						fontFamily = { { value: questionfontFamily, label: 'questionfontFamily'  } }
+						fontWeight = { { value: questionfontWeight, label: 'questionfontWeight'  } }
+						fontSubset = { { value: questionfontSubset, label: 'questionfontSubset'  } }
+						fontSizeType = { { value: questionfontSizeType, label: 'questionfontSizeType' } }
+						fontSize = { { value: questionfontSize, label: 'questionfontSize'  } }
+						fontSizeMobile = { { value: questionfontSizeMobile, label: 'questionfontSizeMobile'  } }
+						fontSizeTablet= { { value: questionfontSizeTablet, label: 'questionfontSizeTablet' } }
+						lineHeightType = { { value: questionlineHeightType, label: 'questionlineHeightType' } }
+						lineHeight = { { value: questionlineHeight, label: 'questionlineHeight'  } }
+						lineHeightMobile = { { value: questionlineHeightMobile, label: 'questionlineHeightMobile'  } }
+						lineHeightTablet= { { value: questionlineHeightTablet, label: 'questionlineHeightTablet'  } }
+					/>
+					<p className="uagb-setting-label">{ __( "Text Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: questionTextColor }} ></span></span></p>
+						<ColorPalette
+							value={ questionTextColor }
+							onChange={ ( value ) => setAttributes( { questionTextColor: value } ) }
+							allowReset
+						/>
+						<p className="uagb-setting-label">{ __( "Text Active/Hover Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: questionTextActiveColor }} ></span></span></p>
+						<ColorPalette
+							value={ questionTextActiveColor }
+							onChange={ ( value ) => setAttributes( { questionTextActiveColor: value } ) }
+							allowReset
+						/>
+						<TabPanel className="uagb-size-type-field-tabs uagb-size-type-field__common-tabs uagb-inline-margin" activeClass="active-tab"
+							tabs={ [
+								{
+									name: "desktop",
+									title: <Dashicon icon="desktop" />,
+									className: "uagb-desktop-tab uagb-responsive-tabs",
+								},
+								{
+									name: "tablet",
+									title: <Dashicon icon="tablet" />,
+									className: "uagb-tablet-tab uagb-responsive-tabs",
+								},
+								{
+									name: "mobile",
+									title: <Dashicon icon="smartphone" />,
+									className: "uagb-mobile-tab uagb-responsive-tabs",
+								},
+							] }>
+							{
+								( tab ) => {
+									let tabout
+
+									if ( "mobile" === tab.name ) {
+										tabout = (
+											<Fragment>
+												<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
+													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeMobile === "px" } aria-pressed={ questionPaddingTypeMobile === "px" } onClick={ () => setAttributes( { questionPaddingTypeMobile: "px" } ) }>{ "px" }</Button>
+													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeMobile === "%" } aria-pressed={ questionPaddingTypeMobile === "%" } onClick={ () => setAttributes( { questionPaddingTypeMobile: "%" } ) }>{ "%" }</Button>
+												</ButtonGroup>
+												<h2>{ __( "Padding" ) }</h2>
+												<RangeControl
+													label={ UAGB_Block_Icons.vertical_spacing }
+													className={ "uagb-margin-control" }
+													value={ vquestionPaddingMobile }
+													onChange={ ( value ) => setAttributes( { vquestionPaddingMobile: value } ) }
+													min={ 0 }
+													max={ 100 }
+													allowReset
+												/>
+												<RangeControl
+													label={ UAGB_Block_Icons.horizontal_spacing }
+													className={ "uagb-margin-control" }
+													value={ hquestionPaddingMobile }
+													onChange={ ( value ) => setAttributes( { hquestionPaddingMobile: value } ) }
+													min={ 0 }
+													max={ 100 }
+													allowReset
+												/>
+											</Fragment>
+										)
+									} else if ( "tablet" === tab.name ) {
+										tabout = (
+											<Fragment>
+												<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
+													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeTablet === "px" } aria-pressed={ questionPaddingTypeTablet === "px" } onClick={ () => setAttributes( { questionPaddingTypeTablet: "px" } ) }>{ "px" }</Button>
+													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeTablet === "%" } aria-pressed={ questionPaddingTypeTablet === "%" } onClick={ () => setAttributes( { questionPaddingTypeTablet: "%" } ) }>{ "%" }</Button>
+												</ButtonGroup>
+												<h2>{ __( "Padding" ) }</h2>
+												<RangeControl
+													label={ UAGB_Block_Icons.vertical_spacing }
+													className={ "uagb-margin-control" }
+													value={ vquestionPaddingTablet }
+													onChange={ ( value ) => setAttributes( { vquestionPaddingTablet: value } ) }
+													min={ 0 }
+													max={ 100 }
+													allowReset
+												/>
+												<RangeControl
+													label={ UAGB_Block_Icons.horizontal_spacing }
+													className={ "uagb-margin-control" }
+													value={ hquestionPaddingTablet }
+													onChange={ ( value ) => setAttributes( { hquestionPaddingTablet: value } ) }
+													min={ 0 }
+													max={ 100 }
+													allowReset
+												/>
+											</Fragment>
+										)
+									} else {
+										tabout = (
+											<Fragment>
+												<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
+													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeDesktop === "px" } aria-pressed={ questionPaddingTypeDesktop === "px" } onClick={ () => setAttributes( { questionPaddingTypeDesktop: "px" } ) }>{ "px" }</Button>
+													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeDesktop === "%" } aria-pressed={ questionPaddingTypeDesktop === "%" } onClick={ () => setAttributes( { questionPaddingTypeDesktop: "%" } ) }>{ "%" }</Button>
+												</ButtonGroup>
+												<h2>{ __( "Padding" ) }</h2>
+												<RangeControl
+													label={ UAGB_Block_Icons.vertical_spacing }
+													className={ "uagb-margin-control" }
+													value={ vquestionPaddingDesktop }
+													onChange={ ( value ) => setAttributes( { vquestionPaddingDesktop: value } ) }
+													min={ 0 }
+													max={ 100 }
+													allowReset
+												/>
+												<RangeControl
+													label={ UAGB_Block_Icons.horizontal_spacing }
+													className={ "uagb-margin-control" }
+													value={ hquestionPaddingDesktop }
+													onChange={ ( value ) => setAttributes( { hquestionPaddingDesktop: value } ) }
+													min={ 0 }
+													max={ 100 }
+													allowReset
+												/>
+											</Fragment>
+										)
+									}
+
+									return <div>{ tabout }</div>
+								}
+							}
+						</TabPanel>
+						<hr className="uagb-editor__separator" />
+				</PanelBody>
+			)
+		}
+		const faqAnswerSettings = () => {
+
+			return (
+
+				<PanelBody
+					title={ __( "Answer" ) }
+					initialOpen={ true }
+					className="uagb__url-panel-body"
+				>
+					<TypographyControl
+						label={ __( "Typography" ) }
+						attributes = { attributes }
+						setAttributes = { setAttributes }
+						loadGoogleFonts = { { value: answerloadGoogleFonts, label: 'loadGoogleFonts'  } }
+						fontFamily = { { value: answerfontFamily, label: 'answerfontFamily'  } }
+						fontWeight = { { value: answerfontWeight, label: 'answerfontWeight'  } }
+						fontSubset = { { value: answerfontSubset, label: 'answerfontSubset'  } }
+						fontSizeType = { { value: answerfontSizeType, label: 'answerfontSizeType' } }
+						fontSize = { { value: answerfontSize, label: 'answerfontSize'  } }
+						fontSizeMobile = { { value: answerfontSizeMobile, label: 'answerfontSizeMobile'  } }
+						fontSizeTablet= { { value: answerfontSizeTablet, label: 'answerfontSizeTablet' } }
+						lineHeightType = { { value: answerlineHeightType, label: 'answerlineHeightType' } }
+						lineHeight = { { value: answerlineHeight, label: 'answerlineHeight'  } }
+						lineHeightMobile = { { value: answerlineHeightMobile, label: 'answerlineHeightMobile'  } }
+						lineHeightTablet= { { value: answerlineHeightTablet, label: 'answerlineHeightTablet'  } }
+					/>
+					<p className="uagb-setting-label">{ __( "Text Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: answerTextColor }} ></span></span></p>
 					<ColorPalette
 						value={ answerTextColor }
 						onChange={ ( value ) => setAttributes( { answerTextColor: value } ) }
@@ -626,197 +814,6 @@ class UAGBFaqEdit extends Component {
 						}
 					</TabPanel>
 					<hr className="uagb-editor__separator" />
-					{ 'accordion' === layout &&
-						<Fragment>
-							<h2>{  __( " Icon Styling" ) }</h2>
-						
-							<hr className="uagb-editor__separator" />
-							<TabPanel className="uagb-size-type-field-tabs uagb-size-type-field__common-tabs uagb-inline-margin" activeClass="active-tab"
-							tabs={ [
-								{
-									name: "desktop",
-									title: <Dashicon icon="desktop" />,
-									className: "uagb-desktop-tab uagb-responsive-tabs",
-								},
-								{
-									name: "tablet",
-									title: <Dashicon icon="tablet" />,
-									className: "uagb-tablet-tab uagb-responsive-tabs",
-								},
-								{
-									name: "mobile",
-									title: <Dashicon icon="smartphone" />,
-									className: "uagb-mobile-tab uagb-responsive-tabs",
-								},
-							] }>
-							{
-								( tab ) => {
-									let tabout
-
-									if ( "mobile" === tab.name ) {
-										tabout = (
-											<Fragment>
-												<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
-													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "px" } aria-pressed={ iconSizeType === "px" } onClick={ () => setAttributes( { iconSizeType: "px" } ) }>{ "px" }</Button>
-													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "%" } aria-pressed={ iconSizeType === "%" } onClick={ () => setAttributes( { iconSizeType: "%" } ) }>{ "%" }</Button>
-												</ButtonGroup>
-												<h2>{ __( "Icon Size" ) }</h2>
-												<RangeControl
-													value={ iconSizeMobile }
-													onChange={ ( value ) => setAttributes( { iconSizeMobile: value } ) }
-													min={ 0 }
-													max={ 100 }
-													allowReset
-												/>
-											</Fragment>
-										)
-									} else if ( "tablet" === tab.name ) {
-										tabout = (
-											<Fragment>
-												<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
-													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "px" } aria-pressed={ iconSizeType === "px" } onClick={ () => setAttributes( { iconSizeType: "px" } ) }>{ "px" }</Button>
-													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "%" } aria-pressed={ iconSizeType === "%" } onClick={ () => setAttributes( { iconSizeType: "%" } ) }>{ "%" }</Button>
-												</ButtonGroup>
-												<h2>{ __( "Icon Size" ) }</h2>
-												<RangeControl
-													value={ iconSizeTablet }
-													onChange={ ( value ) => setAttributes( { iconSizeTablet: value } ) }
-													min={ 0 }
-													max={ 100 }
-													allowReset
-												/>
-											</Fragment>
-										)
-									} else {
-										tabout = (
-											<Fragment>
-												<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
-													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "px" } aria-pressed={ iconSizeType === "px" } onClick={ () => setAttributes( { iconSizeType: "px" } ) }>{ "px" }</Button>
-													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ iconSizeType === "%" } aria-pressed={ iconSizeType === "%" } onClick={ () => setAttributes( { iconSizeType: "%" } ) }>{ "%" }</Button>
-												</ButtonGroup>
-												<h2>{ __( "Icon Size" ) }</h2>
-												<RangeControl
-													value={ iconSize }
-													onChange={ ( value ) => setAttributes( { iconSize: value } ) }
-													min={ 0 }
-													max={ 100 }
-													allowReset
-												/>
-											</Fragment>
-										)
-									}
-
-									return <div>{ tabout }</div>
-								}
-							}
-						</TabPanel>
-							<p className="uagb-setting-label">{ __( "Icon Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: iconColor }} ></span></span></p>
-							<ColorPalette
-								value={ iconColor }
-								onChange={ ( value ) => setAttributes( { iconColor: value } ) }
-								allowReset
-							/>
-							<p className="uagb-setting-label">{ __( "Icon Active/Hover Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: iconActiveColor }} ></span></span></p>
-							<ColorPalette
-								value={ iconActiveColor }
-								onChange={ ( value ) => setAttributes( { iconActiveColor: value } ) }
-								allowReset
-							/>
-							<RangeControl
-								label={ __( "Gap between Icon and Question" ) }
-								value={ gapBtwIconQUestion }
-								onChange={ ( value ) => setAttributes( { gapBtwIconQUestion: value } ) }
-								min={ 0 }
-								max={ 100 }
-							/>
-						</Fragment>
-					}
-				</PanelBody>
-			)
-		}
-		const faqTypographySettings = () => {
-
-			return (
-				<PanelBody
-					title={ __( "Typography" ) }
-					initialOpen={ true }
-					className="uagb__url-panel-body"
-				>
-					<hr className="uagb-editor__separator" />
-					<TypographyControl
-						label={ __( "Question Typography" ) }
-						attributes = { attributes }
-						setAttributes = { setAttributes }
-						loadGoogleFonts = { { value: questionloadGoogleFonts, label: 'loadGoogleFonts'  } }
-						fontFamily = { { value: questionfontFamily, label: 'questionfontFamily'  } }
-						fontWeight = { { value: questionfontWeight, label: 'questionfontWeight'  } }
-						fontSubset = { { value: questionfontSubset, label: 'questionfontSubset'  } }
-						fontSizeType = { { value: questionfontSizeType, label: 'questionfontSizeType' } }
-						fontSize = { { value: questionfontSize, label: 'questionfontSize'  } }
-						fontSizeMobile = { { value: questionfontSizeMobile, label: 'questionfontSizeMobile'  } }
-						fontSizeTablet= { { value: questionfontSizeTablet, label: 'questionfontSizeTablet' } }
-						lineHeightType = { { value: questionlineHeightType, label: 'questionlineHeightType' } }
-						lineHeight = { { value: questionlineHeight, label: 'questionlineHeight'  } }
-						lineHeightMobile = { { value: questionlineHeightMobile, label: 'questionlineHeightMobile'  } }
-						lineHeightTablet= { { value: questionlineHeightTablet, label: 'questionlineHeightTablet'  } }
-					/>
-					<TypographyControl
-						label={ __( "Answer Typography" ) }
-						attributes = { attributes }
-						setAttributes = { setAttributes }
-						loadGoogleFonts = { { value: answerloadGoogleFonts, label: 'loadGoogleFonts'  } }
-						fontFamily = { { value: answerfontFamily, label: 'answerfontFamily'  } }
-						fontWeight = { { value: answerfontWeight, label: 'answerfontWeight'  } }
-						fontSubset = { { value: answerfontSubset, label: 'answerfontSubset'  } }
-						fontSizeType = { { value: answerfontSizeType, label: 'answerfontSizeType' } }
-						fontSize = { { value: answerfontSize, label: 'answerfontSize'  } }
-						fontSizeMobile = { { value: answerfontSizeMobile, label: 'answerfontSizeMobile'  } }
-						fontSizeTablet= { { value: answerfontSizeTablet, label: 'answerfontSizeTablet' } }
-						lineHeightType = { { value: answerlineHeightType, label: 'answerlineHeightType' } }
-						lineHeight = { { value: answerlineHeight, label: 'answerlineHeight'  } }
-						lineHeightMobile = { { value: answerlineHeightMobile, label: 'answerlineHeightMobile'  } }
-						lineHeightTablet= { { value: answerlineHeightTablet, label: 'answerlineHeightTablet'  } }
-					/>
-				</PanelBody>
-			)
-		}
-		const faqIconSettings = () => {
-
-			return (
-				<PanelBody
-					title={ __( "Icon" ) }
-					initialOpen={ true }
-					className="uagb__url-panel-body"
-				>
-					<p className="components-base-control__label">{__( "Icon" )}</p>
-					<FontIconPicker
-						icons={svg_icons}
-						renderFunc= {renderSVG}
-						theme="default"
-						value={icon}
-						onChange={ (value) => this.onchangeIcon( value ) }
-						isMulti={false}
-						noSelectedPlaceholder= { __( "Select Icon" ) }
-					/>
-					<p className="components-base-control__label">{__( "Active Icon" )}</p>
-					<FontIconPicker
-						icons={svg_icons}
-						renderFunc= {renderSVG}
-						theme="default"
-						value={iconActive}
-						onChange={ (value) => this.onchangeActiveIcon( value ) }
-						isMulti={false}
-						noSelectedPlaceholder= { __( "Select Icon" ) }
-					/>
-					<SelectControl
-						label={ __( "Icon Alignment" ) }
-						value={ iconAlign }
-						options={ [
-							{ value: "left", label: __( "Left" ) },
-							{ value: "right", label: __( "Right" ) },
-						] }
-						onChange={ ( value ) => setAttributes( { iconAlign: value } ) }
-					/>
 				</PanelBody>
 			)
 		}
@@ -825,8 +822,8 @@ class UAGBFaqEdit extends Component {
 				<InspectorControls>
 					{ faqGeneralSettings() }
 					{ faqStylingSettings() }
-					{ faqTypographySettings() }
-					{ 'accordion' === layout && faqIconSettings() }
+					{ faqQuestionSettings() }
+					{ faqAnswerSettings() }
 				</InspectorControls>
 
 				<div className={ classnames(
