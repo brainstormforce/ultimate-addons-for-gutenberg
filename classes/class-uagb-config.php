@@ -2003,6 +2003,7 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 							'iconSizeType'               => 'px',
 							'columns'                    => 2,
 							'schema'                     => '',
+							'enableToggle'               => 'yes',
 						),
 					),
 					'uagb/faq-child'          => array(
