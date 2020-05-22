@@ -230,7 +230,7 @@ class UAGBFaqEdit extends Component {
 
 			return (
 				<PanelBody
-					title={ __( "General Settings" ) }
+					title={ __( "General" ) }
 					initialOpen={ true }
 					className="uagb__url-panel-body"
 				>
@@ -267,6 +267,7 @@ class UAGBFaqEdit extends Component {
 						checked={ enableSchemaSupport }
 						onChange={ ( value ) => setAttributes( { enableSchemaSupport: ! enableSchemaSupport } ) }
 					/>
+					<hr className="uagb-editor__separator" />
 					{ 'grid' === layout &&
 						<RangeControl
 							label={ __( "Columns" ) }
@@ -297,7 +298,7 @@ class UAGBFaqEdit extends Component {
 
 			return (
 				<PanelBody
-					title={ __( "Styling" ) }
+					title={ __( "Style" ) }
 					initialOpen={ false }
 					className="uagb__url-panel-body"
 				>
@@ -308,7 +309,7 @@ class UAGBFaqEdit extends Component {
 						allowReset
 					/>
 					<RangeControl
-						label={ __( "Rows Gap" ) }
+						label={ __( "Rows Gap (px)" ) }
 						value={ rowsGap }
 						onChange={ ( value ) => setAttributes( { rowsGap: value } ) }
 						min={ 0 }
@@ -316,7 +317,7 @@ class UAGBFaqEdit extends Component {
 					/>
 					{ 'grid' === layout &&
 						<RangeControl
-							label={ __( "Columns Gap" ) }
+							label={ __( "Columns Gap (px)" ) }
 							value={ columnsGap }
 							onChange={ ( value ) => setAttributes( { columnsGap: value } ) }
 							min={ 0 }
@@ -346,7 +347,7 @@ class UAGBFaqEdit extends Component {
 					/>
 					{ "none" !== borderStyle &&
 						<RangeControl
-							label={ __( "Thickness" ) }
+							label={ __( "Thickness (px)" ) }
 							value={ borderWidth }
 							onChange={ value => {
 								setAttributes( { borderWidth: value } )
@@ -357,7 +358,7 @@ class UAGBFaqEdit extends Component {
 					}
 					{ "none" !== borderStyle &&
 						<RangeControl
-							label={ __( "Rounded Corners" ) }
+							label={ __( "Rounded Corners (px)" ) }
 							value={ borderRadius }
 							onChange={ value => {
 								setAttributes( { borderRadius: value } )
@@ -456,6 +457,13 @@ class UAGBFaqEdit extends Component {
 								}
 							}
 						</TabPanel>
+							<RangeControl
+								label={ __( "Gap between Icon and Question" ) }
+								value={ gapBtwIconQUestion }
+								onChange={ ( value ) => setAttributes( { gapBtwIconQUestion: value } ) }
+								min={ 0 }
+								max={ 100 }
+							/>
 							<p className="uagb-setting-label">{ __( "Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: iconColor }} ></span></span></p>
 							<ColorPalette
 								value={ iconColor }
@@ -467,13 +475,6 @@ class UAGBFaqEdit extends Component {
 								value={ iconActiveColor }
 								onChange={ ( value ) => setAttributes( { iconActiveColor: value } ) }
 								allowReset
-							/>
-							<RangeControl
-								label={ __( "Gap between Icon and Question" ) }
-								value={ gapBtwIconQUestion }
-								onChange={ ( value ) => setAttributes( { gapBtwIconQUestion: value } ) }
-								min={ 0 }
-								max={ 100 }
 							/>
 						</Fragment>
 					}
@@ -665,7 +666,6 @@ class UAGBFaqEdit extends Component {
 								}
 							}
 						</TabPanel>
-						<hr className="uagb-editor__separator" />
 				</PanelBody>
 			)
 		}
@@ -813,7 +813,6 @@ class UAGBFaqEdit extends Component {
 							}
 						}
 					</TabPanel>
-					<hr className="uagb-editor__separator" />
 				</PanelBody>
 			)
 		}

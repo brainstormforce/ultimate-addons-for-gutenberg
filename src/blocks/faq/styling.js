@@ -75,14 +75,20 @@ function styling( props ) {
     var selectors = {}
     var tablet_selectors = {}
 	var mobile_selectors = {}
-    
+    var icon_color = iconColor;
+
+    if ( 'undefined' == typeof iconColor || '' == iconColor ) {
+        
+        icon_color = questionTextColor
+    }
+
     selectors = {
 
 		" .uagb-icon svg" : {
             "width" : generateCSSUnit( iconSize, iconSizeType ),
             "height" : generateCSSUnit( iconSize, iconSizeType ),
             "font-size" : generateCSSUnit( iconSize, iconSizeType ),
-            "fill" : iconColor
+            "fill" : icon_color
         },
         " .uagb-icon-active svg" : {
             "width" : generateCSSUnit( iconSize, iconSizeType ),
