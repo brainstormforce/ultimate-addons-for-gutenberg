@@ -9,6 +9,10 @@ const {
 	Fragment,
 } = wp.element
 
+const {
+	RichText
+} = wp.blockEditor
+
 export default function save( props ) {
 	
 	const { className } = props
@@ -41,15 +45,18 @@ export default function save( props ) {
 					<div className="uagb-faq-item">
 						<div className="uagb-faq-questions-button uagb-faq-questions">
 							{ 'accordion' === layout && faqRenderIcon() }
-							<span className="uagb-question">
-									{ question }
-							</span>
+							<RichText.Content
+								tagName='span'
+								value={ question }
+								className='uagb-question'
+							/>
 						</div>
 						<div className="uagb-faq-content">
 							<span>
-								<p>
-									{ answer }
-								</p>
+								<RichText.Content
+									tagName='p'
+									value={ answer }
+								/>
 							</span>
 						</div>
 					</div>

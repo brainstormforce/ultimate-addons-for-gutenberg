@@ -5,19 +5,19 @@ const attributes = {
 		type: "string"
 	},
 	question: {
-		type: "string",
+		type: "html",
 		default: __( "What is FAQ?" )
 	},
 	answer: {
-		type: "string",
+		type: "html",
 		default: __( "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." )
 	},
 	icon: {
-		type: "string",
+		type: "html",
 		default: "fas fa-plus"
 	},
 	iconActive: {
-		type: "string",
+		type: "html",
 		default: "fas fa-minus"
 	},
 	layout : {
