@@ -7,7 +7,6 @@ import UAGBIcon from "../../../dist/blocks/uagb-controls/UAGBIcon.json"
 import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
 import FontIconPicker from "@fonticonpicker/react-fonticonpicker"
 import times from "lodash/times"
-import map from "lodash/map"
 import styling from "./styling"
 import memoize from "memize"
 import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
@@ -121,7 +120,7 @@ class UAGBFaqEdit extends Component {
  
 	render() {
 
-		const { attributes, setAttributes, schemaJsonData } = this.props
+		const { attributes, setAttributes } = this.props
         const {
 			layout,
 			inactiveOtherItems,

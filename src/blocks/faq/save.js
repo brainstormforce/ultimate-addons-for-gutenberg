@@ -16,7 +16,6 @@ export default function save( props ) {
 		schema,
 		enableSchemaSupport,
 	} = props.attributes
-	console.log(schema);
 
 	const renderSchema = () => {
 

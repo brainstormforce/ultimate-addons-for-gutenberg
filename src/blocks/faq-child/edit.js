@@ -16,13 +16,6 @@ const {
 	InspectorControls,
 	RichText,
 } = wp.blockEditor
-
-const {
-	PanelBody,
-	TextControl,
-	TextareaControl
-} = wp.components
-
 class UAGBFaqChildEdit extends Component {
 
 	constructor() {
@@ -37,10 +30,6 @@ class UAGBFaqChildEdit extends Component {
 		// Assigning block_id in the attribute.
 		this.props.setAttributes( { block_id: this.props.clientId } )
 		// Pushing Style tag for this block css.
-		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-style-faq-child" + this.props.clientId )
-		document.head.appendChild( $style )
-
 	}
 	componentDidUpdate(prevProps, prevState) {
 
