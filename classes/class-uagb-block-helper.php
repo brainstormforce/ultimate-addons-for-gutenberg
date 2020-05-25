@@ -4951,11 +4951,11 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			$icon_color = $attr['iconColor'];
 
-			if ( ! isset( $attr['iconColor'] ) || '' == $attr['iconColor'] ) {
-        
+			if ( ! isset( $attr['iconColor'] ) || '' === $attr['iconColor'] ) {
+
 				$icon_color = $attr['questionTextColor'];
 			}
-		
+
 			$selectors = array(
 				' .uagb-icon svg'                      => array(
 					'width'     => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
