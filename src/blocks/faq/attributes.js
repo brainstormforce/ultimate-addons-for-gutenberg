@@ -196,12 +196,10 @@ const attributes = {
 		default : 10
 	},
 	iconColor: {
-		type: "string",
-		default: "#313131"
+		type: "string"
 	},
 	iconActiveColor: {
-		type: "string",
-		default: "#313131"
+		type: "string"
 	},
 	gapBtwIconQUestion: {
 		type: "number",

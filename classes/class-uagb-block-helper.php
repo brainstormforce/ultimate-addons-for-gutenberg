@@ -4949,12 +4949,19 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			$attr = array_merge( $defaults, $attr );
 
+			$icon_color = $attr['iconColor'];
+
+			if ( ! isset( $attr['iconColor'] ) || '' == $attr['iconColor'] ) {
+        
+				$icon_color = $attr['questionTextColor'];
+			}
+		
 			$selectors = array(
 				' .uagb-icon svg'                      => array(
 					'width'     => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
 					'height'    => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
 					'font-size' => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
-					'fill'      => $attr['iconColor'],
+					'fill'      => $icon_color,
 				),
 				' .uagb-icon-active svg'               => array(
 					'width'     => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
