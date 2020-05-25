@@ -27,6 +27,10 @@ class UAGBFaqChildEdit extends Component {
 
 	constructor() {
 		super( ...arguments )
+		this.state = {
+			isHovered: "false",
+			isFocused: "false",
+		}
 	}
 
 	componentDidMount() {
@@ -41,8 +45,17 @@ class UAGBFaqChildEdit extends Component {
 	}
 	componentDidUpdate(prevProps, prevState) {
 
+		if ( ! this.props.isSelected && prevProps.isSelected && this.state.isFocused ) {
+			this.setState( {
+				isFocused: "false",
+			} )
+		}
+		if ( this.props.isSelected && ! prevProps.isSelected ) {
 
-		console.log(this.props)
+			this.setState( {
+				isFocused: true,
+			} )
+		}
 	}
 	render() {
 
@@ -113,7 +126,8 @@ class UAGBFaqChildEdit extends Component {
 				</InspectorControls>
                 <div className={ classnames(
                         "uagb-faq-child__outer-wrap",
-                        `uagb-block-${ block_id }`
+                        `uagb-block-${ block_id }`,
+						( this.props.isSelected &&  ( false !== this.state.isFocused ) ) ? "uagb-faq__active" : ""
                     ) }
                 >
                     { faqRenderHtml() }
