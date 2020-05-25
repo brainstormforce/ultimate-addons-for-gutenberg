@@ -1922,7 +1922,6 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 						'js_assets'   => array( 'uagb-faq-js' ),
 						'attributes'  => array(
 							'block_id'                   => '',
-							'faq_count'                  => 2,
 							'faq'                        => '',
 							'layout'                     => 'accordion',
 							'inactiveOtherItems'         => true,

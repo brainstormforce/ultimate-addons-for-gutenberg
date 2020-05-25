@@ -113,7 +113,6 @@ class UAGBFaqEdit extends Component {
 		const { attributes, setAttributes, schemaJsonData } = this.props
         const {
             faq,
-			faq_count,
 			layout,
 			inactiveOtherItems,
 			expandFirstItem,
@@ -862,7 +861,7 @@ class UAGBFaqEdit extends Component {
 				data-faqtoggle = { this.props.attributes.enableToggle }
 				>
                     <InnerBlocks
-                        template={ getFaqChildTemplate( faq_count, faq ) }
+                        template={ getFaqChildTemplate( 2, faq ) }
                         templateLock={ false }
                         allowedBlocks={ ALLOWED_BLOCKS }
                         __experimentalMoverDirection={ 'vertical' }
