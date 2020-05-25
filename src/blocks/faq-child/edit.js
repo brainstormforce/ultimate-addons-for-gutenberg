@@ -28,7 +28,6 @@ class UAGBFaqChildEdit extends Component {
 	constructor() {
 		super( ...arguments )
 		this.state = {
-			isHovered: "false",
 			isFocused: "false",
 		}
 	}
