@@ -1734,6 +1734,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 			return $format;
 		}
+
 		/**
 		 * Disable canonical on Single Post.
 		 *
@@ -1757,6 +1758,83 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			}
 
 			return $redirect_url;
+		}
+
+		/**
+		 * Get Typography Dynamic CSS.
+		 *
+		 * @param  array  $attr The Attribute array.
+		 * @param  string $slug The field slug.
+		 * @param  string $selector The selector array.
+		 * @since  1.14.9
+		 * @return bool|string
+		 */
+		public static function get_typography_css( $attr, $slug, $selector, $combined_selectors ) {
+
+			$typo_css_desktop = array();
+			$typo_css_tablet  = array();
+			$typo_css_mobile  = array();
+
+			$already_selectors_desktop = ( isset( $combined_selectors['desktop'][ $selector ] ) ) ? $combined_selectors['desktop'][ $selector ] : array();
+			$already_selectors_tablet  = ( isset( $combined_selectors['tablet'][ $selector ] ) ) ? $combined_selectors['tablet'][ $selector ] : array();
+			$already_selectors_mobile  = ( isset( $combined_selectors['mobile'][ $selector ] ) ) ? $combined_selectors['mobile'][ $selector ] : array();
+
+			$typo_css_desktop[ $selector ]     = array_merge(
+				$typo_css_desktop[ $selector ] = array(
+					'font-family' => $attr[ $slug . 'FontFamily' ],
+					'font-weight' => $attr[ $slug . 'FontWeight' ],
+					'font-size'   => self::get_css_value( $attr[ $slug . 'FontSize' ], $attr[ $slug . 'FontSizeType' ] ),
+					'line-height' => self::get_css_value( $attr[ $slug . 'LineHeight' ], $attr[ $slug . 'LineHeightType' ] ),
+				),
+				$already_selectors_desktop
+			);
+
+			$typo_css_tablet[ $selector ]     = array_merge(
+				$typo_css_tablet[ $selector ] = array(
+					'font-size'   => self::get_css_value( $attr[ $slug . 'FontSizeTablet' ], $attr[ $slug . 'FontSizeType' ] ),
+					'line-height' => self::get_css_value( $attr[ $slug . 'LineHeightTablet' ], $attr[ $slug . 'LineHeightType' ] ),
+				),
+				$already_selectors_tablet
+			);
+
+			$typo_css_mobile[ $selector ]     = array_merge(
+				$typo_css_mobile[ $selector ] = array(
+					'font-size'   => self::get_css_value( $attr[ $slug . 'FontSizeMobile' ], $attr[ $slug . 'FontSizeType' ] ),
+					'line-height' => self::get_css_value( $attr[ $slug . 'LineHeightMobile' ], $attr[ $slug . 'LineHeightType' ] ),
+				),
+				$already_selectors_mobile
+			);
+
+			return array(
+				'desktop' => array_merge(
+					$combined_selectors['desktop'],
+					$typo_css_desktop
+				),
+				'tablet'  => array_merge(
+					$combined_selectors['tablet'],
+					$typo_css_tablet
+				),
+				'mobile'  => array_merge(
+					$combined_selectors['mobile'],
+					$typo_css_mobile
+				),
+			);
+		}
+
+		/**
+		 * Parse CSS into correct CSS syntax.
+		 *
+		 * @param array  $selectors The block selectors.
+		 * @param string $id The selector ID.
+		 * @since 0.0.1
+		 */
+		public static function generate_all_css( $combined_selectors, $id ) {
+
+			return array(
+				'desktop' => self::generate_css( $combined_selectors['desktop'], $id ),
+				'tablet'  => self::generate_css( $combined_selectors['tablet'], $id ),
+				'mobile'  => self::generate_css( $combined_selectors['mobile'], $id ),
+			);
 		}
 	}
 
