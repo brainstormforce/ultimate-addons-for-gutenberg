@@ -39,7 +39,11 @@ class UAGBFaqChildEdit extends Component {
 		document.head.appendChild( $style )
 
 	}
-	
+	componentDidUpdate(prevProps, prevState) {
+
+
+		console.log(this.props)
+	}
 	render() {
 
 		const { attributes, setAttributes } = this.props
