@@ -1,21 +1,6 @@
-const faq = []	
-
-for ( var i = 1; i <= 2; i++ ) {		
-	faq.push(	
-		{	
-			"question": 'What is FAQ?',	
-			"answer": 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',	
-		}	
-	)	
-}
-
 const attributes = {
 	block_id: {
 		type: "string"
-	},
-	faq: {	
-		type: "array",	
-		default : faq,	
 	},
 	layout: {
 		type: "string",

@@ -46,6 +46,8 @@ const {
 
 const ALLOWED_BLOCKS = [ "uagb/faq-child" ]
 
+const faq = []	
+
 let svg_icons = Object.keys( UAGBIcon )
 class UAGBFaqEdit extends Component {
 
@@ -66,6 +68,15 @@ class UAGBFaqEdit extends Component {
 		const $style = document.createElement( "style" )
 		$style.setAttribute( "id", "uagb-style-faq-" + this.props.clientId )
 		document.head.appendChild( $style )
+
+		for ( var i = 1; i <= 2; i++ ) {		
+			faq.push(	
+				{	
+					"question": 'What is FAQ?',	
+					"answer": 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',	
+				}	
+			)	
+		}
 	}
 
 	componentDidUpdate(prevProps, prevState) {
@@ -112,7 +123,6 @@ class UAGBFaqEdit extends Component {
 
 		const { attributes, setAttributes, schemaJsonData } = this.props
         const {
-            faq,
 			layout,
 			inactiveOtherItems,
 			expandFirstItem,
