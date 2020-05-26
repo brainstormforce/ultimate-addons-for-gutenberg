@@ -2,7 +2,11 @@
 <ruleset name="WordPress Coding Standards for Plugins">
 	<description>Generally-applicable sniffs for WordPress plugins</description>
 
-	<rule ref="PHPCompatibilityWP"/>
+	<!-- <rule ref="PHPCompatibilityWP"/> -->
+	<rule ref="PHPCompatibilityWP">
+	 	<exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
+	</rule>
+
 	<config name="testVersion" value="5.3-"/>
 
 	<rule ref="WordPress-Core" />
@@ -15,7 +19,6 @@
 
 	<!-- Show sniff codes in all reports -->
 	<arg value="s"/>
-
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 </ruleset>

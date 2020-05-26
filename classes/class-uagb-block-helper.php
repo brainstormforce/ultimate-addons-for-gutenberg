@@ -53,17 +53,17 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			$m_selectors = array();
 			$t_selectors = array();
 
-			if ( 'right' == $attr['align'] ) {
+			if ( 'right' === $attr['align'] ) {
 				$style['margin-right']  = UAGB_Helper::get_css_value( $attr['rightMargin'], $attr['desktopMarginType'] );
 				$style['margin-left']   = 'auto';
 				$style['margin-top']    = UAGB_Helper::get_css_value( $attr['topMargin'], $attr['desktopMarginType'] );
 				$style['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMargin'], $attr['desktopMarginType'] );
-			} elseif ( 'left' == $attr['align'] ) {
+			} elseif ( 'left' === $attr['align'] ) {
 				$style['margin-right']  = 'auto';
 				$style['margin-left']   = UAGB_Helper::get_css_value( $attr['leftMargin'], $attr['desktopMarginType'] );
 				$style['margin-top']    = UAGB_Helper::get_css_value( $attr['topMargin'], $attr['desktopMarginType'] );
 				$style['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMargin'], $attr['desktopMarginType'] );
-			} elseif ( 'center' == $attr['align'] ) {
+			} elseif ( 'center' === $attr['align'] ) {
 				$style['margin-right']  = 'auto';
 				$style['margin-left']   = 'auto';
 				$style['margin-top']    = UAGB_Helper::get_css_value( $attr['topMargin'], $attr['desktopMarginType'] );
@@ -73,7 +73,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				$style['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMargin'], $attr['desktopMarginType'] );
 			}
 
-			if ( 'none' != $attr['borderStyle'] ) {
+			if ( 'none' !== $attr['borderStyle'] ) {
 				$style['border-style'] = $attr['borderStyle'];
 				$style['border-width'] = UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' );
 				$style['border-color'] = $attr['borderColor'];
@@ -83,16 +83,11 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			$section_width = '100%';
 
-			if ( isset( $attr['contentWidth'] ) ) {
-
-				if ( 'boxed' == $attr['contentWidth'] ) {
-					if ( isset( $attr['width'] ) ) {
-						$section_width = UAGB_Helper::get_css_value( $attr['width'], 'px' );
-					}
-				}
+			if ( isset( $attr['contentWidth'] ) && ( 'boxed' === $attr['contentWidth'] && isset( $attr['width'] ) ) ) {
+				$section_width = UAGB_Helper::get_css_value( $attr['width'], 'px' );
 			}
 
-			if ( 'wide' != $attr['align'] && 'full' != $attr['align'] ) {
+			if ( 'wide' !== $attr['align'] && 'full' !== $attr['align'] ) {
 				$style['max-width'] = $section_width;
 			}
 
@@ -109,8 +104,8 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			$inner_width = '100%';
 
 			if ( isset( $attr['contentWidth'] ) ) {
-				if ( 'boxed' != $attr['contentWidth'] ) {
-					if ( isset( $attr['themeWidth'] ) && $attr['themeWidth'] == true ) {
+				if ( 'boxed' !== $attr['contentWidth'] ) {
+					if ( isset( $attr['themeWidth'] ) && $attr['themeWidth'] ) {
 						$inner_width = UAGB_Helper::get_css_value( $content_width, 'px' );
 					} else {
 						if ( isset( $attr['innerWidth'] ) ) {
@@ -123,7 +118,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			$selectors = array(
 				'.uagb-section__wrap'          => $style,
 				' > .uagb-section__video-wrap' => array(
-					'opacity' => ( isset( $attr['backgroundVideoOpacity'] ) && '' != $attr['backgroundVideoOpacity'] ) ? ( ( 100 - $attr['backgroundVideoOpacity'] ) / 100 ) : 0.5,
+					'opacity' => ( isset( $attr['backgroundVideoOpacity'] ) && '' !== $attr['backgroundVideoOpacity'] ) ? ( ( 100 - $attr['backgroundVideoOpacity'] ) / 100 ) : 0.5,
 				),
 				' > .uagb-section__inner-wrap' => array(
 					'max-width' => $inner_width,
@@ -133,20 +128,20 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 
-			if ( 'video' == $bg_type ) {
+			if ( 'video' === $bg_type ) {
 				$selectors[' > .uagb-section__overlay'] = array(
 					'opacity'          => 1,
 					'background-color' => $attr['backgroundVideoColor'],
 				);
-			} elseif ( 'image' == $bg_type ) {
-				if ( 'color' == $overlay_type ) {
+			} elseif ( 'image' === $bg_type ) {
+				if ( 'color' === $overlay_type ) {
 					$selectors[' > .uagb-section__overlay'] = array(
-						'opacity'          => ( isset( $attr['backgroundOpacity'] ) && '' != $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : 0,
+						'opacity'          => ( isset( $attr['backgroundOpacity'] ) && '' !== $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : 0,
 						'background-color' => $attr['backgroundImageColor'],
 					);
 				} else {
 					$selectors[' > .uagb-section__overlay']['background-color'] = 'transparent';
-					$selectors[' > .uagb-section__overlay']['opacity']          = ( isset( $attr['backgroundOpacity'] ) && '' != $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '';
+					$selectors[' > .uagb-section__overlay']['opacity']          = ( isset( $attr['backgroundOpacity'] ) && '' !== $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '';
 
 					if ( 'linear' === $attr['gradientOverlayType'] ) {
 
@@ -156,14 +151,14 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 						$selectors[' > .uagb-section__overlay']['background-image'] = 'radial-gradient( at ' . $gradientOverlayPosition . ', ' . $attr['gradientOverlayColor1'] . ' ' . $attr['gradientOverlayLocation1'] . '%, ' . $attr['gradientOverlayColor2'] . ' ' . $attr['gradientOverlayLocation2'] . '%)';
 					}
 				}
-			} elseif ( 'color' == $bg_type ) {
+			} elseif ( 'color' === $bg_type ) {
 				$selectors[' > .uagb-section__overlay'] = array(
-					'opacity'          => ( isset( $attr['backgroundOpacity'] ) && '' != $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '',
+					'opacity'          => ( isset( $attr['backgroundOpacity'] ) && '' !== $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '',
 					'background-color' => $attr['backgroundColor'],
 				);
 			} elseif ( 'gradient' === $bg_type ) {
 				$selectors[' > .uagb-section__overlay']['background-color'] = 'transparent';
-				$selectors[' > .uagb-section__overlay']['opacity']          = ( isset( $attr['backgroundOpacity'] ) && '' != $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '';
+				$selectors[' > .uagb-section__overlay']['opacity']          = ( isset( $attr['backgroundOpacity'] ) && '' !== $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '';
 
 				if ( 'linear' === $attr['gradientType'] ) {
 
@@ -193,7 +188,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 
-			if ( 'right' == $attr['align'] ) {
+			if ( 'right' === $attr['align'] ) {
 				$t_selectors['.uagb-section__wrap']['margin-right']  = UAGB_Helper::get_css_value( $attr['rightMarginTablet'], $attr['tabletMarginType'] );
 				$t_selectors['.uagb-section__wrap']['margin-top']    = UAGB_Helper::get_css_value( $attr['topMarginTablet'], $attr['tabletMarginType'] );
 				$t_selectors['.uagb-section__wrap']['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMarginTablet'], $attr['tabletMarginType'] );
@@ -201,7 +196,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				$m_selectors['.uagb-section__wrap']['margin-right']  = UAGB_Helper::get_css_value( $attr['rightMarginMobile'], $attr['mobileMarginType'] );
 				$m_selectors['.uagb-section__wrap']['margin-top']    = UAGB_Helper::get_css_value( $attr['topMarginMobile'], $attr['mobileMarginType'] );
 				$m_selectors['.uagb-section__wrap']['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMarginMobile'], $attr['mobileMarginType'] );
-			} elseif ( 'left' == $attr['align'] ) {
+			} elseif ( 'left' === $attr['align'] ) {
 				$t_selectors['.uagb-section__wrap']['margin-left']   = UAGB_Helper::get_css_value( $attr['leftMarginTablet'], $attr['tabletMarginType'] );
 				$t_selectors['.uagb-section__wrap']['margin-top']    = UAGB_Helper::get_css_value( $attr['topMarginTablet'], $attr['tabletMarginType'] );
 				$t_selectors['.uagb-section__wrap']['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMarginTablet'], $attr['tabletMarginType'] );
@@ -268,7 +263,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				'border-radius'  => UAGB_Helper::get_css_value( $attr['borderRadius'], $attr['desktopMarginType'] ),
 			);
 
-			if ( 'none' != $attr['borderStyle'] ) {
+			if ( 'none' !== $attr['borderStyle'] ) {
 				$style['border-style'] = $attr['borderStyle'];
 				$style['border-width'] = UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' );
 				$style['border-color'] = $attr['borderColor'];
@@ -289,9 +284,9 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			$inner_width = '100%';
 
 			if ( isset( $attr['contentWidth'] ) ) {
-				if ( 'theme' == $attr['contentWidth'] ) {
+				if ( 'theme' === $attr['contentWidth'] ) {
 					$inner_width = UAGB_Helper::get_css_value( $content_width, 'px' );
-				} elseif ( 'custom' == $attr['contentWidth'] ) {
+				} elseif ( 'custom' === $attr['contentWidth'] ) {
 					$inner_width = UAGB_Helper::get_css_value( $attr['width'], $attr['widthType'] );
 				}
 			}
@@ -299,7 +294,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			$selectors = array(
 				'.uagb-columns__wrap'              => $style,
 				' .uagb-columns__video-wrap'       => array(
-					'opacity' => ( isset( $attr['backgroundVideoOpacity'] ) && '' != $attr['backgroundVideoOpacity'] ) ? ( ( 100 - $attr['backgroundVideoOpacity'] ) / 100 ) : 0.5,
+					'opacity' => ( isset( $attr['backgroundVideoOpacity'] ) && '' !== $attr['backgroundVideoOpacity'] ) ? ( ( 100 - $attr['backgroundVideoOpacity'] ) / 100 ) : 0.5,
 				),
 				' > .uagb-columns__inner-wrap'     => array(
 					'max-width' => $inner_width,
@@ -311,13 +306,13 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'height' => UAGB_Helper::get_css_value( $attr['topHeight'], 'px' ),
 				),
 				' .uagb-columns__shape-top .uagb-columns__shape-fill' => array(
-					'fill' => UAGB_Helper::hex2rgba( $attr['topColor'], ( isset( $attr['topDividerOpacity'] ) && '' != $attr['topDividerOpacity'] ) ? $attr['topDividerOpacity'] : 100 ),
+					'fill' => UAGB_Helper::hex2rgba( $attr['topColor'], ( isset( $attr['topDividerOpacity'] ) && '' !== $attr['topDividerOpacity'] ) ? $attr['topDividerOpacity'] : 100 ),
 				),
 				' .uagb-columns__shape-bottom svg' => array(
 					'height' => UAGB_Helper::get_css_value( $attr['bottomHeight'], 'px' ),
 				),
 				' .uagb-columns__shape-bottom .uagb-columns__shape-fill' => array(
-					'fill' => UAGB_Helper::hex2rgba( $attr['bottomColor'], ( isset( $attr['bottomDividerOpacity'] ) && '' != $attr['bottomDividerOpacity'] ) ? $attr['bottomDividerOpacity'] : 100 ),
+					'fill' => UAGB_Helper::hex2rgba( $attr['bottomColor'], ( isset( $attr['bottomDividerOpacity'] ) && '' !== $attr['bottomDividerOpacity'] ) ? $attr['bottomDividerOpacity'] : 100 ),
 				),
 				'.wp-block-uagb-columns'           => array(
 					'box-shadow' => UAGB_Helper::get_css_value( $attr['boxShadowHOffset'], 'px' ) . ' ' . UAGB_Helper::get_css_value( $attr['boxShadowVOffset'], 'px' ) . ' ' . UAGB_Helper::get_css_value( $attr['boxShadowBlur'], 'px' ) . ' ' . UAGB_Helper::get_css_value( $attr['boxShadowSpread'], 'px' ) . ' ' . $attr['boxShadowColor'] . ' ' . $boxShadowPositionCSS,
@@ -332,24 +327,24 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				$selectors[' .uagb-columns__shape-bottom svg']['width'] = 'calc( ' . $attr['bottomWidth'] . '% + 1.3px )';
 			}
 
-			if ( 'video' == $bg_type ) {
+			if ( 'video' === $bg_type ) {
 				$selectors[' > .uagb-columns__overlay'] = array(
 					'opacity'          => 1,
 					'background-color' => $attr['backgroundVideoColor'],
 				);
-			} elseif ( 'image' == $bg_type ) {
+			} elseif ( 'image' === $bg_type ) {
 				$selectors[' > .uagb-columns__overlay'] = array(
-					'opacity'          => ( isset( $attr['backgroundOpacity'] ) && '' != $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : 0,
+					'opacity'          => ( isset( $attr['backgroundOpacity'] ) && '' !== $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : 0,
 					'background-color' => $attr['backgroundImageColor'],
 				);
-			} elseif ( 'color' == $bg_type ) {
+			} elseif ( 'color' === $bg_type ) {
 				$selectors[' > .uagb-columns__overlay'] = array(
-					'opacity'          => ( isset( $attr['backgroundOpacity'] ) && '' != $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '',
+					'opacity'          => ( isset( $attr['backgroundOpacity'] ) && '' !== $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '',
 					'background-color' => $attr['backgroundColor'],
 				);
 			} elseif ( 'gradient' === $bg_type ) {
 				$selectors[' > .uagb-columns__overlay']['background-color'] = 'transparent';
-				$selectors[' > .uagb-columns__overlay']['opacity']          = ( isset( $attr['backgroundOpacity'] ) && '' != $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '';
+				$selectors[' > .uagb-columns__overlay']['opacity']          = ( isset( $attr['backgroundOpacity'] ) && '' !== $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '';
 
 				if ( 'linear' === $attr['gradientType'] ) {
 
@@ -447,7 +442,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			$m_selectors = array();
 			$t_selectors = array();
 
-			if ( 'none' != $attr['borderStyle'] ) {
+			if ( 'none' !== $attr['borderStyle'] ) {
 				$style['border-style'] = $attr['borderStyle'];
 				$style['border-width'] = UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' );
 				$style['border-color'] = $attr['borderColor'];
@@ -469,15 +464,15 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				'.uagb-column__wrap' => $style,
 			);
 
-			if ( 'image' == $bg_type ) {
-				if ( 'color' == $overlay_type ) {
+			if ( 'image' === $bg_type ) {
+				if ( 'color' === $overlay_type ) {
 					$selectors[' > .uagb-column__overlay'] = array(
-						'opacity'          => ( isset( $attr['backgroundOpacity'] ) && '' != $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : 0,
+						'opacity'          => ( isset( $attr['backgroundOpacity'] ) && '' !== $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : 0,
 						'background-color' => $attr['backgroundImageColor'],
 					);
 				} else {
 					$selectors[' > .uagb-column__overlay']['background-color'] = 'transparent';
-					$selectors[' > .uagb-column__overlay']['opacity']          = ( isset( $attr['backgroundOpacity'] ) && '' != $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '';
+					$selectors[' > .uagb-column__overlay']['opacity']          = ( isset( $attr['backgroundOpacity'] ) && '' !== $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '';
 
 					if ( 'linear' === $attr['gradientOverlayType'] ) {
 
@@ -487,14 +482,14 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 						$selectors[' > .uagb-column__overlay']['background-image'] = 'radial-gradient( at center center, ' . $attr['gradientOverlayColor1'] . ' ' . $attr['gradientOverlayLocation1'] . '%, ' . $attr['gradientOverlayColor2'] . ' ' . $attr['gradientOverlayLocation2'] . '%)';
 					}
 				}
-			} elseif ( 'color' == $bg_type ) {
+			} elseif ( 'color' === $bg_type ) {
 				$selectors[' > .uagb-column__overlay'] = array(
-					'opacity'          => ( isset( $attr['backgroundOpacity'] ) && '' != $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '',
+					'opacity'          => ( isset( $attr['backgroundOpacity'] ) && '' !== $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '',
 					'background-color' => $attr['backgroundColor'],
 				);
 			} elseif ( 'gradient' === $bg_type ) {
 				$selectors[' > .uagb-column__overlay']['background-color'] = 'transparent';
-				$selectors[' > .uagb-column__overlay']['opacity']          = ( isset( $attr['backgroundOpacity'] ) && '' != $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '';
+				$selectors[' > .uagb-column__overlay']['opacity']          = ( isset( $attr['backgroundOpacity'] ) && '' !== $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '';
 
 				if ( 'linear' === $attr['gradientType'] ) {
 
@@ -505,7 +500,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				}
 			}
 
-			if ( '' != $attr['colWidth'] && 0 != $attr['colWidth'] ) {
+			if ( '' !== $attr['colWidth'] && 0 !== $attr['colWidth'] ) {
 
 				$selectors['.uagb-column__wrap']['width'] = UAGB_Helper::get_css_value( $attr['colWidth'], '%' );
 			}
@@ -536,12 +531,12 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 
-			if ( '' != $attr['colWidthTablet'] && 0 != $attr['colWidthTablet'] ) {
+			if ( '' !== $attr['colWidthTablet'] && 0 !== $attr['colWidthTablet'] ) {
 
 				$t_selectors['.uagb-column__wrap']['width'] = UAGB_Helper::get_css_value( $attr['colWidthTablet'], '%' );
 			}
 
-			if ( '' != $attr['colWidthMobile'] && 0 != $attr['colWidthMobile'] ) {
+			if ( '' !== $attr['colWidthMobile'] && 0 !== $attr['colWidthMobile'] ) {
 
 				$m_selectors['.uagb-column__wrap']['width'] = UAGB_Helper::get_css_value( $attr['colWidthMobile'], '%' );
 			}
@@ -647,7 +642,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 
-			if ( 'desktop' == $attr['stack'] ) {
+			if ( 'desktop' === $attr['stack'] ) {
 
 				$selectors[' .uagb-button__wrapper'] = array(
 					'margin-left'   => 0,
@@ -664,7 +659,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 						'flex-direction' => 'column',
 					);
 				}
-			} elseif ( 'tablet' == $attr['stack'] ) {
+			} elseif ( 'tablet' === $attr['stack'] ) {
 
 				$t_selectors[' .uagb-button__wrapper'] = array(
 					'margin-left'   => 0,
@@ -681,7 +676,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 						'flex-direction' => 'column',
 					);
 				}
-			} elseif ( 'mobile' == $attr['stack'] ) {
+			} elseif ( 'mobile' === $attr['stack'] ) {
 
 				$m_selectors[' .uagb-button__wrapper'] = array(
 					'margin-left'   => 0,
@@ -699,7 +694,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					);
 				}
 			}
-			$alignment = ( $attr['align'] == 'left' ) ? 'flex-start' : ( ( $attr['align'] == 'right' ) ? 'flex-end' : 'center' );
+			$alignment = ( 'left' === $attr['align'] ) ? 'flex-start' : ( ( 'right' === $attr['align'] ) ? 'flex-end' : 'center' );
 
 			if ( 'full' === $attr['align'] ) {
 				$selectors[' .uagb-buttons__wrap']          = array(
@@ -727,13 +722,13 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'-ms-flex-align'    => $alignment,
 					'align-items'       => $alignment,
 				);
-				if ( $attr['align'] === 'left' ) {
+				if ( 'left' === $attr['align'] ) {
 					$selectors[' .uagb-buttons__outer-wrap:first-child .uagb-button__wrapper'] = array(
 						'margin-left' => 0,
 					);
 				}
 
-				if ( $attr['align'] === 'right' ) {
+				if ( 'right' === $attr['align'] ) {
 					$selectors[' .uagb-buttons__outer-wrap:last-child .uagb-button__wrapper'] = array(
 						'margin-right' => 0,
 					);
@@ -888,7 +883,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 		 * @return array The Widget List.
 		 */
 		public static function get_info_box_css( $attr, $id ) {
-			 .
+
 			$defaults = UAGB_Helper::$block_list['uagb/info-box']['attributes'];
 
 			$attr = array_merge( $defaults, (array) $attr );
@@ -1064,8 +1059,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 
-			.
-
 			$combined_selectors = array(
 				'desktop' => $selectors,
 				'tablet'  => $t_selectors,
@@ -1092,7 +1085,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 		 * @return array The Widget List.
 		 */
 		public static function get_call_to_action_css( $attr, $id ) {
-			.
+
 			$defaults = UAGB_Helper::$block_list['uagb/call-to-action']['attributes'];
 
 			$attr = array_merge( $defaults, (array) $attr );
@@ -1175,7 +1168,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				);
 			}
 
-			if ( $attr['ctaPosition'] === 'right' && ( $attr['ctaType'] === 'text' || $attr['ctaType'] === 'button' ) ) {
+			if ( 'right' === $attr['ctaPosition'] && ( 'text' === $attr['ctaType'] || 'button' === $attr['ctaType'] ) ) {
 				$selectors[' .uagb-cta__content-right .uagb-cta__left-right-wrap .uagb-cta__content'] = array(
 					'width' => UAGB_Helper::get_css_value( $attr['contentWidth'], '%' ),
 				);
@@ -1203,8 +1196,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 
-			.
-
 			$combined_selectors = array(
 				'desktop' => $selectors,
 				'tablet'  => $t_selectors,
@@ -1231,7 +1222,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 		 * @return array The Widget List.
 		 */
 		public static function get_testimonial_css( $attr, $id ) {
-			.
 
 			$defaults = UAGB_Helper::$block_list['uagb/testimonial']['attributes'];
 
@@ -1291,7 +1281,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 				' .uagb-testimonial__wrap.uagb-tm__bg-type-image .uagb-tm__overlay' => array(
 					'background-color' => $attr['backgroundImageColor'],
-					'opacity'          => ( isset( $attr['backgroundOpacity'] ) && '' != $attr['backgroundOpacity'] ) ? ( ( 100 - $attr['backgroundOpacity'] ) / 100 ) : '0.5',
+					'opacity'          => ( isset( $attr['backgroundOpacity'] ) && '' !== $attr['backgroundOpacity'] ) ? ( ( 100 - $attr['backgroundOpacity'] ) / 100 ) : '0.5',
 				),
 				' .uagb-testimonial__wrap .uagb-tm__content' => array(
 					'border-color'  => $attr['borderColor'],
@@ -1327,8 +1317,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'text-align' => 'center',
 				),
 			);
-
-			.
 
 			$combined_selectors = array(
 				'desktop' => $selectors,
@@ -1424,13 +1412,13 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 
-			if ( 'above' == $attr['imgPosition'] ) {
-				if ( 'center' == $attr['align'] ) {
+			if ( 'above' === $attr['imgPosition'] ) {
+				if ( 'center' === $attr['align'] ) {
 					$selectors[' .uagb-team__image-wrap']['margin-left']  = 'auto';
 					$selectors[' .uagb-team__image-wrap']['margin-right'] = 'auto';
-				} elseif ( 'left' == $attr['align'] ) {
+				} elseif ( 'left' === $attr['align'] ) {
 					$selectors[' .uagb-team__image-wrap']['margin-right'] = 'auto';
-				} elseif ( 'right' == $attr['align'] ) {
+				} elseif ( 'right' === $attr['align'] ) {
 					$selectors[' .uagb-team__image-wrap']['margin-left'] = 'auto';
 				}
 			}
@@ -1499,7 +1487,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			$attr = array_merge( $defaults, (array) $attr );
 
-			$alignment = ( $attr['align'] == 'left' ) ? 'flex-start' : ( ( $attr['align'] == 'right' ) ? 'flex-end' : 'center' );
+			$alignment = ( 'left' === $attr['align'] ) ? 'flex-start' : ( ( 'right' === $attr['align'] ) ? 'flex-end' : 'center' );
 
 			$m_selectors = array();
 			$t_selectors = array();
@@ -1629,9 +1617,9 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				}
 			}
 
-			if ( 'horizontal' == $attr['social_layout'] ) {
+			if ( 'horizontal' === $attr['social_layout'] ) {
 
-				if ( 'desktop' == $attr['stack'] ) {
+				if ( 'desktop' === $attr['stack'] ) {
 
 					$selectors[' .uagb-ss__wrapper'] = array(
 						'margin-left'   => 0,
@@ -1650,7 +1638,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 						'align-items'       => $alignment,
 					);
 
-				} elseif ( 'tablet' == $attr['stack'] ) {
+				} elseif ( 'tablet' === $attr['stack'] ) {
 
 					$t_selectors[' .uagb-ss__wrapper'] = array(
 						'margin-left'   => 0,
@@ -1669,7 +1657,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 						'align-items'       => $alignment,
 					);
 
-				} elseif ( 'mobile' == $attr['stack'] ) {
+				} elseif ( 'mobile' === $attr['stack'] ) {
 
 					$m_selectors[' .uagb-ss__wrapper'] = array(
 						'margin-left'   => 0,
@@ -1788,7 +1776,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			$attr = array_merge( $defaults, (array) $attr );
 
-			$alignment = ( $attr['align'] == 'left' ) ? 'flex-start' : ( ( $attr['align'] == 'right' ) ? 'flex-end' : 'center' );
+			$alignment = ( 'left' === $attr['align'] ) ? 'flex-start' : ( ( 'right' === $attr['align'] ) ? 'flex-end' : 'center' );
 
 			$m_selectors = array();
 			$t_selectors = array();
@@ -1863,7 +1851,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				);
 			}
 
-			if ( 'right' == $attr['align'] ) {
+			if ( 'right' === $attr['align'] ) {
 				$selectors[':not(.uagb-icon-list__no-label) .uagb-icon-list__source-wrap'] = array(
 					'margin-left' => UAGB_Helper::get_css_value( $attr['inner_gap'], 'px' ),
 				);
@@ -1938,9 +1926,9 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				'line-height' => UAGB_Helper::get_css_value( $attr['lineHeightTablet'], $attr['lineHeightType'] ),
 			);
 
-			if ( 'horizontal' == $attr['icon_layout'] ) {
+			if ( 'horizontal' === $attr['icon_layout'] ) {
 
-				if ( 'tablet' == $attr['stack'] ) {
+				if ( 'tablet' === $attr['stack'] ) {
 
 					$t_selectors[' .uagb-icon-list__wrap .uagb-icon-list__wrapper'] = array(
 						'margin-left'   => 0,
@@ -1956,7 +1944,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 						'margin-bottom' => 0,
 					);
 
-				} elseif ( 'mobile' == $attr['stack'] ) {
+				} elseif ( 'mobile' === $attr['stack'] ) {
 
 					$m_selectors[' .uagb-icon-list__wrap .uagb-icon-list__wrapper'] = array(
 						'margin-left'   => 0,
@@ -2342,7 +2330,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 
-			if ( $attr['seperatorStyle'] != 'none' ) {
+			if ( 'none' !== $attr['seperatorStyle'] ) {
 				$selectors[' .uagb-rest_menu__wrap .uagb-rm__separator'] = array(
 					'border-top-color' => $attr['seperatorColor'],
 					'border-top-style' => $attr['seperatorStyle'],
@@ -2409,7 +2397,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			$selectors = self::get_post_selectors( $attr );
 
-			// Pagination CSS
+			// Pagination CSS.
 			$selectors[' .uagb-post-pagination-wrap'] = array(
 
 				'margin-top' => UAGB_Helper::get_css_value( $attr['paginationSpacing'], 'px' ),
@@ -2526,7 +2514,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				'color' => $attr['arrowColor'],
 			);
 
-			if ( isset( $attr['arrowDots'] ) && 'dots' == $attr['arrowDots'] ) {
+			if ( isset( $attr['arrowDots'] ) && 'dots' === $attr['arrowDots'] ) {
 
 				$selectors['.uagb-slick-carousel'] = array(
 					'padding' => '0 0 35px 0',
@@ -2707,7 +2695,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			$author_space = $attr['authorSpace'];
 
-			if ( 'center' !== $attr['align'] || $attr['skinStyle'] == 'border' ) {
+			if ( 'center' !== $attr['align'] || 'border' === $attr['skinStyle'] ) {
 				$author_space = 0;
 			}
 
@@ -4085,7 +4073,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			return $generated_css;
 		}
 
-		/*
+		/**
 		 * Get Marketing Button Block CSS
 		 *
 		 * @since 1.11.0
@@ -4102,8 +4090,8 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			$m_selectors = array();
 			$t_selectors = array();
 
-			$icon_color       = ( '' == $attr['iconColor'] ) ? $attr['titleColor'] : $attr['iconColor'];
-			$icon_hover_color = ( '' == $attr['iconHoverColor'] ) ? $attr['titleHoverColor'] : $attr['iconHoverColor'];
+			$icon_color       = ( '' === $attr['iconColor'] ) ? $attr['titleColor'] : $attr['iconColor'];
+			$icon_hover_color = ( '' === $attr['iconHoverColor'] ) ? $attr['titleHoverColor'] : $attr['iconHoverColor'];
 
 			$selectors = array(
 				' .uagb-marketing-btn__title-wrap'    => array(
@@ -4154,18 +4142,18 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 
-			if ( 'transparent' == $attr['backgroundType'] ) {
+			if ( 'transparent' === $attr['backgroundType'] ) {
 
 				$selectors[' .uagb-marketing-btn__link']['background'] = 'transparent';
 
-			} elseif ( 'color' == $attr['backgroundType'] ) {
+			} elseif ( 'color' === $attr['backgroundType'] ) {
 
 				$selectors[' .uagb-marketing-btn__link']['background'] = UAGB_Helper::hex2rgba( $attr['backgroundColor'], $attr['backgroundOpacity'] );
 
-				// Hover Background
+				// Hover Background.
 				$selectors[' .uagb-marketing-btn__link:hover']['background'] = UAGB_Helper::hex2rgba( $attr['backgroundHoverColor'], $attr['backgroundHoverOpacity'] );
 
-			} elseif ( 'gradient' == $attr['backgroundType'] ) {
+			} elseif ( 'gradient' === $attr['backgroundType'] ) {
 
 				$selectors[' .uagb-marketing-btn__link']['background-color'] = 'transparent';
 
@@ -4178,7 +4166,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				}
 			}
 
-			$margin_type = ( 'after' == $attr['iconPosition'] ) ? 'margin-left' : 'margin-right';
+			$margin_type = ( 'after' === $attr['iconPosition'] ) ? 'margin-left' : 'margin-right';
 
 			$selectors[' .uagb-marketing-btn__icon-wrap'][ $margin_type ] = UAGB_Helper::get_css_value( $attr['iconSpace'], 'px' );
 
@@ -4315,7 +4303,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 
-			if ( '' != $attr['contentPaddingDesktop'] ) {
+			if ( '' !== $attr['contentPaddingDesktop'] ) {
 				$selectors[' .uagb-toc__list-wrap ul.uagb-toc__list > li']['padding-top']    = 'calc( ' . UAGB_Helper::get_css_value( $attr['contentPaddingDesktop'] . $attr['contentPaddingTypeDesktop'] ) . ' / 2 )';
 				$selectors[' .uagb-toc__list-wrap ul.uagb-toc__list > li']['padding-bottom'] = 'calc( ' . UAGB_Helper::get_css_value( $attr['contentPaddingDesktop'] . $attr['contentPaddingTypeDesktop'] ) . ' / 2 )';
 			}
@@ -4390,14 +4378,14 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 
-			if ( '' != $attr['contentPaddingTablet'] ) {
+			if ( '' !== $attr['contentPaddingTablet'] ) {
 				$t_selectors[' .uagb-toc__list-wrap ul.uagb-toc__list > li'] = array(
 					'padding-top'    => 'calc( ' . UAGB_Helper::get_css_value( $attr['contentPaddingTablet'] . $attr['contentPaddingTypeTablet'] ) . ' / 2 )',
 					'padding-bottom' => 'calc( ' . UAGB_Helper::get_css_value( $attr['contentPaddingTablet'] . $attr['contentPaddingTypeTablet'] ) . ' / 2 )',
 				);
 			}
 
-			if ( '' != $attr['contentPaddingMobile'] ) {
+			if ( '' !== $attr['contentPaddingMobile'] ) {
 				$m_selectors[' .uagb-toc__list-wrap ul.uagb-toc__list > li'] = array(
 					'padding-top'    => 'calc( ' . UAGB_Helper::get_css_value( $attr['contentPaddingMobile'] . $attr['contentPaddingTypeMobile'] ) . ' / 2 )',
 					'padding-bottom' => 'calc( ' . UAGB_Helper::get_css_value( $attr['contentPaddingMobile'] . $attr['contentPaddingTypeMobile'] ) . ' / 2 )',
@@ -4427,609 +4415,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			);
 
 			return $generated_css;
-		}
-
-
-		/**
-		 * Get Testimonial Js
-		 *
-		 * @since 1.6.0
-		 * @param array  $attr The block attributes.
-		 * @param string $id The selector ID.
-		 */
-		public static function get_testimonial_js( $attr, $id ) {
-			.
-
-			$defaults = UAGB_Helper::$block_list['uagb/testimonial']['attributes'];
-
-			$attr = array_merge( $defaults, (array) $attr );
-
-			$dots   = ( 'dots' == $attr['arrowDots'] || 'arrowDots' == $attr['arrowDots'] ) ? true : false;
-			$arrows = ( 'arrows' == $attr['arrowDots'] || 'arrowDots' == $attr['arrowDots'] ) ? true : false;
-
-			$slick_options = apply_filters(
-				'uagb_testimonials_slick_options',
-				array(
-					'slidesToShow'   => $attr['columns'],
-					'slidesToScroll' => 1,
-					'autoplaySpeed'  => $attr['autoplaySpeed'],
-					'autoplay'       => $attr['autoplay'],
-					'infinite'       => $attr['infiniteLoop'],
-					'pauseOnHover'   => $attr['pauseOnHover'],
-					'speed'          => $attr['transitionSpeed'],
-					'arrows'         => $arrows,
-					'dots'           => $dots,
-					'rtl'            => false,
-					'prevArrow'      => '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button" style="border-color: ' . $attr['arrowColor'] . ';border-radius:' . $attr['arrowBorderRadius'] . 'px;border-width:' . $attr['arrowBorderSize'] . 'px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" height ="' . $attr['arrowSize'] . '" width = "' . $attr['arrowSize'] . '" fill ="' . $attr['arrowColor'] . '"  ><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg></button>',
-					'nextArrow'      => '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button" style="border-color: ' . $attr['arrowColor'] . ';border-radius:' . $attr['arrowBorderRadius'] . 'px;border-width:' . $attr['arrowBorderSize'] . 'px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" height ="' . $attr['arrowSize'] . '" width = "' . $attr['arrowSize'] . '" fill ="' . $attr['arrowColor'] . '" ><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></button>',
-					'responsive'     => array(
-						array(
-							'breakpoint' => 1024,
-							'settings'   => array(
-								'slidesToShow'   => $attr['tcolumns'],
-								'slidesToScroll' => 1,
-							),
-						),
-						array(
-							'breakpoint' => 767,
-							'settings'   => array(
-								'slidesToShow'   => $attr['mcolumns'],
-								'slidesToScroll' => 1,
-							),
-						),
-					),
-				),
-				$id
-			);
-
-			$settings      = json_encode( $slick_options );
-			$base_selector = ( isset( $attr['classMigrate'] ) && $attr['classMigrate'] ) ? '.uagb-block-' : '#uagb-testimonial-';
-			$selector      = $base_selector . $id;
-			$js            = '$( document ).ready( function() { if( $( "' . $selector . '" ).length > 0 ){ $( "' . $selector . '" ).find( ".is-carousel" ).slick( ' . $settings . ' ); } } );';
-
-			return $js;
-			.
-		}
-
-		/**
-		 * Get Blockquote Js
-		 *
-		 * @since 1.8.2
-		 * @param array  $attr The block attributes.
-		 * @param string $id The selector ID.
-		 */
-		public static function get_blockquote_js( $attr, $id ) {
-			.
-
-			$defaults = UAGB_Helper::$block_list['uagb/blockquote']['attributes'];
-
-			$attr = array_merge( $defaults, (array) $attr );
-
-			$target = $attr['iconTargetUrl'];
-
-			$url = ' ';
-
-			if ( $target == 'current' ) {
-				global $wp;
-				$url = home_url( add_query_arg( array(), $wp->request ) );
-			} else {
-				$url = $attr['customUrl'];
-			}
-
-			$via = isset( $attr['iconShareVia'] ) ? $attr['iconShareVia'] : '';
-
-			$base_selector = ( isset( $attr['classMigrate'] ) && $attr['classMigrate'] ) ? '.uagb-block-' : '#uagb-blockquote-';
-			$selector      = $base_selector . $id;
-
-			$js = 'jQuery( "' . $selector . '" ).find( ".uagb-blockquote__tweet-button" ).click(function(){' .
-				  'var content = jQuery("' . $selector . '").find(".uagb-blockquote__content").text();' .
-				  'var request_url = "https://twitter.com/share?url="+ encodeURIComponent("' . $url . '")+"&text="+content+"&via="+("' . $via . '");' .
-				  'window.open( request_url );' .
-				'});';
-
-			return $js;
-			.
-		}
-
-		/**
-		 * Get Social Share JS
-		 *
-		 * @since 1.8.1
-		 * @param string $attr The block attributes.
-		 * @param string $id The selector ID.
-		 */
-		public static function get_social_share_js( $attr, $id ) {
-
-			$base_selector = ( isset( $attr['classMigrate'] ) && $attr['classMigrate'] ) ? '.uagb-block-' : '#uagb-social-share-';
-			$selector      = $base_selector . $id;
-			$js            = 'var ssLinks = document.querySelectorAll( "' . $selector . '" ); for (let j = 0; j < ssLinks.length; j++) { var ssLink = ssLinks[j].querySelectorAll( ".uagb-ss__link" );';
-			$js           .= 'for (let i = 0; i < ssLink.length; i++) { ssLink[i].addEventListener( "click", function() {' .
-					'var social_url = this.dataset.href;' .
-					'var target = ""; ' .
-					'if( social_url == "mailto:?body=" ){ ' .
-						'target = "_self";' .
-					'}' .
-					'var request_url = social_url + window.location.href ;' .
-					'window.open( request_url,target );' .
-				'}); }}';
-			return $js;
-		}
-
-		/**
-		 * Get Table of Contents Js
-		 *
-		 * @since 1.13.0
-		 * @param array  $attr The block attributes.
-		 * @param string $id The selector ID.
-		 */
-		public static function get_table_of_contents_js( $attr, $id ) {
-			.
-
-			$defaults = UAGB_Helper::$block_list['uagb/table-of-contents']['attributes'];
-
-			$attr          = array_merge( $defaults, (array) $attr );
-			$base_selector = ( isset( $attr['classMigrate'] ) && $attr['classMigrate'] ) ? '.uagb-block-' : '#uagb-toc-';
-			$selector      = $base_selector . $id;
-
-			$js = 'jQuery( document ).ready(function() { ' .
-					 'UAGBTableOfContents._run( ' . json_encode( $attr ) . ', "' . $selector . '" ); ' .
-				'});';
-
-			return $js;
-			.
-		}
-
-		/**
-		 * Adds Google fonts for Advanced Heading block.
-		 *
-		 * @since 1.9.1
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_advanced_heading_gfont( $attr ) {
-
-			$head_load_google_font = isset( $attr['headLoadGoogleFonts'] ) ? $attr['headLoadGoogleFonts'] : '';
-			$head_font_family      = isset( $attr['headFontFamily'] ) ? $attr['headFontFamily'] : '';
-			$head_font_weight      = isset( $attr['headFontWeight'] ) ? $attr['headFontWeight'] : '';
-			$head_font_subset      = isset( $attr['headFontSubset'] ) ? $attr['headFontSubset'] : '';
-
-			$subhead_load_google_font = isset( $attr['subHeadLoadGoogleFonts'] ) ? $attr['subHeadLoadGoogleFonts'] : '';
-			$subhead_font_family      = isset( $attr['subHeadFontFamily'] ) ? $attr['subHeadFontFamily'] : '';
-			$subhead_font_weight      = isset( $attr['subHeadFontWeight'] ) ? $attr['subHeadFontWeight'] : '';
-			$subhead_font_subset      = isset( $attr['subHeadFontSubset'] ) ? $attr['subHeadFontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $head_load_google_font, $head_font_family, $head_font_weight, $head_font_subset );
-			UAGB_Helper::blocks_google_font( $subhead_load_google_font, $subhead_font_family, $subhead_font_weight, $subhead_font_subset );
-		}
-
-
-		/**
-		 * Adds Google fonts for CF7 Styler block.
-		 *
-		 * @since 1.10.0
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_cf7_styler_gfont( $attr ) {
-
-			$label_load_google_font = isset( $attr['labelLoadGoogleFonts'] ) ? $attr['labelLoadGoogleFonts'] : '';
-			$label_font_family      = isset( $attr['labelFontFamily'] ) ? $attr['labelFontFamily'] : '';
-			$label_font_weight      = isset( $attr['labelFontWeight'] ) ? $attr['labelFontWeight'] : '';
-			$label_font_subset      = isset( $attr['labelFontSubset'] ) ? $attr['labelFontSubset'] : '';
-
-			$input_load_google_font = isset( $attr['inputLoadGoogleFonts'] ) ? $attr['inputLoadGoogleFonts'] : '';
-			$input_font_family      = isset( $attr['inputFontFamily'] ) ? $attr['inputFontFamily'] : '';
-			$input_font_weight      = isset( $attr['inputFontWeight'] ) ? $attr['inputFontWeight'] : '';
-			$input_font_subset      = isset( $attr['inputFontSubset'] ) ? $attr['inputFontSubset'] : '';
-
-			$radio_check_load_google_font = isset( $attr['radioCheckLoadGoogleFonts'] ) ? $attr['radioCheckLoadGoogleFonts'] : '';
-			$radio_check_font_family      = isset( $attr['radioCheckFontFamily'] ) ? $attr['radioCheckFontFamily'] : '';
-			$radio_check_font_weight      = isset( $attr['radioCheckFontWeight'] ) ? $attr['radioCheckFontWeight'] : '';
-			$radio_check_font_subset      = isset( $attr['radioCheckFontSubset'] ) ? $attr['radioCheckFontSubset'] : '';
-
-			$button_load_google_font = isset( $attr['buttonLoadGoogleFonts'] ) ? $attr['buttonLoadGoogleFonts'] : '';
-			$button_font_family      = isset( $attr['buttonFontFamily'] ) ? $attr['buttonFontFamily'] : '';
-			$button_font_weight      = isset( $attr['buttonFontWeight'] ) ? $attr['buttonFontWeight'] : '';
-			$button_font_subset      = isset( $attr['buttonFontSubset'] ) ? $attr['buttonFontSubset'] : '';
-
-			$msg_font_load_google_font = isset( $attr['msgLoadGoogleFonts'] ) ? $attr['msgLoadGoogleFonts'] : '';
-			$msg_font_family           = isset( $attr['msgFontFamily'] ) ? $attr['msgFontFamily'] : '';
-			$msg_font_weight           = isset( $attr['msgFontWeight'] ) ? $attr['msgFontWeight'] : '';
-			$msg_font_subset           = isset( $attr['msgFontSubset'] ) ? $attr['msgFontSubset'] : '';
-
-			$validation_msg_load_google_font = isset( $attr['validationMsgLoadGoogleFonts'] ) ? $attr['validationMsgLoadGoogleFonts'] : '';
-			$validation_msg_font_family      = isset( $attr['validationMsgFontFamily'] ) ? $attr['validationMsgFontFamily'] : '';
-			$validation_msg_font_weight      = isset( $attr['validationMsgFontWeight'] ) ? $attr['validationMsgFontWeight'] : '';
-			$validation_msg_font_subset      = isset( $attr['validationMsgFontSubset'] ) ? $attr['validationMsgFontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $msg_font_load_google_font, $msg_font_family, $msg_font_weight, $msg_font_subset );
-			UAGB_Helper::blocks_google_font( $validation_msg_load_google_font, $validation_msg_font_family, $validation_msg_font_weight, $validation_msg_font_subset );
-
-			UAGB_Helper::blocks_google_font( $radio_check_load_google_font, $radio_check_font_family, $radio_check_font_weight, $radio_check_font_subset );
-			UAGB_Helper::blocks_google_font( $button_load_google_font, $button_font_family, $button_font_weight, $button_font_subset );
-
-			UAGB_Helper::blocks_google_font( $label_load_google_font, $label_font_family, $label_font_weight, $label_font_subset );
-			UAGB_Helper::blocks_google_font( $input_load_google_font, $input_font_family, $input_font_weight, $input_font_subset );
-		}
-
-
-		/**
-		 * Adds Google fonts for Gravity Form Styler block.
-		 *
-		 * @since 1.12.0
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_gf_styler_gfont( $attr ) {
-
-			$label_load_google_font = isset( $attr['labelLoadGoogleFonts'] ) ? $attr['labelLoadGoogleFonts'] : '';
-			$label_font_family      = isset( $attr['labelFontFamily'] ) ? $attr['labelFontFamily'] : '';
-			$label_font_weight      = isset( $attr['labelFontWeight'] ) ? $attr['labelFontWeight'] : '';
-			$label_font_subset      = isset( $attr['labelFontSubset'] ) ? $attr['labelFontSubset'] : '';
-
-			$input_load_google_font = isset( $attr['inputLoadGoogleFonts'] ) ? $attr['inputLoadGoogleFonts'] : '';
-			$input_font_family      = isset( $attr['inputFontFamily'] ) ? $attr['inputFontFamily'] : '';
-			$input_font_weight      = isset( $attr['inputFontWeight'] ) ? $attr['inputFontWeight'] : '';
-			$input_font_subset      = isset( $attr['inputFontSubset'] ) ? $attr['inputFontSubset'] : '';
-
-			$radio_check_load_google_font = isset( $attr['radioCheckLoadGoogleFonts'] ) ? $attr['radioCheckLoadGoogleFonts'] : '';
-			$radio_check_font_family      = isset( $attr['radioCheckFontFamily'] ) ? $attr['radioCheckFontFamily'] : '';
-			$radio_check_font_weight      = isset( $attr['radioCheckFontWeight'] ) ? $attr['radioCheckFontWeight'] : '';
-			$radio_check_font_subset      = isset( $attr['radioCheckFontSubset'] ) ? $attr['radioCheckFontSubset'] : '';
-
-			$button_load_google_font = isset( $attr['buttonLoadGoogleFonts'] ) ? $attr['buttonLoadGoogleFonts'] : '';
-			$button_font_family      = isset( $attr['buttonFontFamily'] ) ? $attr['buttonFontFamily'] : '';
-			$button_font_weight      = isset( $attr['buttonFontWeight'] ) ? $attr['buttonFontWeight'] : '';
-			$button_font_subset      = isset( $attr['buttonFontSubset'] ) ? $attr['buttonFontSubset'] : '';
-
-			$msg_font_load_google_font = isset( $attr['msgLoadGoogleFonts'] ) ? $attr['msgLoadGoogleFonts'] : '';
-			$msg_font_family           = isset( $attr['msgFontFamily'] ) ? $attr['msgFontFamily'] : '';
-			$msg_font_weight           = isset( $attr['msgFontWeight'] ) ? $attr['msgFontWeight'] : '';
-			$msg_font_subset           = isset( $attr['msgFontSubset'] ) ? $attr['msgFontSubset'] : '';
-
-			$validation_msg_load_google_font = isset( $attr['validationMsgLoadGoogleFonts'] ) ? $attr['validationMsgLoadGoogleFonts'] : '';
-			$validation_msg_font_family      = isset( $attr['validationMsgFontFamily'] ) ? $attr['validationMsgFontFamily'] : '';
-			$validation_msg_font_weight      = isset( $attr['validationMsgFontWeight'] ) ? $attr['validationMsgFontWeight'] : '';
-			$validation_msg_font_subset      = isset( $attr['validationMsgFontSubset'] ) ? $attr['validationMsgFontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $msg_font_load_google_font, $msg_font_family, $msg_font_weight, $msg_font_subset );
-			UAGB_Helper::blocks_google_font( $validation_msg_load_google_font, $validation_msg_font_family, $validation_msg_font_weight, $validation_msg_font_subset );
-
-			UAGB_Helper::blocks_google_font( $radio_check_load_google_font, $radio_check_font_family, $radio_check_font_weight, $radio_check_font_subset );
-			UAGB_Helper::blocks_google_font( $button_load_google_font, $button_font_family, $button_font_weight, $button_font_subset );
-
-			UAGB_Helper::blocks_google_font( $label_load_google_font, $label_font_family, $label_font_weight, $label_font_subset );
-			UAGB_Helper::blocks_google_font( $input_load_google_font, $input_font_family, $input_font_weight, $input_font_subset );
-		}
-
-		/**
-		 * Adds Google fonts for Marketing Button block.
-		 *
-		 * @since 1.11.0
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_marketing_btn_gfont( $attr ) {
-
-			$title_load_google_font = isset( $attr['titleLoadGoogleFonts'] ) ? $attr['titleLoadGoogleFonts'] : '';
-			$title_font_family      = isset( $attr['titleFontFamily'] ) ? $attr['titleFontFamily'] : '';
-			$title_font_weight      = isset( $attr['titleFontWeight'] ) ? $attr['titleFontWeight'] : '';
-			$title_font_subset      = isset( $attr['titleFontSubset'] ) ? $attr['titleFontSubset'] : '';
-
-			$prefix_load_google_font = isset( $attr['prefixLoadGoogleFonts'] ) ? $attr['prefixLoadGoogleFonts'] : '';
-			$prefix_font_family      = isset( $attr['prefixFontFamily'] ) ? $attr['prefixFontFamily'] : '';
-			$prefix_font_weight      = isset( $attr['prefixFontWeight'] ) ? $attr['prefixFontWeight'] : '';
-			$prefix_font_subset      = isset( $attr['prefixFontSubset'] ) ? $attr['prefixFontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $title_load_google_font, $title_font_family, $title_font_weight, $title_font_subset );
-			UAGB_Helper::blocks_google_font( $prefix_load_google_font, $prefix_font_family, $prefix_font_weight, $prefix_font_subset );
-		}
-
-		/**
-		 * Adds Google fonts for Table Of Contents block.
-		 *
-		 * @since 1.13.0
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_table_of_contents_gfont( $attr ) {
-			$load_google_font         = isset( $attr['loadGoogleFonts'] ) ? $attr['loadGoogleFonts'] : '';
-			$font_family              = isset( $attr['fontFamily'] ) ? $attr['fontFamily'] : '';
-			$font_weight              = isset( $attr['fontWeight'] ) ? $attr['fontWeight'] : '';
-			$font_subset              = isset( $attr['fontSubset'] ) ? $attr['fontSubset'] : '';
-			$heading_load_google_font = isset( $attr['headingLoadGoogleFonts'] ) ? $attr['headingLoadGoogleFonts'] : '';
-			$heading_font_family      = isset( $attr['headingFontFamily'] ) ? $attr['headingFontFamily'] : '';
-			$heading_font_weight      = isset( $attr['headingFontWeight'] ) ? $attr['headingFontWeight'] : '';
-			$heading_font_subset      = isset( $attr['headingFontSubset'] ) ? $attr['headingFontSubset'] : '';
-			UAGB_Helper::blocks_google_font( $load_google_font, $font_family, $font_weight, $font_subset );
-			UAGB_Helper::blocks_google_font( $heading_load_google_font, $heading_font_family, $heading_font_weight, $heading_font_subset );
-		}
-
-		/**
-		 * Adds Google fonts for Blockquote.
-		 *
-		 * @since 1.9.1
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_blockquote_gfont( $attr ) {
-
-			$desc_load_google_font = isset( $attr['descLoadGoogleFonts'] ) ? $attr['descLoadGoogleFonts'] : '';
-			$desc_font_family      = isset( $attr['descFontFamily'] ) ? $attr['descFontFamily'] : '';
-			$desc_font_weight      = isset( $attr['descFontWeight'] ) ? $attr['descFontWeight'] : '';
-			$desc_font_subset      = isset( $attr['descFontSubset'] ) ? $attr['descFontSubset'] : '';
-
-			$author_load_google_font = isset( $attr['authorLoadGoogleFonts'] ) ? $attr['authorLoadGoogleFonts'] : '';
-			$author_font_family      = isset( $attr['authorFontFamily'] ) ? $attr['authorFontFamily'] : '';
-			$author_font_weight      = isset( $attr['authorFontWeight'] ) ? $attr['authorFontWeight'] : '';
-			$author_font_subset      = isset( $attr['authorFontSubset'] ) ? $attr['authorFontSubset'] : '';
-
-			$tweet_btn_load_google_font = isset( $attr['tweetBtnLoadGoogleFonts'] ) ? $attr['tweetBtnLoadGoogleFonts'] : '';
-			$tweet_btn_font_family      = isset( $attr['tweetBtnFontFamily'] ) ? $attr['tweetBtnFontFamily'] : '';
-			$tweet_btn_font_weight      = isset( $attr['tweetBtnFontWeight'] ) ? $attr['tweetBtnFontWeight'] : '';
-			$tweet_btn_font_subset      = isset( $attr['tweetBtnFontSubset'] ) ? $attr['tweetBtnFontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $desc_load_google_font, $desc_font_family, $desc_font_weight, $desc_font_subset );
-			UAGB_Helper::blocks_google_font( $author_load_google_font, $author_font_family, $author_font_weight, $author_font_subset );
-			UAGB_Helper::blocks_google_font( $tweet_btn_load_google_font, $tweet_btn_font_family, $tweet_btn_font_weight, $tweet_btn_font_subset );
-		}
-
-		/**
-		 * Adds Google fonts for Testimonial block.
-		 *
-		 * @since 1.9.1
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_testimonial_gfont( $attr ) {
-			$desc_load_google_fonts = isset( $attr['descLoadGoogleFonts'] ) ? $attr['descLoadGoogleFonts'] : '';
-			$desc_font_family       = isset( $attr['descFontFamily'] ) ? $attr['descFontFamily'] : '';
-			$desc_font_weight       = isset( $attr['descFontWeight'] ) ? $attr['descFontWeight'] : '';
-			$desc_font_subset       = isset( $attr['descFontSubset'] ) ? $attr['descFontSubset'] : '';
-
-			$name_load_google_fonts = isset( $attr['nameLoadGoogleFonts'] ) ? $attr['nameLoadGoogleFonts'] : '';
-			$name_font_family       = isset( $attr['nameFontFamily'] ) ? $attr['nameFontFamily'] : '';
-			$name_font_weight       = isset( $attr['nameFontWeight'] ) ? $attr['nameFontWeight'] : '';
-			$name_font_subset       = isset( $attr['nameFontSubset'] ) ? $attr['nameFontSubset'] : '';
-
-			$company_load_google_fonts = isset( $attr['companyLoadGoogleFonts'] ) ? $attr['companyLoadGoogleFonts'] : '';
-			$company_font_family       = isset( $attr['companyFontFamily'] ) ? $attr['companyFontFamily'] : '';
-			$company_font_weight       = isset( $attr['companyFontWeight'] ) ? $attr['companyFontWeight'] : '';
-			$company_font_subset       = isset( $attr['companyFontSubset'] ) ? $attr['companyFontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $desc_load_google_fonts, $desc_font_family, $desc_font_weight, $desc_font_subset );
-			UAGB_Helper::blocks_google_font( $name_load_google_fonts, $name_font_family, $name_font_family, $name_font_subset );
-			UAGB_Helper::blocks_google_font( $company_load_google_fonts, $company_font_family, $company_font_family, $company_font_subset );
-		}
-
-		/**
-		 * Adds Google fonts for Advanced Heading block.
-		 *
-		 * @since 1.9.1
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_team_gfont( $attr ) {
-
-			$title_load_google_font = isset( $attr['titleLoadGoogleFonts'] ) ? $attr['titleLoadGoogleFonts'] : '';
-			$title_font_family      = isset( $attr['titleFontFamily'] ) ? $attr['titleFontFamily'] : '';
-			$title_font_weight      = isset( $attr['titleFontWeight'] ) ? $attr['titleFontWeight'] : '';
-			$title_font_subset      = isset( $attr['titleFontSubset'] ) ? $attr['titleFontSubset'] : '';
-
-			$prefix_load_google_font = isset( $attr['prefixLoadGoogleFonts'] ) ? $attr['prefixLoadGoogleFonts'] : '';
-			$prefix_font_family      = isset( $attr['prefixFontFamily'] ) ? $attr['prefixFontFamily'] : '';
-			$prefix_font_weight      = isset( $attr['prefixFontWeight'] ) ? $attr['prefixFontWeight'] : '';
-			$prefix_font_subset      = isset( $attr['prefixFontSubset'] ) ? $attr['prefixFontSubset'] : '';
-
-			$desc_load_google_font = isset( $attr['descLoadGoogleFonts'] ) ? $attr['descLoadGoogleFonts'] : '';
-			$desc_font_family      = isset( $attr['descFontFamily'] ) ? $attr['descFontFamily'] : '';
-			$desc_font_weight      = isset( $attr['descFontWeight'] ) ? $attr['descFontWeight'] : '';
-			$desc_font_subset      = isset( $attr['descFontSubset'] ) ? $attr['descFontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $title_load_google_font, $title_font_family, $title_font_weight, $title_font_subset );
-			UAGB_Helper::blocks_google_font( $prefix_load_google_font, $prefix_font_family, $prefix_font_weight, $prefix_font_subset );
-			UAGB_Helper::blocks_google_font( $desc_load_google_font, $desc_font_family, $desc_font_weight, $desc_font_subset );
-		}
-
-		/**
-		 *
-		 * Adds Google fonts for Restaurant Menu block.
-		 *
-		 * @since 1.9.1
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_restaurant_menu_gfont( $attr ) {
-			$title_load_google_fonts = isset( $attr['titleLoadGoogleFonts'] ) ? $attr['titleLoadGoogleFonts'] : '';
-			$title_font_family       = isset( $attr['titleFontFamily'] ) ? $attr['titleFontFamily'] : '';
-			$title_font_weight       = isset( $attr['titleFontWeight'] ) ? $attr['titleFontWeight'] : '';
-			$title_font_subset       = isset( $attr['titleFontSubset'] ) ? $attr['titleFontSubset'] : '';
-
-			$price_load_google_fonts = isset( $attr['priceLoadGoogleFonts'] ) ? $attr['priceLoadGoogleFonts'] : '';
-			$price_font_family       = isset( $attr['priceFontFamily'] ) ? $attr['priceFontFamily'] : '';
-			$price_font_weight       = isset( $attr['priceFontWeight'] ) ? $attr['priceFontWeight'] : '';
-			$price_font_subset       = isset( $attr['priceFontSubset'] ) ? $attr['priceFontSubset'] : '';
-
-			$desc_load_google_fonts = isset( $attr['descLoadGoogleFonts'] ) ? $attr['descLoadGoogleFonts'] : '';
-			$desc_font_family       = isset( $attr['descFontFamily'] ) ? $attr['descFontFamily'] : '';
-			$desc_font_weight       = isset( $attr['descFontWeight'] ) ? $attr['descFontWeight'] : '';
-			$desc_font_subset       = isset( $attr['descFontSubset'] ) ? $attr['descFontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $title_load_google_fonts, $title_font_family, $title_font_weight, $title_font_subset );
-			UAGB_Helper::blocks_google_font( $price_load_google_fonts, $price_font_family, $price_font_weight, $price_font_subset );
-			UAGB_Helper::blocks_google_font( $desc_load_google_fonts, $desc_font_family, $desc_font_weight, $desc_font_subset );
-		}
-
-		/**
-		 * Adds Google fonts for Content Timeline block.
-		 *
-		 * @since 1.9.1
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_content_timeline_gfont( $attr ) {
-			$head_load_google_fonts = isset( $attr['headLoadGoogleFonts'] ) ? $attr['headLoadGoogleFonts'] : '';
-			$head_font_family       = isset( $attr['headFontFamily'] ) ? $attr['headFontFamily'] : '';
-			$head_font_weight       = isset( $attr['headFontWeight'] ) ? $attr['headFontWeight'] : '';
-			$head_font_subset       = isset( $attr['headFontSubset'] ) ? $attr['headFontSubset'] : '';
-
-			$subheadload_google_fonts = isset( $attr['subHeadLoadGoogleFonts'] ) ? $attr['subHeadLoadGoogleFonts'] : '';
-			$subheadfont_family       = isset( $attr['subHeadFontFamily'] ) ? $attr['subHeadFontFamily'] : '';
-			$subheadfont_weight       = isset( $attr['subHeadFontWeight'] ) ? $attr['subHeadFontWeight'] : '';
-			$subheadfont_subset       = isset( $attr['subHeadFontSubset'] ) ? $attr['subHeadFontSubset'] : '';
-
-			$date_load_google_fonts = isset( $attr['dateLoadGoogleFonts'] ) ? $attr['dateLoadGoogleFonts'] : '';
-			$date_font_family       = isset( $attr['dateFontFamily'] ) ? $attr['dateFontFamily'] : '';
-			$date_font_weight       = isset( $attr['dateFontWeight'] ) ? $attr['dateFontWeight'] : '';
-			$date_font_subset       = isset( $attr['dateFontSubset'] ) ? $attr['dateFontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $head_load_google_fonts, $head_font_family, $head_font_weight, $head_font_subset );
-			UAGB_Helper::blocks_google_font( $subheadload_google_fonts, $subheadfont_family, $subheadfont_weight, $subheadfont_subset );
-			UAGB_Helper::blocks_google_font( $date_load_google_fonts, $date_font_family, $date_font_weight, $date_font_subset );
-		}
-
-		/**
-		 * Adds Google fonts for Post Timeline block.
-		 *
-		 * @since 1.9.1
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_post_timeline_gfont( $attr ) {
-			self::blocks_content_timeline_gfont( $attr );
-
-			$author_load_google_fonts = isset( $attr['authorLoadGoogleFonts'] ) ? $attr['authorLoadGoogleFonts'] : '';
-			$author_font_family       = isset( $attr['authorFontFamily'] ) ? $attr['authorFontFamily'] : '';
-			$author_font_weight       = isset( $attr['authorFontWeight'] ) ? $attr['authorFontWeight'] : '';
-			$author_font_subset       = isset( $attr['authorFontSubset'] ) ? $attr['authorFontSubset'] : '';
-
-			$cta_load_google_fonts = isset( $attr['ctaLoadGoogleFonts'] ) ? $attr['ctaLoadGoogleFonts'] : '';
-			$cta_font_family       = isset( $attr['ctaFontFamily'] ) ? $attr['ctaFontFamily'] : '';
-			$cta_font_weight       = isset( $attr['ctaFontWeight'] ) ? $attr['ctaFontWeight'] : '';
-			$cta_font_subset       = isset( $attr['ctaFontSubset'] ) ? $attr['ctaFontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $author_load_google_fonts, $author_font_family, $author_font_weight, $author_font_subset );
-			UAGB_Helper::blocks_google_font( $cta_load_google_fonts, $cta_font_family, $cta_font_weight, $cta_font_subset );
-		}
-
-		/**
-		 * Adds Google fonts for Mulit Button's block.
-		 *
-		 * @since 1.9.1
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_buttons_gfont( $attr ) {
-
-			$load_google_font = isset( $attr['loadGoogleFonts'] ) ? $attr['loadGoogleFonts'] : '';
-			$font_family      = isset( $attr['fontFamily'] ) ? $attr['fontFamily'] : '';
-			$font_weight      = isset( $attr['fontWeight'] ) ? $attr['fontWeight'] : '';
-			$font_subset      = isset( $attr['fontSubset'] ) ? $attr['fontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $load_google_font, $font_family, $font_weight, $font_subset );
-		}
-
-		/**
-		 * Adds Google fonts for Icon List block
-		 *
-		 * @since 1.9.1
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_icon_list_gfont( $attr ) {
-
-			$load_google_font = isset( $attr['loadGoogleFonts'] ) ? $attr['loadGoogleFonts'] : '';
-			$font_family      = isset( $attr['fontFamily'] ) ? $attr['fontFamily'] : '';
-			$font_weight      = isset( $attr['fontWeight'] ) ? $attr['fontWeight'] : '';
-			$font_subset      = isset( $attr['fontSubset'] ) ? $attr['fontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $load_google_font, $font_family, $font_weight, $font_subset );
-		}
-
-		/**
-		 * Adds Google fonts for Post block.
-		 *
-		 * @since 1.9.1
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_post_gfont( $attr ) {
-
-			$title_load_google_font = isset( $attr['titleLoadGoogleFonts'] ) ? $attr['titleLoadGoogleFonts'] : '';
-			$title_font_family      = isset( $attr['titleFontFamily'] ) ? $attr['titleFontFamily'] : '';
-			$title_font_weight      = isset( $attr['titleFontWeight'] ) ? $attr['titleFontWeight'] : '';
-			$title_font_subset      = isset( $attr['titleFontSubset'] ) ? $attr['titleFontSubset'] : '';
-
-			$meta_load_google_font = isset( $attr['metaLoadGoogleFonts'] ) ? $attr['metaLoadGoogleFonts'] : '';
-			$meta_font_family      = isset( $attr['metaFontFamily'] ) ? $attr['metaFontFamily'] : '';
-			$meta_font_weight      = isset( $attr['metaFontWeight'] ) ? $attr['metaFontWeight'] : '';
-			$meta_font_subset      = isset( $attr['metaFontSubset'] ) ? $attr['metaFontSubset'] : '';
-
-			$excerpt_load_google_font = isset( $attr['excerptLoadGoogleFonts'] ) ? $attr['excerptLoadGoogleFonts'] : '';
-			$excerpt_font_family      = isset( $attr['excerptFontFamily'] ) ? $attr['excerptFontFamily'] : '';
-			$excerpt_font_weight      = isset( $attr['excerptFontWeight'] ) ? $attr['excerptFontWeight'] : '';
-			$excerpt_font_subset      = isset( $attr['excerptFontSubset'] ) ? $attr['excerptFontSubset'] : '';
-
-			$cta_load_google_font = isset( $attr['ctaLoadGoogleFonts'] ) ? $attr['ctaLoadGoogleFonts'] : '';
-			$cta_font_family      = isset( $attr['ctaFontFamily'] ) ? $attr['ctaFontFamily'] : '';
-			$cta_font_weight      = isset( $attr['ctaFontWeight'] ) ? $attr['ctaFontWeight'] : '';
-			$cta_font_subset      = isset( $attr['ctaFontSubset'] ) ? $attr['ctaFontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $title_load_google_font, $title_font_family, $title_font_weight, $title_font_subset );
-
-			UAGB_Helper::blocks_google_font( $meta_load_google_font, $meta_font_family, $meta_font_weight, $meta_font_subset );
-
-			UAGB_Helper::blocks_google_font( $excerpt_load_google_font, $excerpt_font_family, $excerpt_font_weight, $excerpt_font_subset );
-
-			UAGB_Helper::blocks_google_font( $cta_load_google_font, $cta_font_family, $cta_font_weight, $cta_font_subset );
-		}
-
-		/**
-		 * Adds Google fonts for Advanced Heading block.
-		 *
-		 * @since 1.9.1
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_info_box_gfont( $attr ) {
-
-			$head_load_google_font = isset( $attr['headLoadGoogleFonts'] ) ? $attr['headLoadGoogleFonts'] : '';
-			$head_font_family      = isset( $attr['headFontFamily'] ) ? $attr['headFontFamily'] : '';
-			$head_font_weight      = isset( $attr['headFontWeight'] ) ? $attr['headFontWeight'] : '';
-			$head_font_subset      = isset( $attr['headFontSubset'] ) ? $attr['headFontSubset'] : '';
-
-			$prefix_load_google_font = isset( $attr['prefixLoadGoogleFonts'] ) ? $attr['prefixLoadGoogleFonts'] : '';
-			$prefix_font_family      = isset( $attr['prefixFontFamily'] ) ? $attr['prefixFontFamily'] : '';
-			$prefix_font_weight      = isset( $attr['prefixFontWeight'] ) ? $attr['prefixFontWeight'] : '';
-			$prefix_font_subset      = isset( $attr['prefixFontSubset'] ) ? $attr['prefixFontSubset'] : '';
-
-			$subhead_load_google_font = isset( $attr['subHeadLoadGoogleFonts'] ) ? $attr['subHeadLoadGoogleFonts'] : '';
-			$subhead_font_family      = isset( $attr['subHeadFontFamily'] ) ? $attr['subHeadFontFamily'] : '';
-			$subhead_font_weight      = isset( $attr['subHeadFontWeight'] ) ? $attr['subHeadFontWeight'] : '';
-			$subhead_font_subset      = isset( $attr['subHeadFontSubset'] ) ? $attr['subHeadFontSubset'] : '';
-
-			$cta_load_google_font = isset( $attr['ctaLoadGoogleFonts'] ) ? $attr['ctaLoadGoogleFonts'] : '';
-			$cta_font_family      = isset( $attr['ctaFontFamily'] ) ? $attr['ctaFontFamily'] : '';
-			$cta_font_weight      = isset( $attr['ctaFontWeight'] ) ? $attr['ctaFontWeight'] : '';
-			$cta_font_subset      = isset( $attr['ctaFontSubset'] ) ? $attr['ctaFontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $cta_load_google_font, $cta_font_family, $cta_font_weight, $cta_font_subset );
-			UAGB_Helper::blocks_google_font( $head_load_google_font, $head_font_family, $head_font_weight, $head_font_subset );
-			UAGB_Helper::blocks_google_font( $prefix_load_google_font, $prefix_font_family, $prefix_font_weight, $prefix_font_subset );
-			UAGB_Helper::blocks_google_font( $subhead_load_google_font, $subhead_font_family, $subhead_font_weight, $subhead_font_subset );
-		}
-
-		/**
-		 * Adds Google fonts for Call To Action block.
-		 *
-		 * @since 1.9.1
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_call_to_action_gfont( $attr ) {
-
-			$title_load_google_font = isset( $attr['titleLoadGoogleFonts'] ) ? $attr['titleLoadGoogleFonts'] : '';
-			$title_font_family      = isset( $attr['titleFontFamily'] ) ? $attr['titleFontFamily'] : '';
-			$title_font_weight      = isset( $attr['titleFontWeight'] ) ? $attr['titleFontWeight'] : '';
-			$title_font_subset      = isset( $attr['titleFontSubset'] ) ? $attr['titleFontSubset'] : '';
-
-			$desc_load_google_font = isset( $attr['descLoadGoogleFonts'] ) ? $attr['descLoadGoogleFonts'] : '';
-			$desc_font_family      = isset( $attr['descFontFamily'] ) ? $attr['descFontFamily'] : '';
-			$desc_font_weight      = isset( $attr['descFontWeight'] ) ? $attr['descFontWeight'] : '';
-			$desc_font_subset      = isset( $attr['descFontSubset'] ) ? $attr['descFontSubset'] : '';
-
-			$cta_load_google_font = isset( $attr['ctaLoadGoogleFonts'] ) ? $attr['ctaLoadGoogleFonts'] : '';
-			$cta_font_family      = isset( $attr['ctaFontFamily'] ) ? $attr['ctaFontFamily'] : '';
-			$cta_font_weight      = isset( $attr['ctaFontWeight'] ) ? $attr['ctaFontWeight'] : '';
-			$cta_font_subset      = isset( $attr['ctaFontSubset'] ) ? $attr['ctaFontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $cta_load_google_font, $cta_font_family, $cta_font_weight, $cta_font_subset );
-			UAGB_Helper::blocks_google_font( $title_load_google_font, $title_font_family, $title_font_weight, $title_font_subset );
-			UAGB_Helper::blocks_google_font( $desc_load_google_font, $desc_font_family, $desc_font_weight, $desc_font_subset );
 		}
 	}
 }
