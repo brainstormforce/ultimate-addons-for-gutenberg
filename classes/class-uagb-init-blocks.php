@@ -177,11 +177,14 @@ class UAGB_Init_Blocks {
 				}
 
 				foreach ( $js_assets as $asset_handle => $val ) {
+
+					$block_dependencies = isset( $block_assets[ $val ]['dep'] ) ? $block_assets[ $val ]['dep'] : '';
+
 					// Scripts.
 					wp_register_script(
 						$val, // Handle.
 						$block_assets[ $val ]['src'],
-						$block_assets[ $val ]['dep'],
+						$block_dependencies,
 						UAGB_VER,
 						true
 					);
