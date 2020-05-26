@@ -78,9 +78,17 @@ $has_read_write_perms   = UAGB_Helper::has_read_write_permissions();
 
 								$addon = str_replace( 'uagb/', '', $addon );
 
-								if ( 'column' === $addon || 'icon-list-child' === $addon || 'social-share-child' === $addon || 'buttons-child' === $addon ) {
-									continue; }
+								$child_blocks = array(
+									'column',
+									'icon-list-child',
+									'social-share-child',
+									'buttons-child',
+									'faq-child',
+								);
 
+								if ( in_array( $addon, $child_blocks, true ) ) {
+									continue;
+								}
 								$title_url     = ( isset( $info['title_url'] ) && ! empty( $info['title_url'] ) ) ? 'href="' . esc_url( $info['title_url'] ) . '"' : '';
 								$anchor_target = ( isset( $info['title_url'] ) && ! empty( $info['title_url'] ) ) ? "target='_blank' rel='noopener'" : '';
 
@@ -246,3 +254,4 @@ $has_read_write_perms   = UAGB_Helper::has_read_write_permissions();
 	<br class="clear">
 </div>
 </div>
+

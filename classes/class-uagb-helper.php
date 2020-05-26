@@ -495,6 +495,10 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					UAGB_Block_JS::blocks_table_of_contents_gfont( $blockattr );
 					break;
 
+				case 'uagb/faq':
+					$css += UAGB_Block_Helper::get_faq_css( $blockattr, $block_id );
+					break;
+
                 default:
                     // Nothing to do here.
                     break;
@@ -907,7 +911,6 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 			return $default;
 		}
-
 		/**
 		 * Returns an option from the database for
 		 * the admin settings page.
@@ -1350,6 +1353,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			$is_already_column    = false;
 			$is_already_icon_list = false;
 			$is_already_button    = false;
+			$is_already_faq       = false;
 
 			foreach ( UAGB_Config::$block_attributes as $key => $block ) {
 
@@ -1406,6 +1410,15 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 					case 'restaurant-menu':
 						$combined[] = 'price-list';
+						break;
+
+					case 'faq-child':
+					case 'faq':
+						if ( ! $is_already_faq ) {
+							$combined[]     = 'faq';
+							$combined[]     = 'faq-child';
+							$is_already_faq = true;
+						}
 						break;
 
 					default:
@@ -1860,3 +1873,4 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 	 */
 	UAGB_Helper::get_instance();
 }
+

@@ -156,10 +156,12 @@ When you use the Ultimate Addons for Gutenberg along with the free Astra theme, 
 == Changelog ==
 
 = 1.15.0 =
+* New: FAQ - Schema
 * Improvement: Advanced Columns : UI Improvements (Column Gap option).
 * Fix: Icon List - Accessibility issue when link is enabled.
 * Fix: Info Box - Hide margin option for Separator.
 * Fix: Post Grid - Multiple AJAX requests generated if Pagination Markup is returned empty.
+* Fix: Settings Icon overlapping on the Label when Gutenberg plugin is active.
 
 = 1.14.11 =
 * Fix: File Generation issue on WooCommerce Pages.
