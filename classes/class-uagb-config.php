@@ -2065,6 +2065,7 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 					'uagb-faq-js'            => array(
 						'src' => UAGB_URL . 'assets/js/faq.js',
 						'dep' => array(),
+						'skipEditor' => true,
 					),
 				);
 			}

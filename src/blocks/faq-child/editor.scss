@@ -37,7 +37,15 @@
     .uagb-faq-item.uagb-faq-item-active .uagb-icon-active {
         display: inline-block;
     }
-    &.uagb-faq__active .uagb-faq-child__wrapper .uagb-faq-item .uagb-faq-content {
-        display: block;
+    &.uagb-faq__active .uagb-faq-child__wrapper .uagb-faq-item {
+        .uagb-faq-content {
+            display: block;
+        }
+        .uagb-icon {
+            display: none
+        }
+        .uagb-icon-active {
+            display: inline-block;
+        }
     }
 }
