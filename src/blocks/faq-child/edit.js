@@ -90,7 +90,7 @@ class UAGBFaqChildEdit extends Component {
 								onChange={ ( value ) => setAttributes( { question: value } ) }
 								className='uagb-question'
 								multiline={false}
-								allowedFormats={[ 'core/bold', 'core/italic', 'core/strikethrough' ]}
+								allowedFormats={[ 'core/bold', 'core/italic', 'core/strikethrough', 'core/link' ]}
 							/>
 						</div>
 						<div className="uagb-faq-content">
@@ -101,7 +101,7 @@ class UAGBFaqChildEdit extends Component {
 									value={ answer }
 									onChange={ ( value ) => setAttributes( { answer: value } ) }
 									multiline={false}
-									allowedFormats={[ 'core/bold', 'core/italic', 'core/strikethrough' ]}
+									allowedFormats={[ 'core/bold', 'core/italic', 'core/strikethrough', 'core/link' ]}
 								/>
 							</span>
 						</div>
