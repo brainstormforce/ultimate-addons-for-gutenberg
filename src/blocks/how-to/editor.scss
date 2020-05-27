@@ -8,3 +8,21 @@
 .wp-block-uagb-how-to span.uagb-howto__cost-wrap {
     display: inline-flex;
 }
+.wp-block-uagb-how-to .block-editor-button-block-appender {
+    margin-top: 0px;
+    margin-left: 20px;
+    width:10%;
+}
+[data-type="uagb/how-to"] {
+    .how-to-schema-notices {
+        background-color: #fde08f;
+        padding: 15px;
+
+        ul {
+            margin: 0;
+        }
+        h6 {
+            margin: 0;
+        }
+    } 
+}

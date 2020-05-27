@@ -4,6 +4,7 @@
 
 // Import block dependencies and components.
 import classnames from "classnames"
+import SchemaNotices from "./schema-notices"
 import times from "lodash/times"
 import map from "lodash/map"
 import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
@@ -723,6 +724,22 @@ class UAGBHowTo extends Component {
 
 		return (
 			<Fragment>
+				<SchemaNotices
+					headingTitle = { headingTitle }
+					headingDesc = { headingDesc }
+					mainimage = { mainimage }
+					showTotaltime = { showTotaltime }
+					timeNeeded = { timeNeeded }
+					time = { time }
+					timeIn = { timeIn }
+					showEstcost = { showEstcost }
+					estCost = { estCost }
+					cost = { cost }
+					currencyType = { currencyType }
+					tools = { tools }
+					materials = { materials }
+					clientId = { this.props.clientId }
+				/>
 				<BlockControls key='index'>
 					<AlignmentToolbar
 						value={ overallAlignment }
