@@ -25,6 +25,14 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 	 */
 	class UAGB_Block_Helper {
 
+		/**
+		 * Get How To CSS
+		 *
+		 * @since 0.0.1
+		 * @param array  $attr The block attributes.
+		 * @param string $id The selector ID.
+		 * @return array The Widget List.
+		 */
 		public static function get_how_to_css( $attr, $id ) {
 			$defaults = UAGB_Helper::$block_list['uagb/how-to']['attributes'];
 
