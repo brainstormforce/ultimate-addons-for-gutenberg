@@ -492,13 +492,13 @@ class UAGBFaqEdit extends Component {
 								min={ 0 }
 								max={ 100 }
 							/>
-							<p className="uagb-setting-label">{ __( "Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: iconColor }} ></span></span></p>
+							<p className="uagb-setting-label">{ __( "Expand Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: iconColor }} ></span></span></p>
 							<ColorPalette
 								value={ iconColor }
 								onChange={ ( value ) => setAttributes( { iconColor: value } ) }
 								allowReset
 							/>
-							<p className="uagb-setting-label">{ __( "Active/Hover Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: iconActiveColor }} ></span></span></p>
+							<p className="uagb-setting-label">{ __( "Collapse Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: iconActiveColor }} ></span></span></p>
 							<ColorPalette
 								value={ iconActiveColor }
 								onChange={ ( value ) => setAttributes( { iconActiveColor: value } ) }
@@ -513,7 +513,8 @@ class UAGBFaqEdit extends Component {
 
 			return (
 				<Fragment>
-					<p className="components-base-control__label">{__( "Icon" )}</p>
+					<h2> { __( "Icon" ) } </h2>
+					<p className="components-base-control__label">{__( "Expand" )}</p>
 					<FontIconPicker
 						icons={svg_icons}
 						renderFunc= {renderSVG}
@@ -523,7 +524,7 @@ class UAGBFaqEdit extends Component {
 						isMulti={false}
 						noSelectedPlaceholder= { __( "Select Icon" ) }
 					/>
-					<p className="components-base-control__label">{__( "Active Icon" )}</p>
+					<p className="components-base-control__label">{__( "Collapse" )}</p>
 					<FontIconPicker
 						icons={svg_icons}
 						renderFunc= {renderSVG}
