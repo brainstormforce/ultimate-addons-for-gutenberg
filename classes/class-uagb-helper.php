@@ -1855,7 +1855,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 *
 		 * @param array  $combined_selectors The combined selector array.
 		 * @param string $id The selector ID.
-		 * @since 0.0.1
+		 * @since x.x.x
 		 */
 		public static function generate_all_css( $combined_selectors, $id ) {
 
