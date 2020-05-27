@@ -83,10 +83,10 @@ function styling( props ) {
         icon_color = questionTextColor
     }
     if ( 'undefined' == typeof iconActiveColor || '' == iconActiveColor ) {
-        
+                
         icon_active_color = questionTextActiveColor
     }
-
+        
     selectors = {
 
 		" .uagb-icon svg" : {
@@ -259,7 +259,7 @@ function styling( props ) {
     }
     if ( true === enableSeparator ) {
         
-        selectors[" .uagb-faq-child__outer-wrap .uagb-faq-content "] = {
+        selectors[".uagb-faq__outer-wrap .uagb-faq-child__outer-wrap .uagb-faq-content "] = {
             "border-style" : "solid",
             "border-top-color" : borderColor,
             "border-top-width" : generateCSSUnit( borderWidth, 'px' ),
