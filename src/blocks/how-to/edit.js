@@ -188,6 +188,8 @@ class UAGBHowTo extends Component {
 				timeIn,
 				showEstcost,
 				showTotaltime,
+				showMaterials,
+				showTools,
 				showEstcostcolor,
 				showTotaltimecolor,
 				tools_count,
@@ -822,6 +824,7 @@ class UAGBHowTo extends Component {
 					}
 					</span>
 					<div className="uagb-how-to-tools__wrap">
+						{ showTools &&
 						<RichText
 							tagName="h3"
 							placeholder={ __( "requirements tools:" ) }
@@ -832,39 +835,42 @@ class UAGBHowTo extends Component {
 							unstableOnSplit={ this.splitBlock }
 							onnRemove={ () => onReplace( [] ) }
 						/>
+						}
+						{ showTools &&
 						<div className="uagb-how-to-tools">
-						{
-						tools.map( ( tools, index ) => {
+									{
+									tools.map( ( tools, index ) => {
 
-								return (
-									<div
-										className={ classnames(
-											`uagb-how-to-tools-${index}`,
-											"uagb-how-to-tools-child__wrapper",
-											className,
-											`uagb-block-${ this.props.clientId }`
-										) }
-										key={ index }
-									>
-										<div className="uagb-tools">
-											<RichText
-												tagName="div"
-												placeholder={ __( "Requirements Tools:" ) }
-												value={ tools.add_required_tools }
-												onChange={ value => {
-															this.savetools( { add_required_tools: value }, index )
-														} }
-												className='uagb-tools__label'
-												placeholder={ __( "Description" ) }
-												multiline={false}
-												allowedFormats={[ 'core/bold', 'core/italic', 'core/strikethrough' ]}
-											/>
-										</div>
-									</div>
-								)
-						})
-					}
-					</div>
+											return (
+												<div
+													className={ classnames(
+														`uagb-how-to-tools-${index}`,
+														"uagb-how-to-tools-child__wrapper",
+														className,
+														`uagb-block-${ this.props.clientId }`
+													) }
+													key={ index }
+												>
+													<div className="uagb-tools">
+														<RichText
+															tagName="div"
+															placeholder={ __( "Requirements Tools:" ) }
+															value={ tools.add_required_tools }
+															onChange={ value => {
+																		this.savetools( { add_required_tools: value }, index )
+																	} }
+															className='uagb-tools__label'
+															placeholder={ __( "Description" ) }
+															multiline={false}
+															allowedFormats={[ 'core/bold', 'core/italic', 'core/strikethrough' ]}
+														/>
+													</div>
+												</div>
+											)
+										})
+									}
+						</div>
+						}
 					<div className="uagb-how-to-materials__wrap">
 						<RichText
 							tagName="h3"
@@ -878,36 +884,36 @@ class UAGBHowTo extends Component {
 						/>
 					</div>
 					<div className="uagb-how-to-materials">
-						{
-						materials.map( ( materials, index ) => {
+								{
+								materials.map( ( materials, index ) => {
 
-								return (
-									<div
-										className={ classnames(
-											`uagb-how-to-materials-${index}`,
-											"uagb-how-to-materials-child__wrapper",
-											className,
-											`uagb-block-${ this.props.clientId }`
-										) }
-									>
-										<div className="uagb-materials">
-											<RichText
-												tagName="div"
-												placeholder={ __( "Requirements Materials:" ) }
-												value={ materials.add_required_materials }
-												onChange={ value => {
-															this.savematerials( { add_required_materials: value }, index )
-														} }
-												className='uagb-materials__label'
-												placeholder={ __( "Description" ) }
-												multiline={false}
-												allowedFormats={[ 'core/bold', 'core/italic', 'core/strikethrough' ]}
-											/>
-										</div>
-									</div>
-								)
-						})
-					}
+										return (
+											<div
+												className={ classnames(
+													`uagb-how-to-materials-${index}`,
+													"uagb-how-to-materials-child__wrapper",
+													className,
+													`uagb-block-${ this.props.clientId }`
+												) }
+											>
+												<div className="uagb-materials">
+													<RichText
+														tagName="div"
+														placeholder={ __( "Requirements Materials:" ) }
+														value={ materials.add_required_materials }
+														onChange={ value => {
+																	this.savematerials( { add_required_materials: value }, index )
+																} }
+														className='uagb-materials__label'
+														placeholder={ __( "Description" ) }
+														multiline={false}
+														allowedFormats={[ 'core/bold', 'core/italic', 'core/strikethrough' ]}
+													/>
+												</div>
+											</div>
+										)
+									})
+								}
 					</div>
 					</div>
 					<div className="uagb-how-to-steps__wrap">

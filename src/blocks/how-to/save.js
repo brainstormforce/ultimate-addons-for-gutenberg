@@ -138,6 +138,8 @@ export default function save( props ) {
 					className='uagb-howto-req-tools-text'
 				/>
 			</div>
+		}
+		{ showTools &&
 			<div className="uagb-tools__wrap">
 			{
 				tools.map( ( tools, index ) => {
@@ -163,8 +165,7 @@ export default function save( props ) {
 			})
 		}
 		</div>
-		}
-		{ showMaterials &&
+	}
 		<div className="uagb-how-to-materials__wrap">
 			<RichText.Content
 				value={ materialTitle }
@@ -196,7 +197,6 @@ export default function save( props ) {
 			})
 		}
 		</div>
-		}
 		<div className="uagb-how-to-steps__wrap">
 			<RichText.Content
 				value={ stepsTitle }

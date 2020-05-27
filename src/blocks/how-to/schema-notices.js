@@ -19,6 +19,8 @@ class SchemaNotices extends Component {
             headingDesc,
             mainimage,
             showTotaltime,
+            showTools,
+            showMaterials,
             timeNeeded,
             time,
             timeIn,
