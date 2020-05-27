@@ -4949,7 +4949,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			$attr = array_merge( $defaults, $attr );
 
-			$icon_color = $attr['iconColor'];
+			$icon_color        = $attr['iconColor'];
 			$icon_active_color = $attr['iconActiveColor'];
 
 			if ( ! isset( $attr['iconColor'] ) || '' === $attr['iconColor'] ) {
