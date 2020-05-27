@@ -160,29 +160,29 @@ class UAGBFaqEdit extends Component {
 			iconActiveColor,
 			gapBtwIconQUestion,
 			questionloadGoogleFonts,
-			questionfontFamily,
-			questionfontWeight,
-			questionfontSubset,
-			questionfontSizeType,
-			questionfontSize,
-			questionfontSizeMobile,
-			questionfontSizeTablet,
-			questionlineHeightType,
-			questionlineHeight,
-			questionlineHeightMobile,
-			questionlineHeightTablet,
+			questionFontFamily,
+			questionFontWeight,
+			questionFontSubset,
+			questionFontSizeType,
+			questionFontSize,
+			questionFontSizeMobile,
+			questionFontSizeTablet,
+			questionLineHeightType,
+			questionLineHeight,
+			questionLineHeightMobile,
+			questionLineHeightTablet,
 			answerloadGoogleFonts,
-			answerfontFamily,
-			answerfontWeight,
-			answerfontSubset,
-			answerfontSizeType,
-			answerfontSize,
-			answerfontSizeMobile,
-			answerfontSizeTablet,
-			answerlineHeightType,
-			answerlineHeight,
-			answerlineHeightMobile,
-			answerlineHeightTablet,
+			answerFontFamily,
+			answerFontWeight,
+			answerFontSubset,
+			answerFontSizeType,
+			answerFontSize,
+			answerFontSizeMobile,
+			answerFontSizeTablet,
+			answerLineHeightType,
+			answerLineHeight,
+			answerLineHeightMobile,
+			answerLineHeightTablet,
 			icon,
 			iconActive,
 			iconAlign,
@@ -564,17 +564,17 @@ class UAGBFaqEdit extends Component {
 						attributes = { attributes }
 						setAttributes = { setAttributes }
 						loadGoogleFonts = { { value: questionloadGoogleFonts, label: 'loadGoogleFonts'  } }
-						fontFamily = { { value: questionfontFamily, label: 'questionfontFamily'  } }
-						fontWeight = { { value: questionfontWeight, label: 'questionfontWeight'  } }
-						fontSubset = { { value: questionfontSubset, label: 'questionfontSubset'  } }
-						fontSizeType = { { value: questionfontSizeType, label: 'questionfontSizeType' } }
-						fontSize = { { value: questionfontSize, label: 'questionfontSize'  } }
-						fontSizeMobile = { { value: questionfontSizeMobile, label: 'questionfontSizeMobile'  } }
-						fontSizeTablet= { { value: questionfontSizeTablet, label: 'questionfontSizeTablet' } }
-						lineHeightType = { { value: questionlineHeightType, label: 'questionlineHeightType' } }
-						lineHeight = { { value: questionlineHeight, label: 'questionlineHeight'  } }
-						lineHeightMobile = { { value: questionlineHeightMobile, label: 'questionlineHeightMobile'  } }
-						lineHeightTablet= { { value: questionlineHeightTablet, label: 'questionlineHeightTablet'  } }
+						fontFamily = { { value: questionFontFamily, label: 'questionFontFamily'  } }
+						fontWeight = { { value: questionFontWeight, label: 'questionFontWeight'  } }
+						fontSubset = { { value: questionFontSubset, label: 'questionFontSubset'  } }
+						fontSizeType = { { value: questionFontSizeType, label: 'questionFontSizeType' } }
+						fontSize = { { value: questionFontSize, label: 'questionFontSize'  } }
+						fontSizeMobile = { { value: questionFontSizeMobile, label: 'questionFontSizeMobile'  } }
+						fontSizeTablet= { { value: questionFontSizeTablet, label: 'questionFontSizeTablet' } }
+						lineHeightType = { { value: questionLineHeightType, label: 'questionLineHeightType' } }
+						lineHeight = { { value: questionLineHeight, label: 'questionLineHeight'  } }
+						lineHeightMobile = { { value: questionLineHeightMobile, label: 'questionLineHeightMobile'  } }
+						lineHeightTablet= { { value: questionLineHeightTablet, label: 'questionLineHeightTablet'  } }
 					/>
 					<p className="uagb-setting-label">{ __( "Text Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: questionTextColor }} ></span></span></p>
 						<ColorPalette
@@ -717,17 +717,17 @@ class UAGBFaqEdit extends Component {
 						attributes = { attributes }
 						setAttributes = { setAttributes }
 						loadGoogleFonts = { { value: answerloadGoogleFonts, label: 'loadGoogleFonts'  } }
-						fontFamily = { { value: answerfontFamily, label: 'answerfontFamily'  } }
-						fontWeight = { { value: answerfontWeight, label: 'answerfontWeight'  } }
-						fontSubset = { { value: answerfontSubset, label: 'answerfontSubset'  } }
-						fontSizeType = { { value: answerfontSizeType, label: 'answerfontSizeType' } }
-						fontSize = { { value: answerfontSize, label: 'answerfontSize'  } }
-						fontSizeMobile = { { value: answerfontSizeMobile, label: 'answerfontSizeMobile'  } }
-						fontSizeTablet= { { value: answerfontSizeTablet, label: 'answerfontSizeTablet' } }
-						lineHeightType = { { value: answerlineHeightType, label: 'answerlineHeightType' } }
-						lineHeight = { { value: answerlineHeight, label: 'answerlineHeight'  } }
-						lineHeightMobile = { { value: answerlineHeightMobile, label: 'answerlineHeightMobile'  } }
-						lineHeightTablet= { { value: answerlineHeightTablet, label: 'answerlineHeightTablet'  } }
+						fontFamily = { { value: answerFontFamily, label: 'answerFontFamily'  } }
+						fontWeight = { { value: answerFontWeight, label: 'answerFontWeight'  } }
+						fontSubset = { { value: answerFontSubset, label: 'answerFontSubset'  } }
+						fontSizeType = { { value: answerFontSizeType, label: 'answerFontSizeType' } }
+						fontSize = { { value: answerFontSize, label: 'answerFontSize'  } }
+						fontSizeMobile = { { value: answerFontSizeMobile, label: 'answerFontSizeMobile'  } }
+						fontSizeTablet= { { value: answerFontSizeTablet, label: 'answerFontSizeTablet' } }
+						lineHeightType = { { value: answerLineHeightType, label: 'answerLineHeightType' } }
+						lineHeight = { { value: answerLineHeight, label: 'answerLineHeight'  } }
+						lineHeightMobile = { { value: answerLineHeightMobile, label: 'answerLineHeightMobile'  } }
+						lineHeightTablet= { { value: answerLineHeightTablet, label: 'answerLineHeightTablet'  } }
 					/>
 					<p className="uagb-setting-label">{ __( "Text Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: answerTextColor }} ></span></span></p>
 					<ColorPalette
