@@ -4950,10 +4950,15 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			$attr = array_merge( $defaults, $attr );
 
 			$icon_color = $attr['iconColor'];
+			$icon_active_color = $attr['iconActiveColor'];
 
 			if ( ! isset( $attr['iconColor'] ) || '' === $attr['iconColor'] ) {
 
 				$icon_color = $attr['questionTextColor'];
+			}
+			if ( ! isset( $attr['iconActiveColor'] ) || '' === $attr['iconActiveColor'] ) {
+
+				$icon_active_color = $attr['questionTextActiveColor'];
 			}
 
 			$selectors = array(
@@ -4967,7 +4972,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'width'     => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
 					'height'    => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
 					'font-size' => UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] ),
-					'fill'      => $attr['iconActiveColor'],
+					'fill'      => $icon_active_color,
 				),
 				' .uagb-faq-child__outer-wrap'         => array(
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['rowsGap'], 'px' ),
@@ -5007,7 +5012,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'margin-left' => UAGB_Helper::get_css_value( $attr['gapBtwIconQUestion'], 'px' ),
 				),
 				' .uagb-faq-item:hover .uagb-icon svg' => array(
-					'fill' => $attr['iconActiveColor'],
+					'fill' => $icon_active_color,
 				),
 				' .uagb-faq-item .uagb-faq-questions-button.uagb-faq-questions' => array(
 					'flex-direction' => $attr['iconAlign'],

@@ -259,11 +259,13 @@ class UAGBFaqEdit extends Component {
 								checked={ inactiveOtherItems }
 								onChange={ ( value ) => setAttributes( { inactiveOtherItems: ! inactiveOtherItems } ) }
 							/>
-							<ToggleControl
-								label={ __( "Expand First Item" ) }
-								checked={ expandFirstItem }
-								onChange={ ( value ) => setAttributes( { expandFirstItem: ! expandFirstItem } ) }
-							/>
+							{ true === inactiveOtherItems &&
+								<ToggleControl
+									label={ __( "Expand First Item" ) }
+									checked={ expandFirstItem }
+									onChange={ ( value ) => setAttributes( { expandFirstItem: ! expandFirstItem } ) }
+								/>
+							}
 							<ToggleControl
 								label={ __( "Enable Toggle" ) }
 								checked={ enableToggle }
