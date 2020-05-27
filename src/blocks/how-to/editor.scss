@@ -13,16 +13,29 @@
     margin-left: 20px;
     width:10%;
 }
-[data-type="uagb/how-to"] {
+.editor-styles-wrapper [data-type="uagb/how-to"] {
     .how-to-schema-notices {
-        background-color: #fde08f;
-        padding: 15px;
+        background-color: #FFF8E5;
+        border-left: 5px solid #FFB901;
+        padding: 8px 10px;
+        font-size: 13px;
+        line-height: 20px;
+        color: #32373c;
 
         ul {
             margin: 0;
+            padding-bottom: 0;
         }
         h6 {
             margin: 0;
+            font-size: inherit;
+            line-height: inherit;
+        }
+        p {
+            margin: 0;
+            margin-top: 15px;
+            font-size: inherit;
+            color: #555d66;
         }
     } 
 }
