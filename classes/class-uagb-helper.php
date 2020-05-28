@@ -750,7 +750,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 							$mobile  .= $css['mobile'];
 						}
 
-						$js = $block_assets['js'];
+						$js .= $block_assets['js'];
 					}
 				}
 			}
