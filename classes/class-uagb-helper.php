@@ -497,6 +497,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 				case 'uagb/faq':
 					$css += UAGB_Block_Helper::get_faq_css( $blockattr, $block_id );
+					UAGB_Block_JS::blocks_faq_gfont( $blockattr );
 					break;
 
                 default:
