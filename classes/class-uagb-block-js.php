@@ -641,8 +641,8 @@ if ( ! class_exists( 'UAGB_Block_JS' ) ) {
 
 			UAGB_Helper::blocks_google_font( $question_load_google_font, $question_font_family, $question_font_weight, $question_font_subset );
 			UAGB_Helper::blocks_google_font( $answer_load_google_font, $answer_font_family, $answer_font_weight, $answer_font_subset );
-			
+
 		}
-		
+
 	}
 }

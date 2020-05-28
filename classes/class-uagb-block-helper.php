@@ -1826,7 +1826,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				);
 			}
 			// Desktop Icon Size CSS ends.
-
 			// Mobile Icon Size CSS starts.
 			$m_selectors = array(
 				' .uagb-icon-list__source-image'       => array(
@@ -1848,7 +1847,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 			// Mobile Icon Size CSS ends.
-
 			// Tablet Icon Size CSS starts.
 			$t_selectors = array(
 				' .uagb-icon-list__source-image'       => array(
@@ -1870,7 +1868,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 			// Tablet Icon Size CSS ends.
-
 			$selectors[' .uagb-icon-list-repeater .uagb-icon-list__label'] = array(
 				'font-size'   => UAGB_Helper::get_css_value( $attr['fontSize'], $attr['fontSizeType'] ),
 				'font-family' => $attr['fontFamily'],
