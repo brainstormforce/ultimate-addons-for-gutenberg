@@ -144,27 +144,17 @@ if ( ! class_exists( 'UAGB_Loader' ) ) {
 		 * @return void
 		 */
 		public function uagb_fails_to_load() {
+
+			if ( ! current_user_can( 'install_plugins' ) ) {
+				return;
+			}
+
 			$class = 'notice notice-error';
 			/* translators: %s: html tags */
 			$message = sprintf( __( 'The %1$sUltimate Addon for Gutenberg%2$s plugin requires %1$sGutenberg%2$s plugin installed & activated.', 'ultimate-addons-for-gutenberg' ), '<strong>', '</strong>' );
 
-			$plugin = 'gutenberg/gutenberg.php';
-
-			if ( _is_gutenberg_installed( $plugin ) ) {
-				if ( ! current_user_can( 'activate_plugins' ) ) {
-					return;
-				}
-
-				$action_url   = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $plugin );
-				$button_label = __( 'Activate Gutenberg', 'ultimate-addons-for-gutenberg' );
-			} else {
-				if ( ! current_user_can( 'install_plugins' ) ) {
-					return;
-				}
-
-				$action_url   = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=gutenberg' ), 'install-plugin_gutenberg' );
-				$button_label = __( 'Install Gutenberg', 'ultimate-addons-for-gutenberg' );
-			}
+			$action_url   = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=gutenberg' ), 'install-plugin_gutenberg' );
+			$button_label = __( 'Install Gutenberg', 'ultimate-addons-for-gutenberg' );
 
 			$button = '<p><a href="' . $action_url . '" class="button-primary">' . $button_label . '</a></p><p></p>';
 
@@ -191,25 +181,4 @@ if ( ! class_exists( 'UAGB_Loader' ) ) {
 	 *  Kicking this off by calling 'get_instance()' method
 	 */
 	UAGB_Loader::get_instance();
-}
-
-/**
- * Is Gutenberg plugin installed.
- */
-if ( ! function_exists( '_is_gutenberg_installed' ) ) {
-
-	/**
-	 * Check if Gutenberg Pro is installed
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $plugin_path Plugin path.
-	 * @return boolean true | false
-	 * @access public
-	 */
-	function _is_gutenberg_installed( $plugin_path ) {
-		$plugins = get_plugins();
-
-		return isset( $plugins[ $plugin_path ] );
-	}
 }

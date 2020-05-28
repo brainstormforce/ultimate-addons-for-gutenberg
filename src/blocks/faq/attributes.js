@@ -192,76 +192,76 @@ const attributes = {
 		type: "boolean",
 		default: false	
 	},
-	questionfontFamily: {
+	questionFontFamily: {
 		type: "string",
-		default: "",
+		default: "Default",
 	},
-	questionfontWeight: {
-		type: "string",
-	},
-	questionfontSubset: {
+	questionFontWeight: {
 		type: "string",
 	},
-	questionfontSize: {
+	questionFontSubset: {
+		type: "string",
+	},
+	questionFontSize: {
 		type: "number",
 	},
-	questionfontSizeType: {
-		type: "string",
-		default: "px"
-	},
-	questionfontSizeTablet: {
-		type: "number",
-	},
-	questionfontSizeMobile: {
-		type: "number",
-	},
-	questionlineHeight: {
-		type: "number",
-	},
-	questionlineHeightType: {
-		type: "string",
-		default: "em"
-	},
-	questionlineHeightTablet: {
-		type: "number",
-	},
-	questionlineHeightMobile: {
-		type: "number",
-	},
-	answerfontFamily: {
-		type: "string",
-		default: "",
-	},
-	answerfontWeight: {
-		type: "string",
-	},
-	answerfontSubset: {
-		type: "string",
-	},
-	answerfontSize: {
-		type: "number",
-	},
-	answerfontSizeType: {
+	questionFontSizeType: {
 		type: "string",
 		default: "px"
 	},
-	answerfontSizeTablet: {
+	questionFontSizeTablet: {
 		type: "number",
 	},
-	answerfontSizeMobile: {
+	questionFontSizeMobile: {
 		type: "number",
 	},
-	answerlineHeight: {
+	questionLineHeight: {
 		type: "number",
 	},
-	answerlineHeightType: {
+	questionLineHeightType: {
 		type: "string",
 		default: "em"
 	},
-	answerlineHeightTablet: {
+	questionLineHeightTablet: {
 		type: "number",
 	},
-	answerlineHeightMobile: {
+	questionLineHeightMobile: {
+		type: "number",
+	},
+	answerFontFamily: {
+		type: "string",
+		default: "Default",
+	},
+	answerFontWeight: {
+		type: "string",
+	},
+	answerFontSubset: {
+		type: "string",
+	},
+	answerFontSize: {
+		type: "number",
+	},
+	answerFontSizeType: {
+		type: "string",
+		default: "px"
+	},
+	answerFontSizeTablet: {
+		type: "number",
+	},
+	answerFontSizeMobile: {
+		type: "number",
+	},
+	answerLineHeight: {
+		type: "number",
+	},
+	answerLineHeightType: {
+		type: "string",
+		default: "em"
+	},
+	answerLineHeightTablet: {
+		type: "number",
+	},
+	answerLineHeightMobile: {
 		type: "number",
 	},
 	icon: {
