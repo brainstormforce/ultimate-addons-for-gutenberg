@@ -262,7 +262,9 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			if ( ! empty( $subsets ) ) {
 				$link .= '&amp;subset=' . implode( ',', $subsets );
 			}
-			echo '<link href="//fonts.googleapis.com/css?family=' . esc_attr( str_replace( '|', '%7C', $link ) ) . '" rel="stylesheet">'; //phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet 
+			if ( isset( $link ) && ! empty( $link ) ) {
+				echo '<link href="//fonts.googleapis.com/css?family=' . esc_attr( str_replace( '|', '%7C', $link ) ) . '" rel="stylesheet">'; //phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet
+			}
 		}
 
 
