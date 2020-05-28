@@ -85,6 +85,7 @@ class UAGBFaqChildEdit extends Component {
 							{ 'accordion' === layout && faqRenderIcon() }
 							<RichText
 								tagName="span"
+								placeholder={ __( "Question" ) }
 								value={ question }
 								onChange={ ( value ) => setAttributes( { question: value } ) }
 								className='uagb-question'
@@ -96,10 +97,11 @@ class UAGBFaqChildEdit extends Component {
 							<span>
 								<RichText
 									tagName="p"
+									placeholder={ __( "Answer" ) }
 									value={ answer }
 									onChange={ ( value ) => setAttributes( { answer: value } ) }
 									multiline={false}
-									allowedFormats={[ 'core/bold', 'core/italic', 'core/strikethrough' ]}
+									allowedFormats={[ 'core/bold', 'core/italic', 'core/strikethrough', 'core/link' ]}
 								/>
 							</span>
 						</div>

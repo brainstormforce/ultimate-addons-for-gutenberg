@@ -76,12 +76,17 @@ function styling( props ) {
     var tablet_selectors = {}
 	var mobile_selectors = {}
     var icon_color = iconColor;
+    var icon_active_color = iconActiveColor;
 
     if ( 'undefined' == typeof iconColor || '' == iconColor ) {
         
         icon_color = questionTextColor
     }
-
+    if ( 'undefined' == typeof iconActiveColor || '' == iconActiveColor ) {
+                
+        icon_active_color = questionTextActiveColor
+    }
+        
     selectors = {
 
 		" .uagb-icon svg" : {
@@ -94,7 +99,7 @@ function styling( props ) {
             "width" : generateCSSUnit( iconSize, iconSizeType ),
             "height" : generateCSSUnit( iconSize, iconSizeType ),
             "font-size" : generateCSSUnit( iconSize, iconSizeType ),
-            "fill" : iconActiveColor
+            "fill" : icon_active_color
         },
         " .uagb-faq-child__outer-wrap" : {
             "margin-bottom" : generateCSSUnit( rowsGap, 'px' ),
@@ -139,7 +144,7 @@ function styling( props ) {
             "margin-left" : generateCSSUnit( gapBtwIconQUestion, 'px' ),
         },
         " .uagb-faq-item:hover .uagb-icon svg" : {
-            "fill" : iconActiveColor
+            "fill" : icon_active_color
         },
         " .uagb-faq-item .uagb-faq-questions-button.uagb-faq-questions" : {
             "flex-direction" : iconAlign
@@ -254,7 +259,7 @@ function styling( props ) {
     }
     if ( true === enableSeparator ) {
         
-        selectors[" .uagb-faq-child__outer-wrap .uagb-faq-content "] = {
+        selectors[".uagb-faq__outer-wrap .uagb-faq-child__outer-wrap .uagb-faq-content "] = {
             "border-style" : "solid",
             "border-top-color" : borderColor,
             "border-top-width" : generateCSSUnit( borderWidth, 'px' ),

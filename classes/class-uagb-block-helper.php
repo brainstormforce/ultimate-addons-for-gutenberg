@@ -1826,7 +1826,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				);
 			}
 			// Desktop Icon Size CSS ends.
-
 			// Mobile Icon Size CSS starts.
 			$m_selectors = array(
 				' .uagb-icon-list__source-image'       => array(
@@ -1848,7 +1847,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 			// Mobile Icon Size CSS ends.
-
 			// Tablet Icon Size CSS starts.
 			$t_selectors = array(
 				' .uagb-icon-list__source-image'       => array(
@@ -1870,7 +1868,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 			// Tablet Icon Size CSS ends.
-
 			$selectors[' .uagb-icon-list-repeater .uagb-icon-list__label'] = array(
 				'font-size'   => UAGB_Helper::get_css_value( $attr['fontSize'], $attr['fontSizeType'] ),
 				'font-family' => $attr['fontFamily'],
@@ -4106,11 +4103,16 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			$attr = array_merge( $defaults, $attr );
 
-			$icon_color = $attr['iconColor'];
+			$icon_color        = $attr['iconColor'];
+			$icon_active_color = $attr['iconActiveColor'];
 
 			if ( ! isset( $attr['iconColor'] ) || '' === $attr['iconColor'] ) {
 
 				$icon_color = $attr['questionTextColor'];
+			}
+			if ( ! isset( $attr['iconActiveColor'] ) || '' === $attr['iconActiveColor'] ) {
+
+				$icon_active_color = $attr['questionTextActiveColor'];
 			}
 
 			$icon_size   = UAGB_Helper::get_css_value( $attr['iconSize'], $attr['iconSizeType'] );
@@ -4168,7 +4170,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'margin-left' => UAGB_Helper::get_css_value( $attr['gapBtwIconQUestion'], 'px' ),
 				),
 				' .uagb-faq-item:hover .uagb-icon svg' => array(
-					'fill' => $attr['iconActiveColor'],
+					'fill' => $icon_active_color,
 				),
 				' .uagb-faq-item .uagb-faq-questions-button.uagb-faq-questions' => array(
 					'flex-direction' => $attr['iconAlign'],

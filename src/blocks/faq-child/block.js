@@ -24,5 +24,8 @@ registerBlockType( "uagb/faq-child", {
 	parent: [ "uagb/faq" ],
 	attributes,
 	edit,
+	supports: {
+		anchor: true,
+	},
 	save,
 } )

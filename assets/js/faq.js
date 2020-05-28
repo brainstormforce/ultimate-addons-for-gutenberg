@@ -67,15 +67,20 @@ let setupFAQ = () => {
 	var expandFirstelements = document.getElementsByClassName( 'uagb-faq-expand-first-true' );
 	var inactiveOtherelements = document.getElementsByClassName( 'uagb-faq-inactive-other-false' );
 	
-	for ( var item of expandFirstelements ) { 
-		item.querySelectorAll( '.uagb-faq-child__outer-wrap' )[0].getElementsByClassName( 'uagb-faq-item' )[0].classList.add( 'uagb-faq-item-active' );
+	for ( var item of expandFirstelements ) {
+		if ( true === item.classList.contains('uagb-faq-layout-accordion') ) { 
+			
+			item.querySelectorAll( '.uagb-faq-child__outer-wrap' )[0].getElementsByClassName( 'uagb-faq-item' )[0].classList.add( 'uagb-faq-item-active' );
+		}
 	}  
 	
 	for ( item of inactiveOtherelements ) { 
-		var otherItems = item.querySelectorAll( '.uagb-faq-child__outer-wrap' );
-		
-		for ( var childItem of otherItems ) {
-			childItem.getElementsByClassName( 'uagb-faq-item' )[0].classList.add( 'uagb-faq-item-active' );
+		if ( true === item.classList.contains('uagb-faq-layout-accordion') ) {
+			var otherItems = item.querySelectorAll( '.uagb-faq-child__outer-wrap' );
+			
+			for ( var childItem of otherItems ) {
+				childItem.getElementsByClassName( 'uagb-faq-item' )[0].classList.add( 'uagb-faq-item-active' );
+			}
 		}
 	}
 }

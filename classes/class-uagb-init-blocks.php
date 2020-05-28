@@ -186,7 +186,9 @@ class UAGB_Init_Blocks {
 						true
 					);
 
-					if ( is_admin() ) {
+					$skip_editor = isset( $block_assets[ $val ]['skipEditor'] ) ? $block_assets[ $val ]['skipEditor'] : false;
+
+					if ( is_admin() && false === $skip_editor ) {
 						wp_enqueue_script( $val );
 					}
 				}

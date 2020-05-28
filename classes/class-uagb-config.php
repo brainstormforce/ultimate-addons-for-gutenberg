@@ -2063,7 +2063,9 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 						'dep' => array( 'jquery', 'uagb-slick-js' ),
 					),
 					'uagb-faq-js'            => array(
-						'src' => UAGB_URL . 'assets/js/faq.js',
+						'src'        => UAGB_URL . 'assets/js/faq.js',
+						'dep'        => array(),
+						'skipEditor' => true,
 					),
 				);
 			}

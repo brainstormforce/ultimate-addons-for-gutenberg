@@ -234,6 +234,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 * Load the front end Google Fonts.
 		 */
 		public function frontend_gfonts() {
+
 			if ( empty( self::$gfonts ) ) {
 				return;
 			}
@@ -497,6 +498,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 				case 'uagb/faq':
 					$css += UAGB_Block_Helper::get_faq_css( $blockattr, $block_id );
+					UAGB_Block_JS::blocks_faq_gfont( $blockattr );
 					break;
 
                 default:
