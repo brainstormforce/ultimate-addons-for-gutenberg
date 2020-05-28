@@ -566,7 +566,7 @@ class UAGBFaqEdit extends Component {
 						label={ __( "Typography" ) }
 						attributes = { attributes }
 						setAttributes = { setAttributes }
-						loadGoogleFonts = { { value: questionloadGoogleFonts, label: 'loadGoogleFonts'  } }
+						loadGoogleFonts = { { value: questionloadGoogleFonts, label: 'questionloadGoogleFonts'  } }
 						fontFamily = { { value: questionFontFamily, label: 'questionFontFamily'  } }
 						fontWeight = { { value: questionFontWeight, label: 'questionFontWeight'  } }
 						fontSubset = { { value: questionFontSubset, label: 'questionFontSubset'  } }
@@ -719,7 +719,7 @@ class UAGBFaqEdit extends Component {
 						label={ __( "Typography" ) }
 						attributes = { attributes }
 						setAttributes = { setAttributes }
-						loadGoogleFonts = { { value: answerloadGoogleFonts, label: 'loadGoogleFonts'  } }
+						loadGoogleFonts = { { value: answerloadGoogleFonts, label: 'answerloadGoogleFonts'  } }
 						fontFamily = { { value: answerFontFamily, label: 'answerFontFamily'  } }
 						fontWeight = { { value: answerFontWeight, label: 'answerFontWeight'  } }
 						fontSubset = { { value: answerFontSubset, label: 'answerFontSubset'  } }

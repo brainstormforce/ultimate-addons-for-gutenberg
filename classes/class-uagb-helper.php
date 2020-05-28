@@ -234,6 +234,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 * Load the front end Google Fonts.
 		 */
 		public function frontend_gfonts() {
+			
 			if ( empty( self::$gfonts ) ) {
 				return;
 			}
