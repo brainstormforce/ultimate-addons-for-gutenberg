@@ -61,10 +61,12 @@ class UAGB_Init_Blocks {
 	 *
 	 * @since 1.12.0
 	 */
-	public function gf_shortcode() { 	// @codingStandardsIgnoreStart
-		$id = intval($_POST['formId']);
+	public function gf_shortcode() {
 
-		// @codingStandardsIgnoreEnd
+		check_ajax_referer( 'uagb_ajax_nonce', 'nonce' );
+
+		$id = intval( $_POST['formId'] );
+
 		if ( $id && 0 !== $id && -1 !== $id ) {
 			$data['html'] = do_shortcode( '[gravityforms id="' . $id . '" ajax="true"]' );
 		} else {
@@ -78,12 +80,12 @@ class UAGB_Init_Blocks {
 	 *
 	 * @since 1.10.0
 	 */
-	public function cf7_shortcode() { 	// @codingStandardsIgnoreStart
+	public function cf7_shortcode() {
 
 		check_ajax_referer( 'uagb_ajax_nonce', 'nonce' );
-		
-		$id = intval($_POST['formId']);
-		// @codingStandardsIgnoreEnd
+
+		$id = intval( $_POST['formId'] );
+
 		if ( $id && 0 !== $id && -1 !== $id ) {
 			$data['html'] = do_shortcode( '[contact-form-7 id="' . $id . '" ajax="true"]' );
 		} else {
