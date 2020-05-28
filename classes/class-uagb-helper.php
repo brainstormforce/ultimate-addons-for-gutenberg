@@ -133,8 +133,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			self::$file_generation = self::allow_file_generation();
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'block_assets' ) );
-			add_action( 'wp', array( $this, 'generate_stylesheet' ), 99 );
-			add_action( 'wp', array( $this, 'generate_script' ), 100 );
+			add_action( 'wp', array( $this, 'generate_assets' ), 99 );
 			add_action( 'wp_head', array( $this, 'frontend_gfonts' ), 120 );
 			add_action( 'wp_head', array( $this, 'print_stylesheet' ), 80 );
 			add_action( 'wp_footer', array( $this, 'print_script' ), 1000 );
@@ -347,16 +346,20 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 * @param object $block The block object.
 		 * @since 0.0.1
 		 */
-		public function get_block_css( $block ) {
+		public function get_block_css_and_js( $block ) {
 
 			$block = (array) $block;
 
 			$name     = $block['blockName'];
 			$css      = array();
+			$js       = '';
 			$block_id = '';
 
 			if ( ! isset( $name ) ) {
-				return '';
+				return array(
+					'css' => array(),
+					'js'  => '',
+				);
 			}
 
 			if ( isset( $block['attrs'] ) && is_array( $block['attrs'] ) ) {
@@ -399,11 +402,13 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				case 'uagb/blockquote':
 					$css += UAGB_Block_Helper::get_blockquote_css( $blockattr, $block_id );
 					UAGB_Block_JS::blocks_blockquote_gfont( $blockattr );
+					$js .= UAGB_Block_JS::get_blockquote_js( $blockattr, $block_id );
 					break;
 
 				case 'uagb/testimonial':
 					$css += UAGB_Block_Helper::get_testimonial_css( $blockattr, $block_id );
 					UAGB_Block_JS::blocks_testimonial_gfont( $blockattr );
+					$js .= UAGB_Block_JS::get_testimonial_js( $blockattr, $block_id );
 					break;
 
 				case 'uagb/team':
@@ -413,6 +418,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 				case 'uagb/social-share':
 					$css += UAGB_Block_Helper::get_social_share_css( $blockattr, $block_id );
+					$js  .= UAGB_Block_JS::get_social_share_js( $blockattr, $block_id );
 					break;
 
 				case 'uagb/social-share-child':
@@ -489,6 +495,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				case 'uagb/table-of-contents':
 					$css += UAGB_Block_Helper::get_table_of_contents_css( $blockattr, $block_id );
 					UAGB_Block_JS::blocks_table_of_contents_gfont( $blockattr );
+					$js .= UAGB_Block_JS::get_table_of_contents_js( $blockattr, $block_id );
 					break;
 
 				case 'uagb/faq':
@@ -511,11 +518,15 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 							$reusable_blocks = $this->parse( $content );
 
-							self::$stylesheet .= $this->get_stylesheet( $reusable_blocks );
+							$assets = $this->get_assets( $reusable_blocks );
+
+							self::$stylesheet .= $assets['css'];
+							self::$script     .= $assets['js'];
 						}
 					} else {
 						// Get CSS for the Block.
-						$inner_block_css = $this->get_block_css( $inner_block );
+						$inner_assets    = $this->get_block_css_and_js( $inner_block );
+						$inner_block_css = $inner_assets['css'];
 
 						$css_desktop = ( isset( $css['desktop'] ) ? $css['desktop'] : '' );
 						$css_tablet  = ( isset( $css['tablet'] ) ? $css['tablet'] : '' );
@@ -526,13 +537,18 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 							$css['tablet']  = $css_tablet . $inner_block_css['tablet'];
 							$css['mobile']  = $css_mobile . $inner_block_css['mobile'];
 						}
+
+						$js .= $inner_assets['js'];
 					}
 				}
 			}
 
 			self::$current_block_list = array_unique( self::$current_block_list );
 
-			return $css;
+			return array(
+				'css' => $css,
+				'js'  => $js,
+			);
 
 		}
 
@@ -566,82 +582,11 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		}
 
 		/**
-		 * Generates Js recurrsively.
-		 *
-		 * @param object $block The block object.
-		 * @since 1.6.0
-		 */
-		public function get_block_js( $block ) {
-
-			$block = (array) $block;
-
-			$name = $block['blockName'];
-			$js   = '';
-
-			if ( ! isset( $name ) ) {
-				return '';
-			}
-
-			if ( isset( $block['attrs'] ) && is_array( $block['attrs'] ) ) {
-				$blockattr = $block['attrs'];
-				if ( isset( $blockattr['block_id'] ) ) {
-					$block_id = $blockattr['block_id'];
-				}
-			}
-
-			switch ( $name ) {
-				case 'uagb/testimonial':
-					$js .= UAGB_Block_JS::get_testimonial_js( $blockattr, $block_id );
-					break;
-
-				case 'uagb/blockquote':
-					$js .= UAGB_Block_JS::get_blockquote_js( $blockattr, $block_id );
-					break;
-
-				case 'uagb/social-share':
-					$js .= UAGB_Block_JS::get_social_share_js( $blockattr, $block_id );
-					break;
-
-				case 'uagb/table-of-contents':
-					$js .= UAGB_Block_JS::get_table_of_contents_js( $blockattr, $block_id );
-					break;
-
-				default:
-					// Nothing to do here.
-					break;
-			}
-
-			if ( isset( $block['innerBlocks'] ) ) {
-
-				foreach ( $block['innerBlocks'] as $j => $inner_block ) {
-
-					if ( 'core/block' === $inner_block['blockName'] ) {
-						$id = ( isset( $inner_block['attrs']['ref'] ) ) ? $inner_block['attrs']['ref'] : 0;
-
-						if ( $id ) {
-							$content = get_post_field( 'post_content', $id );
-
-							$reusable_blocks = $this->parse( $content );
-
-							$this->get_scripts( $reusable_blocks );
-						}
-					} else {
-						// Get JS for the Block.
-						$js .= $this->get_block_js( $inner_block );
-					}
-				}
-			}
-
-			return $js;
-
-		}
-
-		/**
 		 * Generates stylesheet and appends in head tag.
 		 *
 		 * @since 0.0.1
 		 */
-		public function generate_stylesheet() {
+		public function generate_assets() {
 
 			$this_post = array();
 
@@ -707,6 +652,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			}
 
 			self::file_write( self::$stylesheet, 'css' );
+			self::file_write( self::$script, 'js' );
 		}
 
 		/**
@@ -734,29 +680,11 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					return;
 				}
 
-				self::$stylesheet .= $this->get_stylesheet( $blocks );
+				$assets = $this->get_assets( $blocks );
+
+				self::$stylesheet .= $assets['css'];
+				self::$script     .= $assets['js'];
 			}
-		}
-
-		/**
-		 * Generates scripts and appends in footer tag.
-		 *
-		 * @since 1.5.0
-		 */
-		public function generate_script() {
-
-			$blocks = self::$page_blocks;
-
-			if ( ! is_array( $blocks ) || empty( $blocks ) ) {
-				return;
-			}
-
-			$this->get_scripts( $blocks );
-
-			if ( ! empty( self::$script ) ) {
-				self::file_write( self::$script, 'js' );
-			}
-
 		}
 
 		/**
@@ -778,7 +706,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 * @param array $blocks Blocks array.
 		 * @since 1.1.0
 		 */
-		public function get_stylesheet( $blocks ) {
+		public function get_assets( $blocks ) {
 
 			$desktop = '';
 			$tablet  = '';
@@ -786,6 +714,8 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 			$tab_styling_css = '';
 			$mob_styling_css = '';
+
+			$js = '';
 
 			foreach ( $blocks as $i => $block ) {
 
@@ -802,18 +732,25 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 							$reusable_blocks = $this->parse( $content );
 
-							self::$stylesheet .= $this->get_stylesheet( $reusable_blocks );
+							$assets = $this->get_assets( $reusable_blocks );
+
+							self::$stylesheet .= $assets['css'];
+							self::$script     .= $assets['js'];
 
 						}
 					} else {
+
+						$block_assets = $this->get_block_css_and_js( $block );
 						// Get CSS for the Block.
-						$css = $this->get_block_css( $block );
+						$css = $block_assets['css'];
 
 						if ( isset( $css['desktop'] ) ) {
 							$desktop .= $css['desktop'];
 							$tablet  .= $css['tablet'];
 							$mobile  .= $css['mobile'];
 						}
+
+						$js = $block_assets['js'];
 					}
 				}
 			}
@@ -830,40 +767,10 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				$mob_styling_css .= '}';
 			}
 
-			return $desktop . $tab_styling_css . $mob_styling_css;
-		}
-
-
-		/**
-		 * Generates scripts for reusable blocks.
-		 *
-		 * @param array $blocks Blocks array.
-		 * @since 1.6.0
-		 */
-		public function get_scripts( $blocks ) {
-
-			foreach ( $blocks as $i => $block ) {
-				if ( is_array( $block ) ) {
-					if ( 'core/block' === $block['blockName'] ) {
-						$id = ( isset( $block['attrs']['ref'] ) ) ? $block['attrs']['ref'] : 0;
-
-						if ( $id ) {
-							$content = get_post_field( 'post_content', $id );
-
-							$reusable_blocks = $this->parse( $content );
-
-							$this->get_scripts( $reusable_blocks );
-						}
-					} else {
-						// Get JS for the Block.
-						self::$script .= $this->get_block_js( $block );
-					}
-				}
-			}
-
-			if ( ! empty( self::$script ) ) {
-				self::$script = '( function( $ ) { ' . self::$script . '})(jQuery);';
-			}
+			return array(
+				'css' => $desktop . $tab_styling_css . $mob_styling_css,
+				'js'  => $js,
+			);
 		}
 
 		/**
@@ -903,107 +810,6 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			}
 
 			return $default;
-		}
-		/**
-		 * Returns an option from the database for
-		 * the admin settings page.
-		 *
-		 * @param  string  $key     The option key.
-		 * @param  mixed   $default Option default value if option is not available.
-		 * @param  boolean $network_override Whether to allow the network admin setting to be overridden on subsites.
-		 * @return string           Return the option value
-		 */
-		public static function get_admin_settings_option( $key, $default = false, $network_override = false ) {
-
-			// Get the site-wide option if we're in the network admin.
-			if ( $network_override && is_multisite() ) {
-				$value = get_site_option( $key, $default );
-			} else {
-				$value = get_option( $key, $default );
-			}
-
-			return $value;
-		}
-
-		/**
-		 * Updates an option from the admin settings page.
-		 *
-		 * @param string $key       The option key.
-		 * @param mixed  $value     The value to update.
-		 * @param bool   $network   Whether to allow the network admin setting to be overridden on subsites.
-		 * @return mixed
-		 */
-		public static function update_admin_settings_option( $key, $value, $network = false ) {
-
-			// Update the site-wide option since we're in the network admin.
-			if ( $network && is_multisite() ) {
-				update_site_option( $key, $value );
-			} else {
-				update_option( $key, $value );
-			}
-		}
-
-		/**
-		 * Is Knowledgebase.
-		 *
-		 * @return string
-		 * @since 0.0.1
-		 */
-		public static function knowledgebase_data() {
-
-			$knowledgebase = array(
-				'enable_knowledgebase' => true,
-				'knowledgebase_url'    => 'https://www.ultimategutenberg.com/docs/?utm_source=uag-dashboard&utm_medium=link&utm_campaign=uag-dashboard',
-			);
-
-			return $knowledgebase;
-		}
-
-		/**
-		 * Is Knowledgebase.
-		 *
-		 * @return string
-		 * @since 0.0.1
-		 */
-		public static function support_data() {
-
-			$support = array(
-				'enable_support' => true,
-				'support_url'    => 'https://www.ultimategutenberg.com/support/?utm_source=uag-dashboard&utm_medium=link&utm_campaign=uag-dashboard',
-			);
-
-			return $support;
-		}
-
-		/**
-		 * Provide Widget settings.
-		 *
-		 * @return array()
-		 * @since 0.0.1
-		 */
-		public static function get_block_options() {
-
-			$blocks       = self::$block_list;
-			$saved_blocks = self::get_admin_settings_option( '_uagb_blocks' );
-			if ( is_array( $blocks ) ) {
-				foreach ( $blocks as $slug => $data ) {
-					$_slug = str_replace( 'uagb/', '', $slug );
-
-					if ( isset( $saved_blocks[ $_slug ] ) ) {
-						if ( 'disabled' === $saved_blocks[ $_slug ] ) {
-							$blocks[ $slug ]['is_activate'] = false;
-						} else {
-							$blocks[ $slug ]['is_activate'] = true;
-						}
-					} else {
-						$blocks[ $slug ]['is_activate'] = ( isset( $data['default'] ) ) ? $data['default'] : false;
-					}
-				}
-			}
-
-			self::$block_list = $blocks;
-
-			return apply_filters( 'uagb_enabled_blocks', self::$block_list );
 		}
 
 		/**
@@ -1236,49 +1042,6 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		}
 
 		/**
-		 * Get flag if more than 5 pages are build using UAG.
-		 *
-		 * @since  1.10.0
-		 * @return boolean true/false Flag if more than 5 pages are build using UAG.
-		 */
-		public static function show_rating_notice() {
-
-			$posts_created_with_uag = get_option( 'posts-created-with-uagb' );
-
-			if ( false === $posts_created_with_uag ) {
-				$query_args = array(
-					'posts_per_page' => 100,
-					'post_status'    => 'publish',
-					'post_type'      => 'any',
-				);
-
-				$query = new WP_Query( $query_args );
-
-				$uag_post_count = 0;
-
-				if ( isset( $query->post_count ) && $query->post_count > 0 ) {
-					foreach ( $query->posts as $key => $post ) {
-						if ( $uag_post_count >= 5 ) {
-							break;
-						}
-
-						if ( false !== strpos( $post->post_content, '<!-- wp:uagb/' ) ) {
-							$uag_post_count++;
-						}
-					}
-				}
-
-				if ( $uag_post_count >= 5 ) {
-					update_option( 'posts-created-with-uagb', $uag_post_count );
-
-					$posts_created_with_uag = $uag_post_count;
-				}
-			}
-
-			return ( $posts_created_with_uag >= 5 );
-		}
-
-		/**
 		 *  Get - RGBA Color
 		 *
 		 *  Get HEX color and return RGBA. Default return RGB color.
@@ -1330,108 +1093,6 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				// Return rgb(a) color string.
 				return $output;
 			}
-		}
-
-		/**
-		 *  Get Specific Stylesheet
-		 *
-		 * @since 1.13.4
-		 */
-		public static function create_specific_stylesheet() {
-
-			$saved_blocks         = self::get_admin_settings_option( '_uagb_blocks' );
-			$combined             = array();
-			$is_already_post      = false;
-			$is_already_timeline  = false;
-			$is_already_column    = false;
-			$is_already_icon_list = false;
-			$is_already_button    = false;
-			$is_already_faq       = false;
-
-			foreach ( UAGB_Config::$block_attributes as $key => $block ) {
-
-				$block_name = str_replace( 'uagb/', '', $key );
-
-				if ( isset( $saved_blocks[ $block_name ] ) && 'disabled' === $saved_blocks[ $block_name ] ) {
-					continue;
-				}
-
-				switch ( $block_name ) {
-
-					case 'post-grid':
-					case 'post-carousel':
-					case 'post-masonry':
-						if ( ! $is_already_post ) {
-							$combined[]      = 'post';
-							$is_already_post = true;
-						}
-						break;
-
-					case 'columns':
-					case 'column':
-						if ( ! $is_already_column ) {
-							$combined[]        = 'column';
-							$combined[]        = 'columns';
-							$is_already_column = true;
-						}
-						break;
-
-					case 'icon-list':
-					case 'icon-list-child':
-						if ( ! $is_already_icon_list ) {
-							$combined[]           = 'icon-list';
-							$combined[]           = 'icon-list-child';
-							$is_already_icon_list = true;
-						}
-						break;
-					case 'buttons-child':
-					case 'buttons':
-						if ( ! $is_already_button ) {
-							$combined[]        = 'buttons';
-							$combined[]        = 'buttons-child';
-							$is_already_button = true;
-						}
-						break;
-
-					case 'post-timeline':
-					case 'content-timeline':
-						if ( ! $is_already_timeline ) {
-							$combined[]          = 'timeline';
-							$is_already_timeline = true;
-						}
-						break;
-
-					case 'restaurant-menu':
-						$combined[] = 'price-list';
-						break;
-
-					case 'faq-child':
-					case 'faq':
-						if ( ! $is_already_faq ) {
-							$combined[]     = 'faq';
-							$combined[]     = 'faq-child';
-							$is_already_faq = true;
-						}
-						break;
-
-					default:
-						$combined[] = $block_name;
-						break;
-				}
-			}
-
-			$combined_path = plugin_dir_path( UAGB_FILE ) . 'dist/blocks.style.css';
-			wp_delete_file( $combined_path );
-
-			$style = '';
-
-			$wp_filesystem = self::get_instance()->get_filesystem();
-
-			foreach ( $combined as $key => $c_block ) {
-				$style .= $wp_filesystem->get_contents( plugin_dir_path( UAGB_FILE ) . 'assets/css/blocks/' . $c_block . '.css' );
-
-			}
-			$wp_filesystem->put_contents( $combined_path, $style, FS_CHMOD_FILE );
 		}
 
 		/**

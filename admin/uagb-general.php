@@ -9,13 +9,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$blocks                = UAGB_Helper::get_block_options();
+$blocks                = UAGB_Admin_Helper::get_block_options();
 $allow_file_generation = UAGB_Helper::allow_file_generation();
-$kb_data               = UAGB_Helper::knowledgebase_data();
+$kb_data               = UAGB_Admin_Helper::knowledgebase_data();
 $enable_kb             = $kb_data['enable_knowledgebase'];
 $kb_url                = $kb_data['knowledgebase_url'];
 
-$support_data   = UAGB_Helper::support_data();
+$support_data   = UAGB_Admin_Helper::support_data();
 $enable_support = $support_data['enable_support'];
 $support_url    = $support_data['support_url'];
 

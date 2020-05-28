@@ -67,7 +67,7 @@ if ( ! class_exists( 'UAGB_Update' ) ) :
 				return;
 			}
 
-			UAGB_Helper::create_specific_stylesheet();
+			UAGB_Admin_Helper::create_specific_stylesheet();
 
 			// Update auto saved version number.
 			update_option( 'uagb-version', UAGB_VER );

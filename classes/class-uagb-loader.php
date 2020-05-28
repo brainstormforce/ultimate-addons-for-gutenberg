@@ -65,6 +65,7 @@ if ( ! class_exists( 'UAGB_Loader' ) ) {
 		 * @return void
 		 */
 		public function loader() {
+			require_once UAGB_DIR . 'classes/class-uagb-admin-helper.php';
 			require_once UAGB_DIR . 'classes/class-uagb-helper.php';
 			require_once UAGB_DIR . 'classes/class-uagb-update.php';
 		}

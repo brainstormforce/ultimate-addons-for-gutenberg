@@ -156,7 +156,7 @@ class UAGB_Init_Blocks {
 		);
 
 		$blocks          = UAGB_Config::get_block_attributes();
-		$disabled_blocks = UAGB_Helper::get_admin_settings_option( '_uagb_blocks', array() );
+		$disabled_blocks = UAGB_Admin_Helper::get_admin_settings_option( '_uagb_blocks', array() );
 		$block_assets    = UAGB_Config::get_block_assets();
 
 		foreach ( $blocks as $slug => $value ) {
@@ -249,7 +249,7 @@ class UAGB_Init_Blocks {
 		wp_enqueue_script( 'uagb-deactivate-block-js', UAGB_URL . 'dist/blocks-deactivate.js', array( 'wp-blocks' ), UAGB_VER, true );
 
 		$blocks       = array();
-		$saved_blocks = UAGB_Helper::get_admin_settings_option( '_uagb_blocks' );
+		$saved_blocks = UAGB_Admin_Helper::get_admin_settings_option( '_uagb_blocks' );
 
 		if ( is_array( $saved_blocks ) ) {
 			foreach ( $saved_blocks as $slug => $data ) {

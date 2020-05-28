@@ -138,7 +138,7 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 					'display-notice-after'       => WEEK_IN_SECONDS,
 					'priority'                   => 20,
 					'display-with-other-notices' => false,
-					'show_if'                    => UAGB_Helper::show_rating_notice(),
+					'show_if'                    => UAGB_Admin_Helper::show_rating_notice(),
 				)
 			);
 
@@ -312,13 +312,13 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 			check_ajax_referer( 'uagb-block-nonce', 'nonce' );
 
 			$block_id            = sanitize_text_field( $_POST['block_id'] );
-			$blocks              = UAGB_Helper::get_admin_settings_option( '_uagb_blocks', array() );
+			$blocks              = UAGB_Admin_Helper::get_admin_settings_option( '_uagb_blocks', array() );
 			$blocks[ $block_id ] = $block_id;
 			$blocks              = array_map( 'esc_attr', $blocks );
 
 			// Update blocks.
-			UAGB_Helper::update_admin_settings_option( '_uagb_blocks', $blocks );
-			UAGB_Helper::create_specific_stylesheet();
+			UAGB_Admin_Helper::update_admin_settings_option( '_uagb_blocks', $blocks );
+			UAGB_Admin_Helper::create_specific_stylesheet();
 
 			wp_send_json_success();
 		}
@@ -331,13 +331,13 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 			check_ajax_referer( 'uagb-block-nonce', 'nonce' );
 
 			$block_id            = sanitize_text_field( $_POST['block_id'] );
-			$blocks              = UAGB_Helper::get_admin_settings_option( '_uagb_blocks', array() );
+			$blocks              = UAGB_Admin_Helper::get_admin_settings_option( '_uagb_blocks', array() );
 			$blocks[ $block_id ] = 'disabled';
 			$blocks              = array_map( 'esc_attr', $blocks );
 
 			// Update blocks.
-			UAGB_Helper::update_admin_settings_option( '_uagb_blocks', $blocks );
-			UAGB_Helper::create_specific_stylesheet();
+			UAGB_Admin_Helper::update_admin_settings_option( '_uagb_blocks', $blocks );
+			UAGB_Admin_Helper::create_specific_stylesheet();
 
 			wp_send_json_success();
 		}
@@ -363,8 +363,8 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 			$new_blocks = array_map( 'esc_attr', $new_blocks );
 
 			// Update new_extensions.
-			UAGB_Helper::update_admin_settings_option( '_uagb_blocks', $new_blocks );
-			UAGB_Helper::create_specific_stylesheet();
+			UAGB_Admin_Helper::update_admin_settings_option( '_uagb_blocks', $new_blocks );
+			UAGB_Admin_Helper::create_specific_stylesheet();
 
 			wp_send_json_success();
 		}
@@ -390,8 +390,8 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 			$new_blocks = array_map( 'esc_attr', $new_blocks );
 
 			// Update new_extensions.
-			UAGB_Helper::update_admin_settings_option( '_uagb_blocks', $new_blocks );
-			UAGB_Helper::create_specific_stylesheet();
+			UAGB_Admin_Helper::update_admin_settings_option( '_uagb_blocks', $new_blocks );
+			UAGB_Admin_Helper::create_specific_stylesheet();
 
 			wp_send_json_success();
 		}
@@ -406,7 +406,7 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 			$beta_update = sanitize_text_field( $_POST['allow_beta'] );
 
 			// Update new_extensions.
-			UAGB_Helper::update_admin_settings_option( '_uagb_beta', $beta_update );
+			UAGB_Admin_Helper::update_admin_settings_option( '_uagb_beta', $beta_update );
 
 			wp_send_json_success();
 		}
