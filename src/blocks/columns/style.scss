@@ -116,7 +116,8 @@
 	}
 }
 
-.uagb-columns__valign-center {
+.uagb-columns__valign-center,
+.uagb-columns__valign-middle {
 	.uagb-column__wrap {
 		-webkit-box-align: center;
 		-webkit-align-items: center;
