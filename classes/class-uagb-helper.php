@@ -168,6 +168,12 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				}
 			}
 
+			echo '<xmp>';
+			// var_dump(self::$stylesheet);
+			// var_dump(self::$script);
+			print_r(self::$css_file_handler);
+			echo '</xmp>';
+
 			if ( 'enabled' === self::$file_generation ) {
 				$file_handler = self::$css_file_handler;
 
@@ -1195,16 +1201,19 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 			$var = ( 'css' === $type ) ? 'css' : 'js';
 
-			if ( '' === $post_timestamp || false === $post_timestamp ) {
+			var_dump($post_timestamp);
+			var_dump($var);
+
+			if ( /*'' === $post_timestamp || false === $post_timestamp*/ 1 ) {
 				// File not created yet.
 				$date      = new DateTime();
 				$timestamp = $date->getTimestamp();
 
 				$assets_info = self::get_asset_info( $style_data, $type, $timestamp );
 
-				if ( isset( $assets_info[ $var ] ) ) {
+				if ( /*isset( $assets_info[ $var ] )*/ 1 ) {
 					// Create a new file.
-					self::get_instance()->get_filesystem()->put_contents( $assets_info[ $var ], $style_data, FS_CHMOD_FILE );
+					var_dump( self::get_instance()->get_filesystem()->put_contents( $assets_info[ $var ], $style_data, FS_CHMOD_FILE ) );
 
 					// Update the post meta.
 					update_post_meta( get_the_ID(), 'uag_style_timestamp-' . $type, $timestamp );
