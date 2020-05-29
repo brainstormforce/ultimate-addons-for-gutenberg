@@ -64,9 +64,21 @@ let slideToggle = (target, duration = 500) => {
 }
 
 let setupFAQ = () => {
+
+	var pattern = new RegExp('^[\\w\\-]+$');
+	var hashval = window.location.hash.substring(1);
 	var expandFirstelements = document.getElementsByClassName( 'uagb-faq-expand-first-true' );
 	var inactiveOtherelements = document.getElementsByClassName( 'uagb-faq-inactive-other-false' );
 	
+	if ( pattern.test( hashval ) ) {
+
+		let elementToOpen = document.getElementById( hashval );
+
+		elementToOpen.getElementsByClassName( 'uagb-faq-item' )[0].classList.add( 'uagb-faq-item-active' );
+
+		slideDown( elementToOpen.getElementsByClassName( 'uagb-faq-content' )[0], 500 );
+	}
+
 	for ( var item of expandFirstelements ) {
 		if ( true === item.classList.contains('uagb-faq-layout-accordion') ) { 
 			
