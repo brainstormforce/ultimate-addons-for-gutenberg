@@ -157,6 +157,7 @@ When you use the Ultimate Addons for Gutenberg along with the free Astra theme, 
 
 = 1.14.11.1 =
 * Fix: 404 error because of empty Font Family passed to link tag.
+* Fix: Pagination not calculating Pages properly.
 
 = 1.14.11 =
 * Fix: File Generation issue on WooCommerce Pages.
