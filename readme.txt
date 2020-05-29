@@ -163,6 +163,7 @@ When you use the Ultimate Addons for Gutenberg along with the free Astra theme, 
 * Fix: Post Grid - Multiple AJAX requests generated if Pagination Markup is returned empty.
 * Fix: Settings Icon overlapping on the Label when Gutenberg plugin is active.
 * Fix: 404 error because of empty Font Family passed to link tag.
+* Fix: Advanced Columns - Active state of Vertical alignment option not visible in editor.
 
 = 1.14.11 =
 * Fix: File Generation issue on WooCommerce Pages.
