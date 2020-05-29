@@ -72,7 +72,7 @@ class UAGBColumns extends Component {
 		this.props.setAttributes( { classMigrate: true } )
 
 		if ( 'middle' === this.props.attributes.vAlign ) {
-			this.props.setAttributes( { vAlign: center } )
+			this.props.setAttributes( { vAlign: 'center' } )
 		}
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
