@@ -296,8 +296,8 @@ function uagb_render_pagination( $query, $attributes ) {
 	$base                = UAGB_Helper::build_base_url( $permalink_structure, $base );
 	$format              = UAGB_Helper::paged_format( $permalink_structure, $base );
 	$paged               = UAGB_Helper::get_paged( $query );
-	$page_limit 		 = isset( $attributes['pageLimit'] ) ? $attributes['pageLimit'] : $attributes['postsToShow'];
-	$links = paginate_links(
+	$page_limit          = isset( $attributes['pageLimit'] ) ? $attributes['pageLimit'] : $attributes['postsToShow'];
+	$links               = paginate_links(
 		array(
 			'base'      => $base . '%_%',
 			'format'    => $format,
