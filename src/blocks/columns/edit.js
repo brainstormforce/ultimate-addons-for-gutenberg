@@ -25,6 +25,7 @@ const {
 	AlignmentToolbar,
 	BlockControls,
 	BlockAlignmentToolbar,
+	BlockVerticalAlignmentToolbar,
 	ColorPalette,
 	InspectorControls,
 	InnerBlocks,
@@ -221,7 +222,7 @@ class UAGBColumns extends Component {
 			boxShadowSpread,
 			boxShadowPosition,
 		} = attributes
-
+		
 		const CustomTag = `${tag}`
 
 		var element = document.getElementById( "uagb-columns-style-" + this.props.clientId )
@@ -513,48 +514,12 @@ class UAGBColumns extends Component {
 						} }
 						controls={ [ "wide","full" ] }
 					/>
-					<Toolbar>
-						<Tooltip text={ __( "Vertically Top" ) }>
-							<Button
-								className={ classnames(
-									"components-icon-button",
-									"components-toolbar__control",
-									{ "is-active": vAlign === "top" },
-								) }
-								onClick={ () => setAttributes( { vAlign: "top" } ) }
-							>
-								{ UAGB_Block_Icons.top_align }
-							</Button>
-						</Tooltip>
-					</Toolbar>
-					<Toolbar>
-						<Tooltip text={ __( "Vertically Middle" ) }>
-							<Button
-								className={ classnames(
-									"components-icon-button",
-									"components-toolbar__control",
-									{ "is-active": vAlign === "middle" },
-								) }
-								onClick={ () => setAttributes( { vAlign: "middle" } ) }
-							>
-								{ UAGB_Block_Icons.middle_align }
-							</Button>
-						</Tooltip>
-					</Toolbar>
-					<Toolbar>
-						<Tooltip text={ __( "Vertically Bottom" ) }>
-							<Button
-								className={ classnames(
-									"components-icon-button",
-									"components-toolbar__control",
-									{ "is-active": vAlign === "bottom" },
-								) }
-								onClick={ () => setAttributes( { vAlign: "bottom" } ) }
-							>
-								{ UAGB_Block_Icons.bottom_align }
-							</Button>
-						</Tooltip>
-					</Toolbar>
+					<BlockVerticalAlignmentToolbar
+						value={ vAlign }
+						onChange={ ( value ) => {
+							setAttributes( { vAlign: value } )
+						} }
+					/>
 				</BlockControls>
 				<InspectorControls>
 					<PanelBody title={ __( "Layout" ) }>
