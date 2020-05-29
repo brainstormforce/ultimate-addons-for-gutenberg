@@ -73,19 +73,18 @@ let setupFAQ = () => {
 	if ( pattern.test( hashval ) ) {
 
 		let elementToOpen = document.getElementById( hashval );
-
 		elementToOpen.getElementsByClassName( 'uagb-faq-item' )[0].classList.add( 'uagb-faq-item-active' );
 
 		slideDown( elementToOpen.getElementsByClassName( 'uagb-faq-content' )[0], 500 );
-	}
+	} else {
 
-	for ( var item of expandFirstelements ) {
-		if ( true === item.classList.contains('uagb-faq-layout-accordion') ) { 
-			
-			item.querySelectorAll( '.uagb-faq-child__outer-wrap' )[0].getElementsByClassName( 'uagb-faq-item' )[0].classList.add( 'uagb-faq-item-active' );
-		}
-	}  
-	
+		for ( var item of expandFirstelements ) {
+			if ( true === item.classList.contains('uagb-faq-layout-accordion') ) { 
+				
+				item.querySelectorAll( '.uagb-faq-child__outer-wrap' )[0].getElementsByClassName( 'uagb-faq-item' )[0].classList.add( 'uagb-faq-item-active' );
+			}
+		}  
+	}
 	for ( item of inactiveOtherelements ) { 
 		if ( true === item.classList.contains('uagb-faq-layout-accordion') ) {
 			var otherItems = item.querySelectorAll( '.uagb-faq-child__outer-wrap' );
