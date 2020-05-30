@@ -190,6 +190,34 @@ if ( ! class_exists( 'UAGB_Block_JS' ) ) {
 			UAGB_Helper::blocks_google_font( $subhead_load_google_font, $subhead_font_family, $subhead_font_weight, $subhead_font_subset );
 		}
 
+		/**
+		 * Adds Google fonts for How To block.
+		 *
+		 * @since x.x.x
+		 * @param array $attr the blocks attr.
+		 */
+		public static function blocks_how_to_gfont( $attr ) {
+
+			$head_load_google_font = isset( $attr['headLoadGoogleFonts'] ) ? $attr['headLoadGoogleFonts'] : '';
+			$head_font_family      = isset( $attr['headFontFamily'] ) ? $attr['headFontFamily'] : '';
+			$head_font_weight      = isset( $attr['headFontWeight'] ) ? $attr['headFontWeight'] : '';
+			$head_font_subset      = isset( $attr['headFontSubset'] ) ? $attr['headFontSubset'] : '';
+
+			$subhead_load_google_font = isset( $attr['subHeadLoadGoogleFonts'] ) ? $attr['subHeadLoadGoogleFonts'] : '';
+			$subhead_font_family      = isset( $attr['subHeadFontFamily'] ) ? $attr['subHeadFontFamily'] : '';
+			$subhead_font_weight      = isset( $attr['subHeadFontWeight'] ) ? $attr['subHeadFontWeight'] : '';
+			$subhead_font_subset      = isset( $attr['subHeadFontSubset'] ) ? $attr['subHeadFontSubset'] : '';
+
+			$price_load_google_font = isset( $attr['priceLoadGoogleFonts'] ) ? $attr['priceLoadGoogleFonts'] : '';
+			$price_font_family      = isset( $attr['priceFontFamily'] ) ? $attr['priceFontFamily'] : '';
+			$price_font_weight      = isset( $attr['priceFontWeight'] ) ? $attr['priceFontWeight'] : '';
+			$price_font_subset      = isset( $attr['priceFontSubset'] ) ? $attr['priceFontSubset'] : '';
+
+			UAGB_Helper::blocks_google_font( $head_load_google_font, $head_font_family, $head_font_weight, $head_font_subset );
+			UAGB_Helper::blocks_google_font( $subhead_load_google_font, $subhead_font_family, $subhead_font_weight, $subhead_font_subset );
+			UAGB_Helper::blocks_google_font( $price_load_google_font, $price_font_family, $price_font_weight, $price_font_subset );
+		}
+
 
 		/**
 		 * Adds Google fonts for CF7 Styler block.

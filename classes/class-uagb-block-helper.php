@@ -17,6 +17,117 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 	class UAGB_Block_Helper {
 
 		/**
+		 * Get How To CSS
+		 *
+		 * @since x.x.x
+		 * @param array  $attr The block attributes.
+		 * @param string $id The selector ID.
+		 * @return array The Widget List.
+		 */
+		public static function get_how_to_css( $attr, $id ) {
+			$defaults = UAGB_Helper::$block_list['uagb/how-to']['attributes'];
+
+			$attr = array_merge( $defaults, $attr );
+
+			$t_selectors = array();
+			$m_selectors = array();
+
+			$selectors = array(
+				' .uagb-how-to-main-wrap'     => array(
+					'text-align' => $attr['overallAlignment'],
+				),
+
+				' .uagb-how-to-main-wrap p'   => array(
+					'margin-bottom' => UAGB_Helper::get_css_value( $attr['row_gap'], 'px' ),
+				),
+
+				' .uagb-how-to-main-wrap span.uagb-howto__time-wrap' => array(
+					'margin-bottom' => UAGB_Helper::get_css_value( $attr['row_gap'], 'px' ),
+				),
+
+				' .uagb-how-to-main-wrap span.uagb-howto__cost-wrap' => array(
+					'margin-bottom' => UAGB_Helper::get_css_value( $attr['row_gap'], 'px' ),
+				),
+
+				' .uagb-tools__wrap .uagb-how-to-tools-child__wrapper:last-child' => array(
+					'margin-bottom' => UAGB_Helper::get_css_value( $attr['row_gap'], 'px' ),
+				),
+
+				' .uagb-how-to-materials .uagb-how-to-materials-child__wrapper:last-child' => array(
+					'margin-bottom' => UAGB_Helper::get_css_value( $attr['row_gap'], 'px' ),
+				),
+
+				' span.uagb-howto__time-wrap' => array(
+					'display' => 'inline-flex',
+				),
+
+				' span.uagb-howto__time-wrap .uagb-howto-timeNeeded-value' => array(
+					'margin-left' => UAGB_Helper::get_css_value( $attr['timeSpace'], 'px' ),
+				),
+
+				' span.uagb-howto__cost-wrap .uagb-howto-estcost-value' => array(
+					'margin-left' => UAGB_Helper::get_css_value( $attr['costSpace'], 'px' ),
+				),
+
+				' .uagb-how-to-main-wrap .uagb-howto-heading-text' => array(
+					'color' => $attr['headingColor'],
+				),
+
+				' .uagb-howto-desc-text'      => array(
+					'color' => $attr['subHeadingColor'],
+				),
+
+				' .uagb-howto__wrap span.uagb-howto__time-wrap h3' => array(
+					'color' => $attr['showTotaltimecolor'],
+				),
+
+				' .uagb-howto__wrap span.uagb-howto__cost-wrap h3' => array(
+					'color' => $attr['showTotaltimecolor'],
+				),
+
+				' .uagb-how-to-tools__wrap .uagb-howto-req-tools-text' => array(
+					'color' => $attr['showTotaltimecolor'],
+				),
+
+				'  .uagb-how-to-materials__wrap .uagb-howto-req-materials-text' => array(
+					'color' => $attr['showTotaltimecolor'],
+				),
+
+				' .uagb-how-to-steps__wrap .uagb-howto-req-steps-text' => array(
+					'color' => $attr['showTotaltimecolor'],
+				),
+			);
+
+			$selectors[' .uagb-tools__wrap .uagb-how-to-tools-child__wrapper'] = array(
+				'color' => $attr['subHeadingColor'],
+			);
+
+			$selectors[' .uagb-how-to-materials .uagb-how-to-materials-child__wrapper'] = array(
+				'color' => $attr['subHeadingColor'],
+			);
+
+			$t_selectors = array();
+			$m_selectors = array();
+
+			$combined_selectors = array(
+				'desktop' => $selectors,
+				'tablet'  => $t_selectors,
+				'mobile'  => $m_selectors,
+			);
+
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' .uagb-how-to-materials__wrap .uagb-howto-req-materials-text', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' .uagb-how-to-tools__wrap .uagb-howto-req-tools-text', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' span.uagb-howto__cost-wrap h3', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' span.uagb-howto__time-wrap h3', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'head', ' .uagb-howto-heading-text', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'subHead', ' .uagb-howto__wrap p.uagb-howto-desc-text', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'subHead', ' .uagb-tools .uagb-tools__label', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'subHead', ' .uagb-materials .uagb-materials__label', $combined_selectors );
+
+			return UAGB_Helper::generate_all_css( $combined_selectors, ' .uagb-block-' . $id );
+		}
+
+		/**
 		 * Get Section Block CSS
 		 *
 		 * @since 0.0.1

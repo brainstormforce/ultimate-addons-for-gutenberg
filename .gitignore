@@ -25,5 +25,5 @@ vendor/
 ultimate-addons-for-gutenberg.zip
 
 # Exclude webpack files.
-config/webpack.config.dev.js
-config/webpack.config.prod.js
+# config/webpack.config.dev.js
+# config/webpack.config.prod.js

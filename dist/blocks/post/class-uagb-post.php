@@ -777,20 +777,17 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 
 			$permalink_structure = get_option( 'permalink_structure' );
 			$base                = untrailingslashit( wp_specialchars_decode( get_pagenum_link() ) );
-			$total_posts         = ( isset( $attributes['pageLimit'] ) ? $attributes['pageLimit'] : $query->found_posts );
-			$max                 = $query->found_posts;
-			$max                 = ( $total_posts <= $max ) ? $total_posts : $max;
-			$total_pages         = ceil( $max / $attributes['postsToShow'] );
 			$base                = UAGB_Helper::build_base_url( $permalink_structure, $base );
 			$format              = UAGB_Helper::paged_format( $permalink_structure, $base );
 			$paged               = UAGB_Helper::get_paged( $query );
+			$page_limit          = isset( $attributes['pageLimit'] ) ? $attributes['pageLimit'] : $attributes['postsToShow'];
 
 			$links = paginate_links(
 				array(
 					'base'      => $base . '%_%',
 					'format'    => $format,
 					'current'   => ( ! $paged ) ? 1 : $paged,
-					'total'     => $total_pages,
+					'total'     => $page_limit,
 					'type'      => 'array',
 					'mid_size'  => 4,
 					'end_size'  => 4,
