@@ -4358,9 +4358,9 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'border-style'        => 'solid',
 					'border-top-color'    => $attr['borderColor'],
 					'border-top-width'    => UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' ),
-					'border-right-width'  => UAGB_Helper::get_css_value( 0, 'px' ),
-					'border-bottom-width' => UAGB_Helper::get_css_value( 0, 'px' ),
-					'border-left-width'   => UAGB_Helper::get_css_value( 0, 'px' ),
+					'border-right-width'  => '0px',
+					'border-bottom-width' => '0px',
+					'border-left-width'   => '0px',
 				);
 			}
 			if ( 'grid' === $attr['layout'] ) {

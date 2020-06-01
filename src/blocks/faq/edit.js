@@ -204,7 +204,9 @@ class UAGBFaqEdit extends Component {
 		const getFaqChildTemplate = memoize( ( faq_count, faq ) => {
 			return times( faq_count, n => [ "uagb/faq-child", faq[n] ] )
 		} )
-		
+
+		const equalHeightClass = equalHeight ? "uagb-faq-equal-height" : "";
+
 		let loadQuestionGoogleFonts;
 		let loadAnswerGoogleFonts;
 
@@ -869,7 +871,7 @@ class UAGBFaqEdit extends Component {
 					{ faqQuestionSettings() }
 					{ faqAnswerSettings() }
 				</InspectorControls>
-
+				
 				<div className={ classnames(
 					"uagb-faq__outer-wrap",
 					`uagb-block-${ this.props.clientId }`,
@@ -877,7 +879,7 @@ class UAGBFaqEdit extends Component {
 					`uagb-faq-layout-${ this.props.attributes.layout }`,
 					`uagb-faq-expand-first-${ this.props.attributes.expandFirstItem }`,
 					`uagb-faq-inactive-other-${ this.props.attributes.inactiveOtherItems }`,
-					`uagb-faq-equal-height-${ this.props.attributes.equalHeight }`
+					equalHeightClass
 				) }
 				data-faqtoggle = { this.props.attributes.enableToggle }
 				>
