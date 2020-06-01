@@ -1,5 +1,5 @@
 /**
- * BLOCK: UAGB How-To Attributes
+ * BLOCK: UAGB How-To Schema Attributes
  */
 
  const { __ } = wp.i18n

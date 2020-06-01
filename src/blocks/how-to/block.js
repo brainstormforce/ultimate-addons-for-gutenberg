@@ -1,5 +1,5 @@
 /**
- * BLOCK: How To
+ * BLOCK: How-To Schema
  */
 
 import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"

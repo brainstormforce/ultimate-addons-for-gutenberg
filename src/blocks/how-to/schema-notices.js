@@ -1,5 +1,5 @@
 /**
- * Schema Notices component.
+ * How-To Schema Notices component.
  *
  */
 const { __ } = wp.i18n

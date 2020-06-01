@@ -1,5 +1,5 @@
 /**
- * BLOCK: How-To - Save Block
+ * BLOCK: How-To Schema - Save Block
  */
 
 // Import block dependencies and components.
