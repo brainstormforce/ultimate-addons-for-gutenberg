@@ -81,19 +81,19 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'color' => $attr['subHeadingColor'],
 				),
 
-				' .uagb-howto__wrap span.uagb-howto__time-wrap h3.uagb-howto-timeNeeded-value'      => array(
+				' .uagb-howto__wrap span.uagb-howto__time-wrap h3.uagb-howto-timeNeeded-value' => array(
 					'color' => $attr['subHeadingColor'],
 				),
 
-				' .uagb-howto__wrap span.uagb-howto__time-wrap h3.uagb-howto-timeINmin-text'      => array(
+				' .uagb-howto__wrap span.uagb-howto__time-wrap h3.uagb-howto-timeINmin-text' => array(
 					'color' => $attr['subHeadingColor'],
 				),
 
-				' .uagb-howto__wrap span.uagb-howto__cost-wrap h3.uagb-howto-estcost-value'      => array(
+				' .uagb-howto__wrap span.uagb-howto__cost-wrap h3.uagb-howto-estcost-value' => array(
 					'color' => $attr['subHeadingColor'],
 				),
 
-				' .uagb-howto__wrap span.uagb-howto__cost-wrap h3.uagb-howto-estcost-type'      => array(
+				' .uagb-howto__wrap span.uagb-howto__cost-wrap h3.uagb-howto-estcost-type' => array(
 					'color' => $attr['subHeadingColor'],
 				),
 
@@ -4265,7 +4265,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'width'     => $icon_size,
 					'height'    => $icon_size,
 					'font-size' => $icon_size,
-					'fill'      => $attr['iconActiveColor'],
+					'fill'      => $icon_active_color,
 				),
 				' .uagb-faq-child__outer-wrap'         => array(
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['rowsGap'], 'px' ),
@@ -4379,9 +4379,12 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			if ( true === $attr['enableSeparator'] ) {
 
 				$selectors[' .uagb-faq-child__outer-wrap .uagb-faq-content '] = array(
-					'border-style'     => 'solid',
-					'border-top-color' => $attr['borderColor'],
-					'border-top-width' => UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' ),
+					'border-style'        => 'solid',
+					'border-top-color'    => $attr['borderColor'],
+					'border-top-width'    => UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' ),
+					'border-right-width'  => '0px',
+					'border-bottom-width' => '0px',
+					'border-left-width'   => '0px',
 				);
 			}
 			if ( 'grid' === $attr['layout'] ) {

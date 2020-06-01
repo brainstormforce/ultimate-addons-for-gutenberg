@@ -304,6 +304,10 @@ const attributes = {
 		type: "boolean",
 		default: true	
 	},
+	equalHeight: {
+		type: "boolean",
+		default: true	
+	},
 }
 
 export default attributes

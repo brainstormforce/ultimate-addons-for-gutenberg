@@ -15,6 +15,7 @@ export default function save( props ) {
 		block_id,
 		schema,
 		enableSchemaSupport,
+		equalHeight
 	} = props.attributes
 
 	const renderSchema = () => {
@@ -30,6 +31,9 @@ export default function save( props ) {
 
 		return '';
 	}
+
+	const equalHeightClass = equalHeight ? "uagb-faq-equal-height" : "";
+	
 	return (
 		<div className={ classnames(
 			className,
@@ -38,7 +42,8 @@ export default function save( props ) {
 			`uagb-faq-icon-${ props.attributes.iconAlign }`,
 			`uagb-faq-layout-${ props.attributes.layout }`,
 			`uagb-faq-expand-first-${ props.attributes.expandFirstItem }`,
-			`uagb-faq-inactive-other-${ props.attributes.inactiveOtherItems }`
+			`uagb-faq-inactive-other-${ props.attributes.inactiveOtherItems }`,
+			equalHeightClass
 		) }
 		data-faqtoggle = { props.attributes.enableToggle }
 		>
