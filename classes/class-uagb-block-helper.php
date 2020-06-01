@@ -4355,9 +4355,12 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			if ( true === $attr['enableSeparator'] ) {
 
 				$selectors[' .uagb-faq-child__outer-wrap .uagb-faq-content '] = array(
-					'border-style'     => 'solid',
-					'border-top-color' => $attr['borderColor'],
-					'border-top-width' => UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' ),
+					'border-style'        => 'solid',
+					'border-top-color'    => $attr['borderColor'],
+					'border-top-width'    => UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' ),
+					'border-right-width'  => UAGB_Helper::get_css_value( 0, 'px' ),
+					'border-bottom-width' => UAGB_Helper::get_css_value( 0, 'px' ),
+					'border-left-width'   => UAGB_Helper::get_css_value( 0, 'px' ),
 				);
 			}
 			if ( 'grid' === $attr['layout'] ) {
