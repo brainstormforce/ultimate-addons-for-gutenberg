@@ -255,7 +255,7 @@ class UAGBFaqEdit extends Component {
 					{ 'accordion' === layout &&
 						<Fragment>
 							<ToggleControl
-								label={ __( "Inactive other items" ) }
+								label={ __( "Collapse other items" ) }
 								checked={ inactiveOtherItems }
 								onChange={ ( value ) => setAttributes( { inactiveOtherItems: ! inactiveOtherItems } ) }
 							/>

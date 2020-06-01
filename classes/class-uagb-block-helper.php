@@ -4348,7 +4348,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			}
 			if ( 'accordion' === $attr['layout'] && true === $attr['expandFirstItem'] ) {
 
-				$selectors[' .uagb-faq__wrap.uagb-buttons-layout-wrap > .uagb-faq-child__outer-wrap:first-child > .uagb-faq-child__wrapper .uagb-faq-content '] = array(
+				$selectors[' .uagb-faq__wrap.uagb-buttons-layout-wrap > .uagb-faq-child__outer-wrap:first-child > .uagb-faq-child__wrapper .uagb-faq-item.uagb-faq-item-active .uagb-faq-content '] = array(
 					'display' => 'block',
 				);
 			}
