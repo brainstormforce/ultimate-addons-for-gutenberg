@@ -19,7 +19,7 @@ const {
 registerBlockType( "uagb/faq-child", {
 	title: uagb_blocks_info.blocks["uagb/faq-child"]["title"],
 	description: uagb_blocks_info.blocks["uagb/faq-child"]["description"],
-	icon: UAGB_Block_Icons.buttons_child,
+	icon: UAGB_Block_Icons.faq,
 	category: uagb_blocks_info.category,
 	parent: [ "uagb/faq" ],
 	attributes,
