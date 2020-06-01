@@ -886,7 +886,7 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 					),
 					'uagb/how-to'             => array(
 						'slug'        => '',
-						'title'       => __( 'How-To Schema', 'ultimate-addons-for-gutenberg' ),
+						'title'       => __( 'How-to Schema', 'ultimate-addons-for-gutenberg' ),
 						'description' => __( 'How To Configure How-To Schema In Ultimate Addons For Gutenberg?', 'ultimate-addons-for-gutenberg' ),
 						'default'     => true,
 						'attributes'  => array(
