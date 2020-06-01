@@ -4241,7 +4241,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'width'     => $icon_size,
 					'height'    => $icon_size,
 					'font-size' => $icon_size,
-					'fill'      => $attr['iconActiveColor'],
+					'fill'      => $icon_active_color,
 				),
 				' .uagb-faq-child__outer-wrap'         => array(
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['rowsGap'], 'px' ),
