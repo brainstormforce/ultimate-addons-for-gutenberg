@@ -149,11 +149,18 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			add_filter( 'redirect_canonical', array( $this, 'override_canonical' ), 1, 2 );
 		}
 
+		/**
+		 * This is the action where we create dynamic asset files.
+		 * CSS Path : uploads/uag-plugin/uag-style-{post_id}-{timestamp}.css
+		 * JS Path : uploads/uag-plugin/uag-script-{post_id}-{timestamp}.js
+		 *
+		 * @since 1.13.4
+		 */
 		public function generate_asset_files() {
 
 			global $content_width;
 			self::$stylesheet = str_replace( '#CONTENT_WIDTH#', $content_width . 'px', self::$stylesheet );
-			self::$script = 'document.addEventListener("DOMContentLoaded", function(){( function( $ ) { ' . self::$script . ' })(jQuery)})';
+			self::$script     = 'document.addEventListener("DOMContentLoaded", function(){( function( $ ) { ' . self::$script . ' })(jQuery)})';
 
 			if ( 'enabled' === self::$file_generation ) {
 				self::file_write( self::$stylesheet, 'css' );
@@ -167,7 +174,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 * @since 1.13.4
 		 */
 		public function block_assets() {
-			
+
 			$block_list_for_assets = self::$current_block_list;
 
 			$blocks = UAGB_Config::get_block_attributes();
@@ -188,10 +195,6 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					wp_enqueue_style( $val );
 				}
 			}
-
-			// echo '<xmp>';
-			// print_r( self::$css_file_handler );
-			// echo '</xmp>';
 
 			if ( 'enabled' === self::$file_generation ) {
 				$file_handler = self::$css_file_handler;
@@ -215,7 +218,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 */
 		public function print_script() {
 
-			if ( 'enabled' === self::$file_generation && !self::$fallback_assets ) {
+			if ( 'enabled' === self::$file_generation && ! self::$fallback_assets ) {
 				return;
 			}
 
@@ -235,7 +238,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 */
 		public function print_stylesheet() {
 
-			if ( 'enabled' === self::$file_generation && !self::$fallback_assets ) {
+			if ( 'enabled' === self::$file_generation && ! self::$fallback_assets ) {
 				return;
 			}
 
@@ -475,7 +478,9 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 				case 'uagb/icon-list':
 					$css += UAGB_Block_Helper::get_icon_list_css( $blockattr, $block_id );
-					UAGB_Block_JS::blocks_icon_list_gfont( $blockattr );
+					// We have used the same buttons gfont function because the inputs to these functions are same.
+					// If need be please add a new function for Info Box and go ahead.
+					UAGB_Block_JS::blocks_buttons_gfont( $blockattr );
 					break;
 
 				case 'uagb/icon-list-child':
@@ -1160,6 +1165,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 			return apply_filters( 'uag_get_upload_dir', $dir_info );
 		}
+
 		/**
 		 * Checks to see if the site has SSL enabled or not.
 		 *
@@ -1210,6 +1216,16 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			return $info;
 		}
 
+		/**
+		 * Creates a new file for Dynamic CSS/JS.
+		 *
+		 * @param  array  $assets_info File path and other information.
+		 * @param  string $style_data The data that needs to be copied into the created file.
+		 * @param  string $timestamp Current timestamp.
+		 * @param  string $type Type of file - CSS/JS.
+		 * @since x.x.x
+		 * @return boolean true/false
+		 */
 		public static function create_file( $assets_info, $style_data, $timestamp, $type ) {
 			$file_system = self::get_instance()->get_filesystem();
 
@@ -1234,15 +1250,16 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		public static function file_write( $style_data, $type ) {
 
 			$post_timestamp = get_post_meta( get_the_ID(), 'uag_style_timestamp-' . $type, true );
-			$var = ( 'css' === $type ) ? 'css' : 'js';
-			$date      = new DateTime();
-			$new_timestamp = $date->getTimestamp();
-			$file_system = self::get_instance()->get_filesystem();
+			$var            = ( 'css' === $type ) ? 'css' : 'js';
+			$date           = new DateTime();
+			$new_timestamp  = $date->getTimestamp();
+			$file_system    = self::get_instance()->get_filesystem();
 
 			// Get timestamp - Already saved OR new one.
 			$post_timestamp = ( '' === $post_timestamp || false === $post_timestamp ) ? '' : $post_timestamp;
 
-			$assets_info = self::get_asset_info( $style_data, $type, $post_timestamp );
+			$assets_info       = self::get_asset_info( $style_data, $type, $post_timestamp );
+			$new_assets_info   = self::get_asset_info( $style_data, $type, $new_timestamp );
 			$relative_src_path = $assets_info[ $var ];
 
 			/**
@@ -1251,8 +1268,6 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			 * Here we attempt to create them again.
 			 */
 			if ( ! $file_system->exists( $relative_src_path ) && '' !== $post_timestamp ) {
-
-				var_dump( 'Timestamp present but file does not exists.' );
 
 				$did_create = self::create_file( $assets_info, $style_data, $new_timestamp, $type );
 
@@ -1269,13 +1284,11 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			 */
 			if ( '' === $post_timestamp ) {
 
-				var_dump( 'Need to create new assets.' );
-
 				// Create a new file.
-				$did_create = self::create_file( $assets_info, $style_data, $new_timestamp, $type );
+				$did_create = self::create_file( $new_assets_info, $style_data, $new_timestamp, $type );
 
 				if ( $did_create ) {
-					self::$css_file_handler = array_merge( self::$css_file_handler, $assets_info );
+					self::$css_file_handler = array_merge( self::$css_file_handler, $new_assets_info );
 				}
 
 				return $did_create;
@@ -1289,16 +1302,9 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			 */
 			if ( file_exists( $assets_info[ $var ] ) ) {
 
-				var_dump( 'File already exists.' );
-
 				$old_data = $file_system->get_contents( $assets_info[ $var ] );
 
 				if ( $old_data !== $style_data ) {
-
-					//var_dump( 'Data does not match. Update the file.' );
-
-					// File needs a change in content.
-					$new_assets_info = self::get_asset_info( $style_data, $type, $new_timestamp );
 
 					// Create a new file.
 					$did_create = self::create_file( $new_assets_info, $style_data, $new_timestamp, $type );

@@ -54,7 +54,7 @@ const withFaq = createHigherOrderComponent( ( BlockEdit ) => {
 registerBlockType( "uagb/faq", {
 	title: uagb_blocks_info.blocks["uagb/faq"]["title"],
 	description: uagb_blocks_info.blocks["uagb/faq"]["description"],
-	icon: UAGB_Block_Icons.columns,
+	icon: UAGB_Block_Icons.faq,
 	category: uagb_blocks_info.category,
 	keywords: [
 		__( "faq" ),

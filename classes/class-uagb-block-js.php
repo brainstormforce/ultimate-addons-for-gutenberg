@@ -408,8 +408,8 @@ if ( ! class_exists( 'UAGB_Block_JS' ) ) {
 			$company_font_subset       = isset( $attr['companyFontSubset'] ) ? $attr['companyFontSubset'] : '';
 
 			UAGB_Helper::blocks_google_font( $desc_load_google_fonts, $desc_font_family, $desc_font_weight, $desc_font_subset );
-			UAGB_Helper::blocks_google_font( $name_load_google_fonts, $name_font_family, $name_font_family, $name_font_subset );
-			UAGB_Helper::blocks_google_font( $company_load_google_fonts, $company_font_family, $company_font_family, $company_font_subset );
+			UAGB_Helper::blocks_google_font( $name_load_google_fonts, $name_font_family, $name_font_weight, $name_font_subset );
+			UAGB_Helper::blocks_google_font( $company_load_google_fonts, $company_font_family, $company_font_weight, $company_font_subset );
 		}
 
 		/**
@@ -525,22 +525,6 @@ if ( ! class_exists( 'UAGB_Block_JS' ) ) {
 		 * @param array $attr the blocks attr.
 		 */
 		public static function blocks_buttons_gfont( $attr ) {
-
-			$load_google_font = isset( $attr['loadGoogleFonts'] ) ? $attr['loadGoogleFonts'] : '';
-			$font_family      = isset( $attr['fontFamily'] ) ? $attr['fontFamily'] : '';
-			$font_weight      = isset( $attr['fontWeight'] ) ? $attr['fontWeight'] : '';
-			$font_subset      = isset( $attr['fontSubset'] ) ? $attr['fontSubset'] : '';
-
-			UAGB_Helper::blocks_google_font( $load_google_font, $font_family, $font_weight, $font_subset );
-		}
-
-		/**
-		 * Adds Google fonts for Icon List block
-		 *
-		 * @since 1.9.1
-		 * @param array $attr the blocks attr.
-		 */
-		public static function blocks_icon_list_gfont( $attr ) {
 
 			$load_google_font = isset( $attr['loadGoogleFonts'] ) ? $attr['loadGoogleFonts'] : '';
 			$font_family      = isset( $attr['fontFamily'] ) ? $attr['fontFamily'] : '';
