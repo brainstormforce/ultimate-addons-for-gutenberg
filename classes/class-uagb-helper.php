@@ -58,12 +58,20 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		public static $file_generation = 'disabled';
 
 		/**
-		 * UAG File Generation Fallback Flag
+		 * UAG File Generation Fallback Flag for CSS
 		 *
 		 * @since x.x.x
 		 * @var file_generation
 		 */
-		public static $fallback_assets = false;
+		public static $fallback_css = false;
+
+		/**
+		 * UAG File Generation Fallback Flag for JS
+		 *
+		 * @since x.x.x
+		 * @var file_generation
+		 */
+		public static $fallback_js = false;
 
 		/**
 		 * Enque Style and Script Variable
@@ -160,7 +168,9 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 			global $content_width;
 			self::$stylesheet = str_replace( '#CONTENT_WIDTH#', $content_width . 'px', self::$stylesheet );
-			self::$script     = 'document.addEventListener("DOMContentLoaded", function(){( function( $ ) { ' . self::$script . ' })(jQuery)})';
+			if ( '' !== self::$script ) {
+				self::$script = 'document.addEventListener("DOMContentLoaded", function(){( function( $ ) { ' . self::$script . ' })(jQuery)})';
+			}
 
 			if ( 'enabled' === self::$file_generation ) {
 				self::file_write( self::$stylesheet, 'css' );
@@ -202,12 +212,12 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				if ( isset( $file_handler['css_url'] ) ) {
 					wp_enqueue_style( 'uag-style', $file_handler['css_url'], array(), UAGB_VER, 'all' );
 				} else {
-					self::$fallback_assets = true;
+					self::$fallback_css = true;
 				}
 				if ( isset( $file_handler['js_url'] ) ) {
 					wp_enqueue_script( 'uag-script', $file_handler['js_url'], array(), UAGB_VER, true );
 				} else {
-					self::$fallback_assets = true;
+					self::$fallback_js = true;
 				}
 			}
 
@@ -218,7 +228,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 */
 		public function print_script() {
 
-			if ( 'enabled' === self::$file_generation && ! self::$fallback_assets ) {
+			if ( 'enabled' === self::$file_generation && ! self::$fallback_js ) {
 				return;
 			}
 
@@ -238,7 +248,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 */
 		public function print_stylesheet() {
 
-			if ( 'enabled' === self::$file_generation && ! self::$fallback_assets ) {
+			if ( 'enabled' === self::$file_generation && ! self::$fallback_css ) {
 				return;
 			}
 
@@ -1201,12 +1211,12 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			$js_suffix   = 'uag-script';
 			$info        = array();
 
-			if ( ! empty( $data ) && 'css' === $type ) {
+			if ( 'css' === $type ) {
 
 				$info['css']     = $uploads_dir['path'] . $css_suffix . '-' . $post_id . '-' . $timestamp . '.css';
 				$info['css_url'] = $uploads_dir['url'] . $css_suffix . '-' . $post_id . '-' . $timestamp . '.css';
 
-			} elseif ( ! empty( $data ) && 'js' === $type ) {
+			} elseif ( 'js' === $type ) {
 
 				$info['js']     = $uploads_dir['path'] . $js_suffix . '-' . $post_id . '-' . $timestamp . '.js';
 				$info['js_url'] = $uploads_dir['url'] . $js_suffix . '-' . $post_id . '-' . $timestamp . '.js';
@@ -1258,8 +1268,9 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			// Get timestamp - Already saved OR new one.
 			$post_timestamp = ( '' === $post_timestamp || false === $post_timestamp ) ? '' : $post_timestamp;
 
-			$assets_info       = self::get_asset_info( $style_data, $type, $post_timestamp );
-			$new_assets_info   = self::get_asset_info( $style_data, $type, $new_timestamp );
+			$assets_info     = self::get_asset_info( $style_data, $type, $post_timestamp );
+			$new_assets_info = self::get_asset_info( $style_data, $type, $new_timestamp );
+
 			$relative_src_path = $assets_info[ $var ];
 
 			/**
@@ -1318,7 +1329,8 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					return $did_create;
 				}
 			}
-			self::$css_file_handler = $assets_info;
+
+			self::$css_file_handler = array_merge( self::$css_file_handler, $assets_info );
 
 			return true;
 		}
