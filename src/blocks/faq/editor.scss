@@ -13,4 +13,13 @@
     .uagb-faq-layout-grid .block-editor-inner-blocks > .block-editor-block-list__layout {
         display: grid;
     }
+    .uagb-faq-layout-grid.uagb-faq-equal-height .block-editor-inner-blocks > .block-editor-block-list__layout {
+
+        .block-editor-block-list__block,
+        .uagb-faq-child__outer-wrap,
+        .uagb-faq-child__wrapper,
+        .uagb-faq-item {
+            height: 100%;
+        }
+    }
 }

@@ -191,7 +191,8 @@ class UAGBFaqEdit extends Component {
 			iconSizeTablet,
 			iconSize,
 			columns,
-			enableToggle
+			enableToggle,
+			equalHeight
 		} = attributes
 
 		var element = document.getElementById( "uagb-style-faq-" + this.props.clientId )
@@ -203,7 +204,9 @@ class UAGBFaqEdit extends Component {
 		const getFaqChildTemplate = memoize( ( faq_count, faq ) => {
 			return times( faq_count, n => [ "uagb/faq-child", faq[n] ] )
 		} )
-		
+
+		const equalHeightClass = equalHeight ? "uagb-faq-equal-height" : "";
+
 		let loadQuestionGoogleFonts;
 		let loadAnswerGoogleFonts;
 
@@ -344,13 +347,20 @@ class UAGBFaqEdit extends Component {
 						max={ 50 }
 					/>
 					{ 'grid' === layout &&
-						<RangeControl
-							label={ __( "Columns Gap (px)" ) }
-							value={ columnsGap }
-							onChange={ ( value ) => setAttributes( { columnsGap: value } ) }
-							min={ 0 }
-							max={ 50 }
-						/>
+						<Fragment>
+							<RangeControl
+								label={ __( "Columns Gap (px)" ) }
+								value={ columnsGap }
+								onChange={ ( value ) => setAttributes( { columnsGap: value } ) }
+								min={ 0 }
+								max={ 50 }
+							/>
+							<ToggleControl
+							label={ __( "Equal Height" ) }
+							checked={ equalHeight }
+							onChange={ ( value ) => setAttributes( { equalHeight: ! equalHeight } ) }
+							/>
+						</Fragment>
 					}
 					<ToggleControl
 						label={ __( "Enable Separator" ) }
@@ -861,14 +871,15 @@ class UAGBFaqEdit extends Component {
 					{ faqQuestionSettings() }
 					{ faqAnswerSettings() }
 				</InspectorControls>
-
+				
 				<div className={ classnames(
 					"uagb-faq__outer-wrap",
 					`uagb-block-${ this.props.clientId }`,
 					`uagb-faq-icon-${ this.props.attributes.iconAlign }`,
 					`uagb-faq-layout-${ this.props.attributes.layout }`,
 					`uagb-faq-expand-first-${ this.props.attributes.expandFirstItem }`,
-					`uagb-faq-inactive-other-${ this.props.attributes.inactiveOtherItems }`
+					`uagb-faq-inactive-other-${ this.props.attributes.inactiveOtherItems }`,
+					equalHeightClass
 				) }
 				data-faqtoggle = { this.props.attributes.enableToggle }
 				>

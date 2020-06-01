@@ -87,7 +87,9 @@ export default function save( props ) {
 					tagName='p'
 					className='uagb-howto-desc-text'
 				/>
-				<div className="uagb-howto__source-wrap">{image_icon_html}</div>
+				{ mainimage.url &&
+					<div className="uagb-howto__source-wrap">{image_icon_html}</div>
+				}
 				{ showTotaltime &&
 				<span className="uagb-howto__time-wrap">
 					<RichText.Content

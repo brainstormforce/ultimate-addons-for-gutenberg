@@ -41,6 +41,10 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['row_gap'], 'px' ),
 				),
 
+				' .uagb-how-to-main-wrap .uagb-howto__source-wrap' => array(
+					'margin-bottom' => UAGB_Helper::get_css_value( $attr['row_gap'], 'px' ),
+				),
+
 				' .uagb-how-to-main-wrap span.uagb-howto__time-wrap' => array(
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['row_gap'], 'px' ),
 				),
@@ -77,11 +81,27 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'color' => $attr['subHeadingColor'],
 				),
 
-				' .uagb-howto__wrap span.uagb-howto__time-wrap h3' => array(
+				' .uagb-howto__wrap span.uagb-howto__time-wrap h3.uagb-howto-timeNeeded-value' => array(
+					'color' => $attr['subHeadingColor'],
+				),
+
+				' .uagb-howto__wrap span.uagb-howto__time-wrap h3.uagb-howto-timeINmin-text' => array(
+					'color' => $attr['subHeadingColor'],
+				),
+
+				' .uagb-howto__wrap span.uagb-howto__cost-wrap h3.uagb-howto-estcost-value' => array(
+					'color' => $attr['subHeadingColor'],
+				),
+
+				' .uagb-howto__wrap span.uagb-howto__cost-wrap h3.uagb-howto-estcost-type' => array(
+					'color' => $attr['subHeadingColor'],
+				),
+
+				' .uagb-howto__wrap span.uagb-howto__time-wrap h3.uagb-howto-timeNeeded-text' => array(
 					'color' => $attr['showTotaltimecolor'],
 				),
 
-				' .uagb-howto__wrap span.uagb-howto__cost-wrap h3' => array(
+				' .uagb-howto__wrap span.uagb-howto__cost-wrap h3.uagb-howto-estcost-text' => array(
 					'color' => $attr['showTotaltimecolor'],
 				),
 
@@ -117,8 +137,12 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' .uagb-how-to-materials__wrap .uagb-howto-req-materials-text', $combined_selectors );
 			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' .uagb-how-to-tools__wrap .uagb-howto-req-tools-text', $combined_selectors );
-			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' span.uagb-howto__cost-wrap h3', $combined_selectors );
-			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' span.uagb-howto__time-wrap h3', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' span.uagb-howto__cost-wrap h3.uagb-howto-estcost-text', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'subHead', ' span.uagb-howto__cost-wrap h3.uagb-howto-estcost-value', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'subHead', ' span.uagb-howto__cost-wrap h3.uagb-howto-estcost-type', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' span.uagb-howto__time-wrap h3.uagb-howto-timeNeeded-text', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'subHead', ' span.uagb-howto__time-wrap h3.uagb-howto-timeNeeded-value', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'subHead', ' span.uagb-howto__time-wrap h3.uagb-howto-timeINmin-text', $combined_selectors );
 			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'head', ' .uagb-howto-heading-text', $combined_selectors );
 			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'subHead', ' .uagb-howto__wrap p.uagb-howto-desc-text', $combined_selectors );
 			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'subHead', ' .uagb-tools .uagb-tools__label', $combined_selectors );
@@ -4241,7 +4265,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'width'     => $icon_size,
 					'height'    => $icon_size,
 					'font-size' => $icon_size,
-					'fill'      => $attr['iconActiveColor'],
+					'fill'      => $icon_active_color,
 				),
 				' .uagb-faq-child__outer-wrap'         => array(
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['rowsGap'], 'px' ),
@@ -4355,9 +4379,12 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			if ( true === $attr['enableSeparator'] ) {
 
 				$selectors[' .uagb-faq-child__outer-wrap .uagb-faq-content '] = array(
-					'border-style'     => 'solid',
-					'border-top-color' => $attr['borderColor'],
-					'border-top-width' => UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' ),
+					'border-style'        => 'solid',
+					'border-top-color'    => $attr['borderColor'],
+					'border-top-width'    => UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' ),
+					'border-right-width'  => '0px',
+					'border-bottom-width' => '0px',
+					'border-left-width'   => '0px',
 				);
 			}
 			if ( 'grid' === $attr['layout'] ) {
