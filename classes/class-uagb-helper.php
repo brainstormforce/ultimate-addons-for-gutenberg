@@ -60,7 +60,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		/**
 		 * UAG File Generation Fallback Flag
 		 *
-		 * @since 1.14.0
+		 * @since x.x.x
 		 * @var file_generation
 		 */
 		public static $fallback_assets = false;
@@ -154,7 +154,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 * CSS Path : uploads/uag-plugin/uag-style-{post_id}-{timestamp}.css
 		 * JS Path : uploads/uag-plugin/uag-script-{post_id}-{timestamp}.js
 		 *
-		 * @since 1.13.4
+		 * @since x.x.x
 		 */
 		public function generate_asset_files() {
 
