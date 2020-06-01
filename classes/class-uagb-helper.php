@@ -378,6 +378,11 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			}
 
 			switch ( $name ) {
+				case 'uagb/how-to':
+					$css += UAGB_Block_Helper::get_how_to_css( $blockattr, $block_id );
+					UAGB_Block_JS::blocks_how_to_gfont( $blockattr );
+					break;
+
 				case 'uagb/section':
 					$css += UAGB_Block_Helper::get_section_css( $blockattr, $block_id );
 					break;

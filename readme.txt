@@ -157,10 +157,12 @@ When you use the Ultimate Addons for Gutenberg along with the free Astra theme, 
 
 = 1.15.0 =
 * New: FAQ - Schema
+* New: How-To Schema
 * Improvement: Advanced Columns : UI Improvements (Column Gap option).
 * Fix: Icon List - Accessibility issue when link is enabled.
 * Fix: Info Box - Hide margin option for Separator.
 * Fix: Post Grid - Multiple AJAX requests generated if Pagination Markup is returned empty.
+* Fix: Post Grid - Pagination not calculating Pages properly.
 * Fix: Settings Icon overlapping on the Label when Gutenberg plugin is active.
 * Fix: 404 error because of empty Font Family passed to link tag.
 * Fix: Advanced Columns - Active state of Vertical alignment option not visible in editor.
