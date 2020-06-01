@@ -19,7 +19,7 @@ const {
 registerBlockType( "uagb/how-to", {
 	title: uagb_blocks_info.blocks["uagb/how-to"]["title"],
 	description: uagb_blocks_info.blocks["uagb/how-to"]["description"],
-	icon: UAGB_Block_Icons.advanced_heading,
+	icon: UAGB_Block_Icons.how_to,
 	category: uagb_blocks_info.category,
 	keywords: [
 		__( "how to" ),
