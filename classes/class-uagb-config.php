@@ -2073,6 +2073,7 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 							'columns'                    => 2,
 							'schema'                     => '',
 							'enableToggle'               => true,
+							'equalHeight'               => true,
 						),
 					),
 					'uagb/faq-child'          => array(

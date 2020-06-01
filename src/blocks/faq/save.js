@@ -38,7 +38,8 @@ export default function save( props ) {
 			`uagb-faq-icon-${ props.attributes.iconAlign }`,
 			`uagb-faq-layout-${ props.attributes.layout }`,
 			`uagb-faq-expand-first-${ props.attributes.expandFirstItem }`,
-			`uagb-faq-inactive-other-${ props.attributes.inactiveOtherItems }`
+			`uagb-faq-inactive-other-${ props.attributes.inactiveOtherItems }`,
+			`uagb-faq-equal-height-${ props.attributes.equalHeight }`
 		) }
 		data-faqtoggle = { props.attributes.enableToggle }
 		>

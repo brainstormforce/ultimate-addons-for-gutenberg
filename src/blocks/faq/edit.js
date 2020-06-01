@@ -191,7 +191,8 @@ class UAGBFaqEdit extends Component {
 			iconSizeTablet,
 			iconSize,
 			columns,
-			enableToggle
+			enableToggle,
+			equalHeight
 		} = attributes
 
 		var element = document.getElementById( "uagb-style-faq-" + this.props.clientId )
@@ -344,13 +345,20 @@ class UAGBFaqEdit extends Component {
 						max={ 50 }
 					/>
 					{ 'grid' === layout &&
-						<RangeControl
-							label={ __( "Columns Gap (px)" ) }
-							value={ columnsGap }
-							onChange={ ( value ) => setAttributes( { columnsGap: value } ) }
-							min={ 0 }
-							max={ 50 }
-						/>
+						<Fragment>
+							<RangeControl
+								label={ __( "Columns Gap (px)" ) }
+								value={ columnsGap }
+								onChange={ ( value ) => setAttributes( { columnsGap: value } ) }
+								min={ 0 }
+								max={ 50 }
+							/>
+							<ToggleControl
+							label={ __( "Equal Height" ) }
+							checked={ equalHeight }
+							onChange={ ( value ) => setAttributes( { equalHeight: ! equalHeight } ) }
+							/>
+						</Fragment>
 					}
 					<ToggleControl
 						label={ __( "Enable Separator" ) }
@@ -868,7 +876,8 @@ class UAGBFaqEdit extends Component {
 					`uagb-faq-icon-${ this.props.attributes.iconAlign }`,
 					`uagb-faq-layout-${ this.props.attributes.layout }`,
 					`uagb-faq-expand-first-${ this.props.attributes.expandFirstItem }`,
-					`uagb-faq-inactive-other-${ this.props.attributes.inactiveOtherItems }`
+					`uagb-faq-inactive-other-${ this.props.attributes.inactiveOtherItems }`,
+					`uagb-faq-equal-height-${ this.props.attributes.equalHeight }`
 				) }
 				data-faqtoggle = { this.props.attributes.enableToggle }
 				>
