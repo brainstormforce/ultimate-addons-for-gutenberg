@@ -243,7 +243,7 @@ class UAGBHowTo extends Component {
 				timeSpace,
 				costSpace,
 				row_gap,
-				
+				step_gap
 			},
 		} = this.props
 
@@ -330,13 +330,41 @@ class UAGBHowTo extends Component {
 
 	}
 
-		const getInfoBoxAsChild = [ [ 'uagb/info-box', {infoBoxTitle:"Step 1",iconimgPosition:"left",source_type:"image",
-		showPrefix:false,seperatorStyle:"none",ctaType:"all",
-		} ],[ 'uagb/info-box', {infoBoxTitle:"Step 2",iconimgPosition:"left",source_type:"image",
-		showPrefix:false,seperatorStyle:"none",ctaType:"all",
-		} ],[ 'uagb/info-box', {infoBoxTitle:"Step 3",iconimgPosition:"left",source_type:"image",
-		showPrefix:false,seperatorStyle:"none",ctaType:"all",
-		} ] ];
+		const getInfoBoxAsChild = [
+			[ 'uagb/info-box', 
+				{
+					infoBoxTitle:"Step 1",
+					iconimgPosition:"left",
+					source_type:"image",
+					showPrefix:false,
+					seperatorStyle:"none",
+					ctaType:"all",
+					headingTag: "h4"
+				}
+			],
+			[ 'uagb/info-box', 
+				{
+					infoBoxTitle:"Step 2",
+					iconimgPosition:"left",
+					source_type:"image",
+					showPrefix:false,
+					seperatorStyle:"none",
+					ctaType:"all",
+					headingTag: "h4"
+				}
+			],
+			[ 'uagb/info-box', 
+				{
+					infoBoxTitle:"Step 3",
+					iconimgPosition:"left",
+					source_type:"image",
+					showPrefix:false,
+					seperatorStyle:"none",
+					ctaType:"all",
+					headingTag: "h4"
+				}
+			]
+		];
 
 		const howtoGeneralSettings = () => {
 
@@ -589,7 +617,15 @@ class UAGBHowTo extends Component {
 					value={ row_gap }
 					onChange={ ( value ) => setAttributes( { row_gap: value } ) }
 					min={ 0 }
-					max={ 50 }
+					max={ 500 }
+					allowReset
+				/>
+				<RangeControl
+					label={ __( "Gap Between Steps" ) }
+					value={ step_gap }
+					onChange={ ( value ) => setAttributes( { step_gap: value } ) }
+					min={ 0 }
+					max={ 500 }
 					allowReset
 				/>
 				</PanelBody>
@@ -764,7 +800,6 @@ class UAGBHowTo extends Component {
 													className={ classnames(
 														`uagb-how-to-tools-${index}`,
 														"uagb-how-to-tools-child__wrapper",
-														className
 													) }
 													key={ index }
 												>
@@ -812,7 +847,6 @@ class UAGBHowTo extends Component {
 										className={ classnames(
 											`uagb-how-to-materials-${index}`,
 											"uagb-how-to-materials-child__wrapper",
-											className
 										) }
 									>
 										<div className="uagb-materials">

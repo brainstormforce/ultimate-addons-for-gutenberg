@@ -282,6 +282,9 @@ const attributes = {
 		type: "number",
 		default: 20
 	},
+	step_gap: {
+		type: "number",
+	},
 	schema: {
 		type: "string",
 		default: ""

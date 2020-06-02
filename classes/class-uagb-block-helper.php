@@ -61,6 +61,14 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['row_gap'], 'px' ),
 				),
 
+				' .uagb-howto-steps__wrap .wp-block-uagb-info-box' => array(
+					'margin-bottom' => UAGB_Helper::get_css_value( $attr['step_gap'], 'px' ),
+				),
+
+				' .uagb-howto-steps__wrap .wp-block-uagb-info-box:last-child' => array(
+					'margin-bottom' => '0px',
+				),
+
 				' span.uagb-howto__time-wrap .uagb-howto-timeNeeded-value' => array(
 					'margin-left' => UAGB_Helper::get_css_value( $attr['timeSpace'], 'px' ),
 				),

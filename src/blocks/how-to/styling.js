@@ -50,10 +50,14 @@ function styling( props ) {
 		timeSpace,
 		costSpace,
 		row_gap,
+		step_gap
 	} = props.attributes
 
 	var tablet_selectors = {}
 	var mobile_selectors = {}
+
+	var s_gap = ( '' !== step_gap ) ? step_gap : 0;
+	s_gap += 30;
 
 	var selectors = {
 		
@@ -87,6 +91,9 @@ function styling( props ) {
 		' .uagb-how-to-materials .uagb-how-to-materials-child__wrapper:last-child' : {
 		 "margin-bottom" :  generateCSSUnit( row_gap, 'px' ),
 		 },
+		' .uagb-howto-steps__wrap .wp-block.block-editor-block-list__block' : {
+			'margin-bottom' : generateCSS( s_gap, 'px' )
+		},
 		" .block-editor-rich-text__editable.uagb-howto-timeNeeded-text": {
 			"font-family": priceFontFamily,
 			"font-weight": priceFontWeight,
