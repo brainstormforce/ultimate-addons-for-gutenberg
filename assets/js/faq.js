@@ -82,6 +82,7 @@ function setupFAQ() {
 			if ( true === expandFirstelements[item].classList.contains('uagb-faq-layout-accordion') ) { 
 				
 				expandFirstelements[item].querySelectorAll( '.uagb-faq-child__outer-wrap' )[0].getElementsByClassName( 'uagb-faq-item' )[0].classList.add( 'uagb-faq-item-active' );
+				expandFirstelements[item].querySelectorAll( '.uagb-faq-child__outer-wrap' )[0].getElementsByClassName( 'uagb-faq-item' )[0].querySelectorAll( '.uagb-faq-content' )[0].style.display = 'block';
 			}
 		}  
 	}
@@ -91,6 +92,7 @@ function setupFAQ() {
 			
 			for ( var childItem = 0;  childItem < otherItems.length; childItem++ ) {
 				otherItems[childItem].getElementsByClassName( 'uagb-faq-item' )[0].classList.add( 'uagb-faq-item-active' );
+				otherItems[childItem].getElementsByClassName( 'uagb-faq-item' )[0].querySelectorAll( '.uagb-faq-content' )[0].style.display = 'block';
 			}
 		}
 	}
