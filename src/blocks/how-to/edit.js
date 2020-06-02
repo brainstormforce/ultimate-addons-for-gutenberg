@@ -764,8 +764,7 @@ class UAGBHowTo extends Component {
 													className={ classnames(
 														`uagb-how-to-tools-${index}`,
 														"uagb-how-to-tools-child__wrapper",
-														className,
-														`uagb-block-${ this.props.clientId }`
+														className
 													) }
 													key={ index }
 												>
@@ -813,8 +812,7 @@ class UAGBHowTo extends Component {
 										className={ classnames(
 											`uagb-how-to-materials-${index}`,
 											"uagb-how-to-materials-child__wrapper",
-											className,
-											`uagb-block-${ this.props.clientId }`
+											className
 										) }
 									>
 										<div className="uagb-materials">

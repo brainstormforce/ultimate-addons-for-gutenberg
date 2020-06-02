@@ -147,8 +147,7 @@ export default function save( props ) {
 									className={ classnames(
 										`uagb-how-to-tools-${index}`,
 										"uagb-how-to-tools-child__wrapper",
-										className,
-										`uagb-block-${ block_id }`
+										className
 									) }
 									key={ index }
 								>
@@ -183,8 +182,7 @@ export default function save( props ) {
 								className={ classnames(
 									`uagb-how-to-materials-${index}`,
 									"uagb-how-to-materials-child__wrapper",
-									className,
-									`uagb-block-${ block_id }`
+									className
 								) }
 							>
 								<div className="uagb-materials">
