@@ -680,7 +680,7 @@ class UAGBHowTo extends Component {
 					}
 					{ showTotaltime &&
 						<RichText
-							tagName="h3"
+							tagName="p"
 							placeholder={ __( "30" ) }
 							value={ time }
 							className='uagb-howto-timeNeeded-value'
@@ -692,7 +692,7 @@ class UAGBHowTo extends Component {
 					}
 					{ showTotaltime &&
 						<RichText
-							tagName="h3"
+							tagName="p"
 							placeholder={ __( "Minutes" ) }
 							value={ timeIn }
 							className='uagb-howto-timeINmin-text'
@@ -718,7 +718,7 @@ class UAGBHowTo extends Component {
 					}
 					{ showEstcost &&
 						<RichText
-							tagName="h3"
+							tagName="p"
 							placeholder={ __( "30" ) }
 							value={ cost }
 							className='uagb-howto-estcost-value'
@@ -730,7 +730,7 @@ class UAGBHowTo extends Component {
 					}
 					{ showEstcost &&
 						<RichText
-							tagName="h3"
+							tagName="p"
 							placeholder={ __( "USD" ) }
 							value={ currencyType }
 							className='uagb-howto-estcost-type'

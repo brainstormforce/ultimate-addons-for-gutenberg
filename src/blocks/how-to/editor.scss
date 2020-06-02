@@ -40,8 +40,11 @@
     .uagb-how-to-tools__wrap,
     .uagb-how-to-steps__wrap {
         h3 {
-            margin: 0;
             margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        p {
+            margin-top: 25px;
         }
     }
 }

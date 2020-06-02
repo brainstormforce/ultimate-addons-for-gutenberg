@@ -99,11 +99,11 @@ export default function save( props ) {
 					/>
 					<RichText.Content
 						value={ time }
-						tagName='h3'
+						tagName='p'
 						className='uagb-howto-timeNeeded-value'
 					/>
 					<RichText.Content
-						tagName="h3"
+						tagName="p"
 						value={ timeIn }
 						className='uagb-howto-timeINmin-text'
 					/>
@@ -118,11 +118,11 @@ export default function save( props ) {
 					/>
 					<RichText.Content
 						value={ cost }
-						tagName='h3'
+						tagName='p'
 						className='uagb-howto-estcost-value'
 					/>
 					<RichText.Content
-						tagName="h3"
+						tagName="p"
 						value={ currencyType }
 						className='uagb-howto-estcost-type'
 					/>
