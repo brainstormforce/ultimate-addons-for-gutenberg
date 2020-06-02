@@ -94,7 +94,7 @@ export default function save( props ) {
 				<span className="uagb-howto__time-wrap">
 					<RichText.Content
 						value={ timeNeeded }
-						tagName='h3'
+						tagName='h4'
 						className='uagb-howto-timeNeeded-text'
 					/>
 					<RichText.Content
@@ -113,7 +113,7 @@ export default function save( props ) {
 				<span className="uagb-howto__cost-wrap">
 					<RichText.Content
 						value={ estCost }
-						tagName='h3'
+						tagName='h4'
 						className='uagb-howto-estcost-text'
 					/>
 					<RichText.Content
@@ -133,7 +133,7 @@ export default function save( props ) {
 				<div className="uagb-how-to-tools__wrap">
 					<RichText.Content
 						value={ toolsTitle }
-						tagName='h3'
+						tagName='h4'
 						className='uagb-howto-req-tools-text'
 					/>
 				</div>
@@ -148,7 +148,7 @@ export default function save( props ) {
 										`uagb-how-to-tools-${index}`,
 										"uagb-how-to-tools-child__wrapper",
 										className,
-										`uagb-block-${ props.clientId }`
+										`uagb-block-${ block_id }`
 									) }
 									key={ index }
 								>
@@ -169,7 +169,7 @@ export default function save( props ) {
 				<div className="uagb-how-to-materials__wrap">
 					<RichText.Content
 						value={ materialTitle }
-						tagName='h3'
+						tagName='h4'
 						className='uagb-howto-req-materials-text'
 					/>
 				</div>
@@ -184,7 +184,7 @@ export default function save( props ) {
 									`uagb-how-to-materials-${index}`,
 									"uagb-how-to-materials-child__wrapper",
 									className,
-									`uagb-block-${ props.clientId }`
+									`uagb-block-${ block_id }`
 								) }
 							>
 								<div className="uagb-materials">
@@ -203,7 +203,7 @@ export default function save( props ) {
 			<div className="uagb-how-to-steps__wrap">
 				<RichText.Content
 					value={ stepsTitle }
-					tagName='h3'
+					tagName='h4'
 					className='uagb-howto-req-steps-text'
 				/>
 				<div className="uagb-howto-steps__wrap">

@@ -148,7 +148,7 @@ const attributes = {
 	},
 	headingTag: {
 		type: "string",
-		default: "h2"
+		default: "h3"
 	},
 	headSpace: {
 		type: "number",
