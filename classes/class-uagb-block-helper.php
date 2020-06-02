@@ -134,9 +134,9 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' .uagb-how-to-materials__wrap .uagb-howto-req-materials-text', $combined_selectors );
 			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' .uagb-how-to-tools__wrap .uagb-howto-req-tools-text', $combined_selectors );
 			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' .uagb-how-to-steps__wrap .uagb-howto-req-steps-text', $combined_selectors );
-			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' span.uagb-howto__cost-wrap h3.uagb-howto-estcost-text', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' span.uagb-howto__cost-wrap h4.uagb-howto-estcost-text', $combined_selectors );
 			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'subHead', ' span.uagb-howto__cost-wrap p', $combined_selectors );
-			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' span.uagb-howto__time-wrap h3.uagb-howto-timeNeeded-text', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'price', ' span.uagb-howto__time-wrap h4.uagb-howto-timeNeeded-text', $combined_selectors );
 			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'subHead', ' span.uagb-howto__time-wrap p', $combined_selectors );
 			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'head', ' .uagb-howto-heading-text', $combined_selectors );
 			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'subHead', ' .uagb-howto__wrap p.uagb-howto-desc-text', $combined_selectors );
