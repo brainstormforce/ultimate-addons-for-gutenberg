@@ -98,81 +98,9 @@ const attributes = {
 		type: "string",
 		default: "#313131"
 	},
-	questionPaddingTypeMobile: {
-		type: "string",
-		default : "px"
-	},
-	questionPaddingTypeTablet: {
-		type: "string",
-		default : "px"
-	},
-	questionPaddingTypeDesktop: {
-		type: "string",
-		default : "px"
-	},
-	vquestionPaddingMobile: {
-		type: "number",
-		default : 10
-	},
-	vquestionPaddingTablet: {
-		type: "number",
-		default : 10
-	},
-	vquestionPaddingDesktop: {
-		type: "number",
-		default : 10
-	},
-	hquestionPaddingMobile: {
-		type: "number",
-		default : 10
-	},
-	hquestionPaddingTablet: {
-		type: "number",
-		default : 10
-	},
-	hquestionPaddingDesktop: {
-		type: "number",
-		default : 10
-	},
 	answerTextColor: {
 		type: "string",
 		default: "#313131"
-	},
-	answerPaddingTypeMobile: {
-		type: "string",
-		default : "px"
-	},
-	answerPaddingTypeTablet: {
-		type: "string",
-		default : "px"
-	},
-	answerPaddingTypeDesktop: {
-		type: "string",
-		default : "px"
-	},
-	vanswerPaddingMobile: {
-		type: "number",
-		default : 10
-	},
-	vanswerPaddingTablet: {
-		type: "number",
-		default : 10
-	},
-	vanswerPaddingDesktop: {
-		type: "number",
-		default : 10
-	},
-	hanswerPaddingMobile: {
-		type: "number",
-		default : 10
-	},
-	hanswerPaddingTablet: {
-		type: "number",
-		default : 10
-	},
-	hanswerPaddingDesktop: {
-		type: "number",
-		default : 10
 	},
 	iconColor: {
 		type: "string"
@@ -307,6 +235,30 @@ const attributes = {
 	equalHeight: {
 		type: "boolean",
 		default: true	
+	},
+	questionPaddingTypeMobile: {
+		type: "string",
+		default : "px"
+	},
+	questionPaddingTypeTablet: {
+		type: "string",
+		default : "px"
+	},
+	questionPaddingTypeDesktop: {
+		type: "string",
+		default : "px"
+	},
+	questionBottomPaddingMobile: {
+		type: "number",
+		default : 10
+	},
+	questionBottomPaddingTablet: {
+		type: "number",
+		default : 10
+	},
+	questionBottomPaddingDesktop: {
+		type: "number",
+		default : 10
 	},
 }
 
