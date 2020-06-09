@@ -48,7 +48,7 @@ class UAGBButtonsChild extends Component {
 		this.state = {
 			isURLPickerOpen:false,
 		}
-		this.getCtaicon = this.getCtaicon.bind(this)
+		this.getMbicon = this.getMbicon.bind(this)
 	}
 	componentDidMount() {
 		
@@ -82,8 +82,8 @@ class UAGBButtonsChild extends Component {
 		}
 	}
 
-	getCtaicon(value) {
-		this.props.setAttributes( { ctaIcon: value } )
+	getMbicon(value) {
+		this.props.setAttributes( { mbIcon: value } )
 	}
 	render() {
 		
@@ -102,6 +102,9 @@ class UAGBButtonsChild extends Component {
 			borderColor,
 			borderHColor,
 			color,
+			mbIcon,
+			mbIconPosition,
+			mbIconSpace,
 			background,
 			hColor,
 			hBackground,
@@ -121,13 +124,20 @@ class UAGBButtonsChild extends Component {
 		}
 
 		// Icon properties.
-		const cta_icon_props = {
+		const mb_icon_props = {
 			icons: svg_icons,
 			renderFunc: renderSVG,
-			value: ctaIcon,
-			onChange: this.getCtaicon,
+			value: mbIcon,
+			onChange: this.getMbicon,
 			isMulti: false,
 			noSelectedPlaceholder: __( "Select Icon" )
+		}
+
+		var mb_icon_output = ""
+		if( attributes.mbIcon !== "" ){
+			mb_icon_output = <span className= { classnames( `uagb-ifb-align-icon-${ attributes.mbIconPosition }`) }>
+				{ renderSVG(attributes.mbIcon) }
+			</span>
 		}
 
 		const linkControl = this.state.isURLPickerOpen && (
@@ -159,6 +169,34 @@ class UAGBButtonsChild extends Component {
 					initialOpen={ true }
 					className="uagb__url-panel-body"
 				>
+					{/* Button icon option */}
+					<Fragment>
+						<hr className="uagb-editor__separator" />
+						<h2>{ __( "Button Icon" ) }</h2>
+						<FontIconPicker {...mb_icon_props} />
+						{ mbIcon != "" && <Fragment>
+							<SelectControl
+								label={ __( "Icon Position" ) }
+								value={ mbIconPosition }
+								onChange={ ( value ) => setAttributes( { mbIconPosition: value } ) }
+								options={ [
+									{ value: "before", label: __( "Before Text" ) },
+									{ value: "after", label: __( "After Text" ) },
+								] }
+							/>
+							<RangeControl
+								label={ __( "Icon Spacing" ) }
+								value={ mbIconSpace }
+								onChange={ ( value ) => setAttributes( { mbIconSpace: value } ) }
+								min={ 0 }
+								max={ 50 }
+								beforeIcon=""
+								allowReset
+							/>
+						</Fragment>
+						}
+					</Fragment>
+					{/* button icon option end */}
 					<h2>{  __( " Color Settings" ) }</h2>
 					<TabPanel className="uagb-inspect-tabs uagb-inspect-tabs-col-2"
 						activeClass="active-tab"
@@ -281,32 +319,6 @@ class UAGBButtonsChild extends Component {
 						min={ 0 }
 						max={ 50 }
 					/>
-					<Fragment>
-						<hr className="uagb-editor__separator" />
-						<h2>{ __( "Button Icon" ) }</h2>
-						<FontIconPicker {...cta_icon_props} />
-						{ ctaIcon != "" && <Fragment>
-							<SelectControl
-								label={ __( "Icon Position" ) }
-								value={ ctaIconPosition }
-								onChange={ ( value ) => setAttributes( { ctaIconPosition: value } ) }
-								options={ [
-									{ value: "before", label: __( "Before Text" ) },
-									{ value: "after", label: __( "After Text" ) },
-								] }
-							/>
-							<RangeControl
-								label={ __( "Icon Spacing" ) }
-								value={ ctaIconSpace }
-								onChange={ ( value ) => setAttributes( { ctaIconSpace: value } ) }
-								min={ 0 }
-								max={ 50 }
-								beforeIcon=""
-								allowReset
-							/>
-						</Fragment>
-						}
-					</Fragment>
 					<hr className="uagb-editor__separator" />
 					<TabPanel className="uagb-size-type-field-tabs" activeClass="active-tab"
 						tabs={ [

@@ -1243,6 +1243,8 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 							'borderColor'      => '#333',
 							'borderHColor'     => '',
 							'color'            => '#333',
+							'mbIconPosition'   => 'after',
+							'mbIconSpace'      => 5,
 							'background'       => '',
 							'hColor'           => '',
 							'hBackground'      => '',
