@@ -309,7 +309,7 @@ function styling( props ) {
 		},
 	}
 
-	var base_selector = `.block-editor-page #wpwrap .uagb-block-${ props.clientId }`
+	var base_selector = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`
 
 	var styling_css = generateCSS( selectors, base_selector )
 

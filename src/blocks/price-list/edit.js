@@ -12,7 +12,6 @@ import RestMenuStyle from "./inline-styles"
 import RestMenuImage from "./components/RestMenuImage"
 import times from "lodash/times"
 import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
-import map from "lodash/map"
 
 // Import all of our Text Options requirements.
 import TypographyControl from "../../components/typography"
@@ -36,7 +35,6 @@ const {
 	SelectControl,
 	RangeControl,
 	BaseControl,
-	ButtonGroup,
 	Button,
 	TabPanel,
 	Dashicon
@@ -112,7 +110,6 @@ class UAGBRestaurantMenu extends Component {
 	 * Event to set Image selectot label.
 	 */
 	getImageName( image ){
-		const { rest_menu_item_arr } = this.props.attributes
 
 		let image_title = __( "Select Image" )
 		if(image){
@@ -129,7 +126,6 @@ class UAGBRestaurantMenu extends Component {
 	 * Event to set Image as null while removing.
 	 */
 	onRemoveImage() {
-		const { backgroundImage } = this.props.attributes
 		const { setAttributes } = this.props
 
 		setAttributes( { backgroundImage: null } )
@@ -139,7 +135,6 @@ class UAGBRestaurantMenu extends Component {
 	 * Event to set Image as while adding.
 	 */
 	onSelectImage( media ) {
-		const { backgroundImage } = this.props.attributes
 		const { setAttributes } = this.props
 
 		if ( ! media || ! media.url ) {
@@ -157,7 +152,7 @@ class UAGBRestaurantMenu extends Component {
 
 	render() {
 
-		const { isSelected, className, setAttributes, attributes, mergeBlocks, insertBlocksAfter, onReplace } = this.props
+		const { className, setAttributes, attributes } = this.props
 
 		// Setup the attributes.
 		const {
@@ -167,7 +162,6 @@ class UAGBRestaurantMenu extends Component {
 			priceColor,
 			descColor,
 			titleColor,
-			prefixTag,
 			headingTag,
 
 			titleFontSizeType,
@@ -208,14 +202,8 @@ class UAGBRestaurantMenu extends Component {
 			descLineHeightTablet,
 			descLineHeightMobile,
 			descLoadGoogleFonts,
-
-			separatorWidth,
-			separatorSpace,
-			descSpace,
 			imagePosition,
 			imageAlignment,
-			block_id,
-			source_type,
 			titleSpace,
 			imgHrPadding,
 			imgVrPadding,
@@ -233,18 +221,7 @@ class UAGBRestaurantMenu extends Component {
 			seperatorThickness,
 			seperatorColor,
 			stack,
-		} = attributes
-
-		// Add CSS.
-		var element = document.getElementById( "uagb-restaurant-menu-style-" + this.props.clientId )
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = RestMenuStyle( this.props )
-		}
-
-		const sizeTypes = [
-			{ key: "px", name: __( "px" ) },
-			{ key: "em", name: __( "em" ) },
-		]		
+		} = attributes	
 
 		let loadTitleGoogleFonts
 		let loadDescGoogleFonts
@@ -745,7 +722,7 @@ class UAGBRestaurantMenu extends Component {
 				<div className={ classnames(
 					className,
 					"uagb-rest_menu__outer-wrap",
-					`uagb-block-${this.props.clientId}`
+					`uagb-block-${this.props.clientId.substr( 0, 8 )}`
 				) }
 				>
 
@@ -788,16 +765,24 @@ class UAGBRestaurantMenu extends Component {
 		)
 	}
 
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-restaurant-menu-style-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = RestMenuStyle( this.props )
+		}
+	}
+
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { classMigrate: true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-restaurant-menu-style-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-restaurant-menu-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 	}
 }

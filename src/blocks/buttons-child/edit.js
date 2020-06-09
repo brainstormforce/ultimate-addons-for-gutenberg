@@ -4,10 +4,7 @@
 
 // Import classes
 import classnames from "classnames"
-import UAGBIcon from "../../../dist/blocks/uagb-controls/UAGBIcon.json"
-import FontIconPicker from "@fonticonpicker/react-fonticonpicker"
 import styling from "./styling"
-import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
 import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
 
 let svg_icons = Object.keys( UAGBIcon )
@@ -50,16 +47,26 @@ class UAGBButtonsChild extends Component {
 		}
 		this.getMbicon = this.getMbicon.bind(this)
 	}
+
 	componentDidMount() {
 		
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
         this.props.setAttributes( { classMigrate: true } )
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-style-buttons-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-style-button-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 	}
+
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-style-button-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
+	}
+
 	onClickLinkSettings () {
 		
 		const { attributes, setAttributes } = this.props
@@ -74,6 +81,7 @@ class UAGBButtonsChild extends Component {
 			isURLPickerOpen: true
 		}) 
 	}
+
 	onChangeOpensInNewTab ( value ) {
 		if ( true === value ) {
 			this.props.setAttributes( { target: '_blank' } )
@@ -117,11 +125,6 @@ class UAGBButtonsChild extends Component {
 			lineHeightTablet,
 			opensInNewTab
 		} = attributes;
-        var element = document.getElementById( "uagb-style-buttons-" + this.props.clientId )
-
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
 
 		// Icon properties.
 		const mb_icon_props = {
@@ -635,10 +638,10 @@ class UAGBButtonsChild extends Component {
 					{ buttonControls }
 				</InspectorControls>
 				<div className={ classnames(
-				className,
-				"uagb-buttons__outer-wrap",
-				`uagb-block-${ this.props.clientId }`
-				) }>
+					className,
+					"uagb-buttons__outer-wrap",
+					`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
+					) }>
 					<div className="uagb-button__wrapper">
 						<div className="uagb-buttons-repeater uagb-button__wrapper">
 							<RichText

@@ -10,7 +10,6 @@ import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
 function styling( props ) {
 
 	const {
-		block_id,
 		classMigrate,
 		skinStyle,
 		align,	
@@ -22,7 +21,6 @@ function styling( props ) {
 		descFontSizeMobile,
 		descFontFamily,
 		descFontWeight,
-		descFontSubset,
 		descLineHeightType,
 		descLineHeight,
 		descLineHeightTablet,
@@ -33,7 +31,6 @@ function styling( props ) {
 		authorFontSizeMobile,
 		authorFontFamily,
 		authorFontWeight,
-		authorFontSubset,
 		authorLineHeightType,
 		authorLineHeight,
 		authorLineHeightTablet,
@@ -58,7 +55,6 @@ function styling( props ) {
 		tweetBtnFontSizeMobile,
 		tweetBtnFontFamily,
 		tweetBtnFontWeight,
-		tweetBtnFontSubset,
 		tweetBtnLineHeightType,
 		tweetBtnLineHeight,
 		tweetBtnLineHeightTablet,
@@ -72,7 +68,6 @@ function styling( props ) {
 		tweetBtnVrPadding,
 		tweetIconSpacing,		
 		authorImageWidth,
-		authorImageSize,
 		authorImgBorderRadius,
 		quoteBorderRadius,
 		quoteTopMargin,
@@ -87,15 +82,6 @@ function styling( props ) {
 		quotePaddingTablet,
 		quotePaddingMobile,
 	} = props.attributes
-
-	var content_align ="center"
-
-	if( align == "left" ){
-		content_align =" flex-start"
-	}
-	if( align == "right" ){
-		content_align =" flex-end"
-	}
 
 	var author_space = authorSpace
 
@@ -312,10 +298,7 @@ function styling( props ) {
 		},		
 	}
 
-	var base_selector = `.block-editor-page #wpwrap #uagb-blockquote-${ props.clientId }`
-	if ( classMigrate ) {
-		base_selector = `.block-editor-page #wpwrap .uagb-block-${ props.clientId }`
-	}
+	var base_selector = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`
 
 	var styling_css = generateCSS( selectors, base_selector )
 

@@ -36,7 +36,7 @@ class UAGBGoogleMap extends Component {
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 	}
 
 	render() {
@@ -46,7 +46,6 @@ class UAGBGoogleMap extends Component {
 			className,
 			setAttributes,
 			attributes: {
-				block_id,
 				height,
 				zoom,
 				address
@@ -88,7 +87,7 @@ class UAGBGoogleMap extends Component {
 						/>
 					</PanelBody>
 				</InspectorControls>
-				<div className={ classnames( className, "uagb-google-map__wrap", `uagb-block-${this.props.clientId}` ) }>
+				<div className={ classnames( className, "uagb-google-map__wrap", `uagb-block-${this.props.clientId.substr( 0, 8 )}` ) }>
 					<iframe
 						className="uagb-google-map__iframe"
 						src={url}

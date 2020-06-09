@@ -8,7 +8,6 @@ import classnames from "classnames"
 import styling from "./styling"
 import memoize from "memize"
 import times from "lodash/times"
-import map from "lodash/map"
 import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
 import shapes from "./shapes"
 import BoxShadowControl from "../../components/box-shadow"
@@ -67,7 +66,7 @@ class UAGBColumns extends Component {
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { classMigrate: true } )
 
@@ -76,15 +75,22 @@ class UAGBColumns extends Component {
 		}
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-columns-style-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-columns-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
+	}
+
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-columns-style-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
 	}
 
 	/*
 	 * Event to set Image as null while removing.
 	 */
 	onRemoveImage() {
-		const { backgroundImage } = this.props.attributes
 		const { setAttributes } = this.props
 
 		setAttributes( { backgroundImage: null } )
@@ -95,7 +101,6 @@ class UAGBColumns extends Component {
 	 */
 	onSelectImage( media ) {
 
-		const { backgroundImage } = this.props.attributes
 		const { setAttributes } = this.props
 
 		if ( ! media || ! media.url ) {
@@ -114,7 +119,6 @@ class UAGBColumns extends Component {
 	 * Event to set Video as null while removing.
 	 */
 	onRemoveVideo() {
-		const { backgroundVideo } = this.props.attributes
 		const { setAttributes } = this.props
 
 		setAttributes( { backgroundVideo: null } )
@@ -124,7 +128,6 @@ class UAGBColumns extends Component {
 	 * Event to set Video while adding.
 	 */
 	onSelectVideo( media ) {
-		const { backgroundVideo } = this.props.attributes
 		const { setAttributes } = this.props
 
 		if ( ! media || ! media.url ) {
@@ -227,12 +230,6 @@ class UAGBColumns extends Component {
 		} = attributes
 		
 		const CustomTag = `${tag}`
-
-		var element = document.getElementById( "uagb-columns-style-" + this.props.clientId )
-
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
 
 		let active = ( isSelected ) ? "active" : "not-active"
 
@@ -1219,7 +1216,7 @@ class UAGBColumns extends Component {
 						`align${ align }`,
 						reverse_tablet,
 						reverse_mobile,
-						`uagb-block-${this.props.clientId}`
+						`uagb-block-${this.props.clientId.substr( 0, 8 )}`
 					) }
 				>
 					<div className="uagb-columns__overlay"></div>

@@ -13,7 +13,6 @@ import TestimonialImage from "./components/TestimonialImage"
 import times from "lodash/times"
 import Slider from "react-slick"
 import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
-import map from "lodash/map"
 
 // Import all of our Text Options requirements.
 import TypographyControl from "../../components/typography"
@@ -28,7 +27,6 @@ const {
 	BlockControls,
 	ColorPalette,
 	InspectorControls,
-	RichText,
 	PanelColorSettings,
 	MediaUpload
 } = wp.blockEditor
@@ -40,7 +38,6 @@ const {
 	ToggleControl,
 	BaseControl,
 	Button,
-	ButtonGroup,
 	Dashicon,
 	TabPanel
 } = wp.components
@@ -155,7 +152,6 @@ class UAGBtestimonial extends Component {
 	 * Event to set Image as null while removing.
 	 */
 	onRemoveImage() {
-		const { backgroundImage } = this.props.attributes
 		const { setAttributes } = this.props
 
 		setAttributes( { backgroundImage: null } )
@@ -165,7 +161,6 @@ class UAGBtestimonial extends Component {
 	 * Event to set Image as while adding.
 	 */
 	onSelectImage( media ) {
-		const { backgroundImage } = this.props.attributes
 		const { setAttributes } = this.props
 
 		if ( ! media || ! media.url ) {
@@ -183,7 +178,7 @@ class UAGBtestimonial extends Component {
 
 	render() {
 
-		const { isSelected, className, setAttributes, attributes, mergeBlocks, insertBlocksAfter, onReplace } = this.props
+		const { className, setAttributes, attributes } = this.props
 
 		// Setup the attributes.
 		const {
@@ -233,18 +228,13 @@ class UAGBtestimonial extends Component {
 			descLineHeightMobile,
 			descLoadGoogleFonts,
 
-			separatorWidth,
-			separatorSpace,
 			descSpace,
 			iconimgStyle,
 			imagePosition,
 			imageAlignment,
-			block_id,
-			source_type,
 			nameSpace,
 			imgHrPadding,
 			imgVrPadding,
-			iconImage,
 			imageSize,
 			imageWidth,
 			columns,
@@ -277,17 +267,6 @@ class UAGBtestimonial extends Component {
 			borderColor,
 			stack,
 		} = attributes
-
-		// Add CSS.
-		var element = document.getElementById( "uagb-testinomial-style-" + this.props.clientId )
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = TestimonialStyle( this.props )
-		}
-
-		const sizeTypes = [
-			{ key: "px", name: __( "px" ) },
-			{ key: "em", name: __( "em" ) },
-		]
 
 		let loadNameGoogleFonts
 		let loadCompanyGoogleFonts
@@ -1018,7 +997,7 @@ class UAGBtestimonial extends Component {
 				<div className={ classnames(
 					className,
 					"uagb-testomonial__outer-wrap uagb-slick-carousel uagb-tm__arrow-outside",
-					`uagb-block-${ this.props.clientId }`
+					`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
 				) }
 				>
 					<Slider
@@ -1077,16 +1056,24 @@ class UAGBtestimonial extends Component {
 		)
 	}
 
+	componentDidUpdate(prevProps, prevState) {
+		var element = document.getElementById( "uagb-testinomial-style-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = TestimonialStyle( this.props )
+		}
+	}
+
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { classMigrate: true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-testinomial-style-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-testinomial-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 	}
 }

@@ -18,41 +18,33 @@ function InfoBoxStyle( props ) {
 		prefixFontSizeMobile,
 		prefixFontFamily,
 		prefixFontWeight,
-		prefixFontSubset,
 		prefixLineHeightType,
 		prefixLineHeight,
 		prefixLineHeightTablet,
 		prefixLineHeightMobile,
-		prefixLoadGoogleFonts,
 		headFontSize,
 		headFontSizeType,
 		headFontSizeTablet,
 		headFontSizeMobile,
 		headFontFamily,
 		headFontWeight,
-		headFontSubset,
 		headLineHeightType,
 		headLineHeight,
 		headLineHeightTablet,
 		headLineHeightMobile,
-		headLoadGoogleFonts,
 		subHeadFontSize,
 		subHeadFontSizeType,
 		subHeadFontSizeTablet,
 		subHeadFontSizeMobile,
 		subHeadFontFamily,
 		subHeadFontWeight,
-		subHeadFontSubset,
 		subHeadLineHeightType,
 		subHeadLineHeight,
 		subHeadLineHeightTablet,
 		subHeadLineHeightMobile,
-		subHeadLoadGoogleFonts,
 		separatorWidthType,
 		headSpace,
-		separatorSpace,
 		subHeadSpace,
-		icon,
 		iconColor,
 		iconSize,
 		iconimgPosition,
@@ -70,8 +62,6 @@ function InfoBoxStyle( props ) {
 		ctaFontSizeTablet,
 		ctaFontFamily,
 		ctaFontWeight,
-		ctaFontSubset,		
-		ctaBtnSize,
 		ctaBtnLinkColor,
 		ctaBgColor,
 		ctaBtnVertPadding,
@@ -85,7 +75,6 @@ function InfoBoxStyle( props ) {
 		iconRightMargin,
 		iconTopMargin,
 		iconBottomMargin,
-		imageSize,
 		imageWidth,
 		imageWidthType,
 		ctaLinkHoverColor,
@@ -303,10 +292,7 @@ function InfoBoxStyle( props ) {
 		}
 	}
 
-	var id = `.block-editor-page #wpwrap #uagb-infobox-${ props.clientId }`
-	if ( classMigrate ) {
-		id = `.block-editor-page #wpwrap .uagb-block-${ props.clientId }`
-	}
+	var id = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`
 	var styling_css = generateCSS( selectors, id )
 
 	styling_css += generateCSS( tablet_selectors, id, true, "tablet" )

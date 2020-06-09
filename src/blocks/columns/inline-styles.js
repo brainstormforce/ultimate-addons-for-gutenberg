@@ -16,8 +16,6 @@ function inlineStyles( props, isEditor ) {
 		backgroundSize,
 		backgroundAttachment,
 		backgroundImage,
-		backgroundColor,
-		backgroundOpacity,
 		backgroundRepeat,
 		backgroundType,
 		borderStyle,

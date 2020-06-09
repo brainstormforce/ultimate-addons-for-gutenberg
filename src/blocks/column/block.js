@@ -2,7 +2,6 @@
  * BLOCK: Column
  */
 
-import classnames from "classnames"
 import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
 import edit from "./edit"
 import save from "./save"

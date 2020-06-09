@@ -218,7 +218,6 @@ if ( ! class_exists( 'UAGB_Block_JS' ) ) {
 			UAGB_Helper::blocks_google_font( $price_load_google_font, $price_font_family, $price_font_weight, $price_font_subset );
 		}
 
-
 		/**
 		 * Adds Google fonts for CF7 Styler block.
 		 *

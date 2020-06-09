@@ -8,7 +8,6 @@ import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
 function styling( props ) {
 
 	const {
-		classMigrate,
 		customWidth,
 		widthDesktop,
 		widthTablet,
@@ -31,13 +30,7 @@ function styling( props ) {
 		headingColor,
 		//Margin
 		vMarginDesktop,
-		vMarginTablet,
-		vMarginMobile,
 		hMarginDesktop,
-		hMarginTablet,
-		hMarginMobile,
-		marginTypeMobile,
-		marginTypeTablet,
 		marginTypeDesktop,
 		//Padding,
 		vPaddingDesktop,
@@ -63,10 +56,8 @@ function styling( props ) {
 		borderRadius,
 		borderColor,
 		//Typography
-		loadGoogleFonts,
 		fontFamily,
 		fontWeight,
-		fontSubset,
 		fontSize,
 		fontSizeType,
 		fontSizeTablet,
@@ -75,11 +66,8 @@ function styling( props ) {
 		lineHeight,
 		lineHeightTablet,
 		lineHeightMobile,
-
-		headingLoadGoogleFonts,
 		headingFontFamily,
 		headingFontWeight,
-		headingFontSubset,
 		headingFontSize,
 		headingFontSizeType,
 		headingFontSizeTablet,
@@ -234,10 +222,7 @@ function styling( props ) {
 		},
 	}
 
-	var id = `#uagb-toc-${ props.clientId }`
-	if ( classMigrate ) {
-		id = `.uagb-block-${ props.clientId }`
-	}
+	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
 
 	var styling_css = generateCSS( selectors, id )
 

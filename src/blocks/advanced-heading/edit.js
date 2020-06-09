@@ -4,8 +4,6 @@
 
 // Import block dependencies and components.
 import classnames from "classnames"
-import map from "lodash/map"
-import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
 import styling from "./styling"
 
 // Import all of our Text Options requirements.
@@ -21,7 +19,6 @@ import "./style.scss"
 const { __ } = wp.i18n
 
 const {
-	registerBlockType,
 	createBlock
 } = wp.blocks
 
@@ -39,9 +36,6 @@ const {
 	RangeControl,
 	ButtonGroup,
 	Button,
-	TabPanel,
-	Dashicon,
-	TextControl
 } = wp.components
 
 const { withSelect } = wp.data
@@ -59,7 +53,7 @@ class UAGBAdvancedHeading extends Component {
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		// Assigning block_id in the attribute.
 		this.props.setAttributes( { classMigrate: true } )
@@ -69,8 +63,16 @@ class UAGBAdvancedHeading extends Component {
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-adv-heading-style-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-adv-heading-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
+	}
+
+	componentDidUpdate(prevProps, prevState) {
+		var element = document.getElementById( "uagb-adv-heading-style-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
 	}
 
 	/*
@@ -119,18 +121,14 @@ class UAGBAdvancedHeading extends Component {
 
 		// Setup the attributes
 		const {
-			isSelected,
 			className,
 			attributes,
 			setAttributes,
 			insertBlocksAfter,
 			mergeBlocks,
 			onReplace,
-			anchor,
 			attributes: {
-				level,
 				headingTitle,
-				headingId,
 				headingDesc,
 				headingAlign,
 				headingColor,
@@ -169,12 +167,6 @@ class UAGBAdvancedHeading extends Component {
 				subHeadLoadGoogleFonts,
 			},
 		} = this.props
-
-		var element = document.getElementById( "uagb-adv-heading-style-" + this.props.clientId )
-
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
 
 		let loadHeadingGoogleFonts;
 		let loadSubHeadingGoogleFonts;
@@ -359,7 +351,7 @@ class UAGBAdvancedHeading extends Component {
 				<div
 					className={ classnames(
 						className,
-						`uagb-block-${this.props.clientId}`,					
+						`uagb-block-${this.props.clientId.substr( 0, 8 )}`,					
 					) }
 				>
 					<RichText
@@ -406,7 +398,7 @@ class UAGBAdvancedHeading extends Component {
 }
 
 export default withSelect( ( select, props ) => {
-	const { anchor, attributes } = props
+	const { attributes } = props
 	return {
 		anchor: attributes.headingId
 	}

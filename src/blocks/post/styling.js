@@ -10,7 +10,6 @@ import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
 function styling( props ) {
 
 	const {
-		newTab,
 		align,
 		rowGap,
 		columnGap,
@@ -18,55 +17,46 @@ function styling( props ) {
 		contentPadding,
 		contentPaddingMobile,
 		titleColor,
-		titleTag,
 		titleFontSize,
 		titleFontSizeType,
 		titleFontSizeMobile,
 		titleFontSizeTablet,
 		titleFontFamily,
 		titleFontWeight,
-		titleFontSubset,
 		titleLineHeightType,
 		titleLineHeight,
 		titleLineHeightTablet,
 		titleLineHeightMobile,
-		titleLoadGoogleFonts,
 		metaFontSize,
 		metaFontSizeType,
 		metaFontSizeMobile,
 		metaFontSizeTablet,
 		metaFontFamily,
 		metaFontWeight,
-		metaFontSubset,
 		metaLineHeightType,
 		metaLineHeight,
 		metaLineHeightTablet,
 		metaLineHeightMobile,
-		metaLoadGoogleFonts,
 		excerptFontSize,
 		excerptFontSizeType,
 		excerptFontSizeTablet,
 		excerptFontSizeMobile,
 		excerptFontFamily,
 		excerptFontWeight,
-		excerptFontSubset,
 		excerptLineHeightType,
 		excerptLineHeight,
 		excerptLineHeightTablet,
 		excerptLineHeightMobile,
-		excerptLoadGoogleFonts,
 		ctaFontSize,
 		ctaFontSizeType,
 		ctaFontSizeTablet,
 		ctaFontSizeMobile,
 		ctaFontFamily,
 		ctaFontWeight,
-		ctaFontSubset,
 		ctaLineHeightType,
 		ctaLineHeight,
 		ctaLineHeightTablet,
 		ctaLineHeightMobile,
-		ctaLoadGoogleFonts,
 		metaColor,
 		excerptColor,
 		ctaColor,
@@ -76,8 +66,6 @@ function styling( props ) {
 		titleBottomSpace,
 		metaBottomSpace,
 		excerptBottomSpace,
-		equalHeight,
-		excerptLength,
 		overlayOpacity,
 		bgOverlayColor,
 		borderWidth,
@@ -379,11 +367,11 @@ function styling( props ) {
 
 	var styling_css = ""
 
-	styling_css = generateCSS( selectors, `.uagb-block-${ props.clientId }` )
+	styling_css = generateCSS( selectors, `.uagb-block-${ props.clientId.substr( 0, 8 ) }` )
 
-	styling_css += generateCSS( tablet_selectors, `.uagb-block-${ props.clientId }`, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, `.uagb-block-${ props.clientId.substr( 0, 8 ) }`, true, "tablet" )
 
-	styling_css += generateCSS( mobile_selectors, `.uagb-block-${ props.clientId }`, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, `.uagb-block-${ props.clientId.substr( 0, 8 ) }`, true, "mobile" )
 
 	return styling_css
 }

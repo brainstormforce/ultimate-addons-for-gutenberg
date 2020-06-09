@@ -4,7 +4,6 @@
 
 
 import classnames from "classnames"
-import map from "lodash/map"
 import UAGBIcon from "../../../dist/blocks/uagb-controls/UAGBIcon.json"
 import FontIconPicker from "@fonticonpicker/react-fonticonpicker"
 import Title from "./components/Title"
@@ -28,17 +27,13 @@ const {
 	BlockControls,
 	ColorPalette,
 	InspectorControls,
-	PanelColorSettings,
 } = wp.blockEditor
 
 const {
 	PanelBody,
 	SelectControl,
 	RangeControl,
-	Button,
-	ButtonGroup,
 	TabPanel,
-	Dashicon,
 	ToggleControl,
 	TextControl,
 } = wp.components
@@ -103,13 +98,9 @@ class UAGBCallToAction extends Component {
 			descLineHeightTablet,
 			descLineHeightMobile,
 			descLoadGoogleFonts,
-			separatorWidth,
-			separatorHeight,
 			titleSpace,
-			separatorSpace,
 			descSpace,
 			ctaPosition,
-			block_id,
 			buttonAlign,
 			ctaType,
 			ctaText,
@@ -142,17 +133,6 @@ class UAGBCallToAction extends Component {
 			ctaRightSpace,
 			ctaLinkHoverColor
 		} = attributes
-
-		// Add CSS.
-		var element = document.getElementById( "uagb-cta-style-" + this.props.clientId )
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = CtaStyle( this.props )
-		}
-
-		const sizeTypes = [
-			{ key: "px", name: __( "px" ) },
-			{ key: "em", name: __( "em" ) },
-		]
 
 		let loadCtaGoogleFonts
 		let loadTitleGoogleFonts
@@ -729,7 +709,7 @@ class UAGBCallToAction extends Component {
 				<div className={ classnames(
 					className,
 					"uagb-cta__outer-wrap",
-					`uagb-block-${this.props.clientId}`
+					`uagb-block-${this.props.clientId.substr( 0, 8 )}`
 				) }
 				>
 					{ ( ctaType == "all") &&
@@ -747,16 +727,24 @@ class UAGBCallToAction extends Component {
 		)
 	}
 
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-cta-style-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = CtaStyle( this.props )
+		}
+	}
+
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { classMigrate: true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-cta-style-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-cta-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 	}
 }

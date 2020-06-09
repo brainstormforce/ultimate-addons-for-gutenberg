@@ -49,16 +49,24 @@ class UAGBSectionEdit extends Component {
 		this.onSelectVideo = this.onSelectVideo.bind( this )
 	}
 
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-section-style-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
+	}
+
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { classMigrate: true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-section-style-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-section-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 	}
 
@@ -66,7 +74,6 @@ class UAGBSectionEdit extends Component {
 	 * Event to set Image as null while removing.
 	 */
 	onRemoveImage() {
-		const { backgroundImage } = this.props.attributes
 		const { setAttributes } = this.props
 
 		setAttributes( { backgroundImage: null } )
@@ -77,7 +84,6 @@ class UAGBSectionEdit extends Component {
 	 */
 	onSelectImage( media ) {
 
-		const { backgroundImage } = this.props.attributes
 		const { setAttributes } = this.props
 
 		if ( ! media || ! media.url ) {
@@ -96,7 +102,6 @@ class UAGBSectionEdit extends Component {
 	 * Event to set Video as null while removing.
 	 */
 	onRemoveVideo() {
-		const { backgroundVideo } = this.props.attributes
 		const { setAttributes } = this.props
 
 		setAttributes( { backgroundVideo: null } )
@@ -106,7 +111,6 @@ class UAGBSectionEdit extends Component {
 	 * Event to set Video while adding.
 	 */
 	onSelectVideo( media ) {
-		const { backgroundVideo } = this.props.attributes
 		const { setAttributes } = this.props
 
 		if ( ! media || ! media.url ) {
@@ -125,7 +129,6 @@ class UAGBSectionEdit extends Component {
 
 		const {
 			align,
-			padding,
 			contentWidth,
 			width,
 			innerWidth,
@@ -203,16 +206,6 @@ class UAGBSectionEdit extends Component {
 		} = attributes
 
 		const CustomTag = `${tag}`
-
-		var element = document.getElementById( "uagb-section-style-" + this.props.clientId )
-
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
-
-		const onColorChange = ( colorValue ) => {
-			setAttributes( { backgroundColor: colorValue } )
-		}
 
 		let active = ( isSelected ) ? "active" : "not-active"
 
@@ -1006,7 +999,7 @@ class UAGBSectionEdit extends Component {
 						`uagb-section__background-${backgroundType}`,
 						`uagb-section__edit-${ active }`,
 						block_controls_class,
-						`uagb-block-${this.props.clientId}`
+						`uagb-block-${this.props.clientId.substr( 0, 8 )}`
 					) }
 				>
 					<div className="uagb-section__overlay"></div>

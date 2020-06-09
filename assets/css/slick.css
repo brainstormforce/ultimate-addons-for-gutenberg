@@ -112,6 +112,7 @@
 	border: 1px solid #aaa;
 	outline: none;
 	background: transparent;
+	border-radius: 0;
 }
 
 .uagb-slick-carousel .slick-prev:before,

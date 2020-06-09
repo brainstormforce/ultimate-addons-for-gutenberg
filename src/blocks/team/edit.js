@@ -3,7 +3,6 @@
  */
 
 import classnames from "classnames"
-import map from "lodash/map"
 import UAGBIcon from "../../../dist/blocks/uagb-controls/UAGBIcon.json"
 import FontIconPicker from "@fonticonpicker/react-fonticonpicker"
 import styling from "./styling"
@@ -78,7 +77,6 @@ class UAGBTeam extends Component {
 
 	onSelectImage( media ) {
 
-		const { image } = this.props.attributes
 		const { setAttributes } = this.props
 
 		if ( ! media || ! media.url ) {
@@ -98,7 +96,7 @@ class UAGBTeam extends Component {
 
 	render() {
 
-		const { isSelected, className, setAttributes, attributes, mergeBlocks, insertBlocksAfter, onReplace } = this.props
+		const { className, setAttributes, attributes, mergeBlocks, insertBlocksAfter, onReplace } = this.props
 
 		// Setup the attributes.
 		const {
@@ -178,12 +176,6 @@ class UAGBTeam extends Component {
 			socialEnable,
 			stack
 		} = attributes
-
-		// Add CSS.
-		var element = document.getElementById( "uagb-team-style-" + this.props.clientId )
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
 
 		if( image && image["sizes"] ){
 			imageSizeOptions = this.getImageSize(image["sizes"])
@@ -355,79 +347,6 @@ class UAGBTeam extends Component {
 					onRemove={ () => onReplace( [] ) }
 				/>
 			</div>
-		)
-
-		const sizeTypes = [
-			{ key: "px", name: __( "px" ) },
-			{ key: "em", name: __( "em" ) },
-		]
-
-		const titleTypesControls = (
-			<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
-				{ map( sizeTypes, ( { name, key } ) => (
-					<Button
-						key={ key }
-						className="uagb-size-btn"
-						isSmall
-						isPrimary={ titleFontSizeType === key }
-						aria-pressed={ titleFontSizeType === key }
-						onClick={ () => setAttributes( { titleFontSizeType: key } ) }
-					>
-						{ name }
-					</Button>
-				) ) }
-			</ButtonGroup>
-		)
-
-		const descTypesControls = (
-			<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
-				{ map( sizeTypes, ( { name, key } ) => (
-					<Button
-						key={ key }
-						className="uagb-size-btn"
-						isSmall
-						isPrimary={ descFontSizeType === key }
-						aria-pressed={ descFontSizeType === key }
-						onClick={ () => setAttributes( { descFontSizeType: key } ) }
-					>
-						{ name }
-					</Button>
-				) ) }
-			</ButtonGroup>
-		)
-
-		const prefixTypesControls = (
-			<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
-				{ map( sizeTypes, ( { name, key } ) => (
-					<Button
-						key={ key }
-						className="uagb-size-btn"
-						isSmall
-						isPrimary={ prefixFontSizeType === key }
-						aria-pressed={ prefixFontSizeType === key }
-						onClick={ () => setAttributes( { prefixFontSizeType: key } ) }
-					>
-						{ name }
-					</Button>
-				) ) }
-			</ButtonGroup>
-		)
-
-		const socialTypesControls = (
-			<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
-				{ map( sizeTypes, ( { name, key } ) => (
-					<Button
-						key={ key }
-						className="uagb-size-btn"
-						isSmall
-						isPrimary={ socialFontSizeType === key }
-						aria-pressed={ socialFontSizeType === key }
-						onClick={ () => setAttributes( { socialFontSizeType: key } ) }
-					>
-						{ name }
-					</Button>
-				) ) }
-			</ButtonGroup>
 		)
 
 		return (
@@ -834,7 +753,7 @@ class UAGBTeam extends Component {
 						`uagb-team__image-position-${imgPosition}`,
 						`uagb-team__align-${align}`,
 						`uagb-team__stack-${stack}`,
-						`uagb-block-${ this.props.clientId }`
+						`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
 					) }>
 					<div className = "uagb-team__wrap">
 
@@ -862,15 +781,23 @@ class UAGBTeam extends Component {
 		)
 	}
 
+	componentDidUpdate(prevProps, prevState) {
+		var element = document.getElementById( "uagb-team-style-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
+	}
+
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 		this.props.setAttributes( { classMigrate: true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-team-style-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-team-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 	}
 }

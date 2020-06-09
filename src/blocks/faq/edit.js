@@ -60,12 +60,12 @@ class UAGBFaqEdit extends Component {
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { schema: JSON.stringify( this.props.schemaJsonData ) } )
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-style-faq-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-style-faq-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 
 		for ( var i = 1; i <= 2; i++ ) {		
@@ -86,6 +86,11 @@ class UAGBFaqEdit extends Component {
 			this.props.setAttributes({
 				schema: JSON.stringify(this.props.schemaJsonData)
 			});
+		}
+		var element = document.getElementById( "uagb-style-faq-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
 		}
 	}
 	onchangeIcon ( value ) {
@@ -194,12 +199,6 @@ class UAGBFaqEdit extends Component {
 			enableToggle,
 			equalHeight
 		} = attributes
-
-		var element = document.getElementById( "uagb-style-faq-" + this.props.clientId )
-
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
 
 		const getFaqChildTemplate = memoize( ( faq_count, faq ) => {
 			return times( faq_count, n => [ "uagb/faq-child", faq[n] ] )
@@ -874,7 +873,7 @@ class UAGBFaqEdit extends Component {
 				
 				<div className={ classnames(
 					"uagb-faq__outer-wrap",
-					`uagb-block-${ this.props.clientId }`,
+					`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`,
 					`uagb-faq-icon-${ this.props.attributes.iconAlign }`,
 					`uagb-faq-layout-${ this.props.attributes.layout }`,
 					`uagb-faq-expand-first-${ this.props.attributes.expandFirstItem }`,
