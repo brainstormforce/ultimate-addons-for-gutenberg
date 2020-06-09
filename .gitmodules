@@ -1,3 +1,0 @@
-[submodule "admin/bsf-analytics"]
-	path = admin/bsf-analytics
-	url = git@git.brainstormforce.com:wp-sharks/bsf-analytics.git
