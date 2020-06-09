@@ -10,6 +10,8 @@ import styling from "./styling"
 import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
 import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
 
+let svg_icons = Object.keys( UAGBIcon )
+
 const { __ } = wp.i18n
 
 const {
@@ -46,6 +48,7 @@ class UAGBButtonsChild extends Component {
 		this.state = {
 			isURLPickerOpen:false,
 		}
+		this.getCtaicon = this.getCtaicon.bind(this)
 	}
 	componentDidMount() {
 		
@@ -77,6 +80,10 @@ class UAGBButtonsChild extends Component {
 		} else {
 			this.props.setAttributes( { target: '_self' } )
 		}
+	}
+
+	getCtaicon(value) {
+		this.props.setAttributes( { ctaIcon: value } )
 	}
 	render() {
 		
@@ -111,6 +118,16 @@ class UAGBButtonsChild extends Component {
 
 		if( null != element && "undefined" != typeof element ) {
 			element.innerHTML = styling( this.props )
+		}
+
+		// Icon properties.
+		const cta_icon_props = {
+			icons: svg_icons,
+			renderFunc: renderSVG,
+			value: ctaIcon,
+			onChange: this.getCtaicon,
+			isMulti: false,
+			noSelectedPlaceholder: __( "Select Icon" )
 		}
 
 		const linkControl = this.state.isURLPickerOpen && (
@@ -264,6 +281,32 @@ class UAGBButtonsChild extends Component {
 						min={ 0 }
 						max={ 50 }
 					/>
+					<Fragment>
+						<hr className="uagb-editor__separator" />
+						<h2>{ __( "Button Icon" ) }</h2>
+						<FontIconPicker {...cta_icon_props} />
+						{ ctaIcon != "" && <Fragment>
+							<SelectControl
+								label={ __( "Icon Position" ) }
+								value={ ctaIconPosition }
+								onChange={ ( value ) => setAttributes( { ctaIconPosition: value } ) }
+								options={ [
+									{ value: "before", label: __( "Before Text" ) },
+									{ value: "after", label: __( "After Text" ) },
+								] }
+							/>
+							<RangeControl
+								label={ __( "Icon Spacing" ) }
+								value={ ctaIconSpace }
+								onChange={ ( value ) => setAttributes( { ctaIconSpace: value } ) }
+								min={ 0 }
+								max={ 50 }
+								beforeIcon=""
+								allowReset
+							/>
+						</Fragment>
+						}
+					</Fragment>
 					<hr className="uagb-editor__separator" />
 					<TabPanel className="uagb-size-type-field-tabs" activeClass="active-tab"
 						tabs={ [
