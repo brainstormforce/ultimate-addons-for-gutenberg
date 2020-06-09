@@ -738,9 +738,8 @@ class UAGBFaqEdit extends Component {
 												<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeMobile === "px" } aria-pressed={ questionPaddingTypeMobile === "px" } onClick={ () => setAttributes( { questionPaddingTypeMobile: "px" } ) }>{ "px" }</Button>
 												<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeMobile === "%" } aria-pressed={ questionPaddingTypeMobile === "%" } onClick={ () => setAttributes( { questionPaddingTypeMobile: "%" } ) }>{ "%" }</Button>
 											</ButtonGroup>
-											<h2>{ __( "Bottom Padding" ) }</h2>
+											<h2>{ __( "Gap between Q & A" ) }</h2>
 											<RangeControl
-												label={ UAGB_Block_Icons.vertical_spacing }
 												className={ "uagb-margin-control" }
 												value={ questionBottomPaddingMobile }
 												onChange={ ( value ) => setAttributes( { questionBottomPaddingMobile: value } ) }
@@ -757,9 +756,8 @@ class UAGBFaqEdit extends Component {
 												<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeTablet === "px" } aria-pressed={ questionPaddingTypeTablet === "px" } onClick={ () => setAttributes( { questionPaddingTypeTablet: "px" } ) }>{ "px" }</Button>
 												<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeTablet === "%" } aria-pressed={ questionPaddingTypeTablet === "%" } onClick={ () => setAttributes( { questionPaddingTypeTablet: "%" } ) }>{ "%" }</Button>
 											</ButtonGroup>
-											<h2>{ __( "Bottom Padding" ) }</h2>
+											<h2>{ __( "Gap between Q & A" ) }</h2>
 											<RangeControl
-												label={ UAGB_Block_Icons.vertical_spacing }
 												className={ "uagb-margin-control" }
 												value={ questionBottomPaddingTablet }
 												onChange={ ( value ) => setAttributes( { questionBottomPaddingTablet: value } ) }
@@ -776,9 +774,8 @@ class UAGBFaqEdit extends Component {
 												<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeDesktop === "px" } aria-pressed={ questionPaddingTypeDesktop === "px" } onClick={ () => setAttributes( { questionPaddingTypeDesktop: "px" } ) }>{ "px" }</Button>
 												<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeDesktop === "%" } aria-pressed={ questionPaddingTypeDesktop === "%" } onClick={ () => setAttributes( { questionPaddingTypeDesktop: "%" } ) }>{ "%" }</Button>
 											</ButtonGroup>
-											<h2>{ __( "Bottom Padding" ) }</h2>
+											<h2>{ __( "Gap between Q & A" ) }</h2>
 											<RangeControl
-												label={ UAGB_Block_Icons.vertical_spacing }
 												className={ "uagb-margin-control" }
 												value={ questionBottomPaddingDesktop }
 												onChange={ ( value ) => setAttributes( { questionBottomPaddingDesktop: value } ) }
