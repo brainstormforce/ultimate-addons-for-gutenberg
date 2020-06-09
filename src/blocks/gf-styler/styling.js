@@ -21,7 +21,6 @@ function styling( props ) {
 		fieldBorderRadius,
 		fieldBorderColor,
 		fieldBorderFocusColor,
-		buttonAlignment,
 		buttonVrPadding,
 		buttonHrPadding,
 		buttonTextColor,
@@ -386,13 +385,6 @@ function styling( props ) {
 			"border-bottom-width" : generateCSSUnit( fieldBorderWidth, "px" ),
 			"border-radius"       : generateCSSUnit( fieldBorderRadius, fieldBorderRadiusType ),
 		},
-		" .uagb-gf-styler__field-style-underline textarea" : {
-			"border-style"        : "none",
-			"border-bottom-color" : fieldBorderColor,
-			"border-bottom-style" : "solid",
-			"border-bottom-width" : generateCSSUnit( fieldBorderWidth, "px" ),
-			"border-radius"       : generateCSSUnit( fieldBorderRadius, fieldBorderRadiusType ),
-		},
 		" .uagb-gf-styler__check-style-enabled input[type='checkbox'] + label:before" : {
 			"border-style" : "solid",
 		},
@@ -663,11 +655,11 @@ function styling( props ) {
 		},
 	}
 
-	var styling_css = generateCSS( selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId }` )
+	var styling_css = generateCSS( selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }` )
 
-	styling_css += generateCSS( tablet_selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId }`, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`, true, "tablet" )
 
-	styling_css += generateCSS( mobile_selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId }`, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`, true, "mobile" )
 
 	return styling_css
 }

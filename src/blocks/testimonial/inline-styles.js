@@ -18,7 +18,6 @@ function TestimonialStyle( props ) {
 		nameFontSizeMobile,
 		nameFontFamily,
 		nameFontWeight,
-		nameFontSubset,
 		nameLineHeightType,
 		nameLineHeight,
 		nameLineHeightTablet,
@@ -29,7 +28,6 @@ function TestimonialStyle( props ) {
 		companyFontSizeMobile,
 		companyFontFamily,
 		companyFontWeight,
-		companyFontSubset,
 		companyLineHeightType,
 		companyLineHeight,
 		companyLineHeightTablet,
@@ -40,14 +38,11 @@ function TestimonialStyle( props ) {
 		descFontSizeMobile,
 		descFontFamily,
 		descFontWeight,
-		descFontSubset,
 		descLineHeightType,
 		descLineHeight,
 		descLineHeightTablet,
 		descLineHeightMobile,
-		descLoadGoogleFonts,
 		descSpace,
-		block_id,
 		nameSpace,
 		imgVrPadding,
 		imgHrPadding,
@@ -225,10 +220,7 @@ function TestimonialStyle( props ) {
 	}
 
 	var styling_css = ""
-	var id = `#wpwrap #uagb-testimonial-${ props.clientId }`
-	if ( classMigrate ) {
-		id = `.uagb-block-${ props.clientId }`
-	}
+	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
 
 	styling_css = generateCSS( selectors, id )
 	styling_css += generateCSS( tablet_selectors, id, true, "tablet" )

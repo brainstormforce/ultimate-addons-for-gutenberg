@@ -99,7 +99,7 @@ function styling( props ) {
 		}
 	}
 
-	var id = `.uagb-block-${ props.clientId }`
+	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
 	var styling_css = generateCSS( selectors, id )
 
 	styling_css += generateCSS( tablet_selectors, id, true, "tablet" )

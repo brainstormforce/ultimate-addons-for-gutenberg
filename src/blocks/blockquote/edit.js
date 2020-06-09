@@ -55,7 +55,6 @@ class UAGBBlockQuote extends Component {
 	 * Event to set Image as null while removing.
 	 */
 	onRemoveImage() {
-		const { authorImage } = this.props.attributes
 		const { setAttributes } = this.props
 
 		setAttributes( { authorImage: null } )
@@ -66,7 +65,6 @@ class UAGBBlockQuote extends Component {
 	 */
 	onSelectImage( media ) {
 
-		const { authorImage } = this.props.attributes
 		const { setAttributes } = this.props
 
 		if ( ! media || ! media.url ) {
@@ -83,11 +81,10 @@ class UAGBBlockQuote extends Component {
 
 	render() {
 
-		const { isSelected, className, setAttributes, attributes, mergeBlocks, insertBlocksAfter, onReplace } = this.props
+		const { className, setAttributes, attributes } = this.props
 
 		// Setup the attributes.
 		const {
-			block_id,
 			skinStyle,
 			align,
 			authorColor,
@@ -176,12 +173,6 @@ class UAGBBlockQuote extends Component {
 			quoteBgHoverColor,
 			borderHoverColor,
 		} = attributes
-
-		// Add CSS.
-		var element = document.getElementById( "uagb-blockquote-style-" + this.props.clientId )
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
 
 		const sizeTypes = [
 			{ key: "px", name: __( "px" ) },
@@ -1119,7 +1110,7 @@ class UAGBBlockQuote extends Component {
 					className = { classnames(
 						className,
 						"uagb-blockquote__outer-wrap",
-						`uagb-block-${ this.props.clientId }`
+						`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
 					) }>
 					<div className = { classnames(
 						"uagb-blockquote__wrap",
@@ -1160,17 +1151,25 @@ class UAGBBlockQuote extends Component {
 		)
 	}
 
+	componentDidUpdate(prevProps, prevState) {
+		var element = document.getElementById( "uagb-blockquote-style-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
+	}
+
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		// Assigning block_id in the attribute.
 		this.props.setAttributes( { classMigrate: true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-blockquote-style-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-blockquote-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 	}
 }

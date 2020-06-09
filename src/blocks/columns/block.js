@@ -52,7 +52,6 @@ registerBlockType( "uagb/columns", {
 			tag,
 			backgroundType,
 			backgroundVideo,
-			contentWidth,
 			align,
 			columns,
 			stack,
@@ -66,7 +65,7 @@ registerBlockType( "uagb/columns", {
 			reverseMobile,
 			topContentAboveShape,
 			bottomContentAboveShape
-		} = props.attributes
+		} = attributes
 
 		const CustomTag = `${tag}`
 

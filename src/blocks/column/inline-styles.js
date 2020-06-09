@@ -7,10 +7,8 @@ import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
 function inlineStyles( props, isEditor ) {
 
 	const {
-		backgroundPosition,
 		backgroundColor,
 		backgroundOpacity,
-		backgroundRepeat,
 		backgroundType,
 		gradientColor1,
 		gradientColor2,
@@ -19,7 +17,6 @@ function inlineStyles( props, isEditor ) {
 		gradientType,
 		gradientAngle,
 		backgroundImageColor,
-		borderStyle,
 		borderRadius,
 		overlayType,
 		gradientOverlayColor1,
@@ -31,8 +28,6 @@ function inlineStyles( props, isEditor ) {
 	} = props.attributes
 
 	var style = {}
-
-	var position = backgroundPosition.replace( "-", " " )
 
 	if ( "image" === backgroundType ) {
 		if( "color" == overlayType ){

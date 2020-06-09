@@ -18,7 +18,6 @@ function RestMenuStyle( props ) {
 		titleFontSizeMobile,
 		titleFontFamily,
 		titleFontWeight,
-		titleFontSubset,
 		titleLineHeightType,
 		titleLineHeight,
 		titleLineHeightTablet,
@@ -30,7 +29,6 @@ function RestMenuStyle( props ) {
 		priceFontSizeMobile,
 		priceFontFamily,
 		priceFontWeight,
-		priceFontSubset,
 		priceLineHeightType,
 		priceLineHeight,
 		priceLineHeightTablet,
@@ -42,7 +40,6 @@ function RestMenuStyle( props ) {
 		descFontSizeMobile,
 		descFontFamily,
 		descFontWeight,
-		descFontSubset,
 		descLineHeightType,
 		descLineHeight,
 		descLineHeightTablet,
@@ -75,8 +72,6 @@ function RestMenuStyle( props ) {
 	}else if( "right" === align ){
     	align = "flex-end"
 	}
-
-	var column_class = " .uagb-rest_menu__wrap.uagb-rm__desk-column-"+columns+":nth-child("+columns+"n+1)"
 
 	var selectors = {
 		" .uagb-rest_menu__wrap": {
@@ -198,10 +193,7 @@ function RestMenuStyle( props ) {
 	}
 
 	var styling_css = ""
-	var id = "#wpwrap #uagb-rm-"+props.clientId
-	if ( classMigrate ) {
-		id = `#wpwrap .uagb-block-${ props.clientId }`
-	}
+	var id = `#wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`
 
 	styling_css = generateCSS( selectors, id )
 

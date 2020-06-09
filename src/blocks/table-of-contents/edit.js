@@ -70,12 +70,18 @@ class UAGBTableOfContentsEdit extends Component {
 				headerLinks: JSON.stringify(this.props.headers)
 			});
 		}
+
+		var element = document.getElementById( "uagb-style-toc-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
 	}
 
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { classMigrate: true } )
 
@@ -88,7 +94,7 @@ class UAGBTableOfContentsEdit extends Component {
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-style-toc-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-style-toc-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 	}
 
@@ -218,12 +224,6 @@ class UAGBTableOfContentsEdit extends Component {
 				<WebfontLoader config={ headingconfig }>
 				</WebfontLoader>
 			)
-		}
-
-		// Push Styling to Head.
-		var element = document.getElementById( "uagb-style-toc-" + this.props.clientId )
-		if( null != element && "undefined" !== element ) {
-			element.innerHTML = styling( this.props )
 		}
 
 		var scrollElement = jQuery( ".uagb-toc__scroll-top" )
@@ -964,7 +964,7 @@ class UAGBTableOfContentsEdit extends Component {
 					`uagb-toc__align-${align}`,
 					`uagb-toc__columns-${tColumnsDesktop}`,
 					( initialCollapse ) ? `uagb-toc__collapse` : '',
-					`uagb-block-${ this.props.clientId }`
+					`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
 				) }
 				>
 					<div className="uagb-toc__wrap">

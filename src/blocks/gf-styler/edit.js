@@ -53,8 +53,7 @@ class UAGBGF extends Component {
 	 * Event to set Image as while adding.
 	 */
 	onSelectForm( id ) {
-		const { formId } = this.props.attributes
-		const { setAttributes, setState } = this.props
+		const { setAttributes } = this.props
 
 		if ( ! id ) {
 			setAttributes( { isHtml: false } )
@@ -69,11 +68,10 @@ class UAGBGF extends Component {
 
 	render() {
 
-		const { isSelected, className, setAttributes, attributes, mergeBlocks, insertBlocksAfter, onReplace, formHTML } = this.props
+		const { className, setAttributes, attributes } = this.props
 
 		// Setup the attributes.
 		const {
-			block_id,
 			formId,
 			align,
 			isHtml,
@@ -182,9 +180,7 @@ class UAGBGF extends Component {
 			validationMsgLineHeightTablet,
 			validationMsgLineHeightMobile,
 			validationMsgLoadGoogleFonts,	
-			successMsgColor, 
-			successMsgBgColor, 
-			successMsgBorderColor, 
+			successMsgColor,
 			errorMsgColor, 
 			errorMsgBgColor, 
 			errorMsgBorderColor, 
@@ -222,23 +218,11 @@ class UAGBGF extends Component {
 			successMsgLineHeightTablet,
 		} = attributes
 
-		// Add CSS.
-		var element = document.getElementById( "uagb-gf-styler-" + this.props.clientId )
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
-
 		let html = ""
 
 		if ( formJson && formJson.data.html ) {
 			html = formJson.data.html
 		}
-
-		//Register controls
-		const sizeTypes = [
-			{ key: "px", name: __( "px" ) },
-			{ key: "em", name: __( "em" ) },
-		]
 
 		let loadInputGoogleFonts
 		let loadButtonGoogleFonts
@@ -1109,7 +1093,7 @@ class UAGBGF extends Component {
 					className = { classnames(
 						className,	
 						"uagb-gf-styler__outer-wrap",
-						`uagb-block-${ this.props.clientId }`
+						`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
 					) }
 				>
 					<div className = {  classnames(
@@ -1148,10 +1132,10 @@ class UAGBGF extends Component {
 	componentDidMount() {
 		// Assigning block_id in the attribute.
 		this.props.setAttributes( { isHtml: false } )
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-gf-styler-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-gf-styler-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 	}
 
@@ -1159,12 +1143,18 @@ class UAGBGF extends Component {
 		$(".wpgf-submit").click( function(event) {
 			event.preventDefault()
 		})
+
+		var element = document.getElementById( "uagb-gf-style-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
 	}
 
 }
 
 export default withSelect( ( select, props ) => {
-	const { setAttributes, setState } = props
+	const { setAttributes } = props
 	const { formId, isHtml } = props.attributes
 	let json_data = ""
 

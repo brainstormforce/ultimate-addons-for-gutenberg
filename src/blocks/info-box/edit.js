@@ -3,7 +3,6 @@
  */
 
 import classnames from "classnames"
-import map from "lodash/map"
 import UAGBIcon from "../../../dist/blocks/uagb-controls/UAGBIcon.json"
 import FontIconPicker from "@fonticonpicker/react-fonticonpicker"
 import Prefix from "./components/Prefix"
@@ -33,7 +32,6 @@ const {
 	BlockControls,
 	ColorPalette,
 	InspectorControls,
-	RichText,
 	MediaUpload
 } = wp.blockEditor
 
@@ -47,21 +45,7 @@ const {
 	BaseControl,
 	Button,
 	ButtonGroup,
-	Dashicon,
-	withNotices,
 } = wp.components
-
-const {
-	compose
-} = wp.compose
-
-const {
-	withSelect
-} = wp.data
-
-const {
-	withViewportMatch
-} = wp.viewport
 
 const { Component, Fragment } = wp.element
 
@@ -266,12 +250,6 @@ class UAGBinfoBox extends Component {
 			showDesc,
 		} = attributes
 
-		// Add CSS.
-		var element = document.getElementById( "uagb-info-box-style-" + this.props.clientId )
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = InfoBoxStyle( this.props )
-		}
-
 		// Icon properties.
 		const icon_props = {
 			icons: svg_icons,
@@ -295,11 +273,6 @@ class UAGBinfoBox extends Component {
 		if( iconImage && iconImage["sizes"] ){
 			imageSizeOptions = this.getImageSize(iconImage["sizes"])
 		}
-
-		const sizeTypes = [
-			{ key: "px", name: __( "px" ) },
-			{ key: "em", name: __( "em" ) },
-		]
 
 		let loadPrefixGoogleFonts
 		let loadSubHeadGoogleFonts
@@ -1221,7 +1194,7 @@ class UAGBinfoBox extends Component {
 				<div className={ classnames(
 					className,
 					"uagb-infobox__outer-wrap",
-					`uagb-block-${ this.props.clientId }`
+					`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
 				) }
 				>
 					{ ( ctaType == "all") &&<Fragment>
@@ -1239,16 +1212,24 @@ class UAGBinfoBox extends Component {
 		)
 	}
 
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-info-box-style-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = InfoBoxStyle( this.props )
+		}
+	}
+
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { classMigrate: true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-info-box-style-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-info-box-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 	}
 }

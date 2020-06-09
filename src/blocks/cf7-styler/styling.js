@@ -20,7 +20,6 @@ function styling( props ) {
 		fieldBorderRadius,
 		fieldBorderColor,
 		fieldBorderFocusColor,
-		buttonAlignment,
 		buttonVrPadding,
 		buttonHrPadding,
 		buttonTextColor,
@@ -81,22 +80,12 @@ function styling( props ) {
 		radioCheckLineHeight,
 		radioCheckLineHeightTablet,
 		radioCheckLineHeightMobile,
-		validationMsgFontSize, 
 		validationMsgFontSizeType,
 		validationMsgFontSizeTablet,
 		validationMsgFontSizeMobile,
 		validationMsgLineHeightType,
-		validationMsgLineHeight,
 		validationMsgLineHeightTablet,
 		validationMsgLineHeightMobile,
-		msgFontSize,
-		msgFontSizeType,
-		msgFontSizeTablet,
-		msgFontSizeMobile,	
-		msgLineHeightType,
-		msgLineHeight,
-		msgLineHeightTablet,
-		msgLineHeightMobile,
 		radioCheckBorderRadiusType,
 		fieldBorderRadiusType,
 		buttonBorderRadiusType
@@ -447,11 +436,11 @@ function styling( props ) {
 		},
 	}	
 
-	var styling_css = generateCSS( selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId }` )
+	var styling_css = generateCSS( selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }` )
 
-	styling_css += generateCSS( tablet_selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId }`, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`, true, "tablet" )
 
-	styling_css += generateCSS( mobile_selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId }`, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`, true, "mobile" )
 
 	return styling_css
 }

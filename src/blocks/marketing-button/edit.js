@@ -51,19 +51,27 @@ class UAGBMarketingButtonEdit extends Component {
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { classMigrate: true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-style-marketing-btn-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-style-marketing-btn-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
+	}
+
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-style-marketing-btn-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
 	}
 
 	render() {
 
-		const { attributes, setAttributes, isSelected, className } = this.props
+		const { attributes, setAttributes, className } = this.props
 
 		const {
 			align,
@@ -114,7 +122,6 @@ class UAGBMarketingButtonEdit extends Component {
 			backgroundOpacity,
 			backgroundHoverOpacity,
 			//Typography
-			titleLoadGoogleFonts,
 			titleFontFamily,
 			titleFontWeight,
 			titleFontSubset,
@@ -126,7 +133,6 @@ class UAGBMarketingButtonEdit extends Component {
 			titleLineHeight,
 			titleLineHeightTablet,
 			titleLineHeightMobile,
-			prefixLoadGoogleFonts,
 			prefixFontFamily,
 			prefixFontWeight,
 			prefixFontSubset,
@@ -139,12 +145,6 @@ class UAGBMarketingButtonEdit extends Component {
 			prefixLineHeightTablet,
 			prefixLineHeightMobile,
 		} = attributes
-
-		// Push Styling to Head.
-		var element = document.getElementById( "uagb-style-marketing-btn-" + this.props.clientId )
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
 
 		// Load Google fonts for heading.
 		let loadTitleGoogleFonts
@@ -643,7 +643,7 @@ class UAGBMarketingButtonEdit extends Component {
 					`uagb-marketing-btn__align-${ align }`,
 					`uagb-marketing-btn__align-text-${ textAlign }`,
 					`uagb-marketing-btn__icon-${ iconPosition }`,
-					`uagb-block-${ this.props.clientId }`
+					`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
 				) }>
 					<div className="uagb-marketing-btn__wrap">
 						<a className="uagb-marketing-btn__link">
