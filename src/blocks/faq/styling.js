@@ -150,13 +150,17 @@ function styling( props ) {
             "font-weight": answerFontWeight,
             "color" : answerTextColor,
         },
-        " .uagb-faq-child__wrapper .uagb-faq-item" : {
-            "padding-top" : generateCSSUnit( vBoxPaddingDesktop, boxPaddingTypeDesktop ),
+        " .uagb-faq-child__wrapper .uagb-faq-item .uagb-faq-questions-button.uagb-faq-questions" : {
+            "margin-top" : generateCSSUnit( vBoxPaddingDesktop, boxPaddingTypeDesktop ),
+            "margin-right" : generateCSSUnit( hBoxPaddingDesktop, boxPaddingTypeDesktop ),
+            "margin-left" : generateCSSUnit( hBoxPaddingDesktop, boxPaddingTypeDesktop ),
+        },
+        " .uagb-faq-child__wrapper .uagb-faq-item .uagb-faq-content" : {
             "padding-bottom" : generateCSSUnit( vBoxPaddingDesktop, boxPaddingTypeDesktop ),
             "padding-right" : generateCSSUnit( hBoxPaddingDesktop, boxPaddingTypeDesktop ),
             "padding-left" : generateCSSUnit( hBoxPaddingDesktop, boxPaddingTypeDesktop ),
+        },
 
-        }
     }
     
     tablet_selectors = {
@@ -178,12 +182,15 @@ function styling( props ) {
             "height" : generateCSSUnit( iconSizeTablet, iconSizeType ),
             "font-size" : generateCSSUnit( iconSizeTablet, iconSizeType )
         },
-        " .uagb-faq-child__wrapper .uagb-faq-item" : {
-            "padding-top" : generateCSSUnit( vBoxPaddingTablet, boxPaddingTypeTablet ),
+        " .uagb-faq-child__wrapper .uagb-faq-item .uagb-faq-questions-button.uagb-faq-questions" : {
+            "margin-top" : generateCSSUnit( vBoxPaddingTablet, boxPaddingTypeTablet ),
+            "margin-right" : generateCSSUnit( hBoxPaddingTablet, boxPaddingTypeTablet ),
+            "margin-left" : generateCSSUnit( hBoxPaddingTablet, boxPaddingTypeTablet ),
+        },
+        " .uagb-faq-child__wrapper .uagb-faq-item .uagb-faq-content" : {
             "padding-bottom" : generateCSSUnit( vBoxPaddingTablet, boxPaddingTypeTablet ),
             "padding-right" : generateCSSUnit( hBoxPaddingTablet, boxPaddingTypeTablet ),
             "padding-left" : generateCSSUnit( hBoxPaddingTablet, boxPaddingTypeTablet ),
-
         },
         " .uagb-faq-child__outer-wrap .uagb-faq-content" : {
             "padding-top" : generateCSSUnit( questionBottomPaddingTablet, questionPaddingTypeTablet ),
@@ -209,12 +216,15 @@ function styling( props ) {
             "height" : generateCSSUnit( iconSizeMobile, iconSizeType ),
             "font-size" : generateCSSUnit( iconSizeMobile, iconSizeType )
         },
-        " .uagb-faq-child__wrapper .uagb-faq-item" : {
-            "padding-top" : generateCSSUnit( vBoxPaddingMobile, boxPaddingTypeMobile ),
+        " .uagb-faq-child__wrapper .uagb-faq-item .uagb-faq-questions-button.uagb-faq-questions" : {
+            "margin-top" : generateCSSUnit( vBoxPaddingMobile, boxPaddingTypeMobile ),
+            "margin-right" : generateCSSUnit( hBoxPaddingMobile, boxPaddingTypeMobile ),
+            "margin-left" : generateCSSUnit( hBoxPaddingMobile, boxPaddingTypeMobile ),
+        },
+        " .uagb-faq-child__wrapper .uagb-faq-item .uagb-faq-content" : {
             "padding-bottom" : generateCSSUnit( vBoxPaddingMobile, boxPaddingTypeMobile ),
             "padding-right" : generateCSSUnit( hBoxPaddingMobile, boxPaddingTypeMobile ),
             "padding-left" : generateCSSUnit( hBoxPaddingMobile, boxPaddingTypeMobile ),
-
         },
         " .uagb-faq-child__outer-wrap .uagb-faq-content" : {
             "padding-top" : generateCSSUnit( questionBottomPaddingMobile, questionPaddingTypeMobile ),
@@ -254,6 +264,15 @@ function styling( props ) {
             "border-style" : "solid",
             "border-top-color" : borderColor,
             "border-top-width" : generateCSSUnit( borderWidth, 'px' ),
+        }
+        selectors[".uagb-faq__outer-wrap .uagb-faq-child__wrapper .uagb-faq-item .uagb-faq-questions-button.uagb-faq-questions"] = {
+            "padding-bottom" : generateCSSUnit( questionBottomPaddingDesktop, questionPaddingTypeDesktop ),
+        }
+        mobile_selectors[".uagb-faq__outer-wrap .uagb-faq-child__wrapper .uagb-faq-item .uagb-faq-questions-button.uagb-faq-questions"] = {
+            "padding-bottom" : generateCSSUnit( questionBottomPaddingMobile, questionPaddingTypeMobile ),
+        }
+        tablet_selectors[".uagb-faq__outer-wrap .uagb-faq-child__wrapper .uagb-faq-item .uagb-faq-questions-button.uagb-faq-questions"] = {
+            "padding-bottom" : generateCSSUnit( questionBottomPaddingTablet, questionPaddingTypeTabquestionBottomPaddingTablet ),
         }
     }
     if ( 'grid' === layout ) {
