@@ -272,7 +272,7 @@ function styling( props ) {
             "padding-bottom" : generateCSSUnit( questionBottomPaddingMobile, questionPaddingTypeMobile ),
         }
         tablet_selectors[".uagb-faq__outer-wrap .uagb-faq-child__wrapper .uagb-faq-item .uagb-faq-questions-button.uagb-faq-questions"] = {
-            "padding-bottom" : generateCSSUnit( questionBottomPaddingTablet, questionPaddingTypeTabquestionBottomPaddingTablet ),
+            "padding-bottom" : generateCSSUnit( questionBottomPaddingTablet, questionPaddingTypeTablet ),
         }
     }
     if ( 'grid' === layout ) {
