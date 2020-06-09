@@ -1151,8 +1151,6 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				$wp_info['baseurl'] = str_ireplace( 'http://', 'https://', $wp_info['baseurl'] );
 			}
 
-			$wp_info = wp_upload_dir( null, false );
-
 			$dir_name = basename( UAGB_DIR );
 			if ( 'ultimate-addons-for-gutenberg' === $dir_name ) {
 				$dir_name = 'uag-plugin';

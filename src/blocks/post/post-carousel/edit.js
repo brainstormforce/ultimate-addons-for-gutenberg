@@ -212,7 +212,8 @@ class UAGBPostCarousel extends Component {
 			linkBox,
 			postType,
 			taxonomyType,
-			equalHeight
+			equalHeight,
+			postDisplaytext,
 		} = attributes
 
 		const hoverSettings = (
@@ -463,6 +464,14 @@ class UAGBPostCarousel extends Component {
 						label={ __( "Equal Height" ) }
 						checked={ equalHeight }
 						onChange={ ( value ) => setAttributes( { equalHeight: ! equalHeight } ) }
+					/>
+					<hr className="uagb-editor__separator" />
+					<h2>{ __( "If Posts Not Found" ) }</h2>
+					<TextControl
+						autoComplete="off"
+						label={ __( 'Display Message' ) }
+						value={ postDisplaytext }
+						onChange={ ( value ) => setAttributes( { postDisplaytext: value } ) }
 					/>
 				</PanelBody>
 				<PanelBody title={ __( "Carousel" ) } initialOpen={ false }>
@@ -935,7 +944,7 @@ class UAGBPostCarousel extends Component {
 					>
 						{ ! Array.isArray( latestPosts ) ?
 							<Spinner /> :
-							__( "No posts found." )
+							postDisplaytext
 						}
 					</Placeholder>
 				</Fragment>
