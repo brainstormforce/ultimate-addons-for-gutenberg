@@ -1072,7 +1072,7 @@ class UAGBinfoBox extends Component {
 					/>
 
 					{ ( iconimgPosition && (iconimgPosition !== "above-title" && iconimgPosition !== "below-title" )  ) && <SelectControl
-						label={ __( "Vertical ALignment" ) }
+						label={ __( "Vertical Alignment" ) }
 						value={ sourceAlign }
 						onChange={ ( value ) => setAttributes( { sourceAlign: value } ) }
 						options={ [

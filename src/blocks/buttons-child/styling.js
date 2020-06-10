@@ -29,6 +29,7 @@ function styling( props ) {
 		lineHeightType,
 		lineHeightMobile,
 		lineHeightTablet,
+		mbIconSpace,
 	} = props.attributes;
 
 	var tablet_selectors = {}
@@ -66,6 +67,16 @@ function styling( props ) {
 			"padding" : vPadding + "px " + hPadding + "px",
 			"color": color
 		},
+		" .uagb-mb-align-icon-after" : {
+			"margin-left" : generateCSSUnit( mbIconSpace, "px" ),
+		},
+		" .uagb-mb-align-icon-before" : {
+			"margin-right" : generateCSSUnit( mbIconSpace, "px" ),
+		},
+		" .uagb-mb-link .uagb-mb-button-icon" : {
+			"font-size": generateCSSUnit( size, sizeType ),
+			"line-height": generateCSSUnit( lineHeight, lineHeightType ),
+		}
 
 	}
 

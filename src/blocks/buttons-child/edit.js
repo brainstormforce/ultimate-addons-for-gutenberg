@@ -9,6 +9,7 @@ import FontIconPicker from "@fonticonpicker/react-fonticonpicker"
 import styling from "./styling"
 import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
 import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
+import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
 
 let svg_icons = Object.keys( UAGBIcon )
 
@@ -133,9 +134,10 @@ class UAGBButtonsChild extends Component {
 			noSelectedPlaceholder: __( "Select Icon" )
 		}
 
+		let mbBtnClass = "uagb-mb-link uagb-mb-cta-button"
 		var mb_icon_output = ""
 		if( attributes.mbIcon !== "" ){
-			mb_icon_output = <span className= { classnames( `uagb-ifb-align-icon-${ attributes.mbIconPosition }`) }>
+			mb_icon_output = <span className= { classnames(`uagb-ifb-mb-icon`, `uagb-mb-align-icon-${ attributes.mbIconPosition }`) }>
 				{ renderSVG(attributes.mbIcon) }
 			</span>
 		}
@@ -640,20 +642,49 @@ class UAGBButtonsChild extends Component {
 				`uagb-block-${ this.props.clientId }`
 				) }>
 					<div className="uagb-button__wrapper">
-						<div className="uagb-buttons-repeater uagb-button__wrapper">
-							<RichText
-								placeholder={ __( "Add text…" ) }
-								value={ label }
-								tagName='div'
-								onChange={ value => {
-									setAttributes( { label: value })
-								} }
-								allowedFormats={ [ "bold", "italic", "strikethrough" ] }
-								className='uagb-button__link'
-								rel ="noopener noreferrer"
-								keepPlaceholderOnFocus
-							/>	
-						</div>
+						
+
+						{  attributes.mbIcon !== "" && (
+							<div className = { classnames(
+									"uagb-buttons-repeater",
+									"uagb-button__wrapper",
+									mbBtnClass
+							 	) }>
+								{  attributes.mbIconPosition === "before" &&  mb_icon_output }
+								<RichText
+									placeholder={ __( "Add text…" ) }
+									value={ label }
+									tagName='div'
+									onChange={ value => {
+										setAttributes( { label: value })
+									} }
+									allowedFormats={ [ "bold", "italic", "strikethrough" ] }
+									className='uagb-button__link'
+									rel ="noopener noreferrer"
+									keepPlaceholderOnFocus
+								/>
+								{  attributes.mbIconPosition === "after" &&  mb_icon_output }
+							</div>
+						)
+						}
+
+						{  attributes.mbIcon === "" && (
+							<div className="uagb-buttons-repeater uagb-button__wrapper">
+								<RichText
+									placeholder={ __( "Add text…" ) }
+									value={ label }
+									tagName='div'
+									onChange={ value => {
+										setAttributes( { label: value })
+									} }
+									allowedFormats={ [ "bold", "italic", "strikethrough" ] }
+									className='uagb-button__link'
+									rel ="noopener noreferrer"
+									keepPlaceholderOnFocus
+								/>	
+							</div>
+						)
+						}
 					</div>
 				</div>
             </Fragment>
