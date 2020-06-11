@@ -8,7 +8,6 @@ import TypographyControl from "../../components/typography"
 // Import Web font loader for google fonts.
 import WebfontLoader from "../../components/typography/fontloader"
 
-import map from "lodash/map"
 // Import icon.
 import styling from "./styling"
 
@@ -67,11 +66,10 @@ class UAGBCF7 extends Component {
 
 	render() {
 
-		const { isSelected, className, setAttributes, attributes, mergeBlocks, insertBlocksAfter, onReplace, cf7Posts, formHTML } = this.props
+		const { className, setAttributes, attributes } = this.props
 
 		// Setup the attributes.
 		const {
-			block_id,
 			formId,
 			align,
 			isHtml,
@@ -202,23 +200,11 @@ class UAGBCF7 extends Component {
 			buttonBorderRadiusType
 		} = attributes
 
-		// Add CSS.
-		var element = document.getElementById( "uagb-cf7-styler-" + this.props.clientId )
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
-
 		let html = ""
 
 		if ( formJson && formJson.data.html ) {
 			html = formJson.data.html
 		}
-
-		//Register controls
-		const sizeTypes = [
-			{ key: "px", name: __( "px" ) },
-			{ key: "em", name: __( "em" ) },
-		]
 
 		let loadInputGoogleFonts
 		let loadButtonGoogleFonts
@@ -1031,7 +1017,7 @@ class UAGBCF7 extends Component {
 					className = { classnames(
 						className,	
 						"uagb-cf7-styler__outer-wrap",
-						`uagb-block-${ this.props.clientId }`					
+						`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`					
 					) }
 				>
 					<div className = {  classnames(
@@ -1068,21 +1054,27 @@ class UAGBCF7 extends Component {
 	componentDidMount() {
 		// Assigning block_id in the attribute.
 		this.props.setAttributes( { isHtml: false } )
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-cf7-styler-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-cf7-styler-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 	}
+
 	componentDidUpdate(){				
 		$(".wpcf7-submit").click( function(event) {
 			event.preventDefault()
 		})
+		var element = document.getElementById( "uagb-cf7-styler-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
 	}
 }
 
 export default withSelect( ( select, props ) => {
-	const { setAttributes, setState } = props
+	const { setAttributes } = props
 	const { formId, isHtml } = props.attributes
 	let json_data = ""
 

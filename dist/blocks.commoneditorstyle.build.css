@@ -157,6 +157,7 @@ hr.uagb-editor__separator {
 	text-align: right;
 	margin-right: 40px;
 	margin-bottom: -20px;
+	display: block;
 }
 
 .uagb-size-type-field-tabs.uagb-without-size-type .components-tab-panel__tabs {

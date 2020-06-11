@@ -30,10 +30,15 @@ function styling( props ) {
 		lineHeightMobile,
 		lineHeightTablet,
 		mbIconSpace,
+		inheritFromTheme
 	} = props.attributes;
 
 	var tablet_selectors = {}
 	var mobile_selectors = {}
+
+	if ( inheritFromTheme ) {
+		return;
+	}
 
 	var selectors = {
 		" .uagb-buttons-repeater" : {
@@ -67,15 +72,11 @@ function styling( props ) {
 			"padding" : vPadding + "px " + hPadding + "px",
 			"color": color
 		},
-		" .uagb-mb-align-icon-after" : {
+		" .uagb-buttons-repeater span.uagb-mb-align-icon-after" : {
 			"margin-left" : generateCSSUnit( mbIconSpace, "px" ),
 		},
-		" .uagb-mb-align-icon-before" : {
+		" .uagb-buttons-repeater span.uagb-mb-align-icon-before" : {
 			"margin-right" : generateCSSUnit( mbIconSpace, "px" ),
-		},
-		" .uagb-mb-link .uagb-mb-button-icon" : {
-			"font-size": generateCSSUnit( size, sizeType ),
-			"line-height": generateCSSUnit( lineHeight, lineHeightType ),
 		}
 
 	}
@@ -90,7 +91,7 @@ function styling( props ) {
 		"line-height" : generateCSSUnit( lineHeightTablet, lineHeightType ),
 	}
 
-	var id = `.uagb-block-${ props.clientId }`
+	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
 	var styling_css = generateCSS( selectors, id )
 
 	styling_css += generateCSS( tablet_selectors, id, true, "tablet" )

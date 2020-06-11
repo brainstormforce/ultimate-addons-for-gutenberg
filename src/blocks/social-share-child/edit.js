@@ -8,7 +8,6 @@ import UAGBIcon from "../../../dist/blocks/uagb-controls/UAGBIcon.json"
 import FontIconPicker from "@fonticonpicker/react-fonticonpicker"
 import styling from "./styling"
 import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
-import links from "./links"
 
 const { __ } = wp.i18n
 
@@ -20,7 +19,6 @@ const {
 const {
 	InspectorControls,
 	MediaUpload,
-	RichText,
 	ColorPalette
 } = wp.blockEditor
 
@@ -28,8 +26,6 @@ const {
 	PanelBody,
 	SelectControl,
 	Button,
-	TextControl,
-	ToggleControl,
 	TabPanel,
 } = wp.components
 
@@ -48,13 +44,21 @@ class UAGBSocialShareChild extends Component {
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 		this.props.setAttributes( { current_url: wp.data.select("core/editor").getPermalink() } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-style-social-share-child-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-style-social-share-child-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
+	}
+
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-style-social-share-child-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
 	}
 
 	/*
@@ -216,12 +220,6 @@ class UAGBSocialShareChild extends Component {
 			)
 		}
 
-		var element = document.getElementById( "uagb-style-social-share-child-" + this.props.clientId )
-
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
-
 		const renderHtml = () => {
 
 			let image_icon_html = ""
@@ -242,7 +240,7 @@ class UAGBSocialShareChild extends Component {
 											`uagb-ss-repeater`,
 											"uagb-ss__wrapper",
 											className,
-											`uagb-block-${ this.props.clientId }`
+											`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
 										) }
 									>
 										<a className="uagb-ss__link" href="javascript:void(0)" rel ="noopener noreferrer"><span className="uagb-ss__source-wrap">{image_icon_html}</span></a>

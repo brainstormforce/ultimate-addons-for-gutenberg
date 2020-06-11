@@ -11,7 +11,7 @@ class Blog extends React.Component {
 
 	render() {
 
-		const { setAttributes, attributes, className, latestPosts, block_id, categoriesList } = this.props
+		const { attributes, className, latestPosts, block_id, categoriesList } = this.props
 
 		const {
 			columns,
@@ -52,24 +52,6 @@ class Blog extends React.Component {
 					{ UAGB_Block_Icons.carousel_left }
 				</button>
 			)
-		}
-
-		function carousel_set_height(props){
-			var id = props.clientId
-			var equalHeight =  props.attributes.equalHeight
-			if( equalHeight ){
-				var main_block            = $(".uagb-post__items").parents("#block-"+id)
-				var wrap            = main_block.find(".is-carousel")
-				wrap.imagesLoaded( function() {
-		            uagb_carousel_height(id)
-		        })
-
-		        wrap.on( "afterChange", function() {
-		           uagb_carousel_height(id)
-		        } )
-		    }else{
-
-		    }
 		}
 
 		let dots = ( "dots" == arrowDots || "arrows_dots" == arrowDots ) ? true : false

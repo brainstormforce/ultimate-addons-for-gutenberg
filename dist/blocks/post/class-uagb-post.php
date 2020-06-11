@@ -222,6 +222,10 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 		public function get_post_attributes() {
 
 			return array(
+				'inheritFromTheme'        => array(
+					'type'    => 'boolean',
+					'default' => false,
+				),
 				'block_id'                => array(
 					'type'    => 'string',
 					'default' => 'not_set',
@@ -232,6 +236,10 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 				'postType'                => array(
 					'type'    => 'string',
 					'default' => 'post',
+				),
+				'postDisplaytext'         => array(
+					'type'    => 'string',
+					'default' => 'No post found!',
 				),
 				'taxonomyType'            => array(
 					'type'    => 'string',
@@ -754,6 +762,16 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 				?>
 				</div>
 				<?php
+				$post_not_found = $query->found_posts;
+
+				if ( 0 === $post_not_found ) {
+					?>
+					<p class="uagb-post__no-posts">
+						<?php echo esc_html( $attributes['postDisplaytext'] ); ?>
+					</p>
+					<?php
+				}
+
 				if ( isset( $attributes['postPagination'] ) && true === $attributes['postPagination'] ) {
 					?>
 					<div class="uagb-post-pagination-wrap">
@@ -1159,9 +1177,12 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 			$target   = ( $attributes['newTab'] ) ? '_blank' : '_self';
 			$cta_text = ( $attributes['ctaText'] ) ? $attributes['ctaText'] : __( 'Read More', 'ultimate-addons-for-gutenberg' );
 			do_action( "uagb_single_post_before_cta_{$attributes['post_type']}", get_the_ID(), $attributes );
+
+			$wrap_classes = ( $attributes['inheritFromTheme'] ) ? 'uagb-post__cta wp-block-button' : 'uagb-post__cta';
+			$link_classes = ( ! $attributes['inheritFromTheme'] ) ? 'uagb-post__link uagb-text-link' : 'wp-block-button__link uagb-text-link';
 			?>
-			<div class="uagb-post__cta">
-				<a class="uagb-post__link uagb-text-link" href="<?php echo esc_url( apply_filters( "uagb_single_post_link_{$attributes['post_type']}", get_the_permalink(), get_the_ID(), $attributes ) ); ?>" target="<?php echo esc_html( $target ); ?>" rel="bookmark noopener noreferrer"><?php echo esc_html( $cta_text ); ?></a>
+			<div class="<?php echo esc_html( $wrap_classes ); ?>">
+				<a class="<?php echo esc_html( $link_classes ); ?>" href="<?php echo esc_url( apply_filters( "uagb_single_post_link_{$attributes['post_type']}", get_the_permalink(), get_the_ID(), $attributes ) ); ?>" target="<?php echo esc_html( $target ); ?>" rel="bookmark noopener noreferrer"><?php echo esc_html( $cta_text ); ?></a>
 			</div>
 			<?php
 			do_action( "uagb_single_post_after_cta_{$attributes['post_type']}", get_the_ID(), $attributes );

@@ -4,7 +4,6 @@
 
 
 import classnames from "classnames"
-import map from "lodash/map"
 import UAGBIcon from "../../../dist/blocks/uagb-controls/UAGBIcon.json"
 import FontIconPicker from "@fonticonpicker/react-fonticonpicker"
 import Title from "./components/Title"
@@ -28,17 +27,13 @@ const {
 	BlockControls,
 	ColorPalette,
 	InspectorControls,
-	PanelColorSettings,
 } = wp.blockEditor
 
 const {
 	PanelBody,
 	SelectControl,
 	RangeControl,
-	Button,
-	ButtonGroup,
 	TabPanel,
-	Dashicon,
 	ToggleControl,
 	TextControl,
 } = wp.components
@@ -103,13 +98,9 @@ class UAGBCallToAction extends Component {
 			descLineHeightTablet,
 			descLineHeightMobile,
 			descLoadGoogleFonts,
-			separatorWidth,
-			separatorHeight,
 			titleSpace,
-			separatorSpace,
 			descSpace,
 			ctaPosition,
-			block_id,
 			buttonAlign,
 			ctaType,
 			ctaText,
@@ -140,19 +131,9 @@ class UAGBCallToAction extends Component {
 			stack,
 			ctaLeftSpace,
 			ctaRightSpace,
-			ctaLinkHoverColor
+			ctaLinkHoverColor,
+			inheritFromTheme
 		} = attributes
-
-		// Add CSS.
-		var element = document.getElementById( "uagb-cta-style-" + this.props.clientId )
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = CtaStyle( this.props )
-		}
-
-		const sizeTypes = [
-			{ key: "px", name: __( "px" ) },
-			{ key: "em", name: __( "em" ) },
-		]
 
 		let loadCtaGoogleFonts
 		let loadTitleGoogleFonts
@@ -231,20 +212,30 @@ class UAGBCallToAction extends Component {
 							value= { ctaText }
 							onChange={ value => setAttributes( { ctaText: value } ) }
 						/>
-						<TypographyControl
-							label={ __( "Typography" ) }
-							attributes = { attributes }
-							setAttributes = { setAttributes }
-							loadGoogleFonts = { { value: ctaLoadGoogleFonts, label: 'ctaLoadGoogleFonts' } }
-							fontFamily = { { value: ctaFontFamily, label: 'ctaFontFamily' } }
-							fontWeight = { { value: ctaFontWeight, label: 'ctaFontWeight' } }
-							fontSubset = { { value: ctaFontSubset, label: 'ctaFontSubset' } }
-							fontSizeType = { { value: ctaFontSizeType, label: 'ctaFontSizeType' } }
-							fontSize = { { value: ctaFontSize, label: 'ctaFontSize' } }
-							fontSizeMobile = { { value: ctaFontSizeMobile, label: 'ctaFontSizeMobile' } }
-							fontSizeTablet= { { value: ctaFontSizeTablet, label: 'ctaFontSizeTablet' } }							
-							disableLineHeight = {true}
-						/>
+						{ ctaType === "button" &&
+							<ToggleControl
+								label={ __( "Inherit from Theme" ) }
+								checked={ inheritFromTheme }
+								onChange={ ( value ) => setAttributes( { inheritFromTheme: ! inheritFromTheme } ) }
+							/>
+						}
+						
+						{ ( ! inheritFromTheme && ctaType === "button" ) || ctaType === "text" &&
+							<TypographyControl
+								label={ __( "Typography" ) }
+								attributes = { attributes }
+								setAttributes = { setAttributes }
+								loadGoogleFonts = { { value: ctaLoadGoogleFonts, label: 'ctaLoadGoogleFonts' } }
+								fontFamily = { { value: ctaFontFamily, label: 'ctaFontFamily' } }
+								fontWeight = { { value: ctaFontWeight, label: 'ctaFontWeight' } }
+								fontSubset = { { value: ctaFontSubset, label: 'ctaFontSubset' } }
+								fontSizeType = { { value: ctaFontSizeType, label: 'ctaFontSizeType' } }
+								fontSize = { { value: ctaFontSize, label: 'ctaFontSize' } }
+								fontSizeMobile = { { value: ctaFontSizeMobile, label: 'ctaFontSizeMobile' } }
+								fontSizeTablet= { { value: ctaFontSizeTablet, label: 'ctaFontSizeTablet' } }							
+								disableLineHeight = {true}
+							/>
+						}
 					</Fragment>
 				}
 				{ ( ctaType !== "none" ) &&
@@ -261,10 +252,10 @@ class UAGBCallToAction extends Component {
 						/>
 					</Fragment>
 				}
-				<hr className="uagb-editor__separator" />
-				<h2>{ __( "Button Icon" ) }</h2>
 				{ ( ctaType !== "all" ) && ( ctaType !== "none" ) &&
 					<Fragment>
+						<hr className="uagb-editor__separator" />
+						<h2>{ __( "Button Icon" ) }</h2>
 						<FontIconPicker {...cta_icon_props} />
 						{ ctaIcon != "" &&
 							<Fragment>
@@ -291,7 +282,7 @@ class UAGBCallToAction extends Component {
 					</Fragment>
 				}
 
-				{ ( ctaType == "button" ) && (
+				{ ( ctaType == "button" ) && ! inheritFromTheme && (
 					<Fragment>
 						<hr className="uagb-editor__separator" />
 						<h2>{ __( "Button Padding (px)" ) }</h2>
@@ -382,7 +373,7 @@ class UAGBCallToAction extends Component {
 				</TabPanel>
 				}
 
-				{ ( ctaType === "button") &&
+				{ ( ctaType === "button") && ! inheritFromTheme &&
 					<TabPanel className="uagb-inspect-tabs uagb-inspect-tabs-col-2"
 						activeClass="active-tab"
 						tabs={ [
@@ -729,7 +720,7 @@ class UAGBCallToAction extends Component {
 				<div className={ classnames(
 					className,
 					"uagb-cta__outer-wrap",
-					`uagb-block-${this.props.clientId}`
+					`uagb-block-${this.props.clientId.substr( 0, 8 )}`
 				) }
 				>
 					{ ( ctaType == "all") &&
@@ -747,16 +738,24 @@ class UAGBCallToAction extends Component {
 		)
 	}
 
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-cta-style-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = CtaStyle( this.props )
+		}
+	}
+
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { classMigrate: true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-cta-style-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-cta-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 	}
 }

@@ -51,17 +51,25 @@ class UAGBMarketingButtonEdit extends Component {
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { classMigrate: true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-style-marketing-btn-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-style-marketing-btn-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 
 	}
 	
+
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-style-marketing-btn-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
+	}
 
 	render() {
 		const { attributes, setAttributes, isSelected, className } = this.props
@@ -115,7 +123,6 @@ class UAGBMarketingButtonEdit extends Component {
 			backgroundOpacity,
 			backgroundHoverOpacity,
 			//Typography
-			titleLoadGoogleFonts,
 			titleFontFamily,
 			titleFontWeight,
 			titleFontSubset,
@@ -141,12 +148,6 @@ class UAGBMarketingButtonEdit extends Component {
 			prefixLineHeightTablet,
 			prefixLineHeightMobile,
 		} = attributes
-
-		// Push Styling to Head.
-		var element = document.getElementById( "uagb-style-marketing-btn-" + this.props.clientId )
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
 
 		// Load Google fonts for heading.
 		let loadTitleGoogleFonts
@@ -269,6 +270,22 @@ class UAGBMarketingButtonEdit extends Component {
 						/>
 					</PanelBody>
 					<PanelBody	title={ __( "Content" ) } initialOpen={ false }	>
+						<SelectControl
+							label={ __( "Title Tag" ) }
+							value={ titleTag }
+							onChange={ ( value ) => setAttributes( { titleTag: value } ) }
+							options={ [
+								{ value: "h1", label: __( "H1" ) },
+								{ value: "h2", label: __( "H2" ) },
+								{ value: "h3", label: __( "H3" ) },
+								{ value: "h4", label: __( "H4" ) },
+								{ value: "h5", label: __( "H5" ) },
+								{ value: "h6", label: __( "H6" ) },
+								{ value: "span", label: __( "span" ) },
+								{ value: "p", label: __( "p" ) },
+							] }
+						/>
+						<hr className="uagb-editor__separator" />
 						<h2>{ __( "Title" ) }</h2>
 						<TypographyControl
 							label={ __( "Typography" ) }
@@ -306,6 +323,7 @@ class UAGBMarketingButtonEdit extends Component {
 							lineHeightMobile = { { value: prefixLineHeightMobile, label: "prefixLineHeightMobile" } }
 							lineHeightTablet= { { value: prefixLineHeightTablet, label: "prefixLineHeightTablet" } }
 						/>
+						
 						<hr className="uagb-editor__separator" />
 						<h2>{ __( "Colors" ) }</h2>
 						<TabPanel className="uagb-inspect-tabs uagb-inspect-tabs-col-2"
@@ -638,26 +656,7 @@ class UAGBMarketingButtonEdit extends Component {
 							</Fragment>
 						) }
 					</PanelBody>
-
-					{/* Typography editing section */}
-					<PanelBody title={ __( "Typography" ) } initialOpen={ false }>
-						<h2>{ __( "Title" ) }</h2>
-						<SelectControl
-							label={ __( "Title Tag" ) }
-							value={ titleTag }
-							onChange={ ( value ) => setAttributes( { titleTag: value } ) }
-							options={ [
-								{ value: "h1", label: __( "H1" ) },
-								{ value: "h2", label: __( "H2" ) },
-								{ value: "h3", label: __( "H3" ) },
-								{ value: "h4", label: __( "H4" ) },
-								{ value: "h5", label: __( "H5" ) },
-								{ value: "h6", label: __( "H6" ) },
-								{ value: "span", label: __( "span" ) },
-								{ value: "p", label: __( "p" ) },
-							] }
-						/>
-					</PanelBody>
+					
 				</InspectorControls>
 				<div className={ classnames(
 					className,
@@ -665,7 +664,7 @@ class UAGBMarketingButtonEdit extends Component {
 					`uagb-marketing-btn__align-${ align }`,
 					`uagb-marketing-btn__align-text-${ textAlign }`,
 					`uagb-marketing-btn__icon-${ iconPosition }`,
-					`uagb-block-${ this.props.clientId }`
+					`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
 				) }>
 					<div className="uagb-marketing-btn__wrap">
 						<a className="uagb-marketing-btn__link">

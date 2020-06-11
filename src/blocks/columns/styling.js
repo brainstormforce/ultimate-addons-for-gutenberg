@@ -17,7 +17,6 @@ function styling( props ) {
 		backgroundOpacity,
 		backgroundColor,
 		backgroundVideoOpacity,
-		backgroundVideo,
 		borderRadius,
 		contentWidth,
 		width,
@@ -180,10 +179,7 @@ function styling( props ) {
 	}
 
 	var styling_css = ""
-	var id = `#uagb-columns-${ props.clientId }`
-	if ( classMigrate ) {
-		id = `.uagb-block-${ props.clientId }`
-	}
+	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
 
 	styling_css = generateCSS( selectors, id )
 

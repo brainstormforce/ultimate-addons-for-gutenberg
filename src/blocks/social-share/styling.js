@@ -10,9 +10,6 @@ function styling( props ) {
 	const {
 		classMigrate,
 		align,
-		className,
-		social_count,
-		socials,
 		gap,
 		social_layout,
 		borderRadius,
@@ -21,9 +18,6 @@ function styling( props ) {
 		sizeMobile,
 		sizeTablet,
 		bgSize,
-		bgSizeType,
-		bgSizeMobile,
-		bgSizeTablet,
 		stack
 	} = props.attributes
 
@@ -82,7 +76,6 @@ function styling( props ) {
 		"justify-content" : alignment,
 		"-webkit-box-pack": alignment,
 		"-ms-flex-pack": alignment,
-		"justify-content": alignment,
 		"-webkit-box-align": alignment,
 		"-ms-flex-align": alignment,
 		"align-items": alignment,
@@ -107,7 +100,6 @@ function styling( props ) {
 				"justify-content" : alignment,
 				"-webkit-box-pack": alignment,
 				"-ms-flex-pack": alignment,
-				"justify-content": alignment,
 				"-webkit-box-align": alignment,
 				"-ms-flex-align": alignment,
 				"align-items": alignment,
@@ -196,10 +188,7 @@ function styling( props ) {
 	}
 
 	var styling_css = ""
-	var id = `#uagb-social-share-${ props.clientId }`
-	if ( classMigrate ) {
-		id = `.uagb-block-${ props.clientId }`
-	}
+	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
 
 	styling_css = generateCSS( selectors, id )
 

@@ -1,7 +1,3 @@
-const {
-	RichText,
-} = wp.blockEditor
-
 const { __ } = wp.i18n
 
 import classnames from "classnames"
@@ -14,6 +10,10 @@ class InfoBoxCta extends React.Component {
 		const { attributes, setAttributes = "not_set" } = this.props
 
 		let ctaBtnClass = "uagb-infobox-cta-link uagb-ifb-cta-button"
+
+		if ( attributes.inheritFromTheme ) {
+			ctaBtnClass = "wp-block-button__link"
+		}
 
 		let target ="_self"
 		let rel ="noopener noreferrer"
@@ -42,7 +42,7 @@ class InfoBoxCta extends React.Component {
 					}
 
 					{  attributes.ctaType === "button" && (
-						<div className = "uagb-ifb-button-wrapper">
+						<div className = {classnames("uagb-ifb-button-wrapper", ( attributes.inheritFromTheme ) ? "wp-block-button" : null)}>
 							<a className = { ctaBtnClass } target= {target} rel= {rel} >
 								{ cta_icon_output }
 								<span className = "uagb-ifb-cta-content-wrapper">
@@ -67,7 +67,7 @@ class InfoBoxCta extends React.Component {
 					}
 
 					{  attributes.ctaType === "button" && (
-						<div className = "uagb-ifb-button-wrapper">
+						<div className = {classnames("uagb-ifb-button-wrapper", ( attributes.inheritFromTheme ) ? "wp-block-button" : null)}>
 							<a href = {attributes.ctaLink} className = { ctaBtnClass } target= {target} rel= {rel} >
 								{ cta_icon_output }
 								<span className = "uagb-ifb-cta-content-wrapper">

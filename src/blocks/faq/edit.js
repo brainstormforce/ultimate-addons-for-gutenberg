@@ -59,15 +59,32 @@ class UAGBFaqEdit extends Component {
 
 	componentDidMount() {
 
-		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		const { attributes, setAttributes } = this.props
 
-		this.props.setAttributes( { schema: JSON.stringify( this.props.schemaJsonData ) } )
+		const {
+			questionBottomPaddingDesktop,
+			vquestionPaddingDesktop,
+			questionLeftPaddingDesktop,
+			hquestionPaddingDesktop,
+			questionBottomPaddingTablet,
+			vquestionPaddingTablet,
+			questionLeftPaddingTablet,
+			hquestionPaddingTablet,
+			questionBottomPaddingMobile,
+			vquestionPaddingMobile,
+			questionLeftPaddingMobile,
+			hquestionPaddingMobile,
+		} = attributes
+
+		// Assigning block_id in the attribute.
+		setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
+
+		setAttributes( { schema: JSON.stringify( this.props.schemaJsonData ) } )
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-style-faq-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-style-faq-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
-
+		
 		for ( var i = 1; i <= 2; i++ ) {		
 			faq.push(	
 				{	
@@ -75,6 +92,33 @@ class UAGBFaqEdit extends Component {
 					"answer": 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',	
 				}	
 			)	
+		}
+		
+		if ( 10 === questionBottomPaddingDesktop && 10 !== vquestionPaddingDesktop ) {
+
+			setAttributes( { questionBottomPaddingDesktop: vquestionPaddingDesktop } )
+		}
+		if ( 10 === questionLeftPaddingDesktop && 10 !== hquestionPaddingDesktop ) {
+
+			setAttributes( { questionLeftPaddingDesktop: hquestionPaddingDesktop } )
+		}
+
+		if ( 10 === questionBottomPaddingTablet && 10 !== vquestionPaddingTablet ) {
+
+			setAttributes( { questionBottomPaddingTablet: vquestionPaddingTablet } )
+		}
+		if ( 10 === questionLeftPaddingTablet && 10 !== hquestionPaddingTablet ) {
+
+			setAttributes( { questionLeftPaddingTablet: hquestionPaddingTablet } )
+		}
+
+		if ( 10 === questionBottomPaddingMobile && 10 !== vquestionPaddingMobile ) {
+
+			setAttributes( { questionBottomPaddingMobile: vquestionPaddingMobile } )
+		}
+		if ( 10 === questionLeftPaddingMobile && 10 !== hquestionPaddingMobile ) {
+
+			setAttributes( { questionLeftPaddingMobile: hquestionPaddingMobile } )
 		}
 	}
 
@@ -86,6 +130,11 @@ class UAGBFaqEdit extends Component {
 			this.props.setAttributes({
 				schema: JSON.stringify(this.props.schemaJsonData)
 			});
+		}
+		var element = document.getElementById( "uagb-style-faq-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
 		}
 	}
 	onchangeIcon ( value ) {
@@ -137,18 +186,8 @@ class UAGBFaqEdit extends Component {
 			borderColor,
 			questionTextColor,
 			questionTextActiveColor,
-			questionPaddingTypeMobile,
-			questionPaddingTypeTablet,
 			questionPaddingTypeDesktop,
-			vquestionPaddingMobile,
-			vquestionPaddingTablet,
-			vquestionPaddingDesktop,
-			hquestionPaddingMobile,
-			hquestionPaddingTablet,
-			hquestionPaddingDesktop,
 			answerTextColor,
-			answerPaddingTypeMobile,
-			answerPaddingTypeTablet,
 			answerPaddingTypeDesktop,
 			vanswerPaddingMobile,
 			vanswerPaddingTablet,
@@ -192,14 +231,20 @@ class UAGBFaqEdit extends Component {
 			iconSize,
 			columns,
 			enableToggle,
-			equalHeight
+			equalHeight,
+			questionLeftPaddingTablet,
+			hquestionPaddingTablet,
+			vquestionPaddingTablet,
+			questionBottomPaddingTablet,
+			questionLeftPaddingDesktop,
+			hquestionPaddingDesktop,
+			vquestionPaddingDesktop,
+			questionBottomPaddingDesktop,
+			questionLeftPaddingMobile,
+			hquestionPaddingMobile,
+			vquestionPaddingMobile,
+			questionBottomPaddingMobile,
 		} = attributes
-
-		var element = document.getElementById( "uagb-style-faq-" + this.props.clientId )
-
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
 
 		const getFaqChildTemplate = memoize( ( faq_count, faq ) => {
 			return times( faq_count, n => [ "uagb/faq-child", faq[n] ] )
@@ -627,26 +672,44 @@ class UAGBFaqEdit extends Component {
 										tabout = (
 											<Fragment>
 												<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
-													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeMobile === "px" } aria-pressed={ questionPaddingTypeMobile === "px" } onClick={ () => setAttributes( { questionPaddingTypeMobile: "px" } ) }>{ "px" }</Button>
-													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeMobile === "%" } aria-pressed={ questionPaddingTypeMobile === "%" } onClick={ () => setAttributes( { questionPaddingTypeMobile: "%" } ) }>{ "%" }</Button>
+													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeDesktop === "px" } aria-pressed={ questionPaddingTypeDesktop === "px" } onClick={ () => setAttributes( { questionPaddingTypeDesktop: "px" } ) }>{ "px" }</Button>
+													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeDesktop === "%" } aria-pressed={ questionPaddingTypeDesktop === "%" } onClick={ () => setAttributes( { questionPaddingTypeDesktop: "%" } ) }>{ "%" }</Button>
 												</ButtonGroup>
 												<h2>{ __( "Padding" ) }</h2>
 												<RangeControl
-													label={ UAGB_Block_Icons.vertical_spacing }
+													label={ UAGB_Block_Icons.left_margin }
 													className={ "uagb-margin-control" }
-													value={ vquestionPaddingMobile }
-													onChange={ ( value ) => setAttributes( { vquestionPaddingMobile: value } ) }
+													value={ questionLeftPaddingMobile }
+													onChange={ ( value ) => setAttributes( { questionLeftPaddingMobile: value } ) }
 													min={ 0 }
-													max={ 100 }
+													max={ 50 }
 													allowReset
 												/>
 												<RangeControl
-													label={ UAGB_Block_Icons.horizontal_spacing }
+													label={ UAGB_Block_Icons.right_margin }
 													className={ "uagb-margin-control" }
 													value={ hquestionPaddingMobile }
 													onChange={ ( value ) => setAttributes( { hquestionPaddingMobile: value } ) }
 													min={ 0 }
-													max={ 100 }
+													max={ 50 }
+													allowReset
+												/>
+												<RangeControl
+													label={ UAGB_Block_Icons.top_margin }
+													className={ "uagb-margin-control" }
+													value={ vquestionPaddingMobile }
+													onChange={ ( value ) => setAttributes( { vquestionPaddingMobile: value } ) }
+													min={ 0 }
+													max={ 50 }
+													allowReset
+												/>
+												<RangeControl
+													label={ UAGB_Block_Icons.bottom_margin }
+													className={ "uagb-margin-control" }
+													value={ questionBottomPaddingMobile }
+													onChange={ ( value ) => setAttributes( { questionBottomPaddingMobile: value } ) }
+													min={ 0 }
+													max={ 50 }
 													allowReset
 												/>
 											</Fragment>
@@ -655,26 +718,44 @@ class UAGBFaqEdit extends Component {
 										tabout = (
 											<Fragment>
 												<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
-													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeTablet === "px" } aria-pressed={ questionPaddingTypeTablet === "px" } onClick={ () => setAttributes( { questionPaddingTypeTablet: "px" } ) }>{ "px" }</Button>
-													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeTablet === "%" } aria-pressed={ questionPaddingTypeTablet === "%" } onClick={ () => setAttributes( { questionPaddingTypeTablet: "%" } ) }>{ "%" }</Button>
+													<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeDesktop === "px" } aria-pressed={ questionPaddingTypeDesktop === "px" } onClick={ () => setAttributes( { questionPaddingTypeDesktop: "px" } ) }>{ "px" }</Button>
+													<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ questionPaddingTypeDesktop === "%" } aria-pressed={ questionPaddingTypeDesktop === "%" } onClick={ () => setAttributes( { questionPaddingTypeDesktop: "%" } ) }>{ "%" }</Button>
 												</ButtonGroup>
 												<h2>{ __( "Padding" ) }</h2>
 												<RangeControl
-													label={ UAGB_Block_Icons.vertical_spacing }
+													label={ UAGB_Block_Icons.left_margin }
 													className={ "uagb-margin-control" }
-													value={ vquestionPaddingTablet }
-													onChange={ ( value ) => setAttributes( { vquestionPaddingTablet: value } ) }
+													value={ questionLeftPaddingTablet }
+													onChange={ ( value ) => setAttributes( { questionLeftPaddingTablet: value } ) }
 													min={ 0 }
-													max={ 100 }
+													max={ 50 }
 													allowReset
 												/>
 												<RangeControl
-													label={ UAGB_Block_Icons.horizontal_spacing }
+													label={ UAGB_Block_Icons.right_margin }
 													className={ "uagb-margin-control" }
 													value={ hquestionPaddingTablet }
 													onChange={ ( value ) => setAttributes( { hquestionPaddingTablet: value } ) }
 													min={ 0 }
-													max={ 100 }
+													max={ 50 }
+													allowReset
+												/>
+												<RangeControl
+													label={ UAGB_Block_Icons.top_margin }
+													className={ "uagb-margin-control" }
+													value={ vquestionPaddingTablet }
+													onChange={ ( value ) => setAttributes( { vquestionPaddingTablet: value } ) }
+													min={ 0 }
+													max={ 50 }
+													allowReset
+												/>
+												<RangeControl
+													label={ UAGB_Block_Icons.bottom_margin }
+													className={ "uagb-margin-control" }
+													value={ questionBottomPaddingTablet }
+													onChange={ ( value ) => setAttributes( { questionBottomPaddingTablet: value } ) }
+													min={ 0 }
+													max={ 50 }
 													allowReset
 												/>
 											</Fragment>
@@ -688,21 +769,39 @@ class UAGBFaqEdit extends Component {
 												</ButtonGroup>
 												<h2>{ __( "Padding" ) }</h2>
 												<RangeControl
-													label={ UAGB_Block_Icons.vertical_spacing }
+													label={ UAGB_Block_Icons.left_margin }
 													className={ "uagb-margin-control" }
-													value={ vquestionPaddingDesktop }
-													onChange={ ( value ) => setAttributes( { vquestionPaddingDesktop: value } ) }
+													value={ questionLeftPaddingDesktop }
+													onChange={ ( value ) => setAttributes( { questionLeftPaddingDesktop: value } ) }
 													min={ 0 }
-													max={ 100 }
+													max={ 50 }
 													allowReset
 												/>
 												<RangeControl
-													label={ UAGB_Block_Icons.horizontal_spacing }
+													label={ UAGB_Block_Icons.right_margin }
 													className={ "uagb-margin-control" }
 													value={ hquestionPaddingDesktop }
 													onChange={ ( value ) => setAttributes( { hquestionPaddingDesktop: value } ) }
 													min={ 0 }
-													max={ 100 }
+													max={ 50 }
+													allowReset
+												/>
+												<RangeControl
+													label={ UAGB_Block_Icons.top_margin }
+													className={ "uagb-margin-control" }
+													value={ vquestionPaddingDesktop }
+													onChange={ ( value ) => setAttributes( { vquestionPaddingDesktop: value } ) }
+													min={ 0 }
+													max={ 50 }
+													allowReset
+												/>
+												<RangeControl
+													label={ UAGB_Block_Icons.bottom_margin }
+													className={ "uagb-margin-control" }
+													value={ questionBottomPaddingDesktop }
+													onChange={ ( value ) => setAttributes( { questionBottomPaddingDesktop: value } ) }
+													min={ 0 }
+													max={ 50 }
 													allowReset
 												/>
 											</Fragment>
@@ -774,8 +873,8 @@ class UAGBFaqEdit extends Component {
 									tabout = (
 										<Fragment>
 											<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
-												<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ answerPaddingTypeMobile === "px" } aria-pressed={ answerPaddingTypeMobile === "px" } onClick={ () => setAttributes( { answerPaddingTypeMobile: "px" } ) }>{ "px" }</Button>
-												<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ answerPaddingTypeMobile === "%" } aria-pressed={ answerPaddingTypeMobile === "%" } onClick={ () => setAttributes( { answerPaddingTypeMobile: "%" } ) }>{ "%" }</Button>
+												<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ answerPaddingTypeDesktop === "px" } aria-pressed={ answerPaddingTypeDesktop === "px" } onClick={ () => setAttributes( { answerPaddingTypeDesktop: "px" } ) }>{ "px" }</Button>
+												<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ answerPaddingTypeDesktop === "%" } aria-pressed={ answerPaddingTypeDesktop === "%" } onClick={ () => setAttributes( { answerPaddingTypeDesktop: "%" } ) }>{ "%" }</Button>
 											</ButtonGroup>
 											<h2>{ __( "Padding" ) }</h2>
 											<RangeControl
@@ -802,8 +901,8 @@ class UAGBFaqEdit extends Component {
 									tabout = (
 										<Fragment>
 											<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
-												<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ answerPaddingTypeTablet === "px" } aria-pressed={ answerPaddingTypeTablet === "px" } onClick={ () => setAttributes( { answerPaddingTypeTablet: "px" } ) }>{ "px" }</Button>
-												<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ answerPaddingTypeTablet === "%" } aria-pressed={ answerPaddingTypeTablet === "%" } onClick={ () => setAttributes( { answerPaddingTypeTablet: "%" } ) }>{ "%" }</Button>
+												<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ answerPaddingTypeDesktop === "px" } aria-pressed={ answerPaddingTypeDesktop === "px" } onClick={ () => setAttributes( { answerPaddingTypeDesktop: "px" } ) }>{ "px" }</Button>
+												<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ answerPaddingTypeDesktop === "%" } aria-pressed={ answerPaddingTypeDesktop === "%" } onClick={ () => setAttributes( { answerPaddingTypeDesktop: "%" } ) }>{ "%" }</Button>
 											</ButtonGroup>
 											<h2>{ __( "Padding" ) }</h2>
 											<RangeControl
@@ -874,7 +973,7 @@ class UAGBFaqEdit extends Component {
 				
 				<div className={ classnames(
 					"uagb-faq__outer-wrap",
-					`uagb-block-${ this.props.clientId }`,
+					`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`,
 					`uagb-faq-icon-${ this.props.attributes.iconAlign }`,
 					`uagb-faq-layout-${ this.props.attributes.layout }`,
 					`uagb-faq-expand-first-${ this.props.attributes.expandFirstItem }`,

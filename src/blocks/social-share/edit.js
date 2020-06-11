@@ -7,8 +7,6 @@ import times from "lodash/times"
 import map from "lodash/map"
 import memoize from "memize"
 import UAGBIcon from "../../../dist/blocks/uagb-controls/UAGBIcon.json"
-import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
-import FontIconPicker from "@fonticonpicker/react-fonticonpicker"
 import styling from "./styling"
 
 const { __ } = wp.i18n
@@ -23,9 +21,6 @@ const {
 	BlockAlignmentToolbar,
 	InspectorControls,
 	InnerBlocks,
-	PanelColorSettings,
-	MediaUpload,
-	ColorPalette
 } = wp.blockEditor
 
 const {
@@ -47,19 +42,27 @@ class UAGBSocialShare extends Component {
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 		this.props.setAttributes( { classMigrate: true } )
 		this.props.setAttributes( { childMigrate : true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-style-social-share-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-style-social-share-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
+	}
+
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-style-social-share-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
 	}
 
 	render() {
 
-		const { attributes, setAttributes, isSelected } = this.props
+		const { attributes, setAttributes } = this.props
 
 		const {
 			align,
@@ -76,17 +79,7 @@ class UAGBSocialShare extends Component {
 			sizeTablet,
 			bgSize,
 			bgSizeType,
-			bgSizeMobile,
-			bgSizeTablet,
 		} = attributes
-
-		
-
-		var element = document.getElementById( "uagb-style-social-share-" + this.props.clientId )
-
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
 
 		const sizeTypes = [
 			{ key: "px", name: __( "px" ) },
@@ -274,7 +267,7 @@ class UAGBSocialShare extends Component {
 					className,
 					"uagb-social-share__outer-wrap",
 					`uagb-social-share__layout-${social_layout}`,
-					`uagb-block-${ this.props.clientId }`
+					`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
 				) }
 				>
 					<div className="uagb-social-share__wrap">

@@ -3,12 +3,12 @@
  */
 
 const attributes = {
-	block_id: {
-		type: "string"
-	},
-	classMigrate: {
+	inheritFromTheme: {
 		type: "boolean",
 		default: false
+	},
+	block_id: {
+		type: "string"
 	},
 	align: {
 		type: "string",

@@ -98,14 +98,6 @@ const attributes = {
 		type: "string",
 		default: "#313131"
 	},
-	questionPaddingTypeMobile: {
-		type: "string",
-		default : "px"
-	},
-	questionPaddingTypeTablet: {
-		type: "string",
-		default : "px"
-	},
 	questionPaddingTypeDesktop: {
 		type: "string",
 		default : "px"
@@ -137,14 +129,6 @@ const attributes = {
 	answerTextColor: {
 		type: "string",
 		default: "#313131"
-	},
-	answerPaddingTypeMobile: {
-		type: "string",
-		default : "px"
-	},
-	answerPaddingTypeTablet: {
-		type: "string",
-		default : "px"
 	},
 	answerPaddingTypeDesktop: {
 		type: "string",
@@ -308,6 +292,29 @@ const attributes = {
 		type: "boolean",
 		default: true	
 	},
+	questionLeftPaddingTablet: {
+		type: "number",
+		default : 10
+	},
+	questionBottomPaddingTablet: {
+		type: "number",
+		default : 10
+	},
+	questionLeftPaddingDesktop: {
+		type: "number",
+		default : 10
+	},
+	questionBottomPaddingDesktop: {
+		type: "number",
+		default : 10
+	},
+	questionLeftPaddingMobile: {
+		type: "number",
+		default : 10
+	},
+	questionBottomPaddingMobile: {
+		type: "number",
+		default : 10
+	},
 }
-
 export default attributes

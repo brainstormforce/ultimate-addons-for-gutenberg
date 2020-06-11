@@ -16,11 +16,6 @@
 	}
 
 	.uagb-post__items {
-		-js-display: flex;
-		display: -webkit-box;
-		display: -webkit-flex;
-		display: -moz-box;
-		display: -ms-flexbox;
 		display: flex;
 		-ms-flex-wrap: wrap;
 		-webkit-flex-wrap: wrap;
@@ -225,14 +220,11 @@
 		max-width: none;
 		left: 50%;
 		top: 50%;
-		-webkit-transform: translate(-50%,-50%);
-		-ms-transform: translate(-50%,-50%);
 		transform: translate(-50%,-50%);
 		min-height: 100%;
 	}
 
 	.uagb-post__image {
-		-webkit-background-size: cover;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -309,10 +301,8 @@
 .uagb-post-grid .is-grid article,
 .uagb-post-grid .is-masonry article,
 .uagb-post-grid .is-carousel article{
- -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
- }
+ 	box-sizing: border-box;
+}
 
 /**
  * Post grid styles

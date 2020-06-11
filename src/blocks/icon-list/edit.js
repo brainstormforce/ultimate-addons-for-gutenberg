@@ -54,17 +54,25 @@ class UAGBIconList extends Component {
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { classMigrate : true } )
 		this.props.setAttributes( { childMigrate : true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-style-icon-list-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-style-icon-list-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 
 		this.changeChildAttr( this.props.attributes.hideLabel )
+	}
+
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-style-icon-list-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
 	}
 
 	changeChildAttr ( value ) {
@@ -127,12 +135,6 @@ class UAGBIconList extends Component {
 				<WebfontLoader config={ hconfig }>
 				</WebfontLoader>
 			)
-		}
-
-		var element = document.getElementById( "uagb-style-icon-list-" + this.props.clientId )
-
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
 		}
 
 		const labelClass = ( hideLabel ) ? "uagb-icon-list__no-label" : ""
@@ -358,7 +360,7 @@ class UAGBIconList extends Component {
 					`uagb-icon-list__layout-${icon_layout}`,
 					( iconPosition == "top" ? "uagb-icon-list__icon-at-top" : "" ),
 					labelClass,
-					`uagb-block-${ this.props.clientId }`
+					`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
 				) }>
 					<div className="uagb-icon-list__wrap">
 						<InnerBlocks
