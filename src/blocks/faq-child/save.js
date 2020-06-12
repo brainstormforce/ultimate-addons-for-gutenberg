@@ -42,7 +42,7 @@ export default function save( props ) {
 
 		return (
 				<div className="uagb-faq-child__wrapper">
-					<div className="uagb-faq-item">
+					<div className="uagb-faq-item" role="tab" tabindex="0">
 						<div className="uagb-faq-questions-button uagb-faq-questions">
 							{ 'accordion' === layout && faqRenderIcon() }
 							<RichText.Content

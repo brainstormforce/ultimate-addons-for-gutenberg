@@ -55,7 +55,7 @@ class UAGBTeam extends Component {
 		let target_value =  ( target ) ? "_blank" : "_self"
 
 		return (
-			<li className="uagb-team__social-icon"><a href={link} target={target_value} title="" rel ="noopener noreferrer">{ renderSVG(icon) }</a></li>
+			<li className="uagb-team__social-icon"><a href={link} aria-label={ icon } target={target_value} title="" rel ="noopener noreferrer">{ renderSVG(icon) }</a></li>
 		)
 	}
 

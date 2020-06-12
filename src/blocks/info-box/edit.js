@@ -1203,7 +1203,7 @@ class UAGBinfoBox extends Component {
 				) }
 				>
 					{ ( ctaType == "all") &&<Fragment>
-						<a className = "uagb-infobox-link-wrap uagb-infbox__link-to-all" rel ="noopener noreferrer"></a>
+						<a className = "uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label={"Infobox Link"} rel ="noopener noreferrer"></a>
 						{output}
 					</Fragment>
 					}

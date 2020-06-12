@@ -166,7 +166,7 @@ export default function save( props ) {
 		) }>
 
 			{ ( ctaType == "all") &&
-				<a href= {ctaLink} className = "uagb-infobox-link-wrap uagb-infbox__link-to-all" target={target} rel ="noopener noreferrer"></a>
+				<a href= {ctaLink} className = "uagb-infobox-link-wrap uagb-infbox__link-to-all" target={target} aria-label={"Infobox Link"} rel ="noopener noreferrer"></a>
 			}
 			{output}
 		</div>
