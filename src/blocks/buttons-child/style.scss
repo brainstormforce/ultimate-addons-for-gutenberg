@@ -7,16 +7,12 @@ span.uagb-mb-button-icon.uagb-ifb-align-icon-after {
     float: right;
 }
 
-.uagb-mb-link .uagb-button__link {
-    padding: 0 !important;
-}
-.uagb-mb-link {
-    padding: 10px 14px;
+.uagb-buttons-repeater {
     display: inline-flex;
     cursor: pointer;
 }
 
-.uagb-mb-link .uagb-mb-button-icon {
+.uagb-mb-button-icon {
     height: 15px;
     width: 15px;
 }

@@ -44,7 +44,7 @@ export default function save( props ) {
 			( inheritFromTheme ) ? "wp-block-button" : null
 			) }>
 			<div className="uagb-button__wrapper">
-				<div className ={classnames( "uagb-buttons-repeater", "uagb-button__wrapper", "uagb-mb-link" )} >
+				<div className ="uagb-buttons-repeater" >
 					{  ( attributes.icon !== "" && attributes.iconPosition === "before" ) ? mb_icon_output : "" }
 					<RichText.Content
 						value={ label }

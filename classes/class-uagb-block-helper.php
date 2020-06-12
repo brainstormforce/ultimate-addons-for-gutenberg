@@ -934,6 +934,8 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				'border-style'  => $attr['borderStyle'],
 				'border-radius' => UAGB_Helper::get_css_value( $attr['borderRadius'], 'px' ),
 				'background'    => $attr['background'],
+				'padding'       => UAGB_Helper::get_css_value( $attr['vPadding'], 'px' ) . ' ' . UAGB_Helper::get_css_value( $attr['hPadding'], 'px' ),
+				'color'         => $attr['color'],
 			);
 
 			$selectors[ $wrapper . ':hover' ] = array(
@@ -941,15 +943,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				'border-width' => UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' ),
 				'border-color' => $attr['borderHColor'],
 				'border-style' => $attr['borderStyle'],
-			);
-
-			$selectors[ $wrapper . ' a.uagb-button__link' ] = array(
-				'padding' => UAGB_Helper::get_css_value( $attr['vPadding'], 'px' ) . ' ' . UAGB_Helper::get_css_value( $attr['hPadding'], 'px' ),
-				'color'   => $attr['color'],
-			);
-
-			$selectors[ $wrapper . ':hover a.uagb-button__link' ] = array(
-				'color' => $attr['hColor'],
+				'color'        => $attr['hColor'],
 			);
 
 			$selectors[ $wrapper . ' span.uagb-mb-align-icon-after' ] = array(

@@ -50,27 +50,16 @@ function styling( props ) {
 			"border-style": borderStyle,
 			"border-color": borderColor,
 			"border-radius" : generateCSSUnit( borderRadius, "px" ),
-			"background": background
+			"background": background,
+			"padding" : vPadding + "px " + hPadding + "px",
+			"color": color
 		},
 		" .uagb-buttons-repeater:hover" : {
 			"background": hBackground,
 			"border-width": generateCSSUnit( borderWidth, "px" ),
 			"border-style": borderStyle,
 			"border-color": borderHColor,
-		},
-		" .uagb-buttons-repeater a.uagb-button__link" : {
-			"padding" : vPadding + "px " + hPadding + "px",
-			"color": color
-		},
-		" .uagb-buttons-repeater:hover a.uagb-button__link" : {
 			"color": hColor
-		},
-		" .uagb-buttons-repeater:hover .uagb-button__link": {
-			"color": hColor
-		},
-		" .uagb-buttons-repeater .uagb-button__link" : {
-			"padding" : vPadding + "px " + hPadding + "px",
-			"color": color
 		},
 		" .uagb-buttons-repeater span.uagb-mb-align-icon-after" : {
 			"margin-left" : generateCSSUnit( iconSpace, "px" ),

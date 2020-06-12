@@ -654,11 +654,7 @@ class UAGBButtonsChild extends Component {
 					) }>
 					<div className="uagb-button__wrapper">
 						
-						<div className ={ classnames( 
-							'uagb-buttons-repeater',
-							'uagb-button__wrapper',
-							`${ attributes.icon !== "" ? 'uagb-mb-link' : ''}`
-							) }>
+						<div className ="uagb-buttons-repeater" >
 							{ attributes.icon !== "" && attributes.iconPosition === "before" &&  mb_icon_output }
 							<RichText
 								placeholder={ __( "Add text…" ) }
