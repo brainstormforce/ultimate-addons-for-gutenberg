@@ -25,14 +25,14 @@ export default function save( props ) {
 		link,
 		label,
 		inheritFromTheme,
-		mbIcon,
-		mbIconPosition
+		icon,
+		iconPosition
 	} = attributes
 
 	var mb_icon_output = ""
-	if( attributes.mbIcon !== "" ){
-		mb_icon_output = <span className= { classnames(`uagb-mb-button-icon`, `uagb-mb-align-icon-${ attributes.mbIconPosition }`) }>
-			{ renderSVG(attributes.mbIcon) }
+	if( attributes.icon !== "" ){
+		mb_icon_output = <span className= { classnames(`uagb-mb-button-icon`, `uagb-mb-align-icon-${ attributes.iconPosition }`) }>
+			{ renderSVG(attributes.icon) }
 		</span>
 	}
 	
@@ -44,35 +44,22 @@ export default function save( props ) {
 			( inheritFromTheme ) ? "wp-block-button" : null
 			) }>
 			<div className="uagb-button__wrapper">
-				{  attributes.mbIcon !== "" && (
-					<div className = "uagb-buttons-repeater uagb-button__wrapper uagb-mb-link">
-						{  attributes.mbIconPosition === "before" &&  mb_icon_output }
-						<RichText.Content
-							value={ label }
-							tagName='a'
-							className={classnames( 'uagb-button__link', ( inheritFromTheme ) ? "wp-block-button__link" : null ) }
-							href={ link }
-							rel ="noopener noreferrer"
-							target={ target }
-						/>
-						{  attributes.mbIconPosition === "after" &&  mb_icon_output }
-					</div>
-				)
-				}
-
-				{  attributes.mbIcon === "" && (
-					<div className="uagb-buttons-repeater">
-						<RichText.Content
-							value={ label }
-							tagName='a'
-							className={classnames( 'uagb-button__link', ( inheritFromTheme ) ? "wp-block-button__link" : null ) }
-							href={ link }
-							rel ="noopener noreferrer"
-							target={ target }
-						/>	
-					</div>
-				)
-				}
+				<div className ={ classnames( 
+					'uagb-buttons-repeater',
+					'uagb-button__wrapper',
+					`${ attributes.icon !== "" ? 'uagb-mb-link' : ''}`
+					) }>
+					{  attributes.icon !== "" && attributes.iconPosition === "before" &&  mb_icon_output }
+					<RichText.Content
+						value={ label }
+						tagName='a'
+						className={classnames( 'uagb-button__link', ( inheritFromTheme ) ? "wp-block-button__link" : null ) }
+						href={ link }
+						rel ="noopener noreferrer"
+						target={ target }
+					/>
+					{  attributes.icon !== "" && attributes.iconPosition === "after" &&  mb_icon_output }
+				</div>
 			</div>
 		</div>
 		

@@ -49,7 +49,7 @@ class UAGBButtonsChild extends Component {
 		this.state = {
 			isURLPickerOpen:false,
 		}
-		this.getMbicon = this.getMbicon.bind(this)
+		this.geticon = this.geticon.bind(this)
 	}
 
 	componentDidMount() {
@@ -93,8 +93,8 @@ class UAGBButtonsChild extends Component {
 		}
 	}
 
-	getMbicon(value) {
-		this.props.setAttributes( { mbIcon: value } )
+	geticon(value) {
+		this.props.setAttributes( { icon: value } )
 	}
 	render() {
 		
@@ -113,9 +113,9 @@ class UAGBButtonsChild extends Component {
 			borderColor,
 			borderHColor,
 			color,
-			mbIcon,
-			mbIconPosition,
-			mbIconSpace,
+			icon,
+			iconPosition,
+			iconSpace,
 			background,
 			hColor,
 			hBackground,
@@ -134,16 +134,16 @@ class UAGBButtonsChild extends Component {
 		const mb_icon_props = {
 			icons: svg_icons,
 			renderFunc: renderSVG,
-			value: mbIcon,
-			onChange: this.getMbicon,
+			value: icon,
+			onChange: this.geticon,
 			isMulti: false,
 			noSelectedPlaceholder: __( "Select Icon" )
 		}
 
 		var mb_icon_output = ""
-		if( attributes.mbIcon !== "" ){
-			mb_icon_output = <span className= { classnames(`uagb-mb-button-icon`, `uagb-mb-align-icon-${ attributes.mbIconPosition }`) }>
-				{ renderSVG(attributes.mbIcon) }
+		if( attributes.icon !== "" ){
+			mb_icon_output = <span className= { classnames(`uagb-mb-button-icon`, `uagb-mb-align-icon-${ attributes.iconPosition }`) }>
+				{ renderSVG(attributes.icon) }
 			</span>
 		}
 
@@ -185,11 +185,11 @@ class UAGBButtonsChild extends Component {
 						<Fragment>
 							<h2>{ __( "Button Icon" ) }</h2>
 							<FontIconPicker {...mb_icon_props} />
-							{ mbIcon != "" && <Fragment>
+							{ icon != "" && <Fragment>
 								<SelectControl
 									label={ __( "Icon Position" ) }
-									value={ mbIconPosition }
-									onChange={ ( value ) => setAttributes( { mbIconPosition: value } ) }
+									value={ iconPosition }
+									onChange={ ( value ) => setAttributes( { iconPosition: value } ) }
 									options={ [
 										{ value: "before", label: __( "Before Text" ) },
 										{ value: "after", label: __( "After Text" ) },
@@ -197,8 +197,8 @@ class UAGBButtonsChild extends Component {
 								/>
 								<RangeControl
 									label={ __( "Icon Spacing" ) }
-									value={ mbIconSpace }
-									onChange={ ( value ) => setAttributes( { mbIconSpace: value } ) }
+									value={ iconSpace }
+									onChange={ ( value ) => setAttributes( { iconSpace: value } ) }
 									min={ 0 }
 									max={ 50 }
 									beforeIcon=""
@@ -654,44 +654,26 @@ class UAGBButtonsChild extends Component {
 					) }>
 					<div className="uagb-button__wrapper">
 						
-
-						{  attributes.mbIcon !== "" && (
-							<div className ="uagb-buttons-repeater uagb-button__wrapper uagb-mb-link">
-								{  attributes.mbIconPosition === "before" &&  mb_icon_output }
-								<RichText
-									placeholder={ __( "Add text…" ) }
-									value={ label }
-									tagName='div'
-									onChange={ value => {
-										setAttributes( { label: value })
-									} }
-									allowedFormats={ [ "bold", "italic", "strikethrough" ] }
-									className='uagb-button__link'
-									rel ="noopener noreferrer"
-									keepPlaceholderOnFocus
-								/>
-								{  attributes.mbIconPosition === "after" &&  mb_icon_output }
-							</div>
-						)
-						}
-
-						{  attributes.mbIcon === "" && (
-							<div className="uagb-buttons-repeater uagb-button__wrapper">
-								<RichText
-									placeholder={ __( "Add text…" ) }
-									value={ label }
-									tagName='div'
-									onChange={ value => {
-										setAttributes( { label: value })
-									} }
-									allowedFormats={ [ "bold", "italic", "strikethrough" ] }
-									className={classnames( 'uagb-button__link', ( inheritFromTheme ) ? "wp-block-button__link" : null ) }
-									rel ="noopener noreferrer"
-									keepPlaceholderOnFocus
-								/>	
-							</div>
-						)
-						}
+						<div className ={ classnames( 
+							'uagb-buttons-repeater',
+							'uagb-button__wrapper',
+							`${ attributes.icon !== "" ? 'uagb-mb-link' : ''}`
+							) }>
+							{ attributes.icon !== "" && attributes.iconPosition === "before" &&  mb_icon_output }
+							<RichText
+								placeholder={ __( "Add text…" ) }
+								value={ label }
+								tagName='div'
+								onChange={ value => {
+									setAttributes( { label: value })
+								} }
+								allowedFormats={ [ "bold", "italic", "strikethrough" ] }
+								className={classnames( 'uagb-button__link', ( inheritFromTheme ) ? "wp-block-button__link" : null ) }
+								rel ="noopener noreferrer"
+								keepPlaceholderOnFocus
+							/>
+							{ attributes.icon !== "" && attributes.iconPosition === "after" &&  mb_icon_output }
+						</div>
 						
 					</div>
 				</div>

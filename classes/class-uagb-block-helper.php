@@ -953,11 +953,11 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			);
 
 			$selectors[ $wrapper . ' span.uagb-mb-align-icon-after' ] = array(
-				'margin-left' => UAGB_Helper::get_css_value( $attr['mbIconSpace'], 'px' ),
+				'margin-left' => UAGB_Helper::get_css_value( $attr['iconSpace'], 'px' ),
 			);
 
 			$selectors[ $wrapper . ' span.uagb-mb-align-icon-before' ] = array(
-				'margin-right' => UAGB_Helper::get_css_value( $attr['mbIconSpace'], 'px' ),
+				'margin-right' => UAGB_Helper::get_css_value( $attr['iconSpace'], 'px' ),
 			);
 
 			$m_selectors[ $wrapper ] = array(

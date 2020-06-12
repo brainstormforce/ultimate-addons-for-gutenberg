@@ -83,17 +83,17 @@ const attributes = {
 		type: "string",
 		default:"#333" 
 	} ,
-	mbIcon : {
+	icon : {
 		type : "string",
 		default : ""
 	},
-	mbIconPosition: {
+	iconPosition: {
 		type: "string",
 		default: "after"
 	},
-	mbIconSpace :{
+	iconSpace :{
 		type: "number",
-		default : 5
+		default : 8
 	},
 	background: {
 		type: "string",

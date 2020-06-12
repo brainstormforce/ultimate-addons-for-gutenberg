@@ -29,7 +29,7 @@ function styling( props ) {
 		lineHeightType,
 		lineHeightMobile,
 		lineHeightTablet,
-		mbIconSpace,
+		iconSpace,
 		inheritFromTheme
 	} = props.attributes;
 
@@ -73,10 +73,10 @@ function styling( props ) {
 			"color": color
 		},
 		" .uagb-buttons-repeater span.uagb-mb-align-icon-after" : {
-			"margin-left" : generateCSSUnit( mbIconSpace, "px" ),
+			"margin-left" : generateCSSUnit( iconSpace, "px" ),
 		},
 		" .uagb-buttons-repeater span.uagb-mb-align-icon-before" : {
-			"margin-right" : generateCSSUnit( mbIconSpace, "px" ),
+			"margin-right" : generateCSSUnit( iconSpace, "px" ),
 		}
 
 	}
