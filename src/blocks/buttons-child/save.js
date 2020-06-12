@@ -44,12 +44,8 @@ export default function save( props ) {
 			( inheritFromTheme ) ? "wp-block-button" : null
 			) }>
 			<div className="uagb-button__wrapper">
-				<div className ={ classnames( 
-					'uagb-buttons-repeater',
-					'uagb-button__wrapper',
-					`${ attributes.icon !== "" ? 'uagb-mb-link' : ''}`
-					) }>
-					{  attributes.icon !== "" && attributes.iconPosition === "before" &&  mb_icon_output }
+				<div className ={classnames( "uagb-buttons-repeater", "uagb-button__wrapper", "uagb-mb-link" )} >
+					{  ( attributes.icon !== "" && attributes.iconPosition === "before" ) ? mb_icon_output : "" }
 					<RichText.Content
 						value={ label }
 						tagName='a'
@@ -58,8 +54,9 @@ export default function save( props ) {
 						rel ="noopener noreferrer"
 						target={ target }
 					/>
-					{  attributes.icon !== "" && attributes.iconPosition === "after" &&  mb_icon_output }
+					{  ( attributes.icon !== "" && attributes.iconPosition === "after" ) ?  mb_icon_output : "" }
 				</div>
+				
 			</div>
 		</div>
 		
