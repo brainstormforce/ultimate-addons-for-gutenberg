@@ -1,5 +1,7 @@
 import truncate from "lodash/truncate"
-
+const {
+	RawHTML
+} = wp.components
 class Excerpt extends React.Component {
 
 	render() {
@@ -24,7 +26,7 @@ class Excerpt extends React.Component {
 			excerpt += " ..."
 		}
 
-		if ( attributes.displayPostExcerpt ) {
+		if ( attributes.displayPostExcerpt && attributes.displayPostContentRadio == "excerpt" ) {
 
 			return (
 
@@ -33,6 +35,18 @@ class Excerpt extends React.Component {
 				</div>
 			)
 
+		}else if(attributes.displayPostExcerpt && attributes.displayPostContentRadio == "full_post" ){
+			
+			console.log(post.content.raw);
+			return (
+
+				<div className='uagb-post__excerpt uagb-full_post'>
+						<div dangerouslySetInnerHTML={ { __html: post.content.raw.trim() } } />
+						
+				</div>
+			)
+		
+			
 		} else {
 			return null
 		}

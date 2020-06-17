@@ -26,7 +26,8 @@ const {
 	ToggleControl,
 	TabPanel,
 	Dashicon,
-	TextControl
+	TextControl,
+	RadioControl
 } = wp.components
 
 const {
@@ -243,6 +244,8 @@ class UAGBPostGrid extends Component {
 			paginationNextText,
 			inheritFromTheme,
 			postDisplaytext,
+			displayPostContentRadio
+			
 		} = attributes
 
 		const hoverSettings = (
@@ -697,22 +700,43 @@ class UAGBPostGrid extends Component {
 						checked={ displayPostTaxonomy }
 						onChange={ ( value ) => setAttributes( { displayPostTaxonomy: ! displayPostTaxonomy } ) }
 					/>
+					
+				</PanelBody>
+				<PanelBody title={ __( "Post Content Settings" ) } initialOpen={ false }>
 					<ToggleControl
-						label={ __( "Show Excerpt" ) }
+						label={ __( "Post Content" ) }
 						checked={ displayPostExcerpt }
 						onChange={ ( value ) => setAttributes( { displayPostExcerpt: ! displayPostExcerpt } ) }
 					/>
-					{ displayPostExcerpt &&
-						<RangeControl
-							label={ __( "Excerpt Length" ) }
-							value={ excerptLength }
-							onChange={ ( value ) => setAttributes( { excerptLength: value } ) }
-							min={ 1 }
-							max={ 500 }
-							allowReset
+					{ displayPostExcerpt && (
+						<RadioControl
+							label={ __( 'Show:' ) }
+							selected={ displayPostContentRadio }
+							options={ [
+								{ label: __( 'Excerpt' ), value: "excerpt" },
+								{label: __( 'Full post' ), value: "full_post",},
+							] }
+							onChange={ ( value ) =>
+								setAttributes( {
+									displayPostContentRadio: value,
+								} )
+							}
 						/>
-					}
+					) }
+					{ displayPostExcerpt &&
+						displayPostContentRadio === 'excerpt' && (
+							<RangeControl
+								label={ __( 'Max number of words in excerpt' ) }
+								value={ excerptLength }
+								onChange={ ( value ) =>
+									setAttributes( { excerptLength: value } )
+								}
+								min={ 1 }
+								max={ 100 }
+							/>
+						) }
 				</PanelBody>
+				{ displayPostExcerpt && displayPostContentRadio === 'excerpt' && (
 				<PanelBody title={ __( "Read More Link" ) } initialOpen={ false }>
 					<ToggleControl
 						label={ __( "Show Read More Link" ) }
@@ -834,7 +858,7 @@ class UAGBPostGrid extends Component {
 							}
 						</Fragment>
 					}
-				</PanelBody>
+				</PanelBody>)}
 				<PanelBody title={ __( "Typography" ) } initialOpen={ false }>
 					<h2>{ __( "Title" ) }</h2>
 					<SelectControl
