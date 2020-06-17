@@ -236,6 +236,8 @@ class UAGBColumns extends Component {
 			borderRadius,
 			borderColor,
 			columns,
+			tcolumns,
+			mcolumns,
 			bottomType,
 			bottomColor,
 			bottomHeight,
@@ -582,13 +584,65 @@ class UAGBColumns extends Component {
 				<InspectorControls>
 					<PanelBody title={ __( "Layout" ) }>
 
-						<RangeControl
-							label={ __( "Columns" ) }
-							value={ columns }
-							min={ 0 }
-							max={ 6 }
-							onChange={ ( value ) => setAttributes( { columns: value } ) }
-						/>
+						<TabPanel className="uagb-size-type-field-tabs uagb-without-size-type" activeClass="active-tab"
+							tabs={ [
+								{
+									name: "desktop",
+									title: <Dashicon icon="desktop" />,
+									className: "uagb-desktop-tab uagb-responsive-tabs",
+								},
+								{
+									name: "tablet",
+									title: <Dashicon icon="tablet" />,
+									className: "uagb-tablet-tab uagb-responsive-tabs",
+								},
+								{
+									name: "mobile",
+									title: <Dashicon icon="smartphone" />,
+									className: "uagb-mobile-tab uagb-responsive-tabs",
+								},
+							] }>
+							{
+								( tab ) => {
+									let tabout
+
+									if ( "mobile" === tab.name ) {
+										tabout = (
+											<RangeControl
+												label={ __( "Columns" ) }
+												value={ mcolumns }
+												min={ 0 }
+												max={ 6 }
+												onChange={ ( value ) => setAttributes( { mcolumns: value } ) }
+											/>
+										)
+									} else if ( "tablet" === tab.name ) {
+										tabout = (
+											<RangeControl
+												label={ __( "Columns" ) }
+												value={ tcolumns }
+												min={ 0 }
+												max={ 6 }
+												onChange={ ( value ) => setAttributes( { tcolumns: value } ) }
+											/>
+										)
+									} else {
+										tabout = (
+											<RangeControl
+												label={ __( "Columns" ) }
+												value={ columns }
+												min={ 0 }
+												max={ 6 }
+												onChange={ ( value ) => setAttributes( { columns: value } ) }
+											/>
+										)
+									}
+
+									return <div>{ tabout }</div>
+								}
+							}
+						</TabPanel>
+						
 						<SelectControl
 							label={ __( "Stack on" ) }
 							value={ stack }
@@ -1292,7 +1346,9 @@ class UAGBColumns extends Component {
 					}
 					<div className={ classnames(
 						"uagb-columns__inner-wrap",
-						`uagb-columns__columns-${columns}`
+						`uagb-columns__columns-${columns}`,
+						`uagb-columns__columns-tablet-${tcolumns}`,
+						`uagb-columns__columns-mobile-${mcolumns}`
 					) }>
 						<InnerBlocks
 							template={ getColumnsTemplate( columns ) }
