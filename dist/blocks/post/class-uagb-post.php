@@ -526,6 +526,7 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 				),
 				'displayPostContentRadio' =>array(
 					'type' => 'string',
+					'default' => 'excerpt',
 				),
 
 				// CTA attributes.

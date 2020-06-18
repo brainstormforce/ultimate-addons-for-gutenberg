@@ -37,7 +37,6 @@ class Excerpt extends React.Component {
 
 		}else if(attributes.displayPostExcerpt && attributes.displayPostContentRadio == "full_post" ){
 			
-			console.log(post.content.raw);
 			return (
 
 				<div className='uagb-post__excerpt uagb-full_post'>
