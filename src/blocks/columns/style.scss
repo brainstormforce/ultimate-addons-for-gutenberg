@@ -181,14 +181,6 @@
 }
 
 @media (max-width: 976px) {
-	.uagb-columns__stack-tablet > .uagb-columns__columns-1 > .uagb-column__wrap,
-	.uagb-columns__stack-tablet > .uagb-columns__columns-2 > .uagb-column__wrap,
-	.uagb-columns__stack-tablet > .uagb-columns__columns-3 > .uagb-column__wrap,
-	.uagb-columns__stack-tablet > .uagb-columns__columns-4 > .uagb-column__wrap,
-	.uagb-columns__stack-tablet > .uagb-columns__columns-5 > .uagb-column__wrap,
-	.uagb-columns__stack-tablet > .uagb-columns__columns-6 > .uagb-column__wrap {
-		width: 100% !important;
-	}
 
 	.uagb-columns__stack-tablet > .uagb-columns__inner-wrap {
 		display: block;
@@ -210,14 +202,6 @@
 }
 
 @media (max-width: 767px) {
-	.uagb-columns__stack-mobile > .uagb-columns__columns-1 > .uagb-column__wrap,
-	.uagb-columns__stack-mobile > .uagb-columns__columns-2 > .uagb-column__wrap,
-	.uagb-columns__stack-mobile > .uagb-columns__columns-3 > .uagb-column__wrap,
-	.uagb-columns__stack-mobile > .uagb-columns__columns-4 > .uagb-column__wrap,
-	.uagb-columns__stack-mobile > .uagb-columns__columns-5 > .uagb-column__wrap,
-	.uagb-columns__stack-mobile > .uagb-columns__columns-6 > .uagb-column__wrap {
-		width: 100% !important;
-	}
 
 	.uagb-columns__stack-mobile > .uagb-columns__inner-wrap {
 		display: block;

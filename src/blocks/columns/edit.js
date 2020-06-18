@@ -561,7 +561,6 @@ class UAGBColumns extends Component {
 				</Fragment>
 			)
 		}
-			
 		return (
 			
 			<Fragment>
