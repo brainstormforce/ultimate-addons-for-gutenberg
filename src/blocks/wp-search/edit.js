@@ -220,26 +220,64 @@ class UAGBWpSearchEdit extends Component {
                     initialOpen={ false }
                     className="uagb__url-panel-body"
 				>
-                    <Fragment>
-
-                        <TypographyControl
-                            label={ __( "Typography" ) }
-                            attributes = { attributes }
-                            setAttributes = { setAttributes }
-                            loadGoogleFonts = { { value: inputloadGoogleFonts, label: 'inputloadGoogleFonts'  } }
-                            fontFamily = { { value: inputFontFamily, label: 'inputFontFamily'  } }
-                            fontWeight = { { value: inputFontWeight, label: 'inputFontWeight'  } }
-                            fontSubset = { { value: inputFontSubset, label: 'inputFontSubset'  } }
-                            fontSizeType = { { value: inputFontSizeType, label: 'inputFontSizeType' } }
-                            fontSize = { { value: inputFontSize, label: 'inputFontSize'  } }
-                            fontSizeMobile = { { value: inputFontSizeMobile, label: 'inputFontSizeMobile'  } }
-                            fontSizeTablet= { { value: inputFontSizeTablet, label: 'inputFontSizeTablet' } }
-                            lineHeightType = { { value: inputLineHeightType, label: 'inputLineHeightType' } }
-                            lineHeight = { { value: inputLineHeight, label: 'inputLineHeight'  } }
-                            lineHeightMobile = { { value: inputLineHeightMobile, label: 'inputLineHeightMobile'  } }
-                            lineHeightTablet= { { value: inputLineHeightTablet, label: 'inputLineHeightTablet'  } }
-                        />
-                        <TabPanel className="uagb-size-type-field-tabs uagb-size-type-field__common-tabs uagb-inline-margin" activeClass="active-tab"
+                    <p className="uagb-setting-label">{ __( "Text Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: textColor }} ></span></span></p>
+                    <ColorPalette
+                        value={ textColor }
+                        onChange={ ( value ) => setAttributes( { textColor: value } ) }
+                        allowReset
+                    />
+                    <p className="uagb-setting-label">{ __( "Background Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: inputBgColor }} ></span></span></p>
+                    <ColorPalette
+                        value={ inputBgColor }
+                        onChange={ ( value ) => setAttributes( { inputBgColor: value } ) }
+                        allowReset
+                    />
+                    <hr/>
+                    <h2>{ __( "Border" ) }</h2>
+                    <SelectControl
+                        label={ __( "Style" ) }
+                        value={ borderStyle }
+                        options={ [
+                            { value: "none", label: __( "None" ) },
+                            { value: "solid", label: __( "Solid" ) },
+                            { value: "dotted", label: __( "Dotted" ) },
+                            { value: "dashed", label: __( "Dashed" ) },
+                            { value: "double", label: __( "Double" ) },
+                        ] }
+                        onChange={ value => {
+                            setAttributes( { borderStyle: value } )
+                        } }
+                    />
+                    { "none" !== borderStyle &&
+                        <Fragment>
+                            <RangeControl
+                                label={ __( "Thickness (px)" ) }
+                                value={ borderWidth }
+                                onChange={ value => {
+                                    setAttributes( { borderWidth: value } )
+                                } }
+                                min={ 0 }
+                                max={ 20 }
+                            />
+                            <RangeControl
+                                label={ __( "Rounded Corners (px)" ) }
+                                value={ borderRadius }
+                                onChange={ value => {
+                                    setAttributes( { borderRadius: value } )
+                                } }
+                                min={ 0 }
+                                max={ 50 }
+                            />
+                            <p className="uagb-setting-label">{ __( "Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: borderColor }} ></span></span></p>
+                            <ColorPalette
+                                value={ borderColor }
+                                onChange={ ( value ) => setAttributes( { borderColor: value } ) }
+                                allowReset
+                            />
+                        </Fragment>
+                    }
+                    <hr/>
+                    <TabPanel className="uagb-size-type-field-tabs uagb-size-type-field__common-tabs uagb-inline-margin" activeClass="active-tab"
                         tabs={ [
                             {
                                 name: "desktop",
@@ -350,74 +388,35 @@ class UAGBWpSearchEdit extends Component {
                                 return <div>{ tabout }</div>
                             }
                         }
-                        </TabPanel>
-                        <p className="uagb-setting-label">{ __( "Text Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: textColor }} ></span></span></p>
-                        <ColorPalette
-                            value={ textColor }
-                            onChange={ ( value ) => setAttributes( { textColor: value } ) }
-                            allowReset
-                        />
-                        <p className="uagb-setting-label">{ __( "Background Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: inputBgColor }} ></span></span></p>
-                        <ColorPalette
-                            value={ inputBgColor }
-                            onChange={ ( value ) => setAttributes( { inputBgColor: value } ) }
-                            allowReset
-                        />
-                        <BoxShadowControl
-                            setAttributes = { setAttributes }
-                            label = { __( "Box Shadow" ) }
-                            boxShadowColor = { { value: boxShadowColor, label: __( "Color" ) } }
-                            boxShadowHOffset = { { value: boxShadowHOffset, label: __( "Horizontal" ) } }
-                            boxShadowVOffset = { { value: boxShadowVOffset, label: __( "Vertical" ) } }
-                            boxShadowBlur = { { value: boxShadowBlur, label: __( "Blur" ) } }
-                            boxShadowSpread = { { value: boxShadowSpread, label: __( "Spread" ) } }
-                            boxShadowPosition = { { value: boxShadowPosition, label: __( "Position" ) } }
-                        />
-                        
-                        <h2>{ __( "Border" ) }</h2>
-                        <SelectControl
-                            label={ __( "Style" ) }
-                            value={ borderStyle }
-                            options={ [
-                                { value: "none", label: __( "None" ) },
-                                { value: "solid", label: __( "Solid" ) },
-                                { value: "dotted", label: __( "Dotted" ) },
-                                { value: "dashed", label: __( "Dashed" ) },
-                                { value: "double", label: __( "Double" ) },
-                            ] }
-                            onChange={ value => {
-                                setAttributes( { borderStyle: value } )
-                            } }
-                        />
-                        { "none" !== borderStyle &&
-                            <RangeControl
-                                label={ __( "Thickness (px)" ) }
-                                value={ borderWidth }
-                                onChange={ value => {
-                                    setAttributes( { borderWidth: value } )
-                                } }
-                                min={ 0 }
-                                max={ 20 }
-                            />
-                        }
-                        { "none" !== borderStyle &&
-                            <RangeControl
-                                label={ __( "Rounded Corners (px)" ) }
-                                value={ borderRadius }
-                                onChange={ value => {
-                                    setAttributes( { borderRadius: value } )
-                                } }
-                                min={ 0 }
-                                max={ 50 }
-                            />
-                        }
-                        <p className="uagb-setting-label">{ __( "Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: borderColor }} ></span></span></p>
-                        <ColorPalette
-                            value={ borderColor }
-                            onChange={ ( value ) => setAttributes( { borderColor: value } ) }
-                            allowReset
-                        />
-                    </Fragment> 
+                    </TabPanel>
+                    <hr/>
+                    <TypographyControl
+                        label={ __( "Typography" ) }
+                        attributes = { attributes }
+                        setAttributes = { setAttributes }
+                        loadGoogleFonts = { { value: inputloadGoogleFonts, label: 'inputloadGoogleFonts'  } }
+                        fontFamily = { { value: inputFontFamily, label: 'inputFontFamily'  } }
+                        fontWeight = { { value: inputFontWeight, label: 'inputFontWeight'  } }
+                        fontSubset = { { value: inputFontSubset, label: 'inputFontSubset'  } }
+                        fontSizeType = { { value: inputFontSizeType, label: 'inputFontSizeType' } }
+                        fontSize = { { value: inputFontSize, label: 'inputFontSize'  } }
+                        fontSizeMobile = { { value: inputFontSizeMobile, label: 'inputFontSizeMobile'  } }
+                        fontSizeTablet= { { value: inputFontSizeTablet, label: 'inputFontSizeTablet' } }
+                        lineHeightType = { { value: inputLineHeightType, label: 'inputLineHeightType' } }
+                        lineHeight = { { value: inputLineHeight, label: 'inputLineHeight'  } }
+                        lineHeightMobile = { { value: inputLineHeightMobile, label: 'inputLineHeightMobile'  } }
+                        lineHeightTablet= { { value: inputLineHeightTablet, label: 'inputLineHeightTablet'  } }
+                    />
+                    <BoxShadowControl
+                        setAttributes = { setAttributes }
+                        label = { __( "Box Shadow" ) }
+                        boxShadowColor = { { value: boxShadowColor, label: __( "Color" ) } }
+                        boxShadowHOffset = { { value: boxShadowHOffset, label: __( "Horizontal" ) } }
+                        boxShadowVOffset = { { value: boxShadowVOffset, label: __( "Vertical" ) } }
+                        boxShadowBlur = { { value: boxShadowBlur, label: __( "Blur" ) } }
+                        boxShadowSpread = { { value: boxShadowSpread, label: __( "Spread" ) } }
+                        boxShadowPosition = { { value: boxShadowPosition, label: __( "Position" ) } }
+                    />
                 </PanelBody>
             )
         }

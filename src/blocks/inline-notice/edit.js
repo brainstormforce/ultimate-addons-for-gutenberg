@@ -92,6 +92,7 @@ class UAGBInlineNoticeEdit extends Component {
 				textColor,
 				titleColor,
 				noticeColor,
+				contentBgColor,
 				noticeDismissColor,
 				noticeAlignment,
 				titleFontFamily,
@@ -130,10 +131,10 @@ class UAGBInlineNoticeEdit extends Component {
 
 	   	// Notice dismiss options
 		const noticeDismissOptions = [
-			{ value: '', label: __( 'Always allow' ) },
+			{ value: '', label: __( 'Allow Always' ) },
 			{
 				value: 'uagb-dismissable',
-				label: __( 'Dismissible' ),
+				label: __( 'Allow to Dismiss' ),
 			},
 		];
 
@@ -214,7 +215,7 @@ class UAGBInlineNoticeEdit extends Component {
 					}
 					{ cookies &&
 						<RangeControl
-							label={ __( "Do Not Show After Closing (days)" ) }
+							label={ __( "Show Closed Notice After (Days)" ) }
 							value={ close_cookie_days }
 							onChange={ ( value ) => setAttributes( { close_cookie_days: value } ) }
 							min={ 0 }
@@ -231,6 +232,13 @@ class UAGBInlineNoticeEdit extends Component {
 						allowReset
 					/>
 					<hr className="uagb-editor__separator" />
+					<p className="uagb-setting-label">{ __( "Highlight Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: noticeColor }} ></span></span></p>
+						<ColorPalette
+							value={ noticeColor }
+							onChange={ ( value ) => setAttributes( { noticeColor: value } ) }
+							allowReset
+					/>
+					<hr className="uagb-editor__separator" />
 					<p className="uagb-setting-label">{ __( "Content Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: textColor }} ></span></span></p>
 					<ColorPalette
 						value={ textColor }
@@ -238,17 +246,17 @@ class UAGBInlineNoticeEdit extends Component {
 						allowReset
 					/>
 					<hr className="uagb-editor__separator" />
-					<p className="uagb-setting-label">{ __( "Background Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: noticeColor }} ></span></span></p>
+					<p className="uagb-setting-label">{ __( "Content Background Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: contentBgColor }} ></span></span></p>
 						<ColorPalette
-							value={ noticeColor }
-							onChange={ ( value ) => setAttributes( { noticeColor: value } ) }
+							value={ contentBgColor }
+							onChange={ ( value ) => setAttributes( { contentBgColor: value } ) }
 							allowReset
 					/>
 					{ noticeDismiss &&
 					<hr className="uagb-editor__separator" />
 					}
 					{ noticeDismiss &&
-					<p className="uagb-setting-label">{ __( "Notice Dismiss Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: noticeDismissColor }} ></span></span></p>
+					<p className="uagb-setting-label">{ __( "Dismiss Icon Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: noticeDismissColor }} ></span></span></p>
 					}
 					{ noticeDismiss &&
 					<ColorPalette

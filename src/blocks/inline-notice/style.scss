@@ -19,13 +19,15 @@
     position: relative;
     h4 {
         margin: 0;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
         width: 100%;
        display: inline-block
     }
     .uagb-notice-text{
         border: solid 2px #000;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
      }
      span.uagb-notice-dismiss svg{
         width: 16px;

@@ -172,7 +172,7 @@ if ( ! class_exists( 'UAGB_Block_JS' ) ) {
 		/**
 		 * Get Inline Notice Js
 		 *
-		 * @since x.x.x
+		 * @since 1.16.0
 		 * @param array  $attr The block attributes.
 		 * @param string $id The selector ID.
 		 */
@@ -253,7 +253,7 @@ if ( ! class_exists( 'UAGB_Block_JS' ) ) {
 		/**
 		 * Adds Google fonts for Inline Notice block.
 		 *
-		 * @since x.x.x
+		 * @since 1.16.0
 		 * @param array $attr the blocks attr.
 		 */
 		public static function blocks_inline_notice_gfont( $attr ) {
@@ -712,7 +712,7 @@ if ( ! class_exists( 'UAGB_Block_JS' ) ) {
 		/**
 		 * Adds Google fonts for WP Search block.
 		 *
-		 * @since x.x.x
+		 * @since 1.16.0
 		 * @param array $attr the blocks attr.
 		 */
 		public static function blocks_wp_search_gfont( $attr ) {

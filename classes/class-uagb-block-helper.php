@@ -19,7 +19,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 		/**
 		 * Get Inline Notice CSS
 		 *
-		 * @since x.x.x
+		 * @since 1.16.0
 		 * @param array  $attr The block attributes.
 		 * @param string $id The selector ID.
 		 * @return array The Widget List.
@@ -43,12 +43,13 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'padding-bottom'   => UAGB_Helper::get_css_value( $attr['titleVrPadding'], 'px' ),
 				),
 				' .uagb-notice-text'            => array(
-					'border-color'   => $attr['noticeColor'],
-					'color'          => $attr['textColor'],
-					'padding-left'   => UAGB_Helper::get_css_value( $attr['contentHrPadding'], 'px' ),
-					'padding-right'  => UAGB_Helper::get_css_value( $attr['contentHrPadding'], 'px' ),
-					'padding-top'    => UAGB_Helper::get_css_value( $attr['contentVrPadding'], 'px' ),
-					'padding-bottom' => UAGB_Helper::get_css_value( $attr['contentVrPadding'], 'px' ),
+					'border-color'     => $attr['noticeColor'],
+					'color'            => $attr['textColor'],
+					'background-color' => $attr['contentBgColor'],
+					'padding-left'     => UAGB_Helper::get_css_value( $attr['contentHrPadding'], 'px' ),
+					'padding-right'    => UAGB_Helper::get_css_value( $attr['contentHrPadding'], 'px' ),
+					'padding-top'      => UAGB_Helper::get_css_value( $attr['contentVrPadding'], 'px' ),
+					'padding-bottom'   => UAGB_Helper::get_css_value( $attr['contentVrPadding'], 'px' ),
 				),
 				' span.uagb-notice-dismiss svg' => array(
 					'fill'  => $attr['noticeDismissColor'],
@@ -4507,7 +4508,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 		/**
 		 * Get WP-Search CSS.
 		 *
-		 * @since x.x.x
+		 * @since 1.16.0
 		 * @param array  $attr The block attributes.
 		 * @param string $id The selector ID.
 		 */

@@ -41,7 +41,10 @@
 	},
 	noticeColor: {
 		type: "string",
-		default: "#FFB901"
+		default: "#FFD54F"
+	},
+	contentBgColor: {
+		type: "string",
 	},
 	noticeDismissColor: {
 		type: "string",
