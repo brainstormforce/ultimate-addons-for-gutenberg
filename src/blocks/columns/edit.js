@@ -93,6 +93,16 @@ class UAGBColumns extends Component {
 		const $style = document.createElement( "style" )
 		$style.setAttribute( "id", "uagb-columns-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
+
+		if( 'tablet' === this.props.attributes.stack) {
+			this.props.setAttributes( { columns: 4 } )
+			this.props.setAttributes( { tcolumns: 1 } )
+			this.props.setAttributes( { mcolumns: 1 } )
+		}else if ( 'mobile' === this.props.attributes.stack) {
+			this.props.setAttributes( { columns: 4 } )
+			this.props.setAttributes( { tcolumns: 4 } )
+			this.props.setAttributes( { mcolumns: 1 } )
+		}
 	}
 
 	componentDidUpdate( prevProps ) {
@@ -612,7 +622,7 @@ class UAGBColumns extends Component {
 												value={ mcolumns }
 												min={ 0 }
 												max={ 6 }
-												onChange={ ( value ) => setAttributes( { mcolumns: value } ) }
+												onChange={ ( value ) => setAttributes( { mcolumns: value, stack : 'none' } ) }
 											/>
 										)
 									} else if ( "tablet" === tab.name ) {
@@ -622,7 +632,7 @@ class UAGBColumns extends Component {
 												value={ tcolumns }
 												min={ 0 }
 												max={ 6 }
-												onChange={ ( value ) => setAttributes( { tcolumns: value } ) }
+												onChange={ ( value ) => setAttributes( { tcolumns: value, stack : 'none' } ) }
 											/>
 										)
 									} else {
@@ -632,7 +642,7 @@ class UAGBColumns extends Component {
 												value={ columns }
 												min={ 0 }
 												max={ 6 }
-												onChange={ ( value ) => setAttributes( { columns: value } ) }
+												onChange={ ( value ) => setAttributes( { columns: value, stack : 'none' } ) }
 											/>
 										)
 									}
@@ -642,17 +652,6 @@ class UAGBColumns extends Component {
 							}
 						</TabPanel>
 						
-						<SelectControl
-							label={ __( "Stack on" ) }
-							value={ stack }
-							options={ [
-								{ value: "none", label: __( "None" ) },
-								{ value: "tablet", label: __( "Tablet" ) },
-								{ value: "mobile", label: __( "Mobile" ) },
-							] }
-							onChange={ ( value ) => setAttributes( { stack: value } ) }
-							help={ __( "Note: Choose on what breakpoint the columns will stack." ) }
-						/>
 						<SelectControl
 							label={ __( "Container Width" ) }
 							value={ contentWidth }
@@ -1322,7 +1321,6 @@ class UAGBColumns extends Component {
 						"uagb-columns__wrap",
 						`uagb-columns__background-${backgroundType}`,
 						`uagb-columns__edit-${ active }`,
-						`uagb-columns__stack-${stack}`,
 						`uagb-columns__valign-${vAlign}`,
 						`uagb-columns__gap-${columnGap}`,
 						`align${ align }`,

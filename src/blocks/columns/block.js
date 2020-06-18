@@ -112,7 +112,6 @@ registerBlockType( "uagb/columns", {
 					className,
 					"uagb-columns__wrap",
 					`uagb-columns__background-${backgroundType}`,
-					`uagb-columns__stack-${stack}`,
 					`uagb-columns__valign-${vAlign}`,
 					`uagb-columns__gap-${columnGap}`,
 					`align${ align }`,
