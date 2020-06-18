@@ -32,7 +32,7 @@
 
 .uagb-columns__inner-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout {
 	display: flex;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 }
 
 .uagb-columns__inner-wrap > .block-editor-inner-blocks,
@@ -142,7 +142,7 @@
 		flex-direction: column;
 		> .block-editor-inner-blocks > .block-editor-block-list__layout {
 			display: flex;
-			flex-wrap: nowrap;
+			flex-wrap: wrap;
 			justify-content: space-between;
 			margin-left: 0;
 			margin-right: 0;
@@ -213,14 +213,20 @@
 		flex-direction: column-reverse;
 	}
 
-	.uagb-columns__columns-tablet-1 .block-editor-block-list__block[data-type="uagb/column"] { width: 100%; }
-	.uagb-columns__columns-tablet-2 .block-editor-block-list__block[data-type="uagb/column"] { width: 50%; }
-	.uagb-columns__columns-tablet-3 .block-editor-block-list__block[data-type="uagb/column"] { width: 33.2%; }
-	.uagb-columns__columns-tablet-4 .block-editor-block-list__block[data-type="uagb/column"] { width: 25%; }
-	.uagb-columns__columns-tablet-5 .block-editor-block-list__block[data-type="uagb/column"] { width: 20%; }
-	.uagb-columns__columns-tablet-6 .block-editor-block-list__block[data-type="uagb/column"] { width: 16.66%; }
-	.uagb-columns__columns-tablet-7 .block-editor-block-list__block[data-type="uagb/column"] { width: 14.28%; }
-	.uagb-columns__columns-tablet-8 .block-editor-block-list__block[data-type="uagb/column"] { width: 12.5%; }
+	.uagb-columns__wrap .block-editor-block-list__block[data-type="uagb/column"] .uagb-column__wrap {
+		width: 100%;
+	}
+
+	.uagb-columns__wrap .uagb-columns__columns-tablet-1 .block-editor-block-list__block[data-type="uagb/column"] { width: 100%; }
+	.uagb-columns__wrap .uagb-columns__columns-tablet-2 .block-editor-block-list__block[data-type="uagb/column"] { width: 50%; }
+	.uagb-columns__wrap .uagb-columns__columns-tablet-3 .block-editor-block-list__block[data-type="uagb/column"] { width: 33.2%; }
+	.uagb-columns__wrap .uagb-columns__columns-tablet-4 .block-editor-block-list__block[data-type="uagb/column"] { width: 25%; }
+	.uagb-columns__wrap .uagb-columns__columns-tablet-5 .block-editor-block-list__block[data-type="uagb/column"] { width: 20%; }
+	.uagb-columns__wrap .uagb-columns__columns-tablet-6 .block-editor-block-list__block[data-type="uagb/column"] { width: 16.66%; }
+	.uagb-columns__wrap .uagb-columns__columns-tablet-7 .block-editor-block-list__block[data-type="uagb/column"] { width: 14.28%; }
+	.uagb-columns__wrap .uagb-columns__columns-tablet-8 .block-editor-block-list__block[data-type="uagb/column"] { width: 12.5%; }
+
+	
 }
 
 @media (max-width: 767px) {
@@ -229,14 +235,22 @@
 		flex-direction: column-reverse;
 	}
 
-	.uagb-columns__columns-mobile-1 .block-editor-block-list__block[data-type="uagb/column"] { width: 100%; }
-	.uagb-columns__columns-mobile-2 .block-editor-block-list__block[data-type="uagb/column"] { width: 50%; }
-	.uagb-columns__columns-mobile-3 .block-editor-block-list__block[data-type="uagb/column"] { width: 33.2%; }
-	.uagb-columns__columns-mobile-4 .block-editor-block-list__block[data-type="uagb/column"] { width: 25%; }
-	.uagb-columns__columns-mobile-5 .block-editor-block-list__block[data-type="uagb/column"] { width: 20%; }
-	.uagb-columns__columns-mobile-6 .block-editor-block-list__block[data-type="uagb/column"] { width: 16.66%; }
-	.uagb-columns__columns-tablet-7 .block-editor-block-list__block[data-type="uagb/column"] { width: 14.28%; }
-	.uagb-columns__columns-tablet-8 .block-editor-block-list__block[data-type="uagb/column"] { width: 12.5%; }
+	.uagb-columns__wrap .block-editor-block-list__block[data-type="uagb/column"] .uagb-column__wrap {
+		width: 100%;
+	}
+
+	.uagb-columns__wrap .uagb-columns__columns-mobile-1 .block-editor-block-list__block[data-type="uagb/column"] { width: 100%; }
+	.uagb-columns__wrap .uagb-columns__columns-mobile-2 .block-editor-block-list__block[data-type="uagb/column"] { width: 50%; }
+	.uagb-columns__wrap .uagb-columns__columns-mobile-3 .block-editor-block-list__block[data-type="uagb/column"] { width: 33.2%; }
+	.uagb-columns__wrap .uagb-columns__columns-mobile-4 .block-editor-block-list__block[data-type="uagb/column"] { width: 25%; }
+	.uagb-columns__wrap .uagb-columns__columns-mobile-5 .block-editor-block-list__block[data-type="uagb/column"] { width: 20%; }
+	.uagb-columns__wrap .uagb-columns__columns-mobile-6 .block-editor-block-list__block[data-type="uagb/column"] { width: 16.66%; }
+	.uagb-columns__wrap .uagb-columns__columns-tablet-7 .block-editor-block-list__block[data-type="uagb/column"] { width: 14.28%; }
+	.uagb-columns__wrap .uagb-columns__columns-tablet-8 .block-editor-block-list__block[data-type="uagb/column"] { width: 12.5%; }
+
+	.block-editor-block-list__block[data-type="uagb/column"] {
+		float: left;
+	}
 }
 
 @media (max-width: 600px) {
