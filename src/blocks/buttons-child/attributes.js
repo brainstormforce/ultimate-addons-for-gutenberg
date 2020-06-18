@@ -125,7 +125,19 @@ const attributes = {
 	} ,
 	opensInNewTab: {
 		type: "boolean"
-	}
+	},
+	icon : {
+		type : "string",
+		default : ""
+	},
+	iconPosition: {
+		type: "string",
+		default: "after"
+	},
+	iconSpace :{
+		type: "number",
+		default : 8
+	},
 }
 
 export default attributes

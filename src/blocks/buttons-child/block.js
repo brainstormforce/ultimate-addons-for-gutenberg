@@ -4,6 +4,7 @@
 
 import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
 import attributes from "./attributes"
+import deprecated from "./deprecated"
 import edit from "./edit"
 import save from "./save"
 import "./style.scss"
@@ -21,4 +22,5 @@ registerBlockType( "uagb/buttons-child", {
 	attributes,
 	edit,
 	save,
+	deprecated
 } )

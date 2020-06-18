@@ -961,68 +961,78 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 		 */
 		public static function get_buttons_child_selectors( $attr, $id, $child_migrate ) {
 
-			if ( $attr['inheritFromTheme'] ) {
-				return array(
-					'selectors'   => array(),
-					'm_selectors' => array(),
-					't_selectors' => array(),
-				);
-
-			}
-
-			$wrapper = ( ! $child_migrate ) ? ' .uagb-buttons-repeater-' . $id : ' .uagb-buttons-repeater';
-
+			$wrapper     = ( ! $child_migrate ) ? ' .uagb-buttons-repeater-' . $id : ' .uagb-buttons-repeater';
 			$m_selectors = array();
 			$t_selectors = array();
+			$selectors   = array();
 
-			$attr['sizeType']       = isset( $attr['sizeType'] ) ? $attr['sizeType'] : 'px';
-			$attr['lineHeightType'] = isset( $attr['lineHeightType'] ) ? $attr['lineHeightType'] : 'em';
+			if ( ! $attr['inheritFromTheme'] ) {
+				$attr['sizeType']       = isset( $attr['sizeType'] ) ? $attr['sizeType'] : 'px';
+				$attr['lineHeightType'] = isset( $attr['lineHeightType'] ) ? $attr['lineHeightType'] : 'em';
 
-			$selectors[ $wrapper ] = array(
-				'font-size'     => UAGB_Helper::get_css_value( $attr['size'], $attr['sizeType'] ),
-				'line-height'   => UAGB_Helper::get_css_value( $attr['lineHeight'], $attr['lineHeightType'] ),
-				'border-width'  => UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' ),
-				'border-color'  => $attr['borderColor'],
-				'border-style'  => $attr['borderStyle'],
-				'border-radius' => UAGB_Helper::get_css_value( $attr['borderRadius'], 'px' ),
-				'background'    => $attr['background'],
+				$selectors[ $wrapper ] = array(
+					'font-size'     => UAGB_Helper::get_css_value( $attr['size'], $attr['sizeType'] ),
+					'line-height'   => UAGB_Helper::get_css_value( $attr['lineHeight'], $attr['lineHeightType'] ),
+					'border-width'  => UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' ),
+					'border-color'  => $attr['borderColor'],
+					'border-style'  => $attr['borderStyle'],
+					'border-radius' => UAGB_Helper::get_css_value( $attr['borderRadius'], 'px' ),
+					'background'    => $attr['background'],
+					'padding'       => UAGB_Helper::get_css_value( $attr['vPadding'], 'px' ) . ' ' . UAGB_Helper::get_css_value( $attr['hPadding'], 'px' ),
+					'color'         => $attr['color'],
+				);
+
+				$selectors[ $wrapper . ':hover' ] = array(
+					'background'   => $attr['hBackground'],
+					'border-width' => UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' ),
+					'border-color' => $attr['borderHColor'],
+					'border-style' => $attr['borderStyle'],
+					'color'        => $attr['hColor'],
+				);
+
+				$m_selectors[ $wrapper ] = array(
+					'font-size'   => UAGB_Helper::get_css_value( $attr['sizeMobile'], $attr['sizeType'] ),
+					'line-height' => UAGB_Helper::get_css_value( $attr['lineHeightMobile'], $attr['lineHeightType'] ),
+				);
+
+				$t_selectors[ $wrapper ] = array(
+					'font-size'   => UAGB_Helper::get_css_value( $attr['sizeTablet'], $attr['sizeType'] ),
+					'line-height' => UAGB_Helper::get_css_value( $attr['lineHeightTablet'], $attr['lineHeightType'] ),
+				);
+			}
+
+			$selectors[ $wrapper . ' .uagb-button__icon' ] = array(
+				'width' => UAGB_Helper::get_css_value( $attr['size'], $attr['sizeType'] ),
 			);
 
-			$selectors[ $wrapper . ':hover' ] = array(
-				'background'   => $attr['hBackground'],
-				'border-width' => UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' ),
-				'border-color' => $attr['borderHColor'],
-				'border-style' => $attr['borderStyle'],
+			if ( ! $attr['inheritFromTheme'] ) {
+				$selectors[ $wrapper . ' .uagb-button__icon' ]['color'] = $attr['color'];
+			}
+
+			$selectors[ $wrapper . ' .uagb-button__icon-position-after' ] = array(
+				'margin-left' => UAGB_Helper::get_css_value( $attr['iconSpace'], 'px' ),
 			);
 
-			$selectors[ $wrapper . ' a.uagb-button__link' ] = array(
-				'padding' => UAGB_Helper::get_css_value( $attr['vPadding'], 'px' ) . ' ' . UAGB_Helper::get_css_value( $attr['hPadding'], 'px' ),
-				'color'   => $attr['color'],
+			$selectors[ $wrapper . ' .uagb-button__icon-position-before' ] = array(
+				'margin-right' => UAGB_Helper::get_css_value( $attr['iconSpace'], 'px' ),
 			);
 
-			$selectors[ $wrapper . ':hover a.uagb-button__link' ] = array(
-				'color' => $attr['hColor'],
+			$m_selectors[ $wrapper . ' .uagb-button__icon' ] = array(
+				'width'  => UAGB_Helper::get_css_value( $attr['sizeMobile'], $attr['sizeType'] ),
+				'height' => UAGB_Helper::get_css_value( $attr['sizeMobile'], $attr['sizeType'] ),
 			);
 
-			$m_selectors[ $wrapper ] = array(
-				'font-size'   => UAGB_Helper::get_css_value( $attr['sizeMobile'], $attr['sizeType'] ),
-				'line-height' => UAGB_Helper::get_css_value( $attr['lineHeightMobile'], $attr['lineHeightType'] ),
+			$t_selectors[ $wrapper . ' .uagb-button__icon' ] = array(
+				'width'  => UAGB_Helper::get_css_value( $attr['sizeTablet'], $attr['sizeType'] ),
+				'height' => UAGB_Helper::get_css_value( $attr['sizeTablet'], $attr['sizeType'] ),
 			);
 
-			$t_selectors[ $wrapper ] = array(
-				'font-size'   => UAGB_Helper::get_css_value( $attr['sizeTablet'], $attr['sizeType'] ),
-				'line-height' => UAGB_Helper::get_css_value( $attr['lineHeightTablet'], $attr['lineHeightType'] ),
-			);
-
-			$all_selectors = array(
+			return array(
 
 				'selectors'   => $selectors,
 				'm_selectors' => $m_selectors,
 				't_selectors' => $t_selectors,
 			);
-
-			return $all_selectors;
-
 		}
 		/**
 		 * Get Info Box CSS

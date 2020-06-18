@@ -1,4 +1,22 @@
-.uagb-buttons__wrap .uagb-button__wrapper .uagb-buttons-repeater a.uagb-button__link {
+.uagb-buttons-repeater {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    display: inline-block;
+    a.uagb-button__link {
+        display: flex;
+        justify-content: center;
+    }
+    .uagb-button__icon {
+        font-size: inherit;
+        display: flex;
+        align-items: center;
+        width: 15px;
+
+        svg {
+            fill: currentColor;
+            width: inherit;
+            height: inherit;
+        }
+    }
 }

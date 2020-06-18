@@ -737,7 +737,7 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 					do_action( "uagb_post_before_article_{$attributes['post_type']}", get_the_ID(), $attributes );
 
 					?>
-					<article>
+					<article <?php post_class(); ?>>
 						<?php do_action( "uagb_post_before_inner_wrap_{$attributes['post_type']}", get_the_ID(), $attributes ); ?>
 						<div class="uagb-post__inner-wrap">
 							<?php $this->render_complete_box_link( $attributes ); ?>

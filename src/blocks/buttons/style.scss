@@ -5,21 +5,15 @@
  */
 
 .uagb-buttons__outer-wrap {
-
 	.uagb-buttons__wrap {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
-
-	a.uagb-button__link:focus,
-	.uagb-button__link:focus {
-		box-shadow: none;
-		text-decoration: none;
+	a {
+		color: inherit;
 	}
-
-	.uagb-button__wrapper a.uagb-button__link:not(.wp-block-button__link),
-	.uagb-button__wrapper .uagb-button__link:not(.wp-block-button__link) {
+	.uagb-button__link:not(.wp-block-button__link) {
 	    width: 100%;
 		text-decoration: none;
 		font-family: inherit;
@@ -27,14 +21,4 @@
 		font-weight: inherit;
 		font-size: inherit;
 	}
-
-	.uagb-button__wrapper a.uagb-button__link:not(.wp-block-button__link),
-	.uagb-button__wrapper:hover a.uagb-button__link:not(.wp-block-button__link),
-	.uagb-button__wrapper .uagb-button__link:not(.wp-block-button__link),
-	.uagb-button__wrapper:hover .uagb-button__link:not(.wp-block-button__link) {
-		text-decoration: none;
-	}
-}
-.uagb-buttons__wrap .uagb-button__wrapper a.uagb-button__link {
-    display: inline-block;
 }

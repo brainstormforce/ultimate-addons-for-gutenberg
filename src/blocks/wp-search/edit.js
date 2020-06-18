@@ -200,7 +200,7 @@ class UAGBWpSearchEdit extends Component {
                             <Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ inputSizeType === "%" } aria-pressed={ inputSizeType === "%" } onClick={ () => setAttributes( { inputSizeType: "%" } ) }>{ "%" }</Button>
                         </ButtonGroup>
                         <RangeControl
-                            label={ __( "Input Size" ) }
+                            label={ __( "Input Width" ) }
                             value={ inputSize }
                             onChange={ ( value ) => setAttributes( { inputSize: value } ) }
                             min={ 0 }
