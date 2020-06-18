@@ -18,7 +18,7 @@ const {
 registerBlockType( "uagb/wp-search", {
 	title: uagb_blocks_info.blocks["uagb/wp-search"]["title"],
 	description: uagb_blocks_info.blocks["uagb/wp-search"]["description"],
-	icon: UAGB_Block_Icons.team,
+	icon: UAGB_Block_Icons.wp_search,
 	keywords: [
 		__( "search" ),
 		__( "wp" ),

@@ -6,6 +6,11 @@
 import classnames from "classnames"
 import styling from "./styling"
 import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
+import UAGBIcon from "../../../dist/blocks/uagb-controls/UAGBIcon.json"
+import FontIconPicker from "@fonticonpicker/react-fonticonpicker"
+import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
+
+let svg_icons = Object.keys( UAGBIcon )
 
 const { __ } = wp.i18n
 
@@ -115,8 +120,20 @@ class UAGBButtonsChild extends Component {
 			lineHeightMobile,
 			lineHeightTablet,
 			opensInNewTab,
-			inheritFromTheme
+			inheritFromTheme,
+			icon,
+			iconPosition,
+			iconSpace,
 		} = attributes;
+
+		const icon_props = {
+			icons: svg_icons,
+			value: icon,
+			onChange: (value) => ( setAttributes( { icon: value } ) ),
+			isMulti: false,
+			renderFunc: renderSVG,
+			noSelectedPlaceholder: __( "Select Icon" )
+		}
 
 		const linkControl = this.state.isURLPickerOpen && (
 
@@ -152,6 +169,30 @@ class UAGBButtonsChild extends Component {
 						checked={ inheritFromTheme }
 						onChange={ ( value ) => setAttributes( { inheritFromTheme: ! inheritFromTheme } ) }
 					/>
+					<h2>{ __( "Button Icon" ) }</h2>
+					<FontIconPicker {...icon_props} />
+					{ "" !== icon &&
+						<Fragment>
+							<SelectControl
+								label={ __( "Icon Position" ) }
+								value={ iconPosition }
+								onChange={ ( value ) => setAttributes( { iconPosition: value } ) }
+								options={ [
+									{ value: "before", label: __( "Before Text" ) },
+									{ value: "after", label: __( "After Text" ) },
+								] }
+							/>
+							<RangeControl
+								label={ __( "Icon Spacing" ) }
+								value={ iconSpace }
+								onChange={ ( value ) => setAttributes( { iconSpace: value } ) }
+								min={ 0 }
+								max={ 50 }
+								beforeIcon=""
+								allowReset
+							/>
+						</Fragment>
+					}
 					{ ! inheritFromTheme &&
 						<Fragment>
 							<h2>{  __( " Color Settings" ) }</h2>
@@ -576,6 +617,17 @@ class UAGBButtonsChild extends Component {
 			)
 		}
 
+		const icon_html = ( curr_position ) => {
+			if ( '' !== icon && curr_position === iconPosition ) {
+				return (
+					<span className= { classnames(`uagb-button__icon`, `uagb-button__icon-position-${ iconPosition }`) }>
+						{ renderSVG(icon) }
+					</span>
+				)
+			}
+			return null
+		}
+
         return (
             <Fragment>
 
@@ -600,7 +652,8 @@ class UAGBButtonsChild extends Component {
 					( inheritFromTheme ) ? "wp-block-button" : null
 					) }>
 					<div className="uagb-button__wrapper">
-						<div className="uagb-buttons-repeater uagb-button__wrapper">
+						<div className={classnames( "uagb-buttons-repeater", ( inheritFromTheme ) ? "wp-block-button__link" : null )}>
+							{ icon_html( "before" ) }
 							<RichText
 								placeholder={ __( "Add text…" ) }
 								value={ label }
@@ -609,10 +662,11 @@ class UAGBButtonsChild extends Component {
 									setAttributes( { label: value })
 								} }
 								allowedFormats={ [ "bold", "italic", "strikethrough" ] }
-								className={classnames( 'uagb-button__link', ( inheritFromTheme ) ? "wp-block-button__link" : null ) }
+								className='uagb-button__link'
 								rel ="noopener noreferrer"
 								keepPlaceholderOnFocus
-							/>	
+							/>
+							{ icon_html( "after" ) }
 						</div>
 					</div>
 				</div>

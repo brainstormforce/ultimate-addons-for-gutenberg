@@ -3,7 +3,7 @@
  */
 
 import classnames from "classnames"
-import times from "lodash/times"
+import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
 const { __ } = wp.i18n
 
 const {
@@ -22,8 +22,21 @@ export default function save( props ) {
 		target,
 		link,
 		label,
-		inheritFromTheme
+		inheritFromTheme,
+		icon,
+		iconPosition,
 	} = attributes
+
+	const icon_html = ( curr_position ) => {
+		if ( '' !== icon && curr_position === iconPosition ) {
+			return (
+				<span className= { classnames(`uagb-button__icon`, `uagb-button__icon-position-${ iconPosition }`) }>
+					{ renderSVG(icon) }
+				</span>
+			)
+		}
+		return null
+	}
 
 	return (
 		<div className={ classnames(
@@ -33,16 +46,19 @@ export default function save( props ) {
 			( inheritFromTheme ) ? "wp-block-button" : null
 			) }>
 			<div className="uagb-button__wrapper">
-				<div className="uagb-buttons-repeater">
+				<a
+					className={classnames( "uagb-buttons-repeater", ( inheritFromTheme ) ? "wp-block-button__link" : null )}
+					href={ link }
+					rel ="noopener noreferrer"
+					target={ target }>
+					{ icon_html( "before" ) }
 					<RichText.Content
 						value={ label }
-						tagName='a'
-						className={classnames( 'uagb-button__link', ( inheritFromTheme ) ? "wp-block-button__link" : null ) }
-						href={ link }
-						rel ="noopener noreferrer"
-						target={ target }
+						tagName='div'
+						className='uagb-button__link'
 					/>
-				</div>
+					{ icon_html( "after" ) }
+				</a>
 			</div>
 		</div>
 		

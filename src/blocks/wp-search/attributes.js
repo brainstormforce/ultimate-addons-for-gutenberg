@@ -62,7 +62,7 @@ const attributes = {
     },
     buttonBgColor: {
 		type: "string",
-		default: "#abb8c3"
+		default: "#9d9d9d"
     },
     buttonBgHoverColor: {
 		type: "string",
@@ -75,11 +75,11 @@ const attributes = {
 	},
     buttonWidth: {
 		type: "number",
-		default : 50
+		default : 55
     },
     buttonIconSize: {
 		type: "number",
-		default : 15
+		default : 17
 	},    
     iconColor: {
 		type: "string",
@@ -87,7 +87,7 @@ const attributes = {
     },
     iconSize: {
 		type: "number",
-		default : 15
+		default : 17
 	},
 	inputloadGoogleFonts: {
 		type: "boolean",
@@ -135,15 +135,15 @@ const attributes = {
 	},
 	vinputPaddingMobile: {
 		type: "number",
-		default : 10
+		default : 15
 	},
 	vinputPaddingTablet: {
 		type: "number",
-		default : 10
+		default : 15
 	},
 	vinputPaddingDesktop: {
 		type: "number",
-		default : 10
+		default : 15
 	},
 	hinputPaddingMobile: {
 		type: "number",
