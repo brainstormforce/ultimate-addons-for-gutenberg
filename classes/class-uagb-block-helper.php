@@ -513,15 +513,15 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				$selectors[' > .uagb-columns__overlay']['background-color'] = 'transparent';
 				$selectors[' > .uagb-columns__overlay']['opacity']          = ( isset( $attr['backgroundOpacity'] ) && '' !== $attr['backgroundOpacity'] ) ? $attr['backgroundOpacity'] / 100 : '';
 
-				if($attr['gradientValue']){
-					$selectors[" > .uagb-columns__overlay"]["background-image"] = $attr['gradientValue'];
+				if ( $attr['gradientValue'] ) {
+					$selectors[' > .uagb-columns__overlay']['background-image'] = $attr['gradientValue'];
 				} else {
 					if ( 'linear' === $attr['gradientType'] ) {
 						$selectors[' > .uagb-columns__overlay']['background-image'] = 'linear-gradient(' . $attr['gradientAngle'] . 'deg, ' . $attr['gradientColor1'] . ' ' . $attr['gradientLocation1'] . '%, ' . $attr['gradientColor2'] . ' ' . $attr['gradientLocation2'] . '%)';
-					} else {	
+					} else {
 						$selectors[' > .uagb-columns__overlay']['background-image'] = 'radial-gradient( at center center, ' . $attr['gradientColor1'] . ' ' . $attr['gradientLocation1'] . '%, ' . $attr['gradientColor2'] . ' ' . $attr['gradientLocation2'] . '%)';
 					}
-				}				
+				}
 			}
 
 			$selectors[' > .uagb-columns__overlay']['border-radius'] = UAGB_Helper::get_css_value( $attr['borderRadius'], 'px' );

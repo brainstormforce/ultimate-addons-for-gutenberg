@@ -524,8 +524,8 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 					'type'    => 'boolean',
 					'default' => false,
 				),
-				'displayPostContentRadio' =>array(
-					'type' => 'string',
+				'displayPostContentRadio' => array(
+					'type'    => 'string',
 					'default' => 'excerpt',
 				),
 
@@ -1160,16 +1160,16 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 			$excerpt = apply_filters( "uagb_single_post_excerpt_{$attributes['post_type']}", $excerpt, get_the_ID(), $attributes );
 			do_action( "uagb_single_post_before_excerpt_{$attributes['post_type']}", get_the_ID(), $attributes );
 			?>
-			<?php if($attributes['displayPostContentRadio'] == 'excerpt') {?>
+			<?php if ( 'excerpt' === $attributes['displayPostContentRadio'] ) { ?>
 
 				<div class="uagb-post__excerpt">
 					<?php echo wp_kses_post( $excerpt ); ?>
 				</div>
-			<?php }elseif($attributes['displayPostContentRadio'] == 'full_post'){?>
+			<?php } elseif ( 'full_post' === $attributes['displayPostContentRadio'] ) { ?>
 				<div class="uagb-post__excerpt">
 					<?php echo wp_kses_post( get_the_content() ); ?>
 				</div>
-			<?php }?>
+			<?php } ?>
 			<?php
 			do_action( "uagb_single_post_after_excerpt_{$attributes['post_type']}", get_the_ID(), $attributes );
 		}
@@ -1182,7 +1182,7 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 		 * @since 0.0.1
 		 */
 		public function render_button( $attributes ) {
-			if ( ! $attributes['displayPostLink'] || $attributes['displayPostContentRadio'] == 'full_post') {
+			if ( ! $attributes['displayPostLink'] || 'full_post' === $attributes['displayPostContentRadio'] ) {
 				return;
 			}
 			$target   = ( $attributes['newTab'] ) ? '_blank' : '_self';
