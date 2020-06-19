@@ -94,12 +94,11 @@ class UAGBColumns extends Component {
 		$style.setAttribute( "id", "uagb-columns-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 
+		// Check the value according to Existing stack user
 		if( 'tablet' === this.props.attributes.stack) {
-			this.props.setAttributes( { columns: 4 } )
 			this.props.setAttributes( { tcolumns: 1 } )
 			this.props.setAttributes( { mcolumns: 1 } )
 		}else if ( 'mobile' === this.props.attributes.stack) {
-			this.props.setAttributes( { columns: 4 } )
 			this.props.setAttributes( { tcolumns: 4 } )
 			this.props.setAttributes( { mcolumns: 1 } )
 		}

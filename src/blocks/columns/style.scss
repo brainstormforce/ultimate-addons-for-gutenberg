@@ -182,6 +182,14 @@
 
 @media (max-width: 976px) {
 
+	.uagb-columns__stack-tablet .uagb-columns__inner-wrap .uagb-column__wrap {
+		width: 100%;
+	}
+
+	.uagb-columns__stack-mobile .uagb-columns__inner-wrap .uagb-column__wrap {
+		width: 25%;
+	}
+
 	.uagb-columns__inner-wrap {
 		flex-wrap: wrap;
 	}
@@ -206,6 +214,10 @@
 }
 
 @media (max-width: 767px) {
+
+	.uagb-columns__stack-mobile .uagb-columns__inner-wrap .uagb-column__wrap {
+		width: 100%;
+	}
 
 	.uagb-columns__inner-wrap {
 		flex-wrap: wrap;
