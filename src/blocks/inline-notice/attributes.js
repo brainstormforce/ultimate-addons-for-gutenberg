@@ -9,7 +9,7 @@
 	},
 	c_id: {
 		type: "string",
-		default : null
+		default : null,
 	},
 	noticeTitle: {
 		type: "string",

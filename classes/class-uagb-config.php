@@ -1142,6 +1142,7 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 						'js_assets'   => array( 'uagb-inline-notice-js', 'uagb-cookie-lib' ),
 						'attributes'  => array(
 							'block_id'              => '',
+							'c_id'                  => null,
 							'cookies'               => false,
 							'close_cookie_days'     => 1,
 							'textColor'             => '',

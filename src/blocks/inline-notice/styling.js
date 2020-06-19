@@ -43,7 +43,15 @@ function styling( props ) {
 	var tablet_selectors = {}
 	var mobile_selectors = {}
 
-	var selectors = { 
+	var selectors = {
+
+		'.uagb-inline_notice__align-left .rich-text.block-editor-rich-text__editable.uagb-notice-title' : {
+		    'padding-right' : generateCSSUnit( titleHrPadding + 13, 'px' ),
+		},	
+
+		'.uagb-inline_notice__align-left .rich-text.block-editor-rich-text__editable.uagb-notice-title' : {
+		    'padding-left'  : generateCSSUnit( titleHrPadding + 13, 'px' ),
+		},
 
 		" .rich-text.block-editor-rich-text__editable.uagb-notice-title.keep-placeholder-on-focus" : {
 			"font-size": generateCSSUnit( titleFontSize, titleFontSizeType ),

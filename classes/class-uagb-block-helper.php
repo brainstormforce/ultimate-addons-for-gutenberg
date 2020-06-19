@@ -34,6 +34,12 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			$selectors   = array();
 
 			$selectors = array(
+				'.uagb-inline_notice__align-left h4.uagb-notice-title' => array(
+					'padding-right' => UAGB_Helper::get_css_value( $attr['titleHrPadding'] + '13', 'px' ),
+				),
+				'.uagb-inline_notice__align-right h4.uagb-notice-title' => array(
+					'padding-left' => UAGB_Helper::get_css_value( $attr['titleHrPadding'] + '13', 'px' ),
+				),
 				' h4.uagb-notice-title'         => array(
 					'color'            => $attr['titleColor'],
 					'background-color' => $attr['noticeColor'],

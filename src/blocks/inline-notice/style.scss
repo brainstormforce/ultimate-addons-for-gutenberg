@@ -1,13 +1,22 @@
 .uagb-inline_notice__outer-wrap {
 
     &.uagb-inline_notice__align-right {
-        text-align:right
+        text-align:right;
+        span.uagb-notice-dismiss {
+            left: 13px;
+        }
     }
     &.uagb-inline_notice__align-center {
-        text-align:center
+        text-align:center;
+        span.uagb-notice-dismiss {
+            right: 13px;
+        }
     }
     &.uagb-inline_notice__align-left {
-        text-align:left
+        text-align:left;
+        span.uagb-notice-dismiss {
+            right: 13px;
+        }
     }
 
 }
@@ -37,7 +46,6 @@
         position: absolute;
         cursor: pointer;
         top: 13px;
-        right: 13px;
         opacity: .8;
         padding: 0;
         background: none;
