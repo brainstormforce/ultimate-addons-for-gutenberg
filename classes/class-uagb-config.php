@@ -626,6 +626,7 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 						'js_assets'   => array( 'uagb-faq-js' ),
 						'attributes'  => array(
 <<<<<<< HEAD
+<<<<<<< HEAD
 							'block_id'                   => '',
 							'layout'                     => 'accordion',
 							'inactiveOtherItems'         => true,
@@ -708,6 +709,8 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 							'schema'                     => '',
 							'enableToggle'               => true,
 =======
+=======
+>>>>>>> 73e7498e082b6c180360781a79b0d18891b3cd26
 							'block_id'                     => '',
 							'layout'                       => 'accordion',
 							'inactiveOtherItems'           => true,
@@ -791,7 +794,10 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 							'questionBottomPaddingDesktop' => 10,
 							'questionLeftPaddingMobile'    => 10,
 							'questionBottomPaddingMobile'  => 10,
+<<<<<<< HEAD
 >>>>>>> 3b38f9c6ce7e981b3223352296f34e9b70e2171d
+=======
+>>>>>>> 73e7498e082b6c180360781a79b0d18891b3cd26
 						),
 					),
 					'uagb/faq-child'          => array(
