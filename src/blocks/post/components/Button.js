@@ -1,4 +1,5 @@
 const { __ } = wp.i18n
+import classnames from "classnames"
 
 class Button extends React.Component {
 
@@ -14,8 +15,16 @@ class Button extends React.Component {
 
 			return (
 
-				<div className='uagb-post__cta'>
-					<a className='uagb-post__link uagb-text-link' href={ post.link } target={ target } rel ="noopener noreferrer">{ cta_text }</a>
+				<div className={classnames('uagb-post__cta', ( attributes.inheritFromTheme ) ? 'wp-block-button' : null)}>
+					<a
+						className={classnames(
+							( !attributes.inheritFromTheme ) ? 'uagb-post__link ' : null,
+							'uagb-text-link',
+							( attributes.inheritFromTheme ) ? 'wp-block-button__link' : null
+						)}
+						href={ post.link }
+						target={ target }
+						rel ="noopener noreferrer">{ cta_text }</a>
 				</div>
 			)
 

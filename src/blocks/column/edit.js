@@ -44,21 +44,28 @@ export default class UAGBColumnEdit extends Component {
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { classMigrate: true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-column-style-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-column-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
+	}
+
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-column-style-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
 	}
 
 	/*
 	 * Event to set Image as null while removing.
 	 */
 	onRemoveImage() {
-		const { backgroundImage } = this.props.attributes
 		const { setAttributes } = this.props
 
 		setAttributes( { backgroundImage: null } )
@@ -69,7 +76,6 @@ export default class UAGBColumnEdit extends Component {
 	 */
 	onSelectImage( media ) {
 
-		const { backgroundImage } = this.props.attributes
 		const { setAttributes } = this.props
 
 		if ( ! media || ! media.url ) {
@@ -155,12 +161,6 @@ export default class UAGBColumnEdit extends Component {
 			className,
 			isSelected
 		} = this.props
-
-		var element = document.getElementById( "uagb-column-style-" + this.props.clientId )
-
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
 
 		const border_setting = (
 			<Fragment>
@@ -879,7 +879,7 @@ export default class UAGBColumnEdit extends Component {
 						align_class,
 						align_class_mobile,
 						align_class_tablet,
-						`uagb-block-${this.props.clientId}`
+						`uagb-block-${this.props.clientId.substr( 0, 8 )}`
 					) }
 				>
 					<div className="uagb-column__overlay"></div>

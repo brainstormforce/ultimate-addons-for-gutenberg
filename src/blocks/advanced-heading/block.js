@@ -13,14 +13,8 @@ import "./style.scss"
 const { __ } = wp.i18n
 
 const {
-	registerBlockType,
-	createBlock
+	registerBlockType
 } = wp.blocks
-
-const {
-	RichText
-} = wp.blockEditor
-
 
 registerBlockType( "uagb/advanced-heading", {
 

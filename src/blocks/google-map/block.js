@@ -36,7 +36,7 @@ class UAGBGoogleMap extends Component {
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 	}
 
 	render() {
@@ -46,7 +46,6 @@ class UAGBGoogleMap extends Component {
 			className,
 			setAttributes,
 			attributes: {
-				block_id,
 				height,
 				zoom,
 				address
@@ -88,9 +87,10 @@ class UAGBGoogleMap extends Component {
 						/>
 					</PanelBody>
 				</InspectorControls>
-				<div className={ classnames( className, "uagb-google-map__wrap", `uagb-block-${this.props.clientId}` ) }>
+				<div className={ classnames( className, "uagb-google-map__wrap", `uagb-block-${this.props.clientId.substr( 0, 8 )}` ) }>
 					<iframe
 						className="uagb-google-map__iframe"
+						title = { __( "Google Map for " + address ) }
 						src={url}
 						style={{height: height}}></iframe>
 				</div>
@@ -147,6 +147,7 @@ registerBlockType( "uagb/google-map", {
 			<div className={ classnames( props.className, "uagb-google-map__wrap", `uagb-block-${block_id}` ) }>
 				<iframe
 					className="uagb-google-map__iframe"
+					title = { __( "Google Map for " + address ) }
 					src={url}
 					style={{height: height}}></iframe>
 			</div>
@@ -185,6 +186,46 @@ registerBlockType( "uagb/google-map", {
 
 				return (
 					<div className={ classnames( props.className, "uagb-google-map__wrap" ) } id={ `uagb-google-map-${block_id}`}>
+						<iframe
+							className="uagb-google-map__iframe"
+							src={url}
+							style={{height: height}}></iframe>
+					</div>
+				)
+			},
+		},
+		{
+			attributes : {
+				block_id: {
+					type: "string"
+				},
+				address: {
+					type: "string",
+					default: "Brainstorm Force"
+				},
+				height: {
+					type: "number",
+					default: 300
+				},
+				zoom: {
+					type: "number",
+					default: 12
+				}
+			},			
+			save: function( props ) {
+				const {
+					block_id,
+					height,
+					zoom,
+					address
+				} = props.attributes
+		
+				let encoded_address = encodeURI( address )
+		
+				let url = `https://www.google.com/maps/embed/v1/place?key=${api_key}&q=${encoded_address}&zoom=${zoom}`
+		
+				return (
+					<div className={ classnames( props.className, "uagb-google-map__wrap", `uagb-block-${block_id}` ) }>
 						<iframe
 							className="uagb-google-map__iframe"
 							src={url}

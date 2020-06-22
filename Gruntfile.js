@@ -186,6 +186,29 @@ module.exports = function(grunt) {
         }
 	} )
 
+	// Update Font Awesome library.
+    grunt.registerTask('font-awesome', function () {
+		this.async();
+        var request = require('request');
+        var fs = require('fs');
+
+        request('https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/metadata/icons.json', function (error, response, body) {
+
+            if (response && response.statusCode == 200) {
+
+                console.log('Fonts successfully fetched!');
+
+                var fonts = JSON.parse(body);
+
+                fs.writeFile('dist/blocks/uagb-controls/UAGBIcon.json', JSON.stringify(fonts, null, 4), function (err) {
+                    if (!err) {
+                        console.log("Font-Awesome library updated!");
+                    }
+                });
+            }
+        });
+    });
+
 	// Generate Read me file
 	grunt.registerTask( "readme", ["wp_readme_to_markdown"] )
 

@@ -17,37 +17,29 @@ function CtaStyle( props ) {
 		titleFontSizeTablet,
 		titleFontFamily,
 		titleFontWeight,
-		titleFontSubset,
 		titleLineHeightType,
 		titleLineHeight,
 		titleLineHeightTablet,
 		titleLineHeightMobile,
-		titleLoadGoogleFonts,
 		descFontSize,
 		descFontSizeType,
 		descFontSizeMobile,
 		descFontSizeTablet,
 		descFontFamily,
 		descFontWeight,
-		descFontSubset,
 		descLineHeightType,
 		descLineHeight,
 		descLineHeightTablet,
 		descLineHeightMobile,
-		descLoadGoogleFonts,
 		titleSpace,
 		descSpace,
 		ctaPosition,
-		block_id,
 		ctaFontSize,
 		ctaFontSizeType,
 		ctaFontSizeMobile,
 		ctaFontSizeTablet,
 		ctaFontFamily,
 		ctaFontWeight,
-		ctaFontSubset,
-		ctaLoadGoogleFonts,
-		ctaBtnSize,
 		ctaBtnLinkColor,
 		ctaBgColor,
 		ctaBtnVertPadding,
@@ -218,10 +210,7 @@ function CtaStyle( props ) {
 		},
 	}
 
-	var id = `.block-editor-page #wpwrap #uagb-cta-block-${ props.clientId }`
-	if ( classMigrate ) {
-		id = `.block-editor-page #wpwrap .uagb-block-${ props.clientId }`
-	}
+	var id = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`
 
 	var styling_css = generateCSS( selectors, id )
 

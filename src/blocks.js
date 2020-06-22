@@ -34,6 +34,8 @@ import "./blocks/table-of-contents/block.js"
 import "./blocks/how-to/block.js"
 import "./blocks/faq/block.js"
 import "./blocks/faq-child/block.js"
+import "./blocks/inline-notice/block.js"
+import "./blocks/wp-search/block.js"
 
 import UAGB_Block_Icons from "../dist/blocks/uagb-controls/block-icons"
 

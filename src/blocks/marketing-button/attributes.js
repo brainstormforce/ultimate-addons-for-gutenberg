@@ -141,7 +141,7 @@ const attributes = {
 	// Label and Sub Label
 	heading: {
 		source: "html",
-		selector: "h6",
+		selector: "h1,h2,h3,h4,h5,h6,p,span",
 		default: "Subscribe Now"
 	},
 	prefix: {
@@ -213,6 +213,10 @@ const attributes = {
 	titleLineHeightMobile: {
 		type: "number",
 	},
+	titleTag: {
+		type: "string",
+		default: "h6"
+	},
 	// Prefix Font Family
 	prefixLoadGoogleFonts: {
 		type: "boolean",
@@ -275,7 +279,7 @@ const attributes = {
 	iconFontSizeMobile: {
 		type: "number",
 		default: 20
-	},
+	}
 }
 
 export default attributes

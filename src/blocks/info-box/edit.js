@@ -3,7 +3,6 @@
  */
 
 import classnames from "classnames"
-import map from "lodash/map"
 import UAGBIcon from "../../../dist/blocks/uagb-controls/UAGBIcon.json"
 import FontIconPicker from "@fonticonpicker/react-fonticonpicker"
 import Prefix from "./components/Prefix"
@@ -33,7 +32,6 @@ const {
 	BlockControls,
 	ColorPalette,
 	InspectorControls,
-	RichText,
 	MediaUpload
 } = wp.blockEditor
 
@@ -47,21 +45,7 @@ const {
 	BaseControl,
 	Button,
 	ButtonGroup,
-	Dashicon,
-	withNotices,
 } = wp.components
-
-const {
-	compose
-} = wp.compose
-
-const {
-	withSelect
-} = wp.data
-
-const {
-	withViewportMatch
-} = wp.viewport
 
 const { Component, Fragment } = wp.element
 
@@ -132,7 +116,6 @@ class UAGBinfoBox extends Component {
 	 * Event to set Image as null while removing.
 	 */
 	onRemoveImage() {
-		const { iconImage } = this.props.attributes
 		const { setAttributes } = this.props
 
 		setAttributes( { iconImage: null } )
@@ -160,7 +143,7 @@ class UAGBinfoBox extends Component {
 
 	render() {
 
-		const { isSelected, className, setAttributes, attributes, mergeBlocks, insertBlocksAfter, onReplace } = this.props
+		const { className, setAttributes, attributes } = this.props
 
 		// Setup the attributes.
 		const {
@@ -208,13 +191,11 @@ class UAGBinfoBox extends Component {
 			separatorWidthType,
 			seperatorSpace,
 			headSpace,
-			separatorSpace,
 			subHeadSpace,
 			icon,
 			iconColor,
 			iconSize,
 			iconimgPosition,
-			block_id,
 			iconHover,
 			iconimgBorderRadius,
 			source_type,
@@ -264,13 +245,8 @@ class UAGBinfoBox extends Component {
 			showPrefix,
 			showTitle,
 			showDesc,
+			inheritFromTheme
 		} = attributes
-
-		// Add CSS.
-		var element = document.getElementById( "uagb-info-box-style-" + this.props.clientId )
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = InfoBoxStyle( this.props )
-		}
 
 		// Icon properties.
 		const icon_props = {
@@ -295,11 +271,6 @@ class UAGBinfoBox extends Component {
 		if( iconImage && iconImage["sizes"] ){
 			imageSizeOptions = this.getImageSize(iconImage["sizes"])
 		}
-
-		const sizeTypes = [
-			{ key: "px", name: __( "px" ) },
-			{ key: "em", name: __( "em" ) },
-		]
 
 		let loadPrefixGoogleFonts
 		let loadSubHeadGoogleFonts
@@ -504,20 +475,27 @@ class UAGBinfoBox extends Component {
 						value= { ctaText }
 						onChange={ value => setAttributes( { ctaText: value } ) }
 					/>
-					<TypographyControl
-						label={ __( "Typography" ) }
-						attributes = { attributes }
-						setAttributes = { setAttributes }
-						loadGoogleFonts = { { value: ctaLoadGoogleFonts, label: 'ctaLoadGoogleFonts' } }
-						fontFamily = { { value: ctaFontFamily, label: 'ctaFontFamily' } }
-						fontWeight = { { value: ctaFontWeight, label: 'ctaFontWeight' } }
-						fontSubset = { { value: ctaFontSubset, label: 'ctaFontSubset' } }
-						fontSizeType = { { value: ctaFontSizeType, label: 'ctaFontSizeType' } }
-						fontSize = { { value: ctaFontSize, label: 'ctaFontSize' } }
-						fontSizeMobile = { { value: ctaFontSizeMobile, label: 'ctaFontSizeMobile' } }
-						fontSizeTablet= { { value: ctaFontSizeTablet, label: 'ctaFontSizeTablet' } }
-						disableLineHeight = {true}
+					<ToggleControl
+						label={ __( "Inherit from Theme" ) }
+						checked={ inheritFromTheme }
+						onChange={ ( value ) => setAttributes( { inheritFromTheme: ! inheritFromTheme } ) }
 					/>
+					{ ( !inheritFromTheme && ctaType === "button" ) || ctaType === "text" &&
+						<TypographyControl
+							label={ __( "Typography" ) }
+							attributes = { attributes }
+							setAttributes = { setAttributes }
+							loadGoogleFonts = { { value: ctaLoadGoogleFonts, label: 'ctaLoadGoogleFonts' } }
+							fontFamily = { { value: ctaFontFamily, label: 'ctaFontFamily' } }
+							fontWeight = { { value: ctaFontWeight, label: 'ctaFontWeight' } }
+							fontSubset = { { value: ctaFontSubset, label: 'ctaFontSubset' } }
+							fontSizeType = { { value: ctaFontSizeType, label: 'ctaFontSizeType' } }
+							fontSize = { { value: ctaFontSize, label: 'ctaFontSize' } }
+							fontSizeMobile = { { value: ctaFontSizeMobile, label: 'ctaFontSizeMobile' } }
+							fontSizeTablet= { { value: ctaFontSizeTablet, label: 'ctaFontSizeTablet' } }
+							disableLineHeight = {true}
+						/>
+					}
 				</Fragment>
 				}
 				{ ( ctaType !== "none" ) &&
@@ -566,7 +544,7 @@ class UAGBinfoBox extends Component {
 					</Fragment>
 				}
 
-				{ ( ctaType == "button" ) && (
+				{ ( !inheritFromTheme && ctaType == "button" ) && (
 					<Fragment>
 						<h2>{ __( "Button Padding" ) }</h2>
 						<RangeControl
@@ -630,7 +608,7 @@ class UAGBinfoBox extends Component {
 				)
 				}
 
-				{ ( ctaType === "text") &&
+				{ ( ctaType === "text" ) &&
 					<TabPanel className="uagb-inspect-tabs uagb-inspect-tabs-col-2"
 						activeClass="active-tab"
 						tabs={ [
@@ -657,7 +635,7 @@ class UAGBinfoBox extends Component {
 											allowReset
 										/>
 									</Fragment>
-								}else {
+								} else {
 									tabout_1 = <Fragment>
 										<p className="uagb-setting-label">{ __( "Text Hover Color" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaLinkHoverColor }} ></span></span></p>
 										<ColorPalette
@@ -673,7 +651,7 @@ class UAGBinfoBox extends Component {
 					</TabPanel>
 				}
 
-				{ ( ctaType === "button") &&
+				{ ( !inheritFromTheme && ctaType == "button" ) &&
 						<TabPanel className="uagb-inspect-tabs uagb-inspect-tabs-col-2"
 							activeClass="active-tab"
 							tabs={ [
@@ -1072,7 +1050,7 @@ class UAGBinfoBox extends Component {
 					/>
 
 					{ ( iconimgPosition && (iconimgPosition !== "above-title" && iconimgPosition !== "below-title" )  ) && <SelectControl
-						label={ __( "Vertical ALignment" ) }
+						label={ __( "Vertical Alignment" ) }
 						value={ sourceAlign }
 						onChange={ ( value ) => setAttributes( { sourceAlign: value } ) }
 						options={ [
@@ -1221,11 +1199,11 @@ class UAGBinfoBox extends Component {
 				<div className={ classnames(
 					className,
 					"uagb-infobox__outer-wrap",
-					`uagb-block-${ this.props.clientId }`
+					`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
 				) }
 				>
 					{ ( ctaType == "all") &&<Fragment>
-						<a className = "uagb-infobox-link-wrap uagb-infbox__link-to-all" rel ="noopener noreferrer"></a>
+						<a className = "uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label={"Infobox Link"} rel ="noopener noreferrer"></a>
 						{output}
 					</Fragment>
 					}
@@ -1239,16 +1217,24 @@ class UAGBinfoBox extends Component {
 		)
 	}
 
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-info-box-style-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = InfoBoxStyle( this.props )
+		}
+	}
+
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { classMigrate: true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-info-box-style-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-info-box-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 	}
 }

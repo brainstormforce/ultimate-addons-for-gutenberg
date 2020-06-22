@@ -30,7 +30,8 @@ const {
 	InspectorControls,
 	RichText,
 	PanelColorSettings,
-	ColorPalette
+	ColorPalette,
+	__experimentalLinkControl
 } = wp.blockEditor
 
 const {
@@ -42,27 +43,58 @@ const {
 	Button,
 	Dashicon,
 	ToggleControl,
-	TextControl
+	TextControl,
+	Popover,
+	ToolbarButton,
+	ToolbarGroup,
 } = wp.components
 
 
 class UAGBMarketingButtonEdit extends Component {
 
+	constructor() {
+		super( ...arguments )
+		this.onClickLinkSettings = this.onClickLinkSettings.bind(this)
+		this.onChangeOpensInNewTab = this.onChangeOpensInNewTab.bind(this)
+		this.state = {
+			isURLPickerOpen:false,
+		}
+	}
+
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes( { classMigrate: true } )
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-style-marketing-btn-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-style-marketing-btn-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
+
+	}
+	
+
+	componentDidUpdate( prevProps ) {
+		var element = document.getElementById( "uagb-style-marketing-btn-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
+		}
+	}
+
+	onClickLinkSettings () {
+		this.setState( {
+			isURLPickerOpen: true
+		}) 
+	}
+
+	onChangeOpensInNewTab ( value ) {
+		this.props.setAttributes( { linkTarget: value } )
 	}
 
 	render() {
-
 		const { attributes, setAttributes, isSelected, className } = this.props
 
 		const {
@@ -114,7 +146,6 @@ class UAGBMarketingButtonEdit extends Component {
 			backgroundOpacity,
 			backgroundHoverOpacity,
 			//Typography
-			titleLoadGoogleFonts,
 			titleFontFamily,
 			titleFontWeight,
 			titleFontSubset,
@@ -126,6 +157,7 @@ class UAGBMarketingButtonEdit extends Component {
 			titleLineHeight,
 			titleLineHeightTablet,
 			titleLineHeightMobile,
+			titleTag,
 			prefixLoadGoogleFonts,
 			prefixFontFamily,
 			prefixFontWeight,
@@ -139,12 +171,6 @@ class UAGBMarketingButtonEdit extends Component {
 			prefixLineHeightTablet,
 			prefixLineHeightMobile,
 		} = attributes
-
-		// Push Styling to Head.
-		var element = document.getElementById( "uagb-style-marketing-btn-" + this.props.clientId )
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
 
 		// Load Google fonts for heading.
 		let loadTitleGoogleFonts
@@ -178,7 +204,31 @@ class UAGBMarketingButtonEdit extends Component {
 			)
 		}
 
+		const linkControl = this.state.isURLPickerOpen && (
+
+			<Popover
+				position="bottom center"
+				onClose={ () => this.setState( {
+					isURLPickerOpen: false
+				}) }
+			>
+				<__experimentalLinkControl
+					value={ { url:link, opensInNewTab:linkTarget }  }
+					onChange={( {
+					url: newURL = '',
+					opensInNewTab: newOpensInNewTab,
+					} ) => {
+						setAttributes( { link: newURL } );
+						setAttributes( { linkTarget: newOpensInNewTab } );
+						this.onChangeOpensInNewTab( newOpensInNewTab );
+						
+					} }
+				/>
+			</Popover>
+		);
+
 		return (
+			
 			<Fragment>
 				<BlockControls>
 					<BlockAlignmentToolbar
@@ -189,19 +239,19 @@ class UAGBMarketingButtonEdit extends Component {
 						controls={ [ "left", "center", "right", "full" ] }
 					/>
 				</BlockControls>
+				<BlockControls>
+					<ToolbarGroup>
+						<ToolbarButton
+							icon = 'admin-links'
+							name="link"
+							title={ __( 'Link' ) }
+							onClick={ this.onClickLinkSettings }
+						/>
+					</ToolbarGroup>
+				</BlockControls>
+				{ linkControl }
 				<InspectorControls>
 					<PanelBody title={ __( "General" ) } initialOpen={ true }>
-						<h2>{ __( "Link" ) }</h2>
-						<TextControl
-							value={ link }
-							onChange={ ( value ) => setAttributes( { link: value } ) }
-							placeholder={ __( "Enter URL" ) }
-						/>
-						<ToggleControl
-							label={ __( "Open link in New Tab" ) }
-							checked={ linkTarget }
-							onChange={ ( value ) => setAttributes( { linkTarget : ! linkTarget } ) }
-						/>
 						<SelectControl
 							label={ __( "Text Alignment" ) }
 							value={ textAlign }
@@ -267,6 +317,22 @@ class UAGBMarketingButtonEdit extends Component {
 						/>
 					</PanelBody>
 					<PanelBody	title={ __( "Content" ) } initialOpen={ false }	>
+						<SelectControl
+							label={ __( "Title Tag" ) }
+							value={ titleTag }
+							onChange={ ( value ) => setAttributes( { titleTag: value } ) }
+							options={ [
+								{ value: "h1", label: __( "H1" ) },
+								{ value: "h2", label: __( "H2" ) },
+								{ value: "h3", label: __( "H3" ) },
+								{ value: "h4", label: __( "H4" ) },
+								{ value: "h5", label: __( "H5" ) },
+								{ value: "h6", label: __( "H6" ) },
+								{ value: "span", label: __( "span" ) },
+								{ value: "p", label: __( "p" ) },
+							] }
+						/>
+						<hr className="uagb-editor__separator" />
 						<h2>{ __( "Title" ) }</h2>
 						<TypographyControl
 							label={ __( "Typography" ) }
@@ -304,6 +370,7 @@ class UAGBMarketingButtonEdit extends Component {
 							lineHeightMobile = { { value: prefixLineHeightMobile, label: "prefixLineHeightMobile" } }
 							lineHeightTablet= { { value: prefixLineHeightTablet, label: "prefixLineHeightTablet" } }
 						/>
+						
 						<hr className="uagb-editor__separator" />
 						<h2>{ __( "Colors" ) }</h2>
 						<TabPanel className="uagb-inspect-tabs uagb-inspect-tabs-col-2"
@@ -636,6 +703,7 @@ class UAGBMarketingButtonEdit extends Component {
 							</Fragment>
 						) }
 					</PanelBody>
+					
 				</InspectorControls>
 				<div className={ classnames(
 					className,
@@ -643,7 +711,7 @@ class UAGBMarketingButtonEdit extends Component {
 					`uagb-marketing-btn__align-${ align }`,
 					`uagb-marketing-btn__align-text-${ textAlign }`,
 					`uagb-marketing-btn__icon-${ iconPosition }`,
-					`uagb-block-${ this.props.clientId }`
+					`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
 				) }>
 					<div className="uagb-marketing-btn__wrap">
 						<a className="uagb-marketing-btn__link">
@@ -656,8 +724,9 @@ class UAGBMarketingButtonEdit extends Component {
 								<RichText
 									placeholder={ __( "Add Button Title…" ) }
 									value={ heading }
-									tagName='h6'
+									tagName= { titleTag }
 									onChange={ ( value ) => setAttributes( { heading: value } ) }
+									allowedFormats={ [ "bold", "italic", "strikethrough" ] }
 									className='uagb-marketing-btn__title'
 									onRemove={ () => this.props.onReplace( [] ) }
 									multiline={ false }
@@ -681,6 +750,7 @@ class UAGBMarketingButtonEdit extends Component {
 									value={ prefix }
 									tagName='p'
 									onChange={ ( value ) => setAttributes( { prefix: value } ) }
+									allowedFormats={ [ "bold", "italic", "strikethrough" ] }
 									className='uagb-marketing-btn__prefix'
 									onRemove={ () => this.props.onReplace( [] ) }
 									multiline={ false }

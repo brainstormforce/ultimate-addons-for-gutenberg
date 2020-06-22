@@ -28,7 +28,7 @@ class UAGBFaqChildEdit extends Component {
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 		// Pushing Style tag for this block css.
 	}
 	componentDidUpdate(prevProps, prevState) {
@@ -49,7 +49,6 @@ class UAGBFaqChildEdit extends Component {
 
 		const { attributes, setAttributes } = this.props
         const {
-			block_id,
 			question,
 			answer,
 			icon,
@@ -80,7 +79,7 @@ class UAGBFaqChildEdit extends Component {
 
 			return (
 				<div className="uagb-faq-child__wrapper">
-					<div className="uagb-faq-item">
+					<div className="uagb-faq-item" role="tab" tabindex="0">
 						<div className="uagb-faq-questions-button uagb-faq-questions">
 							{ 'accordion' === layout && faqRenderIcon() }
 							<RichText
@@ -116,9 +115,9 @@ class UAGBFaqChildEdit extends Component {
 				</InspectorControls>
                 <div className={ classnames(
                         "uagb-faq-child__outer-wrap",
-                        `uagb-block-${ block_id }`,
+                        `uagb-block-${ this.props.clientId.substr( 0, 8 ) }`,
 						( this.props.isSelected &&  ( false !== this.state.isFocused ) ) ? "uagb-faq__active" : ""
-                    ) }
+					) }
                 >
                     { faqRenderHtml() }
                 </div>

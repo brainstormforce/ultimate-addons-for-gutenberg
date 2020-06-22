@@ -29,57 +29,86 @@ function styling( props ) {
 		lineHeightType,
 		lineHeightMobile,
 		lineHeightTablet,
+		inheritFromTheme,
+		iconSpace
 	} = props.attributes;
 
 	var tablet_selectors = {}
 	var mobile_selectors = {}
+	var selectors = {}
 
-	var selectors = {
-		" .uagb-buttons-repeater" : {
-			"font-size" : generateCSSUnit( size, sizeType ),
-			"line-height" : generateCSSUnit( lineHeight, lineHeightType ),
-			"font-family": fontFamily,
-			"font-weight": fontWeight,
-			"border-width": generateCSSUnit( borderWidth, "px" ),
-			"border-style": borderStyle,
-			"border-color": borderColor,
-			"border-radius" : generateCSSUnit( borderRadius, "px" ),
-			"background": background
-		},
-		" .uagb-buttons-repeater:hover" : {
-			"background": hBackground,
-			"border-width": generateCSSUnit( borderWidth, "px" ),
-			"border-style": borderStyle,
-			"border-color": borderHColor,
-		},
-		" .uagb-buttons-repeater a.uagb-button__link" : {
-			"padding" : vPadding + "px " + hPadding + "px",
-			"color": color
-		},
-		" .uagb-buttons-repeater:hover a.uagb-button__link" : {
-			"color": hColor
-		},
-		" .uagb-buttons-repeater:hover .uagb-button__link": {
-			"color": hColor
-		},
-		" .uagb-buttons-repeater .uagb-button__link" : {
-			"padding" : vPadding + "px " + hPadding + "px",
-			"color": color
-		},
+	if ( ! inheritFromTheme ) {
+		selectors = {
+			" .uagb-buttons-repeater" : {
+				"font-size" : generateCSSUnit( size, sizeType ),
+				"line-height" : generateCSSUnit( lineHeight, lineHeightType ),
+				"font-family": fontFamily,
+				"font-weight": fontWeight,
+				"border-width": generateCSSUnit( borderWidth, "px" ),
+				"border-style": borderStyle,
+				"border-color": borderColor,
+				"border-radius" : generateCSSUnit( borderRadius, "px" ),
+				"background": background,
+				"padding" : vPadding + "px " + hPadding + "px",
+			},
+			" .uagb-buttons-repeater:hover" : {
+				"background": hBackground,
+				"border-width": generateCSSUnit( borderWidth, "px" ),
+				"border-style": borderStyle,
+				"border-color": borderHColor,
+			},
+			" .uagb-buttons-repeater a.uagb-button__link" : {
+				"color": color
+			},
+			" .uagb-buttons-repeater:hover a.uagb-button__link" : {
+				"color": hColor
+			},
+			" .uagb-buttons-repeater:hover .uagb-button__link": {
+				"color": hColor
+			},
+			" .uagb-buttons-repeater .uagb-button__link" : {
+				"color": color
+			},	
+		}
 
+		mobile_selectors[" .uagb-buttons-repeater"] = {
+			"font-size" : generateCSSUnit( sizeMobile, sizeType ),
+			"line-height" : generateCSSUnit( lineHeightMobile, lineHeightType ),
+		}
+	
+		tablet_selectors[" .uagb-buttons-repeater"] = {
+			"font-size" : generateCSSUnit( sizeTablet, sizeType ),
+			"line-height" : generateCSSUnit( lineHeightTablet, lineHeightType ),
+		}
 	}
 
-	mobile_selectors[" .uagb-buttons-repeater"] = {
-		"font-size" : generateCSSUnit( sizeMobile, sizeType ),
-		"line-height" : generateCSSUnit( lineHeightMobile, lineHeightType ),
+	selectors[" .uagb-button__icon"] = {
+		"width" : generateCSSUnit( size, sizeType ),
 	}
 
-	tablet_selectors[" .uagb-buttons-repeater"] = {
-		"font-size" : generateCSSUnit( sizeTablet, sizeType ),
-		"line-height" : generateCSSUnit( lineHeightTablet, lineHeightType ),
+	if ( ! inheritFromTheme ) {
+		selectors[" .uagb-button__icon"]["color"] = color
 	}
 
-	var id = `.uagb-block-${ props.clientId }`
+	selectors[" .uagb-button__icon-position-after"] = {
+		'margin-left' : generateCSSUnit( iconSpace, 'px' )
+	}
+
+	selectors[" .uagb-button__icon-position-before"] = {
+		'margin-right' : generateCSSUnit( iconSpace, 'px' )
+	}
+
+	mobile_selectors[" .uagb-button__icon"] = {
+		"width" : generateCSSUnit( sizeMobile, sizeType ),
+		"height" : generateCSSUnit( sizeMobile, sizeType ),
+	}
+
+	tablet_selectors[" .uagb-button__icon"] = {
+		"width" : generateCSSUnit( sizeTablet, sizeType ),
+		"height" : generateCSSUnit( sizeTablet, sizeType ),
+	}
+
+	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
 	var styling_css = generateCSS( selectors, id )
 
 	styling_css += generateCSS( tablet_selectors, id, true, "tablet" )

@@ -23,7 +23,8 @@ export default function save( props ) {
 		heading,
 		prefix,
 		link,
-		linkTarget
+		linkTarget,
+		titleTag
 	} = props.attributes
 
 	let target = ( linkTarget ) ? "_blank" : ""
@@ -47,7 +48,7 @@ export default function save( props ) {
 						}
 						<RichText.Content
 							value={ heading }
-							tagName='h6'
+							tagName={ titleTag }
 							className='uagb-marketing-btn__title'
 						/>
 					</div>

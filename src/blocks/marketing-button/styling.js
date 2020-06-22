@@ -9,7 +9,6 @@ import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
 function styling( props ) {
 
 	const {
-		classMigrate,
 		titleSpace,
 		//Icon
 		iconPosition,
@@ -53,7 +52,6 @@ function styling( props ) {
 		//Typography
 		titleFontFamily,
 		titleFontWeight,
-		titleFontSubset,
 		titleFontSize,
 		titleFontSizeType,
 		titleFontSizeTablet,
@@ -64,7 +62,6 @@ function styling( props ) {
 		titleLineHeightMobile,
 		prefixFontFamily,
 		prefixFontWeight,
-		prefixFontSubset,
 		prefixFontSize,
 		prefixFontSizeType,
 		prefixFontSizeTablet,
@@ -202,10 +199,7 @@ function styling( props ) {
 		},
 	}
 
-	var id = `#uagb-marketing-btn-${ props.clientId }`
-	if ( classMigrate ) {
-		id = `.uagb-block-${ props.clientId }`
-	}
+	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
 
 	var styling_css = generateCSS( selectors, id )
 

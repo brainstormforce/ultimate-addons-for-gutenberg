@@ -74,7 +74,7 @@ function setupFAQ() {
 
 		var elementToOpen = document.getElementById( hashval );
 		elementToOpen.getElementsByClassName( 'uagb-faq-item' )[0].classList.add( 'uagb-faq-item-active' );
-
+		elementToOpen.getElementsByClassName( 'uagb-faq-item' )[0].setAttribute( 'aria-expanded', true );
 		slideDown( elementToOpen.getElementsByClassName( 'uagb-faq-content' )[0], 500 );
 	} else {
 
@@ -82,6 +82,7 @@ function setupFAQ() {
 			if ( true === expandFirstelements[item].classList.contains('uagb-faq-layout-accordion') ) { 
 				
 				expandFirstelements[item].querySelectorAll( '.uagb-faq-child__outer-wrap' )[0].getElementsByClassName( 'uagb-faq-item' )[0].classList.add( 'uagb-faq-item-active' );
+				expandFirstelements[item].querySelectorAll( '.uagb-faq-child__outer-wrap' )[0].getElementsByClassName( 'uagb-faq-item' )[0].setAttribute( 'aria-expanded', true );
 				expandFirstelements[item].querySelectorAll( '.uagb-faq-child__outer-wrap' )[0].getElementsByClassName( 'uagb-faq-item' )[0].querySelectorAll( '.uagb-faq-content' )[0].style.display = 'block';
 			}
 		}  
@@ -92,6 +93,7 @@ function setupFAQ() {
 			
 			for ( var childItem = 0;  childItem < otherItems.length; childItem++ ) {
 				otherItems[childItem].getElementsByClassName( 'uagb-faq-item' )[0].classList.add( 'uagb-faq-item-active' );
+				otherItems[childItem].getElementsByClassName( 'uagb-faq-item' )[0].setAttribute( 'aria-expanded', true );
 				otherItems[childItem].getElementsByClassName( 'uagb-faq-item' )[0].querySelectorAll( '.uagb-faq-content' )[0].style.display = 'block';
 			}
 		}
@@ -108,32 +110,45 @@ window.addEventListener(
 			var questionButtons = accordionElements[item].querySelectorAll( '.uagb-faq-questions-button' );
 			
 			for ( var button = 0; button < questionButtons.length; button++ ) {
-				questionButtons[button].addEventListener("click", function() {
-					var faqItem = this.parentElement;
-					if ( faqItem.classList.contains('uagb-faq-item-active') ) {
-						faqItem.classList.remove('uagb-faq-item-active');
-						slideUp( faqItem.getElementsByClassName( 'uagb-faq-content' )[0], 500 );
-					} else {
-						var parent = faqItem.parentElement.parentElement.parentElement.parentElement;
-						var faqToggle = 'true';
-						if ( parent.classList.contains( 'wp-block-uagb-faq' ) ) {
-							faqToggle = parent.getAttribute( 'data-faqtoggle' );
-						}
-						faqItem.classList.add('uagb-faq-item-active');
-						slideDown( faqItem.getElementsByClassName( 'uagb-faq-content' )[0], 500 );
-						if( 'true' === faqToggle ) {
-							for ( var buttonChild = 0; buttonChild < questionButtons.length; buttonChild++ ) {
-								buttonItem = questionButtons[buttonChild].parentElement
-								if ( buttonItem === faqItem ) {
-									continue;
-								}
-								buttonItem.classList.remove('uagb-faq-item-active');
-								slideUp( buttonItem.getElementsByClassName( 'uagb-faq-content' )[0], 500 );
-							}
-						}
-					}
+				
+				questionButtons[button].parentElement.addEventListener("click", function( e ) {
+					faqClick( e, this, questionButtons );
+				});
+				questionButtons[button].parentElement.addEventListener("keypress", function( e ) {
+					faqClick( e, this, questionButtons );
 				});
 			}
 		}
     }
 );
+
+function faqClick( e, faqItem, questionButtons ) {
+
+	e.preventDefault();
+					
+	if ( faqItem.classList.contains('uagb-faq-item-active') ) {
+		faqItem.classList.remove('uagb-faq-item-active');
+		faqItem.setAttribute( 'aria-expanded', false );
+		slideUp( faqItem.getElementsByClassName( 'uagb-faq-content' )[0], 500 );
+	} else {
+		var parent = faqItem.parentElement.parentElement.parentElement.parentElement;
+		var faqToggle = 'true';
+		if ( parent.classList.contains( 'wp-block-uagb-faq' ) ) {
+			faqToggle = parent.getAttribute( 'data-faqtoggle' );
+		}
+		faqItem.classList.add('uagb-faq-item-active');
+		faqItem.setAttribute( 'aria-expanded', true );
+		slideDown( faqItem.getElementsByClassName( 'uagb-faq-content' )[0], 500 );
+		if( 'true' === faqToggle ) {
+			for ( var buttonChild = 0; buttonChild < questionButtons.length; buttonChild++ ) {
+				buttonItem = questionButtons[buttonChild].parentElement
+				if ( buttonItem === faqItem ) {
+					continue;
+				}
+				buttonItem.classList.remove('uagb-faq-item-active');
+				buttonItem.setAttribute( 'aria-expanded', false );
+				slideUp( buttonItem.getElementsByClassName( 'uagb-faq-content' )[0], 500 );
+			}
+		}
+	}
+}

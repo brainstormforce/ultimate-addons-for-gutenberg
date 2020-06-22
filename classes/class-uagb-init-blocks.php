@@ -295,6 +295,7 @@ class UAGB_Init_Blocks {
 				'post_types'        => UAGB_Helper::get_post_types(),
 				'all_taxonomy'      => UAGB_Helper::get_related_taxonomy(),
 				'uagb_ajax_nonce'   => $uagb_ajax_nonce,
+				'uagb_home_url'     => home_url(),
 			)
 		);
 	} // End function editor_assets().

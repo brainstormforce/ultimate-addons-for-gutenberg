@@ -1,4 +1,8 @@
 .wp-block-uagb-faq-child {
+    &.uagb-faq-child__outer-wrap .uagb-faq-item:focus,
+    &.uagb-faq-child__outer-wrap .uagb-faq-item:active {
+        outline: thin dotted;
+    }
     .uagb-faq-questions-button {
 
         display: flex;

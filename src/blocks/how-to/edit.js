@@ -70,13 +70,13 @@ class UAGBHowTo extends Component {
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
 
 		this.props.setAttributes({ schema: JSON.stringify(this.props.schemaJsonData) });
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-how-to-schema-style-" + this.props.clientId )
+		$style.setAttribute( "id", "uagb-how-to-schema-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 	}
 
@@ -89,6 +89,11 @@ class UAGBHowTo extends Component {
 				this.props.setAttributes({
 				schema: JSON.stringify(this.props.schemaJsonData)
 			});
+		}
+		var element = document.getElementById( "uagb-how-to-schema-style-" + this.props.clientId.substr( 0, 8 ) )
+
+		if( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props )
 		}
 	}
 
@@ -138,7 +143,6 @@ class UAGBHowTo extends Component {
 	 * Event to set Image as while adding.
 	 */
 	onSelectImage( media ) {
-		const { mainimage } = this.props.attributes
 		const { setAttributes } = this.props
 
 		if ( ! media || ! media.url ) {
@@ -247,12 +251,6 @@ class UAGBHowTo extends Component {
 				step_gap
 			},
 		} = this.props
-
-		var element = document.getElementById( "uagb-how-to-schema-style-" + this.props.clientId )
-
-		if( null != element && "undefined" != typeof element ) {
-			element.innerHTML = styling( this.props )
-		}
 
 		if( mainimage && mainimage["sizes"] ){
 			imageSizeOptions = this.getImageSize(mainimage["sizes"])
@@ -667,7 +665,7 @@ class UAGBHowTo extends Component {
 				<div
 					className={ classnames(
 						className,
-						`uagb-block-${this.props.clientId}`,					
+						`uagb-block-${this.props.clientId.substr( 0, 8 )}`,					
 					) }
 				>
 				<div className="uagb-how-to-main-wrap">

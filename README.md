@@ -5,7 +5,7 @@
 **Requires at least:** 4.7  
 **Requires PHP:** 5.6  
 **Tested up to:** 5.4  
-**Stable tag:** 1.15.2  
+**Stable tag:** 1.16.0  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -70,9 +70,11 @@ We also have an informative and detailed article that will help you to <a href="
 <strong>An Ultimate Gutenberg Blocks Library</strong>
 
 <ul>
-	<li><a href="https://www.ultimategutenberg.com/docs/how-to-schema/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme" target="_blank">How-to Schema </a>: This block allows you to design attractive How-to pages or articles that can describe the step-by-step procedure to achieve certain goals. The best thing is this block will automatically add How-to Schema to your page that can boost ranking in search results.</li>
- 	<li><a href="https://www.ultimategutenberg.com/docs/faq-schema-or-accordion/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme" target="_blank">FAQ Schema </a>: This block helps you answering user’s common queries in an easy and attractive way.  You also get a one-click option to apply FAQ Schema on the page. That helps to display content in a rich snippet that can pull more traffic to your website.</li>
- 	<li><a href="https://www.ultimategutenberg.com/blocks/advanced-heading/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme" target="_blank">Advanced Heading </a>: The Advanced Heading block lets you add a combination of a heading and a sub-heading with a separator in between. You can select the heading tag for the heading and manage other settings and customizations too.</li>
+	<li><a href="https://www.ultimategutenberg.com/how-to-schema/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme" target="_blank">How-to Schema </a>: This block allows you to design attractive How-to pages or articles that can describe the step-by-step procedure to achieve certain goals. The best thing is this block will automatically add How-to Schema to your page that can boost ranking in search results.</li>
+ 	<li><a href="https://www.ultimategutenberg.com/faq/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme" target="_blank">FAQ Schema </a>: This block helps you answering user’s common queries in an easy and attractive way.  You also get a one-click option to apply FAQ Schema on the page. That helps to display content in a rich snippet that can pull more traffic to your website.</li>
+ 	<li><a href="https://www.ultimategutenberg.com/docs/wp-search/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme" target="_blank">WP - Search </a>: Search bars quickly bring information users are looking for and deliver a great user experience. You can display the WordPress search field anywhere on your page easily with the WP - Search block.</li>
+ 	<li><a href="https://www.ultimategutenberg.com/docs/inline-notice/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme" target="_blank">Inline Notice </a>: Sometimes while writing a procedure or steps to achieve some end results, you might need users to pay attention to a few important notes. Inline Notice block provides a nice ready-to-use box where you can quickly add text to highlight it.</li>
+	<li><a href="https://www.ultimategutenberg.com/blocks/advanced-heading/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme" target="_blank">Advanced Heading </a>: The Advanced Heading block lets you add a combination of a heading and a sub-heading with a separator in between. You can select the heading tag for the heading and manage other settings and customizations too.</li>
  	<li><a href="https://www.ultimategutenberg.com/blocks/advanced-columns/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme" target="_blank">Advanced Columns </a>: This Advanced Columns block gives you advanced options to insert a number of columns within a single row. You get various customization options to manage the look and feel of the entire block and individual columns on the page with advanced shape dividers, variable widths, etc.</li>
  	<li><a href="https://www.ultimategutenberg.com/blocks/blockquote/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme" target="_blank">Blockquote </a>: This Blockquote block lets you display quoted tweetable text in a trendy and designer format with lots of customization options.</li>
  	<li><a href="https://www.ultimategutenberg.com/blocks/call-to-action/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme" target="_blank">Call To Action </a>: The Call To Action block helps you to create attractive call-to-action with a trendy title, description and a catchy button that boosts conversions on your website.</li>
@@ -157,8 +159,25 @@ When you use the Ultimate Addons for Gutenberg along with the free Astra theme, 
 
 ## Changelog ##
 
-### 1.15.2.1 ###
+### 1.16.0 ###
+* New: WP - Search Block.
+* New: Inline Notice Block.
+* New: Users can now share non-personal usage data to help us test and develop better products.
+* Improvement: FAQ Schema - Added new padding options for Question.
+* Improvement: Multi Buttons - Added new option to add icon.
+* Improvement: Multi Buttons - Added new option to inherit styling from the theme.
+* Improvement: Advanced Columns - Added ability to choose from given variations of columns.
+* Improvement: Post Layout - Added an option to show an empty post result message.
+* Improvement: Post Layout - Added new option to inherit styling from the theme.
+* Improvement: Post Layout - Added `post_class()` compatibility to Post Grid, Post Masonry, and Post Carousel using a [custom filter](https://www.ultimategutenberg.com/docs/filters-actions-for-post/#uagb_enable_post_class).
+* Improvement: Call to Action - Added new option to inherit styling from the theme for Button.
+* Improvement: Info Box - Added new option to inherit styling from the theme for Button.
+* Improvement: Added missing accessibility to all blocks.
+* Fix: Post Carousel - Incorrect Border Radius issue with respect to the theme.
+* Fix: Info Box - Fixed a minor issue with z-index and theme heading.
+* Fix: Gravity Form Styler: Show/Hide Not working in front-end.
 * Fix: Table Of Contents - Removed the dependency on data attributes for the header.
+* Fix: Better UX compatibility with Gutenberg plugin.
 
 ### 1.15.2 ###
 * Fix: Fixed compatibility to [CartFlows Templates](https://cartflows.com/templates/?utm_source=uag-repo&utm_medium=link&utm_campaign=readme).
