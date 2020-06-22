@@ -157,6 +157,9 @@ When you use the Ultimate Addons for Gutenberg along with the free Astra theme, 
 
 == Changelog ==
 
+= 1.16.0.1
+* Fix: Posts Grid - Page Limit issue with less number of Posts. 
+
 = 1.15.2.1 =
 * Fix: Table Of Contents - Removed the dependency on data attributes for the header.
 
