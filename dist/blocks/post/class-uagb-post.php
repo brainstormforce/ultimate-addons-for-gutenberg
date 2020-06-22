@@ -780,7 +780,8 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 			$base                = UAGB_Helper::build_base_url( $permalink_structure, $base );
 			$format              = UAGB_Helper::paged_format( $permalink_structure, $base );
 			$paged               = UAGB_Helper::get_paged( $query );
-			$page_limit          = isset( $attributes['pageLimit'] ) ? $attributes['pageLimit'] : $attributes['postsToShow'];
+			$page_limit          = min( $attributes['pageLimit'], $query->max_num_pages );
+			$page_limit          = isset( $page_limit ) ? $page_limit : $attributes['postsToShow'];
 
 			$links = paginate_links(
 				array(
