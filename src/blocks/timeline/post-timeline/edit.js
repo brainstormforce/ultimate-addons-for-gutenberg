@@ -209,7 +209,8 @@ class UAGBTimeline extends Component {
 			linkTarget,
 			postType,
 			taxonomyType,
-			dateFormat
+			dateFormat,
+			excludeCurrentPost,
 		} = attributes
 
 		let taxonomyListOptions = [
@@ -510,6 +511,11 @@ class UAGBTimeline extends Component {
 							<hr className="uagb-editor__separator" />
 						</Fragment>
 					}
+					<ToggleControl
+						label={ __( "Exclude Current Post" ) }
+						checked={ excludeCurrentPost }
+						onChange={ ( value ) => setAttributes( { excludeCurrentPost: ! excludeCurrentPost } ) }
+					/>
 					<QueryControls
 						{ ...{ order, orderBy } }
 						numberOfItems={ postsToShow }

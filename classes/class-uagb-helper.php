@@ -412,12 +412,6 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			}
 
 			switch ( $name ) {
-				case 'uagb/inline-notice':
-					$css += UAGB_Block_Helper::get_inline_notice_css( $blockattr, $block_id );
-					UAGB_Block_JS::blocks_inline_notice_gfont( $blockattr );
-					$js .= UAGB_Block_JS::get_inline_notice_js( $blockattr, $block_id );
-					break;
-
 				case 'uagb/how-to':
 					$css += UAGB_Block_Helper::get_how_to_css( $blockattr, $block_id );
 					UAGB_Block_JS::blocks_how_to_gfont( $blockattr );
@@ -550,11 +544,6 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				case 'uagb/faq':
 					$css += UAGB_Block_Helper::get_faq_css( $blockattr, $block_id );
 					UAGB_Block_JS::blocks_faq_gfont( $blockattr );
-					break;
-
-				case 'uagb/wp-search':
-					$css += UAGB_Block_Helper::get_wp_search_css( $blockattr, $block_id );
-					UAGB_Block_JS::blocks_wp_search_gfont( $blockattr );
 					break;
 
 				default:
@@ -929,6 +918,11 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				'orderby'             => ( isset( $attributes['orderBy'] ) ) ? $attributes['orderBy'] : 'date',
 				'ignore_sticky_posts' => 1,
 			);
+			
+			if (  $attributes['excludeCurrentPost'] ) {
+				$query_args['post__not_in'] = array(get_the_ID());
+			}
+
 
 			if ( isset( $attributes['categories'] ) && '' !== $attributes['categories'] ) {
 				$query_args['tax_query'][] = array(
@@ -1161,6 +1155,8 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			if ( self::is_ssl() ) {
 				$wp_info['baseurl'] = str_ireplace( 'http://', 'https://', $wp_info['baseurl'] );
 			}
+
+			$wp_info = wp_upload_dir( null, false );
 
 			$dir_name = basename( UAGB_DIR );
 			if ( 'ultimate-addons-for-gutenberg' === $dir_name ) {
