@@ -23,7 +23,12 @@ const attributes = {
 	layout : {
 		type: "string",
 		default: "accordion"
-	}
+	},
+	headingTag: {
+		type: "string",
+		selector: "h1,h2,h3,h4,h5,h6",
+		default: "h3"
+	},
 
 }
 

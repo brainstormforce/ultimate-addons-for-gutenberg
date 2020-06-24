@@ -36,7 +36,7 @@ const attributes = {
 	},
 	boxBgColor: {
 		type: "string",
-		default: "#FFFFFF"
+		default: "#eeeeee"
 	},
 	boxPaddingTypeMobile: {
 		type: "string",
@@ -84,11 +84,11 @@ const attributes = {
 	},
 	borderRadius: {
 		type: "number",
-		default : 2
+		default : 4
 	},
 	borderColor: {
 		type: "string",
-		default: "#D2D2D2"
+		default: "#313131"
 	},
 	questionTextColor: {
 		type: "string",
@@ -96,7 +96,15 @@ const attributes = {
 	},
 	questionTextActiveColor: {
 		type: "string",
-		default: "#656565"
+		default: "#313131"
+	},
+	questionPaddingTypeMobile: {
+		type: "string",
+		default : "px"
+	},
+	questionPaddingTypeTablet: {
+		type: "string",
+		default : "px"
 	},
 	questionPaddingTypeDesktop: {
 		type: "string",
@@ -129,6 +137,14 @@ const attributes = {
 	answerTextColor: {
 		type: "string",
 		default: "#313131"
+	},
+	answerPaddingTypeMobile: {
+		type: "string",
+		default : "px"
+	},
+	answerPaddingTypeTablet: {
+		type: "string",
+		default : "px"
 	},
 	answerPaddingTypeDesktop: {
 		type: "string",
@@ -262,15 +278,15 @@ const attributes = {
 	},
 	iconSize: {
 		type: "number",
-		default : 12
+		default : 15
 	},
 	iconSizeTablet: {
 		type: "number",
-		default : 12
+		default : 15
 	},
 	iconSizeMobile: {
 		type: "number",
-		default : 12
+		default : 15
 	},
 	iconSizeType: {
 		type: "string",
@@ -292,29 +308,11 @@ const attributes = {
 		type: "boolean",
 		default: true	
 	},
-	questionLeftPaddingTablet: {
-		type: "number",
-		default : 10
-	},
-	questionBottomPaddingTablet: {
-		type: "number",
-		default : 10
-	},
-	questionLeftPaddingDesktop: {
-		type: "number",
-		default : 10
-	},
-	questionBottomPaddingDesktop: {
-		type: "number",
-		default : 10
-	},
-	questionLeftPaddingMobile: {
-		type: "number",
-		default : 10
-	},
-	questionBottomPaddingMobile: {
-		type: "number",
-		default : 10
+	headingTag: {
+		type: "string",
+		selector: "h1,h2,h3,h4,h5,h6",
+		default: "h3"
 	},
 }
+
 export default attributes
