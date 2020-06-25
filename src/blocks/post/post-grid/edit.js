@@ -27,7 +27,9 @@ const {
 	ToggleControl,
 	TabPanel,
 	Dashicon,
-	TextControl
+	TextControl,
+	RadioControl,
+	IconButton
 } = wp.components
 
 const {
@@ -235,6 +237,10 @@ class UAGBPostGrid extends Component {
 			paginationPrevText,
 			paginationNextText,
 			excludeCurrentPost,
+			inheritFromTheme,
+			postDisplaytext,
+			displayPostContentRadio
+			
 		} = attributes
 
 		const hoverSettings = (
@@ -527,15 +533,30 @@ class UAGBPostGrid extends Component {
 									{ value: "filled", label: __( "Filled" ) },
 								] }
 							/>
-							<SelectControl
-								label={ __( "Pagination Alignment" ) }
-								value={ paginationAlignment }
-								onChange={ ( value ) => setAttributes( { paginationAlignment: value } ) }
-								options={ [
-									{ value: "left", label: __( "Left" ) },
-									{ value: "center", label: __( "Center" ) },
-									{ value: "right", label: __( "Right" ) },
-								] }
+							<h2> { __( "Pagination Alignment" ) }</h2>
+							<IconButton
+								key={ "left" }
+								icon="editor-alignleft"
+								label="Left"
+								onClick={ () => setAttributes( { paginationAlignment: "left" } ) }
+								aria-pressed = { "left" === paginationAlignment }
+								isPrimary = { "left" === paginationAlignment }
+							/>
+							<IconButton
+								key={ "center" }
+								icon="editor-aligncenter"
+								label="Right"
+								onClick={ () => setAttributes( { paginationAlignment: "center" } ) }
+								aria-pressed = { "center" === paginationAlignment }
+								isPrimary = { "center" === paginationAlignment }
+							/>
+							<IconButton
+								key={ "right" }
+								icon="editor-alignright"
+								label="Right"
+								onClick={ () => setAttributes( { paginationAlignment: "right" } ) }
+								aria-pressed = { "right" === paginationAlignment }
+								isPrimary = { "right" === paginationAlignment }
 							/>
 							<hr className="uagb-editor__separator" />
 							{ paginationLayout == "filled" && 
@@ -694,17 +715,37 @@ class UAGBPostGrid extends Component {
 						checked={ displayPostExcerpt }
 						onChange={ ( value ) => setAttributes( { displayPostExcerpt: ! displayPostExcerpt } ) }
 					/>
-					{ displayPostExcerpt &&
-						<RangeControl
-							label={ __( "Excerpt Length" ) }
-							value={ excerptLength }
-							onChange={ ( value ) => setAttributes( { excerptLength: value } ) }
-							min={ 1 }
-							max={ 500 }
-							allowReset
+					{ displayPostExcerpt && (
+						<RadioControl
+							label={ __( 'Show:' ) }
+							selected={ displayPostContentRadio }
+							options={ [
+								{ label: __( 'Excerpt' ), value: "excerpt" },
+								{label: __( 'Full post' ), value: "full_post",},
+							] }
+							onChange={ ( value ) =>
+								setAttributes( {
+									displayPostContentRadio: value,
+								} )
+							}
 						/>
-					}
+					) }
+					{ displayPostExcerpt &&
+						displayPostContentRadio === 'excerpt' && (
+							<RangeControl
+								label={ __( 'Max number of words in excerpt' ) }
+								value={ excerptLength }
+								onChange={ ( value ) =>
+									setAttributes( { excerptLength: value } )
+								}
+								min={ 1 }
+								max={ 100 }
+								allowReset
+							/>
+						) }
 				</PanelBody>
+
+				{ displayPostExcerpt && displayPostContentRadio === 'excerpt' && (
 				<PanelBody title={ __( "Read More Link" ) } initialOpen={ false }>
 					<ToggleControl
 						label={ __( "Show Read More Link" ) }
@@ -822,7 +863,7 @@ class UAGBPostGrid extends Component {
 							</TabPanel>
 						</Fragment>
 					}
-				</PanelBody>
+				</PanelBody>)}
 				<PanelBody title={ __( "Typography" ) } initialOpen={ false }>
 					<h2>{ __( "Title" ) }</h2>
 					<SelectControl

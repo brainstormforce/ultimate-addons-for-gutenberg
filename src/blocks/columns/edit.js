@@ -13,6 +13,7 @@ import dropRight from "lodash/dropRight"
 import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
 import shapes from "./shapes"
 import BoxShadowControl from "../../components/box-shadow"
+import GradientSettings from "../../components/gradient-settings"
 import rowIcons from './icons';
 const ALLOWED_BLOCKS = [ "uagb/column" ]
 
@@ -267,7 +268,8 @@ class UAGBColumns extends Component {
 			boxShadowVOffset,
 			boxShadowBlur,
 			boxShadowSpread,
-			boxShadowPosition
+			boxShadowPosition,
+			gradientValue,
 		} = attributes
 		
 		const CustomTag = `${tag}`
@@ -949,6 +951,8 @@ class UAGBColumns extends Component {
 						</TabPanel>
 					</PanelBody>
 					<PanelBody title={ __( "Background" ) } initialOpen={ false }>
+					
+			
 						<SelectControl
 							label={ __( "Background Type" ) }
 							value={ backgroundType }
@@ -1055,69 +1059,7 @@ class UAGBColumns extends Component {
 						}
 						{ "gradient" == backgroundType &&
 							( <Fragment>
-								<p className="uagb-setting-label">{ __( "Color 1" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: backgroundVideoColor }} ></span></span></p>
-								<ColorPalette
-									value={ gradientColor1 }
-									onChange={ ( colorValue ) => setAttributes( { gradientColor1: colorValue } ) }
-									allowReset
-								/>
-								<RangeControl
-									label={ __( "Location 1" ) }
-									value={ gradientLocation1 }
-									onChange={ ( value ) => setAttributes( { gradientLocation1: value } ) }
-									min={ 0 }
-									max={ 100 }
-									allowReset
-								/>
-								<p className="uagb-setting-label">{ __( "Color 2" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: backgroundVideoColor }} ></span></span></p>
-								<ColorPalette
-									value={ gradientColor2 }
-									onChange={ ( colorValue ) => setAttributes( { gradientColor2: colorValue } ) }
-									allowReset
-								/>
-								<RangeControl
-									label={ __( "Location 2" ) }
-									value={ gradientLocation2 }
-									onChange={ ( value ) => setAttributes( { gradientLocation2: value } ) }
-									min={ 0 }
-									max={ 100 }
-									allowReset
-								/>
-								<SelectControl
-									label={ __( "Type" ) }
-									value={ gradientType }
-									onChange={ ( value ) => setAttributes( { gradientType: value } ) }
-									options={ [
-										{ value: "linear", label: __( "Linear" ) },
-										{ value: "radial", label: __( "Radial" ) },
-									] }
-								/>
-								{ "linear" == gradientType && <RangeControl
-										label={ __( "Angle" ) }
-										value={ gradientAngle }
-										onChange={ ( value ) => setAttributes( { gradientAngle: value } ) }
-										min={ 0 }
-										max={ 360 }
-										allowReset
-									/>
-								}
-								{ "radial" == gradientType && <SelectControl
-										label={ __( "Type" ) }
-										value={ gradientPosition }
-										onChange={ ( value ) => setAttributes( { gradientPosition: value } ) }
-										options={ [
-											{ value: "center center", label: __( "Center Center" ) },
-											{ value: "center left", label: __( "Center Left" ) },
-											{ value: "center right", label: __( "Center Right" ) },
-											{ value: "top center", label: __( "Top Center" ) },
-											{ value: "top left", label: __( "Top Left" ) },
-											{ value: "top right", label: __( "Top Right" ) },
-											{ value: "bottom center", label: __( "Bottom Center" ) },
-											{ value: "bottom left", label: __( "Bottom Left" ) },
-											{ value: "bottom right", label: __( "Bottom Right" ) },
-										] }
-									/>
-								}
+								<GradientSettings attributes={ attributes }	setAttributes={ setAttributes }/>
 							</Fragment>
 							)
 						}

@@ -36,7 +36,7 @@ const attributes = {
 	},
 	boxBgColor: {
 		type: "string",
-		default: "#eeeeee"
+		default: "#FFFFFF"
 	},
 	boxPaddingTypeMobile: {
 		type: "string",
@@ -84,11 +84,11 @@ const attributes = {
 	},
 	borderRadius: {
 		type: "number",
-		default : 4
+		default : 2
 	},
 	borderColor: {
 		type: "string",
-		default: "#313131"
+		default: "#D2D2D2"
 	},
 	questionTextColor: {
 		type: "string",
@@ -96,7 +96,7 @@ const attributes = {
 	},
 	questionTextActiveColor: {
 		type: "string",
-		default: "#313131"
+		default: "#656565"
 	},
 	questionPaddingTypeDesktop: {
 		type: "string",
@@ -262,15 +262,15 @@ const attributes = {
 	},
 	iconSize: {
 		type: "number",
-		default : 15
+		default : 12
 	},
 	iconSizeTablet: {
 		type: "number",
-		default : 15
+		default : 12
 	},
 	iconSizeMobile: {
 		type: "number",
-		default : 15
+		default : 12
 	},
 	iconSizeType: {
 		type: "string",

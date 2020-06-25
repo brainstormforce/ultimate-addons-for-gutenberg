@@ -5,6 +5,7 @@
 import classnames from "classnames"
 import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
 import styling from "./styling"
+import GradientSettings from "../../components/gradient-settings"
 
 const { __ } = wp.i18n
 
@@ -156,6 +157,7 @@ export default class UAGBColumnEdit extends Component {
 				mobilePaddingType,
 				tabletPaddingType,
 				desktopPaddingType,
+				gradientValue
 			},
 			setAttributes,
 			className,
@@ -792,55 +794,7 @@ export default class UAGBColumnEdit extends Component {
 					}
 					{ "gradient" == backgroundType &&
 							( <Fragment>
-								<PanelColorSettings
-									title={ __( "Color Settings" ) }
-									colorSettings={ [
-										{
-											value: gradientColor2,
-											onChange:( value ) => setAttributes( { gradientColor2: value } ),
-											label: __( "Color 1" ),
-										},
-										{
-											value: gradientColor1,
-											onChange:( value ) => setAttributes( { gradientColor1: value } ),
-											label: __( "Color 2" ),
-										},
-									] }
-								>
-								</PanelColorSettings>
-								<SelectControl
-									label={ __( "Type" ) }
-									value={ gradientType }
-									onChange={ ( value ) => setAttributes( { gradientType: value } ) }
-									options={ [
-										{ value: "linear", label: __( "Linear" ) },
-										{ value: "radial", label: __( "Radial" ) },
-									] }
-								/>
-								<RangeControl
-									label={ __( "Location 1" ) }
-									value={ gradientLocation1 }
-									onChange={ ( value ) => setAttributes( { gradientLocation1: value } ) }
-									min={ 0 }
-									max={ 100 }
-									allowReset
-								/>
-								<RangeControl
-									label={ __( "Location 2" ) }
-									value={ gradientLocation2 }
-									onChange={ ( value ) => setAttributes( { gradientLocation2: value } ) }
-									min={ 0 }
-									max={ 100 }
-									allowReset
-								/>
-								<RangeControl
-									label={ __( "Angle" ) }
-									value={ gradientAngle }
-									onChange={ ( value ) => setAttributes( { gradientAngle: value } ) }
-									min={ 0 }
-									max={ 360 }
-									allowReset
-								/>
+								<GradientSettings attributes={ this.props.attributes }	setAttributes={ setAttributes }/>
 							</Fragment> )
 					}
 					{ ( "color" == backgroundType || ( "image" == backgroundType && backgroundImage ) || "gradient" == backgroundType ) &&

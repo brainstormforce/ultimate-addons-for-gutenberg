@@ -244,6 +244,10 @@ const attributes = {
 		type: "string",
 		default: 'px'
 	},
+	gradientValue: {
+		type: "string",
+		default: "",
+	},
 }
 
 export default attributes

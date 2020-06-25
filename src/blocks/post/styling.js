@@ -91,7 +91,28 @@ function styling( props ) {
 		paginationAlignment,
 		inheritFromTheme,
 		postPagination,
-		paginationMarkup
+		paginationMarkup,
+		paginationType,
+		paginationEventType,
+		paginationAlign,
+		paginationTextColor,
+		paginationMasonryBgColor,
+		paginationMasonryBorderStyle,
+		paginationMasonryBorderWidth,
+		paginationMasonryBorderRadius,
+		paginationMasonryBorderColor,
+		paginationTextHoverColor,
+		paginationBgHoverColor,
+		paginationFontSize,
+		loaderColor,
+		loaderSize,
+		paginationButtonPaddingType,
+		vpaginationButtonPaddingMobile,
+		vpaginationButtonPaddingTablet,
+		vpaginationButtonPaddingDesktop,
+		hpaginationButtonPaddingMobile,
+		hpaginationButtonPaddingTablet,
+		hpaginationButtonPaddingDesktop,
 	} = props.attributes
 
 	var mobile_selectors = {}
@@ -295,6 +316,7 @@ function styling( props ) {
 		}
 	}
 
+	
 
 	if ( linkBox ) {
 		selectors[" .uagb-post__inner-wrap"]["cursor"] = "pointer"
@@ -376,6 +398,53 @@ function styling( props ) {
 				"font-size": generateCSSUnit( ctaFontSizeTablet, ctaFontSizeType ),
 				"line-height": ctaLineHeightTablet + ctaLineHeightType,
 			},
+		}
+	}
+
+	if ( 'infinite' === paginationType ) {
+
+		if ( 'button' === paginationEventType ) {
+			selectors[' .uagb-post__load-more-wrap'] = {
+				'text-align' : paginationAlign,
+			} 
+			selectors[' .uagb-post__load-more-wrap .uagb-post-pagination-button'] = {
+
+				'color' : paginationTextColor,
+				"background-color" : paginationMasonryBgColor,
+				"border-style" : paginationMasonryBorderStyle,
+				"border-width" : generateCSSUnit( paginationMasonryBorderWidth, 'px' ),
+				"border-radius" : generateCSSUnit( paginationMasonryBorderRadius, 'px' ),
+				"border-color" : paginationMasonryBorderColor,
+				"font-size": generateCSSUnit( paginationFontSize, 'px' ),
+				"padding-top": generateCSSUnit( vpaginationButtonPaddingDesktop, paginationButtonPaddingType ),
+				"padding-bottom": generateCSSUnit( vpaginationButtonPaddingDesktop, paginationButtonPaddingType ),
+				"padding-right": generateCSSUnit( hpaginationButtonPaddingDesktop, paginationButtonPaddingType ),
+				"padding-left": generateCSSUnit( hpaginationButtonPaddingDesktop, paginationButtonPaddingType ),
+
+			}
+			selectors[' .uagb-post__load-more-wrap .uagb-post-pagination-button:hover'] = {
+				'color' : paginationTextHoverColor,
+				"background-color" : paginationBgHoverColor,
+			}
+			mobile_selectors[' .uagb-post__load-more-wrap .uagb-post-pagination-button'] = {
+				"padding-top": generateCSSUnit( vpaginationButtonPaddingMobile, paginationButtonPaddingType ),
+				"padding-bottom": generateCSSUnit( vpaginationButtonPaddingMobile, paginationButtonPaddingType ),
+				"padding-right": generateCSSUnit( hpaginationButtonPaddingMobile, paginationButtonPaddingType ),
+				"padding-left": generateCSSUnit( hpaginationButtonPaddingMobile, paginationButtonPaddingType ),
+			}
+			tablet_selectors[' .uagb-post__load-more-wrap .uagb-post-pagination-button'] = {
+				"padding-top": generateCSSUnit( vpaginationButtonPaddingTablet, paginationButtonPaddingType ),
+				"padding-bottom": generateCSSUnit( vpaginationButtonPaddingTablet, paginationButtonPaddingType ),
+				"padding-right": generateCSSUnit( hpaginationButtonPaddingTablet, paginationButtonPaddingType ),
+				"padding-left": generateCSSUnit( hpaginationButtonPaddingTablet, paginationButtonPaddingType ),
+			}
+		}
+		if ( 'scroll' === paginationEventType ) {
+			selectors['.uagb-post-grid .uagb-post-inf-loader div'] = {
+				"width" : generateCSSUnit( loaderSize, "px" ),
+				"height" : generateCSSUnit( loaderSize, "px" ),
+				"background-color" : loaderColor
+			}
 		}
 	}
 

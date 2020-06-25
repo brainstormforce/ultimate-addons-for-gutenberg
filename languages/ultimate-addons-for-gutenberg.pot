@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Ultimate Addons for Gutenberg 1.16.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-addons-for-gutenberg\n"
-"POT-Creation-Date: 2020-06-19 09:57:32+00:00\n"
+"POT-Creation-Date: 2020-06-22 08:22:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -473,7 +473,7 @@ msgid "Inline Notice"
 msgstr ""
 
 #: classes/class-uagb-config.php:1138
-msgid "This block helps you add inline notice."
+msgid "This block helps you add an inline notice."
 msgstr ""
 
 #: classes/class-uagb-config.php:1187
@@ -512,7 +512,7 @@ msgstr ""
 
 #: classes/class-uagb-config.php:1399 classes/class-uagb-config.php:1483
 #: classes/class-uagb-config.php:1584 dist/blocks/post/class-uagb-post.php:313
-#: dist/blocks/post/class-uagb-post.php:1178
+#: dist/blocks/post/class-uagb-post.php:1179
 #: dist/blocks/post-timeline/class-uagb-post-timeline.php:447
 msgid "Read More"
 msgstr ""

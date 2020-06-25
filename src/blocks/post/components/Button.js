@@ -6,6 +6,10 @@ class Button extends React.Component {
 	render() {
 
 		const { post, attributes } = this.props
+		
+		if ( attributes.displayPostContentRadio == "full_post" ) {
+			return null;
+		}
 
 		let target = ( attributes.newTab ) ? "_blank" : "_self"
 

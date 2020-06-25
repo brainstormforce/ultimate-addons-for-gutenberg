@@ -917,6 +917,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				'order'               => ( isset( $attributes['order'] ) ) ? $attributes['order'] : 'desc',
 				'orderby'             => ( isset( $attributes['orderBy'] ) ) ? $attributes['orderBy'] : 'date',
 				'ignore_sticky_posts' => 1,
+				'paged'               => 1,
 			);
 			
 			if (  $attributes['excludeCurrentPost'] ) {
@@ -933,7 +934,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				);
 			}
 
-			if ( isset( $attributes['postPagination'] ) && true === $attributes['postPagination'] ) {
+			if ( 'grid' === $block_type && isset( $attributes['postPagination'] ) && true === $attributes['postPagination'] ) {
 
 				if ( get_query_var( 'paged' ) ) {
 
@@ -950,6 +951,12 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				}
 				$query_args['posts_per_page'] = $attributes['postsToShow'];
 				$query_args['paged']          = $paged;
+
+			}
+
+			if ( 'masonry' === $block_type && isset( $attributes['paginationType'] ) && 'none' !== $attributes['paginationType'] && isset( $attributes['paged'] ) ) {
+
+				$query_args['paged'] = $attributes['paged'];
 
 			}
 

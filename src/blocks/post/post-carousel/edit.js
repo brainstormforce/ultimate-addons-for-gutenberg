@@ -33,7 +33,8 @@ const {
 	Button,
 	TabPanel,
 	Dashicon,
-	TextControl
+	TextControl,
+	RadioControl
 } = wp.components
 
 const {
@@ -204,7 +205,13 @@ class UAGBPostCarousel extends Component {
 			postType,
 			taxonomyType,
 			equalHeight,
+<<<<<<< HEAD
 			excludeCurrentPost,
+=======
+			inheritFromTheme,
+			postDisplaytext,
+			displayPostContentRadio
+>>>>>>> 0beaf8cc852cfc3de442c3f0b9df2fbd1faac0bc
 		} = attributes
 
 		const hoverSettings = (
@@ -612,17 +619,37 @@ class UAGBPostCarousel extends Component {
 						checked={ displayPostExcerpt }
 						onChange={ ( value ) => setAttributes( { displayPostExcerpt: ! displayPostExcerpt } ) }
 					/>
-					{ displayPostExcerpt &&
-						<RangeControl
-							label={ __( "Excerpt Length" ) }
-							value={ excerptLength }
-							onChange={ ( value ) => setAttributes( { excerptLength: value } ) }
-							min={ 1 }
-							max={ 500 }
-							allowReset
+					{ displayPostExcerpt && (
+						<RadioControl
+							label={ __( 'Show:' ) }
+							selected={ displayPostContentRadio }
+							options={ [
+								{ label: __( 'Excerpt' ), value: "excerpt" },
+								{label: __( 'Full post' ), value: "full_post",},
+							] }
+							onChange={ ( value ) =>
+								setAttributes( {
+									displayPostContentRadio: value,
+								} )
+							}
 						/>
-					}
+					) }
+					{ displayPostExcerpt &&
+						displayPostContentRadio === 'excerpt' && (
+							<RangeControl
+								label={ __( 'Max number of words in excerpt' ) }
+								value={ excerptLength }
+								onChange={ ( value ) =>
+									setAttributes( { excerptLength: value } )
+								}
+								min={ 1 }
+								max={ 100 }
+								allowReset
+							/>
+					)}
 				</PanelBody>
+				
+				{ displayPostExcerpt && displayPostContentRadio === 'excerpt' && (
 				<PanelBody title={ __( "Read More Link" ) } initialOpen={ false }>
 					<ToggleControl
 						label={ __( "Show Read More Link" ) }
@@ -740,7 +767,7 @@ class UAGBPostCarousel extends Component {
 							</TabPanel>
 						</Fragment>
 					}
-				</PanelBody>
+				</PanelBody>)}
 				<PanelBody title={ __( "Typography" ) } initialOpen={ false }>
 					<SelectControl
 						label={ __( "Title Tag" ) }

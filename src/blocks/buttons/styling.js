@@ -19,7 +19,7 @@ function styling( props ) {
 	var tablet_selectors = {}
 	var mobile_selectors = {}
 
-	selectors[" .uagb-buttons-repeater"] = {
+	selectors[" .uagb-buttons-repeater:not(.wp-block-button__link)"] = {
 		"font-family": fontFamily,
 		"font-weight": fontWeight,
 	}
@@ -90,7 +90,7 @@ function styling( props ) {
 		}
 	} else {
 		selectors[" .uagb-button__wrapper"]["justify-content"] = "center";
-		selectors[" .uagb-button__wrapper"]["width"] = "100%";
+		selectors[" .uagb-buttons-repeater"]["width"] = "100%";
 		selectors[" .wp-block[data-type='uagb/buttons-child']:first-child .uagb-button__wrapper"] = {
 			"margin-left" : 0
 		}

@@ -6,6 +6,15 @@
 .uagb-post-grid {
 	margin: 0;
 	position: relative;
+	.uagb-post__load-more-wrap {
+		width: 100%;
+		.uagb-post-pagination-button {
+			cursor: pointer;
+		}
+		a {
+			color: inherit;
+		}
+	}
 
 	.is-grid {
 
@@ -365,3 +374,54 @@
 		display: inline-block;
    }
 }
+.uagb-post-grid .uagb-post-inf-loader {
+	margin: 0 auto;
+	min-height: 58px;
+	line-height: 58px;
+	width: 160px;
+	text-align: center;
+	div {
+		width: 18px;
+		height: 18px;
+		background-color: #0085ba;
+		-webkit-border-radius: 100%;
+		border-radius: 100%;
+		display: inline-block;
+		-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+		animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+	}
+	.uagb-post-loader-1 {
+		-webkit-animation-delay: -0.32s;
+		animation-delay: -0.32s;
+	}
+	.uagb-post-loader-2 {
+		-webkit-animation-delay: -0.16s;
+		animation-delay: -0.16s;
+	}
+}
+
+  @-webkit-keyframes sk-bouncedelay {
+	0%,
+	80%,
+	100% {
+	  -webkit-transform: scale(0);
+	  transform: scale(0);
+	}
+	40% {
+	  -webkit-transform: scale(1);
+	  transform: scale(1);
+	}
+  }
+  
+  @keyframes sk-bouncedelay {
+	0%,
+	80%,
+	100% {
+	  -webkit-transform: scale(0);
+	  transform: scale(0);
+	}
+	40% {
+	  -webkit-transform: scale(1);
+	  transform: scale(1);
+	}
+  }

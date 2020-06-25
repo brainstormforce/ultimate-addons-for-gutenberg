@@ -211,6 +211,16 @@ class UAGB_Init_Blocks {
 			}
 		}
 
+		$uagb_masonry_ajax_nonce = wp_create_nonce( 'uagb_masonry_ajax_nonce' );
+		wp_localize_script(
+			'uagb-post-js',
+			'uagb_data',
+			array(
+				'ajax_url'                => admin_url( 'admin-ajax.php' ),
+				'uagb_masonry_ajax_nonce' => $uagb_masonry_ajax_nonce,
+			)
+		);
+
 	} // End function editor_assets().
 
 	/**
