@@ -1082,7 +1082,6 @@ export default withSelect( ( select, props ) => {
 	const { categories, postsToShow, order, orderBy, postType, taxonomyType, paginationMarkup, postPagination, excludeCurrentPost } = props.attributes
 	const { setAttributes } = props
 	const { getEntityRecords } = select( "core" )
-	const postId = select("core/editor").getCurrentPostId()
 
 	let allTaxonomy = uagb_blocks_info.all_taxonomy
 	let currentTax = allTaxonomy[postType]
@@ -1120,16 +1119,15 @@ export default withSelect( ( select, props ) => {
 		}
 	}
 
-	let latestPostsQuery = {
+	var latestPostsQuery = {
 		order: order,
 		orderby: orderBy,
 		per_page: postsToShow, 
-		exclude: postId
 	}
+	
 	if ( excludeCurrentPost ) {
-		console.log("innnn")
-		latestPostsQuery[exclude] = postId
-		//latestPostsQuery[ exclude ] = select("core/editor").getCurrentPostId()
+		
+		latestPostsQuery['exclude'] = select("core/editor").getCurrentPostId();
 	}
 
 	latestPostsQuery[rest_base] = categories

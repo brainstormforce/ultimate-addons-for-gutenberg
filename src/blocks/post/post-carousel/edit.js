@@ -205,13 +205,10 @@ class UAGBPostCarousel extends Component {
 			postType,
 			taxonomyType,
 			equalHeight,
-<<<<<<< HEAD
 			excludeCurrentPost,
-=======
 			inheritFromTheme,
 			postDisplaytext,
 			displayPostContentRadio
->>>>>>> 0beaf8cc852cfc3de442c3f0b9df2fbd1faac0bc
 		} = attributes
 
 		const hoverSettings = (
