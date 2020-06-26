@@ -406,15 +406,11 @@ class UAGBPostGrid extends Component {
 							<hr className="uagb-editor__separator" />
 						</Fragment>
 					}
-					
-					
 					<ToggleControl
 						label={ __( "Exclude Current Post" ) }
 						checked={ excludeCurrentPost }
 						onChange={ ( value ) => setAttributes( { excludeCurrentPost: ! excludeCurrentPost } ) }
-					/>
-					
-				
+					/>		
 					<RangeControl
 							label={ __( "Posts Per Page" ) }
 							value={ postsToShow }
@@ -1083,15 +1079,17 @@ class UAGBPostGrid extends Component {
 
 export default withSelect( ( select, props ) => {
 
-	const { categories, postsToShow, order, orderBy, postType, taxonomyType, paginationMarkup, postPagination } = props.attributes
+	const { categories, postsToShow, order, orderBy, postType, taxonomyType, paginationMarkup, postPagination, excludeCurrentPost } = props.attributes
 	const { setAttributes } = props
 	const { getEntityRecords } = select( "core" )
+	const postId = select("core/editor").getCurrentPostId()
 
 	let allTaxonomy = uagb_blocks_info.all_taxonomy
 	let currentTax = allTaxonomy[postType]
 	let taxonomy = ""
 	let categoriesList = []
 	let rest_base = ""
+	let exclude =""
 
 	if ( true === postPagination && 'empty' === paginationMarkup ) {
 		$.ajax({
@@ -1125,7 +1123,13 @@ export default withSelect( ( select, props ) => {
 	let latestPostsQuery = {
 		order: order,
 		orderby: orderBy,
-		per_page: postsToShow,
+		per_page: postsToShow, 
+		exclude: postId
+	}
+	if ( excludeCurrentPost ) {
+		console.log("innnn")
+		latestPostsQuery[exclude] = postId
+		//latestPostsQuery[ exclude ] = select("core/editor").getCurrentPostId()
 	}
 
 	latestPostsQuery[rest_base] = categories
