@@ -123,7 +123,9 @@ window.addEventListener(
 );
 
 function faqClick( e, faqItem, questionButtons ) {
-
+	if ( e.target.tagName == "A" ) {
+		return;
+	}
 	e.preventDefault();
 					
 	if ( faqItem.classList.contains('uagb-faq-item-active') ) {
