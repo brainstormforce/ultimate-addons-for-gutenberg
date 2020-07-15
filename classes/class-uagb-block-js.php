@@ -130,6 +130,7 @@ if ( ! class_exists( 'UAGB_Block_JS' ) ) {
 				for ( var i = 0; i < ssLink.length; i++ ) {
 					ssLink[i].addEventListener( "click", function() {
 						var social_url = this.dataset.href;
+						console.log(social_url);
 						var target = "";
 						if( social_url == "mailto:?body=" ) {
 							target = "_self";
