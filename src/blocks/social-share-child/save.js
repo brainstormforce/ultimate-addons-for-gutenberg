@@ -25,11 +25,7 @@ export default function save( props ) {
 		link,
 	} = props.attributes
 
-	let url = ""
-
-	if( null != current_url ) {
-		url = links[type]
-	}
+	let url = links[type]
 
 	let image_icon_html = ""
 
