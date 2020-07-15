@@ -1,5 +1,5 @@
 /**
- * BLOCK: Social Share
+ * BLOCK: Social Share child
  */
 
 import classnames from "classnames"

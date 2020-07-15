@@ -170,6 +170,7 @@ When you use the Ultimate Addons for Gutenberg along with the free Astra theme, 
 * Improvement: Post Layout - Added an option to exclude current post.
 * Improvement: Inline Notice - Added heading options for notice title.
 * Fix: Info Box - CSS selector affecting all of Gutenberg.
+* Fix: Social Share - Not working with reusable block.
 
 = 1.16.0 =
 * New: WP - Search Block.

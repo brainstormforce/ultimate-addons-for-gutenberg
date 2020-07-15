@@ -25,8 +25,6 @@ export default function save( props ) {
 	} = props.attributes
 
 	let url = links[type]
-	
-	console.log(url)
 
 	let image_icon_html = ""
 
