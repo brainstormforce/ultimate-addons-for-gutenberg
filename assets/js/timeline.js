@@ -28,31 +28,34 @@
 				var last_item_top = $card_last.offset().top - $(this).offset().top
 				var $last_item, parent_top
 
-				if( $(this).hasClass("uagb-timeline__arrow-center")) {
+				switch(true) {
 
-					line_outer.css("bottom", timeline_end_icon.top )
+					case $(this).hasClass("uagb-timeline__arrow-center"):
+						line_outer.css("bottom", timeline_end_icon.top )
 
-					parent_top = last_item_top - timeline_start_icon.top
-					$last_item = parent_top + timeline_end_icon.top
+						parent_top = last_item_top - timeline_start_icon.top
+						$last_item = parent_top + timeline_end_icon.top
+					  break;
 
-				} else if( $(this).hasClass("uagb-timeline__arrow-top")) {
+					case $(this).hasClass("uagb-timeline__arrow-top"):
+						var top_height = timeline_card_height - timeline_end_icon.top
+						line_outer.css("bottom", top_height )
+	
+						$last_item = last_item_top
+					  break;
 
-					var top_height = timeline_card_height - timeline_end_icon.top
-					line_outer.css("bottom", top_height )
+					case $(this).hasClass("uagb-timeline__arrow-bottom"):
+						var bottom_height = timeline_card_height - timeline_end_icon.top
+						line_outer.css("bottom", bottom_height )
+	
+						parent_top = last_item_top - timeline_start_icon.top
+						$last_item = parent_top + timeline_end_icon.top
+					  break;
 
-					$last_item = last_item_top
-
-				} else if( $(this).hasClass("uagb-timeline__arrow-bottom")) {
-
-					var bottom_height = timeline_card_height - timeline_end_icon.top
-					line_outer.css("bottom", bottom_height )
-
-					parent_top = last_item_top - timeline_start_icon.top
-					$last_item = parent_top + timeline_end_icon.top
-
+					default:
+					  // code block
 				}
 
-				var num = 0
 				var elementEnd = $last_item + 20
 				var connectorHeight = 3 * $(this).find(".uagb-timeline__marker:first").height()
 				var viewportHeight = document.documentElement.clientHeight 
@@ -79,7 +82,6 @@
 					if ( (photoViewportOffsetTop  + viewportHeightHalf ) < elementEnd ) {
 						if (0 > photoViewportOffsetTop) {
 							line_inner.height((viewportHeightHalf) - Math.abs(photoViewportOffsetTop))
-							++num
 						} else {
 							line_inner.height((viewportHeightHalf) + photoViewportOffsetTop )
 						}
@@ -92,7 +94,7 @@
 
 				//Icon bg color and icon color
 				var timeline_icon_pos, timeline_card_pos
-				var elementPos, elementCardPos
+				// var elementPos, elementCardPos
 				var timeline_icon_top, timeline_card_top
 				var timeline_icon = $(this).find(".uagb-timeline__marker"),
 					animate_border  = $(this).find(".uagb-timeline__field-wrap")
@@ -104,13 +106,11 @@
 				for (var i = 0; i < timeline_icon.length; i++) {
 					timeline_icon_pos = $(timeline_icon[i]).offset().top
 					timeline_card_pos = $(animate_border[i]).offset().top
-					elementPos = $(this).offset().top
-					elementCardPos = $(this).offset().top
 
 					timeline_icon_top = timeline_icon_pos - $document.scrollTop()
 					timeline_card_top = timeline_card_pos - $document.scrollTop()
 
-					if ( ( timeline_card_top ) < ( ( viewportHeightHalf ) ) ) {
+					if ( ( timeline_card_top ) < ( viewportHeightHalf ) ) {
 
 						animate_border[i].classList.remove("out-view")
 						animate_border[i].classList.add("in-view")
@@ -121,18 +121,16 @@
 						animate_border[i].classList.remove("in-view")
 					}
 
-					if ( ( timeline_icon_top ) < ( ( viewportHeightHalf ) ) ) {
+					if ( ( timeline_icon_top ) < ( viewportHeightHalf ) ) {
 
 						// Add classes if element is above than half of viewport.
 						timeline_icon[i].classList.remove("uagb-timeline__out-view-icon")
 						timeline_icon[i].classList.add("uagb-timeline__in-view-icon")
 
 					} else {
-
 						// Remove classes if element is below than half of viewport.
 						timeline_icon[i].classList.add("uagb-timeline__out-view-icon")
 						timeline_icon[i].classList.remove("uagb-timeline__in-view-icon")
-
 					}
 				}
 
