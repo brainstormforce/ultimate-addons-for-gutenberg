@@ -173,9 +173,9 @@
 
 .uagb-rest_menu__outer-wrap{
     position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
 }
 
 .uagb-rm__overlay{
@@ -185,6 +185,7 @@
     left: 0;
     position: absolute;
     background:transparent;
+    float: left;
 }
 .uagb-tm-parent{
     padding:30px;
@@ -206,6 +207,7 @@
 .uagb-rest_menu__wrap.uagb-rm__desk-column-3{
     display: block;
     width: 33%;
+    float: left;
     width: calc(100% / 3);
     padding-left: 10px;
     padding-right: 10px;
@@ -213,12 +215,14 @@
 .uagb-rest_menu__wrap.uagb-rm__desk-column-2{
     display: block;
     width: 49%;
+    float: left;
     padding-left: 10px;
     padding-right: 10px;
 }
 .uagb-rest_menu__wrap.uagb-rm__desk-column-1{
     display: block;
     width: 100%;
+    float: left;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -281,17 +285,20 @@
 
     .uagb-rm__tablet-column-3.uagb-rest_menu__wrap{   
         width: 33%;
+        float: left;
         padding-left: 10px;
         padding-right: 10px;
     }
 
     .uagb-rm__tablet-column-2.uagb-rest_menu__wrap{   
         width: 50%;
+        float: left;
         padding-left: 10px;
         padding-right: 10px;
     }
     .uagb-rm__tablet-column-1.uagb-rest_menu__wrap{   
         width: 100%;
+        float: left;
         padding-left: 10px;
         padding-right: 10px;
     }
@@ -323,16 +330,19 @@
     }
     .uagb-rest_menu__wrap.uagb-rm__mobile-column-3{
         width: 33%;
+        float: left;
         padding-left: 10px;
         padding-right: 10px;
     }
     .uagb-rest_menu__wrap.uagb-rm__mobile-column-2{
         width: 50%;
+        float: left;
         padding-left: 10px;
         padding-right: 10px;
     }
     .uagb-rest_menu__wrap.uagb-rm__mobile-column-1{
         width: 100%;
+        float: left;
         padding-left: 10px;
         padding-right: 10px;
     }
