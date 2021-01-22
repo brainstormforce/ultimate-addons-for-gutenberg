@@ -19,6 +19,7 @@ export default function save( props ) {
 		className,
 		imagePosition,
 	} = props.attributes
+	console.log(props.attributes);
 
 	return (
 		<Fragment>

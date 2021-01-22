@@ -3,7 +3,7 @@
 */
 
 function PositionClasses( attributes ) {
-	
+	console.log(attributes);
 	var iconimgStyle_class = ""
 	let imge_cnt = 0
 	let image = attributes.image
