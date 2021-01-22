@@ -124,6 +124,31 @@ const deprecated = [
 			)
 		},
 	},
+
+	//copy from master branch
+	{
+		attributes,
+		save: function( props ) {
+
+			const {
+				block_id,
+				className,
+			} = props.attributes
+		
+			return (
+				<Fragment>
+					<div className={ classnames(
+							className,
+							"uagb-rest_menu__outer-wrap",
+							`uagb-block-${block_id}`,					
+						) }
+						>				
+					<InnerBlocks.Content/>
+					</div>
+				</Fragment>
+			)
+		},
+	},
 ]
 
 export default deprecated;
