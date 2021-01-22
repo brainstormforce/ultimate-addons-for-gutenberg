@@ -24,7 +24,10 @@ const attributes = {
 		type: "string",
 		default: "top"
 	},
-	
+	imageAlignment:{
+		type: "string",
+		default: "top"
+	},
 	imageSize:{
 		type: "string",
 		default: "medium",

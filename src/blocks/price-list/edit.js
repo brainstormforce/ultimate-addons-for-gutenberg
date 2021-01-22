@@ -100,7 +100,6 @@ class UAGBRestaurantMenu extends Component {
 		});
 		setAttributes( { imageSize: value } )
 	}
-	
 	setimageAlignment (value) {
 		const { setAttributes } = this.props
 		const getChildBlocks = select('core/block-editor').getBlocks( this.props.clientId );
@@ -109,9 +108,7 @@ class UAGBRestaurantMenu extends Component {
 			pricelistChild.attributes.imageAlignment = value
 		});
 		setAttributes( { imageAlignment: value } )
-	}
-	
-	
+	}	
 	
 	/*
 	* Event to set Image as null while removing.
@@ -389,7 +386,7 @@ class UAGBRestaurantMenu extends Component {
 								<SelectControl
 								label={ __( "Vertical Alignment" ) }
 								value={ imageAlignment }
-								onChange={ ( value ) => setAttributes( { imageAlignment: value } ) }
+								onChange={this.setimageAlignment}
 								options={ [
 									{ value: "top", label: __( "Top" ) },
 									{ value: "middle", label: __( "Middle" ) },
