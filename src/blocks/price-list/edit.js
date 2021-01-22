@@ -697,7 +697,6 @@ class UAGBRestaurantMenu extends Component {
 																pricelistChild.attributes.columns = this.props.attributes.columns;
 																pricelistChild.attributes.tcolumns = this.props.attributes.tcolumns;
 																pricelistChild.attributes.mcolumns = this.props.attributes.mcolumns;
-																pricelistChild.attributes.imageAlignment = this.props.attributes.imageAlignment;
 															});
 														}
 														
