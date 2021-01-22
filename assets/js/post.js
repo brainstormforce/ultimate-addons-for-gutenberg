@@ -5,25 +5,17 @@
 	UAGBPostCarousel = {
 
 		_setHeight: function( scope ) {
+			
 			var post_wrapper = scope.find(".slick-slide"),
 				post_active = scope.find(".slick-slide.slick-active"),
 				max_height = -1,
 				wrapper_height = -1,
-				post_active_height = -1,
-				is_background_enabled = scope.parents(".uagb-post-grid").hasClass("uagb-post__image-position-background")
+				post_active_height = -1;
 
 			post_active.each( function( i ) {
 				var this_height = $( this ).outerHeight(),
 					blog_post = $( this ).find( ".uagb-post__inner-wrap" ),
-					blog_post_height = blog_post.outerHeight(),
-					post_img_ht = $( this ).find( ".uagb-post__image" ).outerHeight(),
-					post_text_ht = $( this ).find( ".uagb-post__text" ).outerHeight()
-
-				if( is_background_enabled ){
-					blog_post_height =  post_text_ht
-				}else{
-					blog_post_height = post_img_ht+ post_text_ht
-				}
+					blog_post_height = blog_post.outerHeight();
 
 				if( max_height < blog_post_height ) {
 					max_height = blog_post_height

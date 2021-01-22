@@ -5,7 +5,7 @@
 **Requires at least:** 4.7  
 **Requires PHP:** 5.6  
 **Tested up to:** 5.6  
-**Stable tag:** 1.20.0  
+**Stable tag:** 1.20.1  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -165,6 +165,11 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 1. /assets/screenshots/1.png
 
 ## Changelog ##
+
+### 1.20.1 ###
+* Fix: Content Timeline - Content not being saved issue.
+* Fix: Post Carousel - Posts layout breaks when equal height option is enabled.
+* Fix: Table of Content - Hyperlink not being scrolled to respective heading issue.
 
 ### 1.20.0 ###
 * New: Lottie Block.

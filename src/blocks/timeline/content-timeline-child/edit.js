@@ -144,11 +144,9 @@ class UAGBcontentTimelineChild extends Component {
 												<RichText
 													tagName={ headingTag }
 													value={ time_heading }
+													onChange={ ( value ) => setAttributes( { time_heading: value } ) }
 													placeholder={ __( "Write a Heading" ) }
 													className='uagb-timeline__heading'
-													onChange={ ( value ) => {
-														setAttributes( { "tm_content": "p" } )
-													} }
 													onMerge={ mergeBlocks }
 													unstableOnSplit={
 														insertBlocksAfter ?
@@ -167,6 +165,7 @@ class UAGBcontentTimelineChild extends Component {
 											<RichText
 												tagName= "p"
 												value={ time_desc }
+												onChange={ ( value ) => setAttributes( { time_desc: value } ) }
 												placeholder={ __( "Write a Description" ) }
 												className='uagb-timeline-desc-content'
 												onMerge={ mergeBlocks }
