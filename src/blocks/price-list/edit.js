@@ -389,7 +389,7 @@ class UAGBRestaurantMenu extends Component {
 								<SelectControl
 								label={ __( "Vertical Alignment" ) }
 								value={ imageAlignment }
-								onChange={this.setimageAlignment}
+								onChange={ ( value ) => setAttributes( { imageAlignment: value } ) }
 								options={ [
 									{ value: "top", label: __( "Top" ) },
 									{ value: "middle", label: __( "Middle" ) },
