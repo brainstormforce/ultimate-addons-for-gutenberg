@@ -170,6 +170,7 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 * Fix: Content Timeline - Content not being saved issue.
 * Fix: Post Carousel - Posts layout breaks when equal height option is enabled.
 * Fix: Table of Content - Hyperlink not being scrolled to respective heading issue.
+* Fix: Price List - validation issue when image alignment set to middle.
 
 ### 1.20.0 ###
 * New: Lottie Block.
