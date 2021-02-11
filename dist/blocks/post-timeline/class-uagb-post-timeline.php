@@ -509,11 +509,22 @@ if ( ! class_exists( 'UAGB_Post_Timeline' ) ) {
 			$attributes['post_type'] = 'timeline';
 
 			$recent_posts = UAGB_Helper::get_query( $attributes, 'timeline' );
-			$block_id     = 'uagb-block-' . $attributes['block_id'];
+
+			$block_id = 'uagb-block-' . $attributes['block_id'];
+
+			$animation_class = ( isset( $attributes['animationfield'] ) ) ? 'uag-animation-speed  uag-animation-' . $attributes['animationfield'] : '';
+
+			$animation_hover_class = ( isset( $attributes['animationhoverfield'] ) ) ? 'uag-hover-animation-' . $attributes['animationhoverfield'] : '';
+
+			$main_classes = array(
+				$block_id,
+				$animation_class,
+				$animation_hover_class,
+			);
 
 			ob_start();
 			?>
-			<div class = "uagb-timeline__outer-wrap <?php echo esc_html( $block_id ); ?>" >
+			<div class = "uagb-timeline__outer-wrap <?php echo esc_attr( implode( ' ', $main_classes ) ); ?>" >
 				<div  class = "<?php echo esc_html( $this->get_classes( $attributes ) ); ?>" >
 					<div class = "uagb-timeline-wrapper">
 						<div class = "uagb-timeline__main">

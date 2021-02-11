@@ -103,9 +103,15 @@ array_multisort(
 									'restaurant-menu-child',
 									'content-timeline-child',
 								);
+
+								if ( array_key_exists( 'extension', $info ) && $info['extension'] ) {
+									continue;
+								}
+
 								if ( in_array( $addon, $child_blocks, true ) ) {
 									continue;
 								}
+
 								$title_url     = ( isset( $info['title_url'] ) && ! empty( $info['title_url'] ) ) ? 'href="' . esc_url( $info['title_url'] ) . '"' : '';
 								$anchor_target = ( isset( $info['title_url'] ) && ! empty( $info['title_url'] ) ) ? "target='_blank' rel='noopener'" : '';
 

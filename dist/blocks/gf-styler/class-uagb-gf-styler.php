@@ -624,11 +624,16 @@ if ( ! class_exists( 'UAGB_GF_Styler' ) ) {
 			if ( $attributes['advancedValidationSettings'] ) {
 				$classes[] = 'uagb-gf-styler__error-yes';
 			}
+			$animation_class = ( isset( $attributes['animationfield'] ) ) ? 'uag-animation-speed  uag-animation-' . $attributes['animationfield'] : '';
+
+			$animation_hover_class = ( isset( $attributes['animationhoverfield'] ) ) ? 'uag-hover-animation-' . $attributes['animationhoverfield'] : '';
 
 			$main_classes = array(
 				'wp-block-uagb-gf-styler',
 				'uagb-gf-styler__outer-wrap',
 				'uagb-block-' . $attributes['block_id'],
+				$animation_class,
+				$animation_hover_class,
 			);
 
 			if ( isset( $attributes['className'] ) ) {

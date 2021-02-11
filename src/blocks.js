@@ -8,6 +8,7 @@
  * All blocks should be included here since this is the file that
  * Webpack is compiling as the input file.
  */
+import "./blocks/advanced-tab-animation/attributes.js"
 import "./blocks/advanced-heading/block.js"
 import "./blocks/post/block.js"
 import "./blocks/section/block.js"
@@ -39,6 +40,7 @@ import "./blocks/inline-notice/block.js"
 import "./blocks/wp-search/block.js"
 import "./blocks/review/block.js"
 import "./blocks/taxonomy-list/block.js"
+import "./blocks/advanced-tab-animation/block.js"
 import "./blocks/lottie/block.js"
 
 import UAGB_Block_Icons from "../dist/blocks/uagb-controls/block-icons"

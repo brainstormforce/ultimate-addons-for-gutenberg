@@ -204,6 +204,9 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 				$css_assets = ( isset( $blocks[ $curr_block_name ]['css_assets'] ) ) ? $blocks[ $curr_block_name ]['css_assets'] : array();
 
+				// Animation JS include.
+				wp_enqueue_script( 'uagb-advanced-tab-animation-js' );
+
 				foreach ( $js_assets as $asset_handle => $val ) {
 					// Scripts.
 					if ( 'uagb-faq-js' === $val ) {

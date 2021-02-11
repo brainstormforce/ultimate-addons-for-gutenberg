@@ -565,10 +565,16 @@ if ( ! class_exists( 'UAGB_CF7_Styler' ) ) {
 				$classes[] = 'uagb-cf7-styler__highlight-border';
 			}
 
+			$animation_class = ( isset( $attributes['animationfield'] ) ) ? 'uag-animation-speed  uag-animation-' . $attributes['animationfield'] : '';
+
+			$animation_hover_class = ( isset( $attributes['animationhoverfield'] ) ) ? 'uag-hover-animation-' . $attributes['animationhoverfield'] : '';
+
 			$main_classes = array(
 				'wp-block-uagb-cf7-styler',
 				'uagb-cf7-styler__outer-wrap',
 				'uagb-block-' . $attributes['block_id'],
+				$animation_class,
+				$animation_hover_class,
 			);
 
 			if ( isset( $attributes['className'] ) ) {

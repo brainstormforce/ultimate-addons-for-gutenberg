@@ -27,6 +27,7 @@ class Blog extends React.Component {
 			arrowColor,
 			arrowDots,
 			equalHeight,
+			animationfield,
 			layoutConfig
 		} = attributes
 

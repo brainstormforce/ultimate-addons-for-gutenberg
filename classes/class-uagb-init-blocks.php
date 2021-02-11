@@ -160,6 +160,7 @@ class UAGB_Init_Blocks {
 		$block_assets    = UAGB_Config::get_block_assets();
 
 		foreach ( $blocks as $slug => $value ) {
+
 			$_slug = str_replace( 'uagb/', '', $slug );
 
 			if ( ! ( isset( $disabled_blocks[ $_slug ] ) && 'disabled' === $disabled_blocks[ $_slug ] ) ) {

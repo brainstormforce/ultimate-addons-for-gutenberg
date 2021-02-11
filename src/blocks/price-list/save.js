@@ -5,7 +5,6 @@
 // Import block dependencies and components.
 import classnames from "classnames"
 
-const { Fragment } = wp.element
 const {	InnerBlocks } = wp.blockEditor
 
 export default function save( props ) {
@@ -16,15 +15,13 @@ export default function save( props ) {
 	} = props.attributes
 
 	return (
-		<Fragment>
-			<div className={ classnames(
-					className,
-					"uagb-rest_menu__outer-wrap",
-					`uagb-block-${block_id}`,					
-				) }
-				>				
+		<div className={ classnames(
+				className,
+				"uagb-rest_menu__outer-wrap",
+				`uagb-block-${block_id}`,					
+			) }
+			>				
 			<InnerBlocks.Content/>
-			</div>
-		</Fragment>
+		</div>
 	)
 }

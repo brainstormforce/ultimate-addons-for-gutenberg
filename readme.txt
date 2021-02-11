@@ -166,6 +166,9 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 
 == Changelog ==
 
+= 1.21.0 =
+* Improvement: Add animation settings field in the Advanced Section for all blocks
+
 = 1.20.1 =
 * Fix: Content Timeline - Content not being saved issue.
 * Fix: Post Carousel - Posts layout breaks when equal height option is enabled.

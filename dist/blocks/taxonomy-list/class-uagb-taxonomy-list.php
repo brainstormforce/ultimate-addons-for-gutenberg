@@ -542,10 +542,17 @@ if ( ! class_exists( 'UAGB_Taxonomy_List' ) ) {
 			$noTaxDisplaytext = $attributes['noTaxDisplaytext'];
 			$showCount        = $attributes['showCount'];
 
-			$main_classes  = array(
+			$animation_class = ( isset( $attributes['animationfield'] ) ) ? 'uag-animation-speed  uag-animation-' . $attributes['animationfield'] : '';
+
+			$animation_hover_class = ( isset( $attributes['animationhoverfield'] ) ) ? 'uag-hover-animation-' . $attributes['animationhoverfield'] : '';
+
+			$main_classes = array(
 				'uagb-taxonomy__outer-wrap',
 				'uagb-block-' . $block_id,
+				$animation_class,
+				$animation_hover_class,
 			);
+
 			$inner_classes = array(
 				'uagb-taxonomy-wrap',
 				'uagb-layout-' . $layout,

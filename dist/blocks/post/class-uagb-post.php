@@ -825,12 +825,19 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 				'uagb-post__columns-mobile-' . $attributes['mcolumns'],
 			);
 
-			$block_id  = 'uagb-block-' . $attributes['block_id'];
+			$block_id = 'uagb-block-' . $attributes['block_id'];
+
+			$animation_class = ( isset( $attributes['animationfield'] ) ) ? 'uag-animation-speed  uag-animation-' . $attributes['animationfield'] : '';
+
+			$animation_hover_class = ( isset( $attributes['animationhoverfield'] ) ) ? 'uag-hover-animation-' . $attributes['animationhoverfield'] : '';
+
 			$outerwrap = array(
 				'uagb-post-grid',
 				( isset( $attributes['className'] ) ) ? $attributes['className'] : '',
 				'uagb-post__image-position-' . $attributes['imgPosition'],
 				$block_id,
+				$animation_hover_class,
+				$animation_class,
 			);
 
 			switch ( $layout ) {
