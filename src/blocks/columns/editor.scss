@@ -129,6 +129,10 @@
 	padding-left: 15px;
     padding-right: 15px;
 }
+.wp-block-uagb-columns.uagb-editor-preview-mode-mobile > .uagb-columns__inner-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout,
+.wp-block-uagb-columns.uagb-editor-preview-mode-tablet > .uagb-columns__inner-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout {
+	flex-wrap: wrap;
+}
 
 .wp-block-uagb-columns {
 	display: block;

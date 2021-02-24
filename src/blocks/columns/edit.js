@@ -21,7 +21,8 @@ const { __ } = wp.i18n
 const {
 	withSelect,
 	useDispatch,
-	withDispatch
+	withDispatch,
+	select
 } = wp.data
 const {
 	compose,
@@ -78,6 +79,9 @@ class UAGBColumns extends Component {
 		this.onSelectImage = this.onSelectImage.bind( this )
 		this.onSelectVideo = this.onSelectVideo.bind( this )
 		this.blockVariationPickerOnSelect = this.blockVariationPickerOnSelect.bind( this )
+		this.setColumns = this.setColumns.bind( this );
+		this.setColumnsTab = this.setColumnsTab.bind( this );
+		this.setColumnsMob = this.setColumnsMob.bind( this );
 	}
 
 	componentDidMount() {
@@ -157,6 +161,55 @@ class UAGBColumns extends Component {
 		setAttributes( { backgroundVideo: media } )
 	}
 
+	setColumns(value) {
+		
+		const { setAttributes } = this.props
+
+		if ( 0 !== value ) {
+			let widthcount = 100 / value;
+
+			const getChildBlocks = select('core/block-editor').getBlocks( this.props.clientId );
+
+			getChildBlocks.forEach((columnChild, key) => {
+				columnChild.attributes.colWidth = widthcount;
+			});
+		}
+
+		setAttributes( { columns: value } );
+	}
+	setColumnsTab(value) {
+		
+		const { setAttributes } = this.props
+
+		if ( 0 !== value ) {
+
+			let widthcountTab = 100 / value;
+
+			const getChildBlocks = select('core/block-editor').getBlocks( this.props.clientId );
+
+			getChildBlocks.forEach((columnChild, key) => {
+				columnChild.attributes.colWidthTablet = widthcountTab;
+			});
+		}
+		setAttributes( { columnsTablet: value } );
+	}
+	setColumnsMob(value) {
+		
+		const { setAttributes } = this.props
+
+		if ( 0 !== value ) {
+
+			let widthcount = 100 / value;
+
+			const getChildBlocks = select('core/block-editor').getBlocks( this.props.clientId );
+
+			getChildBlocks.forEach((columnChild, key) => {
+				columnChild.attributes.colWidthMobile = widthcount;
+			});
+		}
+		setAttributes( { columnsMobile: value } );
+	}
+	
 	blockVariationPickerOnSelect ( nextVariation = this.props.defaultVariation ) {
 			
 		if ( nextVariation.attributes ) {
@@ -184,6 +237,7 @@ class UAGBColumns extends Component {
 			className, 
 			variations,
 			hasInnerBlocks,
+			deviceType,
 		 } = this.props
 
 		const {
@@ -237,6 +291,8 @@ class UAGBColumns extends Component {
 			borderRadius,
 			borderColor,
 			columns,
+			columnsTablet,
+			columnsMobile,
 			bottomType,
 			bottomColor,
 			bottomHeight,
@@ -545,7 +601,11 @@ class UAGBColumns extends Component {
 
 		const reverse_tablet = ( reverseTablet ) ? "uagb-columns__reverse-tablet" : ""
 
-		const reverse_mobile = ( reverseMobile ) ? "uagb-columns__reverse-mobile" : ""			
+		const reverse_mobile = ( reverseMobile ) ? "uagb-columns__reverse-mobile" : ""
+		
+		const col_tablet = ( columnsTablet ) ? `uagb-columns__columns-tab-${columnsTablet}` : ""
+
+		const col_mobile = ( columnsMobile ) ? `uagb-columns__columns-mob-${columnsMobile}` : ""
 		
 		if ( ! hasInnerBlocks ) {
 			return (
@@ -582,15 +642,64 @@ class UAGBColumns extends Component {
 					/>
 				</BlockControls>
 				<InspectorControls>
-					<PanelBody title={ __( "Layout", 'ultimate-addons-for-gutenberg' ) }>
+					<PanelBody title={ __( "Layout" ) }>
+					<TabPanel className="uagb-size-type-field-tabs uagb-without-size-type" activeClass="active-tab"
+							tabs={ [
+								{
+									name: "desktop",
+									title: <Dashicon icon="desktop" />,
+									className: "uagb-desktop-tab uagb-responsive-tabs",
+								},
+								{
+									name: "tablet",
+									title: <Dashicon icon="tablet" />,
+									className: "uagb-tablet-tab uagb-responsive-tabs",
+								},
+								{
+									name: "mobile",
+									title: <Dashicon icon="smartphone" />,
+									className: "uagb-mobile-tab uagb-responsive-tabs",
+								},
+							] }>
+							{
+								( tab ) => {
+									let tabout
 
-						<RangeControl
-							label={ __( "Columns", 'ultimate-addons-for-gutenberg' ) }
-							value={ columns }
-							min={ 0 }
-							max={ 6 }
-							onChange={ ( value ) => setAttributes( { columns: value } ) }
-						/>
+									if ( "mobile" === tab.name ) {
+										tabout = (
+											<RangeControl
+												label={ __( "Columns" ) }
+												value={ columnsMobile }
+												min={ 0 }
+												max={ 6 }
+												onChange={ this.setColumnsMob}
+											/>
+										)
+									} else if ( "tablet" === tab.name ) {
+										tabout = (
+											<RangeControl
+												label={ __( "Columns" ) }
+												value={ columnsTablet }
+												min={ 0 }
+												max={ 6 }
+												onChange={ this.setColumnsTab }
+											/>
+										)
+									} else {
+										tabout = (
+											<RangeControl
+												label={ __( "Columns" ) }
+												value={ columns }
+												min={ 0 }
+												max={ 6 }
+												onChange={ this.setColumns }
+											/>
+										)
+									}
+									return <div>{ tabout }</div>
+								}
+							}
+						</TabPanel>
 						<SelectControl
 							label={ __( "Stack on", 'ultimate-addons-for-gutenberg' ) }
 							value={ stack }
@@ -662,11 +771,13 @@ class UAGBColumns extends Component {
 							label={ __( "Reverse Columns (Tablet)", 'ultimate-addons-for-gutenberg' ) }
 							checked={ reverseTablet }
 							onChange={ ( value ) => setAttributes( { reverseTablet: ! reverseTablet } ) }
+							help={ __( "If enabled layout will be stacked for Tablet & Mobile devices", 'ultimate-addons-for-gutenberg' ) }
 						/>
 						<ToggleControl
 							label={ __( "Reverse Columns (Mobile)", 'ultimate-addons-for-gutenberg' ) }
 							checked={ reverseMobile }
 							onChange={ ( value ) => setAttributes( { reverseMobile: ! reverseMobile } ) }
+							help={ __( "If enabled layout will be stacked for Tablet & Mobile devices", 'ultimate-addons-for-gutenberg' ) }
 						/>
 					</PanelBody>
 					<PanelBody title={ __( "Spacing" ) } initialOpen={ false }>
@@ -1214,6 +1325,7 @@ class UAGBColumns extends Component {
 						`uagb-columns__stack-${stack}`,
 						`uagb-columns__valign-${vAlign}`,
 						`uagb-columns__gap-${columnGap}`,
+						`uagb-editor-preview-mode-${deviceType.toLowerCase()}`,
 						`align${ align }`,
 						reverse_tablet,
 						reverse_mobile,
@@ -1234,9 +1346,10 @@ class UAGBColumns extends Component {
 					}
 					<div className={ classnames(
 						"uagb-columns__inner-wrap",
-						`uagb-columns__columns-${columns}`
+						`uagb-columns__columns-${columns}`, col_tablet, col_mobile
 					) }>
 						<InnerBlocks
+							key={ columns }
 							template={ getColumnsTemplate( columns ) }
 							templateLock="all"
 							allowedBlocks={ ALLOWED_BLOCKS }
@@ -1254,6 +1367,8 @@ const applyWithSelect = withSelect( ( select, props ) => {
 	const { getBlockType, getBlockVariations, getDefaultBlockVariation } = select( 'core/blocks' );
 	const innerBlocks = getBlocks( props.clientId );
 	const { replaceInnerBlocks } = useDispatch( 'core/block-editor' );
+	const { __experimentalGetPreviewDeviceType = null } = select( 'core/edit-post' );
+	let deviceType = __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : null;
 
 	return {
 		// Subscribe to changes of the innerBlocks to control the display of the layout selection placeholder.
@@ -1264,6 +1379,7 @@ const applyWithSelect = withSelect( ( select, props ) => {
 		defaultVariation: typeof getDefaultBlockVariation === 'undefined' ? null : getDefaultBlockVariation( props.name ),
 		variations: typeof getBlockVariations === 'undefined' ? null : getBlockVariations( props.name ),
 		replaceInnerBlocks,
+		deviceType:deviceType
 	};
 } );
 

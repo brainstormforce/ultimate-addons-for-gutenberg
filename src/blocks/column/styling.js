@@ -61,6 +61,9 @@ function styling( props ) {
 	var position = backgroundPosition.replace( "-", " " )
 	var tablet_selectors = {}
 	var mobile_selectors = {}
+	var styling_css = ""
+	var selectors_tab = ""
+	var selectors_mob = ""
 
 	var style = {
 		"padding-top": generateCSSUnit( topPadding, desktopPaddingType ),
@@ -120,24 +123,36 @@ function styling( props ) {
 			"margin-right": generateCSSUnit( rightMarginMobile, mobileMarginType ),
 		}
 	}
-
+	
 	if ( colWidth != "" && colWidth != 0 ) {
 		selectors[".block-editor-block-list__block"] = { "width" : colWidth + "%" }
 	}
 
 	if ( colWidthTablet != "" && colWidthTablet != 0 ) {
-		tablet_selectors[".block-editor-block-list__block"] = { "width" : colWidthTablet + "%" }
+
+		var selectors_tab = {
+			".block-editor-block-list__block" : { "width" : colWidthTablet + "%" },
+			"" : ""
+		}
+		var id_tablet = `#wpwrap .edit-post-visual-editor .uagb-editor-preview-mode-tablet #block-${ props.clientId }`;
+
+		styling_css = generateCSS( selectors_tab, id_tablet );
 	}
 
 	if ( colWidthMobile != "" && colWidthMobile != 0 ) {
-		mobile_selectors[".block-editor-block-list__block"] = { "width" : colWidthMobile + "%" }
-	}
+		
+		var selectors_mob = {
+			".block-editor-block-list__block" : { "width" : colWidthMobile + "%" },
+			"" : ""
+		}
+		var id_mob = `#wpwrap .edit-post-visual-editor .uagb-editor-preview-mode-mobile #block-${ props.clientId }`;
 
-	var styling_css = ""
+		styling_css += generateCSS( selectors_mob, id_mob );
+	}
 
 	var id = `#wpwrap .edit-post-visual-editor #block-${ props.clientId }`
 
-	styling_css = generateCSS( selectors, id )
+	styling_css += generateCSS( selectors, id )
 
 	styling_css += generateCSS( tablet_selectors, id, true, "tablet" )
 

@@ -189,7 +189,24 @@
 	.uagb-columns__stack-tablet > .uagb-columns__columns-6 > .uagb-column__wrap {
 		width: 100% !important;
 	}
+	
+	.uagb-columns__columns-tab-1.uagb-columns__inner-wrap,
+	.uagb-columns__columns-tab-2.uagb-columns__inner-wrap,
+	.uagb-columns__columns-tab-3.uagb-columns__inner-wrap,
+	.uagb-columns__columns-tab-4.uagb-columns__inner-wrap,
+	.uagb-columns__columns-tab-5.uagb-columns__inner-wrap,
+	.uagb-columns__columns-tab-6.uagb-columns__inner-wrap {
+        display: flex;
+        flex-wrap: wrap;
+	}
 
+	.uagb-columns__columns-tab-1 .uagb-column__wrap { width: 100%;}
+	.uagb-columns__columns-tab-2 .uagb-column__wrap { width: 50%; }
+	.uagb-columns__columns-tab-3 .uagb-column__wrap { width: 33.33%; }
+	.uagb-columns__columns-tab-4 .uagb-column__wrap { width: 25%; }
+	.uagb-columns__columns-tab-5 .uagb-column__wrap { width: 20%; }
+	.uagb-columns__columns-tab-6 .uagb-column__wrap { width: 16.66%; }
+	
 	.uagb-columns__stack-tablet > .uagb-columns__inner-wrap {
 		display: block;
 	}
@@ -208,6 +225,23 @@
 	.uagb-columns__stack-mobile > .uagb-columns__columns-5 > .uagb-column__wrap,
 	.uagb-columns__stack-mobile > .uagb-columns__columns-6 > .uagb-column__wrap {
 		width: 100% !important;
+	}
+
+	.uagb-columns__columns-mob-1 .uagb-column__wrap { width: 100%; }
+	.uagb-columns__columns-mob-2 .uagb-column__wrap { width: 50%; }
+	.uagb-columns__columns-mob-3 .uagb-column__wrap { width: 33.33%; }
+	.uagb-columns__columns-mob-4 .uagb-column__wrap { width: 25%; }
+	.uagb-columns__columns-mob-5 .uagb-column__wrap { width: 20%; }
+	.uagb-columns__columns-mob-6 .uagb-column__wrap { width: 16.66%; }
+	
+	.uagb-columns__columns-mob-1.uagb-columns__inner-wrap,
+	.uagb-columns__columns-mob-2.uagb-columns__inner-wrap,
+	.uagb-columns__columns-mob-3.uagb-columns__inner-wrap,
+	.uagb-columns__columns-mob-4.uagb-columns__inner-wrap,
+	.uagb-columns__columns-mob-5.uagb-columns__inner-wrap,
+	.uagb-columns__columns-mob-6.uagb-columns__inner-wrap {
+        display: flex;
+        flex-wrap: wrap;
 	}
 
 	.uagb-columns__stack-mobile > .uagb-columns__inner-wrap {
