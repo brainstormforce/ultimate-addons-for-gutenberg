@@ -17,6 +17,50 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 	class UAGB_Block_Helper {
 
 		/**
+		 * Get featured image block CSS
+		 *
+		 * @since x.x.x
+		 * @param array  $attr The block attributes.
+		 * @param string $id The selector ID.
+		 * @return array The Widget List.
+		 */
+		public static function get_fse_featuredimage_css( $attr, $id ) {
+			$defaults = UAGB_Helper::$block_list['uagb/fse-post-featured-image']['attributes'];
+
+			$attr = array_merge( $defaults, $attr );
+
+			$selectors          = array();
+			$t_selectors        = array();
+			$m_selectors        = array();
+			$selectors          = array(
+				'.uagb-fse-featured-image__wrap > img' => array(
+					'padding-left'     => UAGB_Helper::get_css_value( $attr['hPadding'], 'px' ),
+					'padding-right'    => UAGB_Helper::get_css_value( $attr['hPadding'], 'px' ),
+					'padding-top'      => UAGB_Helper::get_css_value( $attr['vPadding'], 'px' ),
+					'padding-bottom'   => UAGB_Helper::get_css_value( $attr['vPadding'], 'px' ),
+					'background-color' => $attr['backgroundColor'],
+					'border-style'     => $attr['borderStyle'],
+					'border-width'     => UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' ),
+					'border-color'     => $attr['borderColor'],
+					'border-radius'    => UAGB_Helper::get_css_value( $attr['borderRadius'], 'px' ),
+					'margin-left'      => UAGB_Helper::get_css_value( $attr['hMargin'], 'px' ),
+					'margin-right'     => UAGB_Helper::get_css_value( $attr['hMargin'], 'px' ),
+					'margin-top'       => UAGB_Helper::get_css_value( $attr['vMargin'], 'px' ),
+					'margin-bottom'    => UAGB_Helper::get_css_value( $attr['vMargin'], 'px' ),
+				),
+				'.uagb-fse-featured-image__wrap'       => array(
+					'text-align' => $attr['align'],
+				),
+			);
+			$combined_selectors = array(
+				'desktop' => $selectors,
+				'tablet'  => $t_selectors,
+				'mobile'  => $m_selectors,
+			);
+			return UAGB_Helper::generate_all_css( $combined_selectors, ' .uagb-block-' . $id );
+
+		}
+		/**
 		 * Get review block CSS
 		 *
 		 * @since 1.19.0
@@ -4280,7 +4324,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			return UAGB_Helper::generate_all_css( $combined_selectors, '.uagb-block-' . $id );
 		}
-
 		/**
 		 * Get Marketing Button Block CSS
 		 *

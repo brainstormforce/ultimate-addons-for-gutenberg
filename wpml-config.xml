@@ -73,6 +73,11 @@
 			<xpath>//*[@class="uagb-marketing-btn__title"]</xpath>
 			<xpath>//p[@class="uagb-marketing-btn__prefix"]</xpath>
 		</gutenberg-block>
+		<gutenberg-block type="uagb/post-title" translate="1">
+			<xpath>//a[@class="uagb-post-title__link"]/@href</xpath>
+			<xpath>//*[@class="uagb-post-title__title"]</xpath>
+			<xpath>//p[@class="uagb-post-title__prefix"]</xpath>
+		</gutenberg-block>
 		<gutenberg-block type="uagb/table-of-contents" translate="1">
 			<xpath>//div[@class="uagb-toc__title"]</xpath>
 			<xpath>//ul[@class="uagb-toc__list"]/li/a</xpath>
