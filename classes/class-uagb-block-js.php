@@ -261,6 +261,28 @@ if ( ! class_exists( 'UAGB_Block_JS' ) ) {
 		}
 
 		/**
+		 * Adds Google fonts for post comment block.
+		 *
+		 * @since x.x.x
+		 * @param array $attr the blocks attr.
+		 */
+		public static function blocks_fse_post_comment_gfont( $attr ) {
+
+			$author_load_google_font = isset( $attr['authorLoadGoogleFonts'] ) ? $attr['authorLoadGoogleFonts'] : '';
+			$author_font_family      = isset( $attr['authorFontFamily'] ) ? $attr['authorFontFamily'] : '';
+			$author_font_weight      = isset( $attr['authorFontWeight'] ) ? $attr['authorFontWeight'] : '';
+			$author_font_subset      = isset( $attr['authorFontSubset'] ) ? $attr['authorFontSubset'] : '';
+
+			$comment_load_google_font = isset( $attr['commentLoadGoogleFonts'] ) ? $attr['commentLoadGoogleFonts'] : '';
+			$comment_font_family      = isset( $attr['commentFontFamily'] ) ? $attr['commentFontFamily'] : '';
+			$comment_font_weight      = isset( $attr['commentFontWeight'] ) ? $attr['commentFontWeight'] : '';
+			$comment_font_subset      = isset( $attr['commentFontSubset'] ) ? $attr['commentFontSubset'] : '';
+
+			UAGB_Helper::blocks_google_font( $author_load_google_font, $author_font_family, $author_font_weight, $author_font_subset );
+			UAGB_Helper::blocks_google_font( $comment_load_google_font, $comment_font_family, $comment_font_weight, $comment_font_subset );
+		}
+
+		/**
 		 * Adds Google fonts for How To block.
 		 *
 		 * @since 1.15.0
