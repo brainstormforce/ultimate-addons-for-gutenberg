@@ -19,12 +19,12 @@ const AdvancedControlsBlock = wp.compose.createHigherOrderComponent((BlockEdit) 
 		return (
 			<Fragment>
 				<BlockEdit {...props} />
-				{isSelected && ! block_type.includes(blocks_name) &&
-					<InspectorAdvancedControls>
-						<p className="components-base-control__help">{ __( "Below setting will only take effect once you are on the live page, and not while you're editing.", 'ultimate-addons-for-gutenberg' ) }</p> 
-						{ UserConditionOptions( props ) }						
-					</InspectorAdvancedControls>
-				}
+					{isSelected && ! block_type.includes(blocks_name) && 'uagb' === uagb_blocks_info.category && blocks_name.includes('uagb') &&
+						<InspectorAdvancedControls>
+							<p className="components-base-control__help">{ __( "Below setting will only take effect once you are on the live page, and not while you're editing.", 'ultimate-addons-for-gutenberg' ) }</p> 
+							{ UserConditionOptions( props ) }						
+						</InspectorAdvancedControls>
+					}
 			</Fragment>
 		);
 	};

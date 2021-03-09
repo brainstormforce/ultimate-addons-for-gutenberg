@@ -167,6 +167,9 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 
 ## Changelog ##
 
+### 1.22.0 ###
+* Fix: Block Conditions - Visible only to UAGB Block.
+
 ### 1.21.0 ###
 * New: Tabs Block. [Read More](https://ultimategutenberg.com/tabs/)
 * New: Added ability to import pre-made pages, patterns for block editor.
