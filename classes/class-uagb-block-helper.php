@@ -5117,5 +5117,40 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			return UAGB_Helper::generate_all_css( $combined_selectors, '.uagb-block-' . $id );
 		}
+		/**
+		 * Get Fse Post Title Block CSS
+		 *
+		 * @since x.x.x
+		 * @param array  $attr The block attributes.
+		 * @param string $id The selector ID.
+		 * @return array The Widget List.
+		 */
+		public static function get_fse_post_title_css( $attr, $id ) {
+
+			$defaults = UAGB_Helper::$block_list['uagb/fse-post-title']['attributes'];
+
+			$attr = array_merge( $defaults, (array) $attr );
+
+			$m_selectors = array();
+			$t_selectors = array();
+
+			$selectors = array(
+				' .uagb-post-title__text' => array(
+					'text-align' => $attr['titleAlign'],
+					'color'      => $attr['titleColor'],
+				),
+			);
+
+			$combined_selectors = array(
+				'desktop' => $selectors,
+				'tablet'  => $t_selectors,
+				'mobile'  => $m_selectors,
+			);
+
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'title', ' .uagb-post-title__text', $combined_selectors );
+
+			return UAGB_Helper::generate_all_css( $combined_selectors, '.uagb-block-' . $id );
+
+		}
 	}
 }

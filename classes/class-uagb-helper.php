@@ -590,6 +590,11 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					$js  .= UAGB_Block_JS::get_lottie_js( $blockattr, $block_id );
 					break;
 
+				case 'uagb/fse-post-title':
+					$css += UAGB_Block_Helper::get_fse_post_title_css( $blockattr, $block_id );
+					UAGB_Block_JS::blocks_fse_post_title_gfont( $blockattr );
+					break;
+
 				default:
 					// Nothing to do here.
 					break;

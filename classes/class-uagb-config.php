@@ -2584,6 +2584,28 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 							'playOn'           => 'none',
 						),
 					),
+					'uagb/fse-post-title'         => array(
+						'slug'        => '',
+						'title'       => __( 'Post Title', 'ultimate-addons-for-gutenberg' ),
+						'description' => __( 'This block helps you to add post title.', 'ultimate-addons-for-gutenberg' ),
+						'default'     => true,
+						'attributes'  => array(
+							'titleAlign'            => 'center',
+							'titleColor'            => '',
+							'titleFontFamily'       => '',
+							'titleLoadGoogleFonts'  => false,
+							'titleFontWeight'       => '',
+							'titleFontSubset'       => '',
+							'titleFontSize'         => '',
+							'titleFontSizeType'     => 'px',
+							'titleFontSizeTablet'   => '',
+							'titleFontSizeMobile'   => '',
+							'titleLineHeight'       => '',
+							'titleLineHeightType'   => 'em',
+							'titleLineHeightTablet' => '',
+							'titleLineHeightMobile' => '',
+						),
+					),
 				);
 			}
 			return self::$block_attributes;
