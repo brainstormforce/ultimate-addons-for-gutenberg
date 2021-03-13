@@ -53,6 +53,7 @@ export default class UAGBColumnEdit extends Component {
 		const $style = document.createElement( "style" )
 		$style.setAttribute( "id", "uagb-column-style-" + this.props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
+		$style.innerHTML = styling( this.props )
 	}
 
 	componentDidUpdate( prevProps ) {
