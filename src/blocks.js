@@ -44,7 +44,7 @@ import "./blocks/extensions/block.js"
 import "./blocks/tabs/block.js"
 import "./blocks/tabs-child/block.js"
 import "./blocks/lottie/block.js"
-
+import "./blocks/fse-navigation/block.js"
 import UAGB_Block_Icons from "../dist/blocks/uagb-controls/block-icons"
 
 const { updateCategory } = wp.blocks

@@ -561,6 +561,10 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					UAGB_Block_JS::blocks_cf7_styler_gfont( $blockattr );
 					break;
 
+				case 'uagb/fse-navigation':
+					$css += UAGB_Block_Helper::get_fse_navigation_css( $blockattr, $block_id );
+					UAGB_Block_JS::blocks_fse_navigation_styler_gfont( $blockattr );
+					break;
 				case 'uagb/marketing-button':
 					$css += UAGB_Block_Helper::get_marketing_btn_css( $blockattr, $block_id );
 					UAGB_Block_JS::blocks_marketing_btn_gfont( $blockattr );
