@@ -5117,5 +5117,277 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			return UAGB_Helper::generate_all_css( $combined_selectors, '.uagb-block-' . $id );
 		}
+		/**
+		 * Get Post Author Block CSS
+		 *
+		 * @since x.x.x
+		 * @param array  $attr The block attributes.
+		 * @param string $id The selector ID.
+		 * @return array The Widget List.
+		 */
+		public static function get_fse_post_author_css( $attr, $id ) {
+			$defaults = UAGB_Helper::$block_list['uagb/fse-post-author']['attributes'];
+
+			$attr = array_merge( $defaults, (array) $attr );
+
+			$m_selectors = array();
+			$t_selectors = array();
+
+			$selectors = array(
+				'.uagb-post-author__wrap'  => array(
+					'padding-left'   => UAGB_Helper::get_css_value( $attr['leftPadding'], $attr['desktopPaddingType'] ),
+					'padding-right'  => UAGB_Helper::get_css_value( $attr['rightPadding'], $attr['desktopPaddingType'] ),
+					'padding-top'    => UAGB_Helper::get_css_value( $attr['topPadding'], $attr['desktopPaddingType'] ),
+					'padding-bottom' => UAGB_Helper::get_css_value( $attr['bottomPadding'], $attr['desktopPaddingType'] ),
+					'text-align'     => $attr['align'],
+				),
+				' .uagb-post-author__name' => array(
+					'color' => $attr['authorColor'],
+				),
+			);
+			if ( 'before' === $attr['iconPosition'] ) {
+				$selectors['.uagb-post-author__wrap .dashicons-admin-users'] = array(
+					'margin-right' => UAGB_Helper::get_css_value( $attr['iconSpace'], 'px' ),
+					'color'        => $attr['iconColor'],
+					'font-size'    => UAGB_Helper::get_css_value( $attr['iconSize'], 'px' ),
+				);
+			}
+			if ( 'after' === $attr['iconPosition'] ) {
+				$selectors['.uagb-post-author__wrap .dashicons-admin-users'] = array(
+					'margin-left' => UAGB_Helper::get_css_value( $attr['iconSpace'], 'px' ),
+					'color'       => $attr['iconColor'],
+					'font-size'   => UAGB_Helper::get_css_value( $attr['iconSize'], 'px' ),
+				);
+			}
+			$m_selectors = array(
+				'.uagb-post-author__wrap' => array(
+					'padding-top'    => UAGB_Helper::get_css_value( $attr['topPaddingMobile'], $attr['mobilePaddingType'] ),
+					'padding-bottom' => UAGB_Helper::get_css_value( $attr['bottomPaddingMobile'], $attr['mobilePaddingType'] ),
+					'padding-left'   => UAGB_Helper::get_css_value( $attr['leftPaddingMobile'], $attr['mobilePaddingType'] ),
+					'padding-right'  => UAGB_Helper::get_css_value( $attr['rightPaddingMobile'], $attr['mobilePaddingType'] ),
+				),
+			);
+
+			$t_selectors = array(
+				'.uagb-post-author__wrap'  => array(
+					'padding-top'    => UAGB_Helper::get_css_value( $attr['topPaddingTablet'], $attr['tabletPaddingType'] ),
+					'padding-bottom' => UAGB_Helper::get_css_value( $attr['bottomPaddingTablet'], $attr['tabletPaddingType'] ),
+					'padding-left'   => UAGB_Helper::get_css_value( $attr['leftPaddingTablet'], $attr['tabletPaddingType'] ),
+					'padding-right'  => UAGB_Helper::get_css_value( $attr['rightPaddingTablet'], $attr['tabletPaddingType'] ),
+				),
+				' .uagb-post-author__name' => array(
+					'font-size'   => UAGB_Helper::get_css_value( $attr['authorFontSizeTablet'], $attr['authorFontSizeType'] ),
+					'line-height' => UAGB_Helper::get_css_value( $attr['authorLineHeightTablet'], $attr['authorLineHeightType'] ),
+				),
+			);
+
+			$combined_selectors = array(
+				'desktop' => $selectors,
+				'tablet'  => $t_selectors,
+				'mobile'  => $m_selectors,
+			);
+
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'author', ' .uagb-post-author__name', $combined_selectors );
+
+			return UAGB_Helper::generate_all_css( $combined_selectors, '.uagb-block-' . $id );
+		}
+		/**
+		 * Get Post Date Block CSS
+		 *
+		 * @since x.x.x
+		 * @param array  $attr The block attributes.
+		 * @param string $id The selector ID.
+		 * @return array The Widget List.
+		 */
+		public static function get_fse_post_date_css( $attr, $id ) {
+			$defaults = UAGB_Helper::$block_list['uagb/fse-post-date']['attributes'];
+
+			$attr = array_merge( $defaults, (array) $attr );
+
+			$m_selectors = array();
+			$t_selectors = array();
+
+			$selectors = array(
+				'.uagb-post-date__wrap'      => array(
+					'padding-left'   => UAGB_Helper::get_css_value( $attr['leftPadding'], $attr['desktopPaddingType'] ),
+					'padding-right'  => UAGB_Helper::get_css_value( $attr['rightPadding'], $attr['desktopPaddingType'] ),
+					'padding-top'    => UAGB_Helper::get_css_value( $attr['topPadding'], $attr['desktopPaddingType'] ),
+					'padding-bottom' => UAGB_Helper::get_css_value( $attr['bottomPadding'], $attr['desktopPaddingType'] ),
+					'text-align'     => $attr['align'],
+				),
+				'.uagb-post-date__wrap time' => array(
+					'color' => $attr['dateColor'],
+				),
+			);
+			if ( 'before' === $attr['iconPosition'] ) {
+				$selectors['.uagb-post-date__wrap .dashicons-calendar'] = array(
+					'margin-right' => UAGB_Helper::get_css_value( $attr['iconSpace'], 'px' ),
+					'color'        => $attr['iconColor'],
+					'font-size'    => UAGB_Helper::get_css_value( $attr['iconSize'], 'px' ),
+				);
+			}
+			if ( 'after' === $attr['iconPosition'] ) {
+				$selectors['.uagb-post-date__wrap .dashicons-calendar'] = array(
+					'margin-left' => UAGB_Helper::get_css_value( $attr['iconSpace'], 'px' ),
+					'color'       => $attr['iconColor'],
+					'font-size'   => UAGB_Helper::get_css_value( $attr['iconSize'], 'px' ),
+				);
+			}
+			$m_selectors = array(
+				'.uagb-post-date__wrap' => array(
+					'padding-top'    => UAGB_Helper::get_css_value( $attr['topPaddingMobile'], $attr['mobilePaddingType'] ),
+					'padding-bottom' => UAGB_Helper::get_css_value( $attr['bottomPaddingMobile'], $attr['mobilePaddingType'] ),
+					'padding-left'   => UAGB_Helper::get_css_value( $attr['leftPaddingMobile'], $attr['mobilePaddingType'] ),
+					'padding-right'  => UAGB_Helper::get_css_value( $attr['rightPaddingMobile'], $attr['mobilePaddingType'] ),
+				),
+			);
+
+			$t_selectors = array(
+				'.uagb-post-date__wrap' => array(
+					'padding-top'    => UAGB_Helper::get_css_value( $attr['topPaddingTablet'], $attr['tabletPaddingType'] ),
+					'padding-bottom' => UAGB_Helper::get_css_value( $attr['bottomPaddingTablet'], $attr['tabletPaddingType'] ),
+					'padding-left'   => UAGB_Helper::get_css_value( $attr['leftPaddingTablet'], $attr['tabletPaddingType'] ),
+					'padding-right'  => UAGB_Helper::get_css_value( $attr['rightPaddingTablet'], $attr['tabletPaddingType'] ),
+				),
+			);
+
+			$combined_selectors = array(
+				'desktop' => $selectors,
+				'tablet'  => $t_selectors,
+				'mobile'  => $m_selectors,
+			);
+
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'date', '.uagb-post-date__wrap time', $combined_selectors );
+
+			return UAGB_Helper::generate_all_css( $combined_selectors, '.uagb-block-' . $id );
+		}
+
+		/**
+		 * Get Post Excerpt Block CSS
+		 *
+		 * @since x.x.x
+		 * @param array  $attr The block attributes.
+		 * @param string $id The selector ID.
+		 * @return array The Widget List.
+		 */
+		public static function get_fse_post_excerpt_css( $attr, $id ) {
+			$defaults = UAGB_Helper::$block_list['uagb/fse-post-excerpt']['attributes'];
+
+			$attr = array_merge( $defaults, (array) $attr );
+
+			$m_selectors = array();
+			$t_selectors = array();
+
+			$selectors   = array(
+				'.uagb-post-excerpt__wrap' => array(
+					'padding-left'   => UAGB_Helper::get_css_value( $attr['leftPadding'], $attr['desktopPaddingType'] ),
+					'padding-right'  => UAGB_Helper::get_css_value( $attr['rightPadding'], $attr['desktopPaddingType'] ),
+					'padding-top'    => UAGB_Helper::get_css_value( $attr['topPadding'], $attr['desktopPaddingType'] ),
+					'padding-bottom' => UAGB_Helper::get_css_value( $attr['bottomPadding'], $attr['desktopPaddingType'] ),
+				),
+				'.uagb-post-excerpt__wrap .uagb-post-excerpt__text' => array(
+					'color'      => $attr['excerptColor'],
+					'text-align' => $attr['align'],
+				),
+			);
+			$m_selectors = array(
+				'.uagb-post-excerpt__wrap' => array(
+					'padding-top'    => UAGB_Helper::get_css_value( $attr['topPaddingMobile'], $attr['mobilePaddingType'] ),
+					'padding-bottom' => UAGB_Helper::get_css_value( $attr['bottomPaddingMobile'], $attr['mobilePaddingType'] ),
+					'padding-left'   => UAGB_Helper::get_css_value( $attr['leftPaddingMobile'], $attr['mobilePaddingType'] ),
+					'padding-right'  => UAGB_Helper::get_css_value( $attr['rightPaddingMobile'], $attr['mobilePaddingType'] ),
+				),
+			);
+
+			$t_selectors = array(
+				'.uagb-post-excerpt__wrap' => array(
+					'padding-top'    => UAGB_Helper::get_css_value( $attr['topPaddingTablet'], $attr['tabletPaddingType'] ),
+					'padding-bottom' => UAGB_Helper::get_css_value( $attr['bottomPaddingTablet'], $attr['tabletPaddingType'] ),
+					'padding-left'   => UAGB_Helper::get_css_value( $attr['leftPaddingTablet'], $attr['tabletPaddingType'] ),
+					'padding-right'  => UAGB_Helper::get_css_value( $attr['rightPaddingTablet'], $attr['tabletPaddingType'] ),
+				),
+			);
+
+			$combined_selectors = array(
+				'desktop' => $selectors,
+				'tablet'  => $t_selectors,
+				'mobile'  => $m_selectors,
+			);
+
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'excerpt', '.uagb-post-excerpt__text', $combined_selectors );
+
+			return UAGB_Helper::generate_all_css( $combined_selectors, '.uagb-block-' . $id );
+		}
+
+		/**
+		 * Get Post Categories Block CSS
+		 *
+		 * @since x.x.x
+		 * @param array  $attr The block attributes.
+		 * @param string $id The selector ID.
+		 * @return array The Widget List.
+		 */
+		public static function get_fse_post_categories_css( $attr, $id ) {
+			$defaults = UAGB_Helper::$block_list['uagb/fse-post-categories']['attributes'];
+
+			$attr = array_merge( $defaults, (array) $attr );
+
+			$m_selectors = array();
+			$t_selectors = array();
+
+			$selectors = array(
+				'.uagb-post-categories__wrap' => array(
+					'padding-left'   => UAGB_Helper::get_css_value( $attr['leftPadding'], $attr['desktopPaddingType'] ),
+					'padding-right'  => UAGB_Helper::get_css_value( $attr['rightPadding'], $attr['desktopPaddingType'] ),
+					'padding-top'    => UAGB_Helper::get_css_value( $attr['topPadding'], $attr['desktopPaddingType'] ),
+					'padding-bottom' => UAGB_Helper::get_css_value( $attr['bottomPadding'], $attr['desktopPaddingType'] ),
+					'text-align'     => $attr['align'],
+				),
+				'.uagb-post-categories__wrap .uagb-post-categories__name' => array(
+					'color' => $attr['categoriesColor'],
+				),
+			);
+			if ( 'before' === $attr['iconPosition'] ) {
+				$selectors['.uagb-post-categories__wrap .dashicons-tag'] = array(
+					'margin-right' => UAGB_Helper::get_css_value( $attr['iconSpace'], 'px' ),
+					'color'        => $attr['iconColor'],
+					'font-size'    => UAGB_Helper::get_css_value( $attr['iconSize'], 'px' ),
+				);
+			}
+			if ( 'after' === $attr['iconPosition'] ) {
+				$selectors['.uagb-post-categories__wrap .dashicons-tag'] = array(
+					'margin-left' => UAGB_Helper::get_css_value( $attr['iconSpace'], 'px' ),
+					'color'       => $attr['iconColor'],
+					'font-size'   => UAGB_Helper::get_css_value( $attr['iconSize'], 'px' ),
+				);
+			}
+			$m_selectors = array(
+				'.uagb-post-categories__wrap' => array(
+					'padding-top'    => UAGB_Helper::get_css_value( $attr['topPaddingMobile'], $attr['mobilePaddingType'] ),
+					'padding-bottom' => UAGB_Helper::get_css_value( $attr['bottomPaddingMobile'], $attr['mobilePaddingType'] ),
+					'padding-left'   => UAGB_Helper::get_css_value( $attr['leftPaddingMobile'], $attr['mobilePaddingType'] ),
+					'padding-right'  => UAGB_Helper::get_css_value( $attr['rightPaddingMobile'], $attr['mobilePaddingType'] ),
+				),
+			);
+
+			$t_selectors = array(
+				'.uagb-post-categories__wrap' => array(
+					'padding-top'    => UAGB_Helper::get_css_value( $attr['topPaddingTablet'], $attr['tabletPaddingType'] ),
+					'padding-bottom' => UAGB_Helper::get_css_value( $attr['bottomPaddingTablet'], $attr['tabletPaddingType'] ),
+					'padding-left'   => UAGB_Helper::get_css_value( $attr['leftPaddingTablet'], $attr['tabletPaddingType'] ),
+					'padding-right'  => UAGB_Helper::get_css_value( $attr['rightPaddingTablet'], $attr['tabletPaddingType'] ),
+				),
+			);
+
+			$combined_selectors = array(
+				'desktop' => $selectors,
+				'tablet'  => $t_selectors,
+				'mobile'  => $m_selectors,
+			);
+
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'categories', '.uagb-post-categories__name', $combined_selectors );
+
+			return UAGB_Helper::generate_all_css( $combined_selectors, '.uagb-block-' . $id );
+		}
 	}
 }
