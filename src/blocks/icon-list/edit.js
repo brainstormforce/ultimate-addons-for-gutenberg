@@ -99,6 +99,7 @@ class UAGBIconList extends Component {
 			stack,
 			icon_layout,
 			iconPosition,
+			topMargin,
 			size,
 			sizeType,
 			sizeMobile,
@@ -236,6 +237,17 @@ class UAGBIconList extends Component {
 							onChange={ ( value ) => setAttributes( { iconPosition: value } ) }
 							help={ __( "Note: This manages the Icon Position with respect to the Label.", 'ultimate-addons-for-gutenberg' ) }
 						/>
+						{ iconPosition == "top" && (
+						<RangeControl
+							label={ __( "Top Margin", 'ultimate-addons-for-gutenberg' ) }
+							value={ topMargin }
+							onChange={ ( value ) => setAttributes( { topMargin: value } ) }
+							min={ 0 }
+							max={ 50 }
+							allowReset
+							initialPosition={0}
+						/>
+						)}
 						<TabPanel className="uagb-size-type-field-tabs" activeClass="active-tab"
 							tabs={ [
 								{

@@ -2112,6 +2112,9 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'border-style'  => ( $attr['border'] > 0 ) ? 'solid' : '',
 					'border-width'  => UAGB_Helper::get_css_value( $attr['border'], 'px' ),
 				),
+				'.uagb-icon-list__icon-at-top .uagb-icon-list__source-wrap' => array(
+					'margin-top' => UAGB_Helper::get_css_value( $attr['topMargin'], 'px' ),
+				),
 				' .uagb-icon-list__wrap'               => array(
 					'justify-content'   => $alignment,
 					'-webkit-box-pack'  => $alignment,

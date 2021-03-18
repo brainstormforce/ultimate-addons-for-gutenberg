@@ -31,6 +31,7 @@ function styling( props ) {
 		border,
 		bgSize,
 		borderRadius,
+		topMargin
 	} = props.attributes
 
 	var selectors = {}
@@ -40,11 +41,15 @@ function styling( props ) {
 	var editor_gap = ( undefined !== typeof gap && '' !== gap ) ? ( gap + 15 ) : 15;
 	
 	selectors = {
+		".uagb-icon-list__icon-at-top .wp-block[data-type=\"uagb/icon-list-child\"] .uagb-icon-list__source-wrap" : {
+			"margin-top":  generateCSSUnit( topMargin, "px" ),
+		},
 		" .uagb-icon-list__source-wrap" : {
 			"padding": generateCSSUnit( bgSize, "px" ),
 			"border-radius": generateCSSUnit( borderRadius, "px" ),
 			"border-style" : ( 0 == border || undefined == border ) ? "none" : "solid",
-			"border-width" : generateCSSUnit( border, "px" )
+			"border-width" : generateCSSUnit( border, "px" ),
+			"margin-top":  generateCSSUnit( topMargin, "px" ),
 		},
 		".uagb-icon-list__layout-vertical .wp-block[data-type=\"uagb/icon-list-child\"]" : {
 			"margin-left" : 0,

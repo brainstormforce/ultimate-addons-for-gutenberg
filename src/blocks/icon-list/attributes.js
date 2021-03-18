@@ -65,6 +65,10 @@ const attributes = {
 		type: "string",
 		default: "middle"
 	},
+	topMargin: {
+		type: "number",
+		default: 0,
+	},
 	size: {
 		type: "number",
 		default: 16

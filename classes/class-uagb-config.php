@@ -1036,6 +1036,7 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 							),
 							'gap'              => '10',
 							'inner_gap'        => '15',
+							'topMargin'		   => '0',
 							'size'             => '16',
 							'sizeType'         => 'px',
 							'sizeMobile'       => '',
