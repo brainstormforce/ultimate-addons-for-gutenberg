@@ -35,3 +35,6 @@ scripts
 config
 .github
 .wordpress-org
+.eslintignore
+.eslintrc.js
+artifact
