@@ -324,7 +324,7 @@
 
 			// WordPress adds "Activate" button after waiting for 1000ms. So we will run our activation after that.
 			setTimeout( function() {
-				
+
 				$.ajax({
 					url: uagb.ajax_url,
 					type: "POST",
@@ -334,8 +334,8 @@
 						"nonce"  : uagb.ajax_nonce,
 					},
 				})
-					.done(function (result) {
-					
+					.done(function (result) {q
+
 						if( result.success ) {
 							$button.text( uagb.activated_text ).removeClass( "updating-message" )
 
@@ -370,7 +370,7 @@
 					wp.a11y.speak( wp.updates.l10n.updateCancel, "polite" )
 				} )
 			}
-			
+
 			wp.updates.installTheme( {
 				slug:    $button.data( "slug" )
 			}).then(function(e){

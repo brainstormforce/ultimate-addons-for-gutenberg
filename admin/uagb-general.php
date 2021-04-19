@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $blocks                = UAGB_Admin_Helper::get_block_options();
-$allow_file_generation = UAGB_Helper::allow_file_generation();
+$allow_file_generation = UAGB_File_Generation::allow_file_generation();
 $kb_data               = UAGB_Admin_Helper::knowledgebase_data();
 $enable_kb             = $kb_data['enable_knowledgebase'];
 $kb_url                = $kb_data['knowledgebase_url'];
@@ -21,7 +21,7 @@ $support_url    = $support_data['support_url'];
 
 $uagb_support_link      = apply_filters( 'uagb_support_link', $support_url );
 $uagb_support_link_text = apply_filters( 'uagb_support_link_text', __( 'Submit a Ticket »', 'ultimate-addons-for-gutenberg' ) );
-$has_read_write_perms   = UAGB_Helper::has_read_write_permissions();
+$has_read_write_perms   = UAGB_File_Generation::has_read_write_permissions();
 
 
 array_multisort(

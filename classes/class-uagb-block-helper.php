@@ -31,7 +31,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			$t_selectors = array();
 			$m_selectors = array();
-			$selectors   = array();
 
 			$selectors = array(
 				' .uagb_review_block .uagb-rating-title'  => array(
@@ -978,7 +977,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'justify-content'   => $alignment,
 					'-webkit-box-pack'  => $alignment,
 					'-ms-flex-pack'     => $alignment,
-					'justify-content'   => $alignment,
 					'-webkit-box-align' => $alignment,
 					'-ms-flex-align'    => $alignment,
 					'align-items'       => $alignment,
@@ -1363,9 +1361,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 
 			$attr = array_merge( $defaults, (array) $attr );
 
-			$t_selectors = array();
-			$m_selectors = array();
-
 			$svg_size   = UAGB_Helper::get_css_value( $attr['ctaFontSize'], $attr['ctaFontSizeType'] );
 			$m_svg_size = UAGB_Helper::get_css_value( $attr['ctaFontSizeMobile'], $attr['ctaFontSizeType'] );
 			$t_svg_size = UAGB_Helper::get_css_value( $attr['ctaFontSizeTablet'], $attr['ctaFontSizeType'] );
@@ -1521,7 +1516,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			$position = str_replace( '-', ' ', $attr['backgroundPosition'] );
 
 			$t_selectors = array();
-			$m_selectors = array();
 
 			$selectors = array(
 				' .uagb-testimonial__wrap'        => array(

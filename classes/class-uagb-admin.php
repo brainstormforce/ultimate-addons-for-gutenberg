@@ -44,10 +44,6 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 
 			add_action( 'wp_ajax_uag-theme-activate', __CLASS__ . '::theme_activate' );
 
-			add_action( 'wp_ajax_uagb_file_generation', __CLASS__ . '::file_generation' );
-
-			add_action( 'wp_ajax_uagb_file_regeneration', __CLASS__ . '::file_regeneration' );
-
 			// Enqueue admin scripts.
 			if ( isset( $_GET['page'] ) && UAGB_SLUG === $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles_scripts' );
@@ -413,72 +409,6 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 			wp_send_json_success();
 		}
 
-		/**
-		 * File Generation Flag
-		 *
-		 * @since 1.14.0
-		 */
-		public static function file_generation() {
-
-			if ( ! current_user_can( 'manage_options' ) ) {
-				wp_send_json_error(
-					array(
-						'success' => false,
-						'message' => __( 'Access Denied. You don\'t have enough capabilities to execute this action.', 'ultimate-addons-for-gutenberg' ),
-					)
-				);
-			}
-
-			check_ajax_referer( 'uagb-block-nonce', 'nonce' );
-
-			if ( 'disabled' === $_POST['value'] ) {
-				UAGB_Helper::get_instance()->delete_upload_dir();
-			}
-
-			wp_send_json_success(
-				array(
-					'success' => true,
-					'message' => update_option( '_uagb_allow_file_generation', $_POST['value'] ),
-				)
-			);
-		}
-
-		/**
-		 * File Regeneration Flag
-		 *
-		 * @since x.x.x
-		 */
-		public static function file_regeneration() {
-
-			if ( ! current_user_can( 'manage_options' ) ) {
-				wp_send_json_error(
-					array(
-						'success' => false,
-						'message' => __( 'Access Denied. You don\'t have enough capabilities to execute this action.', 'ultimate-addons-for-gutenberg' ),
-					)
-				);
-			}
-
-			check_ajax_referer( 'uagb-block-nonce', 'nonce' );
-
-			global $wpdb;
-
-			$file_generation = UAGB_Helper::allow_file_generation();
-
-			$uag_query = "DELETE FROM $wpdb->postmeta WHERE meta_key = '_uagb_page_assets'";
-			$result    = $wpdb->get_results( $uag_query ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
-
-			if ( 'enabled' === $file_generation ) {
-
-				UAGB_Helper::get_instance()->delete_upload_dir();
-			}
-
-			wp_send_json_success(
-				array(
-					'success' => true,
-				)
-			);
-		}
 		/**
 		 * Required Plugin Activate
 		 *
