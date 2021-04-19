@@ -73,8 +73,6 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			self::$block_list = UAGB_Config::get_block_attributes();
 
 			add_action( 'wp_head', array( $this, 'frontend_gfonts' ), 120 );
-
-			add_action( 'wp_footer', array( $this, 'print_script' ), 1000 );
 			add_filter( 'redirect_canonical', array( $this, 'override_canonical' ), 1, 2 );
 
 		}
