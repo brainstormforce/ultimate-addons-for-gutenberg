@@ -33,11 +33,6 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 */
 		public static $block_list;
 
-
-
-
-
-
 		/**
 		 * Store Json variable
 		 *

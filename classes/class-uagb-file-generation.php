@@ -133,13 +133,9 @@ if ( ! class_exists( 'UAGB_File_Generation' ) ) {
 		 */
 		public function __construct() {
 
-			if ( ! defined( 'FS_CHMOD_FILE' ) ) {
-				define( 'FS_CHMOD_FILE', ( fileperms( ABSPATH . 'index.php' ) & 0777 | 0644 ) );
-			}
+			$this->define_constants();
 
 			self::$file_generation = static::allow_file_generation();
-
-			$this->define_constants();
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'generate_asset_files' ), 1 );
 			add_action( 'wp_head', array( $this, 'print_stylesheet' ), 80 );
@@ -302,7 +298,9 @@ if ( ! class_exists( 'UAGB_File_Generation' ) ) {
 		 * @since 1.0.0
 		 */
 		public function define_constants() {
-
+			if ( ! defined( 'FS_CHMOD_FILE' ) ) {
+				define( 'FS_CHMOD_FILE', ( fileperms( ABSPATH . 'index.php' ) & 0777 | 0644 ) );
+			}
 		}
 
 		/**
@@ -362,8 +360,8 @@ if ( ! class_exists( 'UAGB_File_Generation' ) ) {
 			global $wpdb;
 			$wpdb->delete( $wpdb->postmeta, array( 'meta_key' => '_uagb_page_assets' ) );
 
-			$file_generation = static::allow_file_generation();
-			if ( 'enabled' === $file_generation ) {
+			$allow_file_generation = static::allow_file_generation();
+			if ( 'enabled' === $allow_file_generation ) {
 				$this->delete_upload_dir();
 			}
 
@@ -559,18 +557,19 @@ if ( ! class_exists( 'UAGB_File_Generation' ) ) {
 			$uploads_dir = self::get_upload_dir();
 			$info        = array();
 
-			if ( 'css' === $type ) {
-
-				$path            = get_post_meta( $post_id, '_uag_css_style_name', true );
-				$info['css']     = $uploads_dir['path'] . $path;
-				$info['css_url'] = $uploads_dir['url'] . $path;
-
-			} elseif ( 'js' === $type ) {
-
-				$path           = get_post_meta( $post_id, '_uag_js_script_name', true );
-				$info['js']     = $uploads_dir['path'] . $path;
-				$info['js_url'] = $uploads_dir['url'] . $path;
-
+			switch ( $type ) {
+				case 'css':
+					$path            = get_post_meta( $post_id, '_uag_css_style_name', true );
+					$info['css']     = $uploads_dir['path'] . $path;
+					$info['css_url'] = $uploads_dir['url'] . $path;
+					break;
+				case 'js':
+					$path           = get_post_meta( $post_id, '_uag_js_script_name', true );
+					$info['js']     = $uploads_dir['path'] . $path;
+					$info['js_url'] = $uploads_dir['url'] . $path;
+					break;
+				default:
+					break;
 			}
 
 			return $info;
@@ -629,13 +628,15 @@ if ( ! class_exists( 'UAGB_File_Generation' ) ) {
 				return false;
 			}
 
-			if ( 'css' === $type ) {
-
-				$post_timestamp_path = get_post_meta( $post_id, '_uag_css_style_name', true );
-
-			} elseif ( 'js' === $type ) {
-
-				$post_timestamp_path = get_post_meta( $post_id, '_uag_js_script_name', true );
+			switch ( $type ) {
+				case 'css':
+					$post_timestamp_path = get_post_meta( $post_id, '_uag_css_style_name', true );
+					break;
+				case 'js':
+					$post_timestamp_path = get_post_meta( $post_id, '_uag_js_script_name', true );
+					break;
+				default:
+					break;
 			}
 
 			$var           = ( 'css' === $type ) ? 'css' : 'js';
@@ -1027,7 +1028,7 @@ if ( ! class_exists( 'UAGB_File_Generation' ) ) {
 				$css = $file_system->get_contents( $block_static_css_path );
 			}
 
-			array_push( self::$static_css_blocks, $block_name );
+			self::$static_css_blocks[] = $block_name;
 
 			return $css;
 		}
