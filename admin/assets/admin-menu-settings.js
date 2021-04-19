@@ -334,7 +334,7 @@
 						"nonce"  : uagb.ajax_nonce,
 					},
 				})
-					.done(function (result) {q
+					.done(function (result) {
 
 						if( result.success ) {
 							$button.text( uagb.activated_text ).removeClass( "updating-message" )
