@@ -837,7 +837,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			$t_selectors = array();
 
 			$selectors = array(
-				'.wp-block-uagb-advanced-heading .uagb-heading-text' => array(
+				' .uagb-heading-text' => array(
 					'text-align'    => $attr['headingAlign'],
 					'color'         => $attr['headingColor'],
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['headSpace'], 'px' ),
@@ -845,7 +845,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				' .uagb-separator-wrap' => array(
 					'text-align' => $attr['headingAlign'],
 				),
-				'.wp-block-uagb-advanced-heading .uagb-desc-text' => array(
+				' .uagb-desc-text' => array(
 					'text-align' => $attr['headingAlign'],
 					'color'      => $attr['subHeadingColor'],
 				),
