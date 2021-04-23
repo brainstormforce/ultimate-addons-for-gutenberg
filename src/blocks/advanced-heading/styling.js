@@ -8,7 +8,6 @@ import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
 function styling( props ) {
 
 	const {
-		classMigrate,
 		headingAlign,
 		headingTag,
 		headingColor,
