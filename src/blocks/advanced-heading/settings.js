@@ -92,85 +92,87 @@ export default function headingSettings (props){
     }
 
     const BlockControlSettings = () => {
-        <BlockControls key='controls'>
-            <AlignmentToolbar
-                value={ headingAlign }
-                onChange={ ( value ) => setAttributes( { headingAlign: value } ) }
-            />
-        </BlockControls>
+        return (<BlockControls key='controls'>
+                    <AlignmentToolbar
+                        value={ headingAlign }
+                        onChange={ ( value ) => setAttributes( { headingAlign: value } ) }
+                    />
+                </BlockControls>)
     }
 
     const AdvancedHeading = () => {
-        <PanelBody title={ __( "Advanced Heading", "ultimate-addons-for-gutenberg" ) }>
-            <h2>{ __( "Heading", "ultimate-addons-for-gutenberg" ) }</h2>
-            <SelectControl
-                label={ __( "Heading Tag", "ultimate-addons-for-gutenberg" ) }
-                value={ headingTag }
-                onChange={ value => {
-                    setAttributes( { headingTag: value } )
-                } }
-                options={ [
-                    { value: "h1", label: __( "H1", "ultimate-addons-for-gutenberg" ) },
-                    { value: "h2", label: __( "H2", "ultimate-addons-for-gutenberg" ) },
-                    { value: "h3", label: __( "H3", "ultimate-addons-for-gutenberg" ) },
-                    { value: "h4", label: __( "H4", "ultimate-addons-for-gutenberg" ) },
-                    { value: "h5", label: __( "H5", "ultimate-addons-for-gutenberg" ) },
-                    { value: "h6", label: __( "H6", "ultimate-addons-for-gutenberg" ) },
-                ] }
-            />
-            <TypographyControl
-                label={ __( "Typography", "ultimate-addons-for-gutenberg" ) }
-                attributes = { attributes }
-                setAttributes = { setAttributes }
-                loadGoogleFonts = { { value: headLoadGoogleFonts, label:"headLoadGoogleFonts"  } }
-                fontFamily = { { value: headFontFamily, label:"headFontFamily"  } }
-                fontWeight = { { value: headFontWeight, label:"headFontWeight"  } }
-                fontSubset = { { value: headFontSubset, label:"headFontSubset"  } }
-                fontSizeType = { { value: headFontSizeType, label: "headFontSizeType" } }
-                fontSize = { { value: headFontSize, label:"headFontSize"  } }
-                fontSizeMobile = { { value: headFontSizeMobile, label:"headFontSizeMobile"  } }
-                fontSizeTablet= { { value: headFontSizeTablet, label:"headFontSizeTablet"  } }
-                lineHeightType = { { value: headLineHeightType, label: "headLineHeightType" } }
-                lineHeight = { { value: headLineHeight, label:"headLineHeight"  } }
-                lineHeightMobile = { { value: headLineHeightMobile, label:"headLineHeightMobile"  } }
-                lineHeightTablet= { { value: headLineHeightTablet, label:"headLineHeightTablet"  } }
-            />
-            <p className="uagb-setting-label">{ __( "Heading Color" , "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: headingColor }} ></span></span></p>
-            <ColorPalette
-                value={ headingColor }
-                onChange={ ( value ) => setAttributes( { headingColor: value } ) }
-                allowReset
-            />
-            <hr className="uagb-editor__separator" />
-            <h2>{ __( "Sub-Heading", "ultimate-addons-for-gutenberg" ) }</h2>
-            <TypographyControl
-                label={ __( "Typography", "ultimate-addons-for-gutenberg" ) }
-                attributes = { attributes }
-                setAttributes = { setAttributes }
-                loadGoogleFonts = { { value: subHeadLoadGoogleFonts, label:"subHeadLoadGoogleFonts" } }
-                fontFamily = { { value: subHeadFontFamily, label:"subHeadFontFamily" } }
-                fontWeight = { { value: subHeadFontWeight, label:"subHeadFontWeight" } }
-                fontSubset = { { value: subHeadFontSubset, label:"subHeadFontSubset" } }
-                fontSizeType = { { value: subHeadFontSizeType, label:"subHeadFontSizeType"  } }
-                fontSize = { { value: subHeadFontSize, label:"subHeadFontSize" } }
-                fontSizeMobile = { { value: subHeadFontSizeMobile, label:"subHeadFontSizeMobile" } }
-                fontSizeTablet= { { value: subHeadFontSizeTablet, label:"subHeadFontSizeTablet" } }
-                lineHeightType = { { value: subHeadLineHeightType, label:"subHeadLineHeightType"  } }
-                lineHeight = { { value: subHeadLineHeight, label:"subHeadLineHeight" } }
-                lineHeightMobile = { { value: subHeadLineHeightMobile, label:"subHeadLineHeightMobile" } }
-                lineHeightTablet= { { value: subHeadLineHeightTablet, label:"subHeadLineHeightTablet" } }
-            />
-            <p className="uagb-setting-label">{ __( "Sub Heading Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: subHeadingColor }} ></span></span></p>
-            <ColorPalette
-                value={ subHeadingColor }
-                onChange={ ( value ) => setAttributes( { subHeadingColor: value } ) }
-                allowReset
-            />
-        </PanelBody>
-
+        return (
+            <PanelBody title={ __( "Advanced Heading", "ultimate-addons-for-gutenberg" ) }>
+                <h2>{ __( "Heading", "ultimate-addons-for-gutenberg" ) }</h2>
+                <SelectControl
+                    label={ __( "Heading Tag", "ultimate-addons-for-gutenberg" ) }
+                    value={ headingTag }
+                    onChange={ value => {
+                        setAttributes( { headingTag: value } )
+                    } }
+                    options={ [
+                        { value: "h1", label: __( "H1", "ultimate-addons-for-gutenberg" ) },
+                        { value: "h2", label: __( "H2", "ultimate-addons-for-gutenberg" ) },
+                        { value: "h3", label: __( "H3", "ultimate-addons-for-gutenberg" ) },
+                        { value: "h4", label: __( "H4", "ultimate-addons-for-gutenberg" ) },
+                        { value: "h5", label: __( "H5", "ultimate-addons-for-gutenberg" ) },
+                        { value: "h6", label: __( "H6", "ultimate-addons-for-gutenberg" ) },
+                    ] }
+                />
+                <TypographyControl
+                    label={ __( "Typography", "ultimate-addons-for-gutenberg" ) }
+                    attributes = { attributes }
+                    setAttributes = { setAttributes }
+                    loadGoogleFonts = { { value: headLoadGoogleFonts, label:"headLoadGoogleFonts"  } }
+                    fontFamily = { { value: headFontFamily, label:"headFontFamily"  } }
+                    fontWeight = { { value: headFontWeight, label:"headFontWeight"  } }
+                    fontSubset = { { value: headFontSubset, label:"headFontSubset"  } }
+                    fontSizeType = { { value: headFontSizeType, label: "headFontSizeType" } }
+                    fontSize = { { value: headFontSize, label:"headFontSize"  } }
+                    fontSizeMobile = { { value: headFontSizeMobile, label:"headFontSizeMobile"  } }
+                    fontSizeTablet= { { value: headFontSizeTablet, label:"headFontSizeTablet"  } }
+                    lineHeightType = { { value: headLineHeightType, label: "headLineHeightType" } }
+                    lineHeight = { { value: headLineHeight, label:"headLineHeight"  } }
+                    lineHeightMobile = { { value: headLineHeightMobile, label:"headLineHeightMobile"  } }
+                    lineHeightTablet= { { value: headLineHeightTablet, label:"headLineHeightTablet"  } }
+                />
+                <p className="uagb-setting-label">{ __( "Heading Color" , "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: headingColor }} ></span></span></p>
+                <ColorPalette
+                    value={ headingColor }
+                    onChange={ ( value ) => setAttributes( { headingColor: value } ) }
+                    allowReset
+                />
+                <hr className="uagb-editor__separator" />
+                <h2>{ __( "Sub-Heading", "ultimate-addons-for-gutenberg" ) }</h2>
+                <TypographyControl
+                    label={ __( "Typography", "ultimate-addons-for-gutenberg" ) }
+                    attributes = { attributes }
+                    setAttributes = { setAttributes }
+                    loadGoogleFonts = { { value: subHeadLoadGoogleFonts, label:"subHeadLoadGoogleFonts" } }
+                    fontFamily = { { value: subHeadFontFamily, label:"subHeadFontFamily" } }
+                    fontWeight = { { value: subHeadFontWeight, label:"subHeadFontWeight" } }
+                    fontSubset = { { value: subHeadFontSubset, label:"subHeadFontSubset" } }
+                    fontSizeType = { { value: subHeadFontSizeType, label:"subHeadFontSizeType"  } }
+                    fontSize = { { value: subHeadFontSize, label:"subHeadFontSize" } }
+                    fontSizeMobile = { { value: subHeadFontSizeMobile, label:"subHeadFontSizeMobile" } }
+                    fontSizeTablet= { { value: subHeadFontSizeTablet, label:"subHeadFontSizeTablet" } }
+                    lineHeightType = { { value: subHeadLineHeightType, label:"subHeadLineHeightType"  } }
+                    lineHeight = { { value: subHeadLineHeight, label:"subHeadLineHeight" } }
+                    lineHeightMobile = { { value: subHeadLineHeightMobile, label:"subHeadLineHeightMobile" } }
+                    lineHeightTablet= { { value: subHeadLineHeightTablet, label:"subHeadLineHeightTablet" } }
+                />
+                <p className="uagb-setting-label">{ __( "Sub Heading Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: subHeadingColor }} ></span></span></p>
+                <ColorPalette
+                    value={ subHeadingColor }
+                    onChange={ ( value ) => setAttributes( { subHeadingColor: value } ) }
+                    allowReset
+                />
+            </PanelBody>
+        )
     }
 
     const SeperatorSettings = () => {
+        return (
         <PanelBody title={ __( "Separator", "ultimate-addons-for-gutenberg" ) } initialOpen={ false }>
         <SelectControl
             label={ __( "Style", "ultimate-addons-for-gutenberg" ) }
@@ -221,11 +223,11 @@ export default function headingSettings (props){
         </Fragment>
         }
     </PanelBody>
-    
+        )
     }
 
     const SpacingSettings = () => {
-        <PanelBody title={ __( "Spacing", "ultimate-addons-for-gutenberg" ) } initialOpen={ false }>
+        return (<PanelBody title={ __( "Spacing", "ultimate-addons-for-gutenberg" ) } initialOpen={ false }>
             <RangeControl
                 label={ __( "Heading Bottom Spacing (px)", "ultimate-addons-for-gutenberg" ) }
                 value={ headSpace }
@@ -249,17 +251,19 @@ export default function headingSettings (props){
                 />
             }
         </PanelBody>
+        )
     }
+    
     return ( 
         <>
-          {BlockControlSettings}
-         <InspectorControls>
-             {AdvancedHeading()}
-             {SeperatorSettings()}
-             {SpacingSettings()}
-         </InspectorControls>
-         {loadHeadingGoogleFonts}
-         {loadSubHeadingGoogleFonts}
+            {BlockControlSettings}
+            <InspectorControls>
+                {AdvancedHeading()}
+                {SeperatorSettings()}
+                {SpacingSettings()}
+            </InspectorControls>
+            {loadHeadingGoogleFonts}
+            {loadSubHeadingGoogleFonts}
         </>
     )
 }
