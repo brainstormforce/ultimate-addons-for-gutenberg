@@ -6,19 +6,18 @@ const {
 const { __ } = wp.i18n
 
 export default function renderHeading( props ) {
-    const {
-        attributes,
+   const {
+        attributes:{
+            block_id,
+            headingTitle,
+            headingDesc,
+            headingTag,
+            seperatorStyle
+        },
         setAttributes,
         className,
         deviceType
     } = props;
-    const {
-        block_id,
-        headingTitle,
-        headingDesc,
-        headingTag,
-        seperatorStyle
-    } = attributes;
 
     const heading_html = (
         <RichText
