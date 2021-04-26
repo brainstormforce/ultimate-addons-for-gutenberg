@@ -6,11 +6,10 @@ const { __ } = wp.i18n
 
 import classnames from "classnames"
 
-class InfoBoxCta extends React.Component {
+export default function InfoBoxCta(props){
+	
 
-	render() {
-
-		const { attributes } = this.props
+		const { attributes } = props
 
 		let ctaBtnClass = "uagb-infobox-cta-link uagb-ifb-cta-button"
 
@@ -50,7 +49,6 @@ class InfoBoxCta extends React.Component {
 				}
 			</div>            
 		)
-	}
+	
 }
 
-export default InfoBoxCta

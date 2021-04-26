@@ -8,17 +8,12 @@ const {
 	createBlock
 } = wp.blocks
 
-class Prefix extends React.Component {
-
-	render() {
-
-		//const { attributes, setAttributes } = this.props;
+export default function Prefix(props){
 
 		const {
 			attributes,
-			setAttributes ,
-			props
-		} = this.props
+			setAttributes 
+		} = props
 
 		if( setAttributes !== "not_set" ){
 			return (
@@ -56,7 +51,5 @@ class Prefix extends React.Component {
 	            />
 			)
 		}
-	}
 }
 
-export default Prefix

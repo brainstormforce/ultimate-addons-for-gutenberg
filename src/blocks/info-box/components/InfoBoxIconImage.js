@@ -4,11 +4,9 @@ const {
 
 const { __ } = wp.i18n
 
-class InfoBoxIconImage extends React.Component {
-
-	render() {
-
-		const { attributes } = this.props 
+export default function InfoBoxIconImage(props){
+	
+		const { attributes } = props 
 
 		let url_chk = ""
 		if( typeof attributes.iconImage !== "undefined" && attributes.iconImage !== null && attributes.iconImage !=="" ){
@@ -43,7 +41,6 @@ class InfoBoxIconImage extends React.Component {
 			return null
 		}       
 		
-	}
+	
 }
 
-export default InfoBoxIconImage

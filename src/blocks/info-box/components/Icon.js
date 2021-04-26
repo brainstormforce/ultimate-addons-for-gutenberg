@@ -6,22 +6,19 @@ const {
 
 const { __ } = wp.i18n
 
-class Icon extends React.Component {
+export default function Icon(props){	
 
-	render() {
+	const { attributes } = props
 
-		const { attributes } = this.props
-
-		return (
-			<div className="uagb-ifb-image-icon-content uagb-ifb-imgicon-wrap" >
-				<div className="uagb-ifb-icon-wrap">
-					<span className="uagb-ifb-icon">
-						{ renderSVG( attributes.icon ) }
-					</span>
-				</div>
+	return (
+		<div className="uagb-ifb-image-icon-content uagb-ifb-imgicon-wrap" >
+			<div className="uagb-ifb-icon-wrap">
+				<span className="uagb-ifb-icon">
+					{ renderSVG( attributes.icon ) }
+				</span>
 			</div>
-		)
-	}
+		</div>
+	)
+	
 }
 
-export default Icon

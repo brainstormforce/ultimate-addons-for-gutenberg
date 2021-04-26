@@ -1,15 +1,11 @@
-class InfoBoxSeparator extends React.Component {
-
-	render() {
-
-		const { attributes } = this.props
+export default function InfoBoxSeparator(){
+	
 
 		return (
 			<div className = "uagb-ifb-separator-parent">
 				<div className = "uagb-ifb-separator" ></div>
 			</div>
 		)
-	}
+	
 }
 
-export default InfoBoxSeparator

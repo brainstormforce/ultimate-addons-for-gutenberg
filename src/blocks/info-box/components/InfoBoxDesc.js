@@ -8,16 +8,11 @@ const {
 	createBlock
 } = wp.blocks
 
-class InfoBoxDesc extends React.Component {
-
-	render() {
-
-		//const { attributes, setAttributes } = this.props;
+export default function InfoBoxDesc(props){
 		const {
 			attributes,
-			setAttributes ,
-			props
-		} = this.props
+			setAttributes 
+		} = props
 
 		if( setAttributes !== "not_set" ){
 			return (
@@ -51,7 +46,6 @@ class InfoBoxDesc extends React.Component {
 	            />
 			)
 		}
-	}
+	
 }
 
-export default InfoBoxDesc

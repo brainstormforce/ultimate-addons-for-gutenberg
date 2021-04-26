@@ -10,7 +10,7 @@ import InfoBoxDesc from "./components/InfoBoxDesc"
 import Icon from "./components/Icon"
 import InfoBoxPositionClasses from "./classes"
 import InfoBoxSeparator from "./components/InfoBoxSeparator"
-import CallToAction from "./components/CallToAction"
+import InfoBoxCta from "./components/CallToAction"
 import InfoBoxIconImage from "./components/IconImage"
 
 const {
@@ -44,14 +44,14 @@ export default function save( props ) {
 	let is_image = ""
 
 	if( source_type === "icon" && icon !=="" ) {
-		is_image = <Icon attributes={ props.attributes }/>
+		is_image = Icon(props)
 	}else{
-		is_image = <InfoBoxIconImage attributes={ props.attributes } />
+		is_image = InfoBoxIconImage(props)
 	}
 
 	var icon_image_html = is_image
 	var seperator_position = seperatorPosition
-	var seperator_html = <InfoBoxSeparator attributes={props.attributes} />
+	var seperator_html = InfoBoxSeparator()
 	var show_seperator = true
 
 	if( seperatorPosition == "after_icon" && ( iconimgPosition == "above-title" || iconimgPosition == "below-title" ) ){
@@ -78,27 +78,27 @@ export default function save( props ) {
 		)
 	}
 	// Get description and seperator components.
-	const desc = (
+	const desc = () => {
 		<Fragment>
 			{ "none" !== seperatorStyle && ( seperator_position == "after_title"  && show_seperator )&& seperator_html }
 			<div className = "uagb-ifb-text-wrap">
-				{ showDesc && "" !== headingDesc && <InfoBoxDesc attributes={props.attributes} setAttributes = "not_set"/> }
+				{ showDesc && "" !== headingDesc && InfoBoxDesc(props)}
 				{ "none" !== seperatorStyle && seperator_position == "after_desc" && seperator_html }
-				{ ctaType !== "none" && <CallToAction attributes={props.attributes} />}
+				{ ctaType !== "none" && InfoBoxCta(props)}
 			</div>
 		</Fragment>
-	)
+	}
 
 	// Get Title and Prefix components.
-	const title_text = (
+	const title_text = () => {
 		<div className = "uagb-ifb-title-wrap">
-			{ showPrefix && "" !== prefixTitle && <Prefix attributes={ props.attributes } setAttributes = "not_set"/> }
+			{ showPrefix && "" !== prefixTitle && Prefix(props) }
 			{ "none" !== seperatorStyle && seperator_position == "after_prefix" && seperator_html }
-			{ showTitle && "" !== infoBoxTitle && <Title attributes={ props.attributes} setAttributes = "not_set"/> }
+			{ showTitle && "" !== infoBoxTitle && Title(props) }
 		</div>
-	)
+	}
 
-	const output = (
+	const output = () => {
 		<div className = { classnames(
 			"uagb-infobox__content-wrap",
 			( ctaType == "all" ? " uagb-infobox_cta-type-all" : "" ),
@@ -107,42 +107,42 @@ export default function save( props ) {
 			<div className = "uagb-ifb-left-right-wrap">
 
 				{ ( iconimgPosition == "left" ) &&
-						is_image
+						icon_image_html
 				}
 				<div className = "uagb-ifb-content">
 
 					{  iconimgPosition == "above-title" && icon_image_html }
 
-					{ ( iconimgPosition == "above-title" || iconimgPosition == "below-title" ) && title_text }
+					{ ( iconimgPosition == "above-title" || iconimgPosition == "below-title" ) && title_text() }
 
 					{ iconimgPosition == "below-title"  && icon_image_html }
 
-					{ ( iconimgPosition == "above-title" || iconimgPosition == "below-title" ) && desc }
+					{ ( iconimgPosition == "above-title" || iconimgPosition == "below-title" ) && desc() }
 
 					{ ( iconimgPosition === "left-title" ) &&
 							<Fragment>
 								<div className = "uagb-ifb-left-title-image">
 									{ icon_image_html }
-									{ title_text }
+									{ title_text() }
 								</div>
-								{ desc }
+								{ desc() }
 							</Fragment>
 					}
 
 					{ ( iconimgPosition === "right-title" ) &&
 							<Fragment>
 								<div className = "uagb-ifb-right-title-image">
-									{ title_text }
+									{ title_text() }
 									{ icon_image_html }
 								</div>
-								{ desc }
+								{ desc() }
 							</Fragment>
 					}
 
 					{ ( iconimgPosition == "left" || iconimgPosition == "right" ) &&
 							<Fragment>
-								{ title_text }
-								{ desc }
+								{ title_text() }
+								{ desc() }
 							</Fragment>
 					}
 
@@ -151,7 +151,7 @@ export default function save( props ) {
 				{ ( iconimgPosition == "right" ) && icon_image_html }
 			</div>
 		</div>
-	)
+	}
 
 	let target ="_self"
 	if( ctaTarget ){
@@ -168,7 +168,7 @@ export default function save( props ) {
 			{ ( ctaType == "all" ) &&
 				<a href= {ctaLink} className = "uagb-infobox-link-wrap uagb-infbox__link-to-all" target={target} aria-label={"Infobox Link"} rel ="noopener noreferrer"></a>
 			}
-			{output}
+			{output()}
 		</div>
 	)
 }
