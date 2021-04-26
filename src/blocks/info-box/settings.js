@@ -406,13 +406,12 @@ export default function InfoBoxSetting(props){
                                 value={ iconImage }
                                 render={ ( { open } ) => (
                                     <Button isSecondary onClick={ open }>
-                                        {! iconImage ? __( "Select Image", "ultimate-addons-for-gutenberg" ) : __( "Replace image", "ultimate-addons-for-gutenberg" ) }
+                                        { image_name }
                                     </Button>
                                 ) }
                             />
-                            {console.log(iconImage)}
                             { ( iconImage && iconImage.url !=="null" && iconImage.url !== "" ) &&
-                                <Button className="uagb-rm-btn" onClick={ onRemoveImage() } isLink isDestructive>
+                                <Button className="uagb-rm-btn" onClick={ onRemoveImage } isLink isDestructive>
                                     { __( "Remove Image", "ultimate-addons-for-gutenberg" ) }
                                 </Button>
                             }

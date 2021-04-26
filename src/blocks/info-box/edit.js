@@ -11,11 +11,6 @@ import React, { useEffect } from 'react';
 const { __ } = wp.i18n
 const { Fragment } = wp.element
 
-
-$ = jQuery
-
-
-
 export default function UAGBinfoBox(props){
 	useEffect(() => { // Replacement for componentDidMount.
 
