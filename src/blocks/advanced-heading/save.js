@@ -21,7 +21,7 @@ export default function save( props ) {
 
 	var seprator_output =  ""
 	if( seperatorStyle !== "none" ){
-		seprator_output = <div className="uagb-separator-wrap" ></div>
+		seprator_output = <div className="uagb-separator-wrap" ><div className="uagb-separator"></div></div>
 	}
 	return (
 		<div

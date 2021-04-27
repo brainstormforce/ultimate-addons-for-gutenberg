@@ -52,6 +52,9 @@ function styling( props ) {
 			"font-size": generateCSSUnit( subHeadFontSize, subHeadFontSizeType ),
 			"line-height": generateCSSUnit( subHeadLineHeight, subHeadLineHeightType ),
 			"color": subHeadingColor,
+		},
+		" .uagb-separator-wrap": {
+			"text-align": headingAlign,
 		}
 	}
 
@@ -67,7 +70,6 @@ function styling( props ) {
 
 	if( seperatorStyle !== "none" ){
 		selectors[" .uagb-separator"] = {
-			"text-align": headingAlign,
 			"border-top-style": seperatorStyle,
 			"border-top-width": generateCSSUnit( separatorHeight, "px" ),
 			"width": generateCSSUnit( separatorWidth, separatorWidthType ),

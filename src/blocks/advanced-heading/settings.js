@@ -258,7 +258,7 @@ export default function headingSettings (props){
     
     return ( 
         <div>
-            {BlockControlSettings}
+            {BlockControlSettings()}
             <InspectorControls>
                 {AdvancedHeading()}
                 {SeperatorSettings()}
