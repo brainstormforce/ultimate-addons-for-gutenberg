@@ -24,7 +24,6 @@ export default function save( props ) {
 		ctaType,
 		ctaLink,
 		ctaTarget,
-		className,
 		prefixTitle,
 		infoBoxTitle,
 		headingDesc,

@@ -320,7 +320,7 @@ class UAGB_Init_Blocks {
 
 		wp_enqueue_style(
 			'uagb-block-css', // Handle.
-			UAGB_URL . 'dist/blocks.style.css', // Block style CSS.
+			UAGB_URL . 'dist/build/style-blocks.css', // Block style CSS.
 			array(),
 			UAGB_VER
 		);
@@ -423,7 +423,7 @@ class UAGB_Init_Blocks {
 		// Scripts.
 		wp_enqueue_script(
 			'uagb-block-editor-js', // Handle.
-			UAGB_URL . 'dist/blocks.build.js',
+			UAGB_URL . 'dist/build/blocks.js',
 			array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor', 'wp-api-fetch' ), // Dependencies, defined above.
 			UAGB_VER,
 			true // Enqueue the script in the footer.
@@ -434,7 +434,7 @@ class UAGB_Init_Blocks {
 		// Styles.
 		wp_enqueue_style(
 			'uagb-block-editor-css', // Handle.
-			UAGB_URL . 'dist/blocks.editor.build.css', // Block editor CSS.
+			UAGB_URL . 'dist/build/blocks.css', // Block editor CSS.
 			array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
 			UAGB_VER
 		);

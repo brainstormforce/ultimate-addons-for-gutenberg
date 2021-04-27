@@ -9,9 +9,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2021-04-09T15:35:23+00:00\n"
+=======
 "POT-Creation-Date: 2021-04-21T13:17:23+00:00\n"
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0-alpha-59d879d\n"
+"X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: ultimate-addons-for-gutenberg\n"
 
 #. Plugin Name of the plugin
@@ -302,7 +306,11 @@ msgid "Theme Successfully Activated"
 msgstr ""
 
 #: classes/class-uagb-config.php:46
+<<<<<<< HEAD
+#: src/blocks/advanced-heading/edit.js:210
+=======
 #: dist/blocks.build.js:26974
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Advanced Heading"
 msgstr ""
 
@@ -335,7 +343,11 @@ msgid "This block allows you to display your Blockquote."
 msgstr ""
 
 #: classes/class-uagb-config.php:350
+<<<<<<< HEAD
+#: src/blocks/info-box/edit.js:460
+=======
 #: dist/blocks.build.js:85216
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Call To Action"
 msgstr ""
 
@@ -352,8 +364,13 @@ msgid "This block allows you to add and style your Contact Form 7 forms right in
 msgstr ""
 
 #: classes/class-uagb-config.php:560
+<<<<<<< HEAD
+#: src/blocks/timeline/content-timeline-child/block.js:26
+#: src/blocks/timeline/content-timeline/block.js:74
+=======
 #: dist/blocks.build.js:97647
 #: dist/blocks.build.js:99331
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Content Timeline"
 msgstr ""
 
@@ -421,6 +438,22 @@ msgid "Label #1"
 msgstr ""
 
 #: classes/class-uagb-config.php:1064
+<<<<<<< HEAD
+#: src/blocks/blockquote/edit.js:907
+#: src/blocks/faq/edit.js:533
+#: src/blocks/faq/edit.js:641
+#: src/blocks/icon-list-child/edit.js:313
+#: src/blocks/icon-list-child/edit.js:320
+#: src/blocks/info-box/edit.js:1063
+#: src/blocks/inline-notice/edit.js:232
+#: src/blocks/social-share-child/edit.js:294
+#: src/blocks/social-share-child/edit.js:301
+#: src/blocks/tabs/edit.js:330
+#: src/blocks/team/edit.js:469
+#: src/blocks/team/edit.js:487
+#: src/blocks/team/edit.js:505
+#: src/blocks/team/edit.js:523
+=======
 #: dist/blocks.build.js:85972
 #: dist/blocks.build.js:90251
 #: dist/blocks.build.js:90283
@@ -438,6 +471,7 @@ msgstr ""
 #: dist/blocks.build.js:125263
 #: dist/blocks.build.js:125322
 #: dist/blocks.build.js:137041
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Icon"
 msgstr ""
 
@@ -474,11 +508,18 @@ msgid "This block allows you to add multiple buttons with a single block."
 msgstr ""
 
 #: classes/class-uagb-config.php:1336
+<<<<<<< HEAD
+#: src/blocks/call-to-action/edit.js:196
+#: src/blocks/call-to-action/edit.js:204
+#: src/blocks/info-box/edit.js:468
+#: src/blocks/post/post-masonry/edit.js:885
+=======
 #: dist/blocks.build.js:66072
 #: dist/blocks.build.js:85223
 #: dist/blocks.build.js:102258
 #: dist/blocks.build.js:102265
 #: dist/blocks.build.js:125128
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Button"
 msgstr ""
 
@@ -497,9 +538,12 @@ msgstr ""
 #: classes/class-uagb-config.php:1458
 #: classes/class-uagb-config.php:1554
 #: classes/class-uagb-config.php:1668
+<<<<<<< HEAD
+=======
 #: dist/blocks/post-timeline/class-uagb-post-timeline.php:447
 #: dist/blocks/post/class-uagb-post.php:445
 #: dist/blocks/post/class-uagb-post.php:1469
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Read More"
 msgstr ""
 
@@ -629,6 +673,17 @@ msgstr ""
 msgid "This block allows you to place a Table of Contents for Pages/Posts."
 msgstr ""
 
+<<<<<<< HEAD
+#: classes/class-uagb-config.php:2264
+#: src/blocks/table-of-contents/attributes.js:74
+#: src/blocks/table-of-contents/attributes.js:78
+#: src/blocks/table-of-contents/edit.js:979
+msgid "Table Of Contents"
+msgstr ""
+
+#: classes/class-uagb-config.php:2265
+#: src/blocks/table-of-contents/attributes.js:340
+=======
 #: classes/class-uagb-config.php:2265
 #: dist/blocks/table-of-content/class-uagb-table-of-content.php:110
 #: dist/blocks/table-of-content/class-uagb-table-of-content.php:114
@@ -641,6 +696,7 @@ msgstr ""
 #: classes/class-uagb-config.php:2266
 #: dist/blocks/table-of-content/class-uagb-table-of-content.php:378
 #: dist/blocks.build.js:23507
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Add a header to begin generating the table of contents"
 msgstr ""
 
@@ -652,8 +708,13 @@ msgstr ""
 msgid "This block allows you to display your team. Add their picture, name, what they do and links to their social profiles."
 msgstr ""
 
+<<<<<<< HEAD
+#: classes/class-uagb-config.php:2431
+#: src/blocks/testimonial/edit.js:321
+=======
 #: classes/class-uagb-config.php:2432
 #: dist/blocks.build.js:88090
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Testimonial"
 msgstr ""
 
@@ -677,8 +738,12 @@ msgstr ""
 msgid "This block helps you to display content categorization for various post types"
 msgstr ""
 
+<<<<<<< HEAD
+#: classes/class-uagb-config.php:2667
+=======
 #: classes/class-uagb-config.php:2669
 #: dist/blocks/taxonomy-list/class-uagb-taxonomy-list.php:113
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Taxonomy Not Available."
 msgstr ""
 
@@ -690,6 +755,16 @@ msgstr ""
 msgid "This block allow you to create interactive contact form, newsletter, suggestion, etc easily."
 msgstr ""
 
+<<<<<<< HEAD
+#: classes/class-uagb-config.php:2682
+#: src/blocks/forms/attributes.js:9
+#: src/blocks/forms/edit.js:977
+msgid "Submit"
+msgstr ""
+
+#: classes/class-uagb-config.php:2683
+#: src/blocks/forms/attributes.js:13
+=======
 #: classes/class-uagb-config.php:2684
 #: dist/blocks.build.js:129844
 #: dist/blocks.build.js:131509
@@ -698,6 +773,7 @@ msgstr ""
 
 #: classes/class-uagb-config.php:2685
 #: dist/blocks.build.js:129848
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "UAG Form"
 msgstr ""
 
@@ -705,6 +781,25 @@ msgstr ""
 msgid "The form has been submitted Successfully!"
 msgstr ""
 
+<<<<<<< HEAD
+#: classes/class-uagb-config.php:2765
+#: src/blocks/forms/attributes.js:29
+msgid "There has been some error while submitting the form. Please verify all form fields again."
+msgstr ""
+
+#: classes/class-uagb-config.php:2778
+#: src/blocks/forms/attributes.js:385
+msgid "Please fill up the above captcha."
+msgstr ""
+
+#: classes/class-uagb-config.php:2783
+#: src/blocks/forms/child-blocks/name/attributes.js:17
+#: src/blocks/forms/child-blocks/name/edit.js:103
+#: src/blocks/forms/child-blocks/toggle/attributes.js:15
+#: src/blocks/forms/child-blocks/toggle/edit.js:123
+#: src/blocks/forms/child-blocks/upload/edit.js:103
+#: src/blocks/testimonial/edit.js:341
+=======
 #: classes/class-uagb-config.php:2711
 #: dist/blocks.build.js:129887
 msgid "Form Submission"
@@ -726,6 +821,7 @@ msgstr ""
 #: dist/blocks.build.js:132403
 #: dist/blocks.build.js:135181
 #: dist/blocks.build.js:135358
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Name"
 msgstr ""
 
@@ -733,6 +829,15 @@ msgstr ""
 msgid "This block helps to add Name field."
 msgstr ""
 
+<<<<<<< HEAD
+#: classes/class-uagb-config.php:2790
+#: src/blocks/forms/child-blocks/email/attributes.js:13
+#: src/blocks/forms/child-blocks/email/edit.js:102
+#: src/blocks/forms/edit.js:675
+#: src/blocks/forms/edit.js:684
+#: src/blocks/forms/edit.js:693
+#: src/blocks/social-share-child/edit.js:278
+=======
 #: classes/class-uagb-config.php:2792
 #: dist/blocks.build.js:92841
 #: dist/blocks.build.js:131082
@@ -740,6 +845,7 @@ msgstr ""
 #: dist/blocks.build.js:131100
 #: dist/blocks.build.js:132545
 #: dist/blocks.build.js:132687
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Email"
 msgstr ""
 
@@ -755,6 +861,15 @@ msgstr ""
 msgid "This block helps to add Hidden field."
 msgstr ""
 
+<<<<<<< HEAD
+#: classes/class-uagb-config.php:2802
+#: src/blocks/forms/child-blocks/hidden/attributes.js:12
+msgid "Hidden Field Name"
+msgstr ""
+
+#: classes/class-uagb-config.php:2809
+#: src/blocks/forms/child-blocks/phone/attributes.js:11
+=======
 #: classes/class-uagb-config.php:2804
 #: dist/blocks.build.js:132825
 msgid "Hidden Field Name"
@@ -762,6 +877,7 @@ msgstr ""
 
 #: classes/class-uagb-config.php:2811
 #: dist/blocks.build.js:133065
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Phone"
 msgstr ""
 
@@ -777,9 +893,15 @@ msgstr ""
 msgid "This block helps to add Textarea field."
 msgstr ""
 
+<<<<<<< HEAD
+#: classes/class-uagb-config.php:2821
+#: src/blocks/forms/child-blocks/textarea/attributes.js:13
+#: src/blocks/forms/edit.js:313
+=======
 #: classes/class-uagb-config.php:2823
 #: dist/blocks.build.js:130576
 #: dist/blocks.build.js:133397
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Message"
 msgstr ""
 
@@ -799,6 +921,18 @@ msgstr ""
 msgid "This block helps to add Radio field."
 msgstr ""
 
+<<<<<<< HEAD
+#: classes/class-uagb-config.php:2841
+#: classes/class-uagb-config.php:2846
+#: src/blocks/blockquote/edit.js:961
+#: src/blocks/forms/child-blocks/url/attributes.js:12
+#: src/blocks/forms/edit.js:323
+#: src/blocks/icon-list-child/edit.js:361
+#: src/blocks/team/edit.js:479
+#: src/blocks/team/edit.js:497
+#: src/blocks/team/edit.js:515
+#: src/blocks/team/edit.js:533
+=======
 #: classes/class-uagb-config.php:2843
 #: classes/class-uagb-config.php:2848
 #: dist/blocks.build.js:90267
@@ -809,6 +943,7 @@ msgstr ""
 #: dist/blocks.build.js:113844
 #: dist/blocks.build.js:130589
 #: dist/blocks.build.js:134501
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "URL"
 msgstr ""
 
@@ -848,8 +983,13 @@ msgstr ""
 msgid "This block helps to add Accept field."
 msgstr ""
 
+<<<<<<< HEAD
+#: classes/class-uagb-config.php:2879
+#: src/blocks/lottie/edit.js:329
+=======
 #: classes/class-uagb-config.php:2881
 #: dist/blocks.build.js:138594
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Lottie"
 msgstr ""
 
@@ -858,7 +998,11 @@ msgid "This block helps you add Lottie animation and customize it as required."
 msgstr ""
 
 #: classes/class-uagb-helper.php:1076
+<<<<<<< HEAD
+#: src/blocks/forms/edit.js:467
+=======
 #: dist/blocks.build.js:130791
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Full"
 msgstr ""
 
@@ -874,6 +1018,67 @@ msgstr ""
 msgid "Ultimate Addons Blocks"
 msgstr ""
 
+<<<<<<< HEAD
+#: classes/class-uagb-init-blocks.php:523
+#: src/blocks/advanced-heading/edit.js:282
+#: src/blocks/blockquote/edit.js:286
+#: src/blocks/blockquote/edit.js:525
+#: src/blocks/buttons-child/edit.js:290
+#: src/blocks/buttons/edit.js:143
+#: src/blocks/call-to-action/edit.js:202
+#: src/blocks/call-to-action/edit.js:316
+#: src/blocks/call-to-action/edit.js:613
+#: src/blocks/cf7-styler/edit.js:317
+#: src/blocks/cf7-styler/edit.js:479
+#: src/blocks/column/edit.js:175
+#: src/blocks/column/edit.js:633
+#: src/blocks/columns/edit.js:280
+#: src/blocks/columns/edit.js:598
+#: src/blocks/columns/edit.js:637
+#: src/blocks/columns/edit.js:961
+#: src/blocks/columns/edit.js:1156
+#: src/blocks/faq/edit.js:491
+#: src/blocks/forms/edit.js:355
+#: src/blocks/forms/edit.js:408
+#: src/blocks/forms/edit.js:570
+#: src/blocks/forms/edit.js:823
+#: src/blocks/gf-styler/edit.js:335
+#: src/blocks/gf-styler/edit.js:561
+#: src/blocks/icon-list/edit.js:196
+#: src/blocks/info-box/edit.js:414
+#: src/blocks/info-box/edit.js:466
+#: src/blocks/info-box/edit.js:591
+#: src/blocks/info-box/edit.js:1049
+#: src/blocks/lottie/edit.js:129
+#: src/blocks/marketing-button/edit.js:660
+#: src/blocks/post/post-carousel/edit.js:848
+#: src/blocks/post/post-grid/edit.js:934
+#: src/blocks/post/post-masonry/edit.js:689
+#: src/blocks/post/post-masonry/edit.js:874
+#: src/blocks/post/post-masonry/edit.js:1072
+#: src/blocks/review/edit.js:662
+#: src/blocks/section/edit.js:639
+#: src/blocks/section/edit.js:883
+#: src/blocks/social-share/edit.js:155
+#: src/blocks/table-of-contents/edit.js:926
+#: src/blocks/team/edit.js:404
+#: src/blocks/testimonial/edit.js:481
+#: src/blocks/testimonial/edit.js:587
+#: src/blocks/testimonial/edit.js:943
+#: src/blocks/timeline/content-timeline/edit.js:470
+#: src/blocks/timeline/post-timeline/edit.js:570
+#: src/components/gutter-options/index.js:6
+#: src/components/gutter-options/index.js:7
+#: src/components/option-selector-control/index.js:52
+#: src/components/option-selector-control/index.js:53
+msgid "None"
+msgstr ""
+
+#: classes/class-uagb-init-blocks.php:552
+#: classes/class-uagb-init-blocks.php:585
+#: src/blocks/cf7-styler/edit.js:445
+#: src/blocks/gf-styler/edit.js:478
+=======
 #: classes/class-uagb-init-blocks.php:524
 #: dist/blocks.build.js:27072
 #: dist/blocks.build.js:63803
@@ -934,6 +1139,7 @@ msgstr ""
 #: classes/class-uagb-init-blocks.php:586
 #: dist/blocks.build.js:108945
 #: dist/blocks.build.js:110936
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgid "Select Form"
 msgstr ""
 
@@ -954,14 +1160,6 @@ msgstr ""
 msgid "Install Gutenberg"
 msgstr ""
 
-#: dist/blocks/post-timeline/class-uagb-post-timeline.php:545
-msgid "No posts found"
-msgstr ""
-
-#: dist/blocks/post-timeline/class-uagb-post-timeline.php:703
-msgid "Untitled"
-msgstr ""
-
 #: lib/notices/class-astra-notices.php:120
 msgid "WordPress Nonce not validated."
 msgstr ""
@@ -976,6 +1174,6140 @@ msgstr ""
 msgid "Ultimate Addons for Gutenberg requires WordPress version %s+. Because you are using an earlier version, the plugin is currently NOT RUNNING."
 msgstr ""
 
+<<<<<<< HEAD
+#: src/blocks/advanced-heading/block.js:24
+msgid "advanced heading"
+msgstr ""
+
+#: src/blocks/advanced-heading/block.js:25
+#: src/blocks/buttons/block.js:33
+#: src/blocks/call-to-action/block.js:29
+#: src/blocks/cf7-styler/block.js:42
+#: src/blocks/columns/block.js:34
+#: src/blocks/faq/block.js:63
+#: src/blocks/forms/block.js:26
+#: src/blocks/gf-styler/block.js:41
+#: src/blocks/google-map/block.js:189
+#: src/blocks/how-to/block.js:27
+#: src/blocks/icon-list/block.js:26
+#: src/blocks/info-box/block.js:25
+#: src/blocks/inline-notice/block.js:26
+#: src/blocks/lottie/block.js:22
+#: src/blocks/marketing-button/block.js:27
+#: src/blocks/post/post-carousel/block.js:28
+#: src/blocks/post/post-grid/block.js:28
+#: src/blocks/post/post-masonry/block.js:28
+#: src/blocks/review/block.js:27
+#: src/blocks/section/block.js:30
+#: src/blocks/social-share-child/block.js:28
+#: src/blocks/social-share/block.js:31
+#: src/blocks/table-of-contents/block.js:27
+#: src/blocks/tabs-child/block.js:25
+#: src/blocks/tabs/block.js:25
+#: src/blocks/taxonomy-list/block.js:28
+#: src/blocks/team/block.js:28
+#: src/blocks/testimonial/block.js:25
+#: src/blocks/timeline/content-timeline-child/block.js:28
+#: src/blocks/timeline/content-timeline/block.js:76
+#: src/blocks/timeline/post-timeline/block.js:28
+#: src/blocks/wp-search/block.js:25
+msgid "uag"
+msgstr ""
+
+#: src/blocks/advanced-heading/block.js:26
+msgid "heading"
+msgstr ""
+
+#: src/blocks/advanced-heading/block.js:33
+#: src/blocks/advanced-heading/edit.js:358
+#: src/blocks/timeline/content-timeline-child/edit.js:140
+msgid "Write a Heading"
+msgstr ""
+
+#: src/blocks/advanced-heading/block.js:34
+#: src/blocks/advanced-heading/edit.js:383
+#: src/blocks/team/edit.js:272
+#: src/blocks/team/edit.js:276
+#: src/blocks/timeline/content-timeline-child/edit.js:161
+msgid "Write a Description"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:211
+#: src/blocks/call-to-action/edit.js:484
+#: src/blocks/how-to/edit.js:578
+#: src/blocks/how-to/edit.js:599
+#: src/blocks/table-of-contents/edit.js:335
+#: src/blocks/timeline/content-timeline/edit.js:520
+#: src/blocks/timeline/post-timeline/edit.js:666
+msgid "Heading"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:213
+#: src/blocks/timeline/post-timeline/edit.js:668
+msgid "Heading Tag"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:219
+#: src/blocks/call-to-action/edit.js:490
+#: src/blocks/faq/edit.js:697
+#: src/blocks/how-to/edit.js:413
+#: src/blocks/inline-notice/edit.js:210
+#: src/blocks/marketing-button/edit.js:325
+#: src/blocks/post/post-carousel/edit.js:930
+#: src/blocks/post/post-grid/edit.js:1017
+#: src/blocks/post/post-masonry/edit.js:1154
+#: src/blocks/team/edit.js:551
+#: src/blocks/timeline/content-timeline/edit.js:341
+#: src/blocks/timeline/post-timeline/edit.js:672
+msgid "H1"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:220
+#: src/blocks/call-to-action/edit.js:491
+#: src/blocks/faq/edit.js:698
+#: src/blocks/how-to/edit.js:414
+#: src/blocks/inline-notice/edit.js:211
+#: src/blocks/marketing-button/edit.js:326
+#: src/blocks/post/post-carousel/edit.js:931
+#: src/blocks/post/post-grid/edit.js:1018
+#: src/blocks/post/post-masonry/edit.js:1155
+#: src/blocks/team/edit.js:552
+#: src/blocks/timeline/content-timeline/edit.js:342
+#: src/blocks/timeline/post-timeline/edit.js:673
+msgid "H2"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:221
+#: src/blocks/call-to-action/edit.js:492
+#: src/blocks/faq/edit.js:699
+#: src/blocks/how-to/edit.js:415
+#: src/blocks/inline-notice/edit.js:212
+#: src/blocks/marketing-button/edit.js:327
+#: src/blocks/post/post-carousel/edit.js:932
+#: src/blocks/post/post-grid/edit.js:1019
+#: src/blocks/post/post-masonry/edit.js:1156
+#: src/blocks/team/edit.js:553
+#: src/blocks/timeline/content-timeline/edit.js:343
+#: src/blocks/timeline/post-timeline/edit.js:674
+msgid "H3"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:222
+#: src/blocks/call-to-action/edit.js:493
+#: src/blocks/faq/edit.js:700
+#: src/blocks/how-to/edit.js:416
+#: src/blocks/inline-notice/edit.js:213
+#: src/blocks/marketing-button/edit.js:328
+#: src/blocks/post/post-carousel/edit.js:933
+#: src/blocks/post/post-grid/edit.js:1020
+#: src/blocks/post/post-masonry/edit.js:1157
+#: src/blocks/team/edit.js:554
+#: src/blocks/timeline/content-timeline/edit.js:344
+#: src/blocks/timeline/post-timeline/edit.js:675
+msgid "H4"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:223
+#: src/blocks/call-to-action/edit.js:494
+#: src/blocks/faq/edit.js:701
+#: src/blocks/how-to/edit.js:417
+#: src/blocks/inline-notice/edit.js:214
+#: src/blocks/marketing-button/edit.js:329
+#: src/blocks/post/post-carousel/edit.js:934
+#: src/blocks/post/post-grid/edit.js:1021
+#: src/blocks/post/post-masonry/edit.js:1158
+#: src/blocks/team/edit.js:555
+#: src/blocks/timeline/content-timeline/edit.js:345
+#: src/blocks/timeline/post-timeline/edit.js:676
+msgid "H5"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:224
+#: src/blocks/call-to-action/edit.js:495
+#: src/blocks/faq/edit.js:702
+#: src/blocks/how-to/edit.js:418
+#: src/blocks/inline-notice/edit.js:215
+#: src/blocks/marketing-button/edit.js:330
+#: src/blocks/post/post-carousel/edit.js:935
+#: src/blocks/post/post-grid/edit.js:1022
+#: src/blocks/post/post-masonry/edit.js:1159
+#: src/blocks/team/edit.js:556
+#: src/blocks/timeline/content-timeline/edit.js:346
+#: src/blocks/timeline/post-timeline/edit.js:677
+msgid "H6"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:228
+#: src/blocks/advanced-heading/edit.js:253
+#: src/blocks/blockquote/edit.js:672
+#: src/blocks/blockquote/edit.js:699
+#: src/blocks/blockquote/edit.js:935
+#: src/blocks/buttons/edit.js:152
+#: src/blocks/buttons/edit.js:154
+#: src/blocks/call-to-action/edit.js:225
+#: src/blocks/call-to-action/edit.js:500
+#: src/blocks/call-to-action/edit.js:525
+#: src/blocks/cf7-styler/edit.js:379
+#: src/blocks/cf7-styler/edit.js:406
+#: src/blocks/cf7-styler/edit.js:596
+#: src/blocks/cf7-styler/edit.js:726
+#: src/blocks/cf7-styler/edit.js:824
+#: src/blocks/cf7-styler/edit.js:882
+#: src/blocks/faq/edit.js:706
+#: src/blocks/faq/edit.js:913
+#: src/blocks/forms/edit.js:614
+#: src/blocks/gf-styler/edit.js:403
+#: src/blocks/gf-styler/edit.js:678
+#: src/blocks/gf-styler/edit.js:808
+#: src/blocks/gf-styler/edit.js:1026
+#: src/blocks/how-to/edit.js:597
+#: src/blocks/icon-list/edit.js:314
+#: src/blocks/info-box/edit.js:485
+#: src/blocks/info-box/edit.js:501
+#: src/blocks/info-box/edit.js:764
+#: src/blocks/info-box/edit.js:810
+#: src/blocks/info-box/edit.js:842
+#: src/blocks/inline-notice/edit.js:307
+#: src/blocks/marketing-button/edit.js:338
+#: src/blocks/marketing-button/edit.js:357
+#: src/blocks/post/post-carousel/edit.js:924
+#: src/blocks/post/post-carousel/edit.js:943
+#: src/blocks/post/post-carousel/edit.js:963
+#: src/blocks/post/post-carousel/edit.js:986
+#: src/blocks/post/post-grid/edit.js:911
+#: src/blocks/post/post-grid/edit.js:1010
+#: src/blocks/post/post-grid/edit.js:1030
+#: src/blocks/post/post-grid/edit.js:1051
+#: src/blocks/post/post-grid/edit.js:1074
+#: src/blocks/post/post-masonry/edit.js:1049
+#: src/blocks/post/post-masonry/edit.js:1148
+#: src/blocks/post/post-masonry/edit.js:1167
+#: src/blocks/post/post-masonry/edit.js:1188
+#: src/blocks/post/post-masonry/edit.js:1211
+#: src/blocks/table-of-contents/edit.js:355
+#: src/blocks/table-of-contents/edit.js:508
+#: src/blocks/tabs/edit.js:463
+#: src/blocks/team/edit.js:544
+#: src/blocks/team/edit.js:562
+#: src/blocks/team/edit.js:581
+#: src/blocks/team/edit.js:600
+#: src/blocks/team/edit.js:619
+#: src/blocks/testimonial/edit.js:320
+#: src/blocks/testimonial/edit.js:323
+#: src/blocks/testimonial/edit.js:343
+#: src/blocks/testimonial/edit.js:363
+#: src/blocks/timeline/content-timeline/edit.js:337
+#: src/blocks/timeline/content-timeline/edit.js:522
+#: src/blocks/timeline/content-timeline/edit.js:562
+#: src/blocks/timeline/post-timeline/edit.js:684
+#: src/blocks/timeline/post-timeline/edit.js:704
+#: src/blocks/timeline/post-timeline/edit.js:727
+#: src/blocks/timeline/post-timeline/edit.js:750
+#: src/blocks/timeline/post-timeline/edit.js:773
+msgid "Typography"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:244
+#: src/blocks/table-of-contents/edit.js:371
+#: src/blocks/timeline/content-timeline/edit.js:377
+#: src/blocks/timeline/post-timeline/edit.js:439
+msgid "Heading Color"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:251
+msgid "Sub-Heading"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:269
+msgid "Sub Heading Color"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:276
+#: src/blocks/info-box/edit.js:395
+msgid "Separator"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:278
+#: src/blocks/buttons-child/edit.js:287
+#: src/blocks/faq/edit.js:447
+#: src/blocks/faq/edit.js:488
+#: src/blocks/forms/edit.js:271
+#: src/blocks/how-to/edit.js:576
+#: src/blocks/info-box/edit.js:587
+#: src/blocks/lottie/edit.js:163
+#: src/blocks/post/post-grid/edit.js:930
+#: src/blocks/post/post-masonry/edit.js:686
+#: src/blocks/post/post-masonry/edit.js:1068
+#: src/blocks/review/edit.js:486
+#: src/blocks/table-of-contents/edit.js:537
+msgid "Style"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:283
+#: src/blocks/blockquote/edit.js:287
+#: src/blocks/buttons-child/edit.js:291
+#: src/blocks/call-to-action/edit.js:317
+#: src/blocks/cf7-styler/edit.js:318
+#: src/blocks/cf7-styler/edit.js:480
+#: src/blocks/column/edit.js:176
+#: src/blocks/columns/edit.js:1157
+#: src/blocks/faq/edit.js:492
+#: src/blocks/forms/edit.js:356
+#: src/blocks/forms/edit.js:409
+#: src/blocks/forms/edit.js:571
+#: src/blocks/forms/edit.js:824
+#: src/blocks/gf-styler/edit.js:336
+#: src/blocks/gf-styler/edit.js:562
+#: src/blocks/info-box/edit.js:415
+#: src/blocks/info-box/edit.js:592
+#: src/blocks/marketing-button/edit.js:661
+#: src/blocks/post/post-carousel/edit.js:849
+#: src/blocks/post/post-grid/edit.js:935
+#: src/blocks/post/post-masonry/edit.js:690
+#: src/blocks/post/post-masonry/edit.js:1073
+#: src/blocks/section/edit.js:884
+#: src/blocks/table-of-contents/edit.js:927
+#: src/blocks/testimonial/edit.js:588
+msgid "Solid"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:284
+#: src/blocks/blockquote/edit.js:290
+#: src/blocks/buttons-child/edit.js:294
+#: src/blocks/call-to-action/edit.js:318
+#: src/blocks/cf7-styler/edit.js:321
+#: src/blocks/cf7-styler/edit.js:483
+#: src/blocks/column/edit.js:179
+#: src/blocks/columns/edit.js:1160
+#: src/blocks/faq/edit.js:495
+#: src/blocks/forms/edit.js:359
+#: src/blocks/forms/edit.js:412
+#: src/blocks/forms/edit.js:574
+#: src/blocks/forms/edit.js:827
+#: src/blocks/gf-styler/edit.js:339
+#: src/blocks/gf-styler/edit.js:565
+#: src/blocks/info-box/edit.js:416
+#: src/blocks/info-box/edit.js:593
+#: src/blocks/marketing-button/edit.js:664
+#: src/blocks/post/post-carousel/edit.js:852
+#: src/blocks/post/post-grid/edit.js:938
+#: src/blocks/post/post-masonry/edit.js:693
+#: src/blocks/post/post-masonry/edit.js:1076
+#: src/blocks/section/edit.js:887
+#: src/blocks/table-of-contents/edit.js:930
+#: src/blocks/testimonial/edit.js:591
+msgid "Double"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:285
+#: src/blocks/blockquote/edit.js:289
+#: src/blocks/buttons-child/edit.js:293
+#: src/blocks/call-to-action/edit.js:319
+#: src/blocks/cf7-styler/edit.js:320
+#: src/blocks/cf7-styler/edit.js:482
+#: src/blocks/column/edit.js:178
+#: src/blocks/columns/edit.js:1159
+#: src/blocks/faq/edit.js:494
+#: src/blocks/forms/edit.js:358
+#: src/blocks/forms/edit.js:411
+#: src/blocks/forms/edit.js:573
+#: src/blocks/forms/edit.js:826
+#: src/blocks/gf-styler/edit.js:338
+#: src/blocks/gf-styler/edit.js:564
+#: src/blocks/info-box/edit.js:417
+#: src/blocks/info-box/edit.js:594
+#: src/blocks/marketing-button/edit.js:663
+#: src/blocks/post/post-carousel/edit.js:850
+#: src/blocks/post/post-grid/edit.js:936
+#: src/blocks/post/post-masonry/edit.js:692
+#: src/blocks/post/post-masonry/edit.js:1074
+#: src/blocks/section/edit.js:886
+#: src/blocks/table-of-contents/edit.js:929
+#: src/blocks/testimonial/edit.js:590
+msgid "Dashed"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:286
+#: src/blocks/blockquote/edit.js:288
+#: src/blocks/buttons-child/edit.js:292
+#: src/blocks/call-to-action/edit.js:320
+#: src/blocks/cf7-styler/edit.js:319
+#: src/blocks/cf7-styler/edit.js:481
+#: src/blocks/column/edit.js:177
+#: src/blocks/columns/edit.js:1158
+#: src/blocks/faq/edit.js:493
+#: src/blocks/forms/edit.js:357
+#: src/blocks/forms/edit.js:410
+#: src/blocks/forms/edit.js:572
+#: src/blocks/forms/edit.js:825
+#: src/blocks/gf-styler/edit.js:337
+#: src/blocks/gf-styler/edit.js:563
+#: src/blocks/info-box/edit.js:418
+#: src/blocks/info-box/edit.js:595
+#: src/blocks/marketing-button/edit.js:662
+#: src/blocks/post/post-carousel/edit.js:851
+#: src/blocks/post/post-grid/edit.js:937
+#: src/blocks/post/post-masonry/edit.js:691
+#: src/blocks/post/post-masonry/edit.js:1075
+#: src/blocks/section/edit.js:885
+#: src/blocks/table-of-contents/edit.js:928
+#: src/blocks/testimonial/edit.js:589
+msgid "Dotted"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:291
+#: src/blocks/blockquote/edit.js:298
+#: src/blocks/faq/edit.js:503
+#: src/blocks/post/post-masonry/edit.js:702
+msgid "Thickness (px)"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:300
+#: src/blocks/blockquote/edit.js:229
+#: src/blocks/blockquote/edit.js:246
+#: src/blocks/buttons-child/edit.js:346
+#: src/blocks/buttons-child/edit.js:491
+#: src/blocks/buttons-child/edit.js:530
+#: src/blocks/buttons-child/edit.js:570
+#: src/blocks/cf7-styler/edit.js:339
+#: src/blocks/cf7-styler/edit.js:500
+#: src/blocks/cf7-styler/edit.js:779
+#: src/blocks/cf7-styler/edit.js:964
+#: src/blocks/column/edit.js:364
+#: src/blocks/column/edit.js:410
+#: src/blocks/column/edit.js:485
+#: src/blocks/columns/edit.js:618
+#: src/blocks/columns/edit.js:698
+#: src/blocks/columns/edit.js:744
+#: src/blocks/columns/edit.js:790
+#: src/blocks/columns/edit.js:865
+#: src/blocks/columns/edit.js:893
+#: src/blocks/faq/edit.js:559
+#: src/blocks/faq/edit.js:576
+#: src/blocks/faq/edit.js:593
+#: src/blocks/faq/edit.js:759
+#: src/blocks/faq/edit.js:805
+#: src/blocks/faq/edit.js:851
+#: src/blocks/faq/edit.js:960
+#: src/blocks/faq/edit.js:988
+#: src/blocks/faq/edit.js:1016
+#: src/blocks/gf-styler/edit.js:357
+#: src/blocks/gf-styler/edit.js:582
+#: src/blocks/gf-styler/edit.js:861
+#: src/blocks/icon-list/edit.js:148
+#: src/blocks/info-box/edit.js:432
+#: src/blocks/marketing-button/edit.js:467
+#: src/blocks/marketing-button/edit.js:493
+#: src/blocks/marketing-button/edit.js:519
+#: src/blocks/post/post-masonry/edit.js:538
+#: src/blocks/post/post-masonry/edit.js:566
+#: src/blocks/post/post-masonry/edit.js:594
+#: src/blocks/section/edit.js:268
+#: src/blocks/section/edit.js:324
+#: src/blocks/section/edit.js:370
+#: src/blocks/section/edit.js:416
+#: src/blocks/section/edit.js:491
+#: src/blocks/section/edit.js:537
+#: src/blocks/section/edit.js:583
+#: src/blocks/social-share/edit.js:90
+#: src/blocks/social-share/edit.js:107
+#: src/blocks/table-of-contents/edit.js:450
+#: src/blocks/table-of-contents/edit.js:468
+#: src/blocks/table-of-contents/edit.js:486
+#: src/blocks/table-of-contents/edit.js:578
+#: src/blocks/table-of-contents/edit.js:596
+#: src/blocks/table-of-contents/edit.js:614
+#: src/blocks/table-of-contents/edit.js:720
+#: src/blocks/table-of-contents/edit.js:748
+#: src/blocks/table-of-contents/edit.js:776
+#: src/blocks/table-of-contents/edit.js:832
+#: src/blocks/table-of-contents/edit.js:860
+#: src/blocks/table-of-contents/edit.js:888
+#: src/components/typography/range-typography.js:37
+msgid "Size Type"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:305
+#: src/blocks/call-to-action/edit.js:326
+#: src/blocks/columns/edit.js:326
+#: src/blocks/columns/edit.js:434
+#: src/blocks/info-box/edit.js:437
+#: src/blocks/info-box/edit.js:602
+#: src/blocks/lottie/edit.js:190
+#: src/blocks/lottie/edit.js:201
+#: src/blocks/lottie/edit.js:212
+#: src/blocks/post/post-carousel/edit.js:856
+#: src/blocks/post/post-grid/edit.js:942
+#: src/blocks/post/post-masonry/edit.js:1080
+#: src/blocks/section/edit.js:250
+#: src/blocks/table-of-contents/edit.js:583
+#: src/blocks/table-of-contents/edit.js:601
+#: src/blocks/table-of-contents/edit.js:619
+#: src/blocks/team/edit.js:444
+#: src/blocks/testimonial/edit.js:969
+msgid "Width"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:315
+#: src/blocks/info-box/edit.js:445
+msgid "Separator Color"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:326
+#: src/blocks/blockquote/edit.js:804
+#: src/blocks/buttons/edit.js:129
+#: src/blocks/call-to-action/edit.js:552
+#: src/blocks/cf7-styler/edit.js:665
+#: src/blocks/column/edit.js:292
+#: src/blocks/gf-styler/edit.js:747
+#: src/blocks/how-to/edit.js:650
+#: src/blocks/info-box/edit.js:871
+#: src/blocks/post/post-carousel/edit.js:1048
+#: src/blocks/post/post-grid/edit.js:755
+#: src/blocks/post/post-grid/edit.js:1128
+#: src/blocks/post/post-masonry/edit.js:1266
+#: src/blocks/section/edit.js:298
+#: src/blocks/team/edit.js:664
+#: src/blocks/testimonial/edit.js:413
+#: src/blocks/timeline/content-timeline/edit.js:593
+#: src/blocks/timeline/post-timeline/edit.js:839
+msgid "Spacing"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:328
+msgid "Heading Bottom Spacing (px)"
+msgstr ""
+
+#: src/blocks/advanced-heading/edit.js:338
+msgid "Separator Bottom Spacing (px)"
+msgstr ""
+
+#: src/blocks/blockquote/block.js:39
+msgid "blockquote"
+msgstr ""
+
+#: src/blocks/blockquote/block.js:40
+msgid "quote"
+msgstr ""
+
+#: src/blocks/blockquote/block.js:41
+msgid "uagb"
+msgstr ""
+
+#: src/blocks/blockquote/components/AuthorText.js:26
+#: src/blocks/blockquote/edit.js:697
+#: src/blocks/timeline/post-timeline/edit.js:748
+msgid "Author"
+msgstr ""
+
+#: src/blocks/blockquote/components/Description.js:26
+msgid "Write a Quote"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:178
+#: src/blocks/icon-list/edit.js:143
+#: src/blocks/social-share/edit.js:85
+#: src/blocks/timeline/post-timeline/edit.js:247
+#: src/components/typography/range-typography.js:31
+msgid "px"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:179
+#: src/blocks/icon-list/edit.js:144
+#: src/blocks/social-share/edit.js:86
+#: src/blocks/timeline/post-timeline/edit.js:248
+#: src/components/typography/range-typography.js:32
+msgid "em"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:262
+#: src/blocks/blockquote/edit.js:265
+#: src/blocks/blockquote/edit.js:541
+#: src/blocks/how-to/edit.js:381
+#: src/blocks/how-to/edit.js:387
+#: src/blocks/icon-list-child/edit.js:335
+#: src/blocks/info-box/edit.js:957
+#: src/blocks/info-box/edit.js:960
+#: src/blocks/info-box/edit.js:971
+#: src/blocks/review/edit.js:822
+#: src/blocks/review/edit.js:828
+#: src/blocks/social-share-child/edit.js:316
+#: src/blocks/social-share-child/edit.js:322
+#: src/blocks/team/edit.js:370
+#: src/blocks/team/edit.js:376
+#: src/blocks/testimonial/edit.js:119
+#: src/blocks/testimonial/edit.js:122
+msgid "Select Image"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:267
+#: src/blocks/info-box/edit.js:962
+#: src/blocks/testimonial/edit.js:124
+msgid "Replace Image"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:273
+#: src/blocks/how-to/edit.js:55
+#: src/blocks/info-box/edit.js:53
+#: src/blocks/review/edit.js:46
+#: src/blocks/team/edit.js:46
+#: src/blocks/testimonial/edit.js:632
+msgid "Thumbnail"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:274
+#: src/blocks/forms/edit.js:464
+#: src/blocks/how-to/edit.js:56
+#: src/blocks/info-box/edit.js:54
+#: src/blocks/review/edit.js:47
+#: src/blocks/team/edit.js:47
+#: src/blocks/testimonial/edit.js:633
+#: src/components/gutter-options/index.js:19
+#: src/components/option-selector-control/index.js:34
+msgid "Medium"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:275
+#: src/blocks/forms/edit.js:465
+#: src/blocks/how-to/edit.js:57
+#: src/blocks/info-box/edit.js:55
+#: src/blocks/review/edit.js:48
+#: src/blocks/team/edit.js:48
+#: src/blocks/testimonial/edit.js:634
+#: src/components/gutter-options/index.js:25
+#: src/components/option-selector-control/index.js:40
+msgid "Large"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:280
+msgid "Modern Layout - Styling"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:282
+msgid "Quote Border Style"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:291
+#: src/blocks/cf7-styler/edit.js:322
+#: src/blocks/cf7-styler/edit.js:484
+#: src/blocks/column/edit.js:180
+#: src/blocks/columns/edit.js:1161
+#: src/blocks/forms/edit.js:360
+#: src/blocks/forms/edit.js:413
+#: src/blocks/forms/edit.js:575
+#: src/blocks/forms/edit.js:828
+#: src/blocks/gf-styler/edit.js:340
+#: src/blocks/gf-styler/edit.js:566
+#: src/blocks/marketing-button/edit.js:665
+#: src/blocks/section/edit.js:888
+#: src/blocks/table-of-contents/edit.js:931
+#: src/blocks/testimonial/edit.js:592
+msgid "Groove"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:292
+#: src/blocks/cf7-styler/edit.js:323
+#: src/blocks/cf7-styler/edit.js:485
+#: src/blocks/column/edit.js:181
+#: src/blocks/columns/edit.js:1162
+#: src/blocks/forms/edit.js:361
+#: src/blocks/forms/edit.js:414
+#: src/blocks/forms/edit.js:576
+#: src/blocks/forms/edit.js:829
+#: src/blocks/gf-styler/edit.js:341
+#: src/blocks/gf-styler/edit.js:567
+#: src/blocks/marketing-button/edit.js:666
+#: src/blocks/section/edit.js:889
+#: src/blocks/table-of-contents/edit.js:932
+#: src/blocks/testimonial/edit.js:593
+#: src/components/box-shadow/index.js:127
+msgid "Inset"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:293
+#: src/blocks/cf7-styler/edit.js:324
+#: src/blocks/cf7-styler/edit.js:486
+#: src/blocks/column/edit.js:182
+#: src/blocks/columns/edit.js:1163
+#: src/blocks/forms/edit.js:362
+#: src/blocks/forms/edit.js:415
+#: src/blocks/forms/edit.js:577
+#: src/blocks/forms/edit.js:830
+#: src/blocks/gf-styler/edit.js:342
+#: src/blocks/gf-styler/edit.js:568
+#: src/blocks/marketing-button/edit.js:667
+#: src/blocks/section/edit.js:890
+#: src/blocks/table-of-contents/edit.js:933
+#: src/blocks/testimonial/edit.js:594
+#: src/components/box-shadow/index.js:128
+msgid "Outset"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:294
+#: src/blocks/cf7-styler/edit.js:325
+#: src/blocks/cf7-styler/edit.js:487
+#: src/blocks/column/edit.js:183
+#: src/blocks/columns/edit.js:1164
+#: src/blocks/forms/edit.js:363
+#: src/blocks/forms/edit.js:416
+#: src/blocks/forms/edit.js:578
+#: src/blocks/forms/edit.js:831
+#: src/blocks/gf-styler/edit.js:343
+#: src/blocks/gf-styler/edit.js:569
+#: src/blocks/marketing-button/edit.js:668
+#: src/blocks/section/edit.js:891
+#: src/blocks/table-of-contents/edit.js:934
+#: src/blocks/testimonial/edit.js:595
+msgid "Ridge"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:311
+msgid "Quotation Layout - Styling"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:339
+#: src/blocks/blockquote/edit.js:355
+#: src/blocks/blockquote/edit.js:371
+msgid "Quote Icon Size"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:415
+#: src/blocks/blockquote/edit.js:431
+#: src/blocks/blockquote/edit.js:447
+#: src/blocks/icon-list/edit.js:332
+#: src/blocks/social-share/edit.js:240
+msgid "Background Size"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:466
+msgid "Quote Icon Border Radius (%)"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:478
+#: src/blocks/blockquote/edit.js:480
+#: src/blocks/call-to-action/edit.js:598
+#: src/blocks/column/edit.js:220
+#: src/blocks/columns/edit.js:585
+#: src/blocks/faq/edit.js:314
+#: src/blocks/forms/child-blocks/toggle/edit.js:87
+#: src/blocks/icon-list/edit.js:182
+#: src/blocks/inline-notice/edit.js:186
+#: src/blocks/section/edit.js:237
+#: src/blocks/social-share/edit.js:141
+#: src/blocks/timeline/content-timeline/edit.js:445
+#: src/blocks/timeline/post-timeline/edit.js:545
+msgid "Layout"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:482
+#: src/blocks/inline-notice/edit.js:190
+msgid "Modern"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:483
+msgid "Quotation"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:491
+msgid "Quote Icon Colors"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:498
+#: src/blocks/blockquote/edit.js:1013
+#: src/blocks/buttons-child/edit.js:204
+#: src/blocks/call-to-action/edit.js:353
+#: src/blocks/call-to-action/edit.js:382
+#: src/blocks/call-to-action/edit.js:604
+#: src/blocks/cf7-styler/edit.js:620
+#: src/blocks/forms/edit.js:518
+#: src/blocks/gf-styler/edit.js:702
+#: src/blocks/icon-list-child/edit.js:232
+#: src/blocks/info-box/edit.js:354
+#: src/blocks/info-box/edit.js:633
+#: src/blocks/info-box/edit.js:676
+#: src/blocks/marketing-button/edit.js:381
+#: src/blocks/post/post-carousel/edit.js:898
+#: src/blocks/post/post-grid/edit.js:984
+#: src/blocks/post/post-masonry/edit.js:630
+#: src/blocks/post/post-masonry/edit.js:1122
+#: src/blocks/social-share-child/edit.js:207
+#: src/blocks/team/edit.js:418
+#: src/blocks/testimonial/edit.js:957
+#: src/blocks/timeline/content-timeline/edit.js:309
+#: src/blocks/timeline/post-timeline/edit.js:395
+msgid "Normal"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:503
+#: src/blocks/blockquote/edit.js:1018
+#: src/blocks/buttons-child/edit.js:209
+#: src/blocks/call-to-action/edit.js:358
+#: src/blocks/call-to-action/edit.js:387
+#: src/blocks/cf7-styler/edit.js:625
+#: src/blocks/forms/edit.js:523
+#: src/blocks/gf-styler/edit.js:707
+#: src/blocks/icon-list-child/edit.js:237
+#: src/blocks/info-box/edit.js:359
+#: src/blocks/info-box/edit.js:638
+#: src/blocks/info-box/edit.js:681
+#: src/blocks/marketing-button/edit.js:386
+#: src/blocks/post/post-carousel/edit.js:903
+#: src/blocks/post/post-grid/edit.js:989
+#: src/blocks/post/post-masonry/edit.js:635
+#: src/blocks/post/post-masonry/edit.js:1127
+#: src/blocks/social-share-child/edit.js:212
+msgid "Hover"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:522
+#: src/blocks/buttons/edit.js:140
+#: src/blocks/call-to-action/edit.js:610
+#: src/blocks/columns/edit.js:595
+#: src/blocks/info-box/edit.js:1046
+#: src/blocks/social-share/edit.js:152
+#: src/blocks/team/edit.js:401
+#: src/blocks/testimonial/edit.js:940
+#: src/blocks/timeline/content-timeline/edit.js:467
+#: src/blocks/timeline/post-timeline/edit.js:567
+msgid "Stack on"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:526
+#: src/blocks/buttons/edit.js:145
+#: src/blocks/call-to-action/edit.js:614
+#: src/blocks/icon-list/edit.js:197
+#: src/blocks/info-box/edit.js:1050
+#: src/blocks/social-share/edit.js:157
+#: src/blocks/team/edit.js:405
+#: src/blocks/testimonial/edit.js:944
+#: src/blocks/timeline/content-timeline/edit.js:471
+#: src/blocks/timeline/post-timeline/edit.js:571
+msgid "Tablet"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:527
+#: src/blocks/buttons/edit.js:146
+#: src/blocks/call-to-action/edit.js:615
+#: src/blocks/columns/edit.js:600
+#: src/blocks/icon-list/edit.js:198
+#: src/blocks/info-box/edit.js:1051
+#: src/blocks/social-share/edit.js:158
+#: src/blocks/team/edit.js:406
+#: src/blocks/testimonial/edit.js:945
+#: src/blocks/timeline/content-timeline/edit.js:472
+#: src/blocks/timeline/post-timeline/edit.js:572
+msgid "Mobile"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:529
+msgid "Note: Choose on what breakpoint the elements will stack."
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:539
+msgid "Author Image"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:553
+#: src/blocks/column/edit.js:667
+#: src/blocks/columns/edit.js:996
+#: src/blocks/how-to/edit.js:396
+#: src/blocks/icon-list-child/edit.js:347
+#: src/blocks/info-box/edit.js:983
+#: src/blocks/review/edit.js:838
+#: src/blocks/social-share-child/edit.js:331
+#: src/blocks/team/edit.js:382
+#: src/blocks/testimonial/edit.js:514
+msgid "Remove Image"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:560
+msgid "Author Image Position"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:564
+#: src/blocks/cf7-styler/edit.js:589
+#: src/blocks/forms/edit.js:283
+#: src/blocks/forms/edit.js:474
+#: src/blocks/gf-styler/edit.js:525
+#: src/blocks/gf-styler/edit.js:671
+#: src/blocks/marketing-button/edit.js:261
+#: src/blocks/table-of-contents/edit.js:341
+#: src/blocks/tabs/edit.js:344
+#: src/blocks/team/edit.js:393
+#: src/blocks/testimonial/edit.js:924
+#: src/blocks/timeline/content-timeline/edit.js:451
+#: src/blocks/timeline/post-timeline/edit.js:551
+msgid "Left"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:565
+#: src/blocks/cf7-styler/edit.js:590
+#: src/blocks/forms/edit.js:291
+#: src/blocks/forms/edit.js:299
+#: src/blocks/forms/edit.js:482
+#: src/blocks/forms/edit.js:490
+#: src/blocks/gf-styler/edit.js:526
+#: src/blocks/gf-styler/edit.js:672
+#: src/blocks/marketing-button/edit.js:262
+#: src/blocks/table-of-contents/edit.js:343
+#: src/blocks/tabs/edit.js:345
+#: src/blocks/team/edit.js:394
+#: src/blocks/testimonial/edit.js:925
+#: src/blocks/timeline/content-timeline/edit.js:452
+#: src/blocks/timeline/post-timeline/edit.js:552
+msgid "Right"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:566
+#: src/blocks/call-to-action/edit.js:643
+#: src/blocks/columns/edit.js:1128
+#: src/blocks/icon-list/edit.js:233
+#: src/blocks/info-box/edit.js:1073
+#: src/blocks/post/post-carousel/edit.js:711
+#: src/blocks/post/post-grid/edit.js:797
+#: src/blocks/post/post-masonry/edit.js:935
+#: src/blocks/tabs/edit.js:346
+#: src/blocks/team/edit.js:430
+#: src/blocks/testimonial/edit.js:922
+#: src/blocks/testimonial/edit.js:935
+#: src/blocks/timeline/content-timeline/edit.js:461
+#: src/blocks/timeline/post-timeline/edit.js:561
+msgid "Top"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:570
+msgid "Author Image Size"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:576
+msgid "Author Image Width"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:585
+msgid "Author Image Rounded Corners"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:601
+#: src/blocks/buttons-child/edit.js:230
+#: src/blocks/call-to-action/edit.js:422
+#: src/blocks/cf7-styler/edit.js:353
+#: src/blocks/cf7-styler/edit.js:535
+#: src/blocks/cf7-styler/edit.js:791
+#: src/blocks/column/edit.js:206
+#: src/blocks/columns/edit.js:1187
+#: src/blocks/forms/edit.js:374
+#: src/blocks/forms/edit.js:427
+#: src/blocks/forms/edit.js:599
+#: src/blocks/forms/edit.js:854
+#: src/blocks/gf-styler/edit.js:371
+#: src/blocks/gf-styler/edit.js:617
+#: src/blocks/gf-styler/edit.js:873
+#: src/blocks/info-box/edit.js:716
+#: src/blocks/marketing-button/edit.js:691
+#: src/blocks/post/post-carousel/edit.js:395
+#: src/blocks/post/post-grid/edit.js:420
+#: src/blocks/post/post-grid/edit.js:731
+#: src/blocks/post/post-masonry/edit.js:382
+#: src/blocks/section/edit.js:914
+#: src/blocks/table-of-contents/edit.js:957
+#: src/blocks/tabs/edit.js:553
+#: src/blocks/testimonial/edit.js:609
+#: src/blocks/timeline/content-timeline/edit.js:267
+#: src/blocks/timeline/content-timeline/edit.js:295
+#: src/blocks/timeline/post-timeline/edit.js:351
+#: src/blocks/timeline/post-timeline/edit.js:381
+msgid "Border Color"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:611
+#: src/blocks/icon-list-child/edit.js:176
+#: src/blocks/info-box/edit.js:368
+#: src/blocks/marketing-button/edit.js:401
+#: src/blocks/table-of-contents/edit.js:319
+#: src/blocks/tabs/edit.js:360
+#: src/blocks/timeline/content-timeline/edit.js:257
+#: src/blocks/timeline/content-timeline/edit.js:285
+#: src/blocks/timeline/post-timeline/edit.js:341
+#: src/blocks/timeline/post-timeline/edit.js:371
+msgid "Icon Color"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:619
+#: src/blocks/icon-list-child/edit.js:182
+#: src/blocks/social-share-child/edit.js:175
+msgid "Icon Background Color"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:635
+#: src/blocks/buttons-child/edit.js:251
+#: src/blocks/call-to-action/edit.js:448
+#: src/blocks/cf7-styler/edit.js:568
+#: src/blocks/forms/edit.js:605
+#: src/blocks/forms/edit.js:860
+#: src/blocks/gf-styler/edit.js:650
+#: src/blocks/info-box/edit.js:742
+#: src/blocks/marketing-button/edit.js:697
+#: src/blocks/post/post-carousel/edit.js:372
+#: src/blocks/post/post-grid/edit.js:397
+#: src/blocks/post/post-masonry/edit.js:359
+msgid "Border Hover Color"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:646
+#: src/blocks/post/post-carousel/edit.js:360
+#: src/blocks/post/post-grid/edit.js:385
+#: src/blocks/post/post-masonry/edit.js:347
+msgid "Hover Color"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:654
+#: src/blocks/buttons-child/edit.js:245
+#: src/blocks/call-to-action/edit.js:441
+#: src/blocks/cf7-styler/edit.js:558
+#: src/blocks/forms/edit.js:553
+#: src/blocks/gf-styler/edit.js:640
+#: src/blocks/info-box/edit.js:735
+#: src/blocks/lottie/edit.js:293
+#: src/blocks/marketing-button/edit.js:636
+#: src/blocks/post/post-carousel/edit.js:366
+#: src/blocks/post/post-grid/edit.js:391
+#: src/blocks/post/post-masonry/edit.js:353
+msgid "Background Hover Color"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:669
+#: src/blocks/call-to-action/edit.js:483
+#: src/blocks/cf7-styler/edit.js:376
+#: src/blocks/gf-styler/edit.js:394
+#: src/blocks/info-box/edit.js:755
+#: src/blocks/inline-notice/edit.js:326
+#: src/blocks/marketing-button/edit.js:319
+#: src/blocks/post/post-carousel/edit.js:740
+#: src/blocks/post/post-grid/edit.js:826
+#: src/blocks/post/post-masonry/edit.js:964
+#: src/blocks/table-of-contents/edit.js:334
+#: src/blocks/table-of-contents/edit.js:409
+#: src/blocks/timeline/content-timeline/edit.js:540
+#: src/blocks/timeline/post-timeline/edit.js:593
+#: src/blocks/timeline/post-timeline/edit.js:702
+msgid "Content"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:670
+msgid "Quote"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:688
+msgid "Quote Color"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:715
+#: src/blocks/review/edit.js:541
+#: src/blocks/timeline/post-timeline/edit.js:447
+msgid "Author Color"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:733
+#: src/blocks/blockquote/edit.js:744
+msgid "Tweet Color"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:753
+msgid "Tweet Background Color"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:769
+#: src/blocks/blockquote/edit.js:781
+msgid "Tweet Hover Color"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:790
+msgid "Tweet Background Hover Color"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:806
+msgid "Quote Icon Margin (px)"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:848
+msgid "Gap Between Border and Quote"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:857
+msgid "Quote Bottom Spacing"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:866
+#: src/blocks/timeline/post-timeline/edit.js:887
+msgid "Author Bottom Spacing"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:878
+msgid "Vertical Padding"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:894
+msgid "Twitter Icon"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:896
+msgid "Enable Twitter Icon"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:902
+msgid "Icon View"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:906
+msgid "Icon & Text"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:908
+#: src/blocks/call-to-action/edit.js:203
+#: src/blocks/call-to-action/edit.js:211
+#: src/blocks/info-box/edit.js:467
+#: src/blocks/info-box/edit.js:474
+#: src/blocks/post/post-carousel/edit.js:818
+#: src/blocks/post/post-grid/edit.js:904
+#: src/blocks/post/post-masonry/edit.js:1042
+msgid "Text"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:912
+msgid "Icon Style"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:916
+msgid "Classic"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:917
+msgid "Bubble"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:918
+#: src/blocks/call-to-action/edit.js:244
+#: src/blocks/forms/child-blocks/accept/edit.js:94
+#: src/blocks/info-box/edit.js:520
+#: src/blocks/marketing-button/edit.js:247
+msgid "Link"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:925
+#: src/blocks/cf7-styler/edit.js:377
+#: src/blocks/gf-styler/edit.js:401
+msgid "Label"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:952
+msgid "Target URL"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:956
+msgid "Current Page"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:957
+msgid "Custom URL"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:970
+#: src/blocks/call-to-action/edit.js:288
+#: src/blocks/cf7-styler/edit.js:642
+#: src/blocks/gf-styler/edit.js:724
+#: src/blocks/post/post-carousel/edit.js:872
+#: src/blocks/post/post-grid/edit.js:958
+#: src/blocks/post/post-masonry/edit.js:1096
+msgid "Button Padding (px)"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:996
+msgid "Space between Tweet Icon and Text"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:1049
+msgid "Normal Quote"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:1064
+msgid "Inline Quote"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:1084
+#: src/blocks/blockquote/edit.js:1090
+msgid "Twitter Username"
+msgstr ""
+
+#: src/blocks/blockquote/edit.js:1094
+msgid "Username"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:135
+#: src/blocks/call-to-action/edit.js:191
+#: src/blocks/faq/edit.js:650
+#: src/blocks/faq/edit.js:660
+#: src/blocks/icon-list-child/edit.js:328
+#: src/blocks/info-box/edit.js:258
+#: src/blocks/info-box/edit.js:268
+#: src/blocks/inline-notice/edit.js:240
+#: src/blocks/marketing-button/edit.js:273
+#: src/blocks/social-share-child/edit.js:309
+#: src/blocks/table-of-contents/edit.js:241
+#: src/blocks/tabs/edit.js:338
+#: src/blocks/team/edit.js:477
+#: src/blocks/team/edit.js:495
+#: src/blocks/team/edit.js:509
+#: src/blocks/team/edit.js:527
+#: src/blocks/timeline/content-timeline/edit.js:242
+#: src/blocks/timeline/post-timeline/edit.js:243
+msgid "Select Icon"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:163
+msgid "Button Settings"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:168
+#: src/blocks/call-to-action/edit.js:217
+#: src/blocks/info-box/edit.js:479
+msgid "Inherit from Theme"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:172
+#: src/blocks/info-box/edit.js:536
+msgid "Button Icon"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:177
+#: src/blocks/call-to-action/edit.js:263
+#: src/blocks/info-box/edit.js:540
+#: src/blocks/marketing-button/edit.js:277
+#: src/blocks/tabs/edit.js:341
+msgid "Icon Position"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:181
+#: src/blocks/call-to-action/edit.js:267
+#: src/blocks/info-box/edit.js:544
+#: src/blocks/marketing-button/edit.js:281
+msgid "Before Text"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:182
+#: src/blocks/call-to-action/edit.js:268
+#: src/blocks/info-box/edit.js:545
+#: src/blocks/marketing-button/edit.js:282
+msgid "After Text"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:186
+#: src/blocks/call-to-action/edit.js:272
+#: src/blocks/info-box/edit.js:549
+#: src/blocks/marketing-button/edit.js:286
+#: src/blocks/tabs/edit.js:351
+msgid "Icon Spacing"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:198
+msgid " Color Settings"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:218
+#: src/blocks/call-to-action/edit.js:409
+#: src/blocks/cf7-styler/edit.js:517
+#: src/blocks/faq/edit.js:722
+#: src/blocks/faq/edit.js:929
+#: src/blocks/forms/edit.js:338
+#: src/blocks/forms/edit.js:391
+#: src/blocks/gf-styler/edit.js:599
+#: src/blocks/icon-list-child/edit.js:124
+#: src/blocks/icon-list-child/edit.js:170
+#: src/blocks/info-box/edit.js:647
+#: src/blocks/info-box/edit.js:703
+#: src/blocks/post/post-grid/edit.js:743
+#: src/blocks/post/post-masonry/edit.js:646
+#: src/blocks/post/post-masonry/edit.js:663
+msgid "Text Color"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:224
+#: src/blocks/call-to-action/edit.js:415
+#: src/blocks/cf7-styler/edit.js:525
+#: src/blocks/cf7-styler/edit.js:751
+#: src/blocks/column/edit.js:641
+#: src/blocks/columns/edit.js:970
+#: src/blocks/faq/edit.js:451
+#: src/blocks/forms/edit.js:344
+#: src/blocks/forms/edit.js:397
+#: src/blocks/forms/edit.js:538
+#: src/blocks/gf-styler/edit.js:456
+#: src/blocks/gf-styler/edit.js:607
+#: src/blocks/gf-styler/edit.js:833
+#: src/blocks/info-box/edit.js:709
+#: src/blocks/lottie/edit.js:287
+#: src/blocks/marketing-button/edit.js:562
+#: src/blocks/post/post-carousel/edit.js:389
+#: src/blocks/post/post-grid/edit.js:414
+#: src/blocks/post/post-grid/edit.js:703
+#: src/blocks/post/post-masonry/edit.js:376
+#: src/blocks/post/post-masonry/edit.js:652
+#: src/blocks/post/post-masonry/edit.js:670
+#: src/blocks/section/edit.js:648
+#: src/blocks/table-of-contents/edit.js:325
+#: src/blocks/table-of-contents/edit.js:539
+#: src/blocks/testimonial/edit.js:488
+#: src/blocks/timeline/content-timeline/edit.js:262
+#: src/blocks/timeline/content-timeline/edit.js:290
+#: src/blocks/timeline/content-timeline/edit.js:387
+#: src/blocks/timeline/post-timeline/edit.js:346
+#: src/blocks/timeline/post-timeline/edit.js:376
+#: src/blocks/timeline/post-timeline/edit.js:425
+msgid "Background Color"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:239
+#: src/blocks/call-to-action/edit.js:435
+#: src/blocks/cf7-styler/edit.js:550
+#: src/blocks/gf-styler/edit.js:632
+#: src/blocks/icon-list-child/edit.js:146
+#: src/blocks/icon-list-child/edit.js:198
+#: src/blocks/info-box/edit.js:656
+#: src/blocks/info-box/edit.js:729
+msgid "Text Hover Color"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:264
+msgid "Padding (px)"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:285
+#: src/blocks/column/edit.js:169
+#: src/blocks/columns/edit.js:1150
+#: src/blocks/faq/edit.js:486
+#: src/blocks/icon-list/edit.js:340
+#: src/blocks/marketing-button/edit.js:654
+#: src/blocks/post/post-grid/edit.js:671
+#: src/blocks/post/post-masonry/edit.js:684
+#: src/blocks/section/edit.js:877
+#: src/blocks/table-of-contents/edit.js:920
+#: src/blocks/testimonial/edit.js:581
+msgid "Border"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:302
+#: src/blocks/info-box/edit.js:424
+msgid "Thickness"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:312
+#: src/blocks/timeline/content-timeline/edit.js:352
+#: src/blocks/timeline/post-timeline/edit.js:793
+msgid "Rounded Corners"
+msgstr ""
+
+#: src/blocks/buttons-child/edit.js:514
+#: src/blocks/buttons-child/edit.js:553
+#: src/blocks/buttons-child/edit.js:593
+#: src/components/typography/index.js:116
+#: src/components/typography/index.js:117
+#: src/components/typography/index.js:118
+msgid "Line Height"
+msgstr ""
+
+#: src/blocks/buttons/block.js:31
+msgid "buttons"
+msgstr ""
+
+#: src/blocks/buttons/block.js:32
+msgid "multi buttons"
+msgstr ""
+
+#: src/blocks/buttons/edit.js:113
+#: src/blocks/cf7-styler/edit.js:443
+#: src/blocks/faq/edit.js:309
+#: src/blocks/forms/child-blocks/accept/edit.js:63
+#: src/blocks/forms/child-blocks/checkbox/edit.js:59
+#: src/blocks/forms/child-blocks/date/edit.js:108
+#: src/blocks/forms/child-blocks/email/edit.js:60
+#: src/blocks/forms/child-blocks/name/edit.js:61
+#: src/blocks/forms/child-blocks/phone/edit.js:61
+#: src/blocks/forms/child-blocks/radio/edit.js:59
+#: src/blocks/forms/child-blocks/select/edit.js:59
+#: src/blocks/forms/child-blocks/textarea/edit.js:61
+#: src/blocks/forms/child-blocks/toggle/edit.js:59
+#: src/blocks/forms/child-blocks/upload/edit.js:60
+#: src/blocks/forms/child-blocks/url/edit.js:59
+#: src/blocks/forms/edit.js:261
+#: src/blocks/gf-styler/edit.js:476
+#: src/blocks/google-map/block.js:66
+#: src/blocks/how-to/edit.js:378
+#: src/blocks/icon-list/edit.js:180
+#: src/blocks/inline-notice/edit.js:184
+#: src/blocks/marketing-button/edit.js:254
+#: src/blocks/post/post-carousel/edit.js:485
+#: src/blocks/post/post-grid/edit.js:511
+#: src/blocks/post/post-masonry/edit.js:754
+#: src/blocks/review/edit.js:775
+#: src/blocks/social-share/edit.js:139
+#: src/blocks/table-of-contents/edit.js:264
+#: src/blocks/timeline/content-timeline/edit.js:444
+msgid "General"
+msgstr ""
+
+#: src/blocks/buttons/edit.js:116
+#: src/blocks/faq/edit.js:411
+#: src/blocks/post/post-masonry/edit.js:480
+#: src/blocks/table-of-contents/edit.js:337
+#: src/blocks/tabs/edit.js:312
+msgid "Alignment"
+msgstr ""
+
+#: src/blocks/buttons/edit.js:131
+msgid "Gap Between Buttons"
+msgstr ""
+
+#: src/blocks/buttons/edit.js:134
+msgid "Note: The gap between the buttons will seem larger in the editor, for better user edit experience. But at frontend the gap will be exactly what is set from here."
+msgstr ""
+
+#: src/blocks/buttons/edit.js:144
+#: src/blocks/social-share/edit.js:156
+msgid "Desktop"
+msgstr ""
+
+#: src/blocks/buttons/edit.js:149
+msgid "Note: Choose on what breakpoint the buttons will stack."
+msgstr ""
+
+#: src/blocks/call-to-action/block.js:27
+#: src/blocks/marketing-button/block.js:26
+msgid "cta"
+msgstr ""
+
+#: src/blocks/call-to-action/block.js:28
+msgid "call to action"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:198
+#: src/blocks/column/edit.js:757
+#: src/blocks/columns/edit.js:304
+#: src/blocks/columns/edit.js:412
+#: src/blocks/info-box/edit.js:462
+#: src/blocks/marketing-button/edit.js:589
+#: src/blocks/section/edit.js:776
+#: src/blocks/section/edit.js:794
+msgid "Type"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:205
+#: src/blocks/info-box/edit.js:469
+msgid "Complete Box"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:249
+#: src/blocks/info-box/edit.js:525
+msgid "Open in new Window"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:310
+#: src/blocks/info-box/edit.js:585
+#: src/blocks/post/post-grid/edit.js:928
+#: src/blocks/post/post-masonry/edit.js:1066
+msgid "Button Border"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:335
+#: src/blocks/info-box/edit.js:614
+#: src/blocks/post/post-carousel/edit.js:864
+#: src/blocks/post/post-grid/edit.js:950
+#: src/blocks/post/post-masonry/edit.js:1088
+msgid "Rounded Corner"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:461
+msgid "CTA Text Color"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:472
+msgid "CTA Text Hover Color"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:486
+#: src/blocks/review/edit.js:778
+msgid "Tag"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:516
+#: src/blocks/call-to-action/edit.js:541
+#: src/blocks/cf7-styler/edit.js:395
+#: src/blocks/cf7-styler/edit.js:422
+#: src/blocks/column/edit.js:634
+#: src/blocks/column/edit.js:724
+#: src/blocks/columns/edit.js:311
+#: src/blocks/columns/edit.js:419
+#: src/blocks/columns/edit.js:962
+#: src/blocks/columns/edit.js:1198
+#: src/blocks/faq/edit.js:523
+#: src/blocks/gf-styler/edit.js:419
+#: src/blocks/gf-styler/edit.js:448
+#: src/blocks/marketing-button/edit.js:556
+#: src/blocks/post/post-carousel/edit.js:383
+#: src/blocks/post/post-grid/edit.js:408
+#: src/blocks/post/post-masonry/edit.js:370
+#: src/blocks/post/post-masonry/edit.js:719
+#: src/blocks/section/edit.js:640
+#: src/blocks/section/edit.js:731
+#: src/blocks/section/edit.js:925
+#: src/blocks/testimonial/edit.js:482
+msgid "Color"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:523
+#: src/blocks/how-to/edit.js:590
+#: src/blocks/how-to/edit.js:633
+#: src/blocks/how-to/edit.js:870
+#: src/blocks/how-to/edit.js:917
+#: src/blocks/marketing-button/edit.js:355
+#: src/blocks/team/edit.js:598
+msgid "Description"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:554
+msgid "Heading Bottom Margin"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:563
+#: src/blocks/info-box/edit.js:907
+msgid "Description Bottom Margin"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:574
+msgid "Content Left Margin"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:585
+msgid "Content Right Margin"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:600
+msgid "Button Position"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:605
+msgid "Stack"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:617
+msgid "Note: Choose on what breakpoint the CTA button will stack."
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:626
+#: src/blocks/column/edit.js:246
+#: src/blocks/column/edit.js:260
+#: src/blocks/column/edit.js:274
+msgid "Content Width (%)"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:639
+msgid "Verticle Alignment"
+msgstr ""
+
+#: src/blocks/call-to-action/edit.js:644
+#: src/blocks/icon-list/edit.js:234
+#: src/blocks/info-box/edit.js:1074
+#: src/blocks/team/edit.js:431
+#: src/blocks/testimonial/edit.js:936
+msgid "Middle"
+msgstr ""
+
+#: src/blocks/cf7-styler/block.js:40
+msgid "CF7 styler"
+msgstr ""
+
+#: src/blocks/cf7-styler/block.js:41
+msgid "contact form styler"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:301
+#: src/blocks/gf-styler/edit.js:319
+msgid "Field Style & Border"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:303
+#: src/blocks/gf-styler/edit.js:321
+msgid "Field Style"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:307
+#: src/blocks/gf-styler/edit.js:325
+msgid "Box"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:308
+#: src/blocks/gf-styler/edit.js:326
+msgid "Underline"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:313
+#: src/blocks/cf7-styler/edit.js:475
+#: src/blocks/column/edit.js:171
+#: src/blocks/columns/edit.js:1152
+#: src/blocks/forms/edit.js:351
+#: src/blocks/forms/edit.js:404
+#: src/blocks/forms/edit.js:566
+#: src/blocks/forms/edit.js:819
+#: src/blocks/gf-styler/edit.js:331
+#: src/blocks/gf-styler/edit.js:557
+#: src/blocks/marketing-button/edit.js:656
+#: src/blocks/section/edit.js:879
+#: src/blocks/table-of-contents/edit.js:922
+#: src/blocks/testimonial/edit.js:583
+msgid "Border Style"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:331
+#: src/blocks/cf7-styler/edit.js:492
+#: src/blocks/cf7-styler/edit.js:772
+#: src/blocks/gf-styler/edit.js:349
+#: src/blocks/gf-styler/edit.js:574
+#: src/blocks/gf-styler/edit.js:854
+msgid "Border Width (px)"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:344
+#: src/blocks/cf7-styler/edit.js:505
+#: src/blocks/cf7-styler/edit.js:784
+#: src/blocks/column/edit.js:197
+#: src/blocks/columns/edit.js:1178
+#: src/blocks/forms/edit.js:592
+#: src/blocks/forms/edit.js:846
+#: src/blocks/gf-styler/edit.js:362
+#: src/blocks/gf-styler/edit.js:587
+#: src/blocks/gf-styler/edit.js:866
+#: src/blocks/icon-list/edit.js:348
+#: src/blocks/marketing-button/edit.js:682
+#: src/blocks/post/post-grid/edit.js:725
+#: src/blocks/section/edit.js:905
+#: src/blocks/social-share/edit.js:248
+#: src/blocks/table-of-contents/edit.js:948
+#: src/blocks/testimonial/edit.js:619
+msgid "Border Radius"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:364
+#: src/blocks/gf-styler/edit.js:382
+msgid "Active Border Color"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:404
+#: src/blocks/gf-styler/edit.js:430
+msgid "Input"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:431
+#: src/blocks/forms/edit.js:799
+#: src/blocks/gf-styler/edit.js:930
+msgid "Field Background Color"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:459
+msgid "Select a Contact Form 7"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:582
+#: src/blocks/forms/edit.js:453
+#: src/blocks/gf-styler/edit.js:664
+msgid "Submit Button"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:584
+#: src/blocks/forms/edit.js:470
+#: src/blocks/gf-styler/edit.js:666
+msgid "Button Alignment"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:588
+#: src/blocks/gf-styler/edit.js:524
+#: src/blocks/gf-styler/edit.js:670
+#: src/blocks/marketing-button/edit.js:260
+#: src/blocks/table-of-contents/edit.js:342
+#: src/blocks/timeline/content-timeline/edit.js:453
+#: src/blocks/timeline/content-timeline/edit.js:463
+#: src/blocks/timeline/post-timeline/edit.js:553
+#: src/blocks/timeline/post-timeline/edit.js:563
+msgid "Center"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:591
+#: src/blocks/gf-styler/edit.js:673
+msgid "Justified"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:594
+#: src/blocks/gf-styler/edit.js:676
+msgid "Button Font"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:667
+#: src/blocks/gf-styler/edit.js:749
+msgid "Label & Input Space"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:676
+#: src/blocks/gf-styler/edit.js:758
+msgid "Fields Space"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:685
+#: src/blocks/forms/edit.js:877
+#: src/blocks/gf-styler/edit.js:767
+msgid "Field Padding (px)"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:708
+#: src/blocks/gf-styler/edit.js:790
+msgid "Radio & Checkbox"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:710
+#: src/blocks/gf-styler/edit.js:792
+msgid "Override Current Style"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:716
+#: src/blocks/column/edit.js:710
+#: src/blocks/columns/edit.js:1039
+#: src/blocks/gf-styler/edit.js:798
+#: src/blocks/how-to/edit.js:401
+#: src/blocks/icon-list/edit.js:266
+#: src/blocks/icon-list/edit.js:281
+#: src/blocks/review/edit.js:843
+#: src/blocks/section/edit.js:717
+#: src/blocks/social-share/edit.js:193
+#: src/blocks/social-share/edit.js:208
+#: src/blocks/social-share/edit.js:223
+#: src/blocks/team/edit.js:438
+msgid "Size"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:724
+#: src/blocks/gf-styler/edit.js:806
+msgid "Radio & Checkbox Label"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:743
+#: src/blocks/forms/edit.js:787
+#: src/blocks/gf-styler/edit.js:825
+msgid "Label Color"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:759
+#: src/blocks/gf-styler/edit.js:841
+msgid "Selected Color"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:808
+#: src/blocks/gf-styler/edit.js:890
+msgid "Success / Error Message"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:809
+msgid "Note: This styling can be only seen at frontend"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:811
+#: src/blocks/gf-styler/edit.js:894
+msgid "Field Validation"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:814
+msgid "Validation Message Position"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:818
+#: src/blocks/columns/edit.js:636
+#: src/blocks/inline-notice/edit.js:191
+#: src/components/typography/font-typography.js:23
+msgid "Default"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:819
+msgid "Bottom Right Side of Field"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:822
+msgid "Validation Font"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:840
+msgid "Validation Message Color"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:850
+#: src/blocks/cf7-styler/edit.js:909
+#: src/blocks/cf7-styler/edit.js:937
+msgid "Message Background Color"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:862
+msgid "Highlight Borders"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:868
+#: src/blocks/gf-styler/edit.js:943
+msgid "Highlight Border Color"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:880
+msgid "Form Success / Error Validation"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:899
+#: src/blocks/forms/edit.js:329
+msgid "Success Message"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:900
+#: src/blocks/cf7-styler/edit.js:928
+#: src/blocks/gf-styler/edit.js:896
+msgid "Message Color"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:918
+#: src/blocks/cf7-styler/edit.js:946
+msgid "Message Border Color"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:927
+msgid "Error Message"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:957
+#: src/blocks/gf-styler/edit.js:985
+msgid "Message Border Width (px)"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:969
+#: src/blocks/gf-styler/edit.js:997
+msgid "Message Border Radius"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:977
+#: src/blocks/gf-styler/edit.js:1005
+msgid "Message Padding (px)"
+msgstr ""
+
+#: src/blocks/cf7-styler/edit.js:1037
+#: src/blocks/gf-styler/edit.js:1115
+msgid "Loading"
+msgstr ""
+
+#: src/blocks/column/edit.js:188
+#: src/blocks/columns/edit.js:1169
+#: src/blocks/forms/edit.js:367
+#: src/blocks/forms/edit.js:420
+#: src/blocks/forms/edit.js:584
+#: src/blocks/forms/edit.js:837
+#: src/blocks/marketing-button/edit.js:673
+#: src/blocks/section/edit.js:896
+#: src/blocks/table-of-contents/edit.js:939
+#: src/blocks/testimonial/edit.js:601
+#: src/blocks/timeline/content-timeline/edit.js:638
+#: src/blocks/timeline/post-timeline/edit.js:821
+msgid "Border Width"
+msgstr ""
+
+#: src/blocks/column/edit.js:322
+#: src/blocks/columns/edit.js:702
+msgid "Padding Mobile"
+msgstr ""
+
+#: src/blocks/column/edit.js:368
+#: src/blocks/columns/edit.js:748
+#: src/blocks/section/edit.js:374
+msgid "Padding Tablet"
+msgstr ""
+
+#: src/blocks/column/edit.js:414
+#: src/blocks/faq/edit.js:809
+#: src/blocks/faq/edit.js:855
+#: src/blocks/faq/edit.js:964
+#: src/blocks/faq/edit.js:992
+#: src/blocks/post/post-masonry/edit.js:542
+#: src/blocks/post/post-masonry/edit.js:570
+#: src/blocks/post/post-masonry/edit.js:598
+#: src/blocks/section/edit.js:420
+#: src/blocks/table-of-contents/edit.js:724
+#: src/blocks/table-of-contents/edit.js:752
+#: src/blocks/table-of-contents/edit.js:780
+#: src/blocks/timeline/content-timeline/edit.js:361
+msgid "Padding"
+msgstr ""
+
+#: src/blocks/column/edit.js:489
+#: src/blocks/columns/edit.js:869
+#: src/blocks/section/edit.js:495
+msgid "Margin Mobile"
+msgstr ""
+
+#: src/blocks/column/edit.js:535
+#: src/blocks/columns/edit.js:897
+#: src/blocks/section/edit.js:541
+msgid "Margin Tablet"
+msgstr ""
+
+#: src/blocks/column/edit.js:581
+#: src/blocks/columns/edit.js:925
+#: src/blocks/section/edit.js:587
+msgid "Margin"
+msgstr ""
+
+#: src/blocks/column/edit.js:627
+#: src/blocks/columns/edit.js:953
+#: src/blocks/marketing-button/edit.js:441
+#: src/blocks/post/post-carousel/edit.js:712
+#: src/blocks/post/post-grid/edit.js:798
+#: src/blocks/post/post-masonry/edit.js:936
+#: src/blocks/section/edit.js:633
+#: src/blocks/table-of-contents/edit.js:538
+#: src/blocks/testimonial/edit.js:475
+msgid "Background"
+msgstr ""
+
+#: src/blocks/column/edit.js:629
+#: src/blocks/columns/edit.js:957
+#: src/blocks/marketing-button/edit.js:551
+#: src/blocks/section/edit.js:635
+#: src/blocks/testimonial/edit.js:477
+msgid "Background Type"
+msgstr ""
+
+#: src/blocks/column/edit.js:635
+#: src/blocks/column/edit.js:725
+#: src/blocks/columns/edit.js:963
+#: src/blocks/marketing-button/edit.js:557
+#: src/blocks/section/edit.js:641
+#: src/blocks/section/edit.js:732
+msgid "Gradient"
+msgstr ""
+
+#: src/blocks/column/edit.js:636
+#: src/blocks/columns/edit.js:964
+#: src/blocks/how-to/edit.js:379
+#: src/blocks/icon-list-child/edit.js:314
+#: src/blocks/info-box/edit.js:969
+#: src/blocks/info-box/edit.js:1064
+#: src/blocks/post/post-carousel/edit.js:691
+#: src/blocks/post/post-grid/edit.js:776
+#: src/blocks/post/post-masonry/edit.js:915
+#: src/blocks/section/edit.js:642
+#: src/blocks/social-share-child/edit.js:295
+#: src/blocks/testimonial/edit.js:483
+#: src/blocks/testimonial/edit.js:695
+#: src/blocks/testimonial/edit.js:910
+#: src/blocks/timeline/post-timeline/edit.js:578
+msgid "Image"
+msgstr ""
+
+#: src/blocks/column/edit.js:653
+#: src/blocks/columns/edit.js:982
+#: src/blocks/section/edit.js:660
+#: src/blocks/testimonial/edit.js:500
+msgid "Background Image"
+msgstr ""
+
+#: src/blocks/column/edit.js:655
+#: src/blocks/column/edit.js:661
+#: src/blocks/columns/edit.js:984
+#: src/blocks/columns/edit.js:990
+#: src/blocks/section/edit.js:662
+#: src/blocks/section/edit.js:668
+#: src/blocks/testimonial/edit.js:502
+#: src/blocks/testimonial/edit.js:508
+msgid "Select Background Image"
+msgstr ""
+
+#: src/blocks/column/edit.js:661
+#: src/blocks/columns/edit.js:990
+#: src/blocks/how-to/edit.js:387
+#: src/blocks/review/edit.js:828
+#: src/blocks/section/edit.js:668
+#: src/blocks/social-share-child/edit.js:322
+#: src/blocks/team/edit.js:376
+#: src/blocks/testimonial/edit.js:508
+msgid "Replace image"
+msgstr ""
+
+#: src/blocks/column/edit.js:674
+#: src/blocks/columns/edit.js:1003
+#: src/blocks/post/post-carousel/edit.js:707
+#: src/blocks/post/post-grid/edit.js:793
+#: src/blocks/post/post-masonry/edit.js:931
+#: src/blocks/section/edit.js:681
+#: src/blocks/testimonial/edit.js:521
+msgid "Image Position"
+msgstr ""
+
+#: src/blocks/column/edit.js:678
+#: src/blocks/columns/edit.js:1007
+#: src/blocks/section/edit.js:685
+#: src/blocks/section/edit.js:802
+#: src/blocks/testimonial/edit.js:525
+msgid "Top Left"
+msgstr ""
+
+#: src/blocks/column/edit.js:679
+#: src/blocks/columns/edit.js:1008
+#: src/blocks/section/edit.js:686
+#: src/blocks/section/edit.js:801
+#: src/blocks/testimonial/edit.js:526
+msgid "Top Center"
+msgstr ""
+
+#: src/blocks/column/edit.js:680
+#: src/blocks/columns/edit.js:1009
+#: src/blocks/section/edit.js:687
+#: src/blocks/section/edit.js:803
+#: src/blocks/testimonial/edit.js:527
+msgid "Top Right"
+msgstr ""
+
+#: src/blocks/column/edit.js:681
+#: src/blocks/columns/edit.js:1010
+#: src/blocks/section/edit.js:688
+#: src/blocks/section/edit.js:799
+#: src/blocks/testimonial/edit.js:528
+msgid "Center Left"
+msgstr ""
+
+#: src/blocks/column/edit.js:682
+#: src/blocks/columns/edit.js:1011
+#: src/blocks/section/edit.js:689
+#: src/blocks/section/edit.js:798
+#: src/blocks/testimonial/edit.js:529
+msgid "Center Center"
+msgstr ""
+
+#: src/blocks/column/edit.js:683
+#: src/blocks/columns/edit.js:1012
+#: src/blocks/section/edit.js:690
+#: src/blocks/section/edit.js:800
+#: src/blocks/testimonial/edit.js:530
+msgid "Center Right"
+msgstr ""
+
+#: src/blocks/column/edit.js:684
+#: src/blocks/columns/edit.js:1013
+#: src/blocks/section/edit.js:691
+#: src/blocks/section/edit.js:805
+#: src/blocks/testimonial/edit.js:531
+msgid "Bottom Left"
+msgstr ""
+
+#: src/blocks/column/edit.js:685
+#: src/blocks/columns/edit.js:1014
+#: src/blocks/section/edit.js:692
+#: src/blocks/section/edit.js:804
+#: src/blocks/testimonial/edit.js:532
+msgid "Bottom Center"
+msgstr ""
+
+#: src/blocks/column/edit.js:686
+#: src/blocks/columns/edit.js:1015
+#: src/blocks/section/edit.js:693
+#: src/blocks/section/edit.js:806
+#: src/blocks/testimonial/edit.js:533
+msgid "Bottom Right"
+msgstr ""
+
+#: src/blocks/column/edit.js:690
+#: src/blocks/columns/edit.js:1019
+#: src/blocks/section/edit.js:697
+msgid "Attachment"
+msgstr ""
+
+#: src/blocks/column/edit.js:694
+#: src/blocks/columns/edit.js:1023
+#: src/blocks/section/edit.js:701
+msgid "Fixed"
+msgstr ""
+
+#: src/blocks/column/edit.js:695
+#: src/blocks/columns/edit.js:1024
+#: src/blocks/post/post-masonry/edit.js:886
+#: src/blocks/section/edit.js:702
+#: src/blocks/table-of-contents/edit.js:285
+msgid "Scroll"
+msgstr ""
+
+#: src/blocks/column/edit.js:699
+#: src/blocks/column/edit.js:704
+#: src/blocks/columns/edit.js:1028
+#: src/blocks/columns/edit.js:1033
+#: src/blocks/section/edit.js:706
+#: src/blocks/section/edit.js:711
+#: src/blocks/testimonial/edit.js:537
+#: src/blocks/testimonial/edit.js:542
+msgid "Repeat"
+msgstr ""
+
+#: src/blocks/column/edit.js:703
+#: src/blocks/columns/edit.js:1032
+#: src/blocks/section/edit.js:710
+#: src/blocks/testimonial/edit.js:541
+msgid "No Repeat"
+msgstr ""
+
+#: src/blocks/column/edit.js:705
+#: src/blocks/columns/edit.js:1034
+#: src/blocks/section/edit.js:712
+#: src/blocks/testimonial/edit.js:543
+msgid "Repeat-x"
+msgstr ""
+
+#: src/blocks/column/edit.js:706
+#: src/blocks/columns/edit.js:1035
+#: src/blocks/section/edit.js:713
+#: src/blocks/testimonial/edit.js:544
+msgid "Repeat-y"
+msgstr ""
+
+#: src/blocks/column/edit.js:714
+#: src/blocks/columns/edit.js:1043
+#: src/blocks/section/edit.js:721
+#: src/blocks/testimonial/edit.js:552
+msgid "Auto"
+msgstr ""
+
+#: src/blocks/column/edit.js:715
+#: src/blocks/columns/edit.js:1044
+#: src/blocks/section/edit.js:722
+#: src/blocks/testimonial/edit.js:553
+msgid "Cover"
+msgstr ""
+
+#: src/blocks/column/edit.js:716
+#: src/blocks/columns/edit.js:1045
+#: src/blocks/section/edit.js:723
+#: src/blocks/testimonial/edit.js:554
+msgid "Contain"
+msgstr ""
+
+#: src/blocks/column/edit.js:720
+#: src/blocks/section/edit.js:727
+msgid "Image Overlay Type"
+msgstr ""
+
+#: src/blocks/column/edit.js:729
+#: src/blocks/columns/edit.js:1049
+#: src/blocks/section/edit.js:736
+#: src/blocks/testimonial/edit.js:558
+msgid "Image Overlay Color"
+msgstr ""
+
+#: src/blocks/column/edit.js:741
+#: src/blocks/marketing-button/edit.js:573
+#: src/blocks/team/edit.js:631
+#: src/blocks/testimonial/edit.js:382
+#: src/blocks/timeline/content-timeline/edit.js:247
+#: src/blocks/timeline/content-timeline/edit.js:275
+#: src/blocks/timeline/content-timeline/edit.js:371
+#: src/blocks/timeline/post-timeline/edit.js:330
+#: src/blocks/timeline/post-timeline/edit.js:360
+#: src/blocks/timeline/post-timeline/edit.js:420
+#: src/components/gradient-settings/index.js:42
+msgid "Color Settings"
+msgstr ""
+
+#: src/blocks/column/edit.js:746
+#: src/blocks/marketing-button/edit.js:578
+#: src/blocks/section/edit.js:747
+msgid "Color 1"
+msgstr ""
+
+#: src/blocks/column/edit.js:751
+#: src/blocks/marketing-button/edit.js:583
+#: src/blocks/section/edit.js:761
+msgid "Color 2"
+msgstr ""
+
+#: src/blocks/column/edit.js:761
+#: src/blocks/marketing-button/edit.js:593
+#: src/blocks/section/edit.js:780
+msgid "Linear"
+msgstr ""
+
+#: src/blocks/column/edit.js:762
+#: src/blocks/marketing-button/edit.js:594
+#: src/blocks/section/edit.js:781
+msgid "Radial"
+msgstr ""
+
+#: src/blocks/column/edit.js:766
+#: src/blocks/marketing-button/edit.js:598
+#: src/blocks/section/edit.js:754
+msgid "Location 1"
+msgstr ""
+
+#: src/blocks/column/edit.js:774
+#: src/blocks/marketing-button/edit.js:606
+#: src/blocks/section/edit.js:768
+msgid "Location 2"
+msgstr ""
+
+#: src/blocks/column/edit.js:782
+#: src/blocks/marketing-button/edit.js:614
+#: src/blocks/section/edit.js:785
+msgid "Angle"
+msgstr ""
+
+#: src/blocks/columns/block.js:32
+msgid "columns"
+msgstr ""
+
+#: src/blocks/columns/block.js:33
+msgid "rows"
+msgstr ""
+
+#: src/blocks/columns/edit.js:281
+msgid "Tilt"
+msgstr ""
+
+#: src/blocks/columns/edit.js:282
+msgid "Mountains"
+msgstr ""
+
+#: src/blocks/columns/edit.js:283
+msgid "Wave Brush"
+msgstr ""
+
+#: src/blocks/columns/edit.js:284
+msgid "Waves"
+msgstr ""
+
+#: src/blocks/columns/edit.js:285
+msgid "Waves Pattern"
+msgstr ""
+
+#: src/blocks/columns/edit.js:286
+msgid "Triangle"
+msgstr ""
+
+#: src/blocks/columns/edit.js:287
+msgid "Drops"
+msgstr ""
+
+#: src/blocks/columns/edit.js:288
+msgid "Clouds"
+msgstr ""
+
+#: src/blocks/columns/edit.js:289
+msgid "ZigZag"
+msgstr ""
+
+#: src/blocks/columns/edit.js:290
+msgid "Pyramids"
+msgstr ""
+
+#: src/blocks/columns/edit.js:291
+msgid "Triangle Asymmetrical"
+msgstr ""
+
+#: src/blocks/columns/edit.js:292
+msgid "Tilt Opacity"
+msgstr ""
+
+#: src/blocks/columns/edit.js:293
+msgid "Fan Opacity"
+msgstr ""
+
+#: src/blocks/columns/edit.js:294
+msgid "Curve"
+msgstr ""
+
+#: src/blocks/columns/edit.js:295
+msgid "Curve Asymmetrical"
+msgstr ""
+
+#: src/blocks/columns/edit.js:296
+msgid "Arrow"
+msgstr ""
+
+#: src/blocks/columns/edit.js:297
+msgid "Arrow Split"
+msgstr ""
+
+#: src/blocks/columns/edit.js:298
+#: src/blocks/review/edit.js:652
+msgid "Book"
+msgstr ""
+
+#: src/blocks/columns/edit.js:318
+#: src/blocks/columns/edit.js:426
+#: src/blocks/columns/edit.js:1091
+#: src/blocks/columns/edit.js:1112
+#: src/blocks/marketing-button/edit.js:625
+#: src/blocks/marketing-button/edit.js:643
+#: src/blocks/section/edit.js:846
+#: src/blocks/section/edit.js:867
+#: src/blocks/testimonial/edit.js:571
+msgid "Opacity"
+msgstr ""
+
+#: src/blocks/columns/edit.js:358
+#: src/blocks/columns/edit.js:369
+#: src/blocks/columns/edit.js:380
+#: src/blocks/columns/edit.js:466
+#: src/blocks/columns/edit.js:477
+#: src/blocks/columns/edit.js:488
+#: src/blocks/google-map/block.js:84
+#: src/blocks/lottie/edit.js:251
+#: src/blocks/lottie/edit.js:262
+#: src/blocks/lottie/edit.js:273
+msgid "Height"
+msgstr ""
+
+#: src/blocks/columns/edit.js:395
+#: src/blocks/columns/edit.js:503
+msgid "Flip"
+msgstr ""
+
+#: src/blocks/columns/edit.js:400
+#: src/blocks/columns/edit.js:508
+msgid "Bring To Front"
+msgstr ""
+
+#: src/blocks/columns/edit.js:556
+#: src/blocks/forms/edit.js:995
+msgid "Select a variation to start with."
+msgstr ""
+
+#: src/blocks/columns/edit.js:588
+#: src/blocks/post/post-carousel/edit.js:567
+#: src/blocks/post/post-carousel/edit.js:577
+#: src/blocks/post/post-carousel/edit.js:587
+#: src/blocks/post/post-grid/edit.js:595
+#: src/blocks/post/post-grid/edit.js:605
+#: src/blocks/post/post-grid/edit.js:615
+#: src/blocks/post/post-masonry/edit.js:836
+#: src/blocks/post/post-masonry/edit.js:846
+#: src/blocks/post/post-masonry/edit.js:856
+#: src/blocks/table-of-contents/edit.js:661
+#: src/blocks/table-of-contents/edit.js:671
+#: src/blocks/table-of-contents/edit.js:681
+#: src/blocks/testimonial/edit.js:873
+#: src/blocks/testimonial/edit.js:883
+#: src/blocks/testimonial/edit.js:893
+msgid "Columns"
+msgstr ""
+
+#: src/blocks/columns/edit.js:599
+msgid "Tablet & Mobile"
+msgstr ""
+
+#: src/blocks/columns/edit.js:603
+msgid "Note: Choose on what breakpoint the columns will stack."
+msgstr ""
+
+#: src/blocks/columns/edit.js:606
+msgid "Container Width"
+msgstr ""
+
+#: src/blocks/columns/edit.js:610
+msgid "Theme Container Width"
+msgstr ""
+
+#: src/blocks/columns/edit.js:611
+msgid "Custom"
+msgstr ""
+
+#: src/blocks/columns/edit.js:623
+#: src/blocks/section/edit.js:273
+msgid "Inner Width"
+msgstr ""
+
+#: src/blocks/columns/edit.js:633
+#: src/blocks/post/post-masonry/edit.js:1276
+msgid "Column Gap"
+msgstr ""
+
+#: src/blocks/columns/edit.js:636
+msgid "Default (10px)"
+msgstr ""
+
+#: src/blocks/columns/edit.js:637
+msgid "No Gap (0px)"
+msgstr ""
+
+#. translators: abbreviation for small size
+#: src/blocks/columns/edit.js:638
+#: src/components/gutter-options/index.js:12
+#: src/components/option-selector-control/index.js:27
+msgid "S"
+msgstr ""
+
+#: src/blocks/columns/edit.js:638
+msgid "Narrow (5px)"
+msgstr ""
+
+#. translators: abbreviation for medium size
+#: src/blocks/columns/edit.js:639
+#: src/components/gutter-options/index.js:18
+#: src/components/option-selector-control/index.js:33
+msgid "M"
+msgstr ""
+
+#: src/blocks/columns/edit.js:639
+msgid "Extended (15px)"
+msgstr ""
+
+#. translators: abbreviation for large size
+#: src/blocks/columns/edit.js:640
+#: src/components/gutter-options/index.js:24
+#: src/components/option-selector-control/index.js:39
+msgid "L"
+msgstr ""
+
+#: src/blocks/columns/edit.js:640
+msgid "Wide (20px)"
+msgstr ""
+
+#. translators: abbreviation for largest size
+#. translators: abbreviation for extra large size
+#: src/blocks/columns/edit.js:641
+#: src/components/gutter-options/index.js:30
+#: src/components/option-selector-control/index.js:45
+msgid "XL"
+msgstr ""
+
+#: src/blocks/columns/edit.js:641
+msgid "Wider (30px)"
+msgstr ""
+
+#: src/blocks/columns/edit.js:644
+msgid "Note: The individual Column Gap can be managed from Column Settings."
+msgstr ""
+
+#: src/blocks/columns/edit.js:647
+#: src/blocks/section/edit.js:283
+msgid "HTML Tag"
+msgstr ""
+
+#: src/blocks/columns/edit.js:651
+#: src/blocks/section/edit.js:287
+msgid "div"
+msgstr ""
+
+#: src/blocks/columns/edit.js:652
+#: src/blocks/section/edit.js:288
+msgid "header"
+msgstr ""
+
+#: src/blocks/columns/edit.js:653
+#: src/blocks/section/edit.js:289
+msgid "footer"
+msgstr ""
+
+#: src/blocks/columns/edit.js:654
+#: src/blocks/section/edit.js:290
+msgid "main"
+msgstr ""
+
+#: src/blocks/columns/edit.js:655
+#: src/blocks/section/edit.js:291
+msgid "article"
+msgstr ""
+
+#: src/blocks/columns/edit.js:656
+#: src/blocks/section/block.js:28
+#: src/blocks/section/edit.js:292
+msgid "section"
+msgstr ""
+
+#: src/blocks/columns/edit.js:657
+#: src/blocks/section/edit.js:293
+msgid "aside"
+msgstr ""
+
+#: src/blocks/columns/edit.js:658
+#: src/blocks/section/edit.js:294
+msgid "nav"
+msgstr ""
+
+#: src/blocks/columns/edit.js:662
+msgid "Reverse Columns (Tablet & Mobile)"
+msgstr ""
+
+#: src/blocks/columns/edit.js:667
+msgid "Reverse Columns (Mobile)"
+msgstr ""
+
+#: src/blocks/columns/edit.js:965
+#: src/blocks/section/edit.js:643
+msgid "Video"
+msgstr ""
+
+#: src/blocks/columns/edit.js:1069
+#: src/blocks/section/edit.js:824
+msgid "Background Video"
+msgstr ""
+
+#: src/blocks/columns/edit.js:1072
+#: src/blocks/columns/edit.js:1078
+#: src/blocks/section/edit.js:827
+#: src/blocks/section/edit.js:833
+msgid "Select Background Video"
+msgstr ""
+
+#: src/blocks/columns/edit.js:1078
+#: src/blocks/section/edit.js:833
+msgid "Replace Video"
+msgstr ""
+
+#: src/blocks/columns/edit.js:1084
+msgid "Remove Video"
+msgstr ""
+
+#: src/blocks/columns/edit.js:1102
+msgid "Video Overlay Color"
+msgstr ""
+
+#: src/blocks/columns/edit.js:1122
+msgid "Shape Dividers"
+msgstr ""
+
+#: src/blocks/columns/edit.js:1133
+#: src/blocks/tabs/edit.js:347
+#: src/blocks/testimonial/edit.js:923
+#: src/blocks/timeline/content-timeline/edit.js:462
+#: src/blocks/timeline/post-timeline/edit.js:562
+msgid "Bottom"
+msgstr ""
+
+#: src/blocks/columns/edit.js:1197
+#: src/blocks/section/edit.js:924
+msgid "Box Shadow"
+msgstr ""
+
+#: src/blocks/columns/edit.js:1199
+#: src/blocks/icon-list/edit.js:185
+#: src/blocks/section/edit.js:926
+#: src/blocks/social-share/edit.js:144
+msgid "Horizontal"
+msgstr ""
+
+#: src/blocks/columns/edit.js:1200
+#: src/blocks/icon-list/edit.js:186
+#: src/blocks/section/edit.js:927
+#: src/blocks/social-share/edit.js:145
+msgid "Vertical"
+msgstr ""
+
+#: src/blocks/columns/edit.js:1201
+#: src/blocks/section/edit.js:928
+msgid "Blur"
+msgstr ""
+
+#: src/blocks/columns/edit.js:1202
+#: src/blocks/section/edit.js:929
+msgid "Spread"
+msgstr ""
+
+#: src/blocks/columns/edit.js:1203
+#: src/blocks/info-box/edit.js:399
+#: src/blocks/section/edit.js:930
+#: src/blocks/team/edit.js:388
+msgid "Position"
+msgstr ""
+
+#: src/blocks/columns/variations.js:20
+msgid "One column"
+msgstr ""
+
+#: src/blocks/columns/variations.js:33
+msgid "Two columns; equal split"
+msgstr ""
+
+#: src/blocks/columns/variations.js:48
+msgid "Two columns; one-third, two-thirds split"
+msgstr ""
+
+#: src/blocks/columns/variations.js:61
+msgid "Two columns; two-thirds, one-third split"
+msgstr ""
+
+#: src/blocks/columns/variations.js:74
+#: src/blocks/columns/variations.js:90
+msgid "Three columns; equal split"
+msgstr ""
+
+#: src/blocks/columns/variations.js:104
+msgid "Three columns; wide center column"
+msgstr ""
+
+#: src/blocks/columns/variations.js:118
+msgid "Four columns; equal split"
+msgstr ""
+
+#: src/blocks/extensions/block.js:23
+msgid "Below setting will only take effect once you are on the live page, and not while you're editing."
+msgstr ""
+
+#: src/blocks/faq-child/attributes.js:9
+msgid "What is FAQ?"
+msgstr ""
+
+#: src/blocks/faq-child/attributes.js:13
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+msgstr ""
+
+#: src/blocks/faq/block.js:61
+msgid "faq"
+msgstr ""
+
+#: src/blocks/faq/block.js:62
+#: src/blocks/how-to/block.js:26
+#: src/blocks/review/block.js:26
+msgid "schema"
+msgstr ""
+
+#: src/blocks/faq/block.js:64
+msgid "accordion"
+msgstr ""
+
+#: src/blocks/faq/edit.js:317
+msgid "Accordion"
+msgstr ""
+
+#: src/blocks/faq/edit.js:318
+msgid "Grid"
+msgstr ""
+
+#: src/blocks/faq/edit.js:325
+msgid "Collapse other items"
+msgstr ""
+
+#: src/blocks/faq/edit.js:331
+msgid "Expand First Item"
+msgstr ""
+
+#: src/blocks/faq/edit.js:337
+msgid "Enable Toggle"
+msgstr ""
+
+#: src/blocks/faq/edit.js:344
+msgid "Enable Schema Support"
+msgstr ""
+
+#: src/blocks/faq/edit.js:375
+msgid "Mobile Columns"
+msgstr ""
+
+#: src/blocks/faq/edit.js:385
+msgid "Tab Columns"
+msgstr ""
+
+#: src/blocks/faq/edit.js:395
+msgid "Desktop Columns"
+msgstr ""
+
+#: src/blocks/faq/edit.js:458
+msgid "Rows Gap (px)"
+msgstr ""
+
+#: src/blocks/faq/edit.js:467
+msgid "Columns Gap (px)"
+msgstr ""
+
+#: src/blocks/faq/edit.js:474
+#: src/blocks/post/post-carousel/edit.js:601
+#: src/blocks/post/post-grid/edit.js:629
+msgid "Equal Height"
+msgstr ""
+
+#: src/blocks/faq/edit.js:481
+msgid "Enable Separator"
+msgstr ""
+
+#: src/blocks/faq/edit.js:514
+#: src/blocks/info-box/edit.js:1013
+#: src/blocks/post/post-masonry/edit.js:711
+msgid "Rounded Corners (px)"
+msgstr ""
+
+#: src/blocks/faq/edit.js:614
+msgid "Gap between Icon and Question"
+msgstr ""
+
+#: src/blocks/faq/edit.js:620
+msgid "Expand Color"
+msgstr ""
+
+#: src/blocks/faq/edit.js:626
+msgid "Collapse Color"
+msgstr ""
+
+#: src/blocks/faq/edit.js:642
+msgid "Expand"
+msgstr ""
+
+#: src/blocks/faq/edit.js:652
+msgid "Collapse"
+msgstr ""
+
+#: src/blocks/faq/edit.js:662
+#: src/blocks/icon-list/edit.js:230
+msgid "Icon Alignment"
+msgstr ""
+
+#: src/blocks/faq/edit.js:686
+msgid "Question"
+msgstr ""
+
+#: src/blocks/faq/edit.js:691
+msgid "Question Tag"
+msgstr ""
+
+#: src/blocks/faq/edit.js:695
+msgid "Span"
+msgstr ""
+
+#: src/blocks/faq/edit.js:696
+#: src/blocks/timeline/content-timeline/edit.js:347
+#: src/blocks/timeline/post-timeline/edit.js:678
+msgid "P"
+msgstr ""
+
+#: src/blocks/faq/edit.js:728
+msgid "Text Active/Hover Color"
+msgstr ""
+
+#: src/blocks/faq/edit.js:908
+msgid "Answer"
+msgstr ""
+
+#: src/blocks/forms/attributes.js:25
+msgid "The form has been submitted successfully!"
+msgstr ""
+
+#: src/blocks/forms/attributes.js:52
+msgid "Form Submission"
+msgstr ""
+
+#: src/blocks/forms/block.js:25
+msgid "forms"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/accept/attributes.js:17
+msgid "I have read and agree to the Privacy Policy."
+msgstr ""
+
+#: src/blocks/forms/child-blocks/accept/attributes.js:25
+msgid "Privacy Policy"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/accept/edit.js:68
+#: src/blocks/forms/child-blocks/checkbox/edit.js:64
+#: src/blocks/forms/child-blocks/checkbox/edit.js:178
+#: src/blocks/forms/child-blocks/date/edit.js:113
+#: src/blocks/forms/child-blocks/date/edit.js:206
+#: src/blocks/forms/child-blocks/email/edit.js:65
+#: src/blocks/forms/child-blocks/email/edit.js:94
+#: src/blocks/forms/child-blocks/name/edit.js:66
+#: src/blocks/forms/child-blocks/name/edit.js:95
+#: src/blocks/forms/child-blocks/phone/edit.js:66
+#: src/blocks/forms/child-blocks/phone/edit.js:113
+#: src/blocks/forms/child-blocks/radio/edit.js:64
+#: src/blocks/forms/child-blocks/radio/edit.js:177
+#: src/blocks/forms/child-blocks/select/edit.js:64
+#: src/blocks/forms/child-blocks/select/edit.js:170
+#: src/blocks/forms/child-blocks/textarea/edit.js:66
+#: src/blocks/forms/child-blocks/textarea/edit.js:102
+#: src/blocks/forms/child-blocks/toggle/edit.js:66
+#: src/blocks/forms/child-blocks/toggle/edit.js:115
+#: src/blocks/forms/child-blocks/upload/edit.js:65
+#: src/blocks/forms/child-blocks/upload/edit.js:95
+#: src/blocks/forms/child-blocks/url/edit.js:64
+#: src/blocks/forms/child-blocks/url/edit.js:92
+msgid "Required"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/accept/edit.js:73
+msgid "Acceptance Text"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/accept/edit.js:79
+msgid "Enable Privacy Link"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/accept/edit.js:88
+msgid "Link Label"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/accept/edit.js:97
+msgid "Enter a valid link."
+msgstr ""
+
+#: src/blocks/forms/child-blocks/accept/edit.js:100
+msgid "Open in new tab"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/accept/edit.js:110
+#: src/blocks/forms/child-blocks/accept/save.js:23
+#: src/blocks/forms/child-blocks/checkbox/edit.js:163
+#: src/blocks/forms/child-blocks/checkbox/save.js:22
+#: src/blocks/forms/child-blocks/date/edit.js:190
+#: src/blocks/forms/child-blocks/date/save.js:46
+#: src/blocks/forms/child-blocks/email/edit.js:79
+#: src/blocks/forms/child-blocks/email/save.js:22
+#: src/blocks/forms/child-blocks/name/edit.js:80
+#: src/blocks/forms/child-blocks/name/save.js:21
+#: src/blocks/forms/child-blocks/phone/edit.js:98
+#: src/blocks/forms/child-blocks/phone/save.js:37
+#: src/blocks/forms/child-blocks/radio/edit.js:162
+#: src/blocks/forms/child-blocks/radio/save.js:22
+#: src/blocks/forms/child-blocks/select/edit.js:155
+#: src/blocks/forms/child-blocks/select/save.js:21
+#: src/blocks/forms/child-blocks/textarea/edit.js:87
+#: src/blocks/forms/child-blocks/textarea/save.js:21
+#: src/blocks/forms/child-blocks/toggle/edit.js:99
+#: src/blocks/forms/child-blocks/toggle/save.js:24
+#: src/blocks/forms/child-blocks/upload/edit.js:79
+#: src/blocks/forms/child-blocks/upload/save.js:23
+#: src/blocks/forms/child-blocks/url/edit.js:77
+#: src/blocks/forms/child-blocks/url/save.js:21
+msgid "required"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/accept/edit.js:111
+#: src/blocks/forms/child-blocks/accept/save.js:24
+msgid "_blank"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/accept/edit.js:111
+#: src/blocks/forms/child-blocks/accept/save.js:24
+msgid "_self"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/checkbox/attributes.js:13
+#: src/blocks/forms/child-blocks/checkbox/edit.js:186
+msgid "Checkbox Title"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/checkbox/attributes.js:21
+#: src/blocks/forms/child-blocks/checkbox/edit.js:28
+#: src/blocks/forms/child-blocks/radio/attributes.js:20
+#: src/blocks/forms/child-blocks/radio/edit.js:28
+#: src/blocks/forms/child-blocks/select/attributes.js:20
+#: src/blocks/forms/child-blocks/select/edit.js:28
+#: src/blocks/forms/variations.js:58
+msgid "Option Name 1"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/checkbox/attributes.js:21
+#: src/blocks/forms/child-blocks/radio/attributes.js:20
+#: src/blocks/forms/child-blocks/select/attributes.js:20
+#: src/blocks/forms/variations.js:58
+msgid "Option Value 1"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/checkbox/edit.js:198
+#: src/blocks/forms/child-blocks/radio/edit.js:197
+#: src/blocks/forms/child-blocks/select/edit.js:190
+msgid " + Add Option "
+msgstr ""
+
+#: src/blocks/forms/child-blocks/date/attributes.js:16
+#: src/blocks/forms/child-blocks/date/edit.js:214
+#: src/blocks/post/post-carousel/edit.js:527
+#: src/blocks/post/post-grid/edit.js:555
+#: src/blocks/post/post-masonry/edit.js:796
+#: src/blocks/timeline/content-timeline-child/edit.js:95
+#: src/blocks/timeline/post-timeline/edit.js:529
+#: src/blocks/timeline/post-timeline/edit.js:725
+msgid "Date"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/date/edit.js:118
+msgid "Additional Validation"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/date/edit.js:121
+msgid "Helps to set range of calender"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/email/attributes.js:21
+msgid "example@mail.com"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/email/edit.js:73
+#: src/blocks/forms/child-blocks/name/edit.js:74
+#: src/blocks/forms/child-blocks/textarea/edit.js:71
+#: src/blocks/forms/child-blocks/url/edit.js:69
+msgid "Placeholder"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/name/attributes.js:21
+msgid "John Doe"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/phone/attributes.js:19
+#: src/blocks/forms/child-blocks/phone/edit.js:76
+msgid "[0-9]{3}-[0-9]{3}-[0-9]{4}"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/phone/edit.js:75
+msgid "[0-9]{3}-[0-9]{2}-[0-9]{3}"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/phone/edit.js:86
+#: src/blocks/forms/child-blocks/phone/save.js:25
+msgid "123-45-678"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/phone/edit.js:88
+#: src/blocks/forms/child-blocks/phone/save.js:27
+msgid "123-456-6789"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/phone/edit.js:121
+msgid "Phone Name"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/radio/attributes.js:12
+msgid "RadioBox Title"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/radio/edit.js:185
+msgid "Radio Title"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/select/attributes.js:12
+#: src/blocks/forms/child-blocks/select/edit.js:178
+msgid "Select Title"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/textarea/attributes.js:25
+msgid "Enter your message"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/textarea/edit.js:76
+msgid "Number of lines"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/textarea/edit.js:110
+msgid "Textarea Name"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/toggle/edit.js:63
+msgid "Leaving the toggle in On/Off state will set it as a default value on page load for the user."
+msgstr ""
+
+#: src/blocks/forms/child-blocks/toggle/edit.js:71
+msgid "Default State"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/toggle/edit.js:73
+msgid "ON State"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/toggle/edit.js:73
+msgid "OFF State"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/toggle/edit.js:77
+msgid "True State"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/toggle/edit.js:82
+msgid "False State"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/toggle/edit.js:91
+#: src/blocks/team/edit.js:420
+#: src/blocks/testimonial/edit.js:959
+msgid "Square"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/toggle/edit.js:92
+msgid "Round"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:16
+msgid "Upload"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:21
+msgid "jpg"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:22
+msgid "jpeg"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:23
+msgid "png"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:24
+msgid "gif"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:25
+msgid "pdf"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:26
+msgid "doc"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:27
+msgid "docx"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:28
+msgid "ppt"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:29
+msgid "pptx"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:30
+msgid "odt"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:31
+msgid "avi"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:32
+msgid "ogg"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:33
+msgid "m4a"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:34
+msgid "mov"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:35
+msgid "mp3"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:36
+msgid "mp4"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:37
+msgid "mpg"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:38
+msgid "wav"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/attributes.js:39
+msgid "wmv"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/upload/edit.js:73
+msgid "Type allowed formats"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/url/attributes.js:20
+msgid "https://example.com"
+msgstr ""
+
+#: src/blocks/forms/child-blocks/url/edit.js:100
+msgid "URL Name"
+msgstr ""
+
+#: src/blocks/forms/edit.js:266
+msgid "Hidden Field Label"
+msgstr ""
+
+#: src/blocks/forms/edit.js:275
+#: src/blocks/section/edit.js:243
+msgid "Boxed"
+msgstr ""
+
+#: src/blocks/forms/edit.js:276
+msgid "Underlined"
+msgstr ""
+
+#: src/blocks/forms/edit.js:279
+msgid "Overall Alignment"
+msgstr ""
+
+#: src/blocks/forms/edit.js:304
+#: src/blocks/forms/edit.js:305
+msgid "Confirmation Type"
+msgstr ""
+
+#: src/blocks/forms/edit.js:334
+msgid "Enter a message you want to display after successfull form submission"
+msgstr ""
+
+#: src/blocks/forms/edit.js:382
+msgid "Error Message "
+msgstr ""
+
+#: src/blocks/forms/edit.js:387
+msgid "Enter a message you want to display after unsuccessfull form submission"
+msgstr ""
+
+#: src/blocks/forms/edit.js:438
+msgid "Success Redirect URL"
+msgstr ""
+
+#: src/blocks/forms/edit.js:439
+msgid "Enter a URL you want to redirect your page to after form Submission"
+msgstr ""
+
+#: src/blocks/forms/edit.js:459
+msgid "Button Size"
+msgstr ""
+
+#: src/blocks/forms/edit.js:463
+#: src/components/gutter-options/index.js:13
+#: src/components/option-selector-control/index.js:28
+msgid "Small"
+msgstr ""
+
+#: src/blocks/forms/edit.js:466
+#: src/components/option-selector-control/index.js:46
+msgid "Extra Large"
+msgstr ""
+
+#: src/blocks/forms/edit.js:495
+#: src/blocks/info-box/edit.js:565
+#: src/blocks/marketing-button/edit.js:471
+#: src/blocks/marketing-button/edit.js:497
+#: src/blocks/marketing-button/edit.js:523
+msgid "Button Padding"
+msgstr ""
+
+#: src/blocks/forms/edit.js:532
+msgid "Submit Color"
+msgstr ""
+
+#: src/blocks/forms/edit.js:547
+msgid "Submit Hover Color"
+msgstr ""
+
+#: src/blocks/forms/edit.js:617
+msgid "submitTextloadGoogleFonts"
+msgstr ""
+
+#: src/blocks/forms/edit.js:618
+msgid "submitTextFontFamily"
+msgstr ""
+
+#: src/blocks/forms/edit.js:619
+msgid "submitTextFontWeight"
+msgstr ""
+
+#: src/blocks/forms/edit.js:620
+msgid "submitTextFontSubset"
+msgstr ""
+
+#: src/blocks/forms/edit.js:621
+msgid "submitTextFontSizeType"
+msgstr ""
+
+#: src/blocks/forms/edit.js:622
+msgid "submitTextFontSize"
+msgstr ""
+
+#: src/blocks/forms/edit.js:623
+msgid "submitTextFontSizeMobile"
+msgstr ""
+
+#: src/blocks/forms/edit.js:624
+msgid "submitTextFontSizeTablet"
+msgstr ""
+
+#: src/blocks/forms/edit.js:625
+msgid "submitTextLineHeightType"
+msgstr ""
+
+#: src/blocks/forms/edit.js:626
+msgid "submitTextLineHeight"
+msgstr ""
+
+#: src/blocks/forms/edit.js:627
+msgid "submitTextLineHeightMobile"
+msgstr ""
+
+#: src/blocks/forms/edit.js:628
+msgid "submitTextLineHeightTablet"
+msgstr ""
+
+#: src/blocks/forms/edit.js:674
+msgid "To"
+msgstr ""
+
+#: src/blocks/forms/edit.js:683
+msgid "CC"
+msgstr ""
+
+#: src/blocks/forms/edit.js:692
+msgid "BCC"
+msgstr ""
+
+#: src/blocks/forms/edit.js:705
+#: src/blocks/forms/edit.js:706
+#: src/blocks/forms/variations.js:65
+msgid "Subject"
+msgstr ""
+
+#: src/blocks/forms/edit.js:719
+msgid "Design"
+msgstr ""
+
+#: src/blocks/forms/edit.js:724
+msgid "Label Typography"
+msgstr ""
+
+#: src/blocks/forms/edit.js:727
+msgid "labelloadGoogleFonts"
+msgstr ""
+
+#: src/blocks/forms/edit.js:728
+msgid "labelFontFamily"
+msgstr ""
+
+#: src/blocks/forms/edit.js:729
+msgid "labelFontWeight"
+msgstr ""
+
+#: src/blocks/forms/edit.js:730
+msgid "labelFontSubset"
+msgstr ""
+
+#: src/blocks/forms/edit.js:731
+msgid "labelFontSizeType"
+msgstr ""
+
+#: src/blocks/forms/edit.js:732
+msgid "labelFontSize"
+msgstr ""
+
+#: src/blocks/forms/edit.js:733
+msgid "labelFontSizeMobile"
+msgstr ""
+
+#: src/blocks/forms/edit.js:734
+msgid "labelFontSizeTablet"
+msgstr ""
+
+#: src/blocks/forms/edit.js:735
+msgid "labelLineHeightType"
+msgstr ""
+
+#: src/blocks/forms/edit.js:736
+msgid "labelLineHeight"
+msgstr ""
+
+#: src/blocks/forms/edit.js:737
+msgid "labelLineHeightMobile"
+msgstr ""
+
+#: src/blocks/forms/edit.js:738
+msgid "labelLineHeightTablet"
+msgstr ""
+
+#: src/blocks/forms/edit.js:741
+msgid "Input Typography"
+msgstr ""
+
+#: src/blocks/forms/edit.js:744
+msgid "inputloadGoogleFonts"
+msgstr ""
+
+#: src/blocks/forms/edit.js:745
+msgid "inputFontFamily"
+msgstr ""
+
+#: src/blocks/forms/edit.js:746
+msgid "inputFontWeight"
+msgstr ""
+
+#: src/blocks/forms/edit.js:747
+msgid "inputFontSubset"
+msgstr ""
+
+#: src/blocks/forms/edit.js:748
+msgid "inputFontSizeType"
+msgstr ""
+
+#: src/blocks/forms/edit.js:749
+msgid "inputFontSize"
+msgstr ""
+
+#: src/blocks/forms/edit.js:750
+msgid "inputFontSizeMobile"
+msgstr ""
+
+#: src/blocks/forms/edit.js:751
+msgid "inputFontSizeTablet"
+msgstr ""
+
+#: src/blocks/forms/edit.js:752
+msgid "inputLineHeightType"
+msgstr ""
+
+#: src/blocks/forms/edit.js:753
+msgid "inputLineHeight"
+msgstr ""
+
+#: src/blocks/forms/edit.js:754
+msgid "inputLineHeightMobile"
+msgstr ""
+
+#: src/blocks/forms/edit.js:755
+msgid "inputLineHeightTablet"
+msgstr ""
+
+#: src/blocks/forms/edit.js:758
+msgid "Checkbox/Radio Size"
+msgstr ""
+
+#: src/blocks/forms/edit.js:766
+msgid "Toggle Width"
+msgstr ""
+
+#: src/blocks/forms/edit.js:774
+msgid "Toggle Height"
+msgstr ""
+
+#: src/blocks/forms/edit.js:781
+msgid "Toggle Active Color"
+msgstr ""
+
+#: src/blocks/forms/edit.js:793
+msgid "Input Color"
+msgstr ""
+
+#: src/blocks/forms/edit.js:805
+msgid "Field Placeholder Color"
+msgstr ""
+
+#: src/blocks/forms/edit.js:811
+msgid "Field Active Color"
+msgstr ""
+
+#: src/blocks/forms/edit.js:870
+msgid "Spacing between fields (px)"
+msgstr ""
+
+#: src/blocks/forms/edit.js:902
+msgid "Google reCAPTCHA"
+msgstr ""
+
+#: src/blocks/forms/edit.js:905
+msgid "P.S. Note that If you are using two forms on the same page with the different reCAPTCHA versions (V2 checkbox and V3), it will create conflicts between the versions. Kindly avoid using different versions on same page. "
+msgstr ""
+
+#: src/blocks/forms/edit.js:908
+msgid "Enable reCAPTCHA "
+msgstr ""
+
+#: src/blocks/forms/edit.js:914
+msgid "Select Version"
+msgstr ""
+
+#: src/blocks/forms/edit.js:918
+msgid "V2"
+msgstr ""
+
+#: src/blocks/forms/edit.js:919
+msgid "V3"
+msgstr ""
+
+#: src/blocks/forms/edit.js:926
+#: src/blocks/forms/edit.js:944
+msgid "Site Key"
+msgstr ""
+
+#: src/blocks/forms/edit.js:929
+#: src/blocks/forms/edit.js:936
+msgid "Enter v2 Keys"
+msgstr ""
+
+#: src/blocks/forms/edit.js:933
+#: src/blocks/forms/edit.js:951
+msgid "Secret Key"
+msgstr ""
+
+#: src/blocks/forms/edit.js:947
+#: src/blocks/forms/edit.js:954
+msgid "Enter v3 Keys"
+msgstr ""
+
+#: src/blocks/forms/edit.js:958
+msgid "Hide reCAPTCHA Badge"
+msgstr ""
+
+#: src/blocks/forms/edit.js:964
+msgid "Know More"
+msgstr ""
+
+#: src/blocks/forms/edit.js:965
+msgid "Get Keys"
+msgstr ""
+
+#: src/blocks/forms/edit.js:966
+msgid " | Documentation"
+msgstr ""
+
+#: src/blocks/forms/variations.js:17
+#: src/blocks/forms/variations.js:19
+msgid "Simple Contact Form"
+msgstr ""
+
+#: src/blocks/forms/variations.js:24
+msgid "First Name"
+msgstr ""
+
+#: src/blocks/forms/variations.js:24
+msgid "John"
+msgstr ""
+
+#: src/blocks/forms/variations.js:25
+msgid "Last Name"
+msgstr ""
+
+#: src/blocks/forms/variations.js:25
+msgid "Doe"
+msgstr ""
+
+#: src/blocks/forms/variations.js:33
+#: src/blocks/forms/variations.js:35
+msgid "Newsletter Form"
+msgstr ""
+
+#: src/blocks/forms/variations.js:46
+#: src/blocks/forms/variations.js:48
+msgid "Suggestion Form"
+msgstr ""
+
+#: src/blocks/forms/variations.js:59
+msgid "Option Name 2"
+msgstr ""
+
+#: src/blocks/forms/variations.js:59
+msgid "Option Value 2"
+msgstr ""
+
+#: src/blocks/forms/variations.js:60
+msgid "Option Name 3"
+msgstr ""
+
+#: src/blocks/forms/variations.js:60
+msgid "Option Value 3"
+msgstr ""
+
+#: src/blocks/forms/variations.js:61
+msgid "Option Name 4"
+msgstr ""
+
+#: src/blocks/forms/variations.js:61
+msgid "Option Value 4"
+msgstr ""
+
+#: src/blocks/forms/variations.js:65
+msgid "Enter your subject"
+msgstr ""
+
+#: src/blocks/gf-styler/block.js:39
+msgid "GF styler"
+msgstr ""
+
+#: src/blocks/gf-styler/block.js:40
+msgid "gravity form styler"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:465
+msgid "TextArea Height"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:495
+msgid "Tab Index"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:508
+msgid "Form Title & Description"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:512
+msgid "Show"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:513
+msgid "Hide"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:520
+msgid "Form Title & Description Alignment"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:541
+msgid "Select a Gravity Form"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:891
+msgid "Note: This styling can be only seen on frontend"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:924
+msgid "Advanced Settings"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:955
+msgid "Form Error Validation"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:957
+msgid "Error Message Color"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:966
+msgid "Error Message Background Color"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:1044
+msgid "Form Success Validation"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:1045
+msgid "Success Message Color"
+msgstr ""
+
+#: src/blocks/gf-styler/edit.js:1055
+msgid "Success Message Typography"
+msgstr ""
+
+#: src/blocks/google-map/block.js:67
+msgid "This block uses Ultimate Addon for Gutenberg's API key to display the map. You don't need to create your own API key or worry about renewing it."
+msgstr ""
+
+#: src/blocks/google-map/block.js:68
+msgid "Address"
+msgstr ""
+
+#: src/blocks/google-map/block.js:72
+msgid "Type the address"
+msgstr ""
+
+#: src/blocks/google-map/block.js:75
+msgid "Zoom"
+msgstr ""
+
+#: src/blocks/google-map/block.js:92
+msgid "Language"
+msgstr ""
+
+#: src/blocks/google-map/block.js:96
+msgid "Afrikaans"
+msgstr ""
+
+#: src/blocks/google-map/block.js:97
+msgid "Albanian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:98
+msgid "Amharic"
+msgstr ""
+
+#: src/blocks/google-map/block.js:99
+msgid "Arabic"
+msgstr ""
+
+#: src/blocks/google-map/block.js:100
+msgid "Armenian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:101
+msgid "Azerbaijani"
+msgstr ""
+
+#: src/blocks/google-map/block.js:102
+msgid "Basque"
+msgstr ""
+
+#: src/blocks/google-map/block.js:103
+msgid "Belarusian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:104
+msgid "Bengali"
+msgstr ""
+
+#: src/blocks/google-map/block.js:105
+msgid "Bosnian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:106
+msgid "Bulgarian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:107
+msgid "Burmese"
+msgstr ""
+
+#: src/blocks/google-map/block.js:108
+msgid "Catalan"
+msgstr ""
+
+#: src/blocks/google-map/block.js:109
+msgid "Chinese"
+msgstr ""
+
+#: src/blocks/google-map/block.js:110
+msgid "Croatian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:111
+msgid "Czech"
+msgstr ""
+
+#: src/blocks/google-map/block.js:112
+msgid "Danish"
+msgstr ""
+
+#: src/blocks/google-map/block.js:113
+msgid "Dutch"
+msgstr ""
+
+#: src/blocks/google-map/block.js:114
+msgid "English"
+msgstr ""
+
+#: src/blocks/google-map/block.js:115
+msgid "Estonian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:116
+msgid "Farsi"
+msgstr ""
+
+#: src/blocks/google-map/block.js:117
+msgid "Finnish"
+msgstr ""
+
+#: src/blocks/google-map/block.js:118
+msgid "French"
+msgstr ""
+
+#: src/blocks/google-map/block.js:119
+msgid "Galician"
+msgstr ""
+
+#: src/blocks/google-map/block.js:120
+msgid "Georgian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:121
+msgid "German"
+msgstr ""
+
+#: src/blocks/google-map/block.js:122
+msgid "Greek"
+msgstr ""
+
+#: src/blocks/google-map/block.js:123
+msgid "Gujarati"
+msgstr ""
+
+#: src/blocks/google-map/block.js:124
+msgid "Hebrew"
+msgstr ""
+
+#: src/blocks/google-map/block.js:125
+msgid "Hindi"
+msgstr ""
+
+#: src/blocks/google-map/block.js:126
+msgid "Hungarian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:127
+msgid "Icelandic"
+msgstr ""
+
+#: src/blocks/google-map/block.js:128
+msgid "Indonesian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:129
+msgid "Italian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:130
+msgid "Japanese"
+msgstr ""
+
+#: src/blocks/google-map/block.js:131
+msgid "Kannada"
+msgstr ""
+
+#: src/blocks/google-map/block.js:132
+msgid "Kazakh"
+msgstr ""
+
+#: src/blocks/google-map/block.js:133
+msgid "Khmer"
+msgstr ""
+
+#: src/blocks/google-map/block.js:134
+msgid "Korean"
+msgstr ""
+
+#: src/blocks/google-map/block.js:135
+msgid "Kyrgyz"
+msgstr ""
+
+#: src/blocks/google-map/block.js:136
+msgid "Lao"
+msgstr ""
+
+#: src/blocks/google-map/block.js:137
+msgid "Latvian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:138
+msgid "Lithuanian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:139
+msgid "Macedonian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:140
+msgid "Malay"
+msgstr ""
+
+#: src/blocks/google-map/block.js:141
+msgid "Malayalam"
+msgstr ""
+
+#: src/blocks/google-map/block.js:142
+msgid "Marathi"
+msgstr ""
+
+#: src/blocks/google-map/block.js:143
+msgid "Mongolian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:144
+msgid "Nepali"
+msgstr ""
+
+#: src/blocks/google-map/block.js:145
+msgid "Norwegian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:146
+msgid "Polish"
+msgstr ""
+
+#: src/blocks/google-map/block.js:147
+msgid "Portuguese"
+msgstr ""
+
+#: src/blocks/google-map/block.js:148
+msgid "Punjabi"
+msgstr ""
+
+#: src/blocks/google-map/block.js:149
+msgid "Romanian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:150
+msgid "Russian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:151
+msgid "Serbian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:152
+msgid "Sinhalese"
+msgstr ""
+
+#: src/blocks/google-map/block.js:153
+msgid "Slovak"
+msgstr ""
+
+#: src/blocks/google-map/block.js:154
+msgid "Slovenian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:155
+msgid "Spanish"
+msgstr ""
+
+#: src/blocks/google-map/block.js:156
+msgid "Swahili"
+msgstr ""
+
+#: src/blocks/google-map/block.js:157
+msgid "Swedish"
+msgstr ""
+
+#: src/blocks/google-map/block.js:158
+msgid "Tamil"
+msgstr ""
+
+#: src/blocks/google-map/block.js:159
+msgid "Telugu"
+msgstr ""
+
+#: src/blocks/google-map/block.js:160
+msgid "Thai"
+msgstr ""
+
+#: src/blocks/google-map/block.js:161
+msgid "Turkish"
+msgstr ""
+
+#: src/blocks/google-map/block.js:162
+msgid "Ukrainian"
+msgstr ""
+
+#: src/blocks/google-map/block.js:163
+msgid "Urdu"
+msgstr ""
+
+#: src/blocks/google-map/block.js:164
+msgid "Uzbek"
+msgstr ""
+
+#: src/blocks/google-map/block.js:165
+msgid "Vietnamese"
+msgstr ""
+
+#: src/blocks/google-map/block.js:166
+msgid "Zulu"
+msgstr ""
+
+#: src/blocks/google-map/block.js:188
+msgid "google map"
+msgstr ""
+
+#: src/blocks/google-map/block.js:190
+msgid "map"
+msgstr ""
+
+#: src/blocks/how-to/attributes.js:13
+msgid "- A Computer."
+msgstr ""
+
+#: src/blocks/how-to/attributes.js:19
+msgid "- A WordPress Website."
+msgstr ""
+
+#: src/blocks/how-to/attributes.js:33
+msgid "Required Tools:"
+msgstr ""
+
+#: src/blocks/how-to/attributes.js:37
+msgid "Things Needed?"
+msgstr ""
+
+#: src/blocks/how-to/attributes.js:41
+msgid "Steps to configure the How-to Schema:"
+msgstr ""
+
+#: src/blocks/how-to/attributes.js:83
+#: src/blocks/how-to/edit.js:801
+msgid "Total Cost:"
+msgstr ""
+
+#: src/blocks/how-to/attributes.js:87
+msgid "Total Time Needed :"
+msgstr ""
+
+#: src/blocks/how-to/attributes.js:91
+msgid " Minutes"
+msgstr ""
+
+#: src/blocks/how-to/attributes.js:116
+msgid "How To Configure How-To Schema In Ultimate Addons For Gutenberg?"
+msgstr ""
+
+#: src/blocks/how-to/attributes.js:125
+msgid "So to get started, you will just need to drag-n-drop the How-to Schema block in the Gutenberg editor. The How-to Schema block can be used on pages that contain a How-to in their title and describe steps to achieve certain requirements."
+msgstr ""
+
+#: src/blocks/how-to/block.js:25
+msgid "how to"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:407
+#: src/blocks/inline-notice/edit.js:204
+msgid "Primary Heading"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:423
+msgid "Show Total Time"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:426
+msgid "Note: Time is recommended field for schema. It should be ON"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:429
+msgid "Time"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:432
+#: src/blocks/how-to/edit.js:692
+msgid "Years"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:440
+msgid "Months"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:448
+msgid "Days"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:456
+msgid "Hours"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:464
+msgid "Minutes"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:476
+msgid "Show Estimated Cost"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:479
+msgid "Note: Cost is recommended field for schema.It should be ON"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:482
+msgid "Click here to find your countrys ISO code."
+msgstr ""
+
+#: src/blocks/how-to/edit.js:486
+msgid "Show Tools"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:489
+#: src/blocks/how-to/edit.js:532
+msgid "Note: This is recommended field for schema.It should be ON"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:493
+msgid "Number of Tools"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:529
+msgid "Show Materials"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:536
+msgid "Number of Materials"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:584
+#: src/blocks/how-to/edit.js:616
+msgid "Secondary Heading"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:653
+msgid "Time Margin"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:663
+msgid "Cost Margin"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:672
+#: src/blocks/post/post-carousel/edit.js:1050
+#: src/blocks/post/post-masonry/edit.js:1268
+#: src/blocks/testimonial/edit.js:423
+msgid "Row Gap"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:680
+msgid "Gap Between Steps"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:692
+msgid "Year"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:693
+msgid " Months "
+msgstr ""
+
+#: src/blocks/how-to/edit.js:693
+msgid " Month "
+msgstr ""
+
+#: src/blocks/how-to/edit.js:694
+msgid " Days "
+msgstr ""
+
+#: src/blocks/how-to/edit.js:694
+msgid " Day "
+msgstr ""
+
+#: src/blocks/how-to/edit.js:695
+msgid "Hours "
+msgstr ""
+
+#: src/blocks/how-to/edit.js:695
+msgid " Hour "
+msgstr ""
+
+#: src/blocks/how-to/edit.js:696
+msgid " Minutes "
+msgstr ""
+
+#: src/blocks/how-to/edit.js:696
+msgid " Minute "
+msgstr ""
+
+#: src/blocks/how-to/edit.js:740
+msgid "How to configure HowTo Schema in UAG?"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:763
+msgid "So to get started, you will just need to drag-n-drop the How-to Schema block in the Gutenberg editor. The How-to Schema block can be used on pages which contain a How-to in their title and describe steps to achieve certain requirements."
+msgstr ""
+
+#: src/blocks/how-to/edit.js:776
+msgid "Total Time Needed ( Minutes ):"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:813
+msgid "30"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:825
+msgid "USD"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:839
+msgid "requirements tools:"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:864
+msgid "Requirements Tools:"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:885
+msgid "requirements materials:"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:911
+msgid "Requirements Materials:"
+msgstr ""
+
+#: src/blocks/how-to/edit.js:932
+msgid "requirements Steps:"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:130
+#: src/blocks/social-share-child/edit.js:147
+msgid "Image Background Color"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:136
+msgid "Image Border Color"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:152
+#: src/blocks/social-share-child/edit.js:157
+msgid "Image Background Hover Color"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:158
+msgid "Image Border Hover Color"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:188
+msgid "Icon Border Color"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:204
+#: src/blocks/info-box/edit.js:377
+#: src/blocks/marketing-button/edit.js:422
+#: src/blocks/social-share-child/edit.js:185
+msgid "Icon Hover Color"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:210
+#: src/blocks/social-share-child/edit.js:191
+msgid "Icon Background Hover Color"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:216
+msgid "Icon Border Hover Color"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:290
+msgid "Label Name"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:308
+msgid "Icon Settings"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:310
+#: src/blocks/social-share-child/edit.js:291
+msgid "Image / Icon"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:353
+msgid "List Item Link"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:355
+msgid "Disable Link"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:365
+msgid "Enter URL"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:368
+msgid "Open in New Tab"
+msgstr ""
+
+#: src/blocks/icon-list-child/edit.js:375
+#: src/blocks/social-share-child/edit.js:337
+msgid "Icon Color Settings"
+msgstr ""
+
+#: src/blocks/icon-list/block.js:24
+msgid "icon list"
+msgstr ""
+
+#: src/blocks/icon-list/block.js:25
+msgid "image list"
+msgstr ""
+
+#: src/blocks/icon-list/edit.js:201
+#: src/blocks/social-share/edit.js:161
+msgid "Note: Choose on what breakpoint the Icons will stack."
+msgstr ""
+
+#: src/blocks/icon-list/edit.js:206
+msgid "Hide Labels"
+msgstr ""
+
+#: src/blocks/icon-list/edit.js:212
+#: src/blocks/social-share/edit.js:257
+msgid "Gap between Items"
+msgstr ""
+
+#: src/blocks/icon-list/edit.js:215
+msgid "Note: For better editing experience, the gap between items might look larger than applied.  Viewing in frontend will show the actual results."
+msgstr ""
+
+#: src/blocks/icon-list/edit.js:221
+msgid "Gap between Icon and Label"
+msgstr ""
+
+#: src/blocks/icon-list/edit.js:237
+msgid "Note: This manages the Icon Position with respect to the Label."
+msgstr ""
+
+#: src/blocks/icon-list/edit.js:296
+#: src/blocks/info-box/edit.js:341
+#: src/blocks/marketing-button/edit.js:295
+#: src/blocks/table-of-contents/edit.js:393
+#: src/blocks/tabs/edit.js:372
+#: src/blocks/timeline/content-timeline/edit.js:622
+#: src/blocks/timeline/post-timeline/edit.js:805
+msgid "Icon Size"
+msgstr ""
+
+#: src/blocks/icon-list/edit.js:335
+#: src/blocks/social-share/edit.js:243
+msgid "Note: Background Size option is useful when one adds background color to the icons."
+msgstr ""
+
+#: src/blocks/icon-list/edit.js:343
+msgid "Note: Border option is useful when one adds border color to the icons."
+msgstr ""
+
+#: src/blocks/icon-list/edit.js:351
+#: src/blocks/social-share/edit.js:251
+msgid "Note: Border Radius option is useful when one adds background color to the icons."
+msgstr ""
+
+#: src/blocks/info-box/block.js:24
+msgid "info box"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:403
+msgid "After Icon/Image"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:404
+msgid "After Prefix"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:405
+msgid "After Title"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:406
+msgid "After Description"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:757
+msgid "Enable Prefix"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:780
+msgid "Prefix Color"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:791
+msgid "Enable Title"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:797
+#: src/blocks/marketing-button/edit.js:321
+#: src/blocks/post/post-grid/edit.js:1013
+#: src/blocks/post/post-masonry/edit.js:1150
+#: src/blocks/team/edit.js:547
+msgid "Title Tag"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:826
+#: src/blocks/inline-notice/edit.js:266
+#: src/blocks/marketing-button/edit.js:395
+#: src/blocks/post/post-carousel/edit.js:1017
+#: src/blocks/post/post-grid/edit.js:1104
+#: src/blocks/post/post-masonry/edit.js:1242
+#: src/blocks/review/edit.js:504
+#: src/blocks/team/edit.js:637
+msgid "Title Color"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:836
+msgid "Enable Description"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:858
+#: src/blocks/marketing-button/edit.js:407
+#: src/blocks/review/edit.js:530
+#: src/blocks/team/edit.js:647
+msgid "Description Color"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:874
+msgid "Prefix Bottom Margin"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:885
+msgid "Title Bottom Margin"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:896
+msgid "Separator Bottom Margin"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:917
+msgid "Image/Icon Margin (px)"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:990
+#: src/blocks/testimonial/edit.js:963
+msgid "Image Size"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:996
+#: src/blocks/table-of-contents/edit.js:547
+msgid "Custom Width"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:999
+msgid "Turn this off to inherit the natural width of Image."
+msgstr ""
+
+#: src/blocks/info-box/edit.js:1003
+msgid "Width (px)"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:1029
+msgid "Image/Icon"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:1031
+msgid "Select Position"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:1035
+msgid "Above Title"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:1036
+msgid "Below Title"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:1037
+msgid "Left of Title"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:1038
+msgid "Right of Title"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:1039
+msgid "Left of Text and Title"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:1040
+msgid "Right of Text and Title"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:1053
+#: src/blocks/testimonial/edit.js:947
+msgid "Note: Choose on what breakpoint the Info Box will stack."
+msgstr ""
+
+#: src/blocks/info-box/edit.js:1059
+msgid "Select Source"
+msgstr ""
+
+#: src/blocks/info-box/edit.js:1069
+#: src/blocks/team/edit.js:426
+msgid "Vertical Alignment"
+msgstr ""
+
+#: src/blocks/inline-notice/block.js:24
+msgid "inline notice"
+msgstr ""
+
+#: src/blocks/inline-notice/block.js:25
+msgid "notice"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:137
+msgid "Allow Always"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:140
+msgid "Allow to Dismiss"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:196
+msgid "Highlight width"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:216
+#: src/blocks/marketing-button/edit.js:331
+#: src/blocks/post/post-carousel/edit.js:936
+#: src/blocks/post/post-grid/edit.js:1023
+#: src/blocks/post/post-masonry/edit.js:1160
+msgid "span"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:217
+#: src/blocks/marketing-button/edit.js:332
+#: src/blocks/post/post-carousel/edit.js:937
+#: src/blocks/post/post-grid/edit.js:1024
+#: src/blocks/post/post-masonry/edit.js:1161
+msgid "p"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:221
+msgid "Notice Display"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:249
+msgid "Enable Cookies"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:256
+msgid "Show Closed Notice After (Days)"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:265
+#: src/blocks/post/post-carousel/edit.js:1008
+#: src/blocks/post/post-grid/edit.js:1095
+#: src/blocks/post/post-masonry/edit.js:1233
+msgid "Colors"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:273
+msgid "Highlight Color"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:280
+#: src/blocks/review/edit.js:552
+#: src/blocks/table-of-contents/edit.js:524
+#: src/blocks/timeline/content-timeline/edit.js:382
+#: src/blocks/timeline/post-timeline/edit.js:456
+msgid "Content Color"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:287
+msgid "Content Background Color"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:297
+msgid "Dismiss Icon Color"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:309
+#: src/blocks/marketing-button/edit.js:336
+#: src/blocks/post/post-carousel/edit.js:528
+#: src/blocks/post/post-grid/edit.js:556
+#: src/blocks/post/post-grid/edit.js:1011
+#: src/blocks/post/post-masonry/edit.js:797
+#: src/blocks/team/edit.js:560
+#: src/blocks/timeline/post-timeline/edit.js:530
+msgid "Title"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:343
+msgid "Title Padding (px)"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:363
+msgid "Content Padding (px)"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:410
+msgid "Notice Title"
+msgstr ""
+
+#: src/blocks/inline-notice/edit.js:421
+msgid "Add notice text..."
+msgstr ""
+
+#: src/blocks/lottie/block.js:20
+msgid "lottie"
+msgstr ""
+
+#: src/blocks/lottie/block.js:21
+msgid "animation"
+msgstr ""
+
+#: src/blocks/lottie/edit.js:122
+msgid "Controls"
+msgstr ""
+
+#: src/blocks/lottie/edit.js:125
+msgid "Play On"
+msgstr ""
+
+#: src/blocks/lottie/edit.js:130
+msgid "On Hover"
+msgstr ""
+
+#: src/blocks/lottie/edit.js:131
+msgid "On Click"
+msgstr ""
+
+#: src/blocks/lottie/edit.js:132
+msgid "Viewport"
+msgstr ""
+
+#: src/blocks/lottie/edit.js:134
+msgid "This setting will only take effect once you are on the live page, and not while you're editing."
+msgstr ""
+
+#: src/blocks/lottie/edit.js:137
+msgid "Loop"
+msgstr ""
+
+#: src/blocks/lottie/edit.js:143
+msgid "Speed"
+msgstr ""
+
+#: src/blocks/lottie/edit.js:152
+msgid "Reverse"
+msgstr ""
+
+#: src/blocks/lottie/edit.js:155
+msgid "Direction of animation."
+msgstr ""
+
+#: src/blocks/lottie/edit.js:312
+msgid "Lottie block requires the file type JSON to be uploaded to media files. Seems like your website has disabled this file type. Please refer"
+msgstr ""
+
+#: src/blocks/lottie/edit.js:322
+msgid "Allows you to add fancy animation i.e Lottie to your website. You can see sample Lottie animations"
+msgstr ""
+
+#: src/blocks/marketing-button/block.js:25
+msgid "marketing button"
+msgstr ""
+
+#: src/blocks/marketing-button/edit.js:256
+msgid "Text Alignment"
+msgstr ""
+
+#: src/blocks/marketing-button/edit.js:310
+#: src/blocks/post/post-carousel/edit.js:1092
+#: src/blocks/post/post-grid/edit.js:1172
+#: src/blocks/post/post-masonry/edit.js:1310
+#: src/blocks/team/edit.js:667
+msgid "Title Bottom Spacing"
+msgstr ""
+
+#: src/blocks/marketing-button/edit.js:416
+msgid "Title Hover Color"
+msgstr ""
+
+#: src/blocks/marketing-button/edit.js:428
+msgid "Description Hover Color"
+msgstr ""
+
+#: src/blocks/marketing-button/edit.js:549
+msgid "Button Background"
+msgstr ""
+
+#: src/blocks/marketing-button/edit.js:555
+msgid "Transparent"
+msgstr ""
+
+#: src/blocks/marketing-button/edit.js:725
+msgid "Add Button Title…"
+msgstr ""
+
+#: src/blocks/marketing-button/edit.js:749
+msgid "Add Button Description…"
+msgstr ""
+
+#: src/blocks/post/post-carousel/block.js:26
+#: src/blocks/post/post-grid/block.js:26
+#: src/blocks/post/post-masonry/block.js:26
+#: src/blocks/taxonomy-list/block.js:26
+#: src/blocks/timeline/post-timeline/block.js:26
+msgid "post"
+msgstr ""
+
+#: src/blocks/post/post-carousel/block.js:27
+msgid "carousel"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:468
+#: src/blocks/post/post-grid/edit.js:493
+#: src/blocks/post/post-masonry/edit.js:455
+#: src/blocks/timeline/post-timeline/edit.js:221
+msgid "All"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:487
+#: src/blocks/post/post-grid/edit.js:513
+#: src/blocks/post/post-masonry/edit.js:756
+#: src/blocks/timeline/post-timeline/edit.js:489
+msgid "Post Type"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:495
+#: src/blocks/post/post-grid/edit.js:521
+#: src/blocks/post/post-masonry/edit.js:764
+#: src/blocks/timeline/post-timeline/edit.js:497
+msgid "Taxonomy"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:513
+#: src/blocks/post/post-grid/edit.js:539
+#: src/blocks/post/post-masonry/edit.js:782
+#: src/blocks/timeline/post-timeline/edit.js:515
+msgid "Exclude Current Post"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:529
+#: src/blocks/post/post-grid/edit.js:557
+#: src/blocks/post/post-masonry/edit.js:798
+#: src/blocks/timeline/post-timeline/edit.js:531
+msgid "Random"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:530
+#: src/blocks/post/post-grid/edit.js:558
+#: src/blocks/post/post-masonry/edit.js:799
+#: src/blocks/timeline/post-timeline/edit.js:532
+msgid "Menu Order"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:534
+#: src/blocks/post/post-masonry/edit.js:803
+#: src/blocks/timeline/post-timeline/edit.js:536
+msgid "Order"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:538
+#: src/blocks/post/post-grid/edit.js:566
+#: src/blocks/post/post-masonry/edit.js:807
+#: src/blocks/timeline/post-timeline/edit.js:540
+msgid "Descending"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:539
+#: src/blocks/post/post-grid/edit.js:567
+#: src/blocks/post/post-masonry/edit.js:808
+#: src/blocks/timeline/post-timeline/edit.js:541
+msgid "Ascending"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:606
+#: src/blocks/post/post-grid/edit.js:648
+#: src/blocks/post/post-masonry/edit.js:899
+msgid "If Posts Not Found"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:609
+#: src/blocks/post/post-grid/edit.js:651
+#: src/blocks/post/post-masonry/edit.js:902
+msgid "Display Message"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:615
+#: src/blocks/post/post-grid/edit.js:657
+#: src/blocks/post/post-masonry/edit.js:908
+msgid "Inherit Styling from Theme"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:618
+#: src/blocks/post/post-grid/edit.js:660
+#: src/blocks/post/post-masonry/edit.js:911
+msgid "This will inherit all the Typography and colors for Title, Meta, Excerpt and Read More button from the theme."
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:621
+#: src/blocks/testimonial/edit.js:730
+msgid "Carousel"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:623
+#: src/blocks/testimonial/edit.js:732
+msgid "Pause On Hover"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:628
+msgid "Autoplay"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:634
+#: src/blocks/testimonial/edit.js:743
+msgid "Autoplay Speed (ms)"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:642
+#: src/blocks/testimonial/edit.js:751
+msgid "Infinite Loop"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:647
+#: src/blocks/testimonial/edit.js:756
+msgid "Transition Speed (ms)"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:654
+msgid "Arrows & Dots"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:656
+#: src/blocks/testimonial/edit.js:763
+msgid "Show Arrows & Dots"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:660
+#: src/blocks/testimonial/edit.js:767
+msgid "Only Arrows"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:661
+#: src/blocks/testimonial/edit.js:768
+msgid "Only Dots"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:662
+#: src/blocks/testimonial/edit.js:769
+msgid "Both Arrows & Dots"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:668
+#: src/blocks/testimonial/edit.js:775
+msgid "Arrow Size"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:675
+#: src/blocks/testimonial/edit.js:782
+msgid "Arrow Border Size"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:682
+#: src/blocks/testimonial/edit.js:789
+msgid "Arrow Border Radius"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:693
+#: src/blocks/post/post-grid/edit.js:778
+#: src/blocks/post/post-masonry/edit.js:917
+msgid "Show Featured Image"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:699
+#: src/blocks/post/post-grid/edit.js:784
+#: src/blocks/post/post-masonry/edit.js:923
+msgid "Image Sizes"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:718
+#: src/blocks/post/post-grid/edit.js:804
+#: src/blocks/post/post-masonry/edit.js:942
+msgid "Background Overlay Color"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:725
+#: src/blocks/post/post-grid/edit.js:811
+#: src/blocks/post/post-masonry/edit.js:949
+msgid "Overlay Opacity"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:733
+#: src/blocks/post/post-grid/edit.js:819
+#: src/blocks/post/post-masonry/edit.js:957
+msgid "Link Complete Box"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:742
+#: src/blocks/post/post-grid/edit.js:828
+#: src/blocks/post/post-masonry/edit.js:966
+msgid "Show Title"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:747
+#: src/blocks/post/post-grid/edit.js:833
+#: src/blocks/post/post-masonry/edit.js:971
+msgid "Show Author"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:752
+#: src/blocks/post/post-grid/edit.js:838
+#: src/blocks/post/post-masonry/edit.js:976
+msgid "Show Date"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:757
+#: src/blocks/post/post-grid/edit.js:843
+#: src/blocks/post/post-masonry/edit.js:981
+msgid "Show Comment"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:762
+#: src/blocks/post/post-grid/edit.js:848
+#: src/blocks/post/post-masonry/edit.js:986
+msgid "Show Taxonomy"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:767
+#: src/blocks/post/post-grid/edit.js:853
+#: src/blocks/post/post-masonry/edit.js:991
+msgid "Show Excerpt"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:773
+#: src/blocks/post/post-grid/edit.js:859
+#: src/blocks/post/post-masonry/edit.js:997
+msgid "Show:"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:776
+#: src/blocks/post/post-carousel/edit.js:984
+#: src/blocks/post/post-grid/edit.js:862
+#: src/blocks/post/post-grid/edit.js:1072
+#: src/blocks/post/post-masonry/edit.js:1000
+#: src/blocks/post/post-masonry/edit.js:1209
+msgid "Excerpt"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:777
+#: src/blocks/post/post-grid/edit.js:863
+#: src/blocks/post/post-masonry/edit.js:1001
+msgid "Full post"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:789
+#: src/blocks/post/post-grid/edit.js:875
+#: src/blocks/post/post-masonry/edit.js:1013
+msgid "Max number of words in excerpt"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:802
+#: src/blocks/post/post-grid/edit.js:888
+#: src/blocks/post/post-masonry/edit.js:1026
+msgid "Read More Link"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:804
+#: src/blocks/post/post-grid/edit.js:890
+#: src/blocks/post/post-masonry/edit.js:1028
+msgid "Show Read More Link"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:809
+#: src/blocks/post/post-grid/edit.js:895
+#: src/blocks/post/post-masonry/edit.js:1033
+#: src/blocks/timeline/post-timeline/edit.js:659
+msgid "Open links in New Tab"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:816
+#: src/blocks/post/post-grid/edit.js:902
+#: src/blocks/post/post-masonry/edit.js:893
+#: src/blocks/post/post-masonry/edit.js:1040
+msgid "Button Text"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:825
+msgid "CTA Tag"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:961
+#: src/blocks/post/post-grid/edit.js:1049
+#: src/blocks/post/post-masonry/edit.js:1186
+msgid "Meta"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:1009
+#: src/blocks/post/post-grid/edit.js:1096
+#: src/blocks/post/post-masonry/edit.js:1234
+msgid "Blog Background Color"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:1023
+#: src/blocks/post/post-grid/edit.js:1110
+#: src/blocks/post/post-masonry/edit.js:1248
+msgid "Meta Color"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:1031
+#: src/blocks/post/post-grid/edit.js:1117
+#: src/blocks/post/post-masonry/edit.js:1255
+msgid "Excerpt Color"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:1041
+msgid "Arrows & Dots Color"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:1058
+msgid "Gap Between Posts & Dots"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:1067
+#: src/blocks/post/post-grid/edit.js:1147
+#: src/blocks/post/post-masonry/edit.js:1285
+#: src/blocks/testimonial/edit.js:431
+#: src/blocks/timeline/post-timeline/edit.js:850
+msgid "Content Padding"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:1075
+#: src/blocks/post/post-grid/edit.js:1155
+#: src/blocks/post/post-masonry/edit.js:1293
+msgid "Content Padding (Mobile)"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:1084
+#: src/blocks/post/post-grid/edit.js:1164
+#: src/blocks/post/post-masonry/edit.js:1302
+msgid "Image Bottom Spacing"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:1100
+#: src/blocks/post/post-grid/edit.js:1180
+#: src/blocks/post/post-masonry/edit.js:1318
+msgid "Meta Bottom Spacing"
+msgstr ""
+
+#: src/blocks/post/post-carousel/edit.js:1108
+#: src/blocks/post/post-grid/edit.js:1188
+#: src/blocks/post/post-masonry/edit.js:1326
+msgid "Excerpt Bottom Spacing"
+msgstr ""
+
+#: src/blocks/post/post-grid/block.js:27
+msgid "grid"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:544
+msgid "Posts Per Page"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:634
+msgid "Post Pagination"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:640
+msgid "Page Limit"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:664
+#: src/blocks/post/post-masonry/edit.js:474
+#: src/blocks/post/post-masonry/edit.js:870
+msgid "Pagination"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:667
+msgid "Pagination Layout"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:672
+msgid "Filled"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:675
+msgid "Pagination Alignment"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:708
+msgid "Background Active Color"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:718
+msgid "Border Size"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:736
+msgid "Border Active Color"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:748
+msgid "Text Active Color"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:758
+msgid "This spacing is between the Post Grid and the Pagination"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:764
+msgid "Previous Text"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:769
+msgid "Next Text"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:978
+#: src/blocks/post/post-masonry/edit.js:1116
+msgid "Button Colors"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:1130
+msgid "Vertical Spacing"
+msgstr ""
+
+#: src/blocks/post/post-grid/edit.js:1138
+msgid "Horizontal Spacing"
+msgstr ""
+
+#: src/blocks/post/post-masonry/block.js:27
+msgid "masonry"
+msgstr ""
+
+#: src/blocks/post/post-masonry/edit.js:505
+msgid "Font Size (px) "
+msgstr ""
+
+#: src/blocks/post/post-masonry/edit.js:731
+msgid " Loader Color"
+msgstr ""
+
+#: src/blocks/post/post-masonry/edit.js:738
+msgid "Loader Size"
+msgstr ""
+
+#: src/blocks/post/post-masonry/edit.js:792
+#: src/blocks/timeline/post-timeline/edit.js:525
+msgid "Order By"
+msgstr ""
+
+#: src/blocks/post/post-masonry/edit.js:875
+msgid "Infinite"
+msgstr ""
+
+#: src/blocks/post/post-masonry/edit.js:881
+msgid "Infinite Load Event"
+msgstr ""
+
+#: src/blocks/review/block.js:24
+msgid "ratings"
+msgstr ""
+
+#: src/blocks/review/block.js:25
+msgid "review"
+msgstr ""
+
+#: src/blocks/review/components.js:186
+msgid "Title of the review"
+msgstr ""
+
+#: src/blocks/review/components.js:196
+msgid "Review Description"
+msgstr ""
+
+#: src/blocks/review/components.js:206
+msgid "Review Author"
+msgstr ""
+
+#: src/blocks/review/components.js:297
+msgid "Title of the summary goes here"
+msgstr ""
+
+#: src/blocks/review/components.js:304
+msgid "Summary of the review goes here"
+msgstr ""
+
+#: src/blocks/review/edit.js:368
+msgid "Audio book"
+msgstr ""
+
+#: src/blocks/review/edit.js:370
+msgid "Individual Product"
+msgstr ""
+
+#: src/blocks/review/edit.js:371
+msgid "Product Collection"
+msgstr ""
+
+#: src/blocks/review/edit.js:372
+msgid "Product Group"
+msgstr ""
+
+#: src/blocks/review/edit.js:373
+msgid "Product Model"
+msgstr ""
+
+#: src/blocks/review/edit.js:374
+msgid "Some Products"
+msgstr ""
+
+#: src/blocks/review/edit.js:375
+msgid "Vehicle"
+msgstr ""
+
+#: src/blocks/review/edit.js:378
+msgid "Mobile Application"
+msgstr ""
+
+#: src/blocks/review/edit.js:379
+msgid "Video Game"
+msgstr ""
+
+#: src/blocks/review/edit.js:380
+msgid "Web Application"
+msgstr ""
+
+#: src/blocks/review/edit.js:406
+msgid "ISBN"
+msgstr ""
+
+#: src/blocks/review/edit.js:409
+#: src/blocks/review/edit.js:415
+#: src/blocks/review/edit.js:677
+#: src/blocks/review/edit.js:737
+msgid "Note: This is a mandatory field for the Review schema"
+msgstr ""
+
+#: src/blocks/review/edit.js:412
+msgid "Book author name"
+msgstr ""
+
+#: src/blocks/review/edit.js:429
+msgid "Provider"
+msgstr ""
+
+#: src/blocks/review/edit.js:444
+msgid "Application Category"
+msgstr ""
+
+#: src/blocks/review/edit.js:449
+msgid "Operating System"
+msgstr ""
+
+#: src/blocks/review/edit.js:465
+msgid "Director Name"
+msgstr ""
+
+#: src/blocks/review/edit.js:488
+msgid "Title Typography"
+msgstr ""
+
+#: src/blocks/review/edit.js:514
+msgid "Description Typography"
+msgstr ""
+
+#: src/blocks/review/edit.js:562
+msgid "Summary Typography"
+msgstr ""
+
+#: src/blocks/review/edit.js:578
+msgid "Summary Color"
+msgstr ""
+
+#: src/blocks/review/edit.js:585
+msgid "Active Star Color"
+msgstr ""
+
+#: src/blocks/review/edit.js:592
+msgid "Inactive Star Color"
+msgstr ""
+
+#: src/blocks/review/edit.js:599
+msgid "Star Outline Color"
+msgstr ""
+
+#: src/blocks/review/edit.js:605
+msgid "Overall Padding (px)"
+msgstr ""
+
+#: src/blocks/review/edit.js:632
+msgid "Schema"
+msgstr ""
+
+#: src/blocks/review/edit.js:634
+msgid "Item type"
+msgstr ""
+
+#: src/blocks/review/edit.js:653
+msgid "Course"
+msgstr ""
+
+#: src/blocks/review/edit.js:654
+msgid "Movie"
+msgstr ""
+
+#: src/blocks/review/edit.js:655
+msgid "Product"
+msgstr ""
+
+#: src/blocks/review/edit.js:656
+msgid "Software Application"
+msgstr ""
+
+#: src/blocks/review/edit.js:661
+msgid "Item subtype"
+msgstr ""
+
+#: src/blocks/review/edit.js:674
+msgid "Review publisher"
+msgstr ""
+
+#: src/blocks/review/edit.js:679
+msgid "Date of publish"
+msgstr ""
+
+#: src/blocks/review/edit.js:690
+msgid "Brand"
+msgstr ""
+
+#: src/blocks/review/edit.js:695
+msgid "SKU"
+msgstr ""
+
+#: src/blocks/review/edit.js:700
+msgid "Identifier"
+msgstr ""
+
+#: src/blocks/review/edit.js:705
+msgid "Identifier type"
+msgstr ""
+
+#: src/blocks/review/edit.js:725
+msgid "Offer Currency"
+msgstr ""
+
+#: src/blocks/review/edit.js:734
+msgid "Offer Price"
+msgstr ""
+
+#: src/blocks/review/edit.js:743
+msgid "Discontinued"
+msgstr ""
+
+#: src/blocks/review/edit.js:744
+msgid "In Stock"
+msgstr ""
+
+#: src/blocks/review/edit.js:745
+msgid "In Store Only"
+msgstr ""
+
+#: src/blocks/review/edit.js:746
+msgid "Limited Availability"
+msgstr ""
+
+#: src/blocks/review/edit.js:747
+msgid "Online Only"
+msgstr ""
+
+#: src/blocks/review/edit.js:748
+msgid "Out Of Stock"
+msgstr ""
+
+#: src/blocks/review/edit.js:749
+msgid "Pre Order"
+msgstr ""
+
+#: src/blocks/review/edit.js:750
+msgid "Pre Sale"
+msgstr ""
+
+#: src/blocks/review/edit.js:751
+msgid "Sold Out"
+msgstr ""
+
+#: src/blocks/review/edit.js:759
+msgid "Price Valid Until"
+msgstr ""
+
+#: src/blocks/review/edit.js:776
+msgid "Review Title"
+msgstr ""
+
+#: src/blocks/review/edit.js:796
+msgid "Open in new window"
+msgstr ""
+
+#: src/blocks/review/edit.js:801
+msgid "Show review description"
+msgstr ""
+
+#: src/blocks/review/edit.js:804
+#: src/blocks/review/edit.js:810
+#: src/blocks/review/edit.js:816
+msgid "Note: This is a mandatory field for the Review schema."
+msgstr ""
+
+#: src/blocks/review/edit.js:807
+msgid "Show review author"
+msgstr ""
+
+#: src/blocks/review/edit.js:813
+msgid "Show review image"
+msgstr ""
+
+#: src/blocks/review/edit.js:852
+msgid "Show ratings"
+msgstr ""
+
+#: src/blocks/review/edit.js:855
+msgid "Note: Add feature/section ratings separately."
+msgstr ""
+
+#: src/blocks/review/edit.js:858
+msgid "Enable schema support"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:50
+msgid "Missing merchant-specific identifier for product ( SKU )"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:54
+msgid "Missing brand of the product"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:58
+msgid "Missing offer Type"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:62
+msgid "Missing offer currency of a product"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:66
+msgid "Missing offer price of a product"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:70
+msgid "Missing offer expiry of a product"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:74
+msgid "Missing global identifiers"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:81
+msgid "Missing ISBN number of a book"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:85
+msgid "Missing author of the book"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:92
+msgid "Missing released date of the movie"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:96
+msgid "Missing director name of the movie"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:103
+msgid "Missing provider of the course"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:110
+msgid "Missing type of application (Application Category)"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:114
+msgid "Missing operating system(s) required"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:118
+msgid "Missing Offer Type"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:122
+msgid "Missing offer price of the application"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:126
+msgid "Missing offer currency of the application"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:138
+msgid "Missing title of the review"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:142
+msgid "Missing review description"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:146
+msgid "Missing review Image"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:150
+msgid "Missing url field"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:154
+msgid "Missing review author name"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:158
+msgid "Missing review publisher"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:162
+msgid "Missing date of publish"
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:177
+msgid "It seems that the following fields are empty. This may generate Schema errors / warnings for your Page, we recommend you to fill these fields."
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:181
+msgid "P.S. Note that this notice is visible only in the editor. This will not be visible in frontend. Also, once the required fields are added, this notice will go away."
+msgstr ""
+
+#: src/blocks/review/schema-notices.js:181
+msgid "Read more."
+msgstr ""
+
+#: src/blocks/section/block.js:29
+msgid "wrapper"
+msgstr ""
+
+#: src/blocks/section/edit.js:239
+msgid "Content Width"
+msgstr ""
+
+#: src/blocks/section/edit.js:244
+msgid "Full Width"
+msgstr ""
+
+#: src/blocks/section/edit.js:259
+msgid "Inherit Inner Width from Theme"
+msgstr ""
+
+#: src/blocks/social-share-child/block.js:26
+#: src/blocks/social-share/block.js:29
+msgid "social share"
+msgstr ""
+
+#: src/blocks/social-share-child/block.js:27
+#: src/blocks/social-share/block.js:30
+msgid "icon"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:262
+msgid "Social Share Settings"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:267
+#: src/blocks/team/edit.js:486
+msgid "Facebook"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:268
+#: src/blocks/team/edit.js:468
+msgid "Twitter"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:269
+msgid "Google Currents"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:270
+#: src/blocks/team/edit.js:522
+msgid "Pinterest"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:271
+#: src/blocks/team/edit.js:504
+msgid "LinkedIn"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:272
+msgid "Digg"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:273
+msgid "Blogger"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:274
+msgid "Reddit"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:275
+msgid "StumbleUpon"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:276
+msgid "Tumblr"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:277
+msgid "Myspace"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:279
+msgid "Pocket"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:280
+msgid "VK"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:281
+msgid "Odnoklassniki"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:282
+msgid "Skype"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:283
+msgid "Telegram"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:284
+msgid "WhatsApp"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:285
+msgid "Xing"
+msgstr ""
+
+#: src/blocks/social-share-child/edit.js:286
+msgid "Buffer"
+msgstr ""
+
+#: src/blocks/social-share/edit.js:260
+msgid "Note: The gap between the items will seem larger in the editor, for better user edit experience. But at frontend the gap will be exactly what is set from here."
+msgstr ""
+
+#: src/blocks/table-of-contents/block.js:25
+msgid "table of contents"
+msgstr ""
+
+#: src/blocks/table-of-contents/block.js:26
+msgid "table"
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:265
+msgid "Select the heading to consider when generating the table"
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:287
+msgid "Smooth Scroll"
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:289
+msgid "This will be in Action only in Front End."
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:295
+msgid "Smooth Scroll Offset (px)"
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:302
+msgid "Scroll Animation Delay (ms)"
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:312
+msgid "Show Scroll To Top"
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:314
+msgid "This will add a Scroll to Top arrow at the bottom of page."
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:347
+msgid "Bottom Space"
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:378
+msgid "Collapsible"
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:380
+msgid "Make Content Collapsible"
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:387
+msgid "Keep Collapsed Initially"
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:411
+msgid "Disable Bullet Points"
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:417
+msgid "Bullet Points Color"
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:454
+#: src/blocks/table-of-contents/edit.js:472
+#: src/blocks/table-of-contents/edit.js:490
+msgid "Gap Between Lists"
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:530
+msgid "Content Hover Color"
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:550
+msgid "Table's width will be auto if this is kept off."
+msgstr ""
+
+#: src/blocks/table-of-contents/edit.js:836
+#: src/blocks/table-of-contents/edit.js:864
+#: src/blocks/table-of-contents/edit.js:892
+msgid "List Margin"
+msgstr ""
+
+#: src/blocks/tabs-child/attributes.js:18
+#: src/blocks/tabs/attributes.js:11
+msgid "Tab 1"
+msgstr ""
+
+#: src/blocks/tabs-child/attributes.js:18
+#: src/blocks/tabs/attributes.js:11
+msgid "Tab 2"
+msgstr ""
+
+#: src/blocks/tabs-child/attributes.js:18
+#: src/blocks/tabs/attributes.js:11
+msgid "Tab 3"
+msgstr ""
+
+#: src/blocks/tabs-child/block.js:24
+#: src/blocks/tabs/block.js:24
+msgid "tabs"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:199
+msgid "Tabs Style"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:225
+msgid "Mobile Style"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:230
+#: src/blocks/tabs/edit.js:258
+#: src/blocks/tabs/edit.js:282
+msgid "Horizontal Style 1"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:231
+#: src/blocks/tabs/edit.js:259
+#: src/blocks/tabs/edit.js:283
+msgid "Horizontal Style 2"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:232
+#: src/blocks/tabs/edit.js:260
+#: src/blocks/tabs/edit.js:284
+msgid "Horizontal Style 3"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:233
+#: src/blocks/tabs/edit.js:261
+#: src/blocks/tabs/edit.js:285
+msgid "Horizontal Style 4"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:234
+#: src/blocks/tabs/edit.js:262
+#: src/blocks/tabs/edit.js:286
+msgid "Horizontal Style 5"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:235
+#: src/blocks/tabs/edit.js:263
+#: src/blocks/tabs/edit.js:287
+msgid "Vertical Style 6"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:236
+#: src/blocks/tabs/edit.js:264
+#: src/blocks/tabs/edit.js:288
+msgid "Vertical Style 7"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:237
+#: src/blocks/tabs/edit.js:265
+#: src/blocks/tabs/edit.js:289
+msgid "Vertical Style 8"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:238
+#: src/blocks/tabs/edit.js:266
+#: src/blocks/tabs/edit.js:290
+msgid "Vertical Style 9"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:239
+#: src/blocks/tabs/edit.js:267
+#: src/blocks/tabs/edit.js:291
+msgid "Vertical Style 10"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:240
+msgid "Stack Style 11"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:241
+msgid "Stack Style 12"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:242
+msgid "Stack Style 13"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:243
+msgid "Stack Style 14"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:253
+msgid "Tablet Style"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:277
+msgid "Desktop Style"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:303
+msgid "Tabs Title Settings"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:305
+msgid "Initial Open Tab"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:324
+msgid "Enable Icon"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:366
+msgid "Active Icon Color"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:383
+msgid "Tab Title Margin (px)"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:419
+msgid "Title Padding"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:438
+msgid "Title Background Color"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:444
+msgid "Title Text Color"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:450
+msgid "Active Tab Background Color"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:456
+msgid "Active Tab Text Color"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:480
+msgid "Tabs Body Settings"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:481
+msgid "Body Background Color"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:487
+msgid "Body Text Color"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:493
+msgid "Tab Body Margin (px)"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:530
+msgid "Body Padding"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:552
+msgid "Border Settings"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:560
+msgid "Border width"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:593
+msgid "Title…"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:601
+msgid "Remove tab"
+msgstr ""
+
+#: src/blocks/tabs/edit.js:612
+msgid "Add tab"
+msgstr ""
+
+#: src/blocks/taxonomy-list/block.js:27
+msgid "taxonomy"
+msgstr ""
+
+#: src/blocks/team/block.js:26
+msgid "team"
+msgstr ""
+
+#: src/blocks/team/block.js:27
+msgid "members"
+msgstr ""
+
+#: src/blocks/team/edit.js:313
+msgid "Write a Title"
+msgstr ""
+
+#: src/blocks/team/edit.js:331
+msgid "Enter Prefix"
+msgstr ""
+
+#: src/blocks/team/edit.js:335
+msgid "Write a Designation"
+msgstr ""
+
+#: src/blocks/team/edit.js:368
+msgid "Team Member Image"
+msgstr ""
+
+#: src/blocks/team/edit.js:392
+msgid "Above"
+msgstr ""
+
+#: src/blocks/team/edit.js:414
+#: src/blocks/testimonial/edit.js:953
+msgid "Image Style"
+msgstr ""
+
+#: src/blocks/team/edit.js:419
+#: src/blocks/testimonial/edit.js:958
+msgid "Circle"
+msgstr ""
+
+#: src/blocks/team/edit.js:454
+msgid "Social Links"
+msgstr ""
+
+#: src/blocks/team/edit.js:457
+msgid "Enable Social Links"
+msgstr ""
+
+#: src/blocks/team/edit.js:464
+msgid "Open Links in New Window"
+msgstr ""
+
+#: src/blocks/team/edit.js:483
+msgid "Enter Twitter URL"
+msgstr ""
+
+#: src/blocks/team/edit.js:501
+msgid "Enter Facebook URL"
+msgstr ""
+
+#: src/blocks/team/edit.js:519
+msgid "Enter LinkedIn URL"
+msgstr ""
+
+#: src/blocks/team/edit.js:537
+msgid "Enter Pinterest URL"
+msgstr ""
+
+#: src/blocks/team/edit.js:579
+msgid "Prefix"
+msgstr ""
+
+#: src/blocks/team/edit.js:617
+msgid "Social Icons"
+msgstr ""
+
+#: src/blocks/team/edit.js:642
+msgid "Designation Color"
+msgstr ""
+
+#: src/blocks/team/edit.js:652
+msgid "Social Icon Color"
+msgstr ""
+
+#: src/blocks/team/edit.js:657
+msgid "Social Icon Hover Color"
+msgstr ""
+
+#: src/blocks/team/edit.js:676
+msgid "Designation Bottom Spacing"
+msgstr ""
+
+#: src/blocks/team/edit.js:685
+msgid "Description Bottom Spacing"
+msgstr ""
+
+#: src/blocks/team/edit.js:693
+msgid "Inter Social Icon Spacing"
+msgstr ""
+
+#: src/blocks/team/edit.js:703
+msgid "Image Margin (px)"
+msgstr ""
+
+#: src/blocks/testimonial/block.js:24
+msgid "testimonial"
+msgstr ""
+
+#: src/blocks/testimonial/components/AuthorName.js:35
+msgid "Author Name"
+msgstr ""
+
+#: src/blocks/testimonial/components/Company.js:43
+msgid "Company Name"
+msgstr ""
+
+#: src/blocks/testimonial/components/Description.js:35
+msgid "Write Description"
+msgstr ""
+
+#: src/blocks/testimonial/edit.js:361
+msgid "Company"
+msgstr ""
+
+#: src/blocks/testimonial/edit.js:388
+msgid "Testimonial Color"
+msgstr ""
+
+#: src/blocks/testimonial/edit.js:393
+msgid "Name Color"
+msgstr ""
+
+#: src/blocks/testimonial/edit.js:398
+msgid "Company Color"
+msgstr ""
+
+#: src/blocks/testimonial/edit.js:403
+msgid "Arrow & Dots Color"
+msgstr ""
+
+#: src/blocks/testimonial/edit.js:415
+msgid "Gap Between Content & Dots"
+msgstr ""
+
+#: src/blocks/testimonial/edit.js:439
+msgid "Testimonial Bottom Margin"
+msgstr ""
+
+#: src/blocks/testimonial/edit.js:447
+msgid "Name Bottom Margin"
+msgstr ""
+
+#: src/blocks/testimonial/edit.js:455
+msgid "Image Horizontal Padding"
+msgstr ""
+
+#: src/blocks/testimonial/edit.js:463
+msgid "Image Vertical Padding"
+msgstr ""
+
+#: src/blocks/testimonial/edit.js:695
+msgid "Settings"
+msgstr ""
+
+#: src/blocks/testimonial/edit.js:816
+msgid "Number of Testimonials"
+msgstr ""
+
+#: src/blocks/testimonial/edit.js:931
+msgid "Vertical ALignment"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline-child/attributes.js:16
+#: src/blocks/timeline/content-timeline/attributes.js:16
+msgid "Timeline Heading "
+msgstr ""
+
+#: src/blocks/timeline/content-timeline-child/attributes.js:20
+#: src/blocks/timeline/content-timeline/attributes.js:17
+msgid "This is Timeline description, you can change me anytime click here "
+msgstr ""
+
+#: src/blocks/timeline/content-timeline-child/block.js:27
+#: src/blocks/timeline/content-timeline/block.js:75
+msgid "Timeline"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline-child/edit.js:93
+#: src/blocks/timeline/content-timeline/edit.js:335
+#: src/blocks/timeline/post-timeline/edit.js:664
+msgid "Timeline Item"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:252
+#: src/blocks/timeline/content-timeline/edit.js:280
+#: src/blocks/timeline/post-timeline/edit.js:336
+#: src/blocks/timeline/post-timeline/edit.js:366
+msgid "Line Color"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:303
+#: src/blocks/timeline/post-timeline/edit.js:389
+msgid "Connector Color Settings"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:314
+#: src/blocks/timeline/post-timeline/edit.js:400
+msgid "Focus"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:348
+#: src/blocks/timeline/post-timeline/edit.js:679
+msgid "SPAN"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:447
+#: src/blocks/timeline/post-timeline/edit.js:547
+msgid "Orientation"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:457
+#: src/blocks/timeline/post-timeline/edit.js:557
+msgid "Arrow Alignment"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:474
+msgid "Note: Choose on what breakpoint the Content Timeline will stack."
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:480
+msgid "Display Date"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:486
+#: src/blocks/timeline/post-timeline/edit.js:606
+msgid "Date Format"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:507
+msgid "Normal Text"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:511
+#: src/blocks/timeline/post-timeline/edit.js:908
+msgid "Date Bottom Spacing"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:542
+msgid "Content Tag"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:560
+msgid "Date Typography"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:579
+#: src/blocks/timeline/post-timeline/edit.js:430
+msgid "Date Color"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:595
+#: src/blocks/timeline/post-timeline/edit.js:859
+msgid "Horizontal Space"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:603
+#: src/blocks/timeline/post-timeline/edit.js:868
+msgid "Vertical Space"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:611
+#: src/blocks/timeline/post-timeline/edit.js:877
+msgid "Heading Bottom Spacing"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:619
+#: src/blocks/timeline/post-timeline/edit.js:802
+msgid "Connector"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:630
+#: src/blocks/timeline/post-timeline/edit.js:813
+msgid "Icon Background Size"
+msgstr ""
+
+#: src/blocks/timeline/content-timeline/edit.js:646
+#: src/blocks/timeline/post-timeline/edit.js:829
+msgid "Connector Width"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/block.js:27
+msgid "timeline"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:466
+msgid "CTA Color"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:472
+msgid "CTA Background Color"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:487
+msgid "Query"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:574
+msgid "Note: Choose on what breakpoint the Post Timeline will stack."
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:580
+msgid "Display Featured Image"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:586
+msgid "Featured Image Style"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:595
+msgid "Display Post Author"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:600
+msgid "Display Post Date"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:630
+msgid "Display Post Excerpt"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:636
+msgid "Excerpt Length"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:646
+msgid "Display Continue Reading Link"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:652
+msgid "CTA Text"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:771
+msgid "CTA"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:841
+msgid "Block Padding"
+msgstr ""
+
+#: src/blocks/timeline/post-timeline/edit.js:897
+msgid "Content Bottom Spacing"
+msgstr ""
+
+#: src/blocks/wp-search/block.js:23
+msgid "search"
+msgstr ""
+
+#: src/blocks/wp-search/block.js:24
+msgid "wp"
+msgstr ""
+
+#: src/components/box-shadow/index.js:31
+#: src/components/typography/index.js:39
+msgid "Hide Advanced"
+msgstr ""
+
+#: src/components/box-shadow/index.js:35
+#: src/components/typography/index.js:43
+msgid "Advanced"
+msgstr ""
+
+#: src/components/gradient-settings/index.js:46
+msgid "Overlay Color"
+msgstr ""
+
+#: src/components/gutter-options/index.js:31
+msgid "Huge"
+msgstr ""
+
+#: src/components/typography/font-typography.js:129
+msgid "Font Family"
+msgstr ""
+
+#: src/components/typography/font-typography.js:140
+msgid "Font Weight"
+msgstr ""
+
+#: src/components/typography/font-typography.js:148
+msgid "Font Subset"
+msgstr ""
+
+#: src/components/typography/index.js:136
+#: src/components/typography/index.js:137
+#: src/components/typography/index.js:138
+msgid "Font Size"
+=======
 #: dist/blocks.build.js:631
 #: dist/blocks.build.js:4150
 msgid "Hide Advanced"
@@ -7143,4 +13475,5 @@ msgstr ""
 
 #: dist/blocks.build.js:138578
 msgid "Allows you to add fancy animation i.e Lottie to your website. You can see sample Lottie animations"
+>>>>>>> 5719cff87298aac4637b6dbffb13e579fd78bbdc
 msgstr ""
