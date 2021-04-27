@@ -78,4 +78,4 @@ const deprecated = [
 	}
 ]
 
-export default deprecated;
+export default deprecated

@@ -8,7 +8,6 @@ import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
 function styling( props ) {
 
 	const {
-		classMigrate,
 		headingAlign,
 		headingTag,
 		headingColor,
@@ -49,7 +48,7 @@ function styling( props ) {
 		" .uagb-separator-wrap": {
 			"text-align": headingAlign,
 		},
-		" .block-editor-rich-text__editable.uagb-desc-text": {
+		" .uagb-desc-text": {
 			"text-align": headingAlign,
 			"font-family": subHeadFontFamily,
 			"font-weight": subHeadFontWeight,
@@ -59,7 +58,7 @@ function styling( props ) {
 		}
 	}
 
-	selectors[" " + headingTag + ".block-editor-rich-text__editable.uagb-heading-text"] = {
+	selectors[" " + headingTag + ".uagb-heading-text"] = {
 		"text-align": headingAlign,
 		"font-family": headFontFamily,
 		"font-weight": headFontWeight,
@@ -70,7 +69,7 @@ function styling( props ) {
 	}
 
 	if( seperatorStyle !== "none" ){
-		selectors[" .uagb-separator"] = {
+		selectors[" .uagb-separator-wrap"] = {
 			"border-top-style": seperatorStyle,
 			"border-top-width": generateCSSUnit( separatorHeight, "px" ),
 			"width": generateCSSUnit( separatorWidth, separatorWidthType ),
@@ -79,20 +78,20 @@ function styling( props ) {
 		}
 	}
 
-	tablet_selectors[" " + headingTag + ".block-editor-rich-text__editable.uagb-heading-text"] = {
+	tablet_selectors[" " + headingTag + ".uagb-heading-text"] = {
 		"font-size": generateCSSUnit( headFontSizeTablet, headFontSizeType ),
 		"line-height": generateCSSUnit( headLineHeightTablet, headLineHeightType ),
 	}
-	tablet_selectors[" .block-editor-rich-text__editable.uagb-desc-text"] = {
+	tablet_selectors[" .uagb-desc-text"] = {
 		"font-size": generateCSSUnit( subHeadFontSizeTablet, subHeadFontSizeType ),
 		"line-height": generateCSSUnit( subHeadLineHeightTablet, subHeadLineHeightType ),
 	}
 
-	mobile_selectors[" " + headingTag + ".block-editor-rich-text__editable.uagb-heading-text"] = {
+	mobile_selectors[" " + headingTag + ".uagb-heading-text"] = {
 		"font-size": generateCSSUnit( headFontSizeMobile, headFontSizeType ),
 		"line-height": generateCSSUnit( headLineHeightMobile, headLineHeightType ),
 	}
-	mobile_selectors[" .block-editor-rich-text__editable.uagb-desc-text"] = {
+	mobile_selectors[" .uagb-desc-text"] = {
 		"font-size": generateCSSUnit( subHeadFontSizeMobile, subHeadFontSizeType ),
 		"line-height": generateCSSUnit( subHeadLineHeightMobile, subHeadLineHeightType ),
 	}
