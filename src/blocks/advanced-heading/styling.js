@@ -45,9 +45,6 @@ function styling( props ) {
 	var mobile_selectors = {}
 	
 	var selectors = {
-		" .uagb-separator-wrap": {
-			"text-align": headingAlign,
-		},
 		" .uagb-desc-text": {
 			"text-align": headingAlign,
 			"font-family": subHeadFontFamily,
@@ -69,7 +66,8 @@ function styling( props ) {
 	}
 
 	if( seperatorStyle !== "none" ){
-		selectors[" .uagb-separator-wrap"] = {
+		selectors[" .uagb-separator"] = {
+			"text-align": headingAlign,
 			"border-top-style": seperatorStyle,
 			"border-top-width": generateCSSUnit( separatorHeight, "px" ),
 			"width": generateCSSUnit( separatorWidth, separatorWidthType ),

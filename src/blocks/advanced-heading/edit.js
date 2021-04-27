@@ -20,7 +20,7 @@ const {
 
 const headingComponent = props => {
   
-		useEffect(() => { // Replacement for componentDidMount.
+	useEffect((props) => { // Replacement for componentDidMount.
 		// Assigning block_id in the attribute.
 		props.setAttributes( { block_id: props.clientId.substr( 0, 8 ) } )
 
@@ -31,15 +31,15 @@ const headingComponent = props => {
 		$style.setAttribute( "id", "uagb-adv-heading-style-" + props.clientId.substr( 0, 8 ) )
 		document.head.appendChild( $style )
 
-	}, [props])
+	})
 
-	useEffect(() => { // Replacement for componentDidUpdate.
+	useEffect((props) => { // Replacement for componentDidUpdate.
 		var element = document.getElementById( "uagb-adv-heading-style-" + props.clientId.substr( 0, 8 ) )
 
 		if( null !== element && undefined !== element ) {
 			element.innerHTML = styling( props )
 		}
-	}, [props] )
+	} )
 
 	return (
 		<div>

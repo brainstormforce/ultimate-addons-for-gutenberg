@@ -34,7 +34,7 @@ export default function renderHeading( props ) {
 
     const separator_html = (
         seperatorStyle !== "none" && (
-            <div className="uagb-separator-wrap">
+            <div className="uagb-separator">
             </div> 
         )
     )
