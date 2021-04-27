@@ -4,129 +4,58 @@
   "description": "The Ultimate Addons for Gutenberg extends the Gutenberg functionality with several unique and feature-rich blocks that help build websites faster.",
   "author": "Brainstorm Force",
   "license": "ISC",
-  "main": "Gruntfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "package": "rm *.zip && wp dist-archive . ultimate-addons-for-gutenberg",
-    "build-zip": "bash ./bin/build-zip.sh"
-  },
+  "keywords": [
+    "gutenberg",
+    "blocks",
+    "gutenberg blocks",
+    "editor",
+    "block"
+  ],
+  "homepage": "https://github.com/brainstormforce/ultimate-addons-for-gutenberg/",
   "repository": {
     "type": "git",
     "url": "git@git.brainstormforce.com:wp-sharks/ultimate-addons-for-gutenberg.git"
   },
+  "bugs": "https://github.com/brainstormforce/ultimate-addons-for-gutenberg/issues/",
+  "main": "src/blocks.js",
   "dependencies": {
     "@dr-kobros/react-webfont-loader": "^8.0.0",
     "@fonticonpicker/react-fonticonpicker": "^1.2.0",
-    "@wordpress/api-fetch": "^2.2.8",
-    "acorn": "^8.0.4",
-    "autoprefixer": "^7.2.4",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-transform-class-properties": "6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
-    "bl": ">=1.2.3",
-    "chalk": "^2.4.2",
+    "@wordpress/icons": "^2.10.1",
     "classnames": "^2.2.6",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "filesize": "^3.5.11",
-    "grunt-bumpup": "^0.6.3",
-    "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-compress": "^1.4.3",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-text-replace": "^0.4.0",
-    "grunt-wp-i18n": "^1.0.3",
-    "gzip-size": "^4.1.0",
-    "jquery": "^3.5.1",
-    "kind-of": ">=6.0.3",
-    "mem": "^8.0.0",
-    "minimist": ">=1.2.3",
-    "ora": "^1.3.0",
-    "postcss-loader": "^2.1.6",
-    "prop-types": "^15.7.2",
-    "querystringify": "^2.2.0",
-    "raw-loader": "^0.5.1",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "memize": "^1.0.5",
+    "prop-types": "^15.6.2",
+    "re-resizable": "^4.7.1",
+    "react-color": "^2.18.0",
+    "react-container-dimensions": "^1.4.1",
+    "react-countdown": "^2.3.1",
+    "react-lazy-load": "^3.0.13",
     "react-lottie": "^1.2.3",
-    "react-rating-stars-component": "^2.2.0",
-    "react-select": "^3.1.1",
-    "react-slick": "0.27.10",
-    "react-transition-group": "^2.9.0",
-    "sass-loader": "^6.0.6",
-    "slick-carousel": "^1.8.1",
-    "striptags": "^3.1.1",
-    "update-notifier": "^2.3.0"
-  },
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "modules": false,
-          "targets": {
-            "browsers": [
-              "last 2 Chrome versions",
-              "last 2 Firefox versions",
-              "last 2 Safari versions",
-              "last 2 iOS versions",
-              "last 1 Android version",
-              "last 1 ChromeAndroid version",
-              "ie 11"
-            ]
-          }
-        }
-      ]
-    ],
-    "plugins": [
-      [
-        "transform-object-rest-spread"
-      ],
-      [
-        "transform-object-rest-spread",
-        {
-          "useBuiltIns": true
-        }
-      ],
-      [
-        "transform-react-jsx",
-        {
-          "pragma": "wp.element.createElement"
-        }
-      ],
-      [
-        "transform-runtime",
-        {
-          "helpers": false,
-          "polyfill": false,
-          "regenerator": true
-        }
-      ]
-    ]
+    "react-masonry-component": "^6.2.1",
+    "react-select": "^2.2.0",
+    "react-slick": "^0.24.0",
+    "react-transition-group": "^2.4.0",
+    "striptags": "^3.1.1"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "copy-webpack-plugin": "^7.0.0",
-    "eslint": "^6.8.0",
-    "eslint-config-wordpress": "^2.0.0",
-    "eslint-plugin-jest": "^21.27.2",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-wordpress": "^0.1.0",
-    "grunt": "^1.3.0",
-    "grunt-wp-readme-to-markdown": "^2.0.1",
-    "memize": "^1.1.0",
+    "@wordpress/eslint-plugin": "^7.1.0",
+    "@wordpress/scripts": "^12.1.1",
+    "install": "^0.13.0",
     "node-sass": "^4.14.1",
-    "react-masonry-component": "^6.2.1",
-    "react-masonry-css": "^1.0.12",
-    "react-memoize": "^1.0.1",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "webfontloader": "^1.6.28",
-    "webpack": "^3.12.0",
-    "webpack-config": "^7.5.0"
+    "sass-loader": "^6.0.6",
+    "webpack": "^4.46.0"
+  },
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build",
+    "format:js": "wp-scripts format-js",
+    "lint:js": "wp-scripts lint-js",
+    "lint:js:fix": "wp-scripts lint-js --fix",
+    "lint:css": "wp-scripts lint-style",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "check-engines": "wp-scripts check-engines",
+    "makepot": "vendor/bin/wp i18n make-pot . --skip-audit --exclude='.dev,.github,.wordpress-org,build,docs,dist,node_modules,vendor,wordpress' languages/ultimate-addons-for-gutenberg.pot",
+    "package": "rm *.zip && wp dist-archive . ultimate-addons-for-gutenberg",
+    "packages-update": "wp-scripts packages-update"
   }
 }
