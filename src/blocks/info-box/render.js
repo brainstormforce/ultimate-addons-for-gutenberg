@@ -1,52 +1,39 @@
-/**
- * BLOCK: Column - Save Block
- */
-
-// Import block dependencies and components.
 import classnames from "classnames"
 import Prefix from "./components/Prefix"
 import Title from "./components/Title"
-import InfoBoxDesc from "./components/InfoBoxDesc"
 import Icon from "./components/Icon"
+import InfoBoxDesc from "./components/InfoBoxDesc"
 import InfoBoxPositionClasses from "./classes"
 import InfoBoxSeparator from "./components/InfoBoxSeparator"
 import InfoBoxCta from "./components/CallToAction"
 import InfoBoxIconImage from "./components/IconImage"
 
-export default function save( props ) {
-	
-	const { className, attributes } = props
-	const {
-		iconimgPosition,
-		block_id,
-		source_type,
-		seperatorStyle,
-		ctaType,
-		ctaLink,
-		ctaTarget,
-		className,
-		prefixTitle,
-		infoBoxTitle,
-		headingDesc,
-		showPrefix,
-		showTitle,
-		showDesc,
-		icon,
-		seperatorPosition
-	} = attributes
+export default function InfoBoxRender(props){
+   
+    const { className, attributes } = props
 
-	// Get icon/Image components.
-	let is_image = ""
+    // Setup the attributes.
+    const {
+        icon,
+        iconimgPosition,
+        source_type,
+        seperatorPosition,
+        seperatorStyle,
+        ctaType,
+        showPrefix,
+        showTitle,
+        showDesc
+    } = attributes
 
-	if( source_type === "icon" && icon !== "" ) {
+    // Get icon/Image components.
+    let is_image = ""
+
+    if( source_type === "icon" && icon !== "" ) {
         is_image =  Icon(props)
     }else{
         is_image = InfoBoxIconImage(attributes)
     }
-    let target ="_self"
-	if( ctaTarget ){
-		target ="_blank"
-	}
+
     var icon_image_html = is_image
     var seperator_position = seperatorPosition
     var seperator_html = InfoBoxSeparator()
@@ -79,23 +66,24 @@ export default function save( props ) {
     // Get description and seperator components.
     const desc = () => {
         return <>
-                    { "none" !== seperatorStyle && ( seperator_position == "after_title"  && show_seperator )&& seperator_html }
-                    <div className = "uagb-ifb-text-wrap">
-                        { showDesc && "" !== headingDesc && InfoBoxDesc(attributes , 'not_set' , props)}
-                        { "none" !== seperatorStyle && seperator_position == "after_desc" && seperator_html }
-                        { ctaType !== "none" && InfoBoxCta(attributes, 'not_set')}
-                    </div>
-                </>
+            { "none" !== seperatorStyle && ( seperator_position == "after_title"  && show_seperator )&& seperator_html }
+            <div className = "uagb-ifb-text-wrap">
+                { showDesc && InfoBoxDesc(attributes , setAttributes , props)}
+                { "none" !== seperatorStyle && seperator_position == "after_desc" && seperator_html }
+                {InfoBoxCta(attributes, setAttributes)}
+            </div>
+        </>
     }
 
     // Get Title and Prefix components.
     const title_text = () => {
-        return <div className = "uagb-ifb-title-wrap">
-                    { showPrefix && "" !== prefixTitle && Prefix(attributes , 'not_set' , props) }
-                    { "none" !== seperatorStyle && seperator_position == "after_prefix" && seperator_html }
-                    { showTitle && "" !== infoBoxTitle && Title(attributes , 'not_set' , props) }
-                </div>
-                
+        return <>
+                    <div className = "uagb-ifb-title-wrap">
+                        { showPrefix && Prefix(attributes , setAttributes , props) }
+                        { "none" !== seperatorStyle && seperator_position == "after_prefix" && seperator_html }
+                        { showTitle && Title(attributes , setAttributes , props) }
+                    </div>
+                </>
     }
 
     const output = () => {
@@ -150,15 +138,18 @@ export default function save( props ) {
             </div>
     }
 
-    return (<div className={ classnames(
+    return <div className={ classnames(
                 className,
                 "uagb-infobox__outer-wrap",
-                `uagb-block-${block_id}`
+                `uagb-block-${ props.clientId.substr( 0, 8 ) }`
             ) }
             >
-                { ( ctaType == "all") &&
-				<a href= {ctaLink} className = "uagb-infobox-link-wrap uagb-infbox__link-to-all" target={target} aria-label={"Infobox Link"} rel ="noopener noreferrer"></a>
-			}
-			{output}
-            </div>)
+                { ( ctaType == "all" ) &&
+                <>
+                    <a className = "uagb-infobox-link-wrap uagb-infbox__link-to-all" aria-label={"Infobox Link"} rel ="noopener noreferrer"></a>
+                    {output()}
+                </>
+                }
+                { ( ctaType !== "all" ) && output() }
+            </div>
 }
