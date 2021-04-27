@@ -19,7 +19,6 @@ const {
 } = wp.components
 
 // Extend component
-const { Component, Fragment } = wp.element
 export default function headingSettings (props){
     const {
         attributes,
@@ -189,7 +188,7 @@ export default function headingSettings (props){
                 { value: "dotted", label: __( "Dotted", "ultimate-addons-for-gutenberg" ) },
             ] }
         />
-        { seperatorStyle !== "none" && <Fragment>
+        { seperatorStyle !== "none" && <>
             <RangeControl
                 label={ __( "Thickness (px)", "ultimate-addons-for-gutenberg" ) }
                 value={ separatorHeight }
@@ -214,16 +213,16 @@ export default function headingSettings (props){
                 allowReset
                 initialPosition={20}
             />
-            { seperatorStyle !== "none" && <Fragment>
+            { seperatorStyle !== "none" && <>
                 <p className="uagb-setting-label">{ __( "Separator Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: separatorColor }} ></span></span></p>
                 <ColorPalette
                     value={ separatorColor }
                     onChange={ ( colorValue ) => setAttributes( { separatorColor: colorValue } ) }
                     allowReset
                 />
-            </Fragment>
+            </>
             }
-        </Fragment>
+        </>
         }
     </PanelBody>
         )
