@@ -21,7 +21,7 @@ $support_url    = $support_data['support_url'];
 
 $uagb_support_link      = apply_filters( 'uagb_support_link', $support_url );
 $uagb_support_link_text = apply_filters( 'uagb_support_link_text', __( 'Submit a Ticket »', 'ultimate-addons-for-gutenberg' ) );
-$has_read_write_perms   = UAGB_Helper::has_read_write_permissions();
+$has_write_permission   = UAGB_Helper::is_uag_dir_has_write_permissions();
 
 
 array_multisort(
@@ -227,10 +227,10 @@ array_multisort(
 							<?php
 							$button_disabled  = '';
 							$file_perm_notice = false;
-							if ( 'disabled' === $allow_file_generation && true === $has_read_write_perms ) {
+							if ( 'disabled' === $allow_file_generation && true === $has_write_permission ) {
 								$val                    = 'enabled';
 								$file_generation_string = __( 'Enable File Generation', 'ultimate-addons-for-gutenberg' );
-							} elseif ( 'disabled' === $allow_file_generation && false === $has_read_write_perms ) {
+							} elseif ( 'disabled' === $allow_file_generation && false === $has_write_permission ) {
 
 								$val                    = 'disabled';
 								$file_generation_string = __( 'Inadequate File Permission', 'ultimate-addons-for-gutenberg' );

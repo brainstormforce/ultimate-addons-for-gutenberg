@@ -60,10 +60,10 @@ if ( ! class_exists( 'UAGB_Twenty_Seventeen_Compatibility' ) ) {
 
 			foreach ( $all_posts as $post ) {
 
-				UAGB_Helper::get_instance()->get_generated_stylesheet( $post );
+				UAGB_Frontend::get_instance()->prepare_assets( $post );
 			}
 			if ( 'enabled' === UAGB_Helper::$file_generation ) {
-				UAGB_Helper::file_write( UAGB_Helper::$stylesheet, 'css' );
+				UAGB_Frontend::file_write( UAGB_Frontend::$stylesheet, 'css' );
 			}
 		}
 	}

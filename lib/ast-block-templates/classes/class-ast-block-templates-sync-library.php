@@ -69,7 +69,7 @@ if ( ! class_exists( 'Ast_Block_Templates_Sync_Library' ) ) :
 			$list_files = $this->get_default_assets();
 			foreach ( $list_files as $key => $file_name ) {
 				if ( file_exists( $dir . '/' . $file_name . '.json' ) ) {
-					$data = ast_block_templates_get_filesystem()->get_contents( $dir . '/' . $file_name . '.json' );
+					$data = uagb_filesystem()->get_contents( $dir . '/' . $file_name . '.json' );
 					if ( ! empty( $data ) ) {
 						update_site_option( $file_name, json_decode( $data, true ) );
 					}

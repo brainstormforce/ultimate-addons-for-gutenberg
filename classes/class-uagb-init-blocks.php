@@ -294,7 +294,7 @@ class UAGB_Init_Blocks {
 
 			if ( class_exists( 'WooCommerce' ) ) {
 
-				if ( false === UAGB_Helper::$uag_flag ) {
+				if ( false === UAGB_Frontend::$uag_flag ) {
 					return;
 				}
 			} else {
@@ -312,7 +312,7 @@ class UAGB_Init_Blocks {
 					return;
 				}
 
-				if ( false === UAGB_Helper::$uag_flag ) {
+				if ( false === UAGB_Frontend::$uag_flag ) {
 					return;
 				}
 			}

@@ -281,7 +281,7 @@ if ( ! class_exists( 'UAGB_Admin_Helper' ) ) {
 
 			$style = '';
 
-			$wp_filesystem = UAGB_Helper::get_instance()->get_filesystem();
+			$wp_filesystem = uagb_filesystem();
 
 			foreach ( $combined as $key => $c_block ) {
 				$style .= $wp_filesystem->get_contents( plugin_dir_path( UAGB_FILE ) . 'assets/css/blocks/' . $c_block . '.css' );

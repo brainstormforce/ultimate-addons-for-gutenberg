@@ -50,6 +50,7 @@ class UAGB_Core_Plugin {
 
 		require UAGB_DIR . 'lib/notices/class-astra-notices.php';
 		require UAGB_DIR . 'classes/class-uagb-admin.php';
+		require UAGB_DIR . 'classes/class-uagb-frontend.php';
 		require UAGB_DIR . 'classes/class-uagb-init-blocks.php';
 	}
 }

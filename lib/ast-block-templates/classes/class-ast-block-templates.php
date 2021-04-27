@@ -96,7 +96,7 @@ if ( ! class_exists( 'Ast_Block_Templates' ) ) :
 						$ext = strtolower( pathinfo( $file_path['data']['file'], PATHINFO_EXTENSION ) );
 
 						if ( 'json' === $ext ) {
-							$forms = json_decode( ast_block_templates_get_filesystem()->get_contents( $file_path['data']['file'] ), true );
+							$forms = json_decode( uagb_filesystem()->get_contents( $file_path['data']['file'] ), true );
 
 							if ( ! empty( $forms ) ) {
 

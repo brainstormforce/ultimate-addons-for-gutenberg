@@ -432,13 +432,13 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 			check_ajax_referer( 'uagb-block-nonce', 'nonce' );
 
 			if ( 'disabled' === $_POST['value'] ) {
-				UAGB_Helper::get_instance()->delete_upload_dir();
+				UAGB_Helper::delete_upload_dir();
 			}
 
 			wp_send_json_success(
 				array(
 					'success' => true,
-					'message' => update_option( '_uagb_allow_file_generation', $_POST['value'] ),
+					'message' => update_option( '_uagb_allow_file_generation', sanitize_text_field( $_POST['value'] ) ),
 				)
 			);
 		}
@@ -465,13 +465,13 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 
 			$file_generation = UAGB_Helper::allow_file_generation();
 
-			$uag_query = "DELETE FROM $wpdb->postmeta WHERE meta_key = '_uagb_page_assets'";
-			$result    = $wpdb->get_results( $uag_query ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
-
 			if ( 'enabled' === $file_generation ) {
 
-				UAGB_Helper::get_instance()->delete_upload_dir();
+				UAGB_Helper::delete_all_uag_dir_files();
 			}
+
+			/* Update the asset version */
+			update_option( '__uagb_asset_version', time() );
 
 			wp_send_json_success(
 				array(
