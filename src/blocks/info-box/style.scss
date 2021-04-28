@@ -126,8 +126,6 @@ a.uagb-infobox-link-wrap:hover,
 /* Above/Below Title */
 .uagb-ifb-icon-wrap .uagb-ifb-icon span {
     font-style:initial;
-    height: auto;
-    width: auto;
 }
 
     /* Infobox image css */
@@ -200,8 +198,6 @@ a.uagb-infobox-link-wrap:hover,
     border-top-style: solid;
     display: inline-block;
     margin: 0;
-}
-.uagb-ifb-separator-parent{
     line-height:0em;
     margin-left:0;
     margin-right:0;
@@ -230,7 +226,7 @@ a.uagb-infobox-link-wrap:hover,
 .uagb-ifb-title-wrap {
     width:100%;
 }
-.uagb-ifb-title-wrap .uagb-ifb-title,
+
 .uagb-ifb-title-wrap .uagb-ifb-title-prefix{
   padding:0;
   margin:0;
@@ -239,16 +235,6 @@ a.uagb-infobox-link-wrap:hover,
 
 .uagb-infobox__content-wrap.uagb-infobox{
     position: relative
-}
-.uagb-ifb-icon span {
-    font-size: 40px;
-    height: 40px;
-    color: #333;
-    width: 40px;
-}
-
-.uagb-ifb-icon svg {
-	fill: #333;
 }
 
 .uagb-ifb-content{
@@ -288,18 +274,13 @@ span.uagb-ifb-button-icon.uagb-ifb-align-icon-after {
     float: right;
 }
 
-.uagb-ifb-button-icon {
+.uagb-ifb-button-icon , .uagb-ifb-text-icon{
 	height: 15px;
     width: 15px;
     font-size: 15px;
     vertical-align: middle
 }
 .uagb-ifb-text-icon {
-    height: 15px;
-    width: 15px;
-    font-size: 15px;
-    line-height: 15px;
-    vertical-align: middle;
     display: inline-block;
 }
 

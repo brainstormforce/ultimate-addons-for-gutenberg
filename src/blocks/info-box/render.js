@@ -14,9 +14,6 @@ const InfoBoxRender = props =>{
 
     // Setup the attributes.
     const {
-        headingDesc,
-        prefixTitle,
-        infoBoxTitle,
         icon,
         iconimgPosition,
         source_type,
