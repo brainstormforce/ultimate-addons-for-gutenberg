@@ -2,8 +2,8 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function styling( props ) {
 
@@ -50,12 +50,12 @@ function styling( props ) {
 		starActiveColor,
 		starOutlineColor,
 		overallAlignment
-	} = props.attributes
+	} = props.attributes;
 
-	var tablet_selectors = {}
-	var mobile_selectors = {}
+	let tablet_selectors = {};
+	let mobile_selectors = {};
 
-	var selectors = {
+	const selectors = {
 
 		" .uagb-star-inner-container svg" : {
 		    "fill":starColor,
@@ -101,8 +101,8 @@ function styling( props ) {
 		        "padding-left" : generateCSSUnit( contentHrPadding, "px" ),
 		    	"padding-right" : generateCSSUnit( contentHrPadding, "px" ),
 		    	"padding-top" : generateCSSUnit( contentVrPadding, "px" ),
-				"padding-bottom" : generateCSSUnit( contentVrPadding, "px" ),
-				"text-align" : overallAlignment,
+			"padding-bottom" : generateCSSUnit( contentVrPadding, "px" ),
+			"text-align" : overallAlignment,
 		},
 		" .uagb_review_summary, p.rich-text.block-editor-rich-text__editable.uagb_review_summary_title" : {
 		    "font-size": generateCSSUnit( contentFontSize, contentFontSizeType ),
@@ -121,22 +121,22 @@ function styling( props ) {
 			"stroke":starOutlineColor,
 			"fill": starActiveColor,
 		}
-	}
+	};
 
 	mobile_selectors = {
-			" .uagb-rating-title, .uagb_review_entry" : {
-				"font-size": generateCSSUnit( headFontSizeMobile, headFontSizeType ),
-				"line-height": generateCSSUnit( headLineHeightMobile, headLineHeightType ),
-			},
-			" .uagb-rating-desc, .uagb-rating-author" : {
-				"font-size": generateCSSUnit( subHeadFontSizeMobile, subHeadFontSizeType ),
-				"line-height": generateCSSUnit( subHeadLineHeightMobile, subHeadLineHeightType ),
-			},
-			" .uagb_review_summary, p.rich-text.block-editor-rich-text__editable.uagb_review_summary_title" : {
+		" .uagb-rating-title, .uagb_review_entry" : {
+			"font-size": generateCSSUnit( headFontSizeMobile, headFontSizeType ),
+			"line-height": generateCSSUnit( headLineHeightMobile, headLineHeightType ),
+		},
+		" .uagb-rating-desc, .uagb-rating-author" : {
+			"font-size": generateCSSUnit( subHeadFontSizeMobile, subHeadFontSizeType ),
+			"line-height": generateCSSUnit( subHeadLineHeightMobile, subHeadLineHeightType ),
+		},
+		" .uagb_review_summary, p.rich-text.block-editor-rich-text__editable.uagb_review_summary_title" : {
 			    "font-size": generateCSSUnit( contentFontSizeMobile, contentFontSizeType ),
 			    "line-height": generateCSSUnit( contentLineHeightMobile, contentLineHeightType ),
-			},
-	}
+		},
+	};
 
 	tablet_selectors = { 
 		" .uagb-rating-title, .uagb_review_entry" : {
@@ -151,17 +151,17 @@ function styling( props ) {
 		    "font-size": generateCSSUnit( contentFontSizeTablet, contentFontSizeType ),		    
 		    "line-height": generateCSSUnit( contentLineHeightTablet, contentLineHeightType ),
 		},
-	}
+	};
 
-	var base_selector = `.block-editor-page #wpwrap .uagb-block-${ block_id.substr( 0, 8 ) }`
+	const base_selector = `.block-editor-page #wpwrap .uagb-block-${ block_id.substr( 0, 8 ) }`;
 
-	var styling_css = generateCSS( selectors, base_selector )
+	let styling_css = generateCSS( selectors, base_selector );
 
-	styling_css += generateCSS( tablet_selectors, base_selector, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, base_selector, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, base_selector, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, base_selector, true, "mobile" );
 
-	return styling_css
+	return styling_css;
 }
 
-export default styling
+export default styling;

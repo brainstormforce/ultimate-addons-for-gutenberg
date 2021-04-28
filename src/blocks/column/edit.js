@@ -2,13 +2,13 @@
  * BLOCK: Column - Edit
  */
 
-import classnames from "classnames"
-import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
-import styling from "./styling"
-import GradientSettings from "../../components/gradient-settings"
-import Columnresponsive from "../../components/typography/column-responsive"
+import classnames from "classnames";
+import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons";
+import styling from "./styling";
+import GradientSettings from "../../components/gradient-settings";
+import Columnresponsive from "../../components/typography/column-responsive";
 
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const {
 	InnerBlocks,
@@ -16,7 +16,7 @@ const {
 	InspectorControls,
 	MediaUpload,
 	PanelColorSettings,
-} = wp.blockEditor
+} = wp.blockEditor;
 
 const {
 	PanelBody,
@@ -27,42 +27,42 @@ const {
 	BaseControl,
 	TabPanel,
 	Dashicon
-} = wp.components
+} = wp.components;
 
 const {
 	Component,
 	Fragment,
-} = wp.element
+} = wp.element;
 
-const { withSelect } = wp.data
+const { withSelect } = wp.data;
 
 class UAGBColumnEdit extends Component {
 
 	constructor() {
-		super( ...arguments )
+		super( ...arguments );
 
-		this.onRemoveImage = this.onRemoveImage.bind( this )
-		this.onSelectImage = this.onSelectImage.bind( this )
+		this.onRemoveImage = this.onRemoveImage.bind( this );
+		this.onSelectImage = this.onSelectImage.bind( this );
 	}
 
 	componentDidMount() {
 
 		// Assigning block_id in the attribute.
-		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
+		this.props.setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } );
 
-		this.props.setAttributes( { classMigrate: true } )
+		this.props.setAttributes( { classMigrate: true } );
 
 		// Pushing Style tag for this block css.
-		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-column-style-" + this.props.clientId.substr( 0, 8 ) )
-		document.head.appendChild( $style )
+		const $style = document.createElement( "style" );
+		$style.setAttribute( "id", "uagb-column-style-" + this.props.clientId.substr( 0, 8 ) );
+		document.head.appendChild( $style );
 	}
 
 	componentDidUpdate( prevProps ) {
-		var element = document.getElementById( "uagb-column-style-" + this.props.clientId.substr( 0, 8 ) )
+		const element = document.getElementById( "uagb-column-style-" + this.props.clientId.substr( 0, 8 ) );
 
-		if( null !== element && undefined !== element ) {
-			element.innerHTML = styling( this.props )
+		if ( null !== element && undefined !== element ) {
+			element.innerHTML = styling( this.props );
 		}
 	}
 
@@ -70,9 +70,9 @@ class UAGBColumnEdit extends Component {
 	 * Event to set Image as null while removing.
 	 */
 	onRemoveImage() {
-		const { setAttributes } = this.props
+		const { setAttributes } = this.props;
 
-		setAttributes( { backgroundImage: null } )
+		setAttributes( { backgroundImage: null } );
 	}
 
 	/*
@@ -80,18 +80,18 @@ class UAGBColumnEdit extends Component {
 	 */
 	onSelectImage( media ) {
 
-		const { setAttributes } = this.props
+		const { setAttributes } = this.props;
 
 		if ( ! media || ! media.url ) {
-			setAttributes( { backgroundImage: null } )
-			return
+			setAttributes( { backgroundImage: null } );
+			return;
 		}
 
 		if ( ! media.type || "image" != media.type ) {
-			return
+			return;
 		}
 
-		setAttributes( { backgroundImage: media } )
+		setAttributes( { backgroundImage: media } );
 	}
 
 	render() {
@@ -166,30 +166,30 @@ class UAGBColumnEdit extends Component {
 			className,
 			isSelected,
 			deviceType
-		} = this.props
+		} = this.props;
 
 		const border_setting = (
 			<Fragment>
-				<PanelBody title={ __( "Border", 'ultimate-addons-for-gutenberg' ) } initialOpen={ false }>
+				<PanelBody title={ __( "Border", "ultimate-addons-for-gutenberg" ) } initialOpen={ false }>
 					<SelectControl
-						label={ __( "Border Style", 'ultimate-addons-for-gutenberg' ) }
+						label={ __( "Border Style", "ultimate-addons-for-gutenberg" ) }
 						value={ borderStyle }
 						onChange={ ( value ) => setAttributes( { borderStyle: value } ) }
 						options={ [
-							{ value: "none", label: __( "None", 'ultimate-addons-for-gutenberg' ) },
-							{ value: "solid", label: __( "Solid", 'ultimate-addons-for-gutenberg' ) },
-							{ value: "dotted", label: __( "Dotted", 'ultimate-addons-for-gutenberg' ) },
-							{ value: "dashed", label: __( "Dashed", 'ultimate-addons-for-gutenberg' ) },
-							{ value: "double", label: __( "Double", 'ultimate-addons-for-gutenberg' ) },
-							{ value: "groove", label: __( "Groove", 'ultimate-addons-for-gutenberg' ) },
-							{ value: "inset", label: __( "Inset", 'ultimate-addons-for-gutenberg' ) },
-							{ value: "outset", label: __( "Outset", 'ultimate-addons-for-gutenberg' ) },
-							{ value: "ridge", label: __( "Ridge", 'ultimate-addons-for-gutenberg' ) },
+							{ value: "none", label: __( "None", "ultimate-addons-for-gutenberg" ) },
+							{ value: "solid", label: __( "Solid", "ultimate-addons-for-gutenberg" ) },
+							{ value: "dotted", label: __( "Dotted", "ultimate-addons-for-gutenberg" ) },
+							{ value: "dashed", label: __( "Dashed", "ultimate-addons-for-gutenberg" ) },
+							{ value: "double", label: __( "Double", "ultimate-addons-for-gutenberg" ) },
+							{ value: "groove", label: __( "Groove", "ultimate-addons-for-gutenberg" ) },
+							{ value: "inset", label: __( "Inset", "ultimate-addons-for-gutenberg" ) },
+							{ value: "outset", label: __( "Outset", "ultimate-addons-for-gutenberg" ) },
+							{ value: "ridge", label: __( "Ridge", "ultimate-addons-for-gutenberg" ) },
 						] }
 					/>
 					{ "none" != borderStyle && (
 						<RangeControl
-							label={ __( "Border Width", 'ultimate-addons-for-gutenberg' ) }
+							label={ __( "Border Width", "ultimate-addons-for-gutenberg" ) }
 							value={ borderWidth }
 							onChange={ ( value ) => setAttributes( { borderWidth: value } ) }
 							min={ 0 }
@@ -198,7 +198,7 @@ class UAGBColumnEdit extends Component {
 						/>
 					) }
 					<RangeControl
-						label={ __( "Border Radius", 'ultimate-addons-for-gutenberg' ) }
+						label={ __( "Border Radius", "ultimate-addons-for-gutenberg" ) }
 						value={ borderRadius }
 						onChange={ ( value ) => setAttributes( { borderRadius: value } ) }
 						min={ 0 }
@@ -207,7 +207,7 @@ class UAGBColumnEdit extends Component {
 					/>
 					{ "none" != borderStyle && (
 						<Fragment>
-							<p className="uagb-setting-label">{ __( "Border Color", 'ultimate-addons-for-gutenberg' ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: borderColor }} ></span></span></p>
+							<p className="uagb-setting-label">{ __( "Border Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={ { backgroundColor: borderColor } } ></span></span></p>
 							<ColorPalette
 								value={ borderColor }
 								onChange={ ( colorValue ) => setAttributes( { borderColor: colorValue } ) }
@@ -217,11 +217,11 @@ class UAGBColumnEdit extends Component {
 					) }
 				</PanelBody>
 			</Fragment>
-		)
+		);
 
 		const inspector_controls = (
 			<Fragment>
-				<PanelBody title={ __( "Layout", 'ultimate-addons-for-gutenberg' ) }>
+				<PanelBody title={ __( "Layout", "ultimate-addons-for-gutenberg" ) }>
 					<TabPanel className="uagb-size-type-field-tabs uagb-without-size-type" activeClass="active-tab"
 						tabs={ [
 							{
@@ -242,66 +242,66 @@ class UAGBColumnEdit extends Component {
 						] }>
 						{
 							( tab ) => {
-								let tabout
+								let tabout;
 
 								if ( "mobile" === tab.name ) {
 									tabout = (
 										<RangeControl
-											label={ __( "Content Width (%)", 'ultimate-addons-for-gutenberg' ) }
+											label={ __( "Content Width (%)", "ultimate-addons-for-gutenberg" ) }
 											value={ colWidthMobile }
 											onChange={ ( value ) => {
 												setAttributes( {
 													colWidthMobile: value,
-												} )
+												} );
 											} }
 											min={ 0 }
 											max={ 100 }
 										/>
-									)
+									);
 								} else if ( "tablet" === tab.name ) {
 									tabout = (
 										<RangeControl
-											label={ __( "Content Width (%)", 'ultimate-addons-for-gutenberg' ) }
+											label={ __( "Content Width (%)", "ultimate-addons-for-gutenberg" ) }
 											value={ colWidthTablet }
 											onChange={ ( value ) => {
 												setAttributes( {
 													colWidthTablet: value,
-												} )
+												} );
 											} }
 											min={ 0 }
 											max={ 100 }
 										/>
-									)
+									);
 								} else {
 									tabout = (
 										<RangeControl
-											label={ __( "Content Width (%)", 'ultimate-addons-for-gutenberg' ) }
+											label={ __( "Content Width (%)", "ultimate-addons-for-gutenberg" ) }
 											value={ colWidth }
 											onChange={ ( value ) => {
 												setAttributes( {
 													colWidth: value,
-												} )
+												} );
 											} }
 											min={ 0 }
 											max={ 100 }
 										/>
-									)
+									);
 								}
 
-								return <div>{ tabout }</div>
+								return <div>{ tabout }</div>;
 							}
 						}
 					</TabPanel>
 				</PanelBody>
-				<PanelBody title={ __( "Spacing", 'ultimate-addons-for-gutenberg' ) } initialOpen={ false }>
-				<Columnresponsive/>
+				<PanelBody title={ __( "Spacing", "ultimate-addons-for-gutenberg" ) } initialOpen={ false }>
+					<Columnresponsive />
 					{ "Desktop" === deviceType && (
 						<Fragment>
-							<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type", 'ultimate-addons-for-gutenberg' ) }>
+							<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type", "ultimate-addons-for-gutenberg" ) }>
 								<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ desktopPaddingType === "px" } aria-pressed={ desktopPaddingType === "px" } onClick={ () => setAttributes( { desktopPaddingType: "px" } ) }>{ "px" }</Button>
 								<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ desktopPaddingType === "%" } aria-pressed={ desktopPaddingType === "%" } onClick={ () => setAttributes( { desktopPaddingType: "%" } ) }>{ "%" }</Button>
 							</ButtonGroup>
-							<h2>{ __( "Padding", 'ultimate-addons-for-gutenberg' ) }</h2>
+							<h2>{ __( "Padding", "ultimate-addons-for-gutenberg" ) }</h2>
 							<RangeControl
 								label={ UAGB_Block_Icons.top_margin }
 								className={ "uagb-margin-control" }
@@ -339,14 +339,14 @@ class UAGBColumnEdit extends Component {
 								allowReset
 							/>
 						</Fragment>
-					)}
+					) }
 					{ "Tablet" === deviceType && (
 						<Fragment>
-							<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type", 'ultimate-addons-for-gutenberg' ) }>
+							<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type", "ultimate-addons-for-gutenberg" ) }>
 								<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ tabletPaddingType === "px" } aria-pressed={ tabletPaddingType === "px" } onClick={ () => setAttributes( { tabletPaddingType: "px" } ) }>{ "px" }</Button>
 								<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ tabletPaddingType === "%" } aria-pressed={ tabletPaddingType === "%" } onClick={ () => setAttributes( { tabletPaddingType: "%" } ) }>{ "%" }</Button>
 							</ButtonGroup>
-							<h2>{ __( "Padding", 'ultimate-addons-for-gutenberg' ) }</h2>
+							<h2>{ __( "Padding", "ultimate-addons-for-gutenberg" ) }</h2>
 							<RangeControl
 								label={ UAGB_Block_Icons.top_margin }
 								className={ "uagb-margin-control" }
@@ -384,14 +384,14 @@ class UAGBColumnEdit extends Component {
 								allowReset
 							/>
 						</Fragment>
-					)}
+					) }
 					{ "Mobile" === deviceType && (
 						<Fragment>
 							<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
 								<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ mobilePaddingType === "px" } aria-pressed={ mobilePaddingType === "px" } onClick={ () => setAttributes( { mobilePaddingType: "px" } ) }>{ "px" }</Button>
 								<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ mobilePaddingType === "%" } aria-pressed={ mobilePaddingType === "%" } onClick={ () => setAttributes( { mobilePaddingType: "%" } ) }>{ "%" }</Button>
 							</ButtonGroup>
-							<h2>{ __( "Padding", 'ultimate-addons-for-gutenberg' ) }</h2>
+							<h2>{ __( "Padding", "ultimate-addons-for-gutenberg" ) }</h2>
 							<RangeControl
 								label={ UAGB_Block_Icons.top_margin }
 								className={ "uagb-margin-control" }
@@ -429,23 +429,23 @@ class UAGBColumnEdit extends Component {
 								allowReset
 							/>
 						</Fragment>
-					)}
+					) }
 				</PanelBody>
-				<PanelBody title={ __( "Background", 'ultimate-addons-for-gutenberg' ) } initialOpen={ false }>
+				<PanelBody title={ __( "Background", "ultimate-addons-for-gutenberg" ) } initialOpen={ false }>
 					<SelectControl
-						label={ __( "Background Type", 'ultimate-addons-for-gutenberg' ) }
+						label={ __( "Background Type", "ultimate-addons-for-gutenberg" ) }
 						value={ backgroundType }
 						onChange={ ( value ) => setAttributes( { backgroundType: value } ) }
 						options={ [
-							{ value: "none", label: __( "None", 'ultimate-addons-for-gutenberg' ) },
-							{ value: "color", label: __( "Color", 'ultimate-addons-for-gutenberg' ) },
-							{ value: "gradient", label: __( "Gradient", 'ultimate-addons-for-gutenberg' ) },
-							{ value: "image", label: __( "Image", 'ultimate-addons-for-gutenberg' ) }
+							{ value: "none", label: __( "None", "ultimate-addons-for-gutenberg" ) },
+							{ value: "color", label: __( "Color", "ultimate-addons-for-gutenberg" ) },
+							{ value: "gradient", label: __( "Gradient", "ultimate-addons-for-gutenberg" ) },
+							{ value: "image", label: __( "Image", "ultimate-addons-for-gutenberg" ) }
 						] }
 					/>
 					{ "color" == backgroundType && (
 						<Fragment>
-							<p className="uagb-setting-label">{ __( "Background Color", 'ultimate-addons-for-gutenberg' ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: backgroundColor }} ></span></span></p>
+							<p className="uagb-setting-label">{ __( "Background Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={ { backgroundColor } } ></span></span></p>
 							<ColorPalette
 								value={ backgroundColor }
 								onChange={ ( colorValue ) => setAttributes( { backgroundColor: colorValue } ) }
@@ -457,120 +457,120 @@ class UAGBColumnEdit extends Component {
 							( <Fragment>
 								<BaseControl
 									className="editor-bg-image-control"
-									label={ __( "Background Image", 'ultimate-addons-for-gutenberg' ) }>
+									label={ __( "Background Image", "ultimate-addons-for-gutenberg" ) }>
 									<MediaUpload
-										title={ __( "Select Background Image", 'ultimate-addons-for-gutenberg' ) }
+										title={ __( "Select Background Image", "ultimate-addons-for-gutenberg" ) }
 										onSelect={ this.onSelectImage }
 										allowedTypes={ [ "image" ] }
 										value={ backgroundImage }
 										render={ ( { open } ) => (
 											<Button isSecondary onClick={ open }>
-												{ ! backgroundImage ? __( "Select Background Image", 'ultimate-addons-for-gutenberg' ) : __( "Replace image", 'ultimate-addons-for-gutenberg' ) }
+												{ ! backgroundImage ? __( "Select Background Image", "ultimate-addons-for-gutenberg" ) : __( "Replace image", "ultimate-addons-for-gutenberg" ) }
 											</Button>
 										) }
 									/>
 									{ backgroundImage &&
 										( <Button className="uagb-rm-btn" onClick={ this.onRemoveImage } isLink isDestructive>
-											{ __( "Remove Image", 'ultimate-addons-for-gutenberg' ) }
+											{ __( "Remove Image", "ultimate-addons-for-gutenberg" ) }
 										</Button> )
 									}
 								</BaseControl>
 								{ backgroundImage &&
 									( <Fragment>
 										<SelectControl
-											label={ __( "Image Position", 'ultimate-addons-for-gutenberg' ) }
+											label={ __( "Image Position", "ultimate-addons-for-gutenberg" ) }
 											value={ backgroundPosition }
 											onChange={ ( value ) => setAttributes( { backgroundPosition: value } ) }
 											options={ [
-												{ value: "top-left", label: __( "Top Left", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "top-center", label: __( "Top Center", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "top-right", label: __( "Top Right", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "center-left", label: __( "Center Left", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "center-center", label: __( "Center Center", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "center-right", label: __( "Center Right", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "bottom-left", label: __( "Bottom Left", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "bottom-center", label: __( "Bottom Center", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "bottom-right", label: __( "Bottom Right", 'ultimate-addons-for-gutenberg' ) },
+												{ value: "top-left", label: __( "Top Left", "ultimate-addons-for-gutenberg" ) },
+												{ value: "top-center", label: __( "Top Center", "ultimate-addons-for-gutenberg" ) },
+												{ value: "top-right", label: __( "Top Right", "ultimate-addons-for-gutenberg" ) },
+												{ value: "center-left", label: __( "Center Left", "ultimate-addons-for-gutenberg" ) },
+												{ value: "center-center", label: __( "Center Center", "ultimate-addons-for-gutenberg" ) },
+												{ value: "center-right", label: __( "Center Right", "ultimate-addons-for-gutenberg" ) },
+												{ value: "bottom-left", label: __( "Bottom Left", "ultimate-addons-for-gutenberg" ) },
+												{ value: "bottom-center", label: __( "Bottom Center", "ultimate-addons-for-gutenberg" ) },
+												{ value: "bottom-right", label: __( "Bottom Right", "ultimate-addons-for-gutenberg" ) },
 											] }
 										/>
 										<SelectControl
-											label={ __( "Attachment", 'ultimate-addons-for-gutenberg' ) }
+											label={ __( "Attachment", "ultimate-addons-for-gutenberg" ) }
 											value={ backgroundAttachment }
 											onChange={ ( value ) => setAttributes( { backgroundAttachment: value } ) }
 											options={ [
-												{ value: "fixed", label: __( "Fixed", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "scroll", label: __( "Scroll", 'ultimate-addons-for-gutenberg' ) }
+												{ value: "fixed", label: __( "Fixed", "ultimate-addons-for-gutenberg" ) },
+												{ value: "scroll", label: __( "Scroll", "ultimate-addons-for-gutenberg" ) }
 											] }
 										/>
 										<SelectControl
-											label={ __( "Repeat", 'ultimate-addons-for-gutenberg' ) }
+											label={ __( "Repeat", "ultimate-addons-for-gutenberg" ) }
 											value={ backgroundRepeat }
 											onChange={ ( value ) => setAttributes( { backgroundRepeat: value } ) }
 											options={ [
-												{ value: "no-repeat", label: __( "No Repeat", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "repeat", label: __( "Repeat", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "repeat-x", label: __( "Repeat-x", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "repeat-y", label: __( "Repeat-y", 'ultimate-addons-for-gutenberg' ) }
+												{ value: "no-repeat", label: __( "No Repeat", "ultimate-addons-for-gutenberg" ) },
+												{ value: "repeat", label: __( "Repeat", "ultimate-addons-for-gutenberg" ) },
+												{ value: "repeat-x", label: __( "Repeat-x", "ultimate-addons-for-gutenberg" ) },
+												{ value: "repeat-y", label: __( "Repeat-y", "ultimate-addons-for-gutenberg" ) }
 											] }
 										/>
 										<SelectControl
-											label={ __( "Size", 'ultimate-addons-for-gutenberg' ) }
+											label={ __( "Size", "ultimate-addons-for-gutenberg" ) }
 											value={ backgroundSize }
 											onChange={ ( value ) => setAttributes( { backgroundSize: value } ) }
 											options={ [
-												{ value: "auto", label: __( "Auto", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "cover", label: __( "Cover", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "contain", label: __( "Contain", 'ultimate-addons-for-gutenberg' ) }
+												{ value: "auto", label: __( "Auto", "ultimate-addons-for-gutenberg" ) },
+												{ value: "cover", label: __( "Cover", "ultimate-addons-for-gutenberg" ) },
+												{ value: "contain", label: __( "Contain", "ultimate-addons-for-gutenberg" ) }
 											] }
 										/>
 										<SelectControl
-											label={ __( "Image Overlay Type", 'ultimate-addons-for-gutenberg' ) }
+											label={ __( "Image Overlay Type", "ultimate-addons-for-gutenberg" ) }
 											value={ overlayType }
 											onChange={ ( value ) => setAttributes( { overlayType: value } ) }
 											options={ [
-												{ value: "color", label: __( "Color", 'ultimate-addons-for-gutenberg' ) },
-												{ value: "gradient", label: __( "Gradient", 'ultimate-addons-for-gutenberg' ) },
+												{ value: "color", label: __( "Color", "ultimate-addons-for-gutenberg" ) },
+												{ value: "gradient", label: __( "Gradient", "ultimate-addons-for-gutenberg" ) },
 											] }
 										/>
 										{ "color" == overlayType &&<Fragment>
-												<p className="uagb-setting-label">{ __( "Image Overlay Color", 'ultimate-addons-for-gutenberg' ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: backgroundImageColor }} ></span></span></p>
-												<ColorPalette
-													value={ backgroundImageColor }
-													onChange={ ( colorValue ) => setAttributes( { backgroundImageColor: colorValue } ) }
-													allowReset
-												/>
-											</Fragment>
+											<p className="uagb-setting-label">{ __( "Image Overlay Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={ { backgroundColor: backgroundImageColor } } ></span></span></p>
+											<ColorPalette
+												value={ backgroundImageColor }
+												onChange={ ( colorValue ) => setAttributes( { backgroundImageColor: colorValue } ) }
+												allowReset
+											/>
+										</Fragment>
 										}
 
 										{ "gradient" == overlayType &&
 											( <Fragment>
 												<PanelColorSettings
-													title={ __( "Color Settings", 'ultimate-addons-for-gutenberg' ) }
+													title={ __( "Color Settings", "ultimate-addons-for-gutenberg" ) }
 													colorSettings={ [
 														{
 															value: gradientOverlayColor2,
 															onChange:( value ) => setAttributes( { gradientOverlayColor2: value } ),
-															label: __( "Color 1", 'ultimate-addons-for-gutenberg' ),
+															label: __( "Color 1", "ultimate-addons-for-gutenberg" ),
 														},
 														{
 															value: gradientOverlayColor1,
 															onChange:( value ) => setAttributes( { gradientOverlayColor1: value } ),
-															label: __( "Color 2", 'ultimate-addons-for-gutenberg' ),
+															label: __( "Color 2", "ultimate-addons-for-gutenberg" ),
 														},
 													] }
 												>
 												</PanelColorSettings>
 												<SelectControl
-													label={ __( "Type", 'ultimate-addons-for-gutenberg' ) }
+													label={ __( "Type", "ultimate-addons-for-gutenberg" ) }
 													value={ gradientOverlayType }
 													onChange={ ( value ) => setAttributes( { gradientOverlayType: value } ) }
 													options={ [
-														{ value: "linear", label: __( "Linear", 'ultimate-addons-for-gutenberg' ) },
-														{ value: "radial", label: __( "Radial", 'ultimate-addons-for-gutenberg' ) },
+														{ value: "linear", label: __( "Linear", "ultimate-addons-for-gutenberg" ) },
+														{ value: "radial", label: __( "Radial", "ultimate-addons-for-gutenberg" ) },
 													] }
 												/>
 												<RangeControl
-													label={ __( "Location 1", 'ultimate-addons-for-gutenberg' ) }
+													label={ __( "Location 1", "ultimate-addons-for-gutenberg" ) }
 													value={ gradientOverlayLocation1 }
 													onChange={ ( value ) => setAttributes( { gradientOverlayLocation1: value } ) }
 													min={ 0 }
@@ -578,7 +578,7 @@ class UAGBColumnEdit extends Component {
 													allowReset
 												/>
 												<RangeControl
-													label={ __( "Location 2", 'ultimate-addons-for-gutenberg' ) }
+													label={ __( "Location 2", "ultimate-addons-for-gutenberg" ) }
 													value={ gradientOverlayLocation2 }
 													onChange={ ( value ) => setAttributes( { gradientOverlayLocation2: value } ) }
 													min={ 0 }
@@ -586,7 +586,7 @@ class UAGBColumnEdit extends Component {
 													allowReset
 												/>
 												<RangeControl
-													label={ __( "Angle", 'ultimate-addons-for-gutenberg' ) }
+													label={ __( "Angle", "ultimate-addons-for-gutenberg" ) }
 													value={ gradientOverlayAngle }
 													onChange={ ( value ) => setAttributes( { gradientOverlayAngle: value } ) }
 													min={ 0 }
@@ -601,7 +601,7 @@ class UAGBColumnEdit extends Component {
 					}
 					{ "gradient" == backgroundType &&
 							( <Fragment>
-								<GradientSettings attributes={ this.props.attributes }	setAttributes={ setAttributes }/>
+								<GradientSettings attributes={ this.props.attributes }	setAttributes={ setAttributes } />
 							</Fragment> )
 					}
 					{ ( "color" == backgroundType || ( "image" == backgroundType && backgroundImage ) || "gradient" == backgroundType ) &&
@@ -612,19 +612,19 @@ class UAGBColumnEdit extends Component {
 								min={ 0 }
 								max={ 100 }
 								allowReset
-								initialPosition={0}
+								initialPosition={ 0 }
 							/> )
 					}
 				</PanelBody>
 				{ border_setting }
 			</Fragment>
-		)
+		);
 
-		let active = ( isSelected ) ? "active" : "not-active"
+		const active = ( isSelected ) ? "active" : "not-active";
 
-		let align_class = ( "center" == align ) ? "" : `uagb-column__align-${align}`
-		let align_class_mobile = ( "" == alignMobile ) ? "" : `uagb-column__align-mobile-${alignMobile}`
-		let align_class_tablet = ( "" == alignTablet ) ? "" : `uagb-column__align-tablet-${alignTablet}`
+		const align_class = ( "center" == align ) ? "" : `uagb-column__align-${align}`;
+		const align_class_mobile = ( "" == alignMobile ) ? "" : `uagb-column__align-mobile-${alignMobile}`;
+		const align_class_tablet = ( "" == alignTablet ) ? "" : `uagb-column__align-tablet-${alignTablet}`;
 
 		return (
 			<Fragment>
@@ -650,14 +650,14 @@ class UAGBColumnEdit extends Component {
 					</div>
 				</div>
 			</Fragment>
-		)
+		);
 	}
 }
 export default withSelect( ( select, props ) => {
-	const { __experimentalGetPreviewDeviceType = null } = select( 'core/edit-post' );
-	let deviceType = __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : null;
+	const { __experimentalGetPreviewDeviceType = null } = select( "core/edit-post" );
+	const deviceType = __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : null;
 
 	return {
-		deviceType: deviceType,
-	}
-} )( UAGBColumnEdit )
+		deviceType,
+	};
+} )( UAGBColumnEdit );

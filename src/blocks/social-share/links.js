@@ -11,6 +11,6 @@ const links = {
 	tumblr: "https://www.tumblr.com/widgets/share/tool?canonicalUrl=",
 	myspace: "https://myspace.com/post?u=",
 	email: "mailto:?body=",
-}
+};
 
-export default links
+export default links;

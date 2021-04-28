@@ -1,12 +1,12 @@
 function generateCSSUnit ( value, unit ) {
 
-	var css = ""
+	let css = "";
 
-	if( typeof value != "undefined" ) {
-		css += value + unit
+	if ( typeof value !== "undefined" ) {
+		css += value + unit;
 	}
 	
-	return css
+	return css;
 }
 
-export default generateCSSUnit
+export default generateCSSUnit;

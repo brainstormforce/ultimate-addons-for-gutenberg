@@ -2,8 +2,8 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function styling( props ) {
 
@@ -40,12 +40,12 @@ function styling( props ) {
 		subHeadLineHeightType,
 		subHeadLineHeightMobile,
 		subHeadLineHeightTablet,
-	} = props.attributes
+	} = props.attributes;
 
-	var tablet_selectors = {}
-	var mobile_selectors = {}
+	const tablet_selectors = {};
+	const mobile_selectors = {};
 	
-	var selectors = {
+	const selectors = {
 		" .uagb-separator-wrap": {
 			"text-align": headingAlign,
 		},
@@ -57,7 +57,7 @@ function styling( props ) {
 			"line-height": generateCSSUnit( subHeadLineHeight, subHeadLineHeightType ),
 			"color": subHeadingColor,
 		}
-	}
+	};
 
 	selectors[" " + headingTag + ".block-editor-rich-text__editable.uagb-heading-text"] = {
 		"text-align": headingAlign,
@@ -67,45 +67,45 @@ function styling( props ) {
 		"line-height": generateCSSUnit( headLineHeight, headLineHeightType ),
 		"color": headingColor,
 		"margin-bottom": generateCSSUnit( headSpace, "px" ),
-	}
+	};
 
-	if( seperatorStyle !== "none" ){
+	if ( seperatorStyle !== "none" ){
 		selectors[" .uagb-separator"] = {
 			"border-top-style": seperatorStyle,
 			"border-top-width": generateCSSUnit( separatorHeight, "px" ),
 			"width": generateCSSUnit( separatorWidth, separatorWidthType ),
 			"border-color": separatorColor,
 			"margin-bottom": generateCSSUnit( separatorSpace, "px" ),
-		}
+		};
 	}
 
 	tablet_selectors[" " + headingTag + ".block-editor-rich-text__editable.uagb-heading-text"] = {
 		"font-size": generateCSSUnit( headFontSizeTablet, headFontSizeType ),
 		"line-height": generateCSSUnit( headLineHeightTablet, headLineHeightType ),
-	}
+	};
 	tablet_selectors[" .block-editor-rich-text__editable.uagb-desc-text"] = {
 		"font-size": generateCSSUnit( subHeadFontSizeTablet, subHeadFontSizeType ),
 		"line-height": generateCSSUnit( subHeadLineHeightTablet, subHeadLineHeightType ),
-	}
+	};
 
 	mobile_selectors[" " + headingTag + ".block-editor-rich-text__editable.uagb-heading-text"] = {
 		"font-size": generateCSSUnit( headFontSizeMobile, headFontSizeType ),
 		"line-height": generateCSSUnit( headLineHeightMobile, headLineHeightType ),
-	}
+	};
 	mobile_selectors[" .block-editor-rich-text__editable.uagb-desc-text"] = {
 		"font-size": generateCSSUnit( subHeadFontSizeMobile, subHeadFontSizeType ),
 		"line-height": generateCSSUnit( subHeadLineHeightMobile, subHeadLineHeightType ),
-	}
+	};
 
-	var base_selector = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`
+	const base_selector = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`;
 
-	var styling_css = generateCSS( selectors, base_selector )
+	let styling_css = generateCSS( selectors, base_selector );
 
-	styling_css += generateCSS( tablet_selectors, `${ base_selector }.uagb-editor-preview-mode-tablet`, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, `${ base_selector }.uagb-editor-preview-mode-tablet`, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, `${ base_selector }.uagb-editor-preview-mode-mobile`, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, `${ base_selector }.uagb-editor-preview-mode-mobile`, true, "mobile" );
 
-	return styling_css
+	return styling_css;
 }
 
-export default styling
+export default styling;

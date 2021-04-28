@@ -1,15 +1,15 @@
 /**
  * BLOCK: Price List - Attributes
  */
-const { __ } = wp.i18n
-const ITEM_COUNT = 4
+const { __ } = wp.i18n;
+const ITEM_COUNT = 4;
 
-const rest_menu_block = []
+const rest_menu_block = [];
 
-for ( var i = 1; i <= ITEM_COUNT; i++ ) {
-	var desc_text     = __("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
-	var title_text    = __("Menu Item "+i)
-	var price_text    = __("$9")
+for ( let i = 1; i <= ITEM_COUNT; i++ ) {
+	const desc_text     = __( "Lorem ipsum dolor sit amet, consectetur adipiscing elit." );
+	const title_text    = __( "Menu Item "+i );
+	const price_text    = __( "$9" );
 	rest_menu_block.push(
 		{
 			"description": desc_text,
@@ -17,7 +17,7 @@ for ( var i = 1; i <= ITEM_COUNT; i++ ) {
 			"price": price_text,
 			"image": "",
 		}
-	)
+	);
 }
 
 const attributes = {
@@ -276,6 +276,6 @@ const attributes = {
 		type: "number",
 		default: "",
 	},
-}
+};
 
-export default attributes
+export default attributes;

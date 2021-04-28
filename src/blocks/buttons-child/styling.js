@@ -2,8 +2,8 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function styling( props ) {
 
@@ -33,9 +33,9 @@ function styling( props ) {
 		iconSpace
 	} = props.attributes;
 
-	var tablet_selectors = {}
-	var mobile_selectors = {}
-	var selectors = {}
+	const tablet_selectors = {};
+	const mobile_selectors = {};
+	let selectors = {};
 
 	if ( ! inheritFromTheme ) {
 		selectors = {
@@ -48,7 +48,7 @@ function styling( props ) {
 				"border-style": borderStyle,
 				"border-color": borderColor,
 				"border-radius" : generateCSSUnit( borderRadius, "px" ),
-				"background": background,
+				background,
 				"padding" : vPadding + "px " + hPadding + "px",
 			},
 			" .uagb-buttons-repeater:hover" : {
@@ -58,7 +58,7 @@ function styling( props ) {
 				"border-color": borderHColor,
 			},
 			" .uagb-buttons-repeater a.uagb-button__link" : {
-				"color": color
+				color
 			},
 			" .uagb-buttons-repeater:hover a.uagb-button__link" : {
 				"color": hColor
@@ -67,55 +67,55 @@ function styling( props ) {
 				"color": hColor
 			},
 			" .uagb-buttons-repeater .uagb-button__link" : {
-				"color": color
+				color
 			},	
-		}
+		};
 
 		mobile_selectors[" .uagb-buttons-repeater"] = {
 			"font-size" : generateCSSUnit( sizeMobile, sizeType ),
 			"line-height" : generateCSSUnit( lineHeightMobile, lineHeightType ),
-		}
+		};
 	
 		tablet_selectors[" .uagb-buttons-repeater"] = {
 			"font-size" : generateCSSUnit( sizeTablet, sizeType ),
 			"line-height" : generateCSSUnit( lineHeightTablet, lineHeightType ),
-		}
+		};
 	}
 
 	selectors[" .uagb-button__icon"] = {
 		"width" : generateCSSUnit( size, sizeType ),
-	}
+	};
 
 	if ( ! inheritFromTheme ) {
-		selectors[" .uagb-button__icon"]["color"] = color
+		selectors[" .uagb-button__icon"].color = color;
 	}
 
 	selectors[" .uagb-button__icon-position-after"] = {
-		'margin-left' : generateCSSUnit( iconSpace, 'px' )
-	}
+		"margin-left" : generateCSSUnit( iconSpace, "px" )
+	};
 
 	selectors[" .uagb-button__icon-position-before"] = {
-		'margin-right' : generateCSSUnit( iconSpace, 'px' )
-	}
+		"margin-right" : generateCSSUnit( iconSpace, "px" )
+	};
 
 	mobile_selectors[" .uagb-button__icon"] = {
 		"width" : generateCSSUnit( sizeMobile, sizeType ),
 		"height" : generateCSSUnit( sizeMobile, sizeType ),
-	}
+	};
 
 	tablet_selectors[" .uagb-button__icon"] = {
 		"width" : generateCSSUnit( sizeTablet, sizeType ),
 		"height" : generateCSSUnit( sizeTablet, sizeType ),
-	}
+	};
 
-	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
-	var styling_css = generateCSS( selectors, id )
+	const id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`;
+	let styling_css = generateCSS( selectors, id );
 
-	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" );
 
-	return styling_css
+	return styling_css;
 }
 
-export default styling
+export default styling;

@@ -1,188 +1,188 @@
 /**
  * BLOCK: Content Timeline child.
  */
-import classnames from "classnames"
-import renderSVG from "../../../../dist/blocks/uagb-controls/renderIcon"
+import classnames from "classnames";
+import renderSVG from "../../../../dist/blocks/uagb-controls/renderIcon";
 
-const { dateI18n } = wp.date
+const { dateI18n } = wp.date;
 
-const { Component, Fragment } = wp.element
+const { Component, Fragment } = wp.element;
 
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const {
 	createBlock
-} = wp.blocks
+} = wp.blocks;
 
 const {
 	InspectorControls,
 	RichText,
-} = wp.blockEditor
+} = wp.blockEditor;
 
 const {
 	PanelBody,
 	TextControl,
-} = wp.components
+} = wp.components;
 
 class UAGBcontentTimelineChild extends Component {
 
-		constructor() {
-			super( ...arguments )
+	constructor() {
+		super( ...arguments );
+	}
+
+	splitBlock( before, after, ...blocks ) {
+		const {
+			attributes,
+			insertBlocksAfter,
+			setAttributes,
+			onReplace,
+		} = this.props;
+
+		if ( after ) {
+			// Append "After" content as a new paragraph block to the end of
+			// any other blocks being inserted after the current paragraph.
+			blocks.push( createBlock( "core/paragraph", { content: after } ) );
 		}
 
-		splitBlock( before, after, ...blocks ) {
-			const {
-				attributes,
-				insertBlocksAfter,
-				setAttributes,
-				onReplace,
-			} = this.props
-
-			if ( after ) {
-				// Append "After" content as a new paragraph block to the end of
-				// any other blocks being inserted after the current paragraph.
-				blocks.push( createBlock( "core/paragraph", { content: after } ) )
-			}
-
-			if ( blocks.length && insertBlocksAfter ) {
-				insertBlocksAfter( blocks )
-			}
-
-			const { content } = attributes
-
-			if ( ! before ) {
-				// If before content is omitted, treat as intent to delete block.
-				onReplace( [] )
-			} else if ( content !== before ) {
-				// Only update content if it has in-fact changed. In case that user
-				// has created a new paragraph at end of an existing one, the value
-				// of before will be strictly equal to the current content.
-				setAttributes( { content: before } )
-			}
+		if ( blocks.length && insertBlocksAfter ) {
+			insertBlocksAfter( blocks );
 		}
 
-		componentDidMount() {
-			//Store client id.
-			this.props.setAttributes( { block_id: this.props.clientId } )
-		}	
+		const { content } = attributes;
 
-		render() {
+		if ( ! before ) {
+			// If before content is omitted, treat as intent to delete block.
+			onReplace( [] );
+		} else if ( content !== before ) {
+			// Only update content if it has in-fact changed. In case that user
+			// has created a new paragraph at end of an existing one, the value
+			// of before will be strictly equal to the current content.
+			setAttributes( { content: before } );
+		}
+	}
 
-			// Setup the attributes.
-			const {
-				setAttributes,
-				insertBlocksAfter,
-				mergeBlocks,
-				onReplace,
-				attributes: {
-					block_id,
-					headingTag,
-					timelinAlignment,
-					icon,
-					t_date,
-					displayPostDate,
-					dateFormat,
-					time_heading,
-					time_desc,
-				},
-			} = this.props
+	componentDidMount() {
+		//Store client id.
+		this.props.setAttributes( { block_id: this.props.clientId } );
+	}	
+
+	render() {
+
+		// Setup the attributes.
+		const {
+			setAttributes,
+			insertBlocksAfter,
+			mergeBlocks,
+			onReplace,
+			attributes: {
+				block_id,
+				headingTag,
+				timelinAlignment,
+				icon,
+				t_date,
+				displayPostDate,
+				dateFormat,
+				time_heading,
+				time_desc,
+			},
+		} = this.props;
 			
-			const content_control = (
-				<InspectorControls>
-					{ displayPostDate != true &&(
-					<PanelBody title={ __( "Timeline Item",'ultimate-addons-for-gutenberg' ) } initialOpen={ false } >
+		const content_control = (
+			<InspectorControls>
+				{ displayPostDate != true &&(
+					<PanelBody title={ __( "Timeline Item","ultimate-addons-for-gutenberg" ) } initialOpen={ false } >
 						<TextControl
-							label= { __( "Date",'ultimate-addons-for-gutenberg' ) }
-							value= { t_date }
+							label={ __( "Date","ultimate-addons-for-gutenberg" ) }
+							value={ t_date }
 							onChange={ ( value ) => setAttributes( { t_date: value } ) }
 						/>
 					</PanelBody>
-					)}
-				</InspectorControls>
-			)
+				) }
+			</InspectorControls>
+		);
 			
-			var display_inner_date  = false
-			var icon_class = "uagb-timeline__icon-new uagb-timeline__out-view-icon "
-			var post_date = t_date
+		let display_inner_date  = false;
+		const icon_class = "uagb-timeline__icon-new uagb-timeline__out-view-icon ";
+		const post_date = t_date;
 
 			
-				if(timelinAlignment == "center"){
-					display_inner_date = true
-				} 
+		if ( timelinAlignment == "center" ){
+			display_inner_date = true;
+		} 
 
-				return (
-					<Fragment>
-								{ content_control }
-								<article  className={ classnames(
-									"uagb-timeline__field uagb-timeline__field-wrap",
-									`uagb-timeline-child-${block_id}`
-								) }>
-									<div className = { this.props.attributes.content_class }>
-									<div className = "uagb-timeline__marker uagb-timeline__out-view-icon">
-										<span className = {icon_class}>{ renderSVG(icon) }</span>
-									</div>
-								<div className = { this.props.attributes.dayalign_class }>
-								<div className="uagb-timeline__events-new">
-									<div className="uagb-timeline__events-inner-new">
-										<div className="uagb-timeline__date-hide uagb-timeline__date-inner" >
+		return (
+			<Fragment>
+				{ content_control }
+				<article  className={ classnames(
+					"uagb-timeline__field uagb-timeline__field-wrap",
+					`uagb-timeline-child-${block_id}`
+				) }>
+					<div className={ this.props.attributes.content_class }>
+						<div className="uagb-timeline__marker uagb-timeline__out-view-icon">
+							<span className={ icon_class }>{ renderSVG( icon ) }</span>
+						</div>
+						<div className={ this.props.attributes.dayalign_class }>
+							<div className="uagb-timeline__events-new">
+								<div className="uagb-timeline__events-inner-new">
+									<div className="uagb-timeline__date-hide uagb-timeline__date-inner" >
 										{ displayPostDate != true && t_date &&
-	                                        <div className={ "uagb-timeline__inner-date-new" }>
-	                                        	{ 'custom' != dateFormat && ( dateI18n( dateFormat, post_date ) ) || post_date }
-	                                        </div>
-										}
-										</div>
-										<div className="uagb-content">
-											<div className="uagb-timeline__heading-text">
-												<RichText
-													tagName={ headingTag }
-													value={ time_heading }
-													onChange={ ( value ) => setAttributes( { time_heading: value } ) }
-													placeholder={ __( "Write a Heading",'ultimate-addons-for-gutenberg' ) }
-													className='uagb-timeline__heading'
-													onMerge={ mergeBlocks }
-													onSplit={
-														insertBlocksAfter ?
-															( before, after, ...blocks ) => {
-																setAttributes( { content: before } )
-																insertBlocksAfter( [
-																	...blocks,
-																	createBlock( "core/paragraph", { content: after } ),
-																] )
-															} :
-															undefined
-													}
-													onRemove={ () => onReplace( [] ) }
-												/>
+											<div className={ "uagb-timeline__inner-date-new" }>
+												{ "custom" != dateFormat && ( dateI18n( dateFormat, post_date ) ) || post_date }
 											</div>
+										}
+									</div>
+									<div className="uagb-content">
+										<div className="uagb-timeline__heading-text">
 											<RichText
-												tagName= "p"
-												value={ time_desc }
-												onChange={ ( value ) => setAttributes( { time_desc: value } ) }
-												placeholder={ __( "Write a Description",'ultimate-addons-for-gutenberg' ) }
-												className='uagb-timeline-desc-content'
+												tagName={ headingTag }
+												value={ time_heading }
+												onChange={ ( value ) => setAttributes( { time_heading: value } ) }
+												placeholder={ __( "Write a Heading","ultimate-addons-for-gutenberg" ) }
+												className='uagb-timeline__heading'
 												onMerge={ mergeBlocks }
-												onSplit={ this.splitBlock }
+												onSplit={
+													insertBlocksAfter ?
+														( before, after, ...blocks ) => {
+															setAttributes( { content: before } );
+															insertBlocksAfter( [
+																...blocks,
+																createBlock( "core/paragraph", { content: after } ),
+															] );
+														} :
+														undefined
+												}
 												onRemove={ () => onReplace( [] ) }
 											/>
-											<div className="uagb-timeline__arrow"></div>
 										</div>
+										<RichText
+											tagName="p"
+											value={ time_desc }
+											onChange={ ( value ) => setAttributes( { time_desc: value } ) }
+											placeholder={ __( "Write a Description","ultimate-addons-for-gutenberg" ) }
+											className='uagb-timeline-desc-content'
+											onMerge={ mergeBlocks }
+											onSplit={ this.splitBlock }
+											onRemove={ () => onReplace( [] ) }
+										/>
+										<div className="uagb-timeline__arrow"></div>
 									</div>
 								</div>
-								</div>	
-									{ display_inner_date && <div className = "uagb-timeline__date-new">
-										{ displayPostDate != true && t_date &&
-                                            <div className={ "uagb-timeline__date-new" }>
-                                            	{ 'custom' != dateFormat && ( dateI18n( dateFormat, post_date ) ) || post_date }
-                                            </div>
-										}
-									</div>
-									}
-									</div>
-								</article>	
-							</Fragment>
+							</div>
+						</div>	
+						{ display_inner_date && <div className="uagb-timeline__date-new">
+							{ displayPostDate != true && t_date &&
+							<div className={ "uagb-timeline__date-new" }>
+								{ "custom" != dateFormat && ( dateI18n( dateFormat, post_date ) ) || post_date }
+							</div>
+							}
+						</div>
+						}
+					</div>
+				</article>	
+			</Fragment>
 							
-					)
-		}
+		);
+	}
 
 }
-export default UAGBcontentTimelineChild
+export default UAGBcontentTimelineChild;

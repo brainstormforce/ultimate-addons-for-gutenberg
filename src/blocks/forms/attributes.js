@@ -1,4 +1,4 @@
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const attributes = {
 	block_id : {
@@ -14,19 +14,19 @@ const attributes = {
 	},
 	buttonAlign : {
 		type: "string",
-		default:  'left' 
+		default:  "left" 
 	},
 	confirmationType : {
 		type: "string",
-		default:  'message',
+		default:  "message",
 	},
 	confirmationMessage : {
 		type: "string",
-		default: __( 'The form has been submitted successfully!' , 'ultimate-addons-for-gutenberg' )
+		default: __( "The form has been submitted successfully!" , "ultimate-addons-for-gutenberg" )
 	},
 	failedMessage : {
 		type: "string",
-		default: __( 'There has been some error while submitting the form. Please verify all form fields again.' ,'ultimate-addons-for-gutenberg' )
+		default: __( "There has been some error while submitting the form. Please verify all form fields again." ,"ultimate-addons-for-gutenberg" )
 	},
 	confirmationUrl : {
 		type: "string",
@@ -37,15 +37,15 @@ const attributes = {
 	},	
 	afterSubmitToEmail : {
 		type: "string",
-		default:'',
+		default:"",
 	},
 	afterSubmitCcEmail : {
 		type: "string",
-		default:'',
+		default:"",
 	},
 	afterSubmitBccEmail : {
 		type: "string",
-		default:'',
+		default:"",
 	},
 	afterSubmitEmailSubject : {
 		type: "string",
@@ -69,7 +69,7 @@ const attributes = {
 	},
 	buttonSize : {
 		type: "string",
-		default: 'medium'
+		default: "medium"
 	},
 	// Border
 	submitborderStyle : {
@@ -315,7 +315,7 @@ const attributes = {
 	},
 	overallAlignment : {
 		type: "string",
-		default:'left'
+		default:"left"
 	},
 
 	//recaptha.
@@ -382,7 +382,7 @@ const attributes = {
 	},
 	captchaMessage:{
 		type:"string",
-		default:__("Please fill up the above captcha." , 'ultimate-addons-for-gutenberg')
+		default:__( "Please fill up the above captcha." , "ultimate-addons-for-gutenberg" )
 	}
-}
-export default attributes
+};
+export default attributes;

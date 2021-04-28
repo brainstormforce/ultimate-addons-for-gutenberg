@@ -2,9 +2,9 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import hexToRgba from "../../../dist/blocks/uagb-controls/hexToRgba"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import hexToRgba from "../../../dist/blocks/uagb-controls/hexToRgba";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function styling( props ) {
 
@@ -70,14 +70,14 @@ function styling( props ) {
 		prefixLineHeight,
 		prefixLineHeightTablet,
 		prefixLineHeightMobile,
-	} = props.attributes
+	} = props.attributes;
 
-	var selectors = {}
-	var tablet_selectors = {}
-	var mobile_selectors = {}
+	let selectors = {};
+	let tablet_selectors = {};
+	let mobile_selectors = {};
 
-	let icon_color = ( "" == iconColor ) ? titleColor : iconColor
-	let icon_hover_color = ( "" == iconHoverColor ) ? titleHoverColor : iconHoverColor
+	const icon_color = ( "" == iconColor ) ? titleColor : iconColor;
+	const icon_hover_color = ( "" == iconHoverColor ) ? titleHoverColor : iconHoverColor;
 
 	selectors = {
 		" .uagb-marketing-btn__title-wrap" : {
@@ -126,36 +126,36 @@ function styling( props ) {
 		" .uagb-marketing-btn__link:hover" : {
 			"border-color": borderHoverColor
 		},
-	}
+	};
 
 	if ( "transparent" == backgroundType ) {
 
-		selectors[" .uagb-marketing-btn__link"]["background"] = "transparent"
+		selectors[" .uagb-marketing-btn__link"].background = "transparent";
 
 	} else if ( "color" == backgroundType ) {
 
-		selectors[" .uagb-marketing-btn__link"]["background"] = hexToRgba( backgroundColor, backgroundOpacity )
+		selectors[" .uagb-marketing-btn__link"].background = hexToRgba( backgroundColor, backgroundOpacity );
 
 		// Hover Background
-		selectors[" .uagb-marketing-btn__link:hover"]["background"] = hexToRgba( backgroundHoverColor, backgroundHoverOpacity )
+		selectors[" .uagb-marketing-btn__link:hover"].background = hexToRgba( backgroundHoverColor, backgroundHoverOpacity );
 
 	} else if ( "gradient" == backgroundType ) {
 
-		selectors[" .uagb-marketing-btn__link"]["background-color"] = "transparent"
+		selectors[" .uagb-marketing-btn__link"]["background-color"] = "transparent";
 
 		if ( "linear" === gradientType ) {
 
-			selectors[" .uagb-marketing-btn__link"]["background-image"] = `linear-gradient(${ gradientAngle }deg, ${ hexToRgba( gradientColor1, backgroundOpacity ) } ${ gradientLocation1 }%, ${ hexToRgba( gradientColor2, backgroundOpacity ) } ${ gradientLocation2 }%)`
+			selectors[" .uagb-marketing-btn__link"]["background-image"] = `linear-gradient(${ gradientAngle }deg, ${ hexToRgba( gradientColor1, backgroundOpacity ) } ${ gradientLocation1 }%, ${ hexToRgba( gradientColor2, backgroundOpacity ) } ${ gradientLocation2 }%)`;
 		} else {
 
-			selectors[" .uagb-marketing-btn__link"]["background-image"] = `radial-gradient( at center center, ${ hexToRgba( gradientColor1, backgroundOpacity ) } ${ gradientLocation1 }%, ${ hexToRgba( gradientColor2, backgroundOpacity ) } ${ gradientLocation2 }%)`
+			selectors[" .uagb-marketing-btn__link"]["background-image"] = `radial-gradient( at center center, ${ hexToRgba( gradientColor1, backgroundOpacity ) } ${ gradientLocation1 }%, ${ hexToRgba( gradientColor2, backgroundOpacity ) } ${ gradientLocation2 }%)`;
 		}
 
 	}
 
-	let margin_type = ( "after" == iconPosition ) ? "margin-left" : "margin-right"
+	const margin_type = ( "after" == iconPosition ) ? "margin-left" : "margin-right";
 
-	selectors[" .uagb-marketing-btn__icon-wrap"][margin_type] = generateCSSUnit( iconSpace, "px" )
+	selectors[" .uagb-marketing-btn__icon-wrap"][margin_type] = generateCSSUnit( iconSpace, "px" );
 
 	tablet_selectors = {
 		" .block-editor-rich-text__editable.uagb-marketing-btn__title" : {
@@ -176,7 +176,7 @@ function styling( props ) {
 			"padding-top" : generateCSSUnit( vPaddingTablet, paddingType ),
 			"padding-bottom" : generateCSSUnit( vPaddingTablet, paddingType ),
 		},
-	}
+	};
 
 	mobile_selectors = {
 		" .block-editor-rich-text__editable.uagb-marketing-btn__title" : {
@@ -197,17 +197,17 @@ function styling( props ) {
 			"padding-top" : generateCSSUnit( vPaddingMobile, paddingType ),
 			"padding-bottom" : generateCSSUnit( vPaddingMobile, paddingType ),
 		},
-	}
+	};
 
-	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
+	const id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`;
 
-	var styling_css = generateCSS( selectors, id )
+	let styling_css = generateCSS( selectors, id );
 
-	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" );
 
-	return styling_css
+	return styling_css;
 }
 
-export default styling
+export default styling;

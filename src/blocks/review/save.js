@@ -3,16 +3,16 @@
  */
 
 // Import block dependencies and components.
-import classnames from "classnames"
+import classnames from "classnames";
 import { Stars } from "./components";
 
 const {
 	RichText,
-} = wp.blockEditor
+} = wp.blockEditor;
 
 export default function save( props ) {
 	
-	const { attributes, className } = props
+	const { attributes, className } = props;
 
 	const {
 		enableSchema,
@@ -38,42 +38,42 @@ export default function save( props ) {
 		enableImage,
 		ctaTarget,
 		ctaLink 
-	} = attributes
+	} = attributes;
 
-		const newAverage = parts.map((i) => i.value).reduce((total, v) => total + v) / parts.length;
+	const newAverage = parts.map( ( i ) => i.value ).reduce( ( total, v ) => total + v ) / parts.length;
 	
-		let url_chk = ''
-		let title = ''
-		if( "undefined" !== typeof attributes.mainimage  && null !== attributes.mainimage && "" !== attributes.mainimage ){
-			url_chk = attributes.mainimage.url
-			title = attributes.mainimage.title
-		}
+	let url_chk = "";
+	let title = "";
+	if ( "undefined" !== typeof attributes.mainimage  && null !== attributes.mainimage && "" !== attributes.mainimage ){
+		url_chk = attributes.mainimage.url;
+		title = attributes.mainimage.title;
+	}
 		
-		let url = ''
-		if( '' !== url_chk ){
-			let size = attributes.mainimage.sizes
-			let imageSize = attributes.imgSize
+	let url = "";
+	if ( "" !== url_chk ){
+		const size = attributes.mainimage.sizes;
+		const imageSize = attributes.imgSize;
 
-			if ( "undefined" !== typeof size && "undefined" !== typeof size[imageSize] ) {
-			  url = size[imageSize].url 
-			}else{
-			  url = url_chk 
-			}
+		if ( "undefined" !== typeof size && "undefined" !== typeof size[imageSize] ) {
+			  url = size[imageSize].url; 
+		} else {
+			  url = url_chk; 
+		}
 	}
 
-	let image_icon_html = ''
+	let image_icon_html = "";
 
 	if ( mainimage && mainimage.url ) {
 
-		image_icon_html = <img className="uagb-howto__source-image" src={url} title={title}/>
+		image_icon_html = <img className="uagb-howto__source-image" src={ url } title={ title } />;
 
 	}
 
-		let rel ="noopener noreferrer"
-		let target =""
-		if( ctaTarget ){
-			target ="_blank"
-		}
+	const rel ="noopener noreferrer";
+	let target ="";
+	if ( ctaTarget ){
+		target ="_blank";
+	}
 
 	return (
 		<div className={ classnames(
@@ -83,26 +83,26 @@ export default function save( props ) {
 		) }
 		>
 			{ enableSchema && (
-			<script type="application/ld+json">
-				{ schema }
-			</script>
-			)}
+				<script type="application/ld+json">
+					{ schema }
+				</script>
+			) }
 			<div className="uagb_review_block">
 				<a
-					href = {ctaLink}
-					className = {
+					href={ ctaLink }
+					className={
 						classnames(
-							'uagb-rating-link-wrapper',
+							"uagb-rating-link-wrapper",
 						)
 					}
-					target= {target}
-					rel= {rel}
+					target={ target }
+					rel={ rel }
 				>
-				<RichText.Content
-					value={ rTitle }
-					className='uagb-rating-title'
-					tagName={ headingTag }
-				/></a>
+					<RichText.Content
+						value={ rTitle }
+						className='uagb-rating-title'
+						tagName={ headingTag }
+					/></a>
 				{ enableDescription === true &&
 				<RichText.Content
 					tagName="p"
@@ -119,68 +119,68 @@ export default function save( props ) {
 				}
 				{ enableImage === true && 
 				<div className="uagb-rating__source-wrap">
-					{image_icon_html}
+					{ image_icon_html }
 				</div>
 				}
-					{parts.map((j, i) => (
-						showFeature === true && ( 
-					<div className="uagb_review_entry">
-						<RichText.Content
-							tagName="div"
-							value={j.label}
-						/>
-						<div
-							key={i}
-							style={{
-								marginLeft: "auto",
-								minWidth: parts.length > 1 ? 120 : 100,
-							}}
-						>
-							<Stars
-								id={`${i}`}
-								key={i}
-								value={j.value}
-								limit={starCount}
-								inactiveStarColor={inactiveStarColor}
-								activeStarColor={activeStarColor}
-								selectedStarColor={selectedStarColor}
-								starOutlineColor={starOutlineColor}
-							/>
-						</div>
-					</div>
-					)))}
-					<div className="uagb_review_summary">
-						<RichText.Content
-							className="uagb_review_summary_title"
-							tagName="p"
-							value={summaryTitle}
-						/>
-						<div className="uagb_review_overall_value">
+				{ parts.map( ( j, i ) => (
+					showFeature === true && ( 
+						<div className="uagb_review_entry">
 							<RichText.Content
-								className="uagb_review_summary_desc"
-								tagName="p"
-								value={summaryDescription}
+								tagName="div"
+								value={ j.label }
 							/>
-							<div className="uagb_review_average">
-								<span className="uagb_review_rating">
-									{Math.round(newAverage * 10) / 10}
-								</span>
+							<div
+								key={ i }
+								style={ {
+									marginLeft: "auto",
+									minWidth: parts.length > 1 ? 120 : 100,
+								} }
+							>
 								<Stars
-									id={`${ID}-average`}
-									className="uagb_review_average_stars"
-									onHover={() => null}
-									onClick={() => null}
-									value={newAverage}
-									limit={starCount}
-									inactiveStarColor={inactiveStarColor}
-									activeStarColor={activeStarColor}
-									selectedStarColor={selectedStarColor}
-									starOutlineColor={starOutlineColor}
+									id={ `${i}` }
+									key={ i }
+									value={ j.value }
+									limit={ starCount }
+									inactiveStarColor={ inactiveStarColor }
+									activeStarColor={ activeStarColor }
+									selectedStarColor={ selectedStarColor }
+									starOutlineColor={ starOutlineColor }
 								/>
 							</div>
 						</div>
+					) ) ) }
+				<div className="uagb_review_summary">
+					<RichText.Content
+						className="uagb_review_summary_title"
+						tagName="p"
+						value={ summaryTitle }
+					/>
+					<div className="uagb_review_overall_value">
+						<RichText.Content
+							className="uagb_review_summary_desc"
+							tagName="p"
+							value={ summaryDescription }
+						/>
+						<div className="uagb_review_average">
+							<span className="uagb_review_rating">
+								{ Math.round( newAverage * 10 ) / 10 }
+							</span>
+							<Stars
+								id={ `${ID}-average` }
+								className="uagb_review_average_stars"
+								onHover={ () => null }
+								onClick={ () => null }
+								value={ newAverage }
+								limit={ starCount }
+								inactiveStarColor={ inactiveStarColor }
+								activeStarColor={ activeStarColor }
+								selectedStarColor={ selectedStarColor }
+								starOutlineColor={ starOutlineColor }
+							/>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	)
+	);
 }

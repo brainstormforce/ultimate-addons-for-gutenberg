@@ -3,17 +3,17 @@
  */
 
 // Import block dependencies and components.
-import classnames from "classnames"
-import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
-import links from "./links"
+import classnames from "classnames";
+import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon";
+import links from "./links";
 
 const {
 	InnerBlocks
-} = wp.blockEditor
+} = wp.blockEditor;
 
 export default function save( props ) {
 
-	const { attributes, className } = props
+	const { attributes, className } = props;
 
 	const {
 		block_id,
@@ -22,7 +22,7 @@ export default function save( props ) {
 		socials,
 		social_count,
 		social_layout,
-	} = props.attributes
+	} = props.attributes;
 
 	return (
 		<div className={ classnames(
@@ -35,5 +35,5 @@ export default function save( props ) {
 				<InnerBlocks.Content />
 			</div>
 		</div>
-	)
+	);
 }

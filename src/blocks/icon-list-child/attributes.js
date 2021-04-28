@@ -7,7 +7,7 @@ const attributes = {
 		type: "string"
 	},
 	label: {
-		type: 'html',
+		type: "html",
 		selector: ".uagb-icon-list__label",
 		default: "#Label"
 	},
@@ -63,6 +63,6 @@ const attributes = {
 		type: "boolean",
 		default: true
 	}
-}
+};
 
-export default attributes
+export default attributes;

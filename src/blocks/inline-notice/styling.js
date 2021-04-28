@@ -2,8 +2,8 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function styling( props ) {
 
@@ -42,17 +42,17 @@ function styling( props ) {
 		noticeAlignment,
 		layout,
 		highlightWidth
-	} = props.attributes
+	} = props.attributes;
 
 
 	let lPadding;
 	let rPadding;
 
 	if ( noticeDismiss ) {
-		if( 'left' === noticeAlignment || 'center' === noticeAlignment ){
+		if ( "left" === noticeAlignment || "center" === noticeAlignment ){
 			rPadding = ( titleHrPadding + 13 ) ;
 			lPadding = titleHrPadding;
-		}else{
+		} else {
 			lPadding = ( titleHrPadding + 13 ) ;
 			rPadding = titleHrPadding;
 		}
@@ -61,10 +61,10 @@ function styling( props ) {
 		rPadding = titleHrPadding;
 	}
 
-	var tablet_selectors = {}
-	var mobile_selectors = {}
+	let tablet_selectors = {};
+	let mobile_selectors = {};
 
-	var selectors = {
+	const selectors = {
 
 		" .rich-text.block-editor-rich-text__editable.uagb-notice-title.keep-placeholder-on-focus" : {
 			"font-size": generateCSSUnit( titleFontSize, titleFontSizeType ),
@@ -98,27 +98,27 @@ function styling( props ) {
 		" span.uagb-notice-dismiss" : {
 			"fill": noticeDismissColor,
 		},
-	}
+	};
 	
-	if("modern" == layout){	
+	if ( "modern" == layout ){	
 
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title.keep-placeholder-on-focus"]["background-color"] = noticeColor
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title.keep-placeholder-on-focus"]["border-top-right-radius"] = "3px"
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title.keep-placeholder-on-focus"]["border-top-left-radius"] = "3px"
+		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title.keep-placeholder-on-focus"]["background-color"] = noticeColor;
+		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title.keep-placeholder-on-focus"]["border-top-right-radius"] = "3px";
+		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title.keep-placeholder-on-focus"]["border-top-left-radius"] = "3px";
 
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["background-color"] = contentBgColor
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["border"] = "2px solid" + noticeColor
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["border-bottom-left-radius"] = "3px"
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["border-bottom-right-radius"] = "3px"
+		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["background-color"] = contentBgColor;
+		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"].border = "2px solid" + noticeColor;
+		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["border-bottom-left-radius"] = "3px";
+		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["border-bottom-right-radius"] = "3px";
 
 
-	}else if("simple" == layout){	
+	} else if ( "simple" == layout ){	
 		
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title.keep-placeholder-on-focus"]["background-color"] = contentBgColor
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title.keep-placeholder-on-focus"]["border-left"] =  generateCSSUnit( highlightWidth, "px" ) +" solid " + noticeColor
+		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title.keep-placeholder-on-focus"]["background-color"] = contentBgColor;
+		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title.keep-placeholder-on-focus"]["border-left"] =  generateCSSUnit( highlightWidth, "px" ) +" solid " + noticeColor;
 
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["background-color"] = contentBgColor
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["border-left"] =  generateCSSUnit( highlightWidth, "px" ) +" solid " + noticeColor
+		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["background-color"] = contentBgColor;
+		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["border-left"] =  generateCSSUnit( highlightWidth, "px" ) +" solid " + noticeColor;
 		
 	}
 	mobile_selectors = {
@@ -131,29 +131,29 @@ function styling( props ) {
 			"font-size": generateCSSUnit( descFontSizeMobile, descFontSizeType ),
 			"line-height": generateCSSUnit( descLineHeightMobile, descLineHeightType ),
 		},
-	}
+	};
 
 	tablet_selectors = { 
-			" .rich-text.block-editor-rich-text__editable.uagb-notice-title.keep-placeholder-on-focus" : {
-				"font-size": generateCSSUnit( titleFontSizeTablet, titleFontSizeType ),
-				"line-height": generateCSSUnit( titleLineHeightTablet, titleLineHeightType ),
-			},
+		" .rich-text.block-editor-rich-text__editable.uagb-notice-title.keep-placeholder-on-focus" : {
+			"font-size": generateCSSUnit( titleFontSizeTablet, titleFontSizeType ),
+			"line-height": generateCSSUnit( titleLineHeightTablet, titleLineHeightType ),
+		},
 
-			" .rich-text.block-editor-rich-text__editable.uagb-notice-text p" : {
+		" .rich-text.block-editor-rich-text__editable.uagb-notice-text p" : {
 			    "font-size": generateCSSUnit( descFontSizeTablet, descFontSizeType ),
 			    "line-height": generateCSSUnit( descLineHeightTablet, descLineHeightType ),
-			},
-	}
+		},
+	};
 
-	var base_selector = `.block-editor-page #wpwrap .uagb-block-${ block_id }`
+	const base_selector = `.block-editor-page #wpwrap .uagb-block-${ block_id }`;
 
-	var styling_css = generateCSS( selectors, base_selector )
+	let styling_css = generateCSS( selectors, base_selector );
 
-	styling_css += generateCSS( tablet_selectors, base_selector, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, base_selector, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, base_selector, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, base_selector, true, "mobile" );
 
-	return styling_css
+	return styling_css;
 }
 
-export default styling
+export default styling;

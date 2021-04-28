@@ -2,16 +2,16 @@
  * BLOCK: Advanced Heading - Deprecated Block
  */
 
-import attributes from "./attributes"
+import attributes from "./attributes";
 
 const {
 	RichText
-} = wp.blockEditor
+} = wp.blockEditor;
 
 const deprecated = [
 	{
 		attributes,			
-		save: function( props ) {
+		save( props ) {
 
 			const {
 				block_id,
@@ -19,11 +19,11 @@ const deprecated = [
 				headingDesc,
 				headingTag,
 				seperatorStyle
-			} = props.attributes
+			} = props.attributes;
 
-			var seprator_output =  ""
-			if( seperatorStyle !== "none" ){
-				seprator_output = <div className="uagb-separator-wrap" ><div className="uagb-separator"></div></div>
+			let seprator_output =  "";
+			if ( seperatorStyle !== "none" ){
+				seprator_output = <div className="uagb-separator-wrap" ><div className="uagb-separator"></div></div>;
 			}
 			return (
 				<div className={ props.className } id={ `uagb-adv-heading-${block_id}` }>
@@ -32,19 +32,19 @@ const deprecated = [
 						value={ headingTitle }
 						className='uagb-heading-text'					
 					/>
-					{seprator_output}
+					{ seprator_output }
 					<RichText.Content
 						tagName="p"
 						value={ headingDesc }
 						className='uagb-desc-text'
 					/>
 				</div>
-			)
+			);
 		},
 	},
 	{
 		attributes,
-		save: function( props ) {
+		save( props ) {
 			const {
 				block_id,
 				headingTitle,
@@ -52,11 +52,11 @@ const deprecated = [
 				headingTag,
 				seperatorStyle,
 				headingId
-			} = props.attributes
+			} = props.attributes;
 
-			var seprator_output =  ""
-			if( seperatorStyle !== "none" ){
-				seprator_output = <div className="uagb-separator-wrap" ><div className="uagb-separator"></div></div>
+			let seprator_output =  "";
+			if ( seperatorStyle !== "none" ){
+				seprator_output = <div className="uagb-separator-wrap" ><div className="uagb-separator"></div></div>;
 			}
 			return (
 				<div className={ props.className } id={ `uagb-adv-heading-${block_id}` }>
@@ -64,18 +64,18 @@ const deprecated = [
 						tagName={ headingTag }
 						value={ headingTitle }
 						className='uagb-heading-text'	
-						id = { headingId }				
+						id={ headingId }				
 					/>
-					{seprator_output}
+					{ seprator_output }
 					<RichText.Content
 						tagName="p"
 						value={ headingDesc }
 						className='uagb-desc-text'					
 					/>
 				</div>
-			)
+			);
 		},
 	}
-]
+];
 
 export default deprecated;

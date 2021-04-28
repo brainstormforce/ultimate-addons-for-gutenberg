@@ -1,5 +1,5 @@
-.uagb-columns__wrap:before {
-	content: '';
+.uagb-columns__wrap::before {
+	content: "";
 	position: absolute;
 	border: 1px dashed #03ddff;
 	top: 0;
@@ -7,4 +7,4 @@
 	bottom: 0;
 	left: 0;
 	z-index: 1;
- }
+}

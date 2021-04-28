@@ -2,8 +2,8 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function TestimonialStyle( props ) {
 	const {
@@ -66,19 +66,19 @@ function TestimonialStyle( props ) {
 		columns,
 		arrowDots,
 		arrowSize
-	} = props.attributes
+	} = props.attributes;
 
-	var img_align = "center"
+	let img_align = "center";
 
-	if( headingAlign == "left" ){
-		img_align = "flex-start"
-	}else if( headingAlign == "right" ){
-		img_align = "flex-end"
+	if ( headingAlign == "left" ){
+		img_align = "flex-start";
+	} else if ( headingAlign == "right" ){
+		img_align = "flex-end";
 	}
 
-	var position = backgroundPosition.replace( "-", " " )
+	const position = backgroundPosition.replace( "-", " " );
 
-	var selectors = {
+	const selectors = {
 		" .uagb-testimonial__wrap": {
 			"padding-left" : generateCSSUnit( ( columnGap/2 ), "px" ),
 			"padding-right" : generateCSSUnit( ( columnGap/2 ), "px" ),
@@ -139,7 +139,7 @@ function TestimonialStyle( props ) {
 		},
 		" .uagb-testimonial__wrap.uagb-tm__bg-type-image .uagb-tm__overlay": {
 			"background-color":backgroundImageColor,
-			"opacity":( typeof backgroundOpacity != "undefined" ) ? ( 100 - backgroundOpacity )/100 : 0.5,
+			"opacity":( typeof backgroundOpacity !== "undefined" ) ? ( 100 - backgroundOpacity )/100 : 0.5,
 		},
 		" ul.slick-dots li button:before": {
 			"color" : arrowColor,
@@ -152,12 +152,12 @@ function TestimonialStyle( props ) {
 			"height": generateCSSUnit( arrowSize, "px" ),
 			"width": generateCSSUnit( arrowSize, "px" ),
 		},
-	}
+	};
 
-	if( test_item_count == columns ) {
+	if ( test_item_count == columns ) {
 		selectors[".uagb-slick-carousel"] = {
-			"padding": '0',
-		}
+			"padding": "0",
+		};
 	}
 
 	if ( borderStyle != "none" ) {
@@ -167,26 +167,26 @@ function TestimonialStyle( props ) {
 			"border-style": borderStyle,
 			"border-width": generateCSSUnit( borderWidth, "px" ),
 			"border-radius": generateCSSUnit( borderRadius, "px" ),
-		}
-	}else{
+		};
+	} else {
 		selectors[" .uagb-testimonial__wrap .uagb-tm__content"] = {
 			"border-radius": generateCSSUnit( borderRadius, "px" ),
-		}
+		};
 	}
 
-	if( arrowDots === "dots"){
+	if ( arrowDots === "dots" ){
 		selectors[" .uagb-slick-carousel.uagb-tm__arrow-outside"] = {
 			"padding" : "0 0 35px 0",
-		}
+		};
 	}
 
-	if( test_item_count === 1 || test_item_count === columns ){
+	if ( test_item_count === 1 || test_item_count === columns ){
 		selectors[" .uagb-slick-carousel.uagb-tm__arrow-outside"] = {
 			"padding" : "0",
-		}
+		};
 	}
 
-	var mobile_selectors = {
+	const mobile_selectors = {
 		" .uagb-tm__desc": {
 			"font-size" : generateCSSUnit( descFontSizeMobile, descFontSizeType ),
 			"line-height": generateCSSUnit( descLineHeightMobile, descLineHeightType ),
@@ -199,9 +199,9 @@ function TestimonialStyle( props ) {
 			"font-size" : generateCSSUnit( nameFontSizeMobile, nameFontSizeType ),
 			"line-height": generateCSSUnit( nameLineHeightMobile, nameLineHeightType ),
 		},
-	}
+	};
 
-	var tablet_selectors = {
+	const tablet_selectors = {
 		" .uagb-tm__desc": {
 			"font-size" : generateCSSUnit( descFontSizeTablet, descFontSizeType ),
 			"line-height": generateCSSUnit( descLineHeightTablet, descLineHeightType ),
@@ -217,17 +217,17 @@ function TestimonialStyle( props ) {
 		" .uagb-tm__content": {
 			"text-align" : "center",
 		},
-	}
+	};
 
-	var styling_css = ""
-	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
+	let styling_css = "";
+	const id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`;
 
-	styling_css = generateCSS( selectors, id )
-	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" )
-	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" )
+	styling_css = generateCSS( selectors, id );
+	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" );
+	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" );
 
-	return styling_css
+	return styling_css;
 
 }
 
-export default TestimonialStyle
+export default TestimonialStyle;

@@ -2,16 +2,16 @@
  * BLOCK: FAQ - Schema
  */
 
-import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
-import attributes from "./attributes"
-import edit from "./edit"
-import save from "./save"
-import "./style.scss"
-import "./editor.scss"
-import deprecated from "./deprecated"
+import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons";
+import attributes from "./attributes";
+import edit from "./edit";
+import save from "./save";
+import "./style.scss";
+import "./editor.scss";
+import deprecated from "./deprecated";
 
 const { addFilter } = wp.hooks;
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const { Fragment } = wp.element;
 const { withSelect } = wp.data;
@@ -19,7 +19,7 @@ const { compose, createHigherOrderComponent } = wp.compose;
 
 const {
 	registerBlockType
-} = wp.blocks
+} = wp.blocks;
 
 /**
  * Override the default block element to add	wrapper props.
@@ -32,7 +32,7 @@ const enhance = compose(
 	
 	withSelect( ( select ) => {
 		return {
-			selected: select( 'core/block-editor' ).getSelectedBlock(),
+			selected: select( "core/block-editor" ).getSelectedBlock(),
 		};
 	} )
 );
@@ -50,18 +50,18 @@ const withFaq = createHigherOrderComponent( ( BlockEdit ) => {
 			</Fragment>
 		);
 	} );
-}, 'withFaq' );
+}, "withFaq" );
 
 registerBlockType( "uagb/faq", {
-	title: uagb_blocks_info.blocks["uagb/faq"]["title"],
-	description: uagb_blocks_info.blocks["uagb/faq"]["description"],
+	title: uagb_blocks_info.blocks["uagb/faq"].title,
+	description: uagb_blocks_info.blocks["uagb/faq"].description,
 	icon: UAGB_Block_Icons.faq,
 	category: uagb_blocks_info.category,
 	keywords: [
-		__( "faq", 'ultimate-addons-for-gutenberg' ),
-		__( "schema", 'ultimate-addons-for-gutenberg' ),
-		__( "uag", 'ultimate-addons-for-gutenberg' ),
-		__( "accordion", 'ultimate-addons-for-gutenberg' ),
+		__( "faq", "ultimate-addons-for-gutenberg" ),
+		__( "schema", "ultimate-addons-for-gutenberg" ),
+		__( "uag", "ultimate-addons-for-gutenberg" ),
+		__( "accordion", "ultimate-addons-for-gutenberg" ),
 	],
 	example:{
 		innerBlocks: [
@@ -92,10 +92,10 @@ registerBlockType( "uagb/faq", {
 		anchor: true,
 	},
 	save,
-} )
+} );
 
 addFilter(
-	'editor.BlockEdit',
-	'uagb/faq',
+	"editor.BlockEdit",
+	"uagb/faq",
 	withFaq
 );

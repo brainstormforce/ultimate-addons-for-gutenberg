@@ -1,20 +1,23 @@
 .uagb-howto__cost-wrap {
-    display: block;
-    .uagb-howto-estcost-text,
-    .uagb-howto-estcost-value,
-    .uagb-howto-estcost-type {
-        display: inline-flex;
-    }
+	display: block;
+
+	.uagb-howto-estcost-text,
+	.uagb-howto-estcost-value,
+	.uagb-howto-estcost-type {
+		display: inline-flex;
+	}
 }
 
 .uagb-howto__time-wrap {
-    display: block;
-   .uagb-howto-timeNeeded-text,
-   .uagb-howto-timeNeeded-value,
-   .uagb-howto-timeINmin-text {
-       display:inline-flex;
-   }
-   .uagb-howto-timeINmin-text{
-       margin-left: 5px;
-   }
+	display: block;
+
+	.uagb-howto-timeNeeded-text,
+	.uagb-howto-timeNeeded-value,
+	.uagb-howto-timeINmin-text {
+		display: inline-flex;
+	}
+
+	.uagb-howto-timeINmin-text {
+		margin-left: 5px;
+	}
 }

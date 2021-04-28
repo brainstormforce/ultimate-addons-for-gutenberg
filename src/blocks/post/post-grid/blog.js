@@ -1,17 +1,17 @@
-const { decodeEntities } = wp.htmlEntities
+const { decodeEntities } = wp.htmlEntities;
 
-import classnames from "classnames"
+import classnames from "classnames";
 import {
 	InnerBlockLayoutContextProvider,
 	renderPostLayout 
-} from '.././function';
+} from ".././function";
 
 
 class Blog extends React.Component {
 
 	render() {
 
-		const { attributes, className, latestPosts, block_id, categoriesList, deviceType} = this.props
+		const { attributes, className, latestPosts, block_id, categoriesList, deviceType } = this.props;
 
 		const {
 			columns,
@@ -23,13 +23,13 @@ class Blog extends React.Component {
 			paginationMarkup,
 			postPagination,
 			layoutConfig
-		} = attributes
+		} = attributes;
 		
-		const equalHeightClass = equalHeight ? "uagb-post__equal-height" : ""
+		const equalHeightClass = equalHeight ? "uagb-post__equal-height" : "";
 		// Removing posts from display should be instant.
 		const displayPosts = latestPosts.length > postsToShow ?
 			latestPosts.slice( 0, postsToShow ) :
-			latestPosts
+			latestPosts;
 		return (
 			<div
 				className={ classnames(
@@ -54,9 +54,9 @@ class Blog extends React.Component {
 						parentName="uagb/post-grid"
 						parentClassName="uagb-block-grid"
 					>
-					{ displayPosts.map( ( post = {}, i ) =>
-						<article key={ i } >
-							<div className="uagb-post__inner-wrap" >
+						{ displayPosts.map( ( post = {}, i ) =>
+							<article key={ i } >
+								<div className="uagb-post__inner-wrap" >
 								
 									{ renderPostLayout(
 										"uagb/post-grid",
@@ -66,18 +66,18 @@ class Blog extends React.Component {
 										this.props.categoriesList
 									) }
 								
-							</div>
-						</article>
-					) }
+								</div>
+							</article>
+						) }
 					</InnerBlockLayoutContextProvider>
 				</div>
-				{ postPagination == true && 'empty' !== paginationMarkup &&
+				{ postPagination == true && "empty" !== paginationMarkup &&
 					<div dangerouslySetInnerHTML={ { __html: paginationMarkup } } className="uagb-post-pagination-wrap">
 					</div>
 				}
 			</div>
-		)
+		);
 	}
 }
 
-export default Blog
+export default Blog;

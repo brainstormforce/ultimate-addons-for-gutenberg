@@ -1,35 +1,35 @@
 /**
  * BLOCK: UAGB Form - Toggle Attributes
  */
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 const attributes = {
-    block_id: {
+	block_id: {
 		type: "string"
 	},
 	toggleRequired : {
-        type: "boolean",
-        default: false
-    },
-    name: {
-        type: "string",
-        default: __("Name" , 'ultimate-addons-for-gutenberg')
-    },
-    toggleStatus : {
-        type: "boolean",
-        default: false
-    },
-    layout: {
-        type: "string",
-        default: "round"
-    },
-    trueValue : {
-        type: "string",
-        default: "on"
-    },
-    falseValue : {
-        type: "string",
-        default: "off"
-    }
+		type: "boolean",
+		default: false
+	},
+	name: {
+		type: "string",
+		default: __( "Name" , "ultimate-addons-for-gutenberg" )
+	},
+	toggleStatus : {
+		type: "boolean",
+		default: false
+	},
+	layout: {
+		type: "string",
+		default: "round"
+	},
+	trueValue : {
+		type: "string",
+		default: "on"
+	},
+	falseValue : {
+		type: "string",
+		default: "off"
+	}
     			
-}
-export default attributes
+};
+export default attributes;

@@ -1,12 +1,12 @@
 const {
 	RichText,
-} = wp.blockEditor
+} = wp.blockEditor;
 
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const {
 	createBlock
-} = wp.blocks
+} = wp.blocks;
 
 const InfoBoxDesc = props => {
 	const {

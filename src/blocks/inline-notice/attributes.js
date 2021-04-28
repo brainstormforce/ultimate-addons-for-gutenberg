@@ -3,7 +3,7 @@
  */
 
 
- const attributes = {
+const attributes = {
 	block_id: {
 		type: "string",
 	},
@@ -168,6 +168,6 @@
 		type: "number",
 		default : 10
 	},
-}
+};
 
-export default attributes
+export default attributes;

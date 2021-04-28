@@ -2,20 +2,20 @@
  * BLOCK: How-To Schema - Save Block
  */
 
-import classnames from "classnames"
+import classnames from "classnames";
 
 const {
 	RichText,
 	InnerBlocks
-} = wp.blockEditor
+} = wp.blockEditor;
 
 const {  
 	Fragment 
-} = wp.element
+} = wp.element;
 
 export default function save( props ) {
 	
-	const { attributes, className } = props
+	const { attributes, className } = props;
 	
 	const {
 		block_id,
@@ -44,43 +44,43 @@ export default function save( props ) {
 		timeInDays,
 		timeInMonths,
 		timeInYears,
-	} = attributes
+	} = attributes;
 
-	let url_chk = ''
-	let title = ''
-		if( "undefined" !== typeof attributes.mainimage && null !== attributes.mainimage && "" !== attributes.mainimage ){
-			url_chk = attributes.mainimage.url
-			title = attributes.mainimage.title
-		}
+	let url_chk = "";
+	let title = "";
+	if ( "undefined" !== typeof attributes.mainimage && null !== attributes.mainimage && "" !== attributes.mainimage ){
+		url_chk = attributes.mainimage.url;
+		title = attributes.mainimage.title;
+	}
 		
-		let url = ''
-		if( '' !== url_chk ){
-			let size = attributes.mainimage.sizes
-			let imageSize = attributes.imgSize
+	let url = "";
+	if ( "" !== url_chk ){
+		const size = attributes.mainimage.sizes;
+		const imageSize = attributes.imgSize;
 
-			if ( "undefined" !== typeof size && "undefined" !== typeof size[imageSize] ) {
-			  url = size[imageSize].url 
-			}else{
-			  url = url_chk 
-			}
+		if ( "undefined" !== typeof size && "undefined" !== typeof size[imageSize] ) {
+			  url = size[imageSize].url; 
+		} else {
+			  url = url_chk; 
+		}
 	}
 
-	let image_icon_html = ''
+	let image_icon_html = "";
 
 	if ( mainimage && mainimage.url ) {
 
-		image_icon_html = <img className="uagb-howto__source-image" src={url} title={title}/>
+		image_icon_html = <img className="uagb-howto__source-image" src={ url } title={ title } />;
 
 	}
 
 	//Time Labels
-	var yearlabel = (timeInYears > 1) ? " Years " : " Year ";
-	var monthlabel = (timeInMonths > 1) ? " Months " : " Month ";
-	var daylabel = (timeInDays > 1) ? " Days " : " Day ";
-	var hourlabel = (timeInHours > 1) ? "Hours " : " Hour ";
+	const yearlabel = ( timeInYears > 1 ) ? " Years " : " Year ";
+	const monthlabel = ( timeInMonths > 1 ) ? " Months " : " Month ";
+	const daylabel = ( timeInDays > 1 ) ? " Days " : " Day ";
+	const hourlabel = ( timeInHours > 1 ) ? "Hours " : " Hour ";
 
-	var minsValue = (timeInMins) ? timeInMins : time;
-	var minslabel = (minsValue > 1) ? " Minutes " : " Minute ";		
+	const minsValue = ( timeInMins ) ? timeInMins : time;
+	const minslabel = ( minsValue > 1 ) ? " Minutes " : " Minute ";		
 
 	return (
 		<div
@@ -92,58 +92,58 @@ export default function save( props ) {
 			<script type="application/ld+json">
 				{ schema }
 			</script>
-		<div className="uagb-how-to-main-wrap">
-			<div className="uagb-howto__wrap">
-				<RichText.Content
-					value={ headingTitle }
-					tagName={ headingTag }
-					className='uagb-howto-heading-text'
-				/>
-				<RichText.Content
-					value={ headingDesc }
-					tagName='p'
-					className='uagb-howto-desc-text'
-				/>
-				{ mainimage.url &&
-					<div className="uagb-howto__source-wrap">{image_icon_html}</div>
-				}
-				{ showTotaltime &&
-				<span className="uagb-howto__time-wrap">
+			<div className="uagb-how-to-main-wrap">
+				<div className="uagb-howto__wrap">
 					<RichText.Content
-						value={ timeNeeded }
-						tagName='h4'
-						className='uagb-howto-timeNeeded-text'
-					/>
-					<Fragment>							
-							{timeInYears && ( <Fragment><p className='uagb-howto-timeNeeded-value'> {timeInYears}</p><p className='uagb-howto-timeINmin-text'>  {yearlabel}</p></Fragment> )}							
-							{timeInMonths && ( <Fragment><p className='uagb-howto-timeNeeded-value'>{timeInMonths}</p><p className='uagb-howto-timeINmin-text'>{monthlabel}</p></Fragment> )}							
-							{timeInDays && ( <Fragment><p className='uagb-howto-timeNeeded-value'>{timeInDays}</p><p className='uagb-howto-timeINmin-text'>{daylabel}</p></Fragment> )}							
-							{timeInHours && ( <Fragment><p className='uagb-howto-timeNeeded-value'>{timeInHours}</p><p className='uagb-howto-timeINmin-text'>{hourlabel}</p></Fragment> )}							
-							{minsValue && ( <Fragment><p className='uagb-howto-timeNeeded-value'>{minsValue}</p><p className='uagb-howto-timeINmin-text'>{minslabel}</p></Fragment> )}								
-					</Fragment>					
-				</span>
-				}
-				{ showEstcost &&
-				<span className="uagb-howto__cost-wrap">
-					<RichText.Content
-						value={ estCost }
-						tagName='h4'
-						className='uagb-howto-estcost-text'
+						value={ headingTitle }
+						tagName={ headingTag }
+						className='uagb-howto-heading-text'
 					/>
 					<RichText.Content
-						value={ cost }
+						value={ headingDesc }
 						tagName='p'
-						className='uagb-howto-estcost-value'
+						className='uagb-howto-desc-text'
 					/>
-					<RichText.Content
-						tagName="p"
-						value={ currencyType }
-						className='uagb-howto-estcost-type'
-					/>
-				</span>
-				}
-			</div>
-			{ showTools &&
+					{ mainimage.url &&
+					<div className="uagb-howto__source-wrap">{ image_icon_html }</div>
+					}
+					{ showTotaltime &&
+					<span className="uagb-howto__time-wrap">
+						<RichText.Content
+							value={ timeNeeded }
+							tagName='h4'
+							className='uagb-howto-timeNeeded-text'
+						/>
+						<Fragment>							
+							{ timeInYears && ( <Fragment><p className='uagb-howto-timeNeeded-value'> { timeInYears }</p><p className='uagb-howto-timeINmin-text'>  { yearlabel }</p></Fragment> ) }							
+							{ timeInMonths && ( <Fragment><p className='uagb-howto-timeNeeded-value'>{ timeInMonths }</p><p className='uagb-howto-timeINmin-text'>{ monthlabel }</p></Fragment> ) }							
+							{ timeInDays && ( <Fragment><p className='uagb-howto-timeNeeded-value'>{ timeInDays }</p><p className='uagb-howto-timeINmin-text'>{ daylabel }</p></Fragment> ) }							
+							{ timeInHours && ( <Fragment><p className='uagb-howto-timeNeeded-value'>{ timeInHours }</p><p className='uagb-howto-timeINmin-text'>{ hourlabel }</p></Fragment> ) }							
+							{ minsValue && ( <Fragment><p className='uagb-howto-timeNeeded-value'>{ minsValue }</p><p className='uagb-howto-timeINmin-text'>{ minslabel }</p></Fragment> ) }								
+						</Fragment>					
+					</span>
+					}
+					{ showEstcost &&
+					<span className="uagb-howto__cost-wrap">
+						<RichText.Content
+							value={ estCost }
+							tagName='h4'
+							className='uagb-howto-estcost-text'
+						/>
+						<RichText.Content
+							value={ cost }
+							tagName='p'
+							className='uagb-howto-estcost-value'
+						/>
+						<RichText.Content
+							tagName="p"
+							value={ currencyType }
+							className='uagb-howto-estcost-type'
+						/>
+					</span>
+					}
+				</div>
+				{ showTools &&
 				<div className="uagb-how-to-tools__wrap">
 					<RichText.Content
 						value={ toolsTitle }
@@ -151,8 +151,8 @@ export default function save( props ) {
 						className='uagb-howto-req-tools-text'
 					/>
 				</div>
-			}
-			{ showTools &&
+				}
+				{ showTools &&
 				<div className="uagb-tools__wrap">
 					{
 						tools.map( ( tools, index ) => {
@@ -172,12 +172,12 @@ export default function save( props ) {
 										/>
 									</div>
 								</div>
-							)
-						})
+							);
+						} )
 					}
 				</div>
-			}
-			{ showMaterials &&
+				}
+				{ showMaterials &&
 				<div className="uagb-how-to-materials__wrap">
 					<RichText.Content
 						value={ materialTitle }
@@ -185,42 +185,42 @@ export default function save( props ) {
 						className='uagb-howto-req-materials-text'
 					/>
 				</div>
-			}
-			{ showMaterials &&
-				<div className="uagb-how-to-materials">
-				{
-					materials.map( ( materials, index ) => {
-					return (
-							<div
-								className={ classnames(
-									`uagb-how-to-materials-${index}`,
-									"uagb-how-to-materials-child__wrapper",
-								) }
-							>
-								<div className="uagb-materials">
-									<RichText.Content
-										tagName="div"
-										value={ materials.add_required_materials }
-										className='uagb-materials__label'
-									/>
-								</div>
-							</div>
-						)
-					})
 				}
+				{ showMaterials &&
+				<div className="uagb-how-to-materials">
+					{
+						materials.map( ( materials, index ) => {
+							return (
+								<div
+									className={ classnames(
+										`uagb-how-to-materials-${index}`,
+										"uagb-how-to-materials-child__wrapper",
+									) }
+								>
+									<div className="uagb-materials">
+										<RichText.Content
+											tagName="div"
+											value={ materials.add_required_materials }
+											className='uagb-materials__label'
+										/>
+									</div>
+								</div>
+							);
+						} )
+					}
 				</div>
-			}
-			<div className="uagb-how-to-steps__wrap">
-				<RichText.Content
-					value={ stepsTitle }
-					tagName='h4'
-					className='uagb-howto-req-steps-text'
-				/>
-				<div className="uagb-howto-steps__wrap">
-					<InnerBlocks.Content />
-				</div>	
+				}
+				<div className="uagb-how-to-steps__wrap">
+					<RichText.Content
+						value={ stepsTitle }
+						tagName='h4'
+						className='uagb-howto-req-steps-text'
+					/>
+					<div className="uagb-howto-steps__wrap">
+						<InnerBlocks.Content />
+					</div>	
+				</div>
 			</div>
 		</div>
-	</div>
-	)
+	);
 }

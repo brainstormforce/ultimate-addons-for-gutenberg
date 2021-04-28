@@ -1,14 +1,14 @@
-const ITEM_COUNT = 2	
+const ITEM_COUNT = 2;	
 
-const buttons = []	
+const buttons = [];	
 
-for ( var i = 1; i <= ITEM_COUNT; i++ ) {	
-	var label = "#Click Here"	
-	var link    = "#"	
+for ( let i = 1; i <= ITEM_COUNT; i++ ) {	
+	const label = "#Click Here";	
+	const link    = "#";	
 	buttons.push(	
 		{	
-			"label": label,	
-			"link": link,	
+			label,	
+			link,	
 			"target": "_self",	
 			"size": "",	
 			"vPadding": 10,	
@@ -30,7 +30,7 @@ for ( var i = 1; i <= ITEM_COUNT; i++ ) {
 			"lineHeightMobile": "",	
 			"lineHeightTablet": "",	
 		}	
-	)	
+	);	
 }
 
 const attributes = {
@@ -79,6 +79,6 @@ const attributes = {
 	fontSubset: {
 		type: "string",
 	},
-}
+};
 
-export default attributes
+export default attributes;

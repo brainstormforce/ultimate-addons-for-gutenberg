@@ -401,6 +401,6 @@ const attributes = {
 		type: "boolean",
 		default: true,
 	},
-}
+};
 
-export default attributes
+export default attributes;

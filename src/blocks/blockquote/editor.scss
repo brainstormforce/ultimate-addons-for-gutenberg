@@ -3,7 +3,8 @@
  */
 
 #wpwrap .edit-post-visual-editor {
-	.uagb-blockquote__skin-quotation blockquote.uagb-blockquote{
+
+	.uagb-blockquote__skin-quotation blockquote.uagb-blockquote {
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -18,34 +19,35 @@
 		border-bottom: 0 none;
 		font-style: normal;
 	}
-	
+
 	blockquote.uagb-blockquote {
-	    margin: 0;
-	    padding: 0;
+		margin: 0;
+		padding: 0;
 	}
 
-	.uagb-blockquote__skin-border blockquote{
+	.uagb-blockquote__skin-border blockquote {
 		padding-left: 10px;
 	}
 
 	.uagb-blockquote__content,
 	cite.uagb-blockquote__author,
-	.uagb-blockquote__author
-	{
-	    font-style: normal;
+	.uagb-blockquote__author {
+		font-style: normal;
 	}
-	
+
 	.uagb-blockquote a {
-		color:#1DA1F2;
-	    -webkit-box-shadow: none;
-	    box-shadow: none;
-	    text-decoration: none;
-	}	
-	.uagb-blockquote__tweet-style-classic a.uagb-blockquote__tweet-button,
-	.uagb-blockquote__tweet-style-bubble a.uagb-blockquote__tweet-button{
-		color: #fff;	
+		color: #1da1f2;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		text-decoration: none;
 	}
-	.uagb-blockquote__align-center a.uagb-blockquote__tweet-button{
+
+	.uagb-blockquote__tweet-style-classic a.uagb-blockquote__tweet-button,
+	.uagb-blockquote__tweet-style-bubble a.uagb-blockquote__tweet-button {
+		color: #fff;
+	}
+
+	.uagb-blockquote__align-center a.uagb-blockquote__tweet-button {
 		margin: 0 auto;
 	}
 }

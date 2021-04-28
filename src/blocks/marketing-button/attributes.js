@@ -1,4 +1,4 @@
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const attributes = {
 	block_id: {
@@ -280,6 +280,6 @@ const attributes = {
 		type: "number",
 		default: 20
 	}
-}
+};
 
-export default attributes
+export default attributes;

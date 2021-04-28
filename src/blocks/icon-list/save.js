@@ -3,25 +3,25 @@
  */
 
 // Import block dependencies and components.
-import classnames from "classnames"
-import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
+import classnames from "classnames";
+import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon";
 
 const {
 	InnerBlocks
-} = wp.blockEditor
+} = wp.blockEditor;
 
 export default function save( props ) {
 	
-	const { attributes, className } = props
+	const { attributes, className } = props;
 
 	const {
 		block_id,
 		icon_layout,
 		hideLabel,
 		iconPosition
-	} = attributes
+	} = attributes;
 
-	const labelClass = ( hideLabel ) ? "uagb-icon-list__no-label" : ""
+	const labelClass = ( hideLabel ) ? "uagb-icon-list__no-label" : "";
 
 	return (
 		<div className={ classnames(
@@ -36,5 +36,5 @@ export default function save( props ) {
 				<InnerBlocks.Content />
 			</div>
 		</div>
-	)
+	);
 }

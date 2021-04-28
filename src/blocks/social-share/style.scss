@@ -18,7 +18,7 @@
 
 	.uagb-ss__wrapper {
 		padding: 0;
-	    margin-left: 5px;
+		margin-left: 5px;
 		margin-right: 5px;
 		transition: all 0.2s;
 		display: inline-flex;
@@ -54,10 +54,13 @@
 		margin-right: 0;
 	}
 }
+
 .uagb-social-share__layout-vertical .uagb-social-share__wrap {
 	flex-direction: column;
 }
+
 @media (max-width: 976px) {
+
 	.uagb-social-share__layout-horizontal .uagb-ss__wrapper {
 		margin-left: 0;
 		margin-right: 0;

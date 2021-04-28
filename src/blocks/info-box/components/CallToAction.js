@@ -1,7 +1,7 @@
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
-import classnames from "classnames"
-import renderSVG from "../../../../dist/blocks/uagb-controls/renderIcon"
+import classnames from "classnames";
+import renderSVG from "../../../../dist/blocks/uagb-controls/renderIcon";
 
 const InfoBoxCta = props => {
 

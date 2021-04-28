@@ -1,12 +1,12 @@
 const {
 	RichText,
-} = wp.blockEditor
+} = wp.blockEditor;
 
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const {
 	createBlock
-} = wp.blocks
+} = wp.blocks;
 
 class Description extends React.Component {
 
@@ -16,41 +16,41 @@ class Description extends React.Component {
 			attributes,
 			setAttributes ,
 			props
-		} = this.props
+		} = this.props;
 
-		if( setAttributes !== "not_set" ){
+		if ( setAttributes !== "not_set" ){
 			return (
 				<RichText
-	                tagName='div'
-	                value={ attributes.descriptionText }
-	                placeholder={ __( "Write a Quote", 'ultimate-addons-for-gutenberg' ) }
-	                className='uagb-blockquote__content'
-	                onChange={ ( value ) => setAttributes( { descriptionText: value } ) }
-	                onMerge = { props.mergeBlocks }
-	                onSplit = {
+					tagName='div'
+					value={ attributes.descriptionText }
+					placeholder={ __( "Write a Quote", "ultimate-addons-for-gutenberg" ) }
+					className='uagb-blockquote__content'
+					onChange={ ( value ) => setAttributes( { descriptionText: value } ) }
+					onMerge={ props.mergeBlocks }
+					onSplit={
 						props.insertBlocksAfter ?
 							( before, after, ...blocks ) => {
-								setAttributes( { content: before } )
+								setAttributes( { content: before } );
 								props.insertBlocksAfter( [
 									...blocks,
 									createBlock( "core/paragraph", { content: after } ),
-								] )
+								] );
 							} :
 							undefined
 					}
 					onRemove={ () => props.onReplace( [] ) }
 	            />
-			)
-		}else{
-			return (
-				<RichText.Content
-	                tagName='div'
-	                value={ attributes.descriptionText }
-	                className='uagb-blockquote__content'
-	            />
-			)
+			);
 		}
+		return (
+			<RichText.Content
+				tagName='div'
+				value={ attributes.descriptionText }
+				className='uagb-blockquote__content'
+	            />
+		);
+		
 	}
 }
 
-export default Description
+export default Description;

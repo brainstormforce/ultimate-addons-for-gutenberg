@@ -2,22 +2,22 @@
  * BLOCK: Buttons - Save Block
  */
 
-import classnames from "classnames"
-import times from "lodash/times"
+import classnames from "classnames";
+import times from "lodash/times";
 
 const {
 	InnerBlocks
-} = wp.blockEditor
+} = wp.blockEditor;
 
 // Extend component
-const { Fragment } = wp.element
+const { Fragment } = wp.element;
 
 export default function save( props ) {
 	
-	const { className } = props
+	const { className } = props;
 	const {
 		block_id
-	} = props.attributes
+	} = props.attributes;
 
 	return (
 		<div className={ classnames(
@@ -30,5 +30,5 @@ export default function save( props ) {
 				<InnerBlocks.Content />
 			</div>
 		</div>
-	)
+	);
 }

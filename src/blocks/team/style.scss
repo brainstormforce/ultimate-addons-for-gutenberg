@@ -4,7 +4,7 @@
  * CSS for both Frontend+Backend.
  */
 
- .uagb-team__outer-wrap {
+.uagb-team__outer-wrap {
 
 	.uagb-team__prefix {
 		font-size: 15px;
@@ -40,7 +40,7 @@
 	}
 
 	.uagb-team__social-icon a span,
-	.uagb-team__social-icon a span:before {
+	.uagb-team__social-icon a span::before {
 		color: inherit;
 		font-size: inherit;
 		height: inherit;
@@ -54,10 +54,12 @@
 		color: #333;
 		display: block;
 	}
+
 	.uagb-team__social-icon {
 		margin-right: 20px;
 		margin-left: 0;
 	}
+
 	.uagb-team__social-list {
 		margin: 0;
 		padding: 0;
@@ -132,6 +134,7 @@
 }
 
 @media only screen and (max-width: 976px) {
+
 	.uagb-team__stack-tablet,
 	.uagb-team__stack-tablet .uagb-team__content {
 		text-align: center;
@@ -152,6 +155,7 @@
 }
 
 @media screen and (max-width: 767px) {
+
 	.uagb-team__stack-mobile,
 	.uagb-team__stack-mobile .uagb-team__content {
 		text-align: center;

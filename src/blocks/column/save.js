@@ -2,19 +2,19 @@
  * BLOCK: Column - Save Block
  */
 
-import classnames from "classnames"
+import classnames from "classnames";
 
 const {
 	InnerBlocks
-} = wp.blockEditor
+} = wp.blockEditor;
 
 export default function save( { attributes, className } ) {
 	
-	const { block_id, backgroundType, align, alignMobile, alignTablet  } = attributes
+	const { block_id, backgroundType, align, alignMobile, alignTablet  } = attributes;
 
-	let align_class = ( "center" == align ) ? "" : `uagb-column__align-${align}`
-	let align_class_mobile = ( "" == alignMobile ) ? "" : `uagb-column__align-mobile-${alignMobile}`
-	let align_class_tablet = ( "" == alignTablet ) ? "" : `uagb-column__align-tablet-${alignTablet}`
+	const align_class = ( "center" == align ) ? "" : `uagb-column__align-${align}`;
+	const align_class_mobile = ( "" == alignMobile ) ? "" : `uagb-column__align-mobile-${alignMobile}`;
+	const align_class_tablet = ( "" == alignTablet ) ? "" : `uagb-column__align-tablet-${alignTablet}`;
 
 	return (
 		<div
@@ -33,5 +33,5 @@ export default function save( { attributes, className } ) {
 				<InnerBlocks.Content />
 			</div>
 		</div>
-	)
+	);
 }

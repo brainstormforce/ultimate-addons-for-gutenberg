@@ -3,17 +3,17 @@
  */
 
 // Import block dependencies and components.
-import classnames from "classnames"
-import attributes from "./attributes"
-import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
-import links from "./links"
+import classnames from "classnames";
+import attributes from "./attributes";
+import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon";
+import links from "./links";
 
 const deprecated =[
 	{
 		attributes,
 		save: props => {
 
-			const { attributes, className } = props
+			const { attributes, className } = props;
 
 			const {
 				block_id,
@@ -23,7 +23,7 @@ const deprecated =[
 				social_count,
 				social_layout,
 				current_url
-			} = props.attributes
+			} = props.attributes;
 
 			return (
 				<div className={ classnames(
@@ -37,25 +37,23 @@ const deprecated =[
 							socials.map( ( social, index ) => {
 
 								if ( social_count <= index ) {
-									return
+									return;
 								}
 
-								let url = ""
+								let url = "";
 
-								if( null != current_url ) {
-									url = links[social.type] + encodeURI( current_url )
+								if ( null != current_url ) {
+									url = links[social.type] + encodeURI( current_url );
 								}
 
-								let image_icon_html = ""
+								let image_icon_html = "";
 
 								if ( social.image_icon == "icon" ) {
 									if ( social.icon ) {
-										image_icon_html = <span className={ classnames( social.icon , "uagb-ss__source-icon" ) }></span>
+										image_icon_html = <span className={ classnames( social.icon , "uagb-ss__source-icon" ) }></span>;
 									}
-								} else {
-									if ( social.image ) {
-										image_icon_html = <img className="uagb-ss__source-image" src={social.image.url} />
-									}
+								} else if ( social.image ) {
+									image_icon_html = <img className="uagb-ss__source-image" src={ social.image.url } />;
 								}
 
 								return (
@@ -66,21 +64,21 @@ const deprecated =[
 										) }
 										key={ index }
 									>
-										<a className="uagb-ss__link" href={url} rel ="noopener noreferrer"><span className="uagb-ss__source-wrap">{image_icon_html}</span></a>
+										<a className="uagb-ss__link" href={ url } rel="noopener noreferrer"><span className="uagb-ss__source-wrap">{ image_icon_html }</span></a>
 									</div>
-								)
-							})
+								);
+							} )
 						}
 					</div>
 				</div>
-			)
+			);
 		},
 	},
 	{
 		attributes,
 		save: props => {
 
-			const { attributes, className } = props
+			const { attributes, className } = props;
 
 			const {
 				block_id,
@@ -90,7 +88,7 @@ const deprecated =[
 				social_count,
 				social_layout,
 				current_url
-			} = props.attributes
+			} = props.attributes;
 
 			return (
 				<div className={ classnames(
@@ -104,25 +102,23 @@ const deprecated =[
 							socials.map( ( social, index ) => {
 
 								if ( social_count <= index ) {
-									return
+									return;
 								}
 
-								let url = ""
+								let url = "";
 
-								if( null != current_url ) {
-									url = links[social.type]
+								if ( null != current_url ) {
+									url = links[social.type];
 								}
 
-								let image_icon_html = ""
+								let image_icon_html = "";
 
 								if ( social.image_icon == "icon" ) {
 									if ( social.icon ) {
-										image_icon_html = <span className="uagb-ss__source-icon">{ renderSVG(social.icon) }</span>
+										image_icon_html = <span className="uagb-ss__source-icon">{ renderSVG( social.icon ) }</span>;
 									}
-								} else {
-									if ( social.image ) {
-										image_icon_html = <img className="uagb-ss__source-image" src={social.image.url} />
-									}
+								} else if ( social.image ) {
+									image_icon_html = <img className="uagb-ss__source-image" src={ social.image.url } />;
 								}
 
 								return (
@@ -133,21 +129,21 @@ const deprecated =[
 										) }
 										key={ index }
 									>
-										<a className="uagb-ss__link" data-href={url} rel ="noopener noreferrer"><span className="uagb-ss__source-wrap">{image_icon_html}</span></a>
+										<a className="uagb-ss__link" data-href={ url } rel="noopener noreferrer"><span className="uagb-ss__source-wrap">{ image_icon_html }</span></a>
 									</div>
-								)
-							})
+								);
+							} )
 						}
 					</div>
 				</div>
-			)
+			);
 		},
 	},
 	{
 		attributes,
 		save: props => {
 
-			const { attributes, className } = props
+			const { attributes, className } = props;
 
 			const {
 				block_id,
@@ -157,7 +153,7 @@ const deprecated =[
 				social_count,
 				social_layout,
 				current_url
-			} = props.attributes
+			} = props.attributes;
 
 			return (
 				<div className={ classnames(
@@ -172,25 +168,23 @@ const deprecated =[
 							socials.map( ( social, index ) => {
 
 								if ( social_count <= index ) {
-									return
+									return;
 								}
 
-								let url = ""
+								let url = "";
 
-								if( null != current_url ) {
-									url = links[social.type]
+								if ( null != current_url ) {
+									url = links[social.type];
 								}
 
-								let image_icon_html = ""
+								let image_icon_html = "";
 
 								if ( social.image_icon == "icon" ) {
 									if ( social.icon ) {
-										image_icon_html = <span className="uagb-ss__source-icon">{ renderSVG(social.icon) }</span>
+										image_icon_html = <span className="uagb-ss__source-icon">{ renderSVG( social.icon ) }</span>;
 									}
-								} else {
-									if ( social.image ) {
-										image_icon_html = <img className="uagb-ss__source-image" src={social.image.url} />
-									}
+								} else if ( social.image ) {
+									image_icon_html = <img className="uagb-ss__source-image" src={ social.image.url } />;
 								}
 
 								return (
@@ -201,16 +195,16 @@ const deprecated =[
 										) }
 										key={ index }
 									>
-										<a className="uagb-ss__link" data-href={url} rel ="noopener noreferrer"><span className="uagb-ss__source-wrap">{image_icon_html}</span></a>
+										<a className="uagb-ss__link" data-href={ url } rel="noopener noreferrer"><span className="uagb-ss__source-wrap">{ image_icon_html }</span></a>
 									</div>
-								)
-							})
+								);
+							} )
 						}
 					</div>
 				</div>
-			)
+			);
 		},
 	}
-]
+];
 
 export default deprecated;

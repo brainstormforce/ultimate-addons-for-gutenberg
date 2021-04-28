@@ -2,23 +2,23 @@
  * BLOCK: Forms - Select - Save Block
  */
 
-import classnames from "classnames"
+import classnames from "classnames";
 
-const { __ } = wp.i18n
-const { RichText } = wp.blockEditor
+const { __ } = wp.i18n;
+const { RichText } = wp.blockEditor;
 
 export default function save( props ) {
 	
-	const { attributes } = props
+	const { attributes } = props;
 
 	const {
 		block_id,
 		selectRequired,
 		options,
 		selectName
-	} = attributes
+	} = attributes;
 	
-	const isRequired = (selectRequired) ? __("required", 'ultimate-addons-for-gutenberg') : "";
+	const isRequired = ( selectRequired ) ? __( "required", "ultimate-addons-for-gutenberg" ) : "";
 	
 	return (
 		<div className={ classnames(
@@ -29,20 +29,20 @@ export default function save( props ) {
 			<RichText.Content
 				tagName="div"
 				value={ selectName }
-				className={`uagb-forms-select-label ${isRequired} uagb-forms-input-label`}	
+				className={ `uagb-forms-select-label ${isRequired} uagb-forms-input-label` }	
 				id={ block_id }	
 			/>
-				<select className="uagb-forms-select-box uagb-forms-input"  required={ selectRequired } name={ block_id }>
-					<option value="" disabled selected>
-						Select your option
-					</option>
-					{options.map((o, index) => {
-						var optionvalue = o.optionvalue;
-						var value = optionvalue.replace(/\s+/g, '-').toLowerCase();
-						return <option value={optionvalue}>{o.optiontitle}</option>;
-					})}
+			<select className="uagb-forms-select-box uagb-forms-input"  required={ selectRequired } name={ block_id }>
+				<option value="" disabled selected>
+					Select your option
+				</option>
+				{ options.map( ( o, index ) => {
+					const optionvalue = o.optionvalue;
+					const value = optionvalue.replace( /\s+/g, "-" ).toLowerCase();
+					return <option value={ optionvalue }>{ o.optiontitle }</option>;
+				} ) }
 					
-				</select>
+			</select>
 		</div>
-	)
+	);
 }

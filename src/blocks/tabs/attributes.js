@@ -1,62 +1,62 @@
 /**
  * BLOCK: UAGB Tabs Block Attributes
  */
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 const attributes = {
 	block_id :{
 		type : "string"
 	},
 	tabHeaders: {
-		type: 'array',
-		default: [__('Tab 1' , 'ultimate-addons-for-gutenberg' ),__('Tab 2','ultimate-addons-for-gutenberg'),__('Tab 3','ultimate-addons-for-gutenberg')]
+		type: "array",
+		default: [__( "Tab 1" , "ultimate-addons-for-gutenberg" ),__( "Tab 2","ultimate-addons-for-gutenberg" ),__( "Tab 3","ultimate-addons-for-gutenberg" )]
 	},
 	tabActive: {
-		type: 'number',
+		type: "number",
 		default: 0,
 	},
 	tabActiveFrontend: {
-		type: 'number',
+		type: "number",
 		default: 0,
 	},
 	tabsStyleD: {
-		type: 'string',
-		default: 'hstyle1'
+		type: "string",
+		default: "hstyle1"
 	},
 	tabsStyleT: {
-		type: 'string',
-		default: 'vstyle6'
+		type: "string",
+		default: "vstyle6"
 	},
 	tabsStyleM: {
-		type: 'string',
-		default: 'vstyle6'
+		type: "string",
+		default: "vstyle6"
 	},
 	headerBgColor: {
-		type: 'string', 
+		type: "string", 
 	},
 	headerTextColor: {
-		type: 'string',
+		type: "string",
 		default:"#007cba"
 	},
 	bodyBgColor: {
-		type: 'string',
+		type: "string",
 	},
 	bodyTextColor: {
-		type: 'string',
+		type: "string",
 	},
 	borderWidth: {
-		type: 'number',
+		type: "number",
 		default:1
 	},
 	borderColor: {
-		type: 'string',
+		type: "string",
 		default:"#e0e0e0"
 	},
 	activeTabBgColor: {
-		type: 'string',
+		type: "string",
 		default:"#007cba"
 	},
 	activeTabTextColor: {
-		type: 'string',
+		type: "string",
 		default:"#fff"
 	},
 	tabTitleLeftMargin :{
@@ -169,6 +169,6 @@ const attributes = {
 		type: "string",
 	},
 
-}
+};
 
-export default attributes
+export default attributes;

@@ -3,8 +3,8 @@
  * @param  {object} props - The block object.
  * @return {object} The inline background type CSS.
  */
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function styling( props ) {
 
@@ -127,9 +127,9 @@ function styling( props ) {
 		msgVrPadding,
 		msgHrPadding,
 		successMsgColor,
-	} = props.attributes
+	} = props.attributes;
 
-	var selectors = {
+	let selectors = {
 		" .gform_wrapper form" :{
 			"text-align" : align,
 		},
@@ -546,50 +546,50 @@ function styling( props ) {
 			"font-family" : successMsgFontFamily,
 			"font-weight" : successMsgFontWeight,
 			"line-height" : generateCSSUnit( successMsgLineHeight, successMsgLineHeightType ),
-		},	
-	}
-
-	var tablet_selectors = {		
-		" input:not([type=submit])": {			
-			"font-size": generateCSSUnit( inputFontSizeTablet, inputFontSizeType ),	
-			"line-height": generateCSSUnit( inputLineHeightTablet, inputLineHeightType ),	
-		},	
-		" select": {			
-			"font-size":generateCSSUnit( labelFontSizeTablet, labelFontSizeType ),
-			"line-height": generateCSSUnit( labelLineHeightTablet, labelLineHeightType ),	
 		},
-		" textarea": {			
-			"font-size": generateCSSUnit( inputFontSizeTablet, inputFontSizeType ),	
-			"line-height": generateCSSUnit( inputLineHeightTablet, inputLineHeightType ),	
+	};
+
+	let tablet_selectors = {
+		" input:not([type=submit])": {
+			"font-size": generateCSSUnit( inputFontSizeTablet, inputFontSizeType ),
+			"line-height": generateCSSUnit( inputLineHeightTablet, inputLineHeightType ),
+		},
+		" select": {
+			"font-size":generateCSSUnit( labelFontSizeTablet, labelFontSizeType ),
+			"line-height": generateCSSUnit( labelLineHeightTablet, labelLineHeightType ),
+		},
+		" textarea": {
+			"font-size": generateCSSUnit( inputFontSizeTablet, inputFontSizeType ),
+			"line-height": generateCSSUnit( inputLineHeightTablet, inputLineHeightType ),
 		},
 		" form label": {
 			"font-size": generateCSSUnit( labelFontSizeTablet, labelFontSizeType ),
-			"line-height": generateCSSUnit( labelLineHeightTablet, labelLineHeightType ),	
+			"line-height": generateCSSUnit( labelLineHeightTablet, labelLineHeightType ),
 		},
 
 		" form .gfield_radio label" :{
 			"font-size": generateCSSUnit( labelFontSizeTablet, labelFontSizeType ),
-			"line-height": generateCSSUnit( labelLineHeightTablet, labelLineHeightType ),	
+			"line-height": generateCSSUnit( labelLineHeightTablet, labelLineHeightType ),
 		},
 		" form .gfield_checkbox label" :{
 			"font-size": generateCSSUnit( labelFontSizeTablet, labelFontSizeType ),
-			"line-height": generateCSSUnit( labelLineHeightTablet, labelLineHeightType ),	
+			"line-height": generateCSSUnit( labelLineHeightTablet, labelLineHeightType ),
 		},
-		" input.gform_button": {			
-			"font-size": generateCSSUnit( buttonFontSizeTablet, buttonFontSizeType ),	
-			"line-height": generateCSSUnit( buttonLineHeightTablet, buttonLineHeightType ),			
+		" input.gform_button": {
+			"font-size": generateCSSUnit( buttonFontSizeTablet, buttonFontSizeType ),
+			"line-height": generateCSSUnit( buttonLineHeightTablet, buttonLineHeightType ),
 		},
 		" .uagb-gf-styler__check-style-enabled form .gfield_radio label" :{
 			"font-size": generateCSSUnit( radioCheckFontSizeTablet, radioCheckFontSizeType ),
-			"line-height": generateCSSUnit( radioCheckLineHeightTablet, radioCheckLineHeightType ),	
+			"line-height": generateCSSUnit( radioCheckLineHeightTablet, radioCheckLineHeightType ),
 		},
 		" .uagb-gf-styler__check-style-enabled form .gfield_checkbox label" :{
 			"font-size": generateCSSUnit( radioCheckFontSizeTablet, radioCheckFontSizeType ),
-			"line-height": generateCSSUnit( radioCheckLineHeightTablet, radioCheckLineHeightType ),	
+			"line-height": generateCSSUnit( radioCheckLineHeightTablet, radioCheckLineHeightType ),
 		},
 		" span.wpgf-not-valid-tip" :{
 			"font-size": generateCSSUnit( validationMsgFontSizeTablet, validationMsgFontSizeType ),
-			"line-height": generateCSSUnit( validationMsgLineHeightTablet, validationMsgLineHeightType ),	
+			"line-height": generateCSSUnit( validationMsgLineHeightTablet, validationMsgLineHeightType ),
 		},
 		" .gform_wrapper .validation_message"    :{
 			"font-size"  : generateCSSUnit( validationMsgFontSizeTablet, validationMsgFontSizeType ),
@@ -603,48 +603,48 @@ function styling( props ) {
 			"font-size"  : generateCSSUnit( successMsgFontSizeTablet, successMsgFontSizeType ),
 			"line-height": generateCSSUnit( successMsgLineHeightTablet, successMsgLineHeightType ),
 		},
-	}
+	};
 
-	var mobile_selectors = {		
-		" input:not([type=submit])": {			
-			"font-size": generateCSSUnit( inputFontSizeMobile, inputFontSizeType ),	
-			"line-height": generateCSSUnit( inputLineHeightMobile, inputLineHeightType ),		
-		},	
-		" select": {			
-			"font-size":generateCSSUnit( labelFontSizeMobile, labelFontSizeType ),
-			"line-height": generateCSSUnit( labelLineHeightMobile, labelLineHeightType ),	
+	let mobile_selectors = {
+		" input:not([type=submit])": {
+			"font-size": generateCSSUnit( inputFontSizeMobile, inputFontSizeType ),
+			"line-height": generateCSSUnit( inputLineHeightMobile, inputLineHeightType ),
 		},
-		" textarea": {			
-			"font-size": generateCSSUnit( inputFontSizeTablet, inputFontSizeType ),	
-			"line-height": generateCSSUnit( inputLineHeightTablet, inputLineHeightType ),	
+		" select": {
+			"font-size":generateCSSUnit( labelFontSizeMobile, labelFontSizeType ),
+			"line-height": generateCSSUnit( labelLineHeightMobile, labelLineHeightType ),
+		},
+		" textarea": {
+			"font-size": generateCSSUnit( inputFontSizeTablet, inputFontSizeType ),
+			"line-height": generateCSSUnit( inputLineHeightTablet, inputLineHeightType ),
 		},
 		" form label": {
-			"font-size": generateCSSUnit( inputFontSizeMobile, inputFontSizeType ),	
+			"font-size": generateCSSUnit( inputFontSizeMobile, inputFontSizeType ),
 			"line-height": generateCSSUnit( inputLineHeightMobile, inputLineHeightType ),
 		},
 		" form .gfield_radio label" :{
 			"font-size": generateCSSUnit( labelFontSizeMobile, labelFontSizeType ),
-			"line-height": generateCSSUnit( labelLineHeightMobile, labelLineHeightType ),	
+			"line-height": generateCSSUnit( labelLineHeightMobile, labelLineHeightType ),
 		},
 		" form .gfield_checkbox label" :{
 			"font-size": generateCSSUnit( labelFontSizeMobile, labelFontSizeType ),
-			"line-height": generateCSSUnit( labelLineHeightMobile, labelLineHeightType ),	
+			"line-height": generateCSSUnit( labelLineHeightMobile, labelLineHeightType ),
 		},
-		" input.gform_button": {			
-			"font-size": generateCSSUnit( buttonFontSizeMobile, buttonFontSizeType ),	
-			"line-height": generateCSSUnit( buttonLineHeightMobile, buttonLineHeightType ),			
+		" input.gform_button": {
+			"font-size": generateCSSUnit( buttonFontSizeMobile, buttonFontSizeType ),
+			"line-height": generateCSSUnit( buttonLineHeightMobile, buttonLineHeightType ),
 		},
 		" .uagb-gf-styler__check-style-enabled form .gfield_radio label" :{
 			"font-size": generateCSSUnit( radioCheckFontSizeMobile, radioCheckFontSizeType ),
-			"line-height": generateCSSUnit( radioCheckLineHeightMobile, radioCheckLineHeightType ),	
+			"line-height": generateCSSUnit( radioCheckLineHeightMobile, radioCheckLineHeightType ),
 		},
 		" .uagb-gf-styler__check-style-enabled form .gfield_checkbox label" :{
 			"font-size": generateCSSUnit( radioCheckFontSizeMobile, radioCheckFontSizeType ),
-			"line-height": generateCSSUnit( radioCheckLineHeightMobile, radioCheckLineHeightType ),	
+			"line-height": generateCSSUnit( radioCheckLineHeightMobile, radioCheckLineHeightType ),
 		},
 		" span.wpgf-not-valid-tip" :{
 			"font-size": generateCSSUnit( validationMsgFontSizeMobile, validationMsgFontSizeType ),
-			"line-height": generateCSSUnit( validationMsgLineHeightMobile, validationMsgLineHeightType ),	
+			"line-height": generateCSSUnit( validationMsgLineHeightMobile, validationMsgLineHeightType ),
 		},
 		" .gform_wrapper .validation_message"    :{
 			"font-size"  : generateCSSUnit( validationMsgFontSizeMobile, validationMsgFontSizeType ),
@@ -658,15 +658,15 @@ function styling( props ) {
 			"font-size"  : generateCSSUnit( successMsgFontSizeMobile, successMsgFontSizeType ),
 			"line-height": generateCSSUnit( successMsgLineHeightMobile, successMsgLineHeightType ),
 		},
-	}
+	};
 
-	var styling_css = generateCSS( selectors, `.block-editor-page #wpwrap .edit-post-visual-editor .wp-block-uagb-gf-styler.uagb-block-${props.clientId.substr( 0, 8 )}` )
+	let styling_css = generateCSS( selectors, `.block-editor-page #wpwrap .edit-post-visual-editor .wp-block-uagb-gf-styler.uagb-block-${props.clientId.substr( 0, 8 )}` );
 
-	styling_css += generateCSS( tablet_selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`, true, "mobile" );
 
-	return styling_css
+	return styling_css;
 }
 
-export default styling
+export default styling;

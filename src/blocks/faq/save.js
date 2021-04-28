@@ -2,21 +2,21 @@
  * BLOCK: FAQ - Save Block
  */
 
-import classnames from "classnames"
+import classnames from "classnames";
 
 const {
 	InnerBlocks
-} = wp.blockEditor
+} = wp.blockEditor;
 
 export default function save( props ) {
 	
-	const { className } = props
+	const { className } = props;
 	const {
 		block_id,
 		schema,
 		enableSchemaSupport,
 		equalHeight
-	} = props.attributes
+	} = props.attributes;
 
 	const renderSchema = () => {
 
@@ -26,11 +26,11 @@ export default function save( props ) {
 				<script type="application/ld+json">
 					{ schema }
 				</script>
-			)
+			);
 		}
 
-		return '';
-	}
+		return "";
+	};
 
 	const equalHeightClass = equalHeight ? "uagb-faq-equal-height" : "";
 	
@@ -45,13 +45,13 @@ export default function save( props ) {
 			`uagb-faq-inactive-other-${ props.attributes.inactiveOtherItems }`,
 			equalHeightClass
 		) }
-		data-faqtoggle = { props.attributes.enableToggle }
-		role = 'tablist'
+		data-faqtoggle={ props.attributes.enableToggle }
+		role='tablist'
 		>
 			{ renderSchema() }
 			<div className="uagb-faq__wrap uagb-buttons-layout-wrap">
 				<InnerBlocks.Content />
 			</div>
 		</div>
-	)
+	);
 }

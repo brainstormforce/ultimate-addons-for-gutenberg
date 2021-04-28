@@ -1,8 +1,8 @@
-import renderSVG from "../../../../dist/blocks/uagb-controls/renderIcon"
+import renderSVG from "../../../../dist/blocks/uagb-controls/renderIcon";
 
 const {
 	RichText,
-} = wp.blockEditor
+} = wp.blockEditor;
 
 const { __ } = wp.i18n
 const InfoBoxIcon = props =>{
@@ -13,7 +13,7 @@ const InfoBoxIcon = props =>{
 			<div className="uagb-ifb-image-icon-content uagb-ifb-imgicon-wrap" >
 				<div className="uagb-ifb-icon-wrap">
 					<span className="uagb-ifb-icon">
-						<span className={attributes.icon} ></span>
+						<span className={ attributes.icon } ></span>
 					</span>
 				</div>
 			</div>

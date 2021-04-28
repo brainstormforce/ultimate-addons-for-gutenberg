@@ -3,23 +3,23 @@
  */
 
 // Import block dependencies and components.
-import classnames from "classnames"
-import shapes from "./shapes"
+import classnames from "classnames";
+import shapes from "./shapes";
 // Import icon.
-import attributes from "./attributes"
+import attributes from "./attributes";
 
 const {
 	InnerBlocks
-} = wp.blockEditor
+} = wp.blockEditor;
 
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const deprecated = [
 	{
 		attributes,			
-		save: function( props ) {
+		save( props ) {
 
-			const { attributes, className } = props
+			const { attributes, className } = props;
 
 			const {
 				block_id,
@@ -40,9 +40,9 @@ const deprecated = [
 				reverseMobile,
 				topContentAboveShape,
 				bottomContentAboveShape
-			} = props.attributes
+			} = props.attributes;
 
-			const CustomTag = `${tag}`
+			const CustomTag = `${tag}`;
 
 			const top_divider_html = (
 				topType != "none" && (
@@ -53,10 +53,10 @@ const deprecated = [
 							{ "uagb-columns__shape-flip": topFlip === true },
 							{ "uagb-columns__shape-above-content": topContentAboveShape === true }
 						) }>
-						{shapes[topType]}
+						{ shapes[topType] }
 					</div>
 				)
-			)
+			);
 
 			const bottom_divider_html = (
 				bottomType != "none" && (
@@ -68,14 +68,14 @@ const deprecated = [
 							{ "uagb-columns__shape-above-content": bottomContentAboveShape === true }
 						) }
 						data-negative="false">
-						{shapes[bottomType]}
+						{ shapes[bottomType] }
 					</div>
 				)
-			)
+			);
 
-			const reverse_tablet = ( reverseTablet ) ? "uagb-columns__reverse-tablet" : ""
+			const reverse_tablet = ( reverseTablet ) ? "uagb-columns__reverse-tablet" : "";
 
-			const reverse_mobile = ( reverseMobile ) ? "uagb-columns__reverse-mobile" : ""
+			const reverse_mobile = ( reverseMobile ) ? "uagb-columns__reverse-mobile" : "";
 
 			return (
 				<CustomTag
@@ -110,13 +110,13 @@ const deprecated = [
 					</div>
 					{ bottom_divider_html }
 				</CustomTag>
-			)
+			);
 		},
 	},
 	{
 		attributes,
-		save: function( props ) {
-			const { attributes, className } = props
+		save( props ) {
+			const { attributes, className } = props;
 
 			const {
 				block_id,
@@ -137,9 +137,9 @@ const deprecated = [
 				reverseMobile,
 				topContentAboveShape,
 				bottomContentAboveShape
-			} = props.attributes
+			} = props.attributes;
 
-			const CustomTag = `${tag}`
+			const CustomTag = `${tag}`;
 
 			const top_divider_html = (
 				topType != "none" && (
@@ -150,10 +150,10 @@ const deprecated = [
 							{ "uagb-columns__shape-flip": topFlip === true },
 							{ "uagb-columns__shape-above-content": topContentAboveShape === true }
 						) }>
-						{shapes[topType]}
+						{ shapes[topType] }
 					</div>
 				)
-			)
+			);
 
 			const bottom_divider_html = (
 				bottomType != "none" && (
@@ -165,14 +165,14 @@ const deprecated = [
 							{ "uagb-columns__shape-above-content": bottomContentAboveShape === true }
 						) }
 						data-negative="false">
-						{shapes[bottomType]}
+						{ shapes[bottomType] }
 					</div>
 				)
-			)
+			);
 
-			const reverse_tablet = ( reverseTablet ) ? "uagb-columns__reverse-tablet" : ""
+			const reverse_tablet = ( reverseTablet ) ? "uagb-columns__reverse-tablet" : "";
 
-			const reverse_mobile = ( reverseMobile ) ? "uagb-columns__reverse-mobile" : ""
+			const reverse_mobile = ( reverseMobile ) ? "uagb-columns__reverse-mobile" : "";
 
 			return (
 				<CustomTag
@@ -194,7 +194,7 @@ const deprecated = [
 					{ "video" == backgroundType &&
 						<div className="uagb-columns__video-wrap">
 							{  backgroundVideo &&
-								<video autoplay loop muted playsinline>
+								<video autoPlay loop muted playsinline>
 									<source src={ backgroundVideo.url } type='video/mp4' />
 								</video>
 							}
@@ -209,9 +209,9 @@ const deprecated = [
 					</div>
 					{ bottom_divider_html }
 				</CustomTag>
-			)
+			);
 		}
 	}
-]
+];
 
 export default deprecated;

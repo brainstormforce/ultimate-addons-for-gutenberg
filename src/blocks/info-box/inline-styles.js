@@ -2,8 +2,8 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function InfoBoxStyle( props ) {
 	const {
@@ -81,9 +81,9 @@ function InfoBoxStyle( props ) {
 		ctaBgHoverColor,
 		ctaBorderhoverColor,
 		ctaIconSpace,		
-	} = props.attributes
+	} = props.attributes;
 
-	var selectors = {
+	const selectors = {
 		// Icon css
 		" .uagb-ifb-icon" : {
 			"height" : generateCSSUnit( iconSize, "px" ),
@@ -211,7 +211,7 @@ function InfoBoxStyle( props ) {
 			"margin-bottom": generateCSSUnit( seperatorSpace, "px" )
 		},
 		" .uagb-ifb-content" : {
-			"padding": ( typeof blockPadding != "undefined" ) ? blockPadding+"px": "inherit"
+			"padding": ( typeof blockPadding !== "undefined" ) ? blockPadding+"px": "inherit"
 		},
 		" .uagb-ifb-align-icon-after" : {
 			"margin-left" : generateCSSUnit( ctaIconSpace, "px" ),
@@ -219,23 +219,23 @@ function InfoBoxStyle( props ) {
 		" .uagb-ifb-align-icon-before" : {
 			"margin-right" : generateCSSUnit( ctaIconSpace, "px" ),
 		},
-	}
+	};
 
 	if ( imageWidthType ) {
 		// Image
 		selectors[" .uagb-ifb-image-content img"] = {
 			"width": generateCSSUnit( imageWidth, "px" ),
 			"max-width": generateCSSUnit( imageWidth, "px" ),
-		}
+		};
 	}
 
-	if( iconimgPosition == "above-title" ||  iconimgPosition == "below-title" ){
+	if ( iconimgPosition == "above-title" ||  iconimgPosition == "below-title" ){
 		selectors[" .uagb-infobox__content-wrap"] = {
 			"text-align" : headingAlign,
-		}
+		};
 	}
 
-	var tablet_selectors = {
+	const tablet_selectors = {
 		" .block-editor-rich-text__editable.uagb-ifb-desc" : {
 			"font-size": generateCSSUnit( subHeadFontSizeTablet, subHeadFontSizeType ),
 			"line-height": generateCSSUnit( subHeadLineHeightTablet, subHeadLineHeightType ),
@@ -263,9 +263,9 @@ function InfoBoxStyle( props ) {
 			"line-height": generateCSSUnit( ctaFontSizeTablet, ctaFontSizeType ),
 			"width": generateCSSUnit( ctaFontSizeTablet, ctaFontSizeType ),
 		}
-	}
+	};
 
-	var mobile_selectors = {
+	const mobile_selectors = {
 		" .block-editor-rich-text__editable.uagb-ifb-desc" : {
 			"font-size": generateCSSUnit( subHeadFontSizeMobile, subHeadFontSizeType ),
 			"line-height": generateCSSUnit( subHeadLineHeightMobile, subHeadLineHeightType ),
@@ -293,15 +293,15 @@ function InfoBoxStyle( props ) {
 			"line-height": generateCSSUnit( ctaFontSizeMobile, ctaFontSizeType ),
 			"width": generateCSSUnit( ctaFontSizeMobile, ctaFontSizeType ),
 		}
-	}
+	};
 
-	var id = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`
-	var styling_css = generateCSS( selectors, id )
+	const id = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`;
+	let styling_css = generateCSS( selectors, id );
 
-	styling_css += generateCSS( tablet_selectors, id, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, id, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, id, true, "mobile" )
-	return styling_css
+	styling_css += generateCSS( mobile_selectors, id, true, "mobile" );
+	return styling_css;
 }
 
-export default InfoBoxStyle
+export default InfoBoxStyle;

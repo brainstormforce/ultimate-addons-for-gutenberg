@@ -2,14 +2,14 @@
  * BLOCK: Testimonial - Attributes
  */
 
-const ITEM_COUNT = 3
+const ITEM_COUNT = 3;
 
-const testimonial_block = []
+const testimonial_block = [];
 
-for (var i = 1; i <= ITEM_COUNT; i++) {
-	var desc_text = "I have been working with these guys since years now! With lots of hard work and timely communication they made sure they delivered the best to me. Highly recommended!"
-	var author_text    = "John Doe "
-	var company_text    = "Company"+i
+for ( let i = 1; i <= ITEM_COUNT; i++ ) {
+	const desc_text = "I have been working with these guys since years now! With lots of hard work and timely communication they made sure they delivered the best to me. Highly recommended!";
+	const author_text    = "John Doe ";
+	const company_text    = "Company"+i;
 	testimonial_block.push(
 		{
 			"description": desc_text,
@@ -17,7 +17,7 @@ for (var i = 1; i <= ITEM_COUNT; i++) {
 			"company": company_text,
 			"image": "",
 		}
-	)
+	);
 }
 
 const attributes = {
@@ -346,6 +346,6 @@ const attributes = {
 		type: "string",
 		default: "tablet"
 	}
-}
+};
 
-export default attributes
+export default attributes;

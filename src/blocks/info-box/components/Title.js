@@ -1,12 +1,12 @@
 const {
 	RichText,
-} = wp.blockEditor
+} = wp.blockEditor;
 
 const {
 	createBlock
-} = wp.blocks
+} = wp.blocks;
 
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const Title = props =>{
 

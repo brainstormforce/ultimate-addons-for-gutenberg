@@ -2,38 +2,38 @@ class AuthorImage extends React.Component {
 
 	render() {
 
-		const { attributes } = this.props 
+		const { attributes } = this.props; 
 
-		let url_chk = ""
-		if( typeof attributes.authorImage !== "undefined" && attributes.authorImage !== null && attributes.authorImage !=="" ){
-			url_chk = attributes.authorImage.url
+		let url_chk = "";
+		if ( typeof attributes.authorImage !== "undefined" && attributes.authorImage !== null && attributes.authorImage !=="" ){
+			url_chk = attributes.authorImage.url;
 		}
 		
-		let url = ""
-		if( url_chk !== "" ){
-			let size = attributes.authorImage.sizes
-			let authorImageSize = attributes.authorImageSize
+		let url = "";
+		if ( url_chk !== "" ){
+			const size = attributes.authorImage.sizes;
+			const authorImageSize = attributes.authorImageSize;
 
 			if ( typeof size !== "undefined" && typeof size[authorImageSize] !== "undefined" ) {
-			  url = size[authorImageSize].url 
-			}else{
-			  url = url_chk 
+			  url = size[authorImageSize].url; 
+			} else {
+			  url = url_chk; 
 			}
 
 			return (				
 				<div className="uagb-blockquote__author-image">
 					<img
-						className =""
-						src = { url }                        
-						alt = { attributes.authorImage.alt }                    
+						className=""
+						src={ url }                        
+						alt={ attributes.authorImage.alt }                    
 					/>						
 				</div>				                 
-			)
-		}else{
-			return null
-		}       
+			);
+		}
+		return null;
+		       
 		
 	}
 }
 
-export default AuthorImage
+export default AuthorImage;

@@ -4,15 +4,15 @@
  * @return {object} The inline background type CSS.
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function styling( props ) {
 
 	const {
 		classMigrate,
 		skinStyle,
-		align,	
+		align,
 		authorColor,
 		descColor,
 		descFontSize,
@@ -36,7 +36,7 @@ function styling( props ) {
 		authorLineHeightTablet,
 		authorLineHeightMobile,
 		descSpace,
-		authorSpace,	
+		authorSpace,
 		borderColor,
 		borderStyle,
 		borderWidth,
@@ -66,7 +66,7 @@ function styling( props ) {
 		tweetBtnBgHoverColor,
 		tweetBtnHrPadding,
 		tweetBtnVrPadding,
-		tweetIconSpacing,		
+		tweetIconSpacing,
 		authorImageWidth,
 		authorImgBorderRadius,
 		quoteBorderRadius,
@@ -76,26 +76,26 @@ function styling( props ) {
 		quoteRightMargin,
 		quoteHoverColor,
 		quoteBgHoverColor,
-		borderHoverColor,	
+		borderHoverColor,
 		quotePadding,
 		quotePaddingType,
 		quotePaddingTablet,
 		quotePaddingMobile,
-	} = props.attributes
+	} = props.attributes;
 
-	var author_space = authorSpace
+	let author_space = authorSpace;
 
 	if( align !== "center" || skinStyle == "border" ){
-		author_space = 0
+		author_space = 0;
 	}
 	//Set align to left for border style
-	var text_align = align
+	let text_align = align;
 
 	if( skinStyle == "border" ){
-		text_align = "left"
+		text_align = "left";
 	}
 
-	var selectors = {
+	let selectors = {
 		" .uagb-blockquote__content.block-editor-rich-text__editable": {
 			"font-size": generateCSSUnit( descFontSize, descFontSizeType ),
 			"font-family": descFontFamily,
@@ -110,8 +110,8 @@ function styling( props ) {
 			"font-family": authorFontFamily,
 			"font-weight": authorFontWeight,
 			"line-height": generateCSSUnit( authorLineHeight, authorLineHeightType ),
-			"color": authorColor,			
-			"text-align": text_align,			
+			"color": authorColor,
+			"text-align": text_align,
 		},
 		" .uagb-blockquote__skin-border blockquote.uagb-blockquote":{
 			"border-color": borderColor,
@@ -136,7 +136,7 @@ function styling( props ) {
 		" .uagb-blockquote__skin-quotation .uagb-blockquote__icon":{
 			"width"         : generateCSSUnit( quoteSize, quoteSizeType ),
 			"height"        : generateCSSUnit( quoteSize, quoteSizeType ),
-		},	
+		},
 		" .uagb-blockquote__skin-quotation .uagb-blockquote__icon svg":{
 			"fill"         : quoteColor,
 		},
@@ -145,10 +145,10 @@ function styling( props ) {
 		},
 		" .uagb-blockquote__skin-quotation .uagb-blockquote__icon-wrap:hover .uagb-blockquote__icon svg":{
 			"fill"         : quoteHoverColor,
-		},		
+		},
 		" .uagb-blockquote__style-style_1 .uagb-blockquote":{
 			"text-align": align,
-		},			
+		},
 		" .uagb-blockquote__author-wrap":{
 			"margin-bottom": generateCSSUnit( author_space, "px" ),
 		},
@@ -157,96 +157,96 @@ function styling( props ) {
 			"height": generateCSSUnit( authorImageWidth, "px" ),
 			"border-radius": generateCSSUnit( authorImgBorderRadius, "%" )
 		}
-	}
-	
+	};
+
 	if( enableTweet ){
 		selectors[" a.uagb-blockquote__tweet-button"] = {
-			"font-size": generateCSSUnit( tweetBtnFontSize, tweetBtnFontSizeType ),	
+			"font-size": generateCSSUnit( tweetBtnFontSize, tweetBtnFontSizeType ),
 			"font-family": tweetBtnFontFamily,
 			"font-weight": tweetBtnFontWeight,
-			"line-height": generateCSSUnit( tweetBtnLineHeight, tweetBtnLineHeightType ),			
-		}
+			"line-height": generateCSSUnit( tweetBtnLineHeight, tweetBtnLineHeightType ),
+		};
 		selectors[" .uagb-blockquote__tweet-style-link a.uagb-blockquote__tweet-button"] = {
-			"color": tweetLinkColor,		
-		}
+			"color": tweetLinkColor,
+		};
 
 		selectors[" .uagb-blockquote__tweet-style-link a.uagb-blockquote__tweet-button svg"] = {
-			"fill": tweetLinkColor,		
-		}
+			"fill": tweetLinkColor,
+		};
 
 		selectors[" .uagb-blockquote__tweet-style-classic a.uagb-blockquote__tweet-button"] = {
-			"color": tweetBtnColor,		
-			"background-color": tweetBtnBgColor,	
+			"color": tweetBtnColor,
+			"background-color": tweetBtnBgColor,
 			"padding-left": generateCSSUnit( tweetBtnHrPadding, "px" ),
 			"padding-right": generateCSSUnit( tweetBtnHrPadding, "px" ),
 			"padding-top": generateCSSUnit( tweetBtnVrPadding, "px" ),
-			"padding-bottom": generateCSSUnit( tweetBtnVrPadding, "px" ),	
-		}
+			"padding-bottom": generateCSSUnit( tweetBtnVrPadding, "px" ),
+		};
 
 		selectors[" .uagb-blockquote__tweet-style-classic a.uagb-blockquote__tweet-button svg"] = {
-			"fill": tweetBtnColor,		
-		}
+			"fill": tweetBtnColor,
+		};
 
 		selectors[" .uagb-blockquote__tweet-style-bubble a.uagb-blockquote__tweet-button"] = {
-			"color": tweetBtnColor,		
-			"background-color": tweetBtnBgColor,	
+			"color": tweetBtnColor,
+			"background-color": tweetBtnBgColor,
 			"padding-left": generateCSSUnit( tweetBtnHrPadding, "px" ),
 			"padding-right": generateCSSUnit( tweetBtnHrPadding, "px" ),
 			"padding-top": generateCSSUnit( tweetBtnVrPadding, "px" ),
-			"padding-bottom": generateCSSUnit( tweetBtnVrPadding, "px" ),	
-		}	
+			"padding-bottom": generateCSSUnit( tweetBtnVrPadding, "px" ),
+		};
 		selectors[" .uagb-blockquote__tweet-style-bubble a.uagb-blockquote__tweet-button svg"] = {
-			"fill": tweetBtnColor,		
-		}	
+			"fill": tweetBtnColor,
+		};
 
 		selectors[" .uagb-blockquote__tweet-style-bubble a.uagb-blockquote__tweet-button:before"] = {
-			"border-right-color": tweetBtnBgColor,		
-		}	
+			"border-right-color": tweetBtnBgColor,
+		};
 
 		selectors[" a.uagb-blockquote__tweet-button svg"] = {
 			"width": generateCSSUnit( tweetBtnFontSize, tweetBtnFontSizeType ),
 			"height": generateCSSUnit( tweetBtnFontSize, tweetBtnFontSizeType ),
-		}
+		};
 
 		selectors[" .uagb-blockquote__tweet-icon_text a.uagb-blockquote__tweet-button svg"] = {
 			"margin-right": generateCSSUnit( tweetIconSpacing, "px" ),
-		}	
+		};
 
 		// Hover CSS
 		selectors[" .uagb-blockquote__tweet-style-link a.uagb-blockquote__tweet-button:hover"] = {
-			"color": tweetBtnHoverColor,		
-		}
+			"color": tweetBtnHoverColor,
+		};
 
 		selectors[" .uagb-blockquote__tweet-style-link a.uagb-blockquote__tweet-button:hover svg"] = {
-			"fill": tweetBtnHoverColor,		
-		}
+			"fill": tweetBtnHoverColor,
+		};
 
 		selectors[" .uagb-blockquote__tweet-style-classic a.uagb-blockquote__tweet-button:hover"] = {
-			"color": tweetBtnHoverColor,		
-			"background-color": tweetBtnBgHoverColor,	
-		}
+			"color": tweetBtnHoverColor,
+			"background-color": tweetBtnBgHoverColor,
+		};
 
 		selectors[" .uagb-blockquote__tweet-style-classic a.uagb-blockquote__tweet-button:hover svg"] = {
-			"fill": tweetBtnHoverColor,		
-			"background-color": tweetBtnBgHoverColor,	
-		}
+			"fill": tweetBtnHoverColor,
+			"background-color": tweetBtnBgHoverColor,
+		};
 
 		selectors[" .uagb-blockquote__tweet-style-bubble a.uagb-blockquote__tweet-button:hover "] = {
-			"color": tweetBtnHoverColor,		
-			"background-color": tweetBtnBgHoverColor,	
-		}
+			"color": tweetBtnHoverColor,
+			"background-color": tweetBtnBgHoverColor,
+		};
 
 		selectors[" .uagb-blockquote__tweet-style-bubble a.uagb-blockquote__tweet-button:hover svg"] = {
-			"fill": tweetBtnHoverColor,		
-			"background-color": tweetBtnBgHoverColor,	
-		}
+			"fill": tweetBtnHoverColor,
+			"background-color": tweetBtnBgHoverColor,
+		};
 
 		selectors[" .uagb-blockquote__tweet-style-bubble a.uagb-blockquote__tweet-button:hover:before"] = {
-			"border-right-color": tweetBtnBgHoverColor,	
-		}
+			"border-right-color": tweetBtnBgHoverColor,
+		};
 	}
 
-	var tablet_selectors = {
+	let tablet_selectors = {
 		" .uagb-blockquote__content.block-editor-rich-text__editable": {
 			"font-size": generateCSSUnit( descFontSizeTablet, descFontSizeType ),
 			"line-height": generateCSSUnit( descLineHeightTablet, descLineHeightType ),
@@ -256,8 +256,8 @@ function styling( props ) {
 			"line-height": generateCSSUnit( authorLineHeightTablet, authorLineHeightType ),
 		},
 		" a.uagb-blockquote__tweet-button" : {
-			"font-size": generateCSSUnit( tweetBtnFontSizeTablet, tweetBtnFontSizeType ),	
-			"line-height": generateCSSUnit( tweetBtnLineHeightTablet, tweetBtnLineHeightType ),			
+			"font-size": generateCSSUnit( tweetBtnFontSizeTablet, tweetBtnFontSizeType ),
+			"line-height": generateCSSUnit( tweetBtnLineHeightTablet, tweetBtnLineHeightType ),
 		},
 		" a.uagb-blockquote__tweet-button svg" : {
 			"width": generateCSSUnit( tweetBtnFontSizeTablet, tweetBtnFontSizeType ),
@@ -269,10 +269,10 @@ function styling( props ) {
 		" .uagb-blockquote__skin-quotation .uagb-blockquote__icon":{
 			"width"         : generateCSSUnit( quoteSizeTablet, quoteSizeType ),
 			"height"        : generateCSSUnit( quoteSizeTablet, quoteSizeType ),
-		},		
-	}
+		},
+	};
 
-	var mobile_selectors = {
+	let mobile_selectors = {
 		" .uagb-blockquote__content.block-editor-rich-text__editable": {
 			"font-size": generateCSSUnit( descFontSizeMobile, descFontSizeType ),
 			"line-height": generateCSSUnit( descLineHeightMobile, descLineHeightType ),
@@ -282,8 +282,8 @@ function styling( props ) {
 			"line-height": generateCSSUnit( authorLineHeightMobile, authorLineHeightType ),
 		},
 		" a.uagb-blockquote__tweet-button" : {
-			"font-size": generateCSSUnit( tweetBtnFontSizeMobile, tweetBtnFontSizeType ),	
-			"line-height": generateCSSUnit( tweetBtnLineHeightMobile, tweetBtnLineHeightType ),			
+			"font-size": generateCSSUnit( tweetBtnFontSizeMobile, tweetBtnFontSizeType ),
+			"line-height": generateCSSUnit( tweetBtnLineHeightMobile, tweetBtnLineHeightType ),
 		},
 		" a.uagb-blockquote__tweet-button svg" :{
 			"width": generateCSSUnit( tweetBtnFontSizeMobile, tweetBtnFontSizeType ),
@@ -295,18 +295,18 @@ function styling( props ) {
 		" .uagb-blockquote__skin-quotation .uagb-blockquote__icon":{
 			"width"         : generateCSSUnit( quoteSizeMobile, quoteSizeType ),
 			"height"        : generateCSSUnit( quoteSizeMobile, quoteSizeType ),
-		},		
-	}
+		},
+	};
 
-	var base_selector = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`
+	let base_selector = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`;
 
-	var styling_css = generateCSS( selectors, base_selector )
+	let styling_css = generateCSS( selectors, base_selector );
 
-	styling_css += generateCSS( tablet_selectors, base_selector, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, base_selector, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, base_selector, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, base_selector, true, "mobile" );
 
-	return styling_css
+	return styling_css;
 }
 
-export default styling
+export default styling;

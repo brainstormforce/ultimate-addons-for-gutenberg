@@ -1,4 +1,4 @@
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 
 const attributes = { 
@@ -7,15 +7,15 @@ const attributes = {
 	},
 	description:{
 		type: "string",
-		default: __("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+		default: __( "Lorem ipsum dolor sit amet, consectetur adipiscing elit." )
 	},
 	title:{
 		type: "string",
-		default:  __("Menu Item")
+		default:  __( "Menu Item" )
 	},
 	price: {
 		type: "string",
-		default:  __("$9")
+		default:  __( "$9" )
 	},
 	image: {
 		type: "object",
@@ -53,6 +53,6 @@ const attributes = {
 		default: "left",
 	},
 
-}
+};
 
 export default attributes;

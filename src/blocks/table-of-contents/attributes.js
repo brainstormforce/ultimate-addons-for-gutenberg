@@ -1,4 +1,4 @@
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const attributes = {
 	block_id : {
@@ -57,25 +57,25 @@ const attributes = {
 		type : "string",
 	},
 	mappingHeaders: {
-		type: 'array',
-		default: Array(6).fill(true)
+		type: "array",
+		default: Array( 6 ).fill( true )
 	},
 	align : {
 		type    : "string",
 		default : "left",
 	},
 	headerLinks: {
-		type: 'html',
-		default: ''
+		type: "html",
+		default: ""
 	},
 	heading: {
 		source: "html",
 		selector: ".uagb-toc__title",
-		default: __( "Table Of Contents" , 'ultimate-addons-for-gutenberg' ),
+		default: __( "Table Of Contents" , "ultimate-addons-for-gutenberg" ),
 	},
 	headingTitle : {
 		type    : "string",
-		default : __( "Table Of Contents" , 'ultimate-addons-for-gutenberg' ),
+		default : __( "Table Of Contents" , "ultimate-addons-for-gutenberg" ),
 	},
 	customWidth : {
 		type: "boolean",
@@ -337,8 +337,8 @@ const attributes = {
 	},
 	emptyHeadingTeaxt: {
 		type: "string",
-		default: __( 'Add a header to begin generating the table of contents', 'ultimate-addons-for-gutenberg' ),
+		default: __( "Add a header to begin generating the table of contents", "ultimate-addons-for-gutenberg" ),
 	},
-}
+};
 
-export default attributes
+export default attributes;

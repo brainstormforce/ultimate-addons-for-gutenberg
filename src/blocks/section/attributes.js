@@ -15,15 +15,15 @@ const attributes = {
 	},
 	mobilePaddingType: {
 		type: "string",
-		default: 'px'
+		default: "px"
 	},
 	tabletPaddingType: {
 		type: "string",
-		default: 'px'
+		default: "px"
 	},
 	desktopPaddingType: {
 		type: "string",
-		default: 'px'
+		default: "px"
 	},
 	topPadding: {
 		type: "number",
@@ -43,15 +43,15 @@ const attributes = {
 	},
 	mobileMarginType: {
 		type: "string",
-		default: 'px'
+		default: "px"
 	},
 	tabletMarginType: {
 		type: "string",
-		default: 'px'
+		default: "px"
 	},
 	desktopMarginType: {
 		type: "string",
-		default: 'px'
+		default: "px"
 	},
 	topMargin: {
 		type: "number",
@@ -295,6 +295,6 @@ const attributes = {
 		type: "string",
 		default: "",
 	},
-}
+};
 
-export default attributes
+export default attributes;

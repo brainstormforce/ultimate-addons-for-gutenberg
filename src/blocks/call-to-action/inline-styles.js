@@ -2,8 +2,8 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function CtaStyle( props ) {
 	const {
@@ -56,9 +56,9 @@ function CtaStyle( props ) {
 		ctaRightSpace,
 		contentWidth,
 		ctaType
-	} = props.attributes
+	} = props.attributes;
 
-	var selectors = {
+	const selectors = {
 
 		" .uagb-cta__content-wrap" : {
 			"text-align" : textAlign,
@@ -139,32 +139,32 @@ function CtaStyle( props ) {
 		" .uagb-cta__align-button-before" : {
 			"margin-right" : generateCSSUnit( ctaIconSpace, "px" ),
 		},
-	}
+	};
 
-	if( textAlign === "left" && ctaPosition === "right" ){
+	if ( textAlign === "left" && ctaPosition === "right" ){
 		selectors[" .uagb-cta__left-right-wrap .uagb-cta__content"] = {
 			"margin-left" : generateCSSUnit( ctaLeftSpace, "px" ),
 			"margin-right" : "0",
-		}
+		};
 	}
 
-	if( textAlign === "right" && ctaPosition === "right" ){
+	if ( textAlign === "right" && ctaPosition === "right" ){
 		selectors[" .uagb-cta__left-right-wrap .uagb-cta__content"] = {
 			"margin-right" : generateCSSUnit( ctaRightSpace, "px" ),
 			"margin-left" : "0",
-		}
+		};
 	}
 
-	if( ctaPosition === "right" && ( ctaType === "text" || ctaType === "button" ) ){
+	if ( ctaPosition === "right" && ( ctaType === "text" || ctaType === "button" ) ){
 		selectors[" .uagb-cta__content-right .uagb-cta__left-right-wrap .uagb-cta__content"] = {
 			"width" : generateCSSUnit( contentWidth, "%" ),
-		}
+		};
 		selectors[" .uagb-cta__content-right .uagb-cta__left-right-wrap .uagb-cta__link-wrapper"] = {
 			"width" : generateCSSUnit( ( 100 - contentWidth ), "%" ),
-		}
+		};
 	}
 
-	var tablet_selectors = {
+	const tablet_selectors = {
 		" .block-editor-rich-text__editable.uagb-cta__title" : {
 			"font-size" : generateCSSUnit( titleFontSizeTablet, titleFontSizeType ),
 			"line-height": generateCSSUnit( titleLineHeightTablet, titleLineHeightType ),
@@ -185,9 +185,9 @@ function CtaStyle( props ) {
 			"width": generateCSSUnit( ctaFontSizeTablet, ctaFontSizeType ),
 			"line-height": generateCSSUnit( ctaFontSizeTablet, ctaFontSizeType ),
 		},
-	}
+	};
 
-	var mobile_selectors = {
+	const mobile_selectors = {
 		" .block-editor-rich-text__editable.uagb-cta__title" : {
 			"font-size" : generateCSSUnit( titleFontSizeMobile, titleFontSizeType ),
 			"line-height": generateCSSUnit( titleLineHeightMobile, titleLineHeightType ),
@@ -208,18 +208,18 @@ function CtaStyle( props ) {
 			"width": generateCSSUnit( ctaFontSizeMobile, ctaFontSizeType ),
 			"line-height": generateCSSUnit( ctaFontSizeMobile, ctaFontSizeType ),
 		},
-	}
+	};
 
-	var id = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`
+	const id = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`;
 
-	var styling_css = generateCSS( selectors, id )
+	let styling_css = generateCSS( selectors, id );
 
-	styling_css += generateCSS( tablet_selectors, id, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, id, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, id, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, id, true, "mobile" );
 
-	return styling_css
+	return styling_css;
 
 }
 
-export default CtaStyle
+export default CtaStyle;

@@ -1,1 +1,21 @@
-[ID*="-optin-notice"]{padding:1px 12px;border-right-color:#007cba}[ID*="-optin-notice"] .notice-container{padding-top:10px;padding-bottom:12px}[ID*="-optin-notice"] .notice-content{margin:0}[ID*="-optin-notice"] .notice-heading{padding:0 0 12px 20px}[ID*="-optin-notice"] .button-primary{margin-left:5px}
+[ID*="-optin-notice"] {
+	padding: 1px 12px;
+	border-right-color: #007cba;
+}
+
+[ID*="-optin-notice"] .notice-container {
+	padding-top: 10px;
+	padding-bottom: 12px;
+}
+
+[ID*="-optin-notice"] .notice-content {
+	margin: 0;
+}
+
+[ID*="-optin-notice"] .notice-heading {
+	padding: 0 0 12px 20px;
+}
+
+[ID*="-optin-notice"] .button-primary {
+	margin-left: 5px;
+}

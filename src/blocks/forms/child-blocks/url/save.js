@@ -2,23 +2,23 @@
  * BLOCK: Forms - URL - Save Block
  */
 
-import classnames from "classnames"
+import classnames from "classnames";
 
-const { __ } = wp.i18n
-const {	RichText } = wp.blockEditor
+const { __ } = wp.i18n;
+const {	RichText } = wp.blockEditor;
 export default function save( props ) {
 	
-	const { attributes } = props
+	const { attributes } = props;
 
 	const {
 		block_id,
 		required,
 		name,
 		placeholder
-	} = attributes
+	} = attributes;
 
 	
-	const isRequired = (required) ? __("required", 'ultimate-addons-for-gutenberg') : "";
+	const isRequired = ( required ) ? __( "required", "ultimate-addons-for-gutenberg" ) : "";
 	
 	return (
 		<div className={ classnames(
@@ -26,14 +26,14 @@ export default function save( props ) {
 			"uagb-forms-field-set",
 			`uagb-block-${ block_id }`,
 		) }>
-				<RichText.Content
-			tagName="div"
-			value={ name }
-			className={`uagb-forms-url-label ${isRequired} uagb-forms-input-label`}
-			id={ block_id }			
+			<RichText.Content
+				tagName="div"
+				value={ name }
+				className={ `uagb-forms-url-label ${isRequired} uagb-forms-input-label` }
+				id={ block_id }			
 			/>
-			<input type="url" name={ block_id } required={ required } placeholder={placeholder}  className="uagb-forms-url-input uagb-forms-input"/>					
+			<input type="url" name={ block_id } required={ required } placeholder={ placeholder }  className="uagb-forms-url-input uagb-forms-input" />					
 
 		</div>
-	)
+	);
 }

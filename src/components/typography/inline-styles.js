@@ -5,7 +5,7 @@
  */
 function TypographyStyles( props ) {
 	return {
-	}
+	};
 }
 
-export default TypographyStyles
+export default TypographyStyles;

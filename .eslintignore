@@ -6,3 +6,4 @@ coverage
 cypress
 node_modules
 vendor
+lib

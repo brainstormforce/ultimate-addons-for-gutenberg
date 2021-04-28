@@ -2,21 +2,21 @@
  * BLOCK: Table of Contents - Save Block
  */
 
-import classnames from "classnames"
-import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
-import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
+import classnames from "classnames";
+import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons";
+import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon";
 
 const {
 	RichText
-} = wp.blockEditor
+} = wp.blockEditor;
 
-const { Fragment } = wp.element
+const { Fragment } = wp.element;
 
 function social_html( icon, link, target ) {
-	let target_value =  ( target ) ? "_blank" : "_self"
+	const target_value =  ( target ) ? "_blank" : "_self";
 	return (
-		<li className="uagb-team__social-icon"><a href={link} aria-label={ icon } target={target_value} title="" rel ="noopener noreferrer">{renderSVG(icon)}</a></li>
-	)
+		<li className="uagb-team__social-icon"><a href={ link } aria-label={ icon } target={ target_value } title="" rel="noopener noreferrer">{ renderSVG( icon ) }</a></li>
+	);
 }
 
 export default function save( props ) {
@@ -43,21 +43,21 @@ export default function save( props ) {
 		socialTarget,
 		socialEnable,
 		stack
-	} = props.attributes
+	} = props.attributes;
 
-	let size = ""
-	let img_url = ""
+	let size = "";
+	let img_url = "";
 
 	if ( image ) {
-		size = image.sizes
+		size = image.sizes;
 		if ( image.sizes ) {
-			img_url = ( size[imgSize] ) ? size[imgSize].url : image.url
+			img_url = ( size[imgSize] ) ? size[imgSize].url : image.url;
 		} else {
-			img_url = image.url
+			img_url = image.url;
 		}
 	}
 
-	let image_html = ""
+	let image_html = "";
 
 	if ( "" != img_url ) {
 		image_html = (
@@ -67,17 +67,17 @@ export default function save( props ) {
 					`uagb-team__image-crop-${imgStyle}`,
 				) }>
 				<img
-					className =""
-					src = { img_url }
-					alt = { ( image.alt ) ? image.alt : "" }
+					className=""
+					src={ img_url }
+					alt={ ( image.alt ) ? image.alt : "" }
 				/>
 			</div>
-		)
+		);
 	}
 
 	return (
 		<div
-			className = { classnames(
+			className={ classnames(
 				props.className,
 				"uagb-team",
 				"uagb-team__outer-wrap",
@@ -86,19 +86,19 @@ export default function save( props ) {
 				`uagb-team__stack-${stack}`,
 				`uagb-block-${ block_id }`
 			) }>
-			<div className = "uagb-team__wrap">
+			<div className="uagb-team__wrap">
 
-				{ ( imgPosition == "left") && image_html }
+				{ ( imgPosition == "left" ) && image_html }
 
-				<div className = "uagb-team__content">
+				<div className="uagb-team__content">
 
 					{  imgPosition == "above" && image_html }
 
-					<div className = "uagb-team__title-wrap">
+					<div className="uagb-team__title-wrap">
 						<RichText.Content
-							tagName= { tag }
+							tagName={ tag }
 							value={ title }
-							className = 'uagb-team__title'
+							className='uagb-team__title'
 						/>
 						<RichText.Content
 							tagName="span"
@@ -107,7 +107,7 @@ export default function save( props ) {
 						/>
 					</div>
 
-					<div className = "uagb-team__desc-wrap">
+					<div className="uagb-team__desc-wrap">
 						<RichText.Content
 							tagName='p'
 							value={ description_text }
@@ -127,8 +127,8 @@ export default function save( props ) {
 
 				</div>
 
-				{ ( imgPosition == "right") && image_html }
+				{ ( imgPosition == "right" ) && image_html }
 			</div>
 		</div>
-	)
+	);
 }

@@ -19,21 +19,21 @@
 	}
 
 	.uagb-gf-styler__check-style-enabled input[type="radio"],
-	.uagb-gf-styler__check-style-enabled input[type="checkbox"] { 
+	.uagb-gf-styler__check-style-enabled input[type="checkbox"] {
 		-webkit-appearance: none;
 	}
-	
+
 	input[type="radio"] {
 		-webkit-appearance: radio;
 	}
 
-	input[type="checkbox"] { 
+	input[type="checkbox"] {
 		-webkit-appearance: checkbox;
 	}
 
-	input[type="checkbox"]:checked:before,
-	input[type="radio"]:checked:before {
-		content: '';
+	input[type="checkbox"]:checked::before,
+	input[type="radio"]:checked::before {
+		content: "";
 	}
 
 	input[type="radio"]:focus,
@@ -43,25 +43,26 @@
 		box-shadow: none;
 	}
 
-	input[type="radio"]:checked:before,
-	input[type="checkbox"]:checked:before { 
+	input[type="radio"]:checked::before,
+	input[type="checkbox"]:checked::before {
 		float: unset;
 		display: inline;
 	}
 
-	input[type=number] {
-	    height: auto;
+	input[type="number"] {
+		height: auto;
 	}
 }
 
 .block-editor-page #wpwrap .edit-post-visual-editor .wp-block-uagb-gf-styler {
+
 	.button,
 	button,
 	input,
 	select,
 	textarea {
 		font-size: 100%;
-		color:inherit;
+		color: inherit;
 	}
 
 	select,

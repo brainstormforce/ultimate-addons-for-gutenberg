@@ -1,8 +1,8 @@
 const {
 	RichText,
-} = wp.blockEditor
+} = wp.blockEditor;
 
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 class Price extends React.Component {
 
@@ -12,42 +12,42 @@ class Price extends React.Component {
 			attributes, 
 			setAttributes , 
 			index_value	
-		} = this.props
+		} = this.props;
 
-		let price = ""
-		if( typeof index_value !== "undefined" ){
+		let price = "";
+		if ( typeof index_value !== "undefined" ){
 			const rest_arr = attributes.rest_menu_item_arr[index_value];
-			if( rest_arr ){
-				if( typeof rest_arr !== "undefined" ){		
-					price = rest_arr["price"]	
+			if ( rest_arr ){
+				if ( typeof rest_arr !== "undefined" ){		
+					price = rest_arr.price;	
 				}
 			}
-		}else{
-			price = attributes.price
+		} else {
+			price = attributes.price;
 		}
 
-		if( setAttributes !== "not_set" ){
+		if ( setAttributes !== "not_set" ){
 			return (
 				<RichText
-	                tagName= 'div'
-	                value={ price }
-	                className = 'uagb-rm__price'
-	                placeholder={ __( "Price" ) }
-	                onChange={ ( value ) => { 
-						setAttributes( { "price": value } )	                	
+					tagName='div'
+					value={ price }
+					className='uagb-rm__price'
+					placeholder={ __( "Price" ) }
+					onChange={ ( value ) => { 
+						setAttributes( { "price": value } );	                	
 	                } }                   
 	            />			
-			)
-		}else{
-			return (
-				<RichText.Content
-	                tagName= 'span'
-	                value={ price }
-	                className='uagb-rm__price'
-	            />			
-			)
+			);
 		}
+		return (
+			<RichText.Content
+				tagName='span'
+				value={ price }
+				className='uagb-rm__price'
+	            />			
+		);
+		
 	}
 }
 
-export default Price
+export default Price;

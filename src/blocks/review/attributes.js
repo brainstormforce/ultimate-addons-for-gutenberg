@@ -1,9 +1,9 @@
 /**
  * BLOCK: UAGB Review Block Attributes
  */
-  const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
- const attributes = {
+const attributes = {
 	ID: {
 		type: "string",
 		default: "",
@@ -42,7 +42,7 @@
 	},
 	datecreated: {
 		type: "string",
-		default: 'Dec 19 2020'
+		default: "Dec 19 2020"
 	},
 	directorname: {
 		type: "string",
@@ -96,7 +96,7 @@
 	},
 	items: {
 		type: "string",
-		default: '[{"label":"","value":0}]',
+		default: "[{\"label\":\"\",\"value\":0}]",
 	},
 	description: {
 		type: "string",
@@ -251,11 +251,11 @@
 	},
 	offerExpiry: {
 		type: "string",
-		default: 'Dec 19 2020'
+		default: "Dec 19 2020"
 	},
 	datepublish: {
 		type: "string",
-		default: 'Dec 19 2020'
+		default: "Dec 19 2020"
 	},
 	featuresTitle : {
 		type: "string",
@@ -463,4 +463,4 @@
 	},
 };
 
-export default attributes
+export default attributes;

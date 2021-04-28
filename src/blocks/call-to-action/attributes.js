@@ -250,6 +250,6 @@ const attributes = {
 		type: "number",
 		default: 5,
 	},
-}
+};
 
-export default attributes
+export default attributes;

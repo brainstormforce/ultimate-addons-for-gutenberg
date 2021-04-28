@@ -1,10 +1,10 @@
-const { decodeEntities } = wp.htmlEntities
+const { decodeEntities } = wp.htmlEntities;
 
 class FeaturedImage extends React.Component {
 
 	render() {
 
-		const { post, attributes } = this.props
+		const { post, attributes } = this.props;
 
 		if (
 			attributes.displayPostImage &&
@@ -12,28 +12,28 @@ class FeaturedImage extends React.Component {
 			attributes.imageSize &&
 			post.uagb_featured_image_src[attributes.imageSize]
 		) {
-			var src = post.uagb_featured_image_src[attributes.imageSize]
-			let target ="_self"
-			if( attributes.linkTarget ){
-				target ="_blank"
+			const src = post.uagb_featured_image_src[attributes.imageSize];
+			let target ="_self";
+			if ( attributes.linkTarget ){
+				target ="_blank";
 			}
 			return (
 				<div className='uagb-timeline__image'>
-					<a href={ post.link } target={target} rel ="noopener noreferrer" style= {{
+					<a href={ post.link } target={ target } rel="noopener noreferrer" style={ {
 						textAlign: attributes.align
-					}}	>
+					} }	>
 						<img
 							src={ src[0] }
 							alt={ decodeEntities( post.title.rendered.trim() ) || __( "(Untitled)" ) }
 						/>
 					</a>
 				</div>
-			)
-		} else {
+			);
+		} 
 
-			return null
-		}
+		return null;
+		
 	}
 }
 
-export default FeaturedImage
+export default FeaturedImage;

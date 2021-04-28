@@ -3,26 +3,26 @@
  */
 
 // Import block dependencies and components.
-import classnames from "classnames"
+import classnames from "classnames";
 
 // Import icon.
-import attributes from "./attributes"
+import attributes from "./attributes";
 
 const {
 	InnerBlocks
-} = wp.blockEditor
+} = wp.blockEditor;
 
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const deprecated = [
 	{
 		attributes,
-		save: function( { attributes, className } ) {
-			const { block_id, backgroundType, align, alignMobile, alignTablet  } = attributes
+		save( { attributes, className } ) {
+			const { block_id, backgroundType, align, alignMobile, alignTablet  } = attributes;
 
-			let align_class = ( "center" == align ) ? "" : `uagb-column__align-${align}`
-			let align_class_mobile = ( "" == alignMobile ) ? "" : `uagb-column__align-mobile-${alignMobile}`
-			let align_class_tablet = ( "" == alignTablet ) ? "" : `uagb-column__align-tablet-${alignTablet}`
+			const align_class = ( "center" == align ) ? "" : `uagb-column__align-${align}`;
+			const align_class_mobile = ( "" == alignMobile ) ? "" : `uagb-column__align-mobile-${alignMobile}`;
+			const align_class_tablet = ( "" == alignTablet ) ? "" : `uagb-column__align-tablet-${alignTablet}`;
 
 			return (
 				<div
@@ -41,9 +41,9 @@ const deprecated = [
 						<InnerBlocks.Content />
 					</div>
 				</div>
-			)
+			);
 		},
 	},
-]
+];
 
 export default deprecated;

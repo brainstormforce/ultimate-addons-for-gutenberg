@@ -3,19 +3,19 @@
  */
 
 // Import block dependencies and components.
-import classnames from "classnames"
-import attributes from "./attributes"
+import classnames from "classnames";
+import attributes from "./attributes";
 
 const {
 	InnerBlocks,
-} = wp.blockEditor
+} = wp.blockEditor;
 
 const deprecated = [
 	{
 		attributes,			
-		save: function( props ) {
+		save( props ) {
 
-			const { attributes, className } = props
+			const { attributes, className } = props;
 
 			const {
 				block_id,
@@ -24,18 +24,18 @@ const deprecated = [
 				backgroundVideo,
 				contentWidth,
 				align
-			} = props.attributes
+			} = props.attributes;
 
-			let block_controls_class = ""
+			let block_controls_class = "";
 
 			if ( "full_width" == contentWidth ) {
 
 				if ( align == "wide" || align == "full" ) {
-					block_controls_class = "align" + align
+					block_controls_class = "align" + align;
 				}
 			}
 
-			const CustomTag = `${tag}`
+			const CustomTag = `${tag}`;
 
 			return (
 				<CustomTag
@@ -60,14 +60,14 @@ const deprecated = [
 						<InnerBlocks.Content />
 					</div>
 				</CustomTag>
-			)
+			);
 		},
 	},
 	{
 		attributes,			
-		save: function( props ) {
+		save( props ) {
 
-			const { attributes, className } = props
+			const { attributes, className } = props;
 
 			const {
 				block_id,
@@ -76,18 +76,18 @@ const deprecated = [
 				backgroundVideo,
 				contentWidth,
 				align
-			} = props.attributes
+			} = props.attributes;
 
-			let block_controls_class = ""
+			let block_controls_class = "";
 
 			if ( "full_width" == contentWidth ) {
 
 				if ( align == "wide" || align == "full" ) {
-					block_controls_class = "align" + align
+					block_controls_class = "align" + align;
 				}
 			}
 
-			const CustomTag = `${tag}`
+			const CustomTag = `${tag}`;
 
 			return (
 				<CustomTag
@@ -103,7 +103,7 @@ const deprecated = [
 					{ "video" == backgroundType &&
 						<div className="uagb-section__video-wrap">
 							{  backgroundVideo &&
-							<video autoplay loop muted playsinline>
+							<video autoPlay loop muted playsinline>
 								<source src={ backgroundVideo.url } type='video/mp4' />
 							</video>
 							}
@@ -114,9 +114,9 @@ const deprecated = [
 						<InnerBlocks.Content />
 					</div>
 				</CustomTag>
-			)
+			);
 		},
 	}
-]
+];
 
 export default deprecated;

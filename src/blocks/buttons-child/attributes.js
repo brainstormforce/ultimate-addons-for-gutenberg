@@ -38,7 +38,7 @@ const attributes = {
 	},
 	label: {
 		type: "html",
-		default:'#Click Here' 
+		default:"#Click Here" 
 	} ,
 	link: {
 		type: "string",
@@ -138,6 +138,6 @@ const attributes = {
 		type: "number",
 		default : 8
 	},
-}
+};
 
-export default attributes
+export default attributes;

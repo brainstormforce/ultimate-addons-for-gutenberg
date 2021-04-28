@@ -2,8 +2,8 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function contentTimelineStyle( props ) {
 	const {
@@ -98,11 +98,11 @@ function contentTimelineStyle( props ) {
 		ctaLineHeightMobile,
 		ctaLoadGoogleFonts,
 		ctaBackground,
-	} = props.attributes
+	} = props.attributes;
 	
-	var resp_selectors = "left"
+	const resp_selectors = "left";
 
-	var selectors = {
+	const selectors = {
 		" .uagb-timeline__heading" : {
 			"font-size" : generateCSSUnit( headFontSize, headFontSizeType ),
 			"font-family": headFontFamily,
@@ -266,10 +266,10 @@ function contentTimelineStyle( props ) {
 			"color": ctaColor,
 			"background-color": ctaBackground,
 		}
-	}
+	};
 
 	/* Generate Responsive CSS for timeline */
-	var tablet_selectors = {
+	const tablet_selectors = {
 		" .uagb-timeline__date-hide.uagb-timeline__date-inner" : {
 			"font-size" : generateCSSUnit( dateFontsizeTablet, dateFontsizeType ),
 			"line-height": generateCSSUnit( dateLineHeightTablet, dateLineHeightType ),
@@ -335,9 +335,9 @@ function contentTimelineStyle( props ) {
 			"font-size" : generateCSSUnit( ctaFontSizeTablet,ctaFontSizeType ),
 			"line-height": generateCSSUnit( ctaLineHeightTablet, ctaLineHeightType ),
 		}
-	}
+	};
 
-	var mobile_selectors = {
+	const mobile_selectors = {
 		" .uagb-timeline__date-hide.uagb-timeline__date-inner" : {
 			"font-size" : generateCSSUnit( dateFontsizeMobile, dateFontsizeType ),
 			"line-height": generateCSSUnit( dateLineHeightMobile, dateLineHeightType ),
@@ -409,19 +409,19 @@ function contentTimelineStyle( props ) {
 			"font-size" : generateCSSUnit( ctaFontSizeMobile, ctaFontSizeType ),
 			"line-height": generateCSSUnit( ctaLineHeightMobile, ctaLineHeightType ),
 		}
-	}
+	};
 
-	var styling_css = ""
-	var id = `.block-editor-page #wpwrap .uagb-block-${ props.clientId }`
+	let styling_css = "";
+	const id = `.block-editor-page #wpwrap .uagb-block-${ props.clientId }`;
 
-	styling_css = generateCSS( selectors, id )
+	styling_css = generateCSS( selectors, id );
 
-	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" );
 
-	return styling_css
+	return styling_css;
 
 }
 
-export default contentTimelineStyle
+export default contentTimelineStyle;

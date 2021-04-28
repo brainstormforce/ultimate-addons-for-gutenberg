@@ -4,23 +4,23 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
-.uagb-inspect-tabs .components-tab-panel__tabs button{
+.uagb-inspect-tabs .components-tab-panel__tabs button {
 	padding: 10px;
-    background: transparent;
-    color: #333;
-    outline: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 3px solid #eee;
-    cursor: pointer;
-    -webkit-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s;
+	background: transparent;
+	color: #333;
+	outline: none;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 3px solid #eee;
+	cursor: pointer;
+	-webkit-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
 }
 
 button.components-button.components-button.components-tab-panel__tabs-item.uagb-responsive-tabs {
-    box-shadow:inset 0 0 0 1px #fff;
+	box-shadow: inset 0 0 0 1px #fff;
 }
 
 hr.uagb-editor__separator {
@@ -30,8 +30,8 @@ hr.uagb-editor__separator {
 .uagb-inspect-tabs > .components-tab-panel__tabs button.active-tab,
 .uagb-inspect-tabs > .components-tab-panel__tabs button:focus {
 	border-bottom: 3px solid #333;
-	outline:none;
-	font-weight:500;
+	outline: none;
+	font-weight: 500;
 }
 
 .uagb-inspect-tab-title {
@@ -50,17 +50,26 @@ hr.uagb-editor__separator {
 .uagb-inspect-tabs-col-3 > .components-tab-panel__tabs button {
 	width: 33.33%;
 }
+
 .uagb-settings-notice {
-	color: #478a3b; background-color: #e5fce3; padding: 15px; border-left: 5px solid #c3f9c5; font-size: 12px; line-height: 1.5; text-align: left;
+	color: #478a3b;
+	background-color: #e5fce3;
+	padding: 15px;
+	border-left: 5px solid #c3f9c5;
+	font-size: 12px;
+	line-height: 1.5;
+	text-align: left;
 }
+
 .uagb-note,
 .components-base-control__help {
 	font-size: 12px;
 	font-style: italic;
 	color: #a4afb7;
 }
+
 .components-range-control.uagb-margin-control .components-base-control__label {
-    width: 30px;
+	width: 30px;
 }
 
 .uagb-icons-list .uagb-widget-icon {
@@ -112,16 +121,16 @@ hr.uagb-editor__separator {
 
 .uagb-icon-picker-wrap .search-icon {
 	background-color: #fff;
-    border: 1px solid #e0e0e0;
-    width: 100%;
+	border: 1px solid #e0e0e0;
+	width: 100%;
 }
 
 .components-button-group.uagb-size-type-field {
 	margin: 0;
-    text-align: right;
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: -18px;
+	text-align: right;
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: -18px;
 }
 
 .uagb-size-type-field-tabs .components-range-control .components-base-control__field {
@@ -144,10 +153,10 @@ hr.uagb-editor__separator {
 }
 
 .edit-post-sidebar h2.uagb-size-type-field-title {
-    font-size: 14px;
-    margin-bottom: 0;
-    color: #555d66;
-    margin-top: 30px
+	font-size: 14px;
+	margin-bottom: 0;
+	color: #555d66;
+	margin-top: 30px;
 }
 
 .uagb-size-type-field-tabs {
@@ -155,8 +164,8 @@ hr.uagb-editor__separator {
 	margin-top: 20px;
 }
 
-.uagb-size-type-field-tabs{
-    margin-bottom: -20px;
+.uagb-size-type-field-tabs {
+	margin-bottom: -20px;
 }
 
 .uagb-size-type-field-tabs .components-tab-panel__tabs {
@@ -172,44 +181,44 @@ hr.uagb-editor__separator {
 }
 
 .uagb-size-type-field-tabs .components-tab-panel__tabs button svg {
-    width: 14px;
-    height: 14px
+	width: 14px;
+	height: 14px;
 }
 
 .uagb-size-type-field-tabs .components-tab-panel__tabs button {
-    border: 0;
-    border-bottom: 0;
-    padding: 3px 3px 0px 0px;
-    margin-bottom: 0;
-    outline: 0;
-    width: auto;
-    font-size: 8px;
+	border: 0;
+	border-bottom: 0;
+	padding: 3px 3px 0 0;
+	margin-bottom: 0;
+	outline: 0;
+	width: auto;
+	font-size: 8px;
 	background: transparent;
-    color: #999;
-    display: inline-block;
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    margin-right: 3px;
+	color: #999;
+	display: inline-block;
+	border-radius: 50%;
+	height: 20px;
+	width: 20px;
+	margin-right: 3px;
 }
 
 .uagb-size-type-field-tabs .components-tab-panel__tabs button.active-tab,
 .uagb-size-type-field-tabs .components-tab-panel__tabs button.active-tab:focus {
 	color: #23282d;
-    background-color: #e4e5e5;
-    box-shadow: none;
+	background-color: #e4e5e5;
+	box-shadow: none;
 }
 
 .uagb-size-type-field button.components-button.uagb-size-btn {
-    background: transparent;
-    color: #777;
-    border: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    text-shadow: none;
-    height: 18px;
-    line-height: 18px;
-    padding: 0 3px;
+	background: transparent;
+	color: #777;
+	border: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	text-shadow: none;
+	height: 18px;
+	line-height: 18px;
+	padding: 0 3px;
 }
 
 .uagb-size-type-field button.components-button.uagb-size-btn:first-child {
@@ -221,14 +230,14 @@ hr.uagb-editor__separator {
 }
 
 .uagb-size-type-field button.components-button.uagb-size-btn.is-primary,
-.uagb-size-type-field button.components-button.uagb-size-btn.is-primary:focus:not(:disabled):not([aria-disabled=true]) {
-    color: #000;
-    text-decoration: underline;
-    background: transparent;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border: none;
-    outline: none
+.uagb-size-type-field button.components-button.uagb-size-btn.is-primary:focus:not(:disabled):not([aria-disabled="true"]) {
+	color: #000;
+	text-decoration: underline;
+	background: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: none;
+	outline: none;
 }
 
 .components-button-group .components-button.is-button {
@@ -236,13 +245,14 @@ hr.uagb-editor__separator {
 	z-index: 1;
 }
 
-.uagb-size-type-field button.components-button.uagb-size-btn:hover,.uagb-size-type-field button.components-button.uagb-size-btn:hover:focus:not(:disabled):not([aria-disabled=true]) {
-    color: #000;
-    background: transparent;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border: none;
-    outline: none
+.uagb-size-type-field button.components-button.uagb-size-btn:hover,
+.uagb-size-type-field button.components-button.uagb-size-btn:hover:focus:not(:disabled):not([aria-disabled="true"]) {
+	color: #000;
+	background: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: none;
+	outline: none;
 }
 
 .uagb-size-type-field__common-tabs .components-tab-panel__tabs {
@@ -253,12 +263,12 @@ hr.uagb-editor__separator {
 .uagb-typography-advanced,
 .uagb-box-shadow-advanced {
 	box-shadow: 0 3px 30px rgba(25, 30, 35, 0.1);
-    border: 1px solid #e2e4e7;
-    background: #fff;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    position: relative;
+	border: 1px solid #e2e4e7;
+	background: #fff;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	position: relative;
 }
 
 .uagb-typography-advanced::before,
@@ -319,7 +329,7 @@ hr.uagb-editor__separator {
 
 .uag-typography-font-family-options .components-base-control__field {
 	display: flex;
-    align-items: center;
+	align-items: center;
 }
 
 .uag-typography-font-family-options .components-base-control__label,
@@ -333,7 +343,7 @@ hr.uagb-editor__separator {
 }
 
 .uag-typography-font-family-options input[type="text"]:focus {
-    box-shadow: none;
+	box-shadow: none;
 }
 
 .uag-typography-option-actions button {
@@ -368,11 +378,11 @@ hr.uagb-editor__separator {
 .uag-typography-font-family-options .react-select__control,
 .uag-typography-font-family-options .react-select__indicators,
 .uag-typography-font-family-options .react-select__value-container {
-    min-height: 28px;
-    height: 28px;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-color: #8D96A0;
+	min-height: 28px;
+	height: 28px;
+	padding-top: 0;
+	padding-bottom: 0;
+	border-color: #8d96a0;
 }
 
 .uag-typography-font-family-options .react-select__indicator-separator {
@@ -380,7 +390,7 @@ hr.uagb-editor__separator {
 }
 
 .uag-typography-font-family-options .react-select__dropdown-indicator svg {
-	fill: #555D66;
+	fill: #555d66;
 }
 
 .uagb__url-panel-body .block-editor-url-input input {
@@ -405,7 +415,7 @@ hr.uagb-editor__separator {
 
 .components-panel .rfipdropdown.rfipdropdown--default.fipappear-enter-done,
 .components-panel .rfipdropdown {
-	left: 0!important;
+	left: 0 !important;
 	width: 230px;
 }
 
@@ -417,7 +427,7 @@ hr.uagb-editor__separator {
 	height: 40px;
 }
 
-.components-panel .rfipicons__ibox:hover>* {
+.components-panel .rfipicons__ibox:hover > * {
 	-webkit-transform: scale(1.45);
 	-ms-transform: scale(1.45);
 	transform: scale(1.45);
@@ -432,7 +442,7 @@ hr.uagb-editor__separator {
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-size: 14px;
 	line-height: 1.71429;
-	vertical-align: baseline
+	vertical-align: baseline;
 }
 
 .rfipbtn,
@@ -442,21 +452,21 @@ hr.uagb-editor__separator {
 	margin: 0;
 	padding: 0;
 	-webkit-box-sizing: border-box;
-	box-sizing: border-box
+	box-sizing: border-box;
 }
 
 .rfipbtn input,
 .rfipbtn select,
 .rfipdropdown input,
 .rfipdropdown select {
-	font-size: 14px
+	font-size: 14px;
 }
 
 .rfip {
 	position: relative;
 	margin: 8px 0;
 	width: 100%;
-	vertical-align: middle
+	vertical-align: middle;
 }
 
 .rfipbtn {
@@ -471,10 +481,10 @@ hr.uagb-editor__separator {
 	min-height: 50px;
 	border-radius: 2px;
 	cursor: pointer;
-	-webkit-transition: border-color .25s, -webkit-box-shadow .25s;
-	transition: border-color .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border-color .25s;
-	transition: box-shadow .25s, border-color .25s, -webkit-box-shadow .25s;
+	-webkit-transition: border-color 0.25s, -webkit-box-shadow 0.25s;
+	transition: border-color 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border-color 0.25s;
+	transition: box-shadow 0.25s, border-color 0.25s, -webkit-box-shadow 0.25s;
 	outline: 0 none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -484,7 +494,7 @@ hr.uagb-editor__separator {
 }
 
 .rfipbtn--open {
-	border-radius: 2px 2px 0 0
+	border-radius: 2px 2px 0 0;
 }
 
 .rfipbtn__button {
@@ -500,28 +510,28 @@ hr.uagb-editor__separator {
 	-ms-flex-pack: center;
 	justify-content: center;
 	height: auto;
-	-webkit-transition: background .25s, -webkit-box-shadow .25s;
-	transition: background .25s, -webkit-box-shadow .25s;
-	transition: background .25s, box-shadow .25s;
-	transition: background .25s, box-shadow .25s, -webkit-box-shadow .25s
+	-webkit-transition: background 0.25s, -webkit-box-shadow 0.25s;
+	transition: background 0.25s, -webkit-box-shadow 0.25s;
+	transition: background 0.25s, box-shadow 0.25s;
+	transition: background 0.25s, box-shadow 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipbtn__button i {
 	font-size: 26px;
-    line-height: 26px;
-    height: 26px;
-    width: 26px;
-	-webkit-transition: -webkit-transform .25s;
-	transition: -webkit-transform .25s;
-	transition: transform .25s;
-	transition: transform .25s, -webkit-transform .25s;
+	line-height: 26px;
+	height: 26px;
+	width: 26px;
+	-webkit-transition: -webkit-transform 0.25s;
+	transition: -webkit-transform 0.25s;
+	transition: transform 0.25s;
+	transition: transform 0.25s, -webkit-transform 0.25s;
 	margin-left: auto;
-    margin-right: auto;
+	margin-right: auto;
 }
 
 .rfipbtn__button--open i {
 	-webkit-transform: rotate(-180deg);
-	transform: rotate(-180deg)
+	transform: rotate(-180deg);
 }
 
 .rfipbtn__current {
@@ -541,11 +551,11 @@ hr.uagb-editor__separator {
 	-webkit-box-flex: 0;
 	-ms-flex: 0 0 86px;
 	flex: 0 0 86px;
-	padding: 2px
+	padding: 2px;
 }
 
 .rfipbtn--multi {
-	width: 258px
+	width: 258px;
 }
 
 .rfipbtn--multi .rfipbtn__current {
@@ -557,13 +567,13 @@ hr.uagb-editor__separator {
 	-ms-flex-preferred-size: 212px;
 	flex-basis: 212px;
 	-ms-flex-line-pack: center;
-	align-content: center
+	align-content: center;
 }
 
 .rfipbtn--multi .rfipbtn__current,
 .rfipbtn__icon {
 	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal
+	-webkit-box-direction: normal;
 }
 
 .rfipbtn__icon {
@@ -582,7 +592,7 @@ hr.uagb-editor__separator {
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	border-radius: 2px
+	border-radius: 2px;
 }
 
 .rfipbtn__icon--empty {
@@ -591,7 +601,7 @@ hr.uagb-editor__separator {
 	margin-left: 8px;
 	text-align: center;
 	text-transform: lowercase;
-	font-style: italic
+	font-style: italic;
 }
 
 .rfipbtn__elm {
@@ -606,7 +616,7 @@ hr.uagb-editor__separator {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	font-size: 18px
+	font-size: 18px;
 }
 
 .rfipbtn__elm img,
@@ -616,7 +626,7 @@ hr.uagb-editor__separator {
 }
 
 .rfipbtn__elm svg {
-	fill : #333;
+	fill: #333;
 }
 
 .rfipbtn__del {
@@ -631,15 +641,15 @@ hr.uagb-editor__separator {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	-webkit-transition: background-color .25s;
-	transition: background-color .25s;
-	cursor: pointer
+	-webkit-transition: background-color 0.25s;
+	transition: background-color 0.25s;
+	cursor: pointer;
 }
 
 .rfipcategory {
 	width: 100%;
 	margin: 0 0 8px;
-	position: relative
+	position: relative;
 }
 
 .rfipcategory select {
@@ -651,11 +661,11 @@ hr.uagb-editor__separator {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, box-shadow .25s;
-	transition: border .25s, box-shadow .25s, -webkit-box-shadow .25s;
-	background-color: transparent!important
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, box-shadow 0.25s;
+	transition: border 0.25s, box-shadow 0.25s, -webkit-box-shadow 0.25s;
+	background-color: transparent !important;
 }
 
 .rfipcategory i {
@@ -664,7 +674,7 @@ hr.uagb-editor__separator {
 	top: 0;
 	font-size: 16px;
 	line-height: 32px;
-	z-index: -1
+	z-index: -1;
 }
 
 .rfipdropdown {
@@ -673,19 +683,19 @@ hr.uagb-editor__separator {
 	left: 0;
 	margin-top: -1px;
 	z-index: 100000001;
-	border-radius: 0 1px 4px 4px
+	border-radius: 0 1px 4px 4px;
 }
 
 .rfipdropdown__selector {
 	overflow: hidden;
-	padding: 16px
+	padding: 16px;
 }
 
 .rfipdropdown.fipappear-enter-active .rfipdropdown__selector,
 .rfipdropdown.fipappear-exit-active .rfipdropdown__selector {
-	-webkit-transition: max-height .3s ease-out, padding .3s ease-out;
-	transition: max-height .3s ease-out, padding .3s ease-out;
-	padding: 16px
+	-webkit-transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+	transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+	padding: 16px;
 }
 
 .rfipicons__pager {
@@ -701,25 +711,25 @@ hr.uagb-editor__separator {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	margin-bottom: 8px
+	margin-bottom: 8px;
 }
 
 .rfipicons__num {
 	width: 100px;
-	margin-right: auto
+	margin-right: auto;
 }
 
 .rfipicons__cp {
 	width: 32px;
 	height: 24px;
 	line-height: 24px;
-	text-align: right
+	text-align: right;
 }
 
 .rfipicons__cp,
 .rfipicons__sp,
 .rfipicons__tp {
-	margin-right: 8px
+	margin-right: 8px;
 }
 
 .rfipicons__arrow {
@@ -742,11 +752,11 @@ hr.uagb-editor__separator {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-	user-select: none
+	user-select: none;
 }
 
 .rfipicons__right {
-	margin-left: auto
+	margin-left: auto;
 }
 
 .rfipicons__left,
@@ -755,11 +765,11 @@ hr.uagb-editor__separator {
 	width: 24px;
 	height: 24px;
 	position: relative;
-	-webkit-transition: background-color .25s, border .25s;
-	transition: background-color .25s, border .25s;
+	-webkit-transition: background-color 0.25s, border 0.25s;
+	transition: background-color 0.25s, border 0.25s;
 	outline: 0 none;
 	border-radius: 2px;
-	font-size: 18px
+	font-size: 18px;
 }
 
 .rfipicons__label {
@@ -773,12 +783,12 @@ hr.uagb-editor__separator {
 	align-items: center;
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
-	justify-content: center
+	justify-content: center;
 }
 
 .rfipicons__label img {
 	height: 18px;
-	width: 18px
+	width: 18px;
 }
 
 .rfipicons__selector {
@@ -793,14 +803,14 @@ hr.uagb-editor__separator {
 	align-content: center;
 	-webkit-box-pack: start;
 	-ms-flex-pack: start;
-	justify-content: flex-start
+	justify-content: flex-start;
 }
 
 .rfipicons__ibox,
 .rfipicons__selector {
 	display: -webkit-box;
 	display: -ms-flexbox;
-	display: flex
+	display: flex;
 }
 
 .rfipicons__ibox {
@@ -812,11 +822,11 @@ hr.uagb-editor__separator {
 	justify-content: center;
 	height: 100%;
 	width: 100%;
-	-webkit-transition: background-color .25s, border .25s;
-	transition: background-color .25s, border .25s;
+	-webkit-transition: background-color 0.25s, border 0.25s;
+	transition: background-color 0.25s, border 0.25s;
 	border-radius: 2px;
 	outline: 0 none;
-	font-size: 20px
+	font-size: 20px;
 }
 
 .rfipicons__ibox img,
@@ -830,20 +840,20 @@ hr.uagb-editor__separator {
 	fill: #333;
 }
 
-.rfipicons__ibox>* {
+.rfipicons__ibox > * {
 	-webkit-transform: scale(1);
 	transform: scale(1);
-	-webkit-transition: -webkit-transform .25s;
-	transition: -webkit-transform .25s;
-	transition: transform .25s;
-	transition: transform .25s, -webkit-transform .25s;
+	-webkit-transition: -webkit-transform 0.25s;
+	transition: -webkit-transform 0.25s;
+	transition: transform 0.25s;
+	transition: transform 0.25s, -webkit-transform 0.25s;
 	-webkit-transform-origin: center;
-	transform-origin: center
+	transform-origin: center;
 }
 
-.rfipicons__ibox:hover>* {
+.rfipicons__ibox:hover > * {
 	-webkit-transform: scale(1.8);
-	transform: scale(1.8)
+	transform: scale(1.8);
 }
 
 .rfipicons__icon {
@@ -859,7 +869,7 @@ hr.uagb-editor__separator {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	cursor: pointer
+	cursor: pointer;
 }
 
 .rfipicons__icon--error {
@@ -867,92 +877,92 @@ hr.uagb-editor__separator {
 	text-align: center;
 	font-size: 16px;
 	width: 100%;
-	line-height: 1
+	line-height: 1;
 }
 
 .rfipsearch {
 	width: 100%;
-	margin: 0 0 8px
+	margin: 0 0 8px;
 }
 
 .rfipsearch input {
 	width: 100%;
 	display: block;
 	height: 32px;
-	line-height: 32px
+	line-height: 32px;
 }
 
 .rfipbtn--green {
 	background-color: #fff;
-	border: 1px solid #81c784
+	border: 1px solid #81c784;
 }
 
 .rfipbtn--green:active,
 .rfipbtn--green:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #66bb6a
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #66bb6a;
 }
 
 .rfipbtn--green .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #81c784;
 	background-color: #c8e6c9;
-	color: #2e7d32
+	color: #2e7d32;
 }
 
 .rfipbtn--green .rfipbtn__button:hover {
-	background-color: #66bb6a
+	background-color: #66bb6a;
 }
 
 .rfipbtn--green .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #81c784;
-	box-shadow: inset 0 0 10px 0 #81c784
+	box-shadow: inset 0 0 10px 0 #81c784;
 }
 
 .rfipbtn--green .rfipbtn__icon {
 	border: 1px solid #a5d6a7;
-	color: #2e7d32
+	color: #2e7d32;
 }
 
 .rfipbtn--green .rfipbtn__icon--empty {
-	color: #81c784
+	color: #81c784;
 }
 
 .rfipbtn--green .rfipbtn__del {
-	background-color: #a5d6a7
+	background-color: #a5d6a7;
 }
 
 .rfipbtn--green .rfipbtn__del:hover {
-	background-color: #81c784
+	background-color: #81c784;
 }
 
 .rfipbtn--green .rfipbtn__del:active,
 .rfipbtn--green .rfipbtn__del:focus {
-	outline: 1px solid #81c784
+	outline: 1px solid #81c784;
 }
 
 .rfipdropdown--green {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #81c784
+	border: 1px solid #81c784;
 }
 
 .rfipdropdown--green input,
 .rfipdropdown--green select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--green .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #66bb6a;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--green .rfipcategory select:active,
@@ -960,16 +970,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #4caf50;
 	-webkit-box-shadow: 0 1px 0 0 #4caf50;
 	box-shadow: 0 1px 0 0 #4caf50;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--green .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #66bb6a;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--green .rfipicons__cp:active,
@@ -977,60 +987,60 @@ hr.uagb-editor__separator {
 	border-bottom-color: #4caf50;
 	-webkit-box-shadow: 0 1px 0 0 #4caf50;
 	box-shadow: 0 1px 0 0 #4caf50;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--green .rfipicons__left,
 .rfipdropdown--green .rfipicons__right {
 	background-color: #a5d6a7;
 	border: 1px solid #a5d6a7;
-	color: #2e7d32
+	color: #2e7d32;
 }
 
 .rfipdropdown--green .rfipicons__left:hover,
 .rfipdropdown--green .rfipicons__right:hover {
 	background-color: #66bb6a;
-	border: 1px solid #66bb6a
+	border: 1px solid #66bb6a;
 }
 
 .rfipdropdown--green .rfipicons__left:active,
 .rfipdropdown--green .rfipicons__left:focus,
 .rfipdropdown--green .rfipicons__right:active,
 .rfipdropdown--green .rfipicons__right:focus {
-	border: 1px solid #66bb6a
+	border: 1px solid #66bb6a;
 }
 
 .rfipdropdown--green .rfipicons__ibox {
 	background-color: #c8e6c9;
 	border: 1px solid #c8e6c9;
-	color: #2e7d32
+	color: #2e7d32;
 }
 
 .rfipdropdown--green .rfipicons__ibox:hover {
 	background-color: #66bb6a;
-	border: 1px solid #66bb6a
+	border: 1px solid #66bb6a;
 }
 
 .rfipdropdown--green .rfipicons__ibox:active,
 .rfipdropdown--green .rfipicons__ibox:focus {
-	border: 1px solid #66bb6a
+	border: 1px solid #66bb6a;
 }
 
 .rfipdropdown--green .rfipicons__ibox--error {
-	color: #ef9a9a
+	color: #ef9a9a;
 }
 
 .rfipdropdown--green .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #a5d6a7
+	background-color: #a5d6a7;
 }
 
 .rfipdropdown--green .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #66bb6a;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--green .rfipsearch input:active,
@@ -1038,80 +1048,80 @@ hr.uagb-editor__separator {
 	border-bottom-color: #4caf50;
 	-webkit-box-shadow: 0 1px 0 0 #4caf50;
 	box-shadow: 0 1px 0 0 #4caf50;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--bluegrey {
 	background-color: #fff;
-	border: 1px solid #90a4ae
+	border: 1px solid #90a4ae;
 }
 
 .rfipbtn--bluegrey:active,
 .rfipbtn--bluegrey:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #78909c
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #78909c;
 }
 
 .rfipbtn--bluegrey .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #90a4ae;
 	background-color: #cfd8dc;
-	color: #37474f
+	color: #37474f;
 }
 
 .rfipbtn--bluegrey .rfipbtn__button:hover {
-	background-color: #78909c
+	background-color: #78909c;
 }
 
 .rfipbtn--bluegrey .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #90a4ae;
-	box-shadow: inset 0 0 10px 0 #90a4ae
+	box-shadow: inset 0 0 10px 0 #90a4ae;
 }
 
 .rfipbtn--bluegrey .rfipbtn__icon {
 	border: 1px solid #b0bec5;
-	color: #37474f
+	color: #37474f;
 }
 
 .rfipbtn--bluegrey .rfipbtn__icon--empty {
-	color: #90a4ae
+	color: #90a4ae;
 }
 
 .rfipbtn--bluegrey .rfipbtn__del {
-	background-color: #b0bec5
+	background-color: #b0bec5;
 }
 
 .rfipbtn--bluegrey .rfipbtn__del:hover {
-	background-color: #90a4ae
+	background-color: #90a4ae;
 }
 
 .rfipbtn--bluegrey .rfipbtn__del:active,
 .rfipbtn--bluegrey .rfipbtn__del:focus {
-	outline: 1px solid #90a4ae
+	outline: 1px solid #90a4ae;
 }
 
 .rfipdropdown--bluegrey {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #90a4ae
+	border: 1px solid #90a4ae;
 }
 
 .rfipdropdown--bluegrey input,
 .rfipdropdown--bluegrey select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--bluegrey .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #78909c;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--bluegrey .rfipcategory select:active,
@@ -1119,16 +1129,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #607d8b;
 	-webkit-box-shadow: 0 1px 0 0 #607d8b;
 	box-shadow: 0 1px 0 0 #607d8b;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--bluegrey .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #78909c;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--bluegrey .rfipicons__cp:active,
@@ -1136,60 +1146,60 @@ hr.uagb-editor__separator {
 	border-bottom-color: #607d8b;
 	-webkit-box-shadow: 0 1px 0 0 #607d8b;
 	box-shadow: 0 1px 0 0 #607d8b;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--bluegrey .rfipicons__left,
 .rfipdropdown--bluegrey .rfipicons__right {
 	background-color: #b0bec5;
 	border: 1px solid #b0bec5;
-	color: #37474f
+	color: #37474f;
 }
 
 .rfipdropdown--bluegrey .rfipicons__left:hover,
 .rfipdropdown--bluegrey .rfipicons__right:hover {
 	background-color: #78909c;
-	border: 1px solid #78909c
+	border: 1px solid #78909c;
 }
 
 .rfipdropdown--bluegrey .rfipicons__left:active,
 .rfipdropdown--bluegrey .rfipicons__left:focus,
 .rfipdropdown--bluegrey .rfipicons__right:active,
 .rfipdropdown--bluegrey .rfipicons__right:focus {
-	border: 1px solid #78909c
+	border: 1px solid #78909c;
 }
 
 .rfipdropdown--bluegrey .rfipicons__ibox {
 	background-color: #cfd8dc;
 	border: 1px solid #cfd8dc;
-	color: #37474f
+	color: #37474f;
 }
 
 .rfipdropdown--bluegrey .rfipicons__ibox:hover {
 	background-color: #78909c;
-	border: 1px solid #78909c
+	border: 1px solid #78909c;
 }
 
 .rfipdropdown--bluegrey .rfipicons__ibox:active,
 .rfipdropdown--bluegrey .rfipicons__ibox:focus {
-	border: 1px solid #78909c
+	border: 1px solid #78909c;
 }
 
 .rfipdropdown--bluegrey .rfipicons__ibox--error {
-	color: #ef9a9a
+	color: #ef9a9a;
 }
 
 .rfipdropdown--bluegrey .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #b0bec5
+	background-color: #b0bec5;
 }
 
 .rfipdropdown--bluegrey .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #78909c;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--bluegrey .rfipsearch input:active,
@@ -1197,80 +1207,80 @@ hr.uagb-editor__separator {
 	border-bottom-color: #607d8b;
 	-webkit-box-shadow: 0 1px 0 0 #607d8b;
 	box-shadow: 0 1px 0 0 #607d8b;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--brown {
 	background-color: #fff;
-	border: 1px solid #a1887f
+	border: 1px solid #a1887f;
 }
 
 .rfipbtn--brown:active,
 .rfipbtn--brown:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #8d6e63
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #8d6e63;
 }
 
 .rfipbtn--brown .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #a1887f;
 	background-color: #d7ccc8;
-	color: #4e342e
+	color: #4e342e;
 }
 
 .rfipbtn--brown .rfipbtn__button:hover {
-	background-color: #8d6e63
+	background-color: #8d6e63;
 }
 
 .rfipbtn--brown .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #a1887f;
-	box-shadow: inset 0 0 10px 0 #a1887f
+	box-shadow: inset 0 0 10px 0 #a1887f;
 }
 
 .rfipbtn--brown .rfipbtn__icon {
 	border: 1px solid #bcaaa4;
-	color: #4e342e
+	color: #4e342e;
 }
 
 .rfipbtn--brown .rfipbtn__icon--empty {
-	color: #a1887f
+	color: #a1887f;
 }
 
 .rfipbtn--brown .rfipbtn__del {
-	background-color: #bcaaa4
+	background-color: #bcaaa4;
 }
 
 .rfipbtn--brown .rfipbtn__del:hover {
-	background-color: #a1887f
+	background-color: #a1887f;
 }
 
 .rfipbtn--brown .rfipbtn__del:active,
 .rfipbtn--brown .rfipbtn__del:focus {
-	outline: 1px solid #a1887f
+	outline: 1px solid #a1887f;
 }
 
 .rfipdropdown--brown {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #a1887f
+	border: 1px solid #a1887f;
 }
 
 .rfipdropdown--brown input,
 .rfipdropdown--brown select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--brown .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #8d6e63;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--brown .rfipcategory select:active,
@@ -1278,16 +1288,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #795548;
 	-webkit-box-shadow: 0 1px 0 0 #795548;
 	box-shadow: 0 1px 0 0 #795548;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--brown .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #8d6e63;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--brown .rfipicons__cp:active,
@@ -1295,60 +1305,60 @@ hr.uagb-editor__separator {
 	border-bottom-color: #795548;
 	-webkit-box-shadow: 0 1px 0 0 #795548;
 	box-shadow: 0 1px 0 0 #795548;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--brown .rfipicons__left,
 .rfipdropdown--brown .rfipicons__right {
 	background-color: #bcaaa4;
 	border: 1px solid #bcaaa4;
-	color: #4e342e
+	color: #4e342e;
 }
 
 .rfipdropdown--brown .rfipicons__left:hover,
 .rfipdropdown--brown .rfipicons__right:hover {
 	background-color: #8d6e63;
-	border: 1px solid #8d6e63
+	border: 1px solid #8d6e63;
 }
 
 .rfipdropdown--brown .rfipicons__left:active,
 .rfipdropdown--brown .rfipicons__left:focus,
 .rfipdropdown--brown .rfipicons__right:active,
 .rfipdropdown--brown .rfipicons__right:focus {
-	border: 1px solid #8d6e63
+	border: 1px solid #8d6e63;
 }
 
 .rfipdropdown--brown .rfipicons__ibox {
 	background-color: #d7ccc8;
 	border: 1px solid #d7ccc8;
-	color: #4e342e
+	color: #4e342e;
 }
 
 .rfipdropdown--brown .rfipicons__ibox:hover {
 	background-color: #8d6e63;
-	border: 1px solid #8d6e63
+	border: 1px solid #8d6e63;
 }
 
 .rfipdropdown--brown .rfipicons__ibox:active,
 .rfipdropdown--brown .rfipicons__ibox:focus {
-	border: 1px solid #8d6e63
+	border: 1px solid #8d6e63;
 }
 
 .rfipdropdown--brown .rfipicons__ibox--error {
-	color: #ef9a9a
+	color: #ef9a9a;
 }
 
 .rfipdropdown--brown .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #bcaaa4
+	background-color: #bcaaa4;
 }
 
 .rfipdropdown--brown .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #8d6e63;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--brown .rfipsearch input:active,
@@ -1356,80 +1366,80 @@ hr.uagb-editor__separator {
 	border-bottom-color: #795548;
 	-webkit-box-shadow: 0 1px 0 0 #795548;
 	box-shadow: 0 1px 0 0 #795548;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--cyan {
 	background-color: #fff;
-	border: 1px solid #4dd0e1
+	border: 1px solid #4dd0e1;
 }
 
 .rfipbtn--cyan:active,
 .rfipbtn--cyan:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #26c6da
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #26c6da;
 }
 
 .rfipbtn--cyan .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #4dd0e1;
 	background-color: #b2ebf2;
-	color: #00838f
+	color: #00838f;
 }
 
 .rfipbtn--cyan .rfipbtn__button:hover {
-	background-color: #26c6da
+	background-color: #26c6da;
 }
 
 .rfipbtn--cyan .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #4dd0e1;
-	box-shadow: inset 0 0 10px 0 #4dd0e1
+	box-shadow: inset 0 0 10px 0 #4dd0e1;
 }
 
 .rfipbtn--cyan .rfipbtn__icon {
 	border: 1px solid #80deea;
-	color: #00838f
+	color: #00838f;
 }
 
 .rfipbtn--cyan .rfipbtn__icon--empty {
-	color: #4dd0e1
+	color: #4dd0e1;
 }
 
 .rfipbtn--cyan .rfipbtn__del {
-	background-color: #80deea
+	background-color: #80deea;
 }
 
 .rfipbtn--cyan .rfipbtn__del:hover {
-	background-color: #4dd0e1
+	background-color: #4dd0e1;
 }
 
 .rfipbtn--cyan .rfipbtn__del:active,
 .rfipbtn--cyan .rfipbtn__del:focus {
-	outline: 1px solid #4dd0e1
+	outline: 1px solid #4dd0e1;
 }
 
 .rfipdropdown--cyan {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #4dd0e1
+	border: 1px solid #4dd0e1;
 }
 
 .rfipdropdown--cyan input,
 .rfipdropdown--cyan select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--cyan .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #26c6da;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--cyan .rfipcategory select:active,
@@ -1437,16 +1447,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #00bcd4;
 	-webkit-box-shadow: 0 1px 0 0 #00bcd4;
 	box-shadow: 0 1px 0 0 #00bcd4;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--cyan .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #26c6da;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--cyan .rfipicons__cp:active,
@@ -1454,60 +1464,60 @@ hr.uagb-editor__separator {
 	border-bottom-color: #00bcd4;
 	-webkit-box-shadow: 0 1px 0 0 #00bcd4;
 	box-shadow: 0 1px 0 0 #00bcd4;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--cyan .rfipicons__left,
 .rfipdropdown--cyan .rfipicons__right {
 	background-color: #80deea;
 	border: 1px solid #80deea;
-	color: #00838f
+	color: #00838f;
 }
 
 .rfipdropdown--cyan .rfipicons__left:hover,
 .rfipdropdown--cyan .rfipicons__right:hover {
 	background-color: #26c6da;
-	border: 1px solid #26c6da
+	border: 1px solid #26c6da;
 }
 
 .rfipdropdown--cyan .rfipicons__left:active,
 .rfipdropdown--cyan .rfipicons__left:focus,
 .rfipdropdown--cyan .rfipicons__right:active,
 .rfipdropdown--cyan .rfipicons__right:focus {
-	border: 1px solid #26c6da
+	border: 1px solid #26c6da;
 }
 
 .rfipdropdown--cyan .rfipicons__ibox {
 	background-color: #b2ebf2;
 	border: 1px solid #b2ebf2;
-	color: #00838f
+	color: #00838f;
 }
 
 .rfipdropdown--cyan .rfipicons__ibox:hover {
 	background-color: #26c6da;
-	border: 1px solid #26c6da
+	border: 1px solid #26c6da;
 }
 
 .rfipdropdown--cyan .rfipicons__ibox:active,
 .rfipdropdown--cyan .rfipicons__ibox:focus {
-	border: 1px solid #26c6da
+	border: 1px solid #26c6da;
 }
 
 .rfipdropdown--cyan .rfipicons__ibox--error {
-	color: #ef9a9a
+	color: #ef9a9a;
 }
 
 .rfipdropdown--cyan .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #80deea
+	background-color: #80deea;
 }
 
 .rfipdropdown--cyan .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #26c6da;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--cyan .rfipsearch input:active,
@@ -1515,80 +1525,80 @@ hr.uagb-editor__separator {
 	border-bottom-color: #00bcd4;
 	-webkit-box-shadow: 0 1px 0 0 #00bcd4;
 	box-shadow: 0 1px 0 0 #00bcd4;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--deeporange {
 	background-color: #fff;
-	border: 1px solid #ff8a65
+	border: 1px solid #ff8a65;
 }
 
 .rfipbtn--deeporange:active,
 .rfipbtn--deeporange:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #ff7043
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #ff7043;
 }
 
 .rfipbtn--deeporange .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #ff8a65;
 	background-color: #ffccbc;
-	color: #d84315
+	color: #d84315;
 }
 
 .rfipbtn--deeporange .rfipbtn__button:hover {
-	background-color: #ff7043
+	background-color: #ff7043;
 }
 
 .rfipbtn--deeporange .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #ff8a65;
-	box-shadow: inset 0 0 10px 0 #ff8a65
+	box-shadow: inset 0 0 10px 0 #ff8a65;
 }
 
 .rfipbtn--deeporange .rfipbtn__icon {
 	border: 1px solid #ffab91;
-	color: #d84315
+	color: #d84315;
 }
 
 .rfipbtn--deeporange .rfipbtn__icon--empty {
-	color: #ff8a65
+	color: #ff8a65;
 }
 
 .rfipbtn--deeporange .rfipbtn__del {
-	background-color: #ffab91
+	background-color: #ffab91;
 }
 
 .rfipbtn--deeporange .rfipbtn__del:hover {
-	background-color: #ff8a65
+	background-color: #ff8a65;
 }
 
 .rfipbtn--deeporange .rfipbtn__del:active,
 .rfipbtn--deeporange .rfipbtn__del:focus {
-	outline: 1px solid #ff8a65
+	outline: 1px solid #ff8a65;
 }
 
 .rfipdropdown--deeporange {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #ff8a65
+	border: 1px solid #ff8a65;
 }
 
 .rfipdropdown--deeporange input,
 .rfipdropdown--deeporange select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--deeporange .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #ff7043;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--deeporange .rfipcategory select:active,
@@ -1596,16 +1606,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #ff5722;
 	-webkit-box-shadow: 0 1px 0 0 #ff5722;
 	box-shadow: 0 1px 0 0 #ff5722;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--deeporange .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #ff7043;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--deeporange .rfipicons__cp:active,
@@ -1613,60 +1623,60 @@ hr.uagb-editor__separator {
 	border-bottom-color: #ff5722;
 	-webkit-box-shadow: 0 1px 0 0 #ff5722;
 	box-shadow: 0 1px 0 0 #ff5722;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--deeporange .rfipicons__left,
 .rfipdropdown--deeporange .rfipicons__right {
 	background-color: #ffab91;
 	border: 1px solid #ffab91;
-	color: #d84315
+	color: #d84315;
 }
 
 .rfipdropdown--deeporange .rfipicons__left:hover,
 .rfipdropdown--deeporange .rfipicons__right:hover {
 	background-color: #ff7043;
-	border: 1px solid #ff7043
+	border: 1px solid #ff7043;
 }
 
 .rfipdropdown--deeporange .rfipicons__left:active,
 .rfipdropdown--deeporange .rfipicons__left:focus,
 .rfipdropdown--deeporange .rfipicons__right:active,
 .rfipdropdown--deeporange .rfipicons__right:focus {
-	border: 1px solid #ff7043
+	border: 1px solid #ff7043;
 }
 
 .rfipdropdown--deeporange .rfipicons__ibox {
 	background-color: #ffccbc;
 	border: 1px solid #ffccbc;
-	color: #d84315
+	color: #d84315;
 }
 
 .rfipdropdown--deeporange .rfipicons__ibox:hover {
 	background-color: #ff7043;
-	border: 1px solid #ff7043
+	border: 1px solid #ff7043;
 }
 
 .rfipdropdown--deeporange .rfipicons__ibox:active,
 .rfipdropdown--deeporange .rfipicons__ibox:focus {
-	border: 1px solid #ff7043
+	border: 1px solid #ff7043;
 }
 
 .rfipdropdown--deeporange .rfipicons__ibox--error {
-	color: #ef9a9a
+	color: #ef9a9a;
 }
 
 .rfipdropdown--deeporange .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #ffab91
+	background-color: #ffab91;
 }
 
 .rfipdropdown--deeporange .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #ff7043;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--deeporange .rfipsearch input:active,
@@ -1674,80 +1684,80 @@ hr.uagb-editor__separator {
 	border-bottom-color: #ff5722;
 	-webkit-box-shadow: 0 1px 0 0 #ff5722;
 	box-shadow: 0 1px 0 0 #ff5722;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--deeppurple {
 	background-color: #fff;
-	border: 1px solid #9575cd
+	border: 1px solid #9575cd;
 }
 
 .rfipbtn--deeppurple:active,
 .rfipbtn--deeppurple:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #7e57c2
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #7e57c2;
 }
 
 .rfipbtn--deeppurple .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #9575cd;
 	background-color: #d1c4e9;
-	color: #4527a0
+	color: #4527a0;
 }
 
 .rfipbtn--deeppurple .rfipbtn__button:hover {
-	background-color: #7e57c2
+	background-color: #7e57c2;
 }
 
 .rfipbtn--deeppurple .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #9575cd;
-	box-shadow: inset 0 0 10px 0 #9575cd
+	box-shadow: inset 0 0 10px 0 #9575cd;
 }
 
 .rfipbtn--deeppurple .rfipbtn__icon {
 	border: 1px solid #b39ddb;
-	color: #4527a0
+	color: #4527a0;
 }
 
 .rfipbtn--deeppurple .rfipbtn__icon--empty {
-	color: #9575cd
+	color: #9575cd;
 }
 
 .rfipbtn--deeppurple .rfipbtn__del {
-	background-color: #b39ddb
+	background-color: #b39ddb;
 }
 
 .rfipbtn--deeppurple .rfipbtn__del:hover {
-	background-color: #9575cd
+	background-color: #9575cd;
 }
 
 .rfipbtn--deeppurple .rfipbtn__del:active,
 .rfipbtn--deeppurple .rfipbtn__del:focus {
-	outline: 1px solid #9575cd
+	outline: 1px solid #9575cd;
 }
 
 .rfipdropdown--deeppurple {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #9575cd
+	border: 1px solid #9575cd;
 }
 
 .rfipdropdown--deeppurple input,
 .rfipdropdown--deeppurple select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--deeppurple .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #7e57c2;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--deeppurple .rfipcategory select:active,
@@ -1755,16 +1765,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #673ab7;
 	-webkit-box-shadow: 0 1px 0 0 #673ab7;
 	box-shadow: 0 1px 0 0 #673ab7;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--deeppurple .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #7e57c2;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--deeppurple .rfipicons__cp:active,
@@ -1772,60 +1782,60 @@ hr.uagb-editor__separator {
 	border-bottom-color: #673ab7;
 	-webkit-box-shadow: 0 1px 0 0 #673ab7;
 	box-shadow: 0 1px 0 0 #673ab7;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--deeppurple .rfipicons__left,
 .rfipdropdown--deeppurple .rfipicons__right {
 	background-color: #b39ddb;
 	border: 1px solid #b39ddb;
-	color: #4527a0
+	color: #4527a0;
 }
 
 .rfipdropdown--deeppurple .rfipicons__left:hover,
 .rfipdropdown--deeppurple .rfipicons__right:hover {
 	background-color: #7e57c2;
-	border: 1px solid #7e57c2
+	border: 1px solid #7e57c2;
 }
 
 .rfipdropdown--deeppurple .rfipicons__left:active,
 .rfipdropdown--deeppurple .rfipicons__left:focus,
 .rfipdropdown--deeppurple .rfipicons__right:active,
 .rfipdropdown--deeppurple .rfipicons__right:focus {
-	border: 1px solid #7e57c2
+	border: 1px solid #7e57c2;
 }
 
 .rfipdropdown--deeppurple .rfipicons__ibox {
 	background-color: #d1c4e9;
 	border: 1px solid #d1c4e9;
-	color: #4527a0
+	color: #4527a0;
 }
 
 .rfipdropdown--deeppurple .rfipicons__ibox:hover {
 	background-color: #7e57c2;
-	border: 1px solid #7e57c2
+	border: 1px solid #7e57c2;
 }
 
 .rfipdropdown--deeppurple .rfipicons__ibox:active,
 .rfipdropdown--deeppurple .rfipicons__ibox:focus {
-	border: 1px solid #7e57c2
+	border: 1px solid #7e57c2;
 }
 
 .rfipdropdown--deeppurple .rfipicons__ibox--error {
-	color: #ef9a9a
+	color: #ef9a9a;
 }
 
 .rfipdropdown--deeppurple .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #b39ddb
+	background-color: #b39ddb;
 }
 
 .rfipdropdown--deeppurple .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #7e57c2;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--deeppurple .rfipsearch input:active,
@@ -1833,7 +1843,7 @@ hr.uagb-editor__separator {
 	border-bottom-color: #673ab7;
 	-webkit-box-shadow: 0 1px 0 0 #673ab7;
 	box-shadow: 0 1px 0 0 #673ab7;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--default {
@@ -1844,70 +1854,70 @@ hr.uagb-editor__separator {
 
 .rfipbtn--default:active,
 .rfipbtn--default:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #bdbdbd
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #bdbdbd;
 }
 
 .rfipbtn--default .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #e0e0e0;
 	background-color: #f5f5f5;
-	color: #424242
+	color: #424242;
 }
 
 .rfipbtn--default .rfipbtn__button:hover {
-	background-color: #bdbdbd
+	background-color: #bdbdbd;
 }
 
 .rfipbtn--default .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #e0e0e0;
-	box-shadow: inset 0 0 10px 0 #e0e0e0
+	box-shadow: inset 0 0 10px 0 #e0e0e0;
 }
 
 .rfipbtn--default .rfipbtn__icon {
 	border: 1px solid #eee;
-	color: #424242
+	color: #424242;
 }
 
 .rfipbtn--default .rfipbtn__icon--empty {
-	color: #e0e0e0
+	color: #e0e0e0;
 }
 
 .rfipbtn--default .rfipbtn__del {
-	background-color: #eee
+	background-color: #eee;
 }
 
 .rfipbtn--default .rfipbtn__del:hover {
-	background-color: #e0e0e0
+	background-color: #e0e0e0;
 }
 
 .rfipbtn--default .rfipbtn__del:active,
 .rfipbtn--default .rfipbtn__del:focus {
-	outline: 1px solid #e0e0e0
+	outline: 1px solid #e0e0e0;
 }
 
 .rfipdropdown--default {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #e0e0e0
+	border: 1px solid #e0e0e0;
 }
 
 .rfipdropdown--default input,
 .rfipdropdown--default select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--default .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #bdbdbd;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--default .rfipcategory select:active,
@@ -1915,16 +1925,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #9e9e9e;
 	-webkit-box-shadow: 0 1px 0 0 #9e9e9e;
 	box-shadow: 0 1px 0 0 #9e9e9e;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--default .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #bdbdbd;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--default .rfipicons__cp:active,
@@ -1932,56 +1942,56 @@ hr.uagb-editor__separator {
 	border-bottom-color: #9e9e9e;
 	-webkit-box-shadow: 0 1px 0 0 #9e9e9e;
 	box-shadow: 0 1px 0 0 #9e9e9e;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--default .rfipicons__left,
 .rfipdropdown--default .rfipicons__right {
 	background-color: #eee;
 	border: 1px solid #eee;
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--default .rfipicons__left:hover,
 .rfipdropdown--default .rfipicons__right:hover {
 	background-color: #bdbdbd;
-	border: 1px solid #bdbdbd
+	border: 1px solid #bdbdbd;
 }
 
 .rfipdropdown--default .rfipicons__left:active,
 .rfipdropdown--default .rfipicons__left:focus,
 .rfipdropdown--default .rfipicons__right:active,
 .rfipdropdown--default .rfipicons__right:focus {
-	border: 1px solid #bdbdbd
+	border: 1px solid #bdbdbd;
 }
 
 .rfipdropdown--default .rfipicons__ibox {
 	background-color: #f5f5f5;
 	border: 1px solid #f5f5f5;
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--default .rfipicons__ibox:hover {
 	background-color: #bdbdbd;
-	border: 1px solid #bdbdbd
+	border: 1px solid #bdbdbd;
 }
 
 .rfipdropdown--default .rfipicons__ibox:active,
 .rfipdropdown--default .rfipicons__ibox:focus {
-	border: 1px solid #bdbdbd
+	border: 1px solid #bdbdbd;
 }
 
 .rfipdropdown--default .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #eee
+	background-color: #eee;
 }
 
 .rfipdropdown--default .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #bdbdbd;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--default .rfipsearch input:active,
@@ -1989,80 +1999,80 @@ hr.uagb-editor__separator {
 	border-bottom-color: #9e9e9e;
 	-webkit-box-shadow: 0 1px 0 0 #9e9e9e;
 	box-shadow: 0 1px 0 0 #9e9e9e;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--blue {
 	background-color: #fff;
-	border: 1px solid #64b5f6
+	border: 1px solid #64b5f6;
 }
 
 .rfipbtn--blue:active,
 .rfipbtn--blue:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #42a5f5
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #42a5f5;
 }
 
 .rfipbtn--blue .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #64b5f6;
 	background-color: #bbdefb;
-	color: #1565c0
+	color: #1565c0;
 }
 
 .rfipbtn--blue .rfipbtn__button:hover {
-	background-color: #42a5f5
+	background-color: #42a5f5;
 }
 
 .rfipbtn--blue .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #64b5f6;
-	box-shadow: inset 0 0 10px 0 #64b5f6
+	box-shadow: inset 0 0 10px 0 #64b5f6;
 }
 
 .rfipbtn--blue .rfipbtn__icon {
 	border: 1px solid #90caf9;
-	color: #1565c0
+	color: #1565c0;
 }
 
 .rfipbtn--blue .rfipbtn__icon--empty {
-	color: #64b5f6
+	color: #64b5f6;
 }
 
 .rfipbtn--blue .rfipbtn__del {
-	background-color: #90caf9
+	background-color: #90caf9;
 }
 
 .rfipbtn--blue .rfipbtn__del:hover {
-	background-color: #64b5f6
+	background-color: #64b5f6;
 }
 
 .rfipbtn--blue .rfipbtn__del:active,
 .rfipbtn--blue .rfipbtn__del:focus {
-	outline: 1px solid #64b5f6
+	outline: 1px solid #64b5f6;
 }
 
 .rfipdropdown--blue {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #64b5f6
+	border: 1px solid #64b5f6;
 }
 
 .rfipdropdown--blue input,
 .rfipdropdown--blue select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--blue .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #42a5f5;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--blue .rfipcategory select:active,
@@ -2070,16 +2080,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #2196f3;
 	-webkit-box-shadow: 0 1px 0 0 #2196f3;
 	box-shadow: 0 1px 0 0 #2196f3;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--blue .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #42a5f5;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--blue .rfipicons__cp:active,
@@ -2087,60 +2097,60 @@ hr.uagb-editor__separator {
 	border-bottom-color: #2196f3;
 	-webkit-box-shadow: 0 1px 0 0 #2196f3;
 	box-shadow: 0 1px 0 0 #2196f3;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--blue .rfipicons__left,
 .rfipdropdown--blue .rfipicons__right {
 	background-color: #90caf9;
 	border: 1px solid #90caf9;
-	color: #1565c0
+	color: #1565c0;
 }
 
 .rfipdropdown--blue .rfipicons__left:hover,
 .rfipdropdown--blue .rfipicons__right:hover {
 	background-color: #42a5f5;
-	border: 1px solid #42a5f5
+	border: 1px solid #42a5f5;
 }
 
 .rfipdropdown--blue .rfipicons__left:active,
 .rfipdropdown--blue .rfipicons__left:focus,
 .rfipdropdown--blue .rfipicons__right:active,
 .rfipdropdown--blue .rfipicons__right:focus {
-	border: 1px solid #42a5f5
+	border: 1px solid #42a5f5;
 }
 
 .rfipdropdown--blue .rfipicons__ibox {
 	background-color: #bbdefb;
 	border: 1px solid #bbdefb;
-	color: #1565c0
+	color: #1565c0;
 }
 
 .rfipdropdown--blue .rfipicons__ibox:hover {
 	background-color: #42a5f5;
-	border: 1px solid #42a5f5
+	border: 1px solid #42a5f5;
 }
 
 .rfipdropdown--blue .rfipicons__ibox:active,
 .rfipdropdown--blue .rfipicons__ibox:focus {
-	border: 1px solid #42a5f5
+	border: 1px solid #42a5f5;
 }
 
 .rfipdropdown--blue .rfipicons__ibox--error {
-	color: #ef9a9a
+	color: #ef9a9a;
 }
 
 .rfipdropdown--blue .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #90caf9
+	background-color: #90caf9;
 }
 
 .rfipdropdown--blue .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #42a5f5;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--blue .rfipsearch input:active,
@@ -2148,80 +2158,80 @@ hr.uagb-editor__separator {
 	border-bottom-color: #2196f3;
 	-webkit-box-shadow: 0 1px 0 0 #2196f3;
 	box-shadow: 0 1px 0 0 #2196f3;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--indigo {
 	background-color: #fff;
-	border: 1px solid #7986cb
+	border: 1px solid #7986cb;
 }
 
 .rfipbtn--indigo:active,
 .rfipbtn--indigo:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #5c6bc0
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #5c6bc0;
 }
 
 .rfipbtn--indigo .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #7986cb;
 	background-color: #c5cae9;
-	color: #283593
+	color: #283593;
 }
 
 .rfipbtn--indigo .rfipbtn__button:hover {
-	background-color: #5c6bc0
+	background-color: #5c6bc0;
 }
 
 .rfipbtn--indigo .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #7986cb;
-	box-shadow: inset 0 0 10px 0 #7986cb
+	box-shadow: inset 0 0 10px 0 #7986cb;
 }
 
 .rfipbtn--indigo .rfipbtn__icon {
 	border: 1px solid #9fa8da;
-	color: #283593
+	color: #283593;
 }
 
 .rfipbtn--indigo .rfipbtn__icon--empty {
-	color: #7986cb
+	color: #7986cb;
 }
 
 .rfipbtn--indigo .rfipbtn__del {
-	background-color: #9fa8da
+	background-color: #9fa8da;
 }
 
 .rfipbtn--indigo .rfipbtn__del:hover {
-	background-color: #7986cb
+	background-color: #7986cb;
 }
 
 .rfipbtn--indigo .rfipbtn__del:active,
 .rfipbtn--indigo .rfipbtn__del:focus {
-	outline: 1px solid #7986cb
+	outline: 1px solid #7986cb;
 }
 
 .rfipdropdown--indigo {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #7986cb
+	border: 1px solid #7986cb;
 }
 
 .rfipdropdown--indigo input,
 .rfipdropdown--indigo select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--indigo .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #5c6bc0;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--indigo .rfipcategory select:active,
@@ -2229,16 +2239,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #3f51b5;
 	-webkit-box-shadow: 0 1px 0 0 #3f51b5;
 	box-shadow: 0 1px 0 0 #3f51b5;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--indigo .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #5c6bc0;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--indigo .rfipicons__cp:active,
@@ -2246,60 +2256,60 @@ hr.uagb-editor__separator {
 	border-bottom-color: #3f51b5;
 	-webkit-box-shadow: 0 1px 0 0 #3f51b5;
 	box-shadow: 0 1px 0 0 #3f51b5;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--indigo .rfipicons__left,
 .rfipdropdown--indigo .rfipicons__right {
 	background-color: #9fa8da;
 	border: 1px solid #9fa8da;
-	color: #283593
+	color: #283593;
 }
 
 .rfipdropdown--indigo .rfipicons__left:hover,
 .rfipdropdown--indigo .rfipicons__right:hover {
 	background-color: #5c6bc0;
-	border: 1px solid #5c6bc0
+	border: 1px solid #5c6bc0;
 }
 
 .rfipdropdown--indigo .rfipicons__left:active,
 .rfipdropdown--indigo .rfipicons__left:focus,
 .rfipdropdown--indigo .rfipicons__right:active,
 .rfipdropdown--indigo .rfipicons__right:focus {
-	border: 1px solid #5c6bc0
+	border: 1px solid #5c6bc0;
 }
 
 .rfipdropdown--indigo .rfipicons__ibox {
 	background-color: #c5cae9;
 	border: 1px solid #c5cae9;
-	color: #283593
+	color: #283593;
 }
 
 .rfipdropdown--indigo .rfipicons__ibox:hover {
 	background-color: #5c6bc0;
-	border: 1px solid #5c6bc0
+	border: 1px solid #5c6bc0;
 }
 
 .rfipdropdown--indigo .rfipicons__ibox:active,
 .rfipdropdown--indigo .rfipicons__ibox:focus {
-	border: 1px solid #5c6bc0
+	border: 1px solid #5c6bc0;
 }
 
 .rfipdropdown--indigo .rfipicons__ibox--error {
-	color: #ef9a9a
+	color: #ef9a9a;
 }
 
 .rfipdropdown--indigo .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #9fa8da
+	background-color: #9fa8da;
 }
 
 .rfipdropdown--indigo .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #5c6bc0;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--indigo .rfipsearch input:active,
@@ -2307,80 +2317,80 @@ hr.uagb-editor__separator {
 	border-bottom-color: #3f51b5;
 	-webkit-box-shadow: 0 1px 0 0 #3f51b5;
 	box-shadow: 0 1px 0 0 #3f51b5;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--lightblue {
 	background-color: #fff;
-	border: 1px solid #4fc3f7
+	border: 1px solid #4fc3f7;
 }
 
 .rfipbtn--lightblue:active,
 .rfipbtn--lightblue:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #29b6f6
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #29b6f6;
 }
 
 .rfipbtn--lightblue .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #4fc3f7;
 	background-color: #b3e5fc;
-	color: #0277bd
+	color: #0277bd;
 }
 
 .rfipbtn--lightblue .rfipbtn__button:hover {
-	background-color: #29b6f6
+	background-color: #29b6f6;
 }
 
 .rfipbtn--lightblue .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #4fc3f7;
-	box-shadow: inset 0 0 10px 0 #4fc3f7
+	box-shadow: inset 0 0 10px 0 #4fc3f7;
 }
 
 .rfipbtn--lightblue .rfipbtn__icon {
 	border: 1px solid #81d4fa;
-	color: #0277bd
+	color: #0277bd;
 }
 
 .rfipbtn--lightblue .rfipbtn__icon--empty {
-	color: #4fc3f7
+	color: #4fc3f7;
 }
 
 .rfipbtn--lightblue .rfipbtn__del {
-	background-color: #81d4fa
+	background-color: #81d4fa;
 }
 
 .rfipbtn--lightblue .rfipbtn__del:hover {
-	background-color: #4fc3f7
+	background-color: #4fc3f7;
 }
 
 .rfipbtn--lightblue .rfipbtn__del:active,
 .rfipbtn--lightblue .rfipbtn__del:focus {
-	outline: 1px solid #4fc3f7
+	outline: 1px solid #4fc3f7;
 }
 
 .rfipdropdown--lightblue {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #4fc3f7
+	border: 1px solid #4fc3f7;
 }
 
 .rfipdropdown--lightblue input,
 .rfipdropdown--lightblue select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--lightblue .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #29b6f6;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--lightblue .rfipcategory select:active,
@@ -2388,16 +2398,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #03a9f4;
 	-webkit-box-shadow: 0 1px 0 0 #03a9f4;
 	box-shadow: 0 1px 0 0 #03a9f4;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--lightblue .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #29b6f6;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--lightblue .rfipicons__cp:active,
@@ -2405,60 +2415,60 @@ hr.uagb-editor__separator {
 	border-bottom-color: #03a9f4;
 	-webkit-box-shadow: 0 1px 0 0 #03a9f4;
 	box-shadow: 0 1px 0 0 #03a9f4;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--lightblue .rfipicons__left,
 .rfipdropdown--lightblue .rfipicons__right {
 	background-color: #81d4fa;
 	border: 1px solid #81d4fa;
-	color: #0277bd
+	color: #0277bd;
 }
 
 .rfipdropdown--lightblue .rfipicons__left:hover,
 .rfipdropdown--lightblue .rfipicons__right:hover {
 	background-color: #29b6f6;
-	border: 1px solid #29b6f6
+	border: 1px solid #29b6f6;
 }
 
 .rfipdropdown--lightblue .rfipicons__left:active,
 .rfipdropdown--lightblue .rfipicons__left:focus,
 .rfipdropdown--lightblue .rfipicons__right:active,
 .rfipdropdown--lightblue .rfipicons__right:focus {
-	border: 1px solid #29b6f6
+	border: 1px solid #29b6f6;
 }
 
 .rfipdropdown--lightblue .rfipicons__ibox {
 	background-color: #b3e5fc;
 	border: 1px solid #b3e5fc;
-	color: #0277bd
+	color: #0277bd;
 }
 
 .rfipdropdown--lightblue .rfipicons__ibox:hover {
 	background-color: #29b6f6;
-	border: 1px solid #29b6f6
+	border: 1px solid #29b6f6;
 }
 
 .rfipdropdown--lightblue .rfipicons__ibox:active,
 .rfipdropdown--lightblue .rfipicons__ibox:focus {
-	border: 1px solid #29b6f6
+	border: 1px solid #29b6f6;
 }
 
 .rfipdropdown--lightblue .rfipicons__ibox--error {
-	color: #ef9a9a
+	color: #ef9a9a;
 }
 
 .rfipdropdown--lightblue .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #81d4fa
+	background-color: #81d4fa;
 }
 
 .rfipdropdown--lightblue .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #29b6f6;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--lightblue .rfipsearch input:active,
@@ -2466,80 +2476,80 @@ hr.uagb-editor__separator {
 	border-bottom-color: #03a9f4;
 	-webkit-box-shadow: 0 1px 0 0 #03a9f4;
 	box-shadow: 0 1px 0 0 #03a9f4;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--pink {
 	background-color: #fff;
-	border: 1px solid #f06292
+	border: 1px solid #f06292;
 }
 
 .rfipbtn--pink:active,
 .rfipbtn--pink:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #ec407a
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #ec407a;
 }
 
 .rfipbtn--pink .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #f06292;
 	background-color: #f8bbd0;
-	color: #ad1457
+	color: #ad1457;
 }
 
 .rfipbtn--pink .rfipbtn__button:hover {
-	background-color: #ec407a
+	background-color: #ec407a;
 }
 
 .rfipbtn--pink .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #f06292;
-	box-shadow: inset 0 0 10px 0 #f06292
+	box-shadow: inset 0 0 10px 0 #f06292;
 }
 
 .rfipbtn--pink .rfipbtn__icon {
 	border: 1px solid #f48fb1;
-	color: #ad1457
+	color: #ad1457;
 }
 
 .rfipbtn--pink .rfipbtn__icon--empty {
-	color: #f06292
+	color: #f06292;
 }
 
 .rfipbtn--pink .rfipbtn__del {
-	background-color: #f48fb1
+	background-color: #f48fb1;
 }
 
 .rfipbtn--pink .rfipbtn__del:hover {
-	background-color: #f06292
+	background-color: #f06292;
 }
 
 .rfipbtn--pink .rfipbtn__del:active,
 .rfipbtn--pink .rfipbtn__del:focus {
-	outline: 1px solid #f06292
+	outline: 1px solid #f06292;
 }
 
 .rfipdropdown--pink {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #f06292
+	border: 1px solid #f06292;
 }
 
 .rfipdropdown--pink input,
 .rfipdropdown--pink select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--pink .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #ec407a;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--pink .rfipcategory select:active,
@@ -2547,16 +2557,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #e91e63;
 	-webkit-box-shadow: 0 1px 0 0 #e91e63;
 	box-shadow: 0 1px 0 0 #e91e63;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--pink .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #ec407a;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--pink .rfipicons__cp:active,
@@ -2564,60 +2574,60 @@ hr.uagb-editor__separator {
 	border-bottom-color: #e91e63;
 	-webkit-box-shadow: 0 1px 0 0 #e91e63;
 	box-shadow: 0 1px 0 0 #e91e63;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--pink .rfipicons__left,
 .rfipdropdown--pink .rfipicons__right {
 	background-color: #f48fb1;
 	border: 1px solid #f48fb1;
-	color: #ad1457
+	color: #ad1457;
 }
 
 .rfipdropdown--pink .rfipicons__left:hover,
 .rfipdropdown--pink .rfipicons__right:hover {
 	background-color: #ec407a;
-	border: 1px solid #ec407a
+	border: 1px solid #ec407a;
 }
 
 .rfipdropdown--pink .rfipicons__left:active,
 .rfipdropdown--pink .rfipicons__left:focus,
 .rfipdropdown--pink .rfipicons__right:active,
 .rfipdropdown--pink .rfipicons__right:focus {
-	border: 1px solid #ec407a
+	border: 1px solid #ec407a;
 }
 
 .rfipdropdown--pink .rfipicons__ibox {
 	background-color: #f8bbd0;
 	border: 1px solid #f8bbd0;
-	color: #ad1457
+	color: #ad1457;
 }
 
 .rfipdropdown--pink .rfipicons__ibox:hover {
 	background-color: #ec407a;
-	border: 1px solid #ec407a
+	border: 1px solid #ec407a;
 }
 
 .rfipdropdown--pink .rfipicons__ibox:active,
 .rfipdropdown--pink .rfipicons__ibox:focus {
-	border: 1px solid #ec407a
+	border: 1px solid #ec407a;
 }
 
 .rfipdropdown--pink .rfipicons__ibox--error {
-	color: #ef9a9a
+	color: #ef9a9a;
 }
 
 .rfipdropdown--pink .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #f48fb1
+	background-color: #f48fb1;
 }
 
 .rfipdropdown--pink .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #ec407a;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--pink .rfipsearch input:active,
@@ -2625,80 +2635,80 @@ hr.uagb-editor__separator {
 	border-bottom-color: #e91e63;
 	-webkit-box-shadow: 0 1px 0 0 #e91e63;
 	box-shadow: 0 1px 0 0 #e91e63;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--orange {
 	background-color: #fff;
-	border: 1px solid #ffb74d
+	border: 1px solid #ffb74d;
 }
 
 .rfipbtn--orange:active,
 .rfipbtn--orange:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #ffa726
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #ffa726;
 }
 
 .rfipbtn--orange .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #ffb74d;
 	background-color: #ffe0b2;
-	color: #ef6c00
+	color: #ef6c00;
 }
 
 .rfipbtn--orange .rfipbtn__button:hover {
-	background-color: #ffa726
+	background-color: #ffa726;
 }
 
 .rfipbtn--orange .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #ffb74d;
-	box-shadow: inset 0 0 10px 0 #ffb74d
+	box-shadow: inset 0 0 10px 0 #ffb74d;
 }
 
 .rfipbtn--orange .rfipbtn__icon {
 	border: 1px solid #ffcc80;
-	color: #ef6c00
+	color: #ef6c00;
 }
 
 .rfipbtn--orange .rfipbtn__icon--empty {
-	color: #ffb74d
+	color: #ffb74d;
 }
 
 .rfipbtn--orange .rfipbtn__del {
-	background-color: #ffcc80
+	background-color: #ffcc80;
 }
 
 .rfipbtn--orange .rfipbtn__del:hover {
-	background-color: #ffb74d
+	background-color: #ffb74d;
 }
 
 .rfipbtn--orange .rfipbtn__del:active,
 .rfipbtn--orange .rfipbtn__del:focus {
-	outline: 1px solid #ffb74d
+	outline: 1px solid #ffb74d;
 }
 
 .rfipdropdown--orange {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #ffb74d
+	border: 1px solid #ffb74d;
 }
 
 .rfipdropdown--orange input,
 .rfipdropdown--orange select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--orange .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #ffa726;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--orange .rfipcategory select:active,
@@ -2706,16 +2716,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #ff9800;
 	-webkit-box-shadow: 0 1px 0 0 #ff9800;
 	box-shadow: 0 1px 0 0 #ff9800;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--orange .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #ffa726;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--orange .rfipicons__cp:active,
@@ -2723,60 +2733,60 @@ hr.uagb-editor__separator {
 	border-bottom-color: #ff9800;
 	-webkit-box-shadow: 0 1px 0 0 #ff9800;
 	box-shadow: 0 1px 0 0 #ff9800;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--orange .rfipicons__left,
 .rfipdropdown--orange .rfipicons__right {
 	background-color: #ffcc80;
 	border: 1px solid #ffcc80;
-	color: #ef6c00
+	color: #ef6c00;
 }
 
 .rfipdropdown--orange .rfipicons__left:hover,
 .rfipdropdown--orange .rfipicons__right:hover {
 	background-color: #ffa726;
-	border: 1px solid #ffa726
+	border: 1px solid #ffa726;
 }
 
 .rfipdropdown--orange .rfipicons__left:active,
 .rfipdropdown--orange .rfipicons__left:focus,
 .rfipdropdown--orange .rfipicons__right:active,
 .rfipdropdown--orange .rfipicons__right:focus {
-	border: 1px solid #ffa726
+	border: 1px solid #ffa726;
 }
 
 .rfipdropdown--orange .rfipicons__ibox {
 	background-color: #ffe0b2;
 	border: 1px solid #ffe0b2;
-	color: #ef6c00
+	color: #ef6c00;
 }
 
 .rfipdropdown--orange .rfipicons__ibox:hover {
 	background-color: #ffa726;
-	border: 1px solid #ffa726
+	border: 1px solid #ffa726;
 }
 
 .rfipdropdown--orange .rfipicons__ibox:active,
 .rfipdropdown--orange .rfipicons__ibox:focus {
-	border: 1px solid #ffa726
+	border: 1px solid #ffa726;
 }
 
 .rfipdropdown--orange .rfipicons__ibox--error {
-	color: #ef9a9a
+	color: #ef9a9a;
 }
 
 .rfipdropdown--orange .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #ffcc80
+	background-color: #ffcc80;
 }
 
 .rfipdropdown--orange .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #ffa726;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--orange .rfipsearch input:active,
@@ -2784,80 +2794,80 @@ hr.uagb-editor__separator {
 	border-bottom-color: #ff9800;
 	-webkit-box-shadow: 0 1px 0 0 #ff9800;
 	box-shadow: 0 1px 0 0 #ff9800;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--purple {
 	background-color: #fff;
-	border: 1px solid #ba68c8
+	border: 1px solid #ba68c8;
 }
 
 .rfipbtn--purple:active,
 .rfipbtn--purple:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #ab47bc
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #ab47bc;
 }
 
 .rfipbtn--purple .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #ba68c8;
 	background-color: #e1bee7;
-	color: #6a1b9a
+	color: #6a1b9a;
 }
 
 .rfipbtn--purple .rfipbtn__button:hover {
-	background-color: #ab47bc
+	background-color: #ab47bc;
 }
 
 .rfipbtn--purple .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #ba68c8;
-	box-shadow: inset 0 0 10px 0 #ba68c8
+	box-shadow: inset 0 0 10px 0 #ba68c8;
 }
 
 .rfipbtn--purple .rfipbtn__icon {
 	border: 1px solid #ce93d8;
-	color: #6a1b9a
+	color: #6a1b9a;
 }
 
 .rfipbtn--purple .rfipbtn__icon--empty {
-	color: #ba68c8
+	color: #ba68c8;
 }
 
 .rfipbtn--purple .rfipbtn__del {
-	background-color: #ce93d8
+	background-color: #ce93d8;
 }
 
 .rfipbtn--purple .rfipbtn__del:hover {
-	background-color: #ba68c8
+	background-color: #ba68c8;
 }
 
 .rfipbtn--purple .rfipbtn__del:active,
 .rfipbtn--purple .rfipbtn__del:focus {
-	outline: 1px solid #ba68c8
+	outline: 1px solid #ba68c8;
 }
 
 .rfipdropdown--purple {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #ba68c8
+	border: 1px solid #ba68c8;
 }
 
 .rfipdropdown--purple input,
 .rfipdropdown--purple select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--purple .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #ab47bc;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--purple .rfipcategory select:active,
@@ -2865,16 +2875,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #9c27b0;
 	-webkit-box-shadow: 0 1px 0 0 #9c27b0;
 	box-shadow: 0 1px 0 0 #9c27b0;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--purple .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #ab47bc;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--purple .rfipicons__cp:active,
@@ -2882,60 +2892,60 @@ hr.uagb-editor__separator {
 	border-bottom-color: #9c27b0;
 	-webkit-box-shadow: 0 1px 0 0 #9c27b0;
 	box-shadow: 0 1px 0 0 #9c27b0;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--purple .rfipicons__left,
 .rfipdropdown--purple .rfipicons__right {
 	background-color: #ce93d8;
 	border: 1px solid #ce93d8;
-	color: #6a1b9a
+	color: #6a1b9a;
 }
 
 .rfipdropdown--purple .rfipicons__left:hover,
 .rfipdropdown--purple .rfipicons__right:hover {
 	background-color: #ab47bc;
-	border: 1px solid #ab47bc
+	border: 1px solid #ab47bc;
 }
 
 .rfipdropdown--purple .rfipicons__left:active,
 .rfipdropdown--purple .rfipicons__left:focus,
 .rfipdropdown--purple .rfipicons__right:active,
 .rfipdropdown--purple .rfipicons__right:focus {
-	border: 1px solid #ab47bc
+	border: 1px solid #ab47bc;
 }
 
 .rfipdropdown--purple .rfipicons__ibox {
 	background-color: #e1bee7;
 	border: 1px solid #e1bee7;
-	color: #6a1b9a
+	color: #6a1b9a;
 }
 
 .rfipdropdown--purple .rfipicons__ibox:hover {
 	background-color: #ab47bc;
-	border: 1px solid #ab47bc
+	border: 1px solid #ab47bc;
 }
 
 .rfipdropdown--purple .rfipicons__ibox:active,
 .rfipdropdown--purple .rfipicons__ibox:focus {
-	border: 1px solid #ab47bc
+	border: 1px solid #ab47bc;
 }
 
 .rfipdropdown--purple .rfipicons__ibox--error {
-	color: #ef9a9a
+	color: #ef9a9a;
 }
 
 .rfipdropdown--purple .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #ce93d8
+	background-color: #ce93d8;
 }
 
 .rfipdropdown--purple .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #ab47bc;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--purple .rfipsearch input:active,
@@ -2943,80 +2953,80 @@ hr.uagb-editor__separator {
 	border-bottom-color: #9c27b0;
 	-webkit-box-shadow: 0 1px 0 0 #9c27b0;
 	box-shadow: 0 1px 0 0 #9c27b0;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--red {
 	background-color: #fff;
-	border: 1px solid #e57373
+	border: 1px solid #e57373;
 }
 
 .rfipbtn--red:active,
 .rfipbtn--red:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #ef5350
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #ef5350;
 }
 
 .rfipbtn--red .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #e57373;
 	background-color: #ffcdd2;
-	color: #c62828
+	color: #c62828;
 }
 
 .rfipbtn--red .rfipbtn__button:hover {
-	background-color: #ef5350
+	background-color: #ef5350;
 }
 
 .rfipbtn--red .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #e57373;
-	box-shadow: inset 0 0 10px 0 #e57373
+	box-shadow: inset 0 0 10px 0 #e57373;
 }
 
 .rfipbtn--red .rfipbtn__icon {
 	border: 1px solid #ef9a9a;
-	color: #c62828
+	color: #c62828;
 }
 
 .rfipbtn--red .rfipbtn__icon--empty {
-	color: #e57373
+	color: #e57373;
 }
 
 .rfipbtn--red .rfipbtn__del {
-	background-color: #ef9a9a
+	background-color: #ef9a9a;
 }
 
 .rfipbtn--red .rfipbtn__del:hover {
-	background-color: #e57373
+	background-color: #e57373;
 }
 
 .rfipbtn--red .rfipbtn__del:active,
 .rfipbtn--red .rfipbtn__del:focus {
-	outline: 1px solid #e57373
+	outline: 1px solid #e57373;
 }
 
 .rfipdropdown--red {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #e57373
+	border: 1px solid #e57373;
 }
 
 .rfipdropdown--red input,
 .rfipdropdown--red select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--red .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #ef5350;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--red .rfipcategory select:active,
@@ -3024,16 +3034,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #f44336;
 	-webkit-box-shadow: 0 1px 0 0 #f44336;
 	box-shadow: 0 1px 0 0 #f44336;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--red .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #ef5350;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--red .rfipicons__cp:active,
@@ -3041,60 +3051,60 @@ hr.uagb-editor__separator {
 	border-bottom-color: #f44336;
 	-webkit-box-shadow: 0 1px 0 0 #f44336;
 	box-shadow: 0 1px 0 0 #f44336;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--red .rfipicons__left,
 .rfipdropdown--red .rfipicons__right {
 	background-color: #ef9a9a;
 	border: 1px solid #ef9a9a;
-	color: #c62828
+	color: #c62828;
 }
 
 .rfipdropdown--red .rfipicons__left:hover,
 .rfipdropdown--red .rfipicons__right:hover {
 	background-color: #ef5350;
-	border: 1px solid #ef5350
+	border: 1px solid #ef5350;
 }
 
 .rfipdropdown--red .rfipicons__left:active,
 .rfipdropdown--red .rfipicons__left:focus,
 .rfipdropdown--red .rfipicons__right:active,
 .rfipdropdown--red .rfipicons__right:focus {
-	border: 1px solid #ef5350
+	border: 1px solid #ef5350;
 }
 
 .rfipdropdown--red .rfipicons__ibox {
 	background-color: #ffcdd2;
 	border: 1px solid #ffcdd2;
-	color: #c62828
+	color: #c62828;
 }
 
 .rfipdropdown--red .rfipicons__ibox:hover {
 	background-color: #ef5350;
-	border: 1px solid #ef5350
+	border: 1px solid #ef5350;
 }
 
 .rfipdropdown--red .rfipicons__ibox:active,
 .rfipdropdown--red .rfipicons__ibox:focus {
-	border: 1px solid #ef5350
+	border: 1px solid #ef5350;
 }
 
 .rfipdropdown--red .rfipicons__ibox--error {
-	color: #ef9a9a
+	color: #ef9a9a;
 }
 
 .rfipdropdown--red .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #ef9a9a
+	background-color: #ef9a9a;
 }
 
 .rfipdropdown--red .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #ef5350;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--red .rfipsearch input:active,
@@ -3102,80 +3112,80 @@ hr.uagb-editor__separator {
 	border-bottom-color: #f44336;
 	-webkit-box-shadow: 0 1px 0 0 #f44336;
 	box-shadow: 0 1px 0 0 #f44336;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--teal {
 	background-color: #fff;
-	border: 1px solid #4db6ac
+	border: 1px solid #4db6ac;
 }
 
 .rfipbtn--teal:active,
 .rfipbtn--teal:focus {
-	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	box-shadow: 0 1.5px 4px rgba(0, 0, 0, .24), 0 1.5px 6px rgba(0, 0, 0, .12);
-	border: 1px solid #26a69a
+	-webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+	border: 1px solid #26a69a;
 }
 
 .rfipbtn--teal .rfipbtn__button {
 	border: 0 none transparent;
 	border-left: 1px solid #4db6ac;
 	background-color: #b2dfdb;
-	color: #00695c
+	color: #00695c;
 }
 
 .rfipbtn--teal .rfipbtn__button:hover {
-	background-color: #26a69a
+	background-color: #26a69a;
 }
 
 .rfipbtn--teal .rfipbtn__button:active {
 	-webkit-box-shadow: inset 0 0 10px 0 #4db6ac;
-	box-shadow: inset 0 0 10px 0 #4db6ac
+	box-shadow: inset 0 0 10px 0 #4db6ac;
 }
 
 .rfipbtn--teal .rfipbtn__icon {
 	border: 1px solid #80cbc4;
-	color: #00695c
+	color: #00695c;
 }
 
 .rfipbtn--teal .rfipbtn__icon--empty {
-	color: #4db6ac
+	color: #4db6ac;
 }
 
 .rfipbtn--teal .rfipbtn__del {
-	background-color: #80cbc4
+	background-color: #80cbc4;
 }
 
 .rfipbtn--teal .rfipbtn__del:hover {
-	background-color: #4db6ac
+	background-color: #4db6ac;
 }
 
 .rfipbtn--teal .rfipbtn__del:active,
 .rfipbtn--teal .rfipbtn__del:focus {
-	outline: 1px solid #4db6ac
+	outline: 1px solid #4db6ac;
 }
 
 .rfipdropdown--teal {
-	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
-	box-shadow: 0 15px 24px rgba(0, 0, 0, .22), 0 19px 76px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
 	color: #424242;
 	background-color: #fff;
-	border: 1px solid #4db6ac
+	border: 1px solid #4db6ac;
 }
 
 .rfipdropdown--teal input,
 .rfipdropdown--teal select {
-	color: #424242
+	color: #424242;
 }
 
 .rfipdropdown--teal .rfipcategory select {
 	background-color: #fff;
 	border: 0 none;
 	border-bottom: 1px solid #26a69a;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--teal .rfipcategory select:active,
@@ -3183,16 +3193,16 @@ hr.uagb-editor__separator {
 	border-bottom-color: #009688;
 	-webkit-box-shadow: 0 1px 0 0 #009688;
 	box-shadow: 0 1px 0 0 #009688;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--teal .rfipicons__cp {
 	border: 0 none;
 	border-bottom: 1px solid #26a69a;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--teal .rfipicons__cp:active,
@@ -3200,60 +3210,60 @@ hr.uagb-editor__separator {
 	border-bottom-color: #009688;
 	-webkit-box-shadow: 0 1px 0 0 #009688;
 	box-shadow: 0 1px 0 0 #009688;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipdropdown--teal .rfipicons__left,
 .rfipdropdown--teal .rfipicons__right {
 	background-color: #80cbc4;
 	border: 1px solid #80cbc4;
-	color: #00695c
+	color: #00695c;
 }
 
 .rfipdropdown--teal .rfipicons__left:hover,
 .rfipdropdown--teal .rfipicons__right:hover {
 	background-color: #26a69a;
-	border: 1px solid #26a69a
+	border: 1px solid #26a69a;
 }
 
 .rfipdropdown--teal .rfipicons__left:active,
 .rfipdropdown--teal .rfipicons__left:focus,
 .rfipdropdown--teal .rfipicons__right:active,
 .rfipdropdown--teal .rfipicons__right:focus {
-	border: 1px solid #26a69a
+	border: 1px solid #26a69a;
 }
 
 .rfipdropdown--teal .rfipicons__ibox {
 	background-color: #b2dfdb;
 	border: 1px solid #b2dfdb;
-	color: #00695c
+	color: #00695c;
 }
 
 .rfipdropdown--teal .rfipicons__ibox:hover {
 	background-color: #26a69a;
-	border: 1px solid #26a69a
+	border: 1px solid #26a69a;
 }
 
 .rfipdropdown--teal .rfipicons__ibox:active,
 .rfipdropdown--teal .rfipicons__ibox:focus {
-	border: 1px solid #26a69a
+	border: 1px solid #26a69a;
 }
 
 .rfipdropdown--teal .rfipicons__ibox--error {
-	color: #ef9a9a
+	color: #ef9a9a;
 }
 
 .rfipdropdown--teal .rfipicons__icon--selected .rfipicons__ibox {
-	background-color: #80cbc4
+	background-color: #80cbc4;
 }
 
 .rfipdropdown--teal .rfipsearch input {
 	border: 0 none;
 	border-bottom: 1px solid #26a69a;
-	-webkit-transition: border .25s, -webkit-box-shadow .25s;
-	transition: border .25s, -webkit-box-shadow .25s;
-	transition: box-shadow .25s, border .25s;
-	transition: box-shadow .25s, border .25s, -webkit-box-shadow .25s
+	-webkit-transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: border 0.25s, -webkit-box-shadow 0.25s;
+	transition: box-shadow 0.25s, border 0.25s;
+	transition: box-shadow 0.25s, border 0.25s, -webkit-box-shadow 0.25s;
 }
 
 .rfipdropdown--teal .rfipsearch input:active,
@@ -3261,7 +3271,7 @@ hr.uagb-editor__separator {
 	border-bottom-color: #009688;
 	-webkit-box-shadow: 0 1px 0 0 #009688;
 	box-shadow: 0 1px 0 0 #009688;
-	outline: 0 none
+	outline: 0 none;
 }
 
 .rfipbtn--default .rfipbtn__icon {
@@ -3273,7 +3283,7 @@ hr.uagb-editor__separator {
 	height: 18px;
 }
 
-[class^=fipicon-] {
+[class^="fipicon-"] {
 	speak: none;
 	font-style: normal;
 	font-weight: 400;
@@ -3284,91 +3294,100 @@ hr.uagb-editor__separator {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-i.fipicon-angle-down:before {
+i.fipicon-angle-down::before {
 	content: "\f140";
 	font-family: dashicons;
 }
 
-i.fipicon-angle-up:before {
+i.fipicon-angle-up::before {
 	content: "\f142";
 	font-family: dashicons;
 }
 
-i.fipicon-angle-right:before {
+i.fipicon-angle-right::before {
 	content: "\f345";
 	font-family: dashicons;
 }
 
-i.fipicon-angle-left:before {
+i.fipicon-angle-left::before {
 	content: "\f341";
 	font-family: dashicons;
 }
 
 label.wp-block-uagb-blockquote__via-label svg {
-    fill: #6c7781;
-    vertical-align: middle;
-}
-.slick-arrow svg{
+	fill: #6c7781;
 	vertical-align: middle;
 }
-.components-select-control__input{
+
+.slick-arrow svg {
+	vertical-align: middle;
+}
+
+.components-select-control__input {
 	text-transform: capitalize;
 }
+
 .components-panel__body.uagb-repeater-panel {
-   max-width: 100%;
-   margin: 0 auto;
-   margin-bottom: 1em;
-   border: 1px solid #e2e4e7;
-   background: #fff;
-   margin-top: 1em;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	border: 1px solid #e2e4e7;
+	background: #fff;
+	margin-top: 1em;
 }
-.edit-post-settings-sidebar__panel-block .components-panel__body.uagb-repeater-panel:last-child{
+
+.edit-post-settings-sidebar__panel-block .components-panel__body.uagb-repeater-panel:last-child {
 	margin-bottom: 1em;
 }
+
 .uagb-inline-margin .uagb-margin-control label.components-base-control__label {
-    display: inline-block;
+	display: inline-block;
 }
+
 .uagb-inline-margin .components-button-group.uagb-size-type-field {
-    display: inline-block;
-    float: right;
+	display: inline-block;
+	float: right;
 }
 
 /* Reset Button Alignment */
-.uagb-size-type-field-tabs.uagb-size-type-field__common-tabs .components-base-control.components-range-control.uagb-margin-control .components-base-control__field{
-    display:flex;
-} 
+.uagb-size-type-field-tabs.uagb-size-type-field__common-tabs .components-base-control.components-range-control.uagb-margin-control .components-base-control__field {
+	display: flex;
+}
 
-.uagb-size-type-field-tabs.uagb-inline-margin .components-range-control .components-base-control__field{
-    display:unset;
+.uagb-size-type-field-tabs.uagb-inline-margin .components-range-control .components-base-control__field {
+	display: unset;
 }
 
 .uag-typography-range-options .uagb-size-type-field-tabs .components-tab-panel__tab-content .components-base-control.components-range-control .components-base-control__field {
-	display:block;
+	display: block;
 }
 
-.uagb-size-type-field-tabs .components-tab-panel__tab-content div.components-base-control .components-base-control__field{
-    display:block;
+.uagb-size-type-field-tabs .components-tab-panel__tab-content div.components-base-control .components-base-control__field {
+	display: block;
 }
 
-.uagb-typography-advanced .uag-typography-range-options .uagb-size-type-field-tabs .components-base-control.components-range-control .components-base-control__field{
-    display:block;
+.uagb-typography-advanced .uag-typography-range-options .uagb-size-type-field-tabs .components-base-control.components-range-control .components-base-control__field {
+	display: block;
 }
+
 .uagb-forms-button-group {
-	margin-bottom:15px;
+	margin-bottom: 15px;
 }
+
 /* WP 5.6 typography icon css */
-.uag-typography-option-actions button .dashicons,.uag-typography-option-actions button .dashicons-before:before {
-    font-size:15px
+.uag-typography-option-actions button .dashicons,
+.uag-typography-option-actions button .dashicons-before::before {
+	font-size: 15px;
 }
 
 .uagb-size-type-field-tabs .components-tab-panel__tabs button span.dashicon.dashicons {
-    font-size:15px
+	font-size: 15px;
 }
 
-.uag-typography-range-options + .components-base-control .components-base-control__field .css-unzpkb-Flex-Root{
-    position:inherit;
+.uag-typography-range-options + .components-base-control .components-base-control__field .css-unzpkb-Flex-Root {
+	position: inherit;
 }
 
 .uag-typography-range-options + .components-button-group.uagb-size-type-field {
-    margin-bottom:-33px
+	margin-bottom: -33px;
 }

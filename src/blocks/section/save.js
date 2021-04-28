@@ -3,17 +3,17 @@
  */
 
 // Import block dependencies and components.
-import classnames from "classnames"
+import classnames from "classnames";
 
-const { Fragment } = wp.element
+const { Fragment } = wp.element;
 
 const {
 	InnerBlocks
-} = wp.blockEditor
+} = wp.blockEditor;
 
 export default function save( props ) {
 
-	const { attributes, className } = props
+	const { attributes, className } = props;
 
 	const {
 		block_id,
@@ -22,18 +22,18 @@ export default function save( props ) {
 		backgroundVideo,
 		contentWidth,
 		align
-	} = props.attributes
+	} = props.attributes;
 
-	let block_controls_class = ""
+	let block_controls_class = "";
 
 	if ( "full_width" == contentWidth ) {
 
 		if ( align == "wide" || align == "full" ) {
-			block_controls_class = "align" + align
+			block_controls_class = "align" + align;
 		}
 	}
 
-	const CustomTag = `${tag}`
+	const CustomTag = `${tag}`;
 
 	return (
 		<CustomTag
@@ -49,7 +49,7 @@ export default function save( props ) {
 			{ "video" == backgroundType &&
 				<div className="uagb-section__video-wrap">
 					{  backgroundVideo &&
-					<video autoplay loop muted playsinline>
+					<video autoPlay loop muted playsinline>
 						<source src={ backgroundVideo.url } type='video/mp4' />
 					</video>
 					}
@@ -60,5 +60,5 @@ export default function save( props ) {
 				<InnerBlocks.Content />
 			</div>
 		</CustomTag>
-	)
+	);
 }

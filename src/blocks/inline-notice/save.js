@@ -3,16 +3,16 @@
  */
 
 // Import block dependencies and components.
-import classnames from "classnames"
-import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
+import classnames from "classnames";
+import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon";
 
 const {
 	RichText,
-} = wp.blockEditor
+} = wp.blockEditor;
 
 export default function save( props ) {
 	
-	const { attributes, className } = props
+	const { attributes, className } = props;
 
 	const {
 		block_id,
@@ -25,17 +25,17 @@ export default function save( props ) {
 		noticeDismiss,
 		cookies,
 		close_cookie_days
-	} = attributes
+	} = attributes;
  	
-	let image_icon_html = ''
+	let image_icon_html = "";
 
 	if ( noticeDismiss ) {
-		image_icon_html = <span className="uagb-notice-dismiss">{ renderSVG(icon) }</span>
+		image_icon_html = <span className="uagb-notice-dismiss">{ renderSVG( icon ) }</span>;
 	}
 
-	var active = '';
+	let active = "";
 	if ( true === cookies ) {
-		active = 'uagb-notice__active';
+		active = "uagb-notice__active";
 	}
 	return (
 		<div className={ classnames(
@@ -47,7 +47,7 @@ export default function save( props ) {
 			`${ active }`
 		) }
 		>
-			{image_icon_html}
+			{ image_icon_html }
 			<RichText.Content
 				value={ noticeTitle }
 				tagName={ headingTag }
@@ -59,5 +59,5 @@ export default function save( props ) {
 				className='uagb-notice-text'
 			/>
 		</div>
-		)
+	);
 }

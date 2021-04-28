@@ -1,21 +1,21 @@
 [ID*="-optin-notice"] {
-    padding: 1px 12px;
-    border-left-color: #007cba;
+	padding: 1px 12px;
+	border-left-color: #007cba;
 }
 
 [ID*="-optin-notice"] .notice-container {
-    padding-top: 10px;
-    padding-bottom: 12px;
+	padding-top: 10px;
+	padding-bottom: 12px;
 }
 
 [ID*="-optin-notice"] .notice-content {
-    margin: 0;
+	margin: 0;
 }
 
 [ID*="-optin-notice"] .notice-heading {
-    padding: 0 20px 12px 0;
+	padding: 0 20px 12px 0;
 }
 
 [ID*="-optin-notice"] .button-primary {
-    margin-right: 5px;
+	margin-right: 5px;
 }

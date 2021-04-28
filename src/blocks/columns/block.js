@@ -2,43 +2,43 @@
  * BLOCK: Columns
  */
 
-import classnames from "classnames"
-import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
-import attributes from "./attributes"
-import edit from "./edit"
-import deprecated from "./deprecated"
-import shapes from "./shapes"
-import variations from './variations';
-import "./style.scss"
-import "./editor.scss"
+import classnames from "classnames";
+import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons";
+import attributes from "./attributes";
+import edit from "./edit";
+import deprecated from "./deprecated";
+import shapes from "./shapes";
+import variations from "./variations";
+import "./style.scss";
+import "./editor.scss";
 
 
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const {
 	registerBlockType
-} = wp.blocks
+} = wp.blocks;
 
 const {
 	InnerBlocks,
-} = wp.blockEditor
+} = wp.blockEditor;
 
 registerBlockType( "uagb/columns", {
-	title: uagb_blocks_info.blocks["uagb/columns"]["title"],
-	description: uagb_blocks_info.blocks["uagb/columns"]["description"],
+	title: uagb_blocks_info.blocks["uagb/columns"].title,
+	description: uagb_blocks_info.blocks["uagb/columns"].description,
 	icon: UAGB_Block_Icons.columns,
 	category: uagb_blocks_info.category,
 	keywords: [
-		__( "columns", 'ultimate-addons-for-gutenberg' ),
-		__( "rows", 'ultimate-addons-for-gutenberg' ),
-		__( "uag", 'ultimate-addons-for-gutenberg' ),
+		__( "columns", "ultimate-addons-for-gutenberg" ),
+		__( "rows", "ultimate-addons-for-gutenberg" ),
+		__( "uag", "ultimate-addons-for-gutenberg" ),
 	],
 	attributes,
 	variations,
 	edit,
 	getEditWrapperProps( attributes ) {
-		return { "data-align": attributes.align }
-		return { "data-valign": attributes.vAlign }
+		return { "data-align": attributes.align };
+		return { "data-valign": attributes.vAlign };
 	},
 	supports: {
 		// Add EditorsKit block navigator toolbar
@@ -46,9 +46,9 @@ registerBlockType( "uagb/columns", {
 		anchor: true,
 	},
 	example: {},
-	save : function( props ) {
+	save( props ) {
 
-		const { attributes, className } = props
+		const { attributes, className } = props;
 
 		const {
 			block_id,
@@ -68,9 +68,9 @@ registerBlockType( "uagb/columns", {
 			reverseMobile,
 			topContentAboveShape,
 			bottomContentAboveShape
-		} = attributes
+		} = attributes;
 
-		const CustomTag = `${tag}`
+		const CustomTag = `${tag}`;
 
 		const top_divider_html = (
 			topType != "none" && (
@@ -81,10 +81,10 @@ registerBlockType( "uagb/columns", {
 						{ "uagb-columns__shape-flip": topFlip === true },
 						{ "uagb-columns__shape-above-content": topContentAboveShape === true }
 					) }>
-					{shapes[topType]}
+					{ shapes[topType] }
 				</div>
 			)
-		)
+		);
 
 		const bottom_divider_html = (
 			bottomType != "none" && (
@@ -96,14 +96,14 @@ registerBlockType( "uagb/columns", {
 						{ "uagb-columns__shape-above-content": bottomContentAboveShape === true }
 					) }
 					data-negative="false">
-					{shapes[bottomType]}
+					{ shapes[bottomType] }
 				</div>
 			)
-		)
+		);
 
-		const reverse_tablet = ( reverseTablet ) ? "uagb-columns__reverse-tablet" : ""
+		const reverse_tablet = ( reverseTablet ) ? "uagb-columns__reverse-tablet" : "";
 
-		const reverse_mobile = ( reverseMobile ) ? "uagb-columns__reverse-mobile" : ""
+		const reverse_mobile = ( reverseMobile ) ? "uagb-columns__reverse-mobile" : "";
 
 		return (
 			<CustomTag
@@ -125,7 +125,7 @@ registerBlockType( "uagb/columns", {
 				{ "video" == backgroundType &&
 					<div className="uagb-columns__video-wrap">
 						{  backgroundVideo &&
-							<video autoplay loop muted playsinline>
+							<video autoPlay loop muted playsinline>
 								<source src={ backgroundVideo.url } type='video/mp4' />
 							</video>
 						}
@@ -140,7 +140,7 @@ registerBlockType( "uagb/columns", {
 				</div>
 				{ bottom_divider_html }
 			</CustomTag>
-		)
+		);
 	},
 	deprecated,
-} )
+} );

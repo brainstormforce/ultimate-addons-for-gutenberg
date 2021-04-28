@@ -3,24 +3,24 @@
  */
 
 // Import block dependencies and components.
-import classnames from "classnames"
-import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
+import classnames from "classnames";
+import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon";
 
 // Import icon.
-import attributes from "./attributes"
+import attributes from "./attributes";
 
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const {
 	RichText
-} = wp.blockEditor
+} = wp.blockEditor;
 
 const deprecated = [
 	{
 		attributes,
 		save: props => {
 
-			const { attributes, className } = props
+			const { attributes, className } = props;
 
 			const {
 				block_id,
@@ -29,9 +29,9 @@ const deprecated = [
 				icon_layout,
 				hideLabel,
 				disableLink
-			} = props.attributes
+			} = props.attributes;
 
-			const labelClass = ( hideLabel ) ? "uagb-icon-list__no-label" : ""
+			const labelClass = ( hideLabel ) ? "uagb-icon-list__no-label" : "";
 
 			return (
 				<div className={ classnames(
@@ -46,24 +46,22 @@ const deprecated = [
 							icons.map( ( icon, index ) => {
 
 								if ( icon_count <= index ) {
-									return
+									return;
 								}
 
-								let url = ""
-								let image_icon_html = ""
+								const url = "";
+								let image_icon_html = "";
 
 								if ( icon.image_icon == "icon" ) {
 									if ( icon.icon ) {
-										image_icon_html = <span className={ classnames( icon.icon , "uagb-icon-list__source-icon" ) }></span>
+										image_icon_html = <span className={ classnames( icon.icon , "uagb-icon-list__source-icon" ) }></span>;
 									}
-								} else {
-									if ( icon.image ) {
-										image_icon_html = <img className="uagb-icon-list__source-image" src={icon.image.url} />
-									}
+								} else if ( icon.image ) {
+									image_icon_html = <img className="uagb-icon-list__source-image" src={ icon.image.url } />;
 								}
 
-								let target = ( icon.target ) ? "_blank" : "_self"
-								let link_url = ( !disableLink ) ? icon.link : "javascript:void(0);"
+								const target = ( icon.target ) ? "_blank" : "_self";
+								const link_url = ( !disableLink ) ? icon.link : "javascript:void(0);";
 
 								return (
 									<a
@@ -77,7 +75,7 @@ const deprecated = [
 										href={ link_url }
 									>
 										<div className="uagb-icon-list__content-wrap">
-											<span className="uagb-icon-list__source-wrap">{image_icon_html}</span>
+											<span className="uagb-icon-list__source-wrap">{ image_icon_html }</span>
 											{ ! hideLabel && "" != icons[ index ].label &&
 												<div className="uagb-icon-list__label-wrap">
 													<RichText.Content
@@ -88,19 +86,19 @@ const deprecated = [
 											}
 										</div>
 									</a>
-								)
-							})
+								);
+							} )
 						}
 					</div>
 				</div>
-			)
+			);
 		},
 	},
 	{
 		attributes,
 		save: props => {
 
-			const { attributes, className } = props
+			const { attributes, className } = props;
 
 			const {
 				block_id,
@@ -109,9 +107,9 @@ const deprecated = [
 				icon_layout,
 				hideLabel,
 				disableLink
-			} = props.attributes
+			} = props.attributes;
 
-			const labelClass = ( hideLabel ) ? "uagb-icon-list__no-label" : ""
+			const labelClass = ( hideLabel ) ? "uagb-icon-list__no-label" : "";
 
 			return (
 				<div className={ classnames(
@@ -126,24 +124,22 @@ const deprecated = [
 							icons.map( ( icon, index ) => {
 
 								if ( icon_count <= index ) {
-									return
+									return;
 								}
 
-								let url = ""
-								let image_icon_html = ""
+								const url = "";
+								let image_icon_html = "";
 
 								if ( icon.image_icon == "icon" ) {
 									if ( icon.icon ) {
-										image_icon_html = <span className="uagb-icon-list__source-icon">{ renderSVG(icon.icon) }</span>
+										image_icon_html = <span className="uagb-icon-list__source-icon">{ renderSVG( icon.icon ) }</span>;
 									}
-								} else {
-									if ( icon.image ) {
-										image_icon_html = <img className="uagb-icon-list__source-image" src={icon.image.url} />
-									}
+								} else if ( icon.image ) {
+									image_icon_html = <img className="uagb-icon-list__source-image" src={ icon.image.url } />;
 								}
 
-								let target = ( icon.target ) ? "_blank" : "_self"
-								let link_url = ( !disableLink ) ? icon.link : "javascript:void(0);"
+								const target = ( icon.target ) ? "_blank" : "_self";
+								const link_url = ( !disableLink ) ? icon.link : "javascript:void(0);";
 
 								return (
 									<a
@@ -157,7 +153,7 @@ const deprecated = [
 										href={ link_url }
 									>
 										<div className="uagb-icon-list__content-wrap">
-											<span className="uagb-icon-list__source-wrap">{image_icon_html}</span>
+											<span className="uagb-icon-list__source-wrap">{ image_icon_html }</span>
 											{ ! hideLabel && "" != icons[ index ].label &&
 												<div className="uagb-icon-list__label-wrap">
 													<RichText.Content
@@ -168,18 +164,18 @@ const deprecated = [
 											}
 										</div>
 									</a>
-								)
-							})
+								);
+							} )
 						}
 					</div>
 				</div>
-			)
+			);
 		},
 	},
 	{
 		attributes,
 		save: props => {
-			const { attributes, className } = props
+			const { attributes, className } = props;
 
 			const {
 				block_id,
@@ -188,9 +184,9 @@ const deprecated = [
 				icon_layout,
 				hideLabel,
 				iconPosition
-			} = props.attributes
+			} = props.attributes;
 
-			const labelClass = ( hideLabel ) ? "uagb-icon-list__no-label" : ""
+			const labelClass = ( hideLabel ) ? "uagb-icon-list__no-label" : "";
 
 			return (
 				<div className={ classnames(
@@ -206,24 +202,22 @@ const deprecated = [
 							icons.map( ( icon, index ) => {
 
 								if ( icon_count <= index ) {
-									return
+									return;
 								}
 
-								let url = ""
-								let image_icon_html = ""
+								const url = "";
+								let image_icon_html = "";
 
 								if ( icon.image_icon == "icon" ) {
 									if ( icon.icon ) {
-										image_icon_html = <span className="uagb-icon-list__source-icon">{ renderSVG(icon.icon) }</span>
+										image_icon_html = <span className="uagb-icon-list__source-icon">{ renderSVG( icon.icon ) }</span>;
 									}
-								} else {
-									if ( icon.image ) {
-										image_icon_html = <img className="uagb-icon-list__source-image" src={icon.image.url} />
-									}
+								} else if ( icon.image ) {
+									image_icon_html = <img className="uagb-icon-list__source-image" src={ icon.image.url } />;
 								}
 
-								let target = ( icon.target ) ? "_blank" : "_self"
-								let link_url = ( !icon.disableLink ) ? icon.link : "javascript:void(0);"
+								const target = ( icon.target ) ? "_blank" : "_self";
+								const link_url = ( !icon.disableLink ) ? icon.link : "javascript:void(0);";
 
 								return (
 									<a
@@ -237,7 +231,7 @@ const deprecated = [
 										href={ link_url }
 									>
 										<div className="uagb-icon-list__content-wrap">
-											<span className="uagb-icon-list__source-wrap">{image_icon_html}</span>
+											<span className="uagb-icon-list__source-wrap">{ image_icon_html }</span>
 											{ ! hideLabel && "" != icons[ index ].label &&
 												<div className="uagb-icon-list__label-wrap">
 													<RichText.Content
@@ -248,18 +242,18 @@ const deprecated = [
 											}
 										</div>
 									</a>
-								)
-							})
+								);
+							} )
 						}
 					</div>
 				</div>
-			)
+			);
 		}
 	},
 	{
 		attributes,
 		save: props => {
-			const { attributes, className } = props
+			const { attributes, className } = props;
 
 			const {
 				block_id,
@@ -268,9 +262,9 @@ const deprecated = [
 				icon_layout,
 				hideLabel,
 				iconPosition
-			} = props.attributes
+			} = props.attributes;
 
-			const labelClass = ( hideLabel ) ? "uagb-icon-list__no-label" : ""
+			const labelClass = ( hideLabel ) ? "uagb-icon-list__no-label" : "";
 
 			return (
 				<div className={ classnames(
@@ -286,24 +280,22 @@ const deprecated = [
 							icons.map( ( icon, index ) => {
 
 								if ( icon_count <= index ) {
-									return
+									return;
 								}
 
-								let url = ""
-								let image_icon_html = ""
+								const url = "";
+								let image_icon_html = "";
 
 								if ( icon.image_icon == "icon" ) {
 									if ( icon.icon ) {
-										image_icon_html = <span className="uagb-icon-list__source-icon">{ renderSVG(icon.icon) }</span>
+										image_icon_html = <span className="uagb-icon-list__source-icon">{ renderSVG( icon.icon ) }</span>;
 									}
-								} else {
-									if ( icon.image ) {
-										image_icon_html = <img className="uagb-icon-list__source-image" src={icon.image.url} />
-									}
+								} else if ( icon.image ) {
+									image_icon_html = <img className="uagb-icon-list__source-image" src={ icon.image.url } />;
 								}
 
-								let target = ( icon.target ) ? "_blank" : "_self"
-								let link_url = ( !icon.disableLink ) ? icon.link : "/"
+								const target = ( icon.target ) ? "_blank" : "_self";
+								const link_url = ( !icon.disableLink ) ? icon.link : "/";
 
 								return (
 									<a
@@ -317,7 +309,7 @@ const deprecated = [
 										href={ link_url }
 									>
 										<div className="uagb-icon-list__content-wrap">
-											<span className="uagb-icon-list__source-wrap">{image_icon_html}</span>
+											<span className="uagb-icon-list__source-wrap">{ image_icon_html }</span>
 											{ ! hideLabel && "" != icons[ index ].label &&
 												<div className="uagb-icon-list__label-wrap">
 													<RichText.Content
@@ -328,18 +320,18 @@ const deprecated = [
 											}
 										</div>
 									</a>
-								)
-							})
+								);
+							} )
 						}
 					</div>
 				</div>
-			)
+			);
 		}
 	},
 	{
 		attributes,
 		save: props => {
-			const { attributes, className } = props
+			const { attributes, className } = props;
 
 			const {
 				block_id,
@@ -348,9 +340,9 @@ const deprecated = [
 				icon_layout,
 				hideLabel,
 				iconPosition
-			} = props.attributes
+			} = props.attributes;
 
-			const labelClass = ( hideLabel ) ? "uagb-icon-list__no-label" : ""
+			const labelClass = ( hideLabel ) ? "uagb-icon-list__no-label" : "";
 
 			return (
 				<div className={ classnames(
@@ -366,24 +358,22 @@ const deprecated = [
 							icons.map( ( icon, index ) => {
 
 								if ( icon_count <= index ) {
-									return
+									return;
 								}
 
-								let url = ""
-								let image_icon_html = ""
+								const url = "";
+								let image_icon_html = "";
 
 								if ( icon.image_icon == "icon" ) {
 									if ( icon.icon ) {
-										image_icon_html = <span className="uagb-icon-list__source-icon">{ renderSVG(icon.icon) }</span>
+										image_icon_html = <span className="uagb-icon-list__source-icon">{ renderSVG( icon.icon ) }</span>;
 									}
-								} else {
-									if ( icon.image ) {
-										image_icon_html = <img className="uagb-icon-list__source-image" src={icon.image.url} />
-									}
+								} else if ( icon.image ) {
+									image_icon_html = <img className="uagb-icon-list__source-image" src={ icon.image.url } />;
 								}
 
-								let target = ( icon.target ) ? "_blank" : "_self"
-								let link_url = ( !icon.disableLink ) ? icon.link : "/"
+								const target = ( icon.target ) ? "_blank" : "_self";
+								const link_url = ( !icon.disableLink ) ? icon.link : "/";
 
 								if ( icon.disableLink ) {
 									return (
@@ -395,7 +385,7 @@ const deprecated = [
 											key={ index }
 										>
 											<div className="uagb-icon-list__content-wrap">
-												<span className="uagb-icon-list__source-wrap">{image_icon_html}</span>
+												<span className="uagb-icon-list__source-wrap">{ image_icon_html }</span>
 												{ ! hideLabel && "" != icons[ index ].label &&
 													<div className="uagb-icon-list__label-wrap">
 														<RichText.Content
@@ -406,42 +396,42 @@ const deprecated = [
 												}
 											</div>
 										</div>
-									)
-								} else {
+									);
+								} 
 
-									return (
-										<a
-											className={ classnames(
-												`uagb-icon-list-repeater-${index}`,
-												"uagb-icon-list__wrapper"
-											) }
-											key={ index }
-											target={ target }
-											rel="noopener noreferrer"
-											href={ link_url }
-										>
-											<div className="uagb-icon-list__content-wrap">
-												<span className="uagb-icon-list__source-wrap">{image_icon_html}</span>
-												{ ! hideLabel && "" != icons[ index ].label &&
-													<div className="uagb-icon-list__label-wrap">
-														<RichText.Content
-															tagName="span"
-															value={ icons[ index ].label }
-															className='uagb-icon-list__label' />
-													</div>
-												}
+								return (
+									<a
+										className={ classnames(
+											`uagb-icon-list-repeater-${index}`,
+											"uagb-icon-list__wrapper"
+										) }
+										key={ index }
+										target={ target }
+										rel="noopener noreferrer"
+										href={ link_url }
+									>
+										<div className="uagb-icon-list__content-wrap">
+											<span className="uagb-icon-list__source-wrap">{ image_icon_html }</span>
+											{ ! hideLabel && "" != icons[ index ].label &&
+											<div className="uagb-icon-list__label-wrap">
+												<RichText.Content
+													tagName="span"
+													value={ icons[ index ].label }
+													className='uagb-icon-list__label' />
 											</div>
-										</a>
-									)
-								}
+											}
+										</div>
+									</a>
+								);
+								
 
-							})
+							} )
 						}
 					</div>
 				</div>
-			)
+			);
 		}
 	}
-]
+];
 
 export default deprecated;

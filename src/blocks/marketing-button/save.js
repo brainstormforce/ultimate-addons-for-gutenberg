@@ -3,16 +3,16 @@
  */
 
 // Import block dependencies and components.
-import classnames from "classnames"
-import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon"
+import classnames from "classnames";
+import renderSVG from "../../../dist/blocks/uagb-controls/renderIcon";
 
 const {
 	RichText
-} = wp.blockEditor
+} = wp.blockEditor;
 
 export default function save( props ) {
 
-	const { attributes, className } = props
+	const { attributes, className } = props;
 
 	const {
 		block_id,
@@ -25,9 +25,9 @@ export default function save( props ) {
 		link,
 		linkTarget,
 		titleTag
-	} = props.attributes
+	} = props.attributes;
 
-	let target = ( linkTarget ) ? "_blank" : ""
+	const target = ( linkTarget ) ? "_blank" : "";
 
 	return (
 		<div className={ classnames(
@@ -39,7 +39,7 @@ export default function save( props ) {
 			`uagb-block-${ block_id }`
 		) }>
 			<div className="uagb-marketing-btn__wrap">
-				<a href={ link } className="uagb-marketing-btn__link" target={ target } rel ="noopener noreferrer">
+				<a href={ link } className="uagb-marketing-btn__link" target={ target } rel="noopener noreferrer">
 					<div className="uagb-marketing-btn__title-wrap">
 						{ "" != icon &&
 							<div className="uagb-marketing-btn__icon-wrap">
@@ -62,5 +62,5 @@ export default function save( props ) {
 				</a>
 			</div>
 		</div>
-	)
+	);
 }

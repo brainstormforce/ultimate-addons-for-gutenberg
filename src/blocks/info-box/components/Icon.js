@@ -1,4 +1,4 @@
-import renderSVG from "../../../../dist/blocks/uagb-controls/renderIcon"
+import renderSVG from "../../../../dist/blocks/uagb-controls/renderIcon";
 
 const { __ } = wp.i18n
 

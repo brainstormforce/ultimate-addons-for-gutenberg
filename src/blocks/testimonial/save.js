@@ -2,14 +2,14 @@
  * BLOCK: Testimonial - Save Block
  */
 
-import classnames from "classnames"
-import AuthorName from "./components/AuthorName"
-import Company from "./components/Company"
-import Description from "./components/Description"
-import PositionClasses from "./classes"
-import TestimonialImage from "./components/Image"
+import classnames from "classnames";
+import AuthorName from "./components/AuthorName";
+import Company from "./components/Company";
+import Description from "./components/Description";
+import PositionClasses from "./classes";
+import TestimonialImage from "./components/Image";
 
-const { Fragment } = wp.element
+const { Fragment } = wp.element;
 
 export default function save( props ) {
 	const {
@@ -27,7 +27,7 @@ export default function save( props ) {
 		test_block,
 		imagePosition,
 		arrowColor,
-	} = props.attributes
+	} = props.attributes;
 
 	return (
 		<div className={ classnames(
@@ -46,43 +46,43 @@ export default function save( props ) {
 			>
 				{ test_block.map( ( test, index ) =>
 
-					<div className = { classnames(
+					<div className={ classnames(
 						"uagb-testimonial__wrap",
 						...PositionClasses( props.attributes ),
-					) } key ={ "wrap-"+index } >
-						<div className = "uagb-tm__content" key ={ "tm_content-"+index }>
-							<div className = "uagb-tm__overlay"></div>
-							{ (imagePosition == "top" || imagePosition == "left" ) && <TestimonialImage  attributes={props.attributes} index_value = {index} /> }
+					) } key={ "wrap-"+index } >
+						<div className="uagb-tm__content" key={ "tm_content-"+index }>
+							<div className="uagb-tm__overlay"></div>
+							{ ( imagePosition == "top" || imagePosition == "left" ) && <TestimonialImage  attributes={ props.attributes } index_value={ index } /> }
 
-							<div className ="uagb-tm__text-wrap">
+							<div className="uagb-tm__text-wrap">
 								{  // Get description.
 									<Fragment>
-										<div className = "uagb-testinomial-text-wrap" key={"text-wrap-"+index}>
-											<Description attributes={props.attributes} setAttributes = "not_set" props = { props }  index_value = {index}/>
+										<div className="uagb-testinomial-text-wrap" key={ "text-wrap-"+index }>
+											<Description attributes={ props.attributes } setAttributes="not_set" props={ props }  index_value={ index } />
 										</div>
 									</Fragment>
 								}
-								<div className ="uagb-tm__meta">
-									<div className ="uagb-tm__meta-inner">
+								<div className="uagb-tm__meta">
+									<div className="uagb-tm__meta-inner">
 
-										{ (imagePosition == "bottom" ) && <TestimonialImage  attributes={props.attributes}  index_value = {index} /> }
+										{ ( imagePosition == "bottom" ) && <TestimonialImage  attributes={ props.attributes }  index_value={ index } /> }
 
 										{ //title_text
 											<Fragment>
-												<div className = "uagb-testimonial-details" key={"tm_wraps-"+index}>
-													<AuthorName attributes={props.attributes} setAttributes = "not_set"  props = { props } index_value = {index}/>
-													<Company attributes={props.attributes} setAttributes = "not_set"  props = { props }  index_value = {index}/>
+												<div className="uagb-testimonial-details" key={ "tm_wraps-"+index }>
+													<AuthorName attributes={ props.attributes } setAttributes="not_set"  props={ props } index_value={ index } />
+													<Company attributes={ props.attributes } setAttributes="not_set"  props={ props }  index_value={ index } />
 												</div>
 											</Fragment>
 										}
 									</div>
 								</div>
 							</div>
-							{ ( imagePosition == "right" ) && <TestimonialImage  attributes={props.attributes} index_value = {index} /> }
+							{ ( imagePosition == "right" ) && <TestimonialImage  attributes={ props.attributes } index_value={ index } /> }
 						</div>
 					</div>
-				)}
+				) }
 			</div>
 		</div>
-	)
+	);
 }

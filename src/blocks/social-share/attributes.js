@@ -2,11 +2,11 @@
  * BLOCK: UAGB Social Share Attributes
  */
 
-const ITEM_COUNT = 1
+const ITEM_COUNT = 1;
 
-const socials = []
+const socials = [];
 
-for (var i = 1; i <= ITEM_COUNT; i++) {
+for ( let i = 1; i <= ITEM_COUNT; i++ ) {
 	socials.push(
 		{
 			"type": "facebook",
@@ -18,7 +18,7 @@ for (var i = 1; i <= ITEM_COUNT; i++) {
 			"icon_bg_color": "",
 			"icon_bg_hover_color": "",
 		}
-	)
+	);
 }
 
 const attributes = {
@@ -92,6 +92,6 @@ const attributes = {
 		type: "string",
 		default: "none"
 	}
-}
+};
 
-export default attributes
+export default attributes;

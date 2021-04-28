@@ -2,44 +2,44 @@
  * BLOCK: UAGB Timeline Attributes
  */
 
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
-const ITEM_COUNT = 5
+const ITEM_COUNT = 5;
 
-const item = []
-const date_arr = []
+const item = [];
+const date_arr = [];
 
-for (var i = 1; i <= ITEM_COUNT; i++) {
+for ( let i = 1; i <= ITEM_COUNT; i++ ) {
 
 	item.push(
 		{
-			"time_heading": __( "Timeline Heading ",'ultimate-addons-for-gutenberg' ) + i ,
-			"time_desc": __( "This is Timeline description, you can change me anytime click here ",'ultimate-addons-for-gutenberg' ),
+			"time_heading": __( "Timeline Heading ","ultimate-addons-for-gutenberg" ) + i ,
+			"time_desc": __( "This is Timeline description, you can change me anytime click here ","ultimate-addons-for-gutenberg" ),
 		}
-	)
+	);
 
-	var j = i - 1
-	var today = new Date( "1/1/2019" )
-	var dd = today.getDate()
-	var mm = today.getMonth()+1 //January is 0!
-	var yyyy = today.getFullYear()-j
+	const j = i - 1;
+	let today = new Date( "1/1/2019" );
+	let dd = today.getDate();
+	let mm = today.getMonth()+1; //January is 0!
+	const yyyy = today.getFullYear()-j;
 
-	if( dd < 10 ) {
-		dd = "0" + dd
+	if ( dd < 10 ) {
+		dd = "0" + dd;
 	}
 
-	if( mm < 10 ) {
-		mm = "0" + mm
+	if ( mm < 10 ) {
+		mm = "0" + mm;
 	}
 
-	today = mm + "/" + dd + "/" + yyyy
-	var p = { "title" : today }
+	today = mm + "/" + dd + "/" + yyyy;
+	const p = { "title" : today };
 
 	date_arr.push(
 		{
 			"title": today,
 		}
-	)
+	);
 }
 
 const attributes = {
@@ -316,6 +316,6 @@ const attributes = {
 		type: "string",
 		default: "tablet"
 	},
-}
+};
 
-export default attributes
+export default attributes;

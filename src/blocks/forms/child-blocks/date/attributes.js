@@ -1,49 +1,49 @@
 /**
  * BLOCK: UAGB Form - Date Attributes
  */
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const attributes = {
-  block_id: {
-    type: "string"
-  },
-  dateRequired : {
-    type: "boolean",
-    default: false
-  },
-  name: {
-    type: "string",
-    default: __("Date" , 'ultimate-addons-for-gutenberg' )
-  },
-  additonalVal : {
-    type: "boolean",
-    default: false
-  },
-  minYear: {
-    type: "string",    
-    default: "",   
-  },
-  minMonth: {
-    type: "string",  
-    default: "",   
-  },
-  minDay: {
-    type: "string",   
-    default: "",   
-  },
-  maxYear: {
-    type: "string",
-    default: "",   
-  },
-  maxMonth: {
-    type: "string",
-    default: "",   
-  },
-  maxDay: {
-    type: "string",
-    default: "",  
-  },
+	block_id: {
+		type: "string"
+	},
+	dateRequired : {
+		type: "boolean",
+		default: false
+	},
+	name: {
+		type: "string",
+		default: __( "Date" , "ultimate-addons-for-gutenberg" )
+	},
+	additonalVal : {
+		type: "boolean",
+		default: false
+	},
+	minYear: {
+		type: "string",    
+		default: "",   
+	},
+	minMonth: {
+		type: "string",  
+		default: "",   
+	},
+	minDay: {
+		type: "string",   
+		default: "",   
+	},
+	maxYear: {
+		type: "string",
+		default: "",   
+	},
+	maxMonth: {
+		type: "string",
+		default: "",   
+	},
+	maxDay: {
+		type: "string",
+		default: "",  
+	},
   
   
-}
-export default attributes
+};
+export default attributes;

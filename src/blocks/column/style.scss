@@ -7,7 +7,7 @@
 .uagb-column__wrap {
 
 	position: relative;
-	overflow:hidden;
+	overflow: hidden;
 
 	.uagb-column__inner-wrap {
 		margin-left: auto;
@@ -64,20 +64,21 @@
 }
 
 .wp-block-uagb-columns > .editor-inner-blocks > .editor-block-list__layout > [data-type="uagb/column"] {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: -14px;
-    margin-right: -14px;
-    min-width: 0;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    flex-basis: 100%;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: -14px;
+	margin-right: -14px;
+	min-width: 0;
+	word-break: break-word;
+	overflow-wrap: break-word;
+	flex-basis: 100%;
 }
 
 @media (max-width: 976px) {
+
 	.uagb-column__align-tablet-left .uagb-column__inner-wrap {
 		margin-left: 0;
 		margin-right: auto;
@@ -90,6 +91,7 @@
 }
 
 @media (max-width: 767px) {
+
 	.uagb-column__align-mobile-left .uagb-column__inner-wrap {
 		margin-left: 0;
 		margin-right: auto;
@@ -102,7 +104,8 @@
 }
 
 @media (max-width: 449px) {
-	.uagb-columns__wrap.uagb-columns__background-image{
-		background-attachment: scroll!important;
+
+	.uagb-columns__wrap.uagb-columns__background-image {
+		background-attachment: scroll !important;
 	}
 }

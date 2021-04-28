@@ -2,7 +2,7 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
 
 function styling( props ) {
 
@@ -11,9 +11,9 @@ function styling( props ) {
 		icon_hover_color,
 		icon_bg_color,
 		icon_bg_hover_color,
-	} = props.attributes
+	} = props.attributes;
 
-	var selectors = {
+	const selectors = {
 		".uagb-ss-repeater a.uagb-ss__link" : {
 			"color" : icon_color
 		},
@@ -32,14 +32,14 @@ function styling( props ) {
 		".uagb-ss-repeater.uagb-ss__wrapper:hover" : {
 			"background" : icon_bg_hover_color,
 		}
-	}
+	};
 
-	var styling_css = ""
-	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
+	let styling_css = "";
+	const id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`;
 
-	styling_css = generateCSS( selectors, id )
+	styling_css = generateCSS( selectors, id );
 
-	return styling_css
+	return styling_css;
 }
 
-export default styling
+export default styling;

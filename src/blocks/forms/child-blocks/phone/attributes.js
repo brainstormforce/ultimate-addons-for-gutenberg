@@ -1,22 +1,22 @@
 /**
  * BLOCK: UAGB Form - Phone Attributes
  */
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 const attributes = {
-    block_id: {
+	block_id: {
 		type: "string"
-    },
-    phoneName: {
-        type: "string",
-        default: __("Phone" , 'ultimate-addons-for-gutenberg' )
-    },
+	},
+	phoneName: {
+		type: "string",
+		default: __( "Phone" , "ultimate-addons-for-gutenberg" )
+	},
 	phoneRequired : {
-        type: "boolean",
-        default: false
-    },
-    pattern: {
-        type: "string",
-        default: __("[0-9]{3}-[0-9]{3}-[0-9]{4}" , 'ultimate-addons-for-gutenberg'),
-    }
-}
-export default attributes
+		type: "boolean",
+		default: false
+	},
+	pattern: {
+		type: "string",
+		default: __( "[0-9]{3}-[0-9]{3}-[0-9]{4}" , "ultimate-addons-for-gutenberg" ),
+	}
+};
+export default attributes;

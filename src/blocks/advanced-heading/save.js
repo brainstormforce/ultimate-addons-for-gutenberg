@@ -2,11 +2,11 @@
  * BLOCK: Advanced Heading - Save Block
  */
 
-import classnames from "classnames"
+import classnames from "classnames";
 
 const {
 	RichText
-} = wp.blockEditor
+} = wp.blockEditor;
 
 export default function save( props ) {
 	
@@ -17,11 +17,11 @@ export default function save( props ) {
 		headingTag,
 		seperatorStyle,
 		headingId
-	} = props.attributes
+	} = props.attributes;
 
-	var seprator_output =  ""
-	if( seperatorStyle !== "none" ){
-		seprator_output = <div className="uagb-separator-wrap" ><div className="uagb-separator"></div></div>
+	let seprator_output =  "";
+	if ( seperatorStyle !== "none" ){
+		seprator_output = <div className="uagb-separator-wrap" ><div className="uagb-separator"></div></div>;
 	}
 	return (
 		<div
@@ -34,14 +34,14 @@ export default function save( props ) {
 				tagName={ headingTag }
 				value={ headingTitle }
 				className='uagb-heading-text'	
-				id = { headingId }				
+				id={ headingId }				
 			/>
-			{seprator_output}
+			{ seprator_output }
 			<RichText.Content
 				tagName="p"
 				value={ headingDesc }
 				className='uagb-desc-text'					
 			/>
 		</div>
-	)
+	);
 }

@@ -2,81 +2,81 @@
  * BLOCK: Forms - Upload - Edit
  */
 
-import classnames from "classnames"
+import classnames from "classnames";
 
-const { __ } = wp.i18n
+const { __ } = wp.i18n;
 
 const {
 	Component,
 	Fragment
-} = wp.element
+} = wp.element;
 
 const {
 	PanelBody,	
 	ToggleControl,
 	FormTokenField
-} = wp.components
+} = wp.components;
 const {
 	InspectorControls,
 	RichText,
-} = wp.blockEditor
+} = wp.blockEditor;
 
 class UAGBFormsUploadEdit extends Component {
 
 	constructor() {
-		super( ...arguments )
+		super( ...arguments );
 	}
 
 	componentDidMount() {
 
-		const { setAttributes } = this.props
+		const { setAttributes } = this.props;
 
 		// Assigning block_id in the attribute.
-		setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } )
+		setAttributes( { block_id: this.props.clientId.substr( 0, 8 ) } );
 
 		// Pushing Style tag for this block css.
-		const $style = document.createElement( "style" )
-		$style.setAttribute( "id", "uagb-style-forms-upload-" + this.props.clientId.substr( 0, 8 ) )
-		document.head.appendChild( $style )
+		const $style = document.createElement( "style" );
+		$style.setAttribute( "id", "uagb-style-forms-upload-" + this.props.clientId.substr( 0, 8 ) );
+		document.head.appendChild( $style );
 		
 	}
 	
 	render() {
 
-		const { attributes, setAttributes,isSelected } = this.props
+		const { attributes, setAttributes,isSelected } = this.props;
 
-        const {
+		const {
 			block_id,
 			uploadRequired,
 			name,
 			formats
-		} = attributes
+		} = attributes;
 		
 		
 		const uploadInspectorControls = () => {
 
 			return (
 				<PanelBody
-					title={ __( "General"  , 'ultimate-addons-for-gutenberg') }
+					title={ __( "General"  , "ultimate-addons-for-gutenberg" ) }
 					initialOpen={ true }
 					className="uagb__url-panel-body"
 				>
 					<ToggleControl
-						label={ __( "Required"  , 'ultimate-addons-for-gutenberg') }
+						label={ __( "Required"  , "ultimate-addons-for-gutenberg" ) }
 						checked={ uploadRequired }
 						onChange={ ( value ) => setAttributes( { uploadRequired: ! uploadRequired } ) }
 					/>
 					<h2>Allowed Formats</h2>
 					<FormTokenField 
-					value={ formats } 					
-					onChange={ ( value ) => setAttributes( { formats: value } ) }
-					placeholder={__("Type allowed formats" , 'ultimate-addons-for-gutenberg')}
+						value={ formats } 					
+						onChange={ ( value ) => setAttributes( { formats: value } ) }
+						placeholder={ __( "Type allowed formats" , "ultimate-addons-for-gutenberg" ) }
 					/>
 				</PanelBody>
-			)
-		}
+			);
+		};
 
-		const isRequired = (uploadRequired) ? __("required" , 'ultimate-addons-for-gutenberg') : "";
+		const isRequired = ( uploadRequired ) ? __( "required" , "ultimate-addons-for-gutenberg" ) : "";
 
 		return (
 			<Fragment>
@@ -89,29 +89,29 @@ class UAGBFormsUploadEdit extends Component {
 					`uagb-block-${ block_id }`,
 					
 				) }>
-					{isSelected && (
+					{ isSelected && (
 						<div className="uagb-forms-required-wrap">
 							<ToggleControl
-								label={ __( "Required" , 'ultimate-addons-for-gutenberg' ) }
+								label={ __( "Required" , "ultimate-addons-for-gutenberg" ) }
 								checked={ uploadRequired }
 								onChange={ ( value ) => setAttributes( { uploadRequired: ! uploadRequired } ) }
 							/>
 						</div>
-					)}
+					) }
 					<RichText
 						tagName="div"
-						placeholder={ __( "Name" , 'ultimate-addons-for-gutenberg') }
+						placeholder={ __( "Name" , "ultimate-addons-for-gutenberg" ) }
 						value={ name }
 						onChange={ ( value ) => setAttributes( { name: value } ) }
-						className={`uagb-forms-upload-label ${isRequired} uagb-forms-input-label`}
+						className={ `uagb-forms-upload-label ${isRequired} uagb-forms-input-label` }
 						multiline={ false }
 						id={ block_id }
 					/>					
-					<input type="file" name={ block_id } className="uagb-forms-upload-input" disabled required={uploadRequired} />
+					<input type="file" name={ block_id } className="uagb-forms-upload-input" disabled required={ uploadRequired } />
 				</div>
 			</Fragment>
-		)
+		);
 	}
 }
 
-export default UAGBFormsUploadEdit
+export default UAGBFormsUploadEdit;

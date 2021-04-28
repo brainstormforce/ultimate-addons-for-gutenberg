@@ -2,8 +2,8 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function styling( props ) {
 
@@ -48,15 +48,15 @@ function styling( props ) {
 		costSpace,
 		row_gap,
 		step_gap
-	} = props.attributes
+	} = props.attributes;
 
-	var tablet_selectors = {}
-	var mobile_selectors = {}
+	let tablet_selectors = {};
+	let mobile_selectors = {};
 
-	var s_gap = ( '' !== step_gap ) ? step_gap : 0;
+	let s_gap = ( "" !== step_gap ) ? step_gap : 0;
 	s_gap += 30;
 
-	var selectors = {
+	const selectors = {
 		
 		" .block-editor-rich-text__editable.uagb-howto-desc-text": {
 			"font-family": subHeadFontFamily,
@@ -65,31 +65,31 @@ function styling( props ) {
 			"line-height": generateCSSUnit( subHeadLineHeight, subHeadLineHeightType ),
 			"color": subHeadingColor,
 		},
-		' .uagb-how-to-main-wrap p': { 
-			"margin-bottom" :generateCSSUnit( row_gap, 'px' ),
+		" .uagb-how-to-main-wrap p": { 
+			"margin-bottom" :generateCSSUnit( row_gap, "px" ),
 		 },
 
-		 ' .uagb-how-to-main-wrap .uagb-howto__source-wrap': { 
-			"margin-bottom" :generateCSSUnit( row_gap, 'px' ),
+		 " .uagb-how-to-main-wrap .uagb-howto__source-wrap": { 
+			"margin-bottom" :generateCSSUnit( row_gap, "px" ),
 		 },
 
-		' .uagb-how-to-main-wrap span.uagb-howto__time-wrap' : {
-		   "margin-bottom" :generateCSSUnit( row_gap, 'px' ),
+		" .uagb-how-to-main-wrap span.uagb-howto__time-wrap" : {
+		   "margin-bottom" :generateCSSUnit( row_gap, "px" ),
 		},
 
-		' .uagb-how-to-main-wrap span.uagb-howto__cost-wrap' : {
-		    "margin-bottom" :generateCSSUnit( row_gap, 'px' ),
+		" .uagb-how-to-main-wrap span.uagb-howto__cost-wrap" : {
+		    "margin-bottom" :generateCSSUnit( row_gap, "px" ),
 		},
 
-		' .uagb-how-to-tools .uagb-how-to-tools-child__wrapper:last-child' : {
-		 "margin-bottom" : generateCSSUnit( row_gap, 'px' ),
+		" .uagb-how-to-tools .uagb-how-to-tools-child__wrapper:last-child" : {
+		 "margin-bottom" : generateCSSUnit( row_gap, "px" ),
 		 },
 
-		' .uagb-how-to-materials .uagb-how-to-materials-child__wrapper:last-child' : {
-		 "margin-bottom" :  generateCSSUnit( row_gap, 'px' ),
+		" .uagb-how-to-materials .uagb-how-to-materials-child__wrapper:last-child" : {
+		 "margin-bottom" :  generateCSSUnit( row_gap, "px" ),
 		 },
-		' .uagb-howto-steps__wrap .wp-block-uagb-info-box' : {
-			'margin-bottom' : generateCSSUnit( s_gap, 'px' )
+		" .uagb-howto-steps__wrap .wp-block-uagb-info-box" : {
+			"margin-bottom" : generateCSSUnit( s_gap, "px" )
 		},
 		" .block-editor-rich-text__editable.uagb-howto-timeNeeded-text": {
 			"font-family": priceFontFamily,
@@ -104,7 +104,7 @@ function styling( props ) {
 			"font-size": generateCSSUnit( subHeadFontSize, subHeadFontSizeType ),
 			"line-height": generateCSSUnit( subHeadLineHeight, subHeadLineHeightType ),
 			"color": subHeadingColor,
-			"margin-left" : generateCSSUnit( timeSpace,"px"),
+			"margin-left" : generateCSSUnit( timeSpace,"px" ),
 		},
 		" .uagb-howto-timeINmin-text ": {
 			"font-family": subHeadFontFamily,
@@ -126,7 +126,7 @@ function styling( props ) {
 			"font-size": generateCSSUnit( subHeadFontSize, subHeadFontSizeType ),
 			"line-height": generateCSSUnit( subHeadLineHeight, subHeadLineHeightType ),
 			"color": subHeadingColor,
-			"margin-left" : generateCSSUnit( costSpace,"px"),
+			"margin-left" : generateCSSUnit( costSpace,"px" ),
 		},
 
 		" .uagb-howto-steps__wrap h4.block-editor-rich-text__editable" :{
@@ -189,12 +189,12 @@ function styling( props ) {
 			"line-height": generateCSSUnit( subHeadLineHeight, subHeadLineHeightType ),
 			"color": subHeadingColor,
 		},
-	}
+	};
 
 	selectors[" .uagb-how-to-main-wrap"] = {
 		    "text-align": overallAlignment,
 		    "display": "block",
-	}
+	};
 
 	selectors[" " + headingTag + ".block-editor-rich-text__editable.uagb-howto-heading-text"] = {
 		"font-family": headFontFamily,
@@ -203,7 +203,7 @@ function styling( props ) {
 		"line-height": generateCSSUnit( headLineHeight, headLineHeightType ),
 		"color": headingColor,
 		"margin-bottom": generateCSSUnit( headSpace, "px" ),
-	}
+	};
 
 	mobile_selectors = {
 		" .block-editor-rich-text__editable.uagb-howto-heading-text": {
@@ -254,7 +254,7 @@ function styling( props ) {
 			"font-size": generateCSSUnit( priceFontSizeMobile, priceFontSizeType ),
 			"line-height": generateCSSUnit( priceLineHeightMobile, priceLineHeightType ),
 		},
-	}
+	};
 
 	tablet_selectors = {
 		" .block-editor-rich-text__editable.uagb-howto-heading-text": {
@@ -305,17 +305,17 @@ function styling( props ) {
 			"font-size": generateCSSUnit( priceFontSizeTablet, priceFontSizeType ),
 			"line-height": generateCSSUnit( priceLineHeightTablet, priceLineHeightType ),
 		},
-	}
+	};
 
-	var base_selector = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`
+	const base_selector = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`;
 
-	var styling_css = generateCSS( selectors, base_selector )
+	let styling_css = generateCSS( selectors, base_selector );
 
-	styling_css += generateCSS( tablet_selectors, `${base_selector}.uagb-editor-preview-mode-tablet`, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, `${base_selector}.uagb-editor-preview-mode-tablet`, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, `${base_selector}.uagb-editor-preview-mode-mobile`, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, `${base_selector}.uagb-editor-preview-mode-mobile`, true, "mobile" );
 
-	return styling_css
+	return styling_css;
 }
 
-export default styling
+export default styling;

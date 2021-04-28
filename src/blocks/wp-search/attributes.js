@@ -5,27 +5,27 @@
 const attributes = {
 	block_id : {
 		type : "string"
-    },
-    layout : {
-        type : "string",
-        default: "input-button"
-    },
-    placeholder : {
-        type : "string",
-        default: "Type & Hit Enter"
-    },
-    inputSize : {
-        type : "number",
-        default: 100
-    },
-    textColor : {
-        type : "string",
-    },
-    inputBgColor : {
+	},
+	layout : {
+		type : "string",
+		default: "input-button"
+	},
+	placeholder : {
+		type : "string",
+		default: "Type & Hit Enter"
+	},
+	inputSize : {
+		type : "number",
+		default: 100
+	},
+	textColor : {
+		type : "string",
+	},
+	inputBgColor : {
 		type : "string",
 		default: "#ECEEEF"
-    },
-    boxShadowColor: {
+	},
+	boxShadowColor: {
 		type: "string"
 	},
 	boxShadowHOffset : {
@@ -45,8 +45,8 @@ const attributes = {
 	boxShadowPosition: {
 		type: "string",
 		default: "outset"
-    },
-    borderStyle: {
+	},
+	borderStyle: {
 		type: "string",
 		default : "none"
 	},
@@ -59,33 +59,33 @@ const attributes = {
 	},
 	borderColor: {
 		type: "string",
-    },
-    buttonBgColor: {
+	},
+	buttonBgColor: {
 		type: "string",
 		default: "#9d9d9d"
-    },
-    buttonBgHoverColor: {
-		type: "string",
-    },
-    buttonIconColor: {
-		type: "string",
-    },
-    buttonIconHoverColor: {
+	},
+	buttonBgHoverColor: {
 		type: "string",
 	},
-    buttonWidth: {
+	buttonIconColor: {
+		type: "string",
+	},
+	buttonIconHoverColor: {
+		type: "string",
+	},
+	buttonWidth: {
 		type: "number",
 		default : 55
-    },
-    buttonIconSize: {
+	},
+	buttonIconSize: {
 		type: "number",
 		default : 17
 	},    
-    iconColor: {
+	iconColor: {
 		type: "string",
 		default: ""
-    },
-    iconSize: {
+	},
+	iconSize: {
 		type: "number",
 		default : 17
 	},
@@ -208,14 +208,14 @@ const attributes = {
 	buttonTextColor: {
 		type: "string",
 		default: "#313131"
-    },
-    buttonTextHoverColor: {
+	},
+	buttonTextHoverColor: {
 		type: "string",
 	},
 	inputSizeType : {
 		type:"string",
 		default: "%"
 	}
-}
+};
 
-export default attributes
+export default attributes;

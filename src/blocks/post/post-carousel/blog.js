@@ -1,15 +1,15 @@
-import classnames from "classnames"
-import Slider from "react-slick"
-import UAGB_Block_Icons from "../../../../dist/blocks/uagb-controls/block-icons"
+import classnames from "classnames";
+import Slider from "react-slick";
+import UAGB_Block_Icons from "../../../../dist/blocks/uagb-controls/block-icons";
 import {
 	InnerBlockLayoutContextProvider,
 	renderPostLayout 
-} from '.././function';
+} from ".././function";
 class Blog extends React.Component {
 
 	render() {
 
-		const { attributes, className, latestPosts, block_id, categoriesList, deviceType } = this.props
+		const { attributes, className, latestPosts, block_id, categoriesList, deviceType } = this.props;
 
 		const {
 			columns,
@@ -28,55 +28,55 @@ class Blog extends React.Component {
 			arrowDots,
 			equalHeight,
 			layoutConfig
-		} = attributes
+		} = attributes;
 
 		// Removing posts from display should be instant.
 		const displayPosts = latestPosts.length > postsToShow ?
 			latestPosts.slice( 0, postsToShow ) :
-			latestPosts
+			latestPosts;
 
 		function NextArrow( props ) {
 
 			return (
-				<button type="button" data-role="none" className="slick-next slick-arrow" aria-label="Next" tabIndex="0" role="button" style={{ "borderColor" : arrowColor, "borderRadius" : arrowBorderRadius, "borderWidth" : arrowBorderSize }}>
+				<button type="button" data-role="none" className="slick-next slick-arrow" aria-label="Next" tabIndex="0" role="button" style={ { "borderColor" : arrowColor, "borderRadius" : arrowBorderRadius, "borderWidth" : arrowBorderSize } }>
 					{ UAGB_Block_Icons.carousel_right }
 				</button>
-			)
+			);
 		}
 
 		function PrevArrow( props ) {
 
 			return (
-				<button type="button" data-role="none" className="slick-prev slick-arrow" aria-label="Previous" tabIndex="0" role="button" style={{ "borderColor" : arrowColor, "borderRadius" : arrowBorderRadius, "borderWidth" : arrowBorderSize }}>
+				<button type="button" data-role="none" className="slick-prev slick-arrow" aria-label="Previous" tabIndex="0" role="button" style={ { "borderColor" : arrowColor, "borderRadius" : arrowBorderRadius, "borderWidth" : arrowBorderSize } }>
 					{ UAGB_Block_Icons.carousel_left }
 				</button>
-			)
+			);
 		}
 
-		let dots = ( "dots" == arrowDots || "arrows_dots" == arrowDots ) ? true : false
-		let arrows = ( "arrows" == arrowDots || "arrows_dots" == arrowDots ) ? true : false
+		const dots = ( "dots" == arrowDots || "arrows_dots" == arrowDots ) ? true : false;
+		const arrows = ( "arrows" == arrowDots || "arrows_dots" == arrowDots ) ? true : false;
 
-		const equalHeightClass = equalHeight ? "uagb-post__carousel_equal-height" : ""
+		const equalHeightClass = equalHeight ? "uagb-post__carousel_equal-height" : "";
 
-		var current = this
+		const current = this;
 		const settings = {
 			slidesToShow : columns,
 			slidesToScroll : 1,
 			autoplaySpeed : 2000,
-			autoplay : autoplay,
+			autoplay,
 			infinite : infiniteLoop,
-			pauseOnHover : pauseOnHover,
+			pauseOnHover,
 			speed : transitionSpeed,
-			arrows : arrows,
-			dots : dots,
+			arrows,
+			dots,
 			rtl : false,
 			afterChange: current  => {
-				if( equalHeight ){
-					uagb_carousel_height(block_id)
+				if ( equalHeight ){
+					uagb_carousel_height( block_id );
 				}
 		    },
-			nextArrow: <NextArrow arrowSize={arrowSize}/>,
-			prevArrow: <PrevArrow arrowSize={arrowSize}/>,
+			nextArrow: <NextArrow arrowSize={ arrowSize } />,
+			prevArrow: <PrevArrow arrowSize={ arrowSize } />,
 			responsive : [
 				{
 					breakpoint : 1024,
@@ -93,21 +93,21 @@ class Blog extends React.Component {
 					}
 				}
 			]
-		}
+		};
 
 		const all_posts = displayPosts.map( ( post, i ) =>
-				<article key={ i } >
-					<div className="uagb-post__inner-wrap" >
-							{ renderPostLayout(
-								"uagb/post-carousel",
-								post,
-								layoutConfig,
-								this.props.attributes,
-								this.props.categoriesList
-							) }
-					</div>
-				</article>
-		)
+			<article key={ i } >
+				<div className="uagb-post__inner-wrap" >
+					{ renderPostLayout(
+						"uagb/post-carousel",
+						post,
+						layoutConfig,
+						this.props.attributes,
+						this.props.categoriesList
+					) }
+				</div>
+			</article>
+		);
 
 		if ( columns >= displayPosts.length ) {
 			return (
@@ -121,7 +121,7 @@ class Blog extends React.Component {
 						`uagb-editor-preview-mode-${ deviceType.toLowerCase() }`,
 						`uagb-block-${ block_id }`
 					) }
-					data-blog-id={block_id}
+					data-blog-id={ block_id }
 				>
 					<div
 						className={ classnames(
@@ -133,50 +133,50 @@ class Blog extends React.Component {
 						) }
 					>
 						<InnerBlockLayoutContextProvider
-						parentName="uagb/post-carousel"
-						parentClassName="uagb-block-grid"
+							parentName="uagb/post-carousel"
+							parentClassName="uagb-block-grid"
 						>
 							{ all_posts }
 						</InnerBlockLayoutContextProvider>
 					</div>
 				</div>
-			)
-		} else {
+			);
+		} 
 
-			let style_str = ""
+		let style_str = "";
 
-			if ( "dots" == arrowDots ) { style_str = {padding:"0 0 35px 0"} }
+		if ( "dots" == arrowDots ) { style_str = { padding:"0 0 35px 0" }; }
 
-			return (
+		return (
 
-				<div
+			<div
+				className={ classnames(
+					className,
+					"uagb-post-grid",
+					"uagb-post__arrow-outside",
+					"uagb-slick-carousel",
+					`uagb-post__image-position-${ imgPosition }`,
+					`${ equalHeightClass }`,
+					`uagb-block-${ block_id }`
+				) }
+				data-blog-id={ block_id }
+				style={ ( "dots" == arrowDots ) ? { padding: "0 0 35px 0" } : {} }
+			>
+				<Slider
 					className={ classnames(
-						className,
-						"uagb-post-grid",
-						"uagb-post__arrow-outside",
-						"uagb-slick-carousel",
-						`uagb-post__image-position-${ imgPosition }`,
-						`${ equalHeightClass }`,
-						`uagb-block-${ block_id }`
+						"is-carousel",
+						`uagb-post__columns-${ columns }`,
+						"uagb-post__items"
 					) }
-					data-blog-id={block_id}
-					style={ ( "dots" == arrowDots ) ? { padding: "0 0 35px 0" } : {} }
+					{ ...settings }
 				>
-					<Slider
-						className={ classnames(
-							"is-carousel",
-							`uagb-post__columns-${ columns }`,
-							"uagb-post__items"
-						) }
-						{...settings}
-					>
-						{ all_posts }
-					</Slider>
-				</div>
-			)
-		}
+					{ all_posts }
+				</Slider>
+			</div>
+		);
+		
 
 	}
 }
 
-export default Blog
+export default Blog;

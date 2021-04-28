@@ -2,11 +2,11 @@
  * BLOCK: Icon List - Attributes
  */
 
-const ITEM_COUNT = 1
+const ITEM_COUNT = 1;
 
-const icons = []
+const icons = [];
 
-for ( var i = 1; i <= ITEM_COUNT; i++ ) {
+for ( let i = 1; i <= ITEM_COUNT; i++ ) {
 	icons.push(
 		{
 			"label": "#Label",
@@ -26,7 +26,7 @@ for ( var i = 1; i <= ITEM_COUNT; i++ ) {
 			"disableLink": true,
 			"hideLabel" : false
 		}
-	)
+	);
 }
 
 const attributes = {
@@ -143,6 +143,6 @@ const attributes = {
 		type: "string",
 		default: "none"
 	}
-}
+};
 
-export default attributes
+export default attributes;

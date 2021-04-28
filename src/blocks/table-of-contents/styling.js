@@ -2,8 +2,8 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function styling( props ) {
 
@@ -84,13 +84,13 @@ function styling( props ) {
 		headingLineHeightMobile,
 		disableBullets,
 		headingAlignment,
-	} = props.attributes
+	} = props.attributes;
 
-	var selectors = {}
-	var tablet_selectors = {}
-	var mobile_selectors = {}
+	let selectors = {};
+	let tablet_selectors = {};
+	let mobile_selectors = {};
 
-	var alignment = ( headingAlignment == "left" ) ? "flex-start" : ( ( headingAlignment == "right" ) ? "flex-end" : "center" )
+	const alignment = ( headingAlignment == "left" ) ? "flex-start" : ( ( headingAlignment == "right" ) ? "flex-end" : "center" );
 
 	selectors = {
 		" .uagb-toc__list-wrap ul li a" : {
@@ -149,24 +149,24 @@ function styling( props ) {
 			"height" : generateCSSUnit( iconSize, "px" ),
 			"fill" : iconColor
 		}
-	}
+	};
 	
 	selectors[" .uagb-toc__list-wrap"] = {
-		'column-count': tColumnsDesktop,
-		'overflow': 'hidden',
-	}
+		"column-count": tColumnsDesktop,
+		"overflow": "hidden",
+	};
 
 	if ( customWidth ) {
-		selectors[" .uagb-toc__wrap"]["width"] = generateCSSUnit( widthDesktop, widthTypeDesktop )
+		selectors[" .uagb-toc__wrap"].width = generateCSSUnit( widthDesktop, widthTypeDesktop );
 	}
 
 	if ( disableBullets ) {
 		selectors[" .uagb-toc__list"] = {
-			'list-style-type': 'none'
-		}
+			"list-style-type": "none"
+		};
 		selectors[" .uagb-toc__list .uagb-toc__list"] = {
-			'list-style-type': 'none'
-		}
+			"list-style-type": "none"
+		};
 	}
 
 	tablet_selectors = {
@@ -192,8 +192,8 @@ function styling( props ) {
 			"margin-bottom": generateCSSUnit( vMarginTablet, marginTypeTablet ),
 		},
 		" .uagb-toc__list-wrap" : {
-			'column-count': tColumnsTablet,
-			'overflow': 'hidden'
+			"column-count": tColumnsTablet,
+			"overflow": "hidden"
 		},
 
 		" .uagb-toc__list-wrap > ul.uagb-toc__list > li:first-child" : {
@@ -206,7 +206,7 @@ function styling( props ) {
 		    "padding-top": "calc( " + generateCSSUnit( contentPaddingTablet, contentPaddingTypeTablet ) + " / 2 )",
 		    "padding-bottom": "calc( " + generateCSSUnit( contentPaddingTablet, contentPaddingTypeTablet ) + " / 2 )"
 		},
-	}
+	};
 
 	mobile_selectors = {
 		" .uagb-toc__list-wrap ul li a" : {
@@ -231,8 +231,8 @@ function styling( props ) {
 			"margin-bottom": generateCSSUnit( vMarginMobile, marginTypeMobile ),
 		},
 		" .uagb-toc__list-wrap" : {
-			'column-count': tColumnsMobile,
-			'overflow': 'hidden'
+			"column-count": tColumnsMobile,
+			"overflow": "hidden"
 		},		
 		" .uagb-toc__list-wrap > ul.uagb-toc__list > li:first-child" : {
 		    "padding-top": generateCSSUnit( contentPaddingMobile, contentPaddingTypeMobile )
@@ -244,25 +244,25 @@ function styling( props ) {
 		    "padding-top": "calc( " + generateCSSUnit( contentPaddingMobile, contentPaddingTypeMobile ) + " / 2 )",
 		    "padding-bottom": "calc( " + generateCSSUnit( contentPaddingMobile, contentPaddingTypeMobile ) + " / 2 )"
 		},
-	}
+	};
 
-	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
+	const id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`;
 
-	var styling_css = generateCSS( selectors, id )
+	let styling_css = generateCSS( selectors, id );
 
-	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" );
 
 	if ( "" != scrollToTopColor ) {
-		styling_css += ".uagb-toc__scroll-top { color: " + scrollToTopColor + "; }"
+		styling_css += ".uagb-toc__scroll-top { color: " + scrollToTopColor + "; }";
 	}
 
 	if ( "" != scrollToTopBgColor ) {
-		styling_css += ".uagb-toc__scroll-top.uagb-toc__show-scroll { background: " + scrollToTopBgColor + "; }"
+		styling_css += ".uagb-toc__scroll-top.uagb-toc__show-scroll { background: " + scrollToTopBgColor + "; }";
 	}
 
-	return styling_css
+	return styling_css;
 }
 
-export default styling
+export default styling;

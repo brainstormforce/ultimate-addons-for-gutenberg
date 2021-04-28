@@ -1,4 +1,4 @@
-.astra-notice .notice-container{
+.astra-notice .notice-container {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	display: flex;
@@ -10,7 +10,7 @@
 	margin-left: 15px;
 }
 
-.astra-notice .notice-image img{
+.astra-notice .notice-image img {
 	max-width: 70px;
 }
 

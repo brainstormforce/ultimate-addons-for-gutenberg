@@ -1,14 +1,14 @@
-import classnames from "classnames"
-import Masonry from "react-masonry-component"
+import classnames from "classnames";
+import Masonry from "react-masonry-component";
 import {
 	InnerBlockLayoutContextProvider,
 	renderPostLayout 
-} from '.././function';
+} from ".././function";
 class Blog extends React.Component {
 
 	render() {
 
-		const { attributes, className, latestPosts, block_id, categoriesList, deviceType } = this.props
+		const { attributes, className, latestPosts, block_id, categoriesList, deviceType } = this.props;
 
 		const {
 			columns,
@@ -20,27 +20,27 @@ class Blog extends React.Component {
 			buttonText,
 			paginationType,
 			layoutConfig
-		} = attributes
+		} = attributes;
 
 		// Removing posts from display should be instant.
 		const displayPosts = latestPosts.length > postsToShow ?
 			latestPosts.slice( 0, postsToShow ) :
-			latestPosts
+			latestPosts;
 
 		const paginationRender = () => {
-			if ( 'infinite' === paginationType) {
+			if ( "infinite" === paginationType ) {
 
-				if( "scroll" === paginationEventType ) { 
+				if ( "scroll" === paginationEventType ) { 
 					return (
 						
-							<div className="uagb-post-inf-loader">
-								<div className="uagb-post-loader-1"></div>
-								<div className="uagb-post-loader-2"></div>
-								<div className="uagb-post-loader-3"></div>
-							</div>
-					)
+						<div className="uagb-post-inf-loader">
+							<div className="uagb-post-loader-1"></div>
+							<div className="uagb-post-loader-2"></div>
+							<div className="uagb-post-loader-3"></div>
+						</div>
+					);
 				}
-				if( "button" === paginationEventType ) { 
+				if ( "button" === paginationEventType ) { 
 					return (
 						<div className="uagb-post__load-more-wrap">
 							<span className="uagb-post-pagination-button">
@@ -49,11 +49,11 @@ class Blog extends React.Component {
 								</a>
 							</span>
 						</div>
-					)
+					);
 				}
 			}
 			
-		}
+		};
 		return (
 
 			<div
@@ -65,7 +65,7 @@ class Blog extends React.Component {
 					`uagb-editor-preview-mode-${ deviceType.toLowerCase() }`,
 					`uagb-block-${ block_id }`
 				) }
-				data-blog-id={block_id}
+				data-blog-id={ block_id }
 			>
 				<Masonry
 					className={ classnames(
@@ -79,25 +79,25 @@ class Blog extends React.Component {
 					<InnerBlockLayoutContextProvider
 						parentName="uagb/post-masonry"
 						parentClassName="uagb-block-grid">
-					{ displayPosts.map( ( post, i ) =>
-						<article key={ i }>
-							<div className="uagb-post__inner-wrap">
-								{ renderPostLayout(
-									"uagb/post-masonry",
-									post,
-									layoutConfig,
-									this.props.attributes,
-									this.props.categoriesList
-								) }
-							</div>
-						</article>
-					) }
+						{ displayPosts.map( ( post, i ) =>
+							<article key={ i }>
+								<div className="uagb-post__inner-wrap">
+									{ renderPostLayout(
+										"uagb/post-masonry",
+										post,
+										layoutConfig,
+										this.props.attributes,
+										this.props.categoriesList
+									) }
+								</div>
+							</article>
+						) }
 					</InnerBlockLayoutContextProvider>
 				</Masonry>
 				{ paginationRender() }
 			</div>
-		)
+		);
 	}
 }
 
-export default Blog
+export default Blog;

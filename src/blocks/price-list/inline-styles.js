@@ -2,8 +2,8 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function RestMenuStyle( props ) {
 	const {
@@ -58,19 +58,19 @@ function RestMenuStyle( props ) {
 		seperatorWidth,
 		seperatorThickness,
 		seperatorColor,
-	} = props.attributes
+	} = props.attributes;
 
-	var tablet_selectors = {}
-	var mobile_selectors = {}
+	let tablet_selectors = {};
+	let mobile_selectors = {};
 
-	var align = headingAlign
-	if( "left" === align ){
-    	align = "flex-start"
-	}else if( "right" === align ){
-    	align = "flex-end"
+	let align = headingAlign;
+	if ( "left" === align ){
+    	align = "flex-start";
+	} else if ( "right" === align ){
+    	align = "flex-end";
 	}
 
-	var selectors = {
+	const selectors = {
 		" [data-type='uagb/restaurant-menu-child'] .wp-block-uagb-restaurant-menu-child": {
 			"padding-left" : generateCSSUnit( columnGap/2, "px" ),
 			"padding-right" : generateCSSUnit( columnGap/2, "px" ),
@@ -123,7 +123,7 @@ function RestMenuStyle( props ) {
 			"color": descColor,
 			"margin-bottom": generateCSSUnit( descSpace, "px" ),
 		},
-	}
+	};
 
 	if ( seperatorStyle !== "none" ) {
 		selectors[" .uagb-rm__separator"] = {
@@ -131,13 +131,13 @@ function RestMenuStyle( props ) {
 			"border-top-style": seperatorStyle,
 			"border-top-width": generateCSSUnit( seperatorThickness, "px" ),
 			"width": generateCSSUnit( seperatorWidth, "%" ),
-		}
+		};
 	}
 
 	selectors[" .uagb-rest_menu__wrap.uagb-rm__desk-column-"+columns+":nth-child("+columns+"n+1)"] = {
 		"margin-left": 0,
 		"clear":"left",
-	}
+	};
 
 	tablet_selectors = {
 		" .uagb-rm__title" : {
@@ -152,17 +152,17 @@ function RestMenuStyle( props ) {
 			"font-size" : generateCSSUnit( priceFontSizeTablet, priceFontSizeType ),
 			"line-height": generateCSSUnit( priceLineHeightTablet, priceLineHeightType ),
 		}
-	}
+	};
 
 	tablet_selectors[" .uagb-rest_menu__wrap.uagb-rm__desk-column-"+columns+":nth-child("+columns+"n+1)"] = {
 		"margin-left": "unset",
 		"clear":"unset",
-	}
+	};
 
 	tablet_selectors[" .uagb-rest_menu__wrap.uagb-rm__tablet-column-"+tcolumns+":nth-child("+tcolumns+"n+1)"] = {
 		"margin-left": 0,
 		"clear":"left",
-	}
+	};
 
 	mobile_selectors = {
 		" .uagb-rm__title" : {
@@ -177,29 +177,29 @@ function RestMenuStyle( props ) {
 			"font-size" : generateCSSUnit( priceFontSizeMobile, priceFontSizeType ),
 			"line-height": generateCSSUnit( priceLineHeightMobile, priceLineHeightType ),
 		}
-	}
+	};
 
 	mobile_selectors[" .uagb-rest_menu__wrap.uagb-rm__desk-column-"+columns+":nth-child("+columns+"n+1)"] = {
 		"margin-left": "unset",
 		"clear":"unset",
-	}
+	};
 
 	mobile_selectors[" .uagb-rest_menu__wrap.uagb-rm__mobile-column-"+mcolumns+":nth-child("+mcolumns+"n+1)"] = {
 		"margin-left": 0,
 		"clear":"left",
-	}
+	};
 
-	var styling_css = ""
-	var id = `#wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`
+	let styling_css = "";
+	const id = `#wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`;
 
-	styling_css = generateCSS( selectors, id )
+	styling_css = generateCSS( selectors, id );
 
-	styling_css += generateCSS( tablet_selectors,`${id}.uagb-editor-preview-mode-tablet`, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors,`${id}.uagb-editor-preview-mode-tablet`, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" );
 
-	return styling_css
+	return styling_css;
 
 }
 
-export default RestMenuStyle
+export default RestMenuStyle;

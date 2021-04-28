@@ -2,9 +2,9 @@
  * Returns Dynamic Generated CSS
  */
 
-import inlineStyles from "./inline-styles"
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import inlineStyles from "./inline-styles";
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function styling( props ) {
 
@@ -56,13 +56,13 @@ function styling( props ) {
 		mobilePaddingType,
 		tabletPaddingType,
 		desktopPaddingType,
-	} = props.attributes
+	} = props.attributes;
 
-	var position = backgroundPosition.replace( "-", " " )
-	var tablet_selectors = {}
-	var mobile_selectors = {}
+	const position = backgroundPosition.replace( "-", " " );
+	let tablet_selectors = {};
+	let mobile_selectors = {};
 
-	var style = {
+	const style = {
 		"padding-top": generateCSSUnit( topPadding, desktopPaddingType ),
 		"padding-bottom": generateCSSUnit( bottomPadding, desktopPaddingType ),
 		"padding-left": generateCSSUnit( leftPadding, desktopPaddingType ),
@@ -72,28 +72,28 @@ function styling( props ) {
 		"margin-left": generateCSSUnit( leftMargin, desktopMarginType ),
 		"margin-right": generateCSSUnit( rightMargin, desktopMarginType ),
 		"border-radius": generateCSSUnit( borderRadius, desktopMarginType ),
-	}
+	};
 
 	if ( borderStyle != "none" ) {
-		style["border-style"] = borderStyle
-		style["border-width"] = generateCSSUnit( borderWidth, "px" )
-		style["border-color"] =  borderColor
+		style["border-style"] = borderStyle;
+		style["border-width"] = generateCSSUnit( borderWidth, "px" );
+		style["border-color"] =  borderColor;
 	}
 
 	if ( "image" === backgroundType ) {
 
-		style["background-image"] = ( backgroundImage ) ? `url(${ backgroundImage.url })` : null
-		style["background-position"] = position
-		style["background-attachment"] = backgroundAttachment
-		style["background-repeat"] = backgroundRepeat
-		style["background-size"] = backgroundSize
+		style["background-image"] = ( backgroundImage ) ? `url(${ backgroundImage.url })` : null;
+		style["background-position"] = position;
+		style["background-attachment"] = backgroundAttachment;
+		style["background-repeat"] = backgroundRepeat;
+		style["background-size"] = backgroundSize;
 
 	}
 
-	var selectors = {
+	const selectors = {
 		":before" : inlineStyles( props ),
 		"" : style
-	}
+	};
 
 	tablet_selectors = {
 		"" : {
@@ -106,7 +106,7 @@ function styling( props ) {
 			"margin-left": generateCSSUnit( leftMarginTablet, tabletMarginType ),
 			"margin-right": generateCSSUnit( rightMarginTablet, tabletMarginType ),
 		}
-	}
+	};
 
 	mobile_selectors = {
 		"" : {
@@ -119,31 +119,31 @@ function styling( props ) {
 			"margin-left": generateCSSUnit( leftMarginMobile, mobileMarginType ),
 			"margin-right": generateCSSUnit( rightMarginMobile, mobileMarginType ),
 		}
-	}
+	};
 
 	if ( colWidth != "" && colWidth != 0 ) {
-		selectors[".block-editor-block-list__block"] = { "width" : colWidth + "%" }
+		selectors[".block-editor-block-list__block"] = { "width" : colWidth + "%" };
 	}
 
 	if ( colWidthTablet != "" && colWidthTablet != 0 ) {
-		tablet_selectors[".block-editor-block-list__block"] = { "width" : colWidthTablet + "%" }
+		tablet_selectors[".block-editor-block-list__block"] = { "width" : colWidthTablet + "%" };
 	}
 
 	if ( colWidthMobile != "" && colWidthMobile != 0 ) {
-		mobile_selectors[".block-editor-block-list__block"] = { "width" : colWidthMobile + "%" }
+		mobile_selectors[".block-editor-block-list__block"] = { "width" : colWidthMobile + "%" };
 	}
 
-	var styling_css = ""
+	let styling_css = "";
 
-	var id = `#wpwrap .edit-post-visual-editor #block-${ props.clientId }`
+	const id = `#wpwrap .edit-post-visual-editor #block-${ props.clientId }`;
 
-	styling_css = generateCSS( selectors, id )
+	styling_css = generateCSS( selectors, id );
 
-	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" );
 
-	return styling_css
+	return styling_css;
 }
 
-export default styling
+export default styling;

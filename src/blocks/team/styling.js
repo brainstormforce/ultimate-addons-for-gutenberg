@@ -2,8 +2,8 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS"
-import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit"
+import generateCSS from "../../../dist/blocks/uagb-controls/generateCSS";
+import generateCSSUnit from "../../../dist/blocks/uagb-controls/generateCSSUnit";
 
 function styling( props ) {
 
@@ -55,12 +55,12 @@ function styling( props ) {
 		socialColor,
 		socialHoverColor,
 		socialSpace,
-	} = props.attributes
+	} = props.attributes;
 
-	var tablet_selectors = {}
-	var mobile_selectors = {}
+	let tablet_selectors = {};
+	let mobile_selectors = {};
 
-	var selectors = {
+	const selectors = {
 		" p.uagb-team__desc.block-editor-rich-text__editable": {
 			"font-size": generateCSSUnit( descFontSize, descFontSizeType ),
 			"line-height": generateCSSUnit( descLineHeight, descLineHeightType ),
@@ -124,22 +124,22 @@ function styling( props ) {
 			"margin-right": generateCSSUnit( imgRightMargin, "px" ),
 			"width": generateCSSUnit( imgWidth, "px" )
 		}
-	}
+	};
 
 	if ( "above" == imgPosition ) {
 		if ( "center" == align ) {
-			selectors[" .uagb-team__image-wrap"]["margin-left"] = "auto"
-			selectors[" .uagb-team__image-wrap"]["margin-right"] = "auto"
+			selectors[" .uagb-team__image-wrap"]["margin-left"] = "auto";
+			selectors[" .uagb-team__image-wrap"]["margin-right"] = "auto";
 		} else if ( "left" == align ) {
-			selectors[" .uagb-team__image-wrap"]["margin-right"] = "auto"
+			selectors[" .uagb-team__image-wrap"]["margin-right"] = "auto";
 		} else if ( "right" == align ) {
-			selectors[" .uagb-team__image-wrap"]["margin-left"] = "auto"
+			selectors[" .uagb-team__image-wrap"]["margin-left"] = "auto";
 		}
 	}
 
 	if ( "above" != imgPosition ) {
 		if ( "middle" == imgAlign ) {
-			selectors[" .uagb-team__image-wrap"]["align-self"] = "center"
+			selectors[" .uagb-team__image-wrap"]["align-self"] = "center";
 		}
 	}
 
@@ -150,7 +150,7 @@ function styling( props ) {
 		"line-height": generateCSSUnit( titleLineHeight, titleLineHeightType ),
 		"color": titleColor,
 		"margin-bottom": generateCSSUnit( titleSpace, "px" ),
-	}
+	};
 
 	mobile_selectors = {
 		" p.uagb-team__desc.block-editor-rich-text__editable": {
@@ -169,7 +169,7 @@ function styling( props ) {
 			"width": generateCSSUnit( socialFontSizeMobile, socialFontSizeType ),
 			"height": generateCSSUnit( socialFontSizeMobile, socialFontSizeType ),
 		},
-	}
+	};
 
 	tablet_selectors = {
 		" p.uagb-team__desc.block-editor-rich-text__editable": {
@@ -188,26 +188,26 @@ function styling( props ) {
 			"width": generateCSSUnit( socialFontSizeTablet, socialFontSizeType ),
 			"height": generateCSSUnit( socialFontSizeTablet, socialFontSizeType ),
 		},
-	}
+	};
 
 	mobile_selectors[" " + tag + ".uagb-team__title"] = {
 		"font-size": generateCSSUnit( titleFontSizeMobile, titleFontSizeType ),
-	}
+	};
 
 	tablet_selectors[" " + tag + ".uagb-team__title"] = {
 		"font-size": generateCSSUnit( titleFontSizeTablet, titleFontSizeType ),
-	}
+	};
 
-	var styling_css = ""
-	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
+	let styling_css = "";
+	const id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`;
 
-	styling_css = generateCSS( selectors, id )
+	styling_css = generateCSS( selectors, id );
 
-	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" );
 
-	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" );
 
-	return styling_css
+	return styling_css;
 }
 
-export default styling
+export default styling;

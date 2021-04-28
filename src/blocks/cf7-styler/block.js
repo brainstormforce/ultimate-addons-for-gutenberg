@@ -3,18 +3,18 @@
  */
 
 // Import block dependencies and components.
-import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons"
+import UAGB_Block_Icons from "../../../dist/blocks/uagb-controls/block-icons";
 
 // Import icon.
-import edit from "./edit"
-import "./editor.scss"
-import "./style.scss"
-const { __ } = wp.i18n
+import edit from "./edit";
+import "./editor.scss";
+import "./style.scss";
+const { __ } = wp.i18n;
 
 // Import registerBlockType() from wp.blocks
 const {
 	registerBlockType,
-} = wp.blocks
+} = wp.blocks;
 
 /**
  * Register: as Gutenberg Block.
@@ -30,16 +30,16 @@ const {
  */
 
 
-if( uagb_blocks_info.blocks["uagb/cf7-styler"]["is_active"] ) {
+if ( uagb_blocks_info.blocks["uagb/cf7-styler"].is_active ) {
 	registerBlockType( "uagb/cf7-styler", {
 
-		title: uagb_blocks_info.blocks["uagb/cf7-styler"]["title"], // Block title.
-		description:uagb_blocks_info.blocks["uagb/cf7-styler"]["description"], // Block description.
+		title: uagb_blocks_info.blocks["uagb/cf7-styler"].title, // Block title.
+		description:uagb_blocks_info.blocks["uagb/cf7-styler"].description, // Block description.
 		icon: UAGB_Block_Icons.cf7_styler,
 		keywords: [
-			__( "CF7 styler",'ultimate-addons-for-gutenberg' ),
-			__( "contact form styler",'ultimate-addons-for-gutenberg' ),
-			__( "uag",'ultimate-addons-for-gutenberg' ),
+			__( "CF7 styler","ultimate-addons-for-gutenberg" ),
+			__( "contact form styler","ultimate-addons-for-gutenberg" ),
+			__( "uag","ultimate-addons-for-gutenberg" ),
 		],
 		supports: {
 			anchor: true,
@@ -48,7 +48,7 @@ if( uagb_blocks_info.blocks["uagb/cf7-styler"]["is_active"] ) {
 		edit,
 		example: {},
 		save() {
-			return null
+			return null;
 		},
-	} )
+	} );
 }
