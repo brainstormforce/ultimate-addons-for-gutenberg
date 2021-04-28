@@ -8,15 +8,14 @@ const {
 	createBlock
 } = wp.blocks;
 
-class Description extends React.Component {
-
-	render() {
-
-		const {
-			attributes,
-			setAttributes ,
-			props
-		} = this.props;
+const Description = props => {
+	const {
+		attributes,
+		setAttributes,
+		mergeBlocks,
+		insertBlocksAfter,
+		onReplace
+	} = props;
 
 		if ( setAttributes !== "not_set" ){
 			return (
@@ -26,19 +25,19 @@ class Description extends React.Component {
 					placeholder={ __( "Write a Description" ) }
 					className='uagb-cta__desc'
 					onChange={ ( value ) => setAttributes( { description: value } ) }
-					onMerge={ props.mergeBlocks }
+					onMerge={ mergeBlocks }
 					onSplit={
-						props.insertBlocksAfter ?
+						insertBlocksAfter ?
 							( before, after, ...blocks ) => {
 								setAttributes( { content: before } );
-								props.insertBlocksAfter( [
+								insertBlocksAfter( [
 									...blocks,
 									createBlock( "core/paragraph", { content: after } ),
 								] );
 							} :
 							undefined
 					}
-					onRemove={ () => props.onReplace( [] ) }
+					onRemove={ () => onReplace( [] ) }
 	            />
 			);
 		}
@@ -50,7 +49,6 @@ class Description extends React.Component {
 	            />
 		);
 		
-	}
 }
 
 export default Description;

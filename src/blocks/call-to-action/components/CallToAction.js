@@ -2,13 +2,11 @@ const { __ } = wp.i18n;
 
 import classnames from "classnames";
 
-class CallToAction extends React.Component {
+const CallToAction = props => {
 
-	render() {
+	const { attributes,setAttributes } = props;
 
-		const { attributes,setAttributes } = this.props;
-
-		const ctaBtnClass = "uagb-cta__block-link uagb-cta__button-link-wrapper uagb-cta-typeof-"+ attributes.ctaType;
+	const ctaBtnClass = "uagb-cta__block-link uagb-cta__button-link-wrapper uagb-cta-typeof-"+ attributes.ctaType;
 
 		let target ="_self";
 		const rel ="noopener noreferrer";
@@ -28,8 +26,7 @@ class CallToAction extends React.Component {
 			link = attributes.ctaLink;
 		}
 		return (			
-			<div className="uagb-cta__link-wrapper uagb-cta__block-link-style">
-				
+			<div className="uagb-cta__link-wrapper uagb-cta__block-link-style">	
 				{  ( attributes.ctaType === "button" || attributes.ctaType === "text" ) && ( 
 					<div className="uagb-cta__button-wrapper">
 						<a href={ link } className={ ctaBtnClass } target={ target } rel={ rel } >
@@ -40,11 +37,10 @@ class CallToAction extends React.Component {
 							{  attributes.ctaIconPosition === "after" &&  cta_icon_output }
 						</a>
 					</div>
-				)
-				}
+				)}
 			</div>            
 		);
-	}
 }
+
 
 export default CallToAction;

@@ -8,50 +8,51 @@ const {
 
 const { __ } = wp.i18n;
 
-class Title extends React.Component {
 
-	render() {
+const Title = props => {
 
-		const {
-			attributes,
-			setAttributes ,
-			props
-		} = this.props;
+	const {
+		attributes,
+		setAttributes,
+		mergeBlocks,
+		insertBlocksAfter,
+		onReplace
+	} = props;
 
-		if ( setAttributes !== "not_set" ){
-			return (
-				<RichText
-					tagName={ attributes.titleTag }
-					placeholder={ __( "Write a Heading" ) }
-					value={ attributes.ctaTitle }
-					className='uagb-cta__title'
-					onChange={ ( value ) => setAttributes( { ctaTitle: value } ) }
-					multiline={ false }
-					onMerge={ props.mergeBlocks }
-					onSplit={
-						props.insertBlocksAfter ?
-							( before, after, ...blocks ) => {
-								setAttributes( { content: before } );
-								props.insertBlocksAfter( [
-									...blocks,
-									createBlock( "core/paragraph", { content: after } ),
-								] );
-							} :
-							undefined
-					}
-					onRemove={ () => props.onReplace( [] ) }
-	            />
-			);
-		}
+	if ( setAttributes !== "not_set" ){
 		return (
-			<RichText.Content
+			<RichText
 				tagName={ attributes.titleTag }
+				placeholder={ __( "Write a Heading" ) }
 				value={ attributes.ctaTitle }
 				className='uagb-cta__title'
-	            />
+				onChange={ ( value ) => setAttributes( { ctaTitle: value } ) }
+				multiline={ false }
+				onMerge={ mergeBlocks }
+				onSplit={
+					insertBlocksAfter ?
+						( before, after, ...blocks ) => {
+							setAttributes( { content: before } );
+							insertBlocksAfter( [
+								...blocks,
+								createBlock( "core/paragraph", { content: after } ),
+							] );
+						} :
+						undefined
+				}
+				onRemove={ () => onReplace( [] ) }
+			/>
 		);
-		
 	}
+	return (
+		<RichText.Content
+			tagName={ attributes.titleTag }
+			value={ attributes.ctaTitle }
+			className='uagb-cta__title'
+			/>
+	);
+	
 }
+
 
 export default Title;
