@@ -3,8 +3,8 @@
  */
 
  import InfoBoxStyle from "./inline-styles"
- import InfoBoxRender from "./render"
- import InfoBoxSetting from "./settings"
+ import infoBoxRender from "./render"
+ import infoBoxSetting from "./settings"
  
  import React, { useEffect } from 'react';
  
@@ -35,8 +35,8 @@ const UAGBinfoBox = props =>{
 	
 	return (
 		<>
-			{InfoBoxSetting(props)}
-			{InfoBoxRender(props) }
+			{infoBoxSetting(props)}
+			{infoBoxRender(props) }
 		</>
 	)
 }

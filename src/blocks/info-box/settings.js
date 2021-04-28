@@ -37,7 +37,7 @@ let imageSizeOptions = [
 	{ value: "full", label: __( "Large", "ultimate-addons-for-gutenberg" ) }
 ]
 
-const InfoBoxSetting = props => {
+const infoBoxSetting = props => {
     const { setAttributes, attributes } = props
 
     // Setup the attributes.
@@ -1042,4 +1042,4 @@ const InfoBoxSetting = props => {
     );
 
 }
-export default InfoBoxSetting
+export default infoBoxSetting

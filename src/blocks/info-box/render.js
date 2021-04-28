@@ -8,7 +8,7 @@ import InfoBoxSeparator from "./components/InfoBoxSeparator"
 import CallToAction from "./components/CallToAction"
 import InfoBoxIconImage from "./components/IconImage"
 
-const InfoBoxRender = props =>{
+const infoBoxRender = props =>{
    
     const { className, attributes , setAttributes } = props
 
@@ -152,4 +152,4 @@ const InfoBoxRender = props =>{
                 { ( ctaType !== "all") && output }
             </div>
 }
-export default InfoBoxRender
+export default infoBoxRender
