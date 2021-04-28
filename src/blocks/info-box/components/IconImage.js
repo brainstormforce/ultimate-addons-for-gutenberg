@@ -1,10 +1,8 @@
-const {
-	RichText,
-} = wp.blockEditor
 
 const { __ } = wp.i18n
 
-export default function InfoBoxIconImage(attributes){
+const InfoBoxIconImage = props =>{
+		const { attributes } = props 
 
 		let url_chk = ""
 		if( typeof attributes.iconImage !== "undefined" && attributes.iconImage !== null && attributes.iconImage !=="" ){
@@ -41,3 +39,4 @@ export default function InfoBoxIconImage(attributes){
 		
 }
 
+export default InfoBoxIconImage

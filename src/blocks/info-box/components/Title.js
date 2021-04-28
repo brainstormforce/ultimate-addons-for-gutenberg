@@ -8,7 +8,15 @@ const {
 
 const { __ } = wp.i18n
 
-export default function Title(attributes , setAttributes ,props){
+const Title = props =>{
+
+	const {
+		attributes,
+		setAttributes ,
+		mergeBlocks,
+		insertBlocksAfter,
+		onReplace
+	} = props
 
 	if( setAttributes !== "not_set" ){
 		return (
@@ -19,19 +27,19 @@ export default function Title(attributes , setAttributes ,props){
 				className = 'uagb-ifb-title'
 				onChange = { ( value ) => setAttributes( { infoBoxTitle: value } ) }
 				multiline={ false }
-				onMerge = { props.mergeBlocks }
+				onMerge = { mergeBlocks }
 				onSplit = {
-					props.insertBlocksAfter ?
+					insertBlocksAfter ?
 						( before, after, ...blocks ) => {
 							setAttributes( { content: before } )
-							props.insertBlocksAfter( [
+							insertBlocksAfter( [
 								...blocks,
 								createBlock( "core/paragraph", { content: after } ),
 							] )
 						} :
 						undefined
 				}
-				onRemove={ () => props.onReplace( [] ) }
+				onRemove={ () => onReplace( [] ) }
 			/>
 		)
 	}else{
@@ -46,5 +54,5 @@ export default function Title(attributes , setAttributes ,props){
 }
 	
 
-
+export default Title
 

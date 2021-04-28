@@ -37,7 +37,7 @@ let imageSizeOptions = [
 	{ value: "full", label: __( "Large", "ultimate-addons-for-gutenberg" ) }
 ]
 
-export default function InfoBoxSetting(props){
+const InfoBoxSetting = props =>{
     const { setAttributes, attributes } = props
 
     // Setup the attributes.
@@ -260,25 +260,25 @@ export default function InfoBoxSetting(props){
         )
     }
 
-    // Icon properties.
-    const icon_props = {
-        icons: svg_icons,
-        value: icon,
-        onChange: ( value ) => ( setAttributes( { icon: value } ) ),
-        isMulti: false,
-        renderFunc: renderSVG,
-        noSelectedPlaceholder: __( "Select Icon", "ultimate-addons-for-gutenberg" )
-    }
+    // // Icon properties.
+    // const icon_props = {
+    //     icons: svg_icons,
+    //     value: icon,
+    //     onChange: ( value ) => ( setAttributes( { icon: value } ) ),
+    //     isMulti: false,
+    //     renderFunc: renderSVG,
+    //     noSelectedPlaceholder: __( "Select Icon", "ultimate-addons-for-gutenberg" )
+    // }
 
-    // Icon properties.
-    const cta_icon_props = {
-        icons: svg_icons,
-        renderFunc: renderSVG,
-        value: ctaIcon,
-        onChange: ( value ) => ( setAttributes( { ctaIcon: value } ) ),
-        isMulti: false,
-        noSelectedPlaceholder: __( "Select Icon", "ultimate-addons-for-gutenberg" )
-    }
+    // // Icon properties.
+    // const cta_icon_props = {
+    //     icons: svg_icons,
+    //     renderFunc: renderSVG,
+    //     value: ctaIcon,
+    //     onChange: ( value ) => ( setAttributes( { ctaIcon: value } ) ),
+    //     isMulti: false,
+    //     noSelectedPlaceholder: __( "Select Icon", "ultimate-addons-for-gutenberg" )
+    // }
 
     const blockControls = () => {
         return <BlockControls key='controls'>
@@ -343,7 +343,14 @@ export default function InfoBoxSetting(props){
 
                 { ( source_type == "icon" ) &&
                     <>
-                        <FontIconPicker {...icon_props} />
+                        <FontIconPicker   
+                                icons={ svg_icons}
+                                renderFunc={ renderSVG}
+                                value= {icon}
+                                onChange= {( value ) => setAttributes( { icon: value } )}
+                                isMulti= {false}
+                                noSelectedPlaceholder= {__( "Select Icon", "ultimate-addons-for-gutenberg" )}
+                        />
                         <RangeControl
                             label = { __( "Icon Size", "ultimate-addons-for-gutenberg" ) }
                             value = { iconSize }
@@ -719,7 +726,14 @@ export default function InfoBoxSetting(props){
                 <>
                     <hr className="uagb-editor__separator" />
                     <h2>{ __( "Button Icon", "ultimate-addons-for-gutenberg" ) }</h2>
-                    <FontIconPicker {...cta_icon_props} />
+                    <FontIconPicker 
+                        icons={ svg_icons}
+                        renderFunc={ renderSVG}
+                        value= {ctaIcon}
+                        onChange= {( value ) => setAttributes( { ctaIcon: value } )}
+                        isMulti= {false}
+                        noSelectedPlaceholder= {__( "Select Icon", "ultimate-addons-for-gutenberg" )}
+                    />
                     { ctaIcon != "" && <>
                         <SelectControl
                             label={ __( "Icon Position", "ultimate-addons-for-gutenberg" ) }
@@ -1041,3 +1055,4 @@ export default function InfoBoxSetting(props){
     );
 
 }
+export default InfoBoxSetting

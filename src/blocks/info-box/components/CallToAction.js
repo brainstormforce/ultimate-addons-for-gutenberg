@@ -3,8 +3,10 @@ const { __ } = wp.i18n
 import classnames from "classnames"
 import renderSVG from "../../../../dist/blocks/uagb-controls/renderIcon"
 
-export default function InfoBoxCta(attributes , setAttributes){
+const InfoBoxCta = props => {
 
+	const { attributes, setAttributes = "not_set" } = props
+	
 	let ctaBtnClass = "uagb-infobox-cta-link uagb-ifb-cta-button"
 
 	if ( attributes.inheritFromTheme ) {
@@ -77,4 +79,5 @@ export default function InfoBoxCta(attributes , setAttributes){
 		)
 	}
 }
+export default InfoBoxCta
 

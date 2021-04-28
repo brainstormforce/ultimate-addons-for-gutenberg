@@ -10,7 +10,8 @@
  
  const { __ } = wp.i18n
  
- export default function UAGBinfoBox(props){
+const UAGBinfoBox = props =>{
+	 
 	 useEffect(() => { // Replacement for componentDidMount.
  
 		 // Assigning block_id in the attribute.
@@ -31,12 +32,12 @@
 			 element.innerHTML = InfoBoxStyle( props )
 		 }
 	 }, [props] )
- 
-		 return (
-			 <>
-				 {InfoBoxSetting(props)}
-				 {InfoBoxRender(props) }
-			 </>
-		 )
- }
- 
+	
+	return (
+		<>
+			{InfoBoxSetting(props)}
+			{InfoBoxRender(props) }
+		</>
+	)
+}
+export default UAGBinfoBox

@@ -5,9 +5,9 @@ const {
 } = wp.blockEditor
 
 const { __ } = wp.i18n
-export default function InfoBoxIcon(props){
+const InfoBoxIcon = props =>{
 
-		const { attributes } = props
+	const { attributes } = props
 
 		return (
 			<div className="uagb-ifb-image-icon-content uagb-ifb-imgicon-wrap" >
@@ -21,3 +21,4 @@ export default function InfoBoxIcon(props){
 	
 }
 
+export default InfoBoxIcon

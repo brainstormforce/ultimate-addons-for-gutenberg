@@ -1,12 +1,9 @@
 import renderSVG from "../../../../dist/blocks/uagb-controls/renderIcon"
 
-const {
-	RichText,
-} = wp.blockEditor
-
 const { __ } = wp.i18n
 
-export default function Icon(attributes){	
+const Icon = props => {	
+	const { attributes } = props
 
 	return (
 		<div className="uagb-ifb-image-icon-content uagb-ifb-imgicon-wrap" >
@@ -19,4 +16,5 @@ export default function Icon(attributes){
 	)
 	
 }
+export default Icon
 
