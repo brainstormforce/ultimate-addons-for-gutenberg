@@ -37,7 +37,7 @@ let imageSizeOptions = [
 	{ value: "full", label: __( "Large", "ultimate-addons-for-gutenberg" ) }
 ]
 
-const InfoBoxSetting = props =>{
+const InfoBoxSetting = props => {
     const { setAttributes, attributes } = props
 
     // Setup the attributes.
@@ -179,12 +179,6 @@ const InfoBoxSetting = props =>{
 	 */
 	const onRemoveImage = () => {
 		setAttributes( { iconImage: "" } )
-	}
-    /**
-	 * Function Name: toggleTarget.
-	 */
-	const toggleTarget = () => {
-		setAttributes( { ctaTarget: ! ctaTarget } )
 	}
 
     if( iconImage && iconImage["sizes"] ){
@@ -361,45 +355,45 @@ const InfoBoxSetting = props =>{
                             allowReset
                         />
                         <TabPanel className="uagb-inspect-tabs uagb-inspect-tabs-col-2"
-                activeClass="active-tab"
-                tabs={ [
-                    {
-                        name: "normal",
-                        title: __( "Normal", "ultimate-addons-for-gutenberg" ),
-                        className: "uagb-normal-tab",
-                    },
-                    {
-                        name: "hover",
-                        title: __( "Hover", "ultimate-addons-for-gutenberg" ),
-                        className: "uagb-focus-tab",
-                    },
-                ] }>
-                {
-                    ( tabName ) => {
-                        let tabout_icon
-                        if( "normal" === tabName.name ) {
-                            tabout_icon = <>
-                                <p className="uagb-setting-label">{ __( "Icon Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: iconColor }} ></span></span></p>
-                                <ColorPalette
-                                    value={ iconColor }
-                                    onChange={ ( colorValue ) => setAttributes( { iconColor: colorValue } ) }
-                                    allowReset
-                                />
-                            </>
-                        }else {
-                            tabout_icon = <>
-                                <p className="uagb-setting-label">{ __( "Icon Hover Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: iconHover }} ></span></span></p>
-                                <ColorPalette
-                                    value={ iconHover }
-                                    onChange={ ( colorValue ) => setAttributes( { iconHover: colorValue } ) }
-                                    allowReset
-                                />
-                            </>
-                        }
-                        return <div>{ tabout_icon }</div>
-                    }
-                }
-            </TabPanel>
+                            activeClass="active-tab"
+                            tabs={ [
+                                {
+                                    name: "normal",
+                                    title: __( "Normal", "ultimate-addons-for-gutenberg" ),
+                                    className: "uagb-normal-tab",
+                                },
+                                {
+                                    name: "hover",
+                                    title: __( "Hover", "ultimate-addons-for-gutenberg" ),
+                                    className: "uagb-focus-tab",
+                                },
+                            ] }>
+                            {
+                                ( tabName ) => {
+                                    let tabout_icon
+                                    if( "normal" === tabName.name ) {
+                                        tabout_icon = <>
+                                            <p className="uagb-setting-label">{ __( "Icon Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: iconColor }} ></span></span></p>
+                                            <ColorPalette
+                                                value={ iconColor }
+                                                onChange={ ( colorValue ) => setAttributes( { iconColor: colorValue } ) }
+                                                allowReset
+                                            />
+                                        </>
+                                    }else {
+                                        tabout_icon = <>
+                                            <p className="uagb-setting-label">{ __( "Icon Hover Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: iconHover }} ></span></span></p>
+                                            <ColorPalette
+                                                value={ iconHover }
+                                                onChange={ ( colorValue ) => setAttributes( { iconHover: colorValue } ) }
+                                                allowReset
+                                            />
+                                        </>
+                                    }
+                                    return <div>{ tabout_icon }</div>
+                                }
+                            }
+                        </TabPanel>
                     </>
                 }
 
@@ -647,308 +641,6 @@ const InfoBoxSetting = props =>{
         </PanelBody>
     }
 
-    // CTA settings.
-    const ctaSettings = () => {
-        return <PanelBody	title={ __( "Call To Action", "ultimate-addons-for-gutenberg" ) } initialOpen={ false }	>
-            <SelectControl
-                label={ __( "Type", "ultimate-addons-for-gutenberg" ) }
-                value={ ctaType }
-                onChange={ ( value ) => setAttributes( { ctaType: value } ) }
-                options={ [
-                    { value: "none", label: __( "None", "ultimate-addons-for-gutenberg" ) },
-                    { value: "text", label: __( "Text", "ultimate-addons-for-gutenberg" ) },
-                    { value: "button", label: __( "Button", "ultimate-addons-for-gutenberg" ) },
-                    { value: "all", label: __( "Complete Box", "ultimate-addons-for-gutenberg" ) },
-                ] }
-            />
-            { ( ctaType === "text" || ctaType === "button" ) && <>
-                <TextControl
-                    label= { __( "Text", "ultimate-addons-for-gutenberg" ) }
-                    value= { ctaText }
-                    onChange={ value => setAttributes( { ctaText: value } ) }
-                />
-                <ToggleControl
-                    label={ __( "Inherit from Theme", "ultimate-addons-for-gutenberg" ) }
-                    checked={ inheritFromTheme }
-                    onChange={ ( value ) => setAttributes( { inheritFromTheme: ! inheritFromTheme } ) }
-                />
-                { ctaType === "text" &&
-                    <TypographyControl
-                        label={ __( "Typography", "ultimate-addons-for-gutenberg" ) }
-                        attributes = { attributes }
-                        setAttributes = { setAttributes }
-                        loadGoogleFonts = { { value: ctaLoadGoogleFonts, label: "ctaLoadGoogleFonts" } }
-                        fontFamily = { { value: ctaFontFamily, label: "ctaFontFamily" } }
-                        fontWeight = { { value: ctaFontWeight, label: "ctaFontWeight" } }
-                        fontSubset = { { value: ctaFontSubset, label: "ctaFontSubset" } }
-                        fontSizeType = { { value: ctaFontSizeType, label: "ctaFontSizeType" } }
-                        fontSize = { { value: ctaFontSize, label: "ctaFontSize" } }
-                        fontSizeMobile = { { value: ctaFontSizeMobile, label: "ctaFontSizeMobile" } }
-                        fontSizeTablet= { { value: ctaFontSizeTablet, label: "ctaFontSizeTablet" } }
-                        disableLineHeight = {true}
-                    />
-                }
-                { ( !inheritFromTheme  && ctaType === "button" )    &&
-                    <TypographyControl
-                        label={ __( "Typography", "ultimate-addons-for-gutenberg" ) }
-                        attributes = { attributes }
-                        setAttributes = { setAttributes }
-                        loadGoogleFonts = { { value: ctaLoadGoogleFonts, label: "ctaLoadGoogleFonts" } }
-                        fontFamily = { { value: ctaFontFamily, label: "ctaFontFamily" } }
-                        fontWeight = { { value: ctaFontWeight, label: "ctaFontWeight" } }
-                        fontSubset = { { value: ctaFontSubset, label: "ctaFontSubset" } }
-                        fontSizeType = { { value: ctaFontSizeType, label: "ctaFontSizeType" } }
-                        fontSize = { { value: ctaFontSize, label: "ctaFontSize" } }
-                        fontSizeMobile = { { value: ctaFontSizeMobile, label: "ctaFontSizeMobile" } }
-                        fontSizeTablet= { { value: ctaFontSizeTablet, label: "ctaFontSizeTablet" } }
-                        disableLineHeight = {true}
-                    />
-                }
-            </>
-            }
-            { ( ctaType !== "none" ) &&
-                <>
-                    <TextControl
-                        label= { __( "Link", "ultimate-addons-for-gutenberg" ) }
-                        value= { ctaLink }
-                        onChange={ value => setAttributes( { ctaLink: value } ) }
-                    />
-                    <ToggleControl
-                        label={ __( "Open in new Window", "ultimate-addons-for-gutenberg" ) }
-                        checked={ ctaTarget }
-                        onChange={ toggleTarget() }
-                    />
-
-                </>
-            }
-
-            { ( ctaType !== "all" ) && ( ctaType !== "none" ) &&
-                <>
-                    <hr className="uagb-editor__separator" />
-                    <h2>{ __( "Button Icon", "ultimate-addons-for-gutenberg" ) }</h2>
-                    <FontIconPicker 
-                        icons={ svg_icons}
-                        renderFunc={ renderSVG}
-                        value= {ctaIcon}
-                        onChange= {( value ) => setAttributes( { ctaIcon: value } )}
-                        isMulti= {false}
-                        noSelectedPlaceholder= {__( "Select Icon", "ultimate-addons-for-gutenberg" )}
-                    />
-                    { ctaIcon != "" && <>
-                        <SelectControl
-                            label={ __( "Icon Position", "ultimate-addons-for-gutenberg" ) }
-                            value={ ctaIconPosition }
-                            onChange={ ( value ) => setAttributes( { ctaIconPosition: value } ) }
-                            options={ [
-                                { value: "before", label: __( "Before Text", "ultimate-addons-for-gutenberg" ) },
-                                { value: "after", label: __( "After Text", "ultimate-addons-for-gutenberg" ) },
-                            ] }
-                        />
-                        <RangeControl
-                            label={ __( "Icon Spacing", "ultimate-addons-for-gutenberg" ) }
-                            value={ ctaIconSpace }
-                            onChange={ ( value ) => setAttributes( { ctaIconSpace: value } ) }
-                            min={ 0 }
-                            max={ 50 }
-                            beforeIcon=""
-                            allowReset
-                        />
-                    </>
-                    }
-                    <hr className="uagb-editor__separator" />
-                </>
-            }
-
-            { ( !inheritFromTheme && ctaType == "button" ) && (
-                <>
-                    <h2>{ __( "Button Padding", "ultimate-addons-for-gutenberg" ) }</h2>
-                    <RangeControl
-                        label={ UAGB_Block_Icons.vertical_spacing }
-                        value={ ctaBtnVertPadding }
-                        onChange={ ( value ) => setAttributes( { ctaBtnVertPadding: value } ) }
-                        min={ 0 }
-                        max={ 50 }
-                        className={ "uagb-margin-control" }
-                        allowReset
-                    />
-                    <RangeControl
-                        label={ UAGB_Block_Icons.horizontal_spacing }
-                        value={ ctaBtnHrPadding }
-                        onChange={ ( value ) => setAttributes( { ctaBtnHrPadding: value } ) }
-                        min={ 0 }
-                        max={ 50 }
-                        className={ "uagb-margin-control" }
-                        allowReset
-                    />
-                    <hr className="uagb-editor__separator" />
-                    <h2>{ __( "Button Border", "ultimate-addons-for-gutenberg" ) }</h2>
-                    <SelectControl
-                        label={ __( "Style", "ultimate-addons-for-gutenberg" ) }
-                        value={ ctaBorderStyle }
-                        onChange={ ( value ) => setAttributes( { ctaBorderStyle: value } ) }
-                        options={ [
-                            { value: "none", label: __( "None", "ultimate-addons-for-gutenberg" ) },
-                            { value: "solid", label: __( "Solid", "ultimate-addons-for-gutenberg" ) },
-                            { value: "double", label: __( "Double", "ultimate-addons-for-gutenberg" ) },
-                            { value: "dashed", label: __( "Dashed", "ultimate-addons-for-gutenberg" ) },
-                            { value: "dotted", label: __( "Dotted", "ultimate-addons-for-gutenberg" ) },
-                        ] }
-                    />
-
-                    { ( ctaBorderStyle !== "none" ) && (
-                        <>
-                            <RangeControl
-                                label={ __( "Width", "ultimate-addons-for-gutenberg" ) }
-                                value={ ctaBorderWidth }
-                                onChange={ ( value ) => setAttributes( { ctaBorderWidth: value } ) }
-                                min={ 0 }
-                                max={ 10 }
-                                beforeIcon=""
-                                allowReset
-                            />
-                        </>
-                    )
-                    }
-                    <RangeControl
-                        label={ __( "Rounded Corner", "ultimate-addons-for-gutenberg" ) }
-                        value={ ctaBorderRadius }
-                        onChange={ ( value ) => setAttributes( { ctaBorderRadius: value } ) }
-                        min={ 0 }
-                        max={ 100 }
-                        beforeIcon=""
-                        allowReset
-                    />
-                    <hr className="uagb-editor__separator" />
-                </>
-            )
-            }
-
-            { ( ctaType === "text" ) &&
-                <TabPanel className="uagb-inspect-tabs uagb-inspect-tabs-col-2"
-                    activeClass="active-tab"
-                    tabs={ [
-                        {
-                            name: "normal",
-                            title: __( "Normal", "ultimate-addons-for-gutenberg" ),
-                            className: "uagb-normal-tab",
-                        },
-                        {
-                            name: "hover",
-                            title: __( "Hover", "ultimate-addons-for-gutenberg" ),
-                            className: "uagb-focus-tab",
-                        },
-                    ] }>
-                    {
-                        ( tabName ) => {
-                            let tabout_1
-                            if( "normal" === tabName.name ) {
-                                tabout_1 = <>
-                                    <p className="uagb-setting-label">{ __( "Text Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaLinkColor }} ></span></span></p>
-                                    <ColorPalette
-                                        value={ ctaLinkColor }
-                                        onChange={ ( colorValue ) => setAttributes( { ctaLinkColor: colorValue } ) }
-                                        allowReset
-                                    />
-                                </>
-                            } else {
-                                tabout_1 = <>
-                                    <p className="uagb-setting-label">{ __( "Text Hover Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaLinkHoverColor }} ></span></span></p>
-                                    <ColorPalette
-                                        value={ ctaLinkHoverColor }
-                                        onChange={ ( colorValue ) => setAttributes( { ctaLinkHoverColor: colorValue } ) }
-                                        allowReset
-                                    />
-                                </>
-                            }
-                            return <div>{ tabout_1 }</div>
-                        }
-                    }
-                </TabPanel>
-            }
-
-            { ( !inheritFromTheme && ctaType == "button" ) &&
-                    <TabPanel className="uagb-inspect-tabs uagb-inspect-tabs-col-2"
-                        activeClass="active-tab"
-                        tabs={ [
-                            {
-                                name: "normal",
-                                title: __( "Normal", "ultimate-addons-for-gutenberg" ),
-                                className: "uagb-normal-tab",
-                            },
-                            {
-                                name: "hover",
-                                title: __( "Hover", "ultimate-addons-for-gutenberg" ),
-                                className: "uagb-focus-tab",
-                            },
-                        ] }>
-                        {
-                            ( tabName ) => {
-                                let tabout
-                                if( "normal" === tabName.name ) {
-                                    tabout = ctaNormalSettings
-                                }else {
-                                    tabout = ctaHoverSettings
-                                }
-                                return <div>{ tabout }</div>
-                            }
-                        }
-                    </TabPanel>
-            }
-        </PanelBody>
-    }
-
-    const ctaNormalSettings = () => {
-        return <>
-            <p className="uagb-setting-label">{ __( "Text Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaBtnLinkColor }} ></span></span></p>
-            <ColorPalette
-                value={ ctaBtnLinkColor }
-                onChange={ ( colorValue ) => setAttributes( { ctaBtnLinkColor: colorValue } ) }
-                allowReset
-            />
-            <p className="uagb-setting-label">{ __( "Background Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaBgColor }} ></span></span></p>
-            <ColorPalette
-                value={ ctaBgColor }
-                onChange={ ( colorValue ) => setAttributes( { ctaBgColor: colorValue } ) }
-                allowReset
-            />
-            { ( ctaBorderStyle !== "none" ) && <>
-                <p className="uagb-setting-label">{ __( "Border Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaBorderColor }} ></span></span></p>
-                <ColorPalette
-                    value={ ctaBorderColor }
-                    onChange={ ( colorValue ) => setAttributes( { ctaBorderColor: colorValue } ) }
-                    allowReset
-                />
-                </>
-            }
-        </>
-    }
-
-    const ctaHoverSettings = () => {
-        return <>
-            <p className="uagb-setting-label">{ __( "Text Hover Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaLinkHoverColor }} ></span></span></p>
-            <ColorPalette
-                value={ ctaLinkHoverColor }
-                onChange={ ( colorValue ) => setAttributes( { ctaLinkHoverColor: colorValue } ) }
-                allowReset
-            />
-            <p className="uagb-setting-label">{ __( "Background Hover Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaBgHoverColor }} ></span></span></p>
-            <ColorPalette
-                value={ ctaBgHoverColor }
-                onChange={ ( colorValue ) => setAttributes( { ctaBgHoverColor: colorValue } ) }
-                allowReset
-            />
-            { ( ctaBorderStyle !== "none" ) && <>
-                <p className="uagb-setting-label">{ __( "Border Hover Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaBorderhoverColor }} ></span></span></p>
-                <ColorPalette
-                    value={ ctaBorderhoverColor }
-                    onChange={ ( colorValue ) => setAttributes( { ctaBorderhoverColor: colorValue } ) }
-                    allowReset
-                />
-                </>
-            }
-        </>
-    }
-
     // Margin Settings.
     const marginSettings = () => {
         return <PanelBody	title={ __( "Spacing", "ultimate-addons-for-gutenberg" ) } initialOpen={ false }	>
@@ -1035,6 +727,301 @@ const InfoBoxSetting = props =>{
                 allowReset
             />
         </PanelBody>
+    }
+    const ctaSettings = () => {
+        return <PanelBody	title={ __( "Call To Action", "ultimate-addons-for-gutenberg" ) } initialOpen={ false }	>
+                    <SelectControl
+                        label={ __( "Type", "ultimate-addons-for-gutenberg" ) }
+                        value={ ctaType }
+                        onChange={ ( value ) => setAttributes( { ctaType: value } ) }
+                        options={ [
+                            { value: "none", label: __( "None", "ultimate-addons-for-gutenberg" ) },
+                            { value: "text", label: __( "Text", "ultimate-addons-for-gutenberg" ) },
+                            { value: "button", label: __( "Button", "ultimate-addons-for-gutenberg" ) },
+                            { value: "all", label: __( "Complete Box", "ultimate-addons-for-gutenberg" ) },
+                        ] }
+                    />
+                    { ( ctaType === "text" || ctaType === "button" ) &&
+                        <>
+                            <TextControl
+                                label= { __( "Text", "ultimate-addons-for-gutenberg" ) }
+                                value= { ctaText }
+                                onChange={ value => setAttributes( { ctaText: value } ) }
+                            />
+                            <ToggleControl
+                                label={ __( "Inherit from Theme", "ultimate-addons-for-gutenberg" ) }
+                                checked={ inheritFromTheme }
+                                onChange={ ( value ) => setAttributes( { inheritFromTheme: ! inheritFromTheme } ) }
+                            />
+                            { ctaType === "text" &&
+                                <TypographyControl
+                                    label={ __( "Typography", "ultimate-addons-for-gutenberg" ) }
+                                    attributes = { attributes }
+                                    setAttributes = { setAttributes }
+                                    loadGoogleFonts = { { value: ctaLoadGoogleFonts, label: "ctaLoadGoogleFonts" } }
+                                    fontFamily = { { value: ctaFontFamily, label: "ctaFontFamily" } }
+                                    fontWeight = { { value: ctaFontWeight, label: "ctaFontWeight" } }
+                                    fontSubset = { { value: ctaFontSubset, label: "ctaFontSubset" } }
+                                    fontSizeType = { { value: ctaFontSizeType, label: "ctaFontSizeType" } }
+                                    fontSize = { { value: ctaFontSize, label: "ctaFontSize" } }
+                                    fontSizeMobile = { { value: ctaFontSizeMobile, label: "ctaFontSizeMobile" } }
+                                    fontSizeTablet= { { value: ctaFontSizeTablet, label: "ctaFontSizeTablet" } }
+                                    disableLineHeight = {true}
+                                />
+                            }
+                            { ( !inheritFromTheme  && ctaType === "button" )  &&
+                                <TypographyControl
+                                    label={ __( "Typography", "ultimate-addons-for-gutenberg" ) }
+                                    attributes = { attributes }
+                                    setAttributes = { setAttributes }
+                                    loadGoogleFonts = { { value: ctaLoadGoogleFonts, label: "ctaLoadGoogleFonts" } }
+                                    fontFamily = { { value: ctaFontFamily, label: "ctaFontFamily" } }
+                                    fontWeight = { { value: ctaFontWeight, label: "ctaFontWeight" } }
+                                    fontSubset = { { value: ctaFontSubset, label: "ctaFontSubset" } }
+                                    fontSizeType = { { value: ctaFontSizeType, label: "ctaFontSizeType" } }
+                                    fontSize = { { value: ctaFontSize, label: "ctaFontSize" } }
+                                    fontSizeMobile = { { value: ctaFontSizeMobile, label: "ctaFontSizeMobile" } }
+                                    fontSizeTablet= { { value: ctaFontSizeTablet, label: "ctaFontSizeTablet" } }
+                                    disableLineHeight = {true}
+                                />
+                            }
+                        </>
+                    } 
+                    { ( ctaType !== "none" ) &&
+                        <>
+                            <TextControl
+                                label= { __( "Link", "ultimate-addons-for-gutenberg" ) }
+                                value= { ctaLink }
+                                onChange={ ( value ) => setAttributes( { ctaLink: value } ) }
+                            />
+                            <ToggleControl
+                                label={ __( "Open in new Window", "ultimate-addons-for-gutenberg" ) }
+                                checked={ ctaTarget }
+                                onChange={ ( value ) => setAttributes( { ctaTarget: ! ctaTarget } ) }
+                            />
+                        </>
+                    } 
+                    { ( ctaType !== "all" &&  ctaType !== "none" ) &&
+                        <>
+                            <hr className="uagb-editor__separator" />
+                            <h2>{ __( "Button Icon", "ultimate-addons-for-gutenberg" ) }</h2>
+                            <FontIconPicker 
+                                icons={ svg_icons}
+                                renderFunc={ renderSVG}
+                                value= {ctaIcon}
+                                onChange= {( value ) => setAttributes( { ctaIcon: value } )}
+                                isMulti= {false}
+                                noSelectedPlaceholder= {__( "Select Icon", "ultimate-addons-for-gutenberg" )}
+                            />
+                            { ( ctaIcon !== "" ) && 
+                            <>
+                                <SelectControl
+                                    label={ __( "Icon Position", "ultimate-addons-for-gutenberg" ) }
+                                    value={ ctaIconPosition }
+                                    onChange={ ( value ) => setAttributes( { ctaIconPosition: value } ) }
+                                    options={ [
+                                        { value: "before", label: __( "Before Text", "ultimate-addons-for-gutenberg" ) },
+                                        { value: "after", label: __( "After Text", "ultimate-addons-for-gutenberg" ) },
+                                    ] }
+                                />
+                                <RangeControl
+                                    label={ __( "Icon Spacing", "ultimate-addons-for-gutenberg" ) }
+                                    value={ ctaIconSpace }
+                                    onChange={ ( value ) => setAttributes( { ctaIconSpace: value } ) }
+                                    min={ 0 }
+                                    max={ 50 }
+                                    beforeIcon= ""
+                                    allowReset
+                                />
+                            </>
+                            }
+                            <hr className="uagb-editor__separator" />
+                        </>
+                    }
+                    { ( !inheritFromTheme && ctaType == "button" ) && 
+                        <>
+                            <h2>{ __( "Button Padding", "ultimate-addons-for-gutenberg" ) }</h2>
+                            <RangeControl
+                                label={ UAGB_Block_Icons.vertical_spacing }
+                                value={ ctaBtnVertPadding }
+                                onChange={ ( value ) => setAttributes( { ctaBtnVertPadding: value } ) }
+                                min={ 0 }
+                                max={ 50 }
+                                className={ "uagb-margin-control" }
+                                allowReset
+                            />
+                            <RangeControl
+                                label={ UAGB_Block_Icons.horizontal_spacing }
+                                value={ ctaBtnHrPadding }
+                                onChange={ ( value ) => setAttributes( { ctaBtnHrPadding: value } ) }
+                                min={ 0 }
+                                max={ 50 }
+                                className={ "uagb-margin-control" }
+                                allowReset
+                            />
+                            <hr className="uagb-editor__separator" />
+                            <h2>{ __( "Button Border", "ultimate-addons-for-gutenberg" ) }</h2>
+                            <SelectControl
+                                label={ __( "Style", "ultimate-addons-for-gutenberg" ) }
+                                value={ ctaBorderStyle }
+                                onChange={ ( value ) => setAttributes( { ctaBorderStyle: value } ) }
+                                options={ [
+                                    { value: "none", label: __( "None", "ultimate-addons-for-gutenberg" ) },
+                                    { value: "solid", label: __( "Solid", "ultimate-addons-for-gutenberg" ) },
+                                    { value: "double", label: __( "Double", "ultimate-addons-for-gutenberg" ) },
+                                    { value: "dashed", label: __( "Dashed", "ultimate-addons-for-gutenberg" ) },
+                                    { value: "dotted", label: __( "Dotted", "ultimate-addons-for-gutenberg" ) },
+                                ] }
+                            />
+                            { ( ctaBorderStyle !== "none" ) && (
+                                <>
+                                    <RangeControl
+                                        label={ __( "Width", "ultimate-addons-for-gutenberg" ) }
+                                        value={ ctaBorderWidth }
+                                        onChange={ ( value ) => setAttributes( { ctaBorderWidth: value } ) }
+                                        min={ 0 }
+                                        max={ 10 }
+                                        beforeIcon=""
+                                        allowReset
+                                    />
+                                </>
+                            )
+                            }
+                            <RangeControl
+                                label={ __( "Rounded Corner", "ultimate-addons-for-gutenberg" ) }
+                                value={ ctaBorderRadius }
+                                onChange={ ( value ) => setAttributes( { ctaBorderRadius: value } ) }
+                                min={ 0 }
+                                max={ 100 }
+                                beforeIcon=""
+                                allowReset
+                            />
+                            <hr className="uagb-editor__separator" />
+                        </>
+                    }
+                    { ( ctaType === "text" ) &&
+                        <TabPanel className="uagb-inspect-tabs uagb-inspect-tabs-col-2"
+                            activeClass="active-tab"
+                            tabs={ [
+                                {
+                                    name: "normal",
+                                    title: __( "Normal", "ultimate-addons-for-gutenberg" ),
+                                    className: "uagb-normal-tab",
+                                },
+                                {
+                                    name: "hover",
+                                    title: __( "Hover", "ultimate-addons-for-gutenberg" ),
+                                    className: "uagb-focus-tab",
+                                },
+                            ] }
+                        >
+                            {
+                                ( tabName ) => {
+                                    let tabout_1
+                                    if( "normal" === tabName.name ) {
+                                        tabout_1 = <>
+                                            <p className="uagb-setting-label">{ __( "Text Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaLinkColor }} ></span></span></p>
+                                            <ColorPalette
+                                                value={ ctaLinkColor }
+                                                onChange={ ( colorValue ) => setAttributes( { ctaLinkColor: colorValue } ) }
+                                                allowReset
+                                            />
+                                        </>
+                                    } else {
+                                        tabout_1 = <>
+                                            <p className="uagb-setting-label">{ __( "Text Hover Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaLinkHoverColor }} ></span></span></p>
+                                            <ColorPalette
+                                                value={ ctaLinkHoverColor }
+                                                onChange={ ( colorValue ) => setAttributes( { ctaLinkHoverColor: colorValue } ) }
+                                                allowReset
+                                            />
+                                        </>
+                                    }
+                                    return <div>{ tabout_1 }</div>
+                                }
+                            }
+                        </TabPanel>
+                    }
+                     { ( !inheritFromTheme && ctaType == "button" ) &&
+                        <TabPanel className="uagb-inspect-tabs uagb-inspect-tabs-col-2"
+                                activeClass="active-tab"
+                                tabs={ [
+                                    {
+                                        name: "normal",
+                                        title: __( "Normal", "ultimate-addons-for-gutenberg" ),
+                                        className: "uagb-normal-tab",
+                                    },
+                                    {
+                                        name: "hover",
+                                        title: __( "Hover", "ultimate-addons-for-gutenberg" ),
+                                        className: "uagb-focus-tab",
+                                    },
+                                ] }>
+                                {
+                                    ( tabName ) => {
+                                        let tabout
+                                        if( "normal" === tabName.name ) {
+                                            tabout = ctaNormalSettings()
+                                        }else {
+                                            tabout = ctaHoverSettings()
+                                        }
+                                        return <div>{ tabout }</div>
+                                    }
+                                }
+                            </TabPanel>
+                    }
+                </PanelBody>
+    }
+    const ctaNormalSettings = () => {
+        return <>
+                    <p className="uagb-setting-label">{ __( "Text Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaBtnLinkColor }} ></span></span></p>
+                    <ColorPalette
+                        value={ ctaBtnLinkColor }
+                        onChange={ ( colorValue ) => setAttributes( { ctaBtnLinkColor: colorValue } ) }
+                        allowReset
+                    />
+                    <p className="uagb-setting-label">{ __( "Background Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaBgColor }} ></span></span></p>
+                    <ColorPalette
+                        value={ ctaBgColor }
+                        onChange={ ( colorValue ) => setAttributes( { ctaBgColor: colorValue } ) }
+                        allowReset
+                    />
+                    { ( ctaBorderStyle !== "none" ) && 
+                        <>
+                            <p className="uagb-setting-label">{ __( "Border Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaBorderColor }} ></span></span></p>
+                            <ColorPalette
+                                value={ ctaBorderColor }
+                                onChange={ ( colorValue ) => setAttributes( { ctaBorderColor: colorValue } ) }
+                                allowReset
+                            />
+                        </>
+                    }
+                </>
+    }
+    const ctaHoverSettings = () => {
+        return <>
+            <p className="uagb-setting-label">{ __( "Text Hover Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaLinkHoverColor }} ></span></span></p>
+            <ColorPalette
+                value={ ctaLinkHoverColor }
+                onChange={ ( colorValue ) => setAttributes( { ctaLinkHoverColor: colorValue } ) }
+                allowReset
+            />
+            <p className="uagb-setting-label">{ __( "Background Hover Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaBgHoverColor }} ></span></span></p>
+            <ColorPalette
+                value={ ctaBgHoverColor }
+                onChange={ ( colorValue ) => setAttributes( { ctaBgHoverColor: colorValue } ) }
+                allowReset
+            />
+            { ( ctaBorderStyle !== "none" ) && <>
+                <p className="uagb-setting-label">{ __( "Border Hover Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: ctaBorderhoverColor }} ></span></span></p>
+                <ColorPalette
+                    value={ ctaBorderhoverColor }
+                    onChange={ ( colorValue ) => setAttributes( { ctaBorderhoverColor: colorValue } ) }
+                    allowReset
+                />
+                </>
+            }
+        </>
     }
 
     return (
