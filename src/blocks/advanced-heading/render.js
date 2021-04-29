@@ -14,6 +14,9 @@ export default function renderHeading( props ) {
             headingTag,
             seperatorStyle
         },
+        insertBlocksAfter,
+        mergeBlocks,
+        onReplace,
         setAttributes,
         className,
         deviceType
@@ -29,6 +32,19 @@ export default function renderHeading( props ) {
             onChange={ ( value ) => {
                 setAttributes( { headingTitle: value } ) 
             }}
+            onMerge={ mergeBlocks }
+            onSplit={
+                insertBlocksAfter ?
+                    ( before, after, ...blocks ) => {
+                        setAttributes( { content: before } );
+                        insertBlocksAfter( [
+                            ...blocks,
+                            createBlock( "core/paragraph", { content: after } ),
+                        ] );
+                    } :
+                    undefined
+            }
+            onRemove={ () => onReplace }
         />
     )
 
@@ -47,6 +63,19 @@ export default function renderHeading( props ) {
             value={ headingDesc }
             className='uagb-desc-text'
             onChange={ ( value ) => setAttributes( { headingDesc: value } ) }
+            onMerge={ mergeBlocks }
+            onSplit={
+                insertBlocksAfter ?
+                    ( before, after, ...blocks ) => {
+                        setAttributes( { content: before } );
+                        insertBlocksAfter( [
+                            ...blocks,
+                            createBlock( "core/paragraph", { content: after } ),
+                        ] );
+                    } :
+                    undefined
+            }
+            onRemove={ () => onReplace }
         />
     )
 
