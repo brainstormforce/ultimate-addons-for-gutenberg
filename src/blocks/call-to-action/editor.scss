@@ -14,17 +14,14 @@
 	color: inherit;
 }
 
-.block-editor-page #wpwrap .uagb-cta__title {
-	margin-bottom: 10px;
-}
-
-.block-editor-page #wpwrap .uagb-cta-separator-parent {
+.block-editor-page #wpwrap .uagb-cta__title,
+.block-editor-page #wpwrap .uagb-cta-separator-parent,
+.block-editor-page #wpwrap .uagb-cta__desc {
 	margin-bottom: 10px;
 }
 
 .block-editor-page #wpwrap .uagb-cta__desc {
 	margin: 0;
-	margin-bottom: 10px;
 }
 
 .block-editor-page #wpwrap .uagb-cta__block-link i {

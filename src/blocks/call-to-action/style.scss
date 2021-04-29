@@ -3,7 +3,14 @@
  *
  * CSS for both Frontend+Backend.
  */
-
+.uagb-cta__outer-wrap .uagb-cta__content ,
+.uagb-cta__outer-wrap a.uagb-cta__block-link span ,
+.uagb-cta__outer-wrap .uagb-cta__content-right .uagb-cta__button-wrapper ,
+.uagb-cta__outer-wrap .uagb-cta-typeof-button , 
+.uagb-cta__outer-wrap .uagb-cta__content-right .uagb-cta__block-link ,
+.uagb-cta__outer-wrap .uagb-cta-with-svg  {
+	display: inline-block;
+}
 .uagb-cta__outer-wrap {
 	position: relative;
 
@@ -11,27 +18,13 @@
 		fill: currentColor;
 	}
 
-	.uagb-cta__content {
-		display: inline-block;
-	}
-
 	a.uagb-cta__block-link span {
 		font-size: inherit;
 		vertical-align: middle;
-		display: inline-block;
 		float: left;
 	}
 
-	.uagb-cta__content-right .uagb-cta__link-wrapper {
-		width: 30%;
-	}
-
-	.uagb-cta__content-right .uagb-cta__content {
-		width: 70%;
-	}
-
 	.uagb-cta__content-right .uagb-cta__button-wrapper {
-		display: inline-block;
 		float: right;
 	}
 
@@ -99,10 +92,7 @@
 	}
 
 	.uagb-cta-typeof-button {
-		display: inline-block;
 		line-height: 1;
-		background-color: transparent;
-		color: #333;
 		text-align: center;
 	}
 
@@ -130,10 +120,7 @@
 	}
 
 	.uagb-cta__block,
-	.uagb-cta__content {
-		z-index: 1;
-	}
-
+	.uagb-cta__content,
 	.uagb-cta__left-right-wrap {
 		z-index: 1;
 	}
@@ -143,7 +130,6 @@
 	}
 
 	.uagb-cta__content-right .uagb-cta__block-link {
-		display: inline-block;
 		float: right;
 		padding: 10px 14px;
 	}
@@ -164,7 +150,6 @@
 		height: 14px;
 		width: 14px;
 		line-height: 14px;
-		display: inline-block;
 		vertical-align: middle;
 	}
 
@@ -204,7 +189,6 @@
 	}
 
 	.uagb-cta__content-stacked-tablet.uagb-cta__content-right .uagb-cta__button-wrapper {
-		display: inline-block;
 		float: none;
 		margin: 0 auto;
 	}
@@ -228,7 +212,6 @@
 	}
 
 	.uagb-cta__content-stacked-mobile.uagb-cta__content-right .uagb-cta__button-wrapper {
-		display: inline-block;
 		float: none;
 		margin: 0 auto;
 	}
