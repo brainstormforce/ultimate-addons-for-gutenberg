@@ -212,7 +212,7 @@ const marketingButtonSettings = props => {
                         isMulti={ false }
                         noSelectedPlaceholder={ __( "Select Icon", "ultimate-addons-for-gutenberg" ) }
                     />
-                    { "" !== icon && <Fragment>
+                    { "" !== icon && <>
                         <SelectControl
                             label={ __( "Icon Position", "ultimate-addons-for-gutenberg" ) }
                             value={ iconPosition }
@@ -233,7 +233,7 @@ const marketingButtonSettings = props => {
                         />
                         <Columnresponsive />
                         { "Desktop" === deviceType && (
-                            <Fragment>
+                            <>
                                 <RangeControl
                                     label={ __( "Icon Size", "ultimate-addons-for-gutenberg" ) }
                                     value={ iconFontSize }
@@ -242,10 +242,10 @@ const marketingButtonSettings = props => {
                                     max={ 500 }
                                     allowReset
                                 />
-                            </Fragment>
+                            </>
                         ) }
                         { "Tablet" === deviceType && (
-                            <Fragment>
+                            <>
                                 <RangeControl
                                     label={ __( "Icon Size", "ultimate-addons-for-gutenberg" ) }
                                     value={ iconFontSizeTablet }
@@ -254,10 +254,10 @@ const marketingButtonSettings = props => {
                                     max={ 500 }
                                     allowReset
                                 />
-                            </Fragment>
+                            </>
                         ) }
                         { "Mobile" === deviceType && (
-                            <Fragment>
+                            <>
                                 <RangeControl
                                     label={ __( "Icon Size", "ultimate-addons-for-gutenberg" ) }
                                     value={ iconFontSizeMobile }
@@ -266,9 +266,9 @@ const marketingButtonSettings = props => {
                                     max={ 500 }
                                     allowReset
                                 />
-                            </Fragment>
+                            </>
                         ) }
-                    </Fragment>
+                    </>
                     }
                     <RangeControl
                         label={ __( "Title Bottom Spacing", "ultimate-addons-for-gutenberg" ) }
@@ -357,7 +357,7 @@ const marketingButtonSettings = props => {
                             ( tabName ) => {
                                 let tabout_color;
                                 if ( "normal" === tabName.name ) {
-                                    tabout_color = <Fragment>
+                                    tabout_color = <>
                                         <p className="uagb-setting-label">{ __( "Title Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={ { backgroundColor: titleColor } } ></span></span></p>
                                         <ColorPalette
                                             value={ titleColor }
@@ -376,9 +376,9 @@ const marketingButtonSettings = props => {
                                             onChange={ ( colorValue ) => setAttributes( { prefixColor: colorValue } ) }
                                             allowReset
                                         />
-                                    </Fragment>;
+                                    </>;
                                 } else {
-                                    tabout_color = <Fragment>
+                                    tabout_color = <>
                                         <p className="uagb-setting-label">{ __( "Title Hover Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={ { backgroundColor: titleHoverColor } } ></span></span></p>
                                         <ColorPalette
                                             value={ titleHoverColor }
@@ -397,7 +397,7 @@ const marketingButtonSettings = props => {
                                             onChange={ ( colorValue ) => setAttributes( { prefixHoverColor: colorValue } ) }
                                             allowReset
                                         />
-                                    </Fragment>;
+                                    </>;
                                 }
                                 return <div>{ tabout_color }</div>;
                             }
@@ -410,7 +410,7 @@ const marketingButtonSettings = props => {
         return <PanelBody title={ __( "Background" ) } initialOpen={ false }>
                     <Columnresponsive />
                     { "Desktop" === deviceType && (
-                        <Fragment>
+                        <>
                             <ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
                                 <Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ paddingType === "px" } aria-pressed={ paddingType === "px" } onClick={ () => setAttributes( { paddingType: "px" } ) }>{ "px" }</Button>
                                 <Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ paddingType === "%" } aria-pressed={ paddingType === "%" } onClick={ () => setAttributes( { paddingType: "%" } ) }>{ "%" }</Button>
@@ -432,10 +432,10 @@ const marketingButtonSettings = props => {
                                 min={ 0 }
                                 max={ ( "%" == paddingType ) ? 100 : 2000 }
                             />
-                        </Fragment>
+                        </>
                     ) }
                     { "Tablet" === deviceType && (
-                        <Fragment>
+                        <>
                             <ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
                                 <Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ paddingType === "px" } aria-pressed={ paddingType === "px" } onClick={ () => setAttributes( { paddingType: "px" } ) }>{ "px" }</Button>
                                 <Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ paddingType === "%" } aria-pressed={ paddingType === "%" } onClick={ () => setAttributes( { paddingType: "%" } ) }>{ "%" }</Button>
@@ -457,10 +457,10 @@ const marketingButtonSettings = props => {
                                 min={ 0 }
                                 max={ ( "%" == paddingType ) ? 100 : 2000 }
                             />
-                        </Fragment>
+                        </>
                     ) }
                     { "Mobile" === deviceType && (
-                        <Fragment>
+                        <>
                             <ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
                                 <Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ paddingType === "px" } aria-pressed={ paddingType === "px" } onClick={ () => setAttributes( { paddingType: "px" } ) }>{ "px" }</Button>
                                 <Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ paddingType === "%" } aria-pressed={ paddingType === "%" } onClick={ () => setAttributes( { paddingType: "%" } ) }>{ "%" }</Button>
@@ -482,7 +482,7 @@ const marketingButtonSettings = props => {
                                 min={ 0 }
                                 max={ ( "%" == paddingType ) ? 100 : 2000 }
                             />
-                        </Fragment>
+                        </>
                     ) }
                     <hr className="uagb-editor__separator" />
                     <h2>{ __( "Button Background", "ultimate-addons-for-gutenberg" ) }</h2>
@@ -497,17 +497,17 @@ const marketingButtonSettings = props => {
                         ] }
                     />
                     { "color" == backgroundType && (
-                        <Fragment>
+                        <>
                             <p className="uagb-setting-label">{ __( "Background Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={ { backgroundColor } } ></span></span></p>
                             <ColorPalette
                                 value={ backgroundColor }
                                 onChange={ ( colorValue ) => setAttributes( { backgroundColor: colorValue } ) }
                                 allowReset
                             />
-                        </Fragment>
+                        </>
                     ) }
                     { "gradient" == backgroundType &&
-                        ( <Fragment>
+                        ( <>
                             <PanelColorSettings
                                 title={ __( "Color Settings", "ultimate-addons-for-gutenberg" ) }
                                 colorSettings={ [
@@ -557,7 +557,7 @@ const marketingButtonSettings = props => {
                                 max={ 360 }
                                 allowReset
                             />
-                        </Fragment> )
+                        </> )
                     }
                     { "transparent" !== backgroundType &&
                         <RangeControl
@@ -571,7 +571,7 @@ const marketingButtonSettings = props => {
                         />
                     }
                     { "color" == backgroundType && (
-                        <Fragment>
+                        <>
                             <p className="uagb-setting-label">{ __( "Background Hover Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={ { backgroundColor: backgroundHoverColor } } ></span></span></p>
                             <ColorPalette
                                 value={ backgroundHoverColor }
@@ -587,7 +587,7 @@ const marketingButtonSettings = props => {
                                 allowReset
                                 initialPosition={ 0 }
                             />
-                        </Fragment>
+                        </>
                     ) }
             </PanelBody>
     }
@@ -629,7 +629,7 @@ const marketingButtonSettings = props => {
                         allowReset
                     />
                     { "none" !== borderStyle && (
-                        <Fragment>
+                        <>
                             <p className="uagb-setting-label">{ __( "Border Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={ { backgroundColor: borderColor } } ></span></span></p>
                             <ColorPalette
                                 value={ borderColor }
@@ -642,7 +642,7 @@ const marketingButtonSettings = props => {
                                 onChange={ ( colorValue ) => setAttributes( { borderHoverColor: colorValue } ) }
                                 allowReset
                             />
-                        </Fragment>
+                        </>
                     ) }
                 </PanelBody>
     }
