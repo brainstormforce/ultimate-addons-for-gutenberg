@@ -2,172 +2,171 @@
  * BLOCK: UAGB Inline Notice Block Attributes
  */
 
-
- const attributes = {
+const attributes = {
 	block_id: {
-		type: "string",
+		type: 'string',
 	},
 	c_id: {
-		type: "string",
-		default : null,
+		type: 'string',
+		default: null,
 	},
 	noticeTitle: {
-		type:"string",
-		source: "html",					
-		selector: ".uagb-notice-title",		
-		default: "Notice Title",
+		type: 'string',
+		source: 'html',
+		selector: '.uagb-notice-title',
+		default: 'Notice Title',
 	},
 	headingTag: {
-		type: "string",
-		default: "h4"
+		type: 'string',
+		default: 'h4',
 	},
 	noticeContent: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	noticeDismiss: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	cookies: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	close_cookie_days: {
-		type: "number",
-		default: 1
+		type: 'number',
+		default: 1,
 	},
 	textColor: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	titleColor: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	noticeColor: {
-		type: "string",
-		default: "#FFD54F"
+		type: 'string',
+		default: '#FFD54F',
 	},
 	contentBgColor: {
-		type: "string",
+		type: 'string',
 	},
 	noticeDismissColor: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	icon: {
-		type: "string",
-		default: "fa fa-window-close"
+		type: 'string',
+		default: 'fa fa-window-close',
 	},
 	noticeAlignment: {
-		type: "string",
-		default: "left"
+		type: 'string',
+		default: 'left',
 	},
 	titleFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	titleFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	titleFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	titleFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	titleLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	titleFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	titleFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	titleFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	titleLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	titleLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	titleLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	descFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	descFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	descFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	descFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	descFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	descFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	descFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	descLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	descLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	descLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	descLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	titleLoadGoogleFonts: {
-		type: "boolean",
-		default: false	
+		type: 'boolean',
+		default: false,
 	},
 	descLoadGoogleFonts: {
-		type: "boolean",
-		default: false	
+		type: 'boolean',
+		default: false,
 	},
 	contentVrPadding: {
-		type: "number",
-		default : 15
+		type: 'number',
+		default: 15,
 	},
 	contentHrPadding: {
-		type: "number",
-		default : 15
+		type: 'number',
+		default: 15,
 	},
 	titleVrPadding: {
-		type: "number",
-		default : 15
+		type: 'number',
+		default: 15,
 	},
 	titleHrPadding: {
-		type: "number",
-		default : 15
+		type: 'number',
+		default: 15,
 	},
 	layout: {
-		type: "string",
-		default : "modern",
+		type: 'string',
+		default: 'modern',
 	},
 	highlightWidth: {
-		type: "number",
-		default : 10
+		type: 'number',
+		default: 10,
 	},
-}
+};
 
-export default attributes
+export default attributes;
