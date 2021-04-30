@@ -212,7 +212,7 @@ const marketingButtonSettings = props => {
                         isMulti={ false }
                         noSelectedPlaceholder={ __( "Select Icon", "ultimate-addons-for-gutenberg" ) }
                     />
-                    { "" != icon && <Fragment>
+                    { "" !== icon && <Fragment>
                         <SelectControl
                             label={ __( "Icon Position", "ultimate-addons-for-gutenberg" ) }
                             value={ iconPosition }
@@ -559,7 +559,7 @@ const marketingButtonSettings = props => {
                             />
                         </Fragment> )
                     }
-                    { "transparent" != backgroundType &&
+                    { "transparent" !== backgroundType &&
                         <RangeControl
                             label={ __( "Opacity", "ultimate-addons-for-gutenberg" ) }
                             value={ backgroundOpacity }
@@ -610,7 +610,7 @@ const marketingButtonSettings = props => {
                             { value: "ridge", label: __( "Ridge", "ultimate-addons-for-gutenberg" ) },
                         ] }
                     />
-                    { "none" != borderStyle && (
+                    { "none" !== borderStyle && (
                         <RangeControl
                             label={ __( "Border Width", "ultimate-addons-for-gutenberg" ) }
                             value={ borderWidth }
@@ -628,7 +628,7 @@ const marketingButtonSettings = props => {
                         max={ 1000 }
                         allowReset
                     />
-                    { "none" != borderStyle && (
+                    { "none" !== borderStyle && (
                         <Fragment>
                             <p className="uagb-setting-label">{ __( "Border Color", "ultimate-addons-for-gutenberg" ) }<span className="components-base-control__label"><span className="component-color-indicator" style={ { backgroundColor: borderColor } } ></span></span></p>
                             <ColorPalette

@@ -10,7 +10,7 @@ const { __ } = wp.i18n;
 
 const marketingButtonRender = (props) => {
     
-	const { attributes, setAttributes, className, deviceType } = props;
+	const { attributes, setAttributes, className, deviceType , mergeBlocks , insertBlocksAfter , onReplace} = props;
 
     const {
         block_id,
@@ -35,7 +35,7 @@ const marketingButtonRender = (props) => {
                 <div className="uagb-marketing-btn__wrap">
                     <a className="uagb-marketing-btn__link">
                         <div className="uagb-marketing-btn__title-wrap">
-                            { "" != icon &&
+                            { "" !== icon &&
                                 <div className="uagb-marketing-btn__icon-wrap">
                                     { renderSVG( icon ) }
                                 </div>
@@ -47,14 +47,14 @@ const marketingButtonRender = (props) => {
                                 onChange={ ( value ) => setAttributes( { heading: value } ) }
                                 allowedFormats={ [ "bold", "italic", "strikethrough" ] }
                                 className='uagb-marketing-btn__title'
-                                onRemove={ () => props.onReplace( [] ) }
+                                onRemove={ () => onReplace( [] ) }
                                 multiline={ false }
-                                onMerge={ props.mergeBlocks }
+                                onMerge={ mergeBlocks }
                                 onSplit={
-                                    props.insertBlocksAfter ?
+                                    insertBlocksAfter ?
                                         ( before, after, ...blocks ) => {
                                             setAttributes( { content: before } );
-                                            props.insertBlocksAfter( [
+                                            insertBlocksAfter( [
                                                 ...blocks,
                                                 createBlock( "core/paragraph", { content: after } ),
                                             ] );
@@ -71,14 +71,14 @@ const marketingButtonRender = (props) => {
                                 onChange={ ( value ) => setAttributes( { prefix: value } ) }
                                 allowedFormats={ [ "bold", "italic", "strikethrough" ] }
                                 className='uagb-marketing-btn__prefix'
-                                onRemove={ () => props.onReplace( [] ) }
+                                onRemove={ () => onReplace( [] ) }
                                 multiline={ false }
-                                onMerge={ props.mergeBlocks }
+                                onMerge={ mergeBlocks }
                                 onSplit={
-                                    props.insertBlocksAfter ?
+                                    insertBlocksAfter ?
                                         ( before, after, ...blocks ) => {
                                             setAttributes( { content: before } );
-                                            props.insertBlocksAfter( [
+                                            insertBlocksAfter( [
                                                 ...blocks,
                                                 createBlock( "core/paragraph", { content: after } ),
                                             ] );
