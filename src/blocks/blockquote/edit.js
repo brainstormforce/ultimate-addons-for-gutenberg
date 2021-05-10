@@ -5,7 +5,7 @@ import classnames from "classnames"
 import TweetButtonCTA from "./components/TweetButtonCTA"
 import Description from "./components/Description"
 import AuthorText from "./components/AuthorText"
-import AuthorImage from "./components/AuthorImage"
+import AuthorImageNew from "./components/AuthorImageNew"
 import styling from "./styling"
 import map from "lodash/map"
 import UAGB_Block_Icons from "@Controls/block-icons"
@@ -1135,7 +1135,7 @@ class UAGBBlockQuote extends Component {
 										"uagb-blockquote__author-wrap",
 										( authorImage !== "" ) ? `uagb-blockquote__author-at-${authorImgPosition}` : "",
 									) }	>
-					      		{ <AuthorImage attributes={attributes} /> }
+					      		{ <AuthorImageNew attributes={attributes} /> }
 					      		{ <AuthorText attributes={attributes} setAttributes = { setAttributes } props = { this.props } /> }
 									</div>
 					      	{ enableTweet &&  <TweetButtonCTA attributes={attributes} /> }

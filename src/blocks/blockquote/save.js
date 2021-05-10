@@ -7,7 +7,7 @@ import UAGB_Block_Icons from "@Controls/block-icons"
 import TweetButtonCTA from "./components/TweetButtonCTA"
 import Description from "./components/Description"
 import AuthorText from "./components/AuthorText"
-import AuthorImage from "./components/AuthorImage"
+import AuthorImageNew from "./components/AuthorImageNew"
 
 const {
 	RichText
@@ -59,7 +59,7 @@ export default function save( props ) {
 								"uagb-blockquote__author-wrap",
 								( authorImage !== "" ) ? `uagb-blockquote__author-at-${authorImgPosition}` : "",	
 							) }	>					   		
-							{ <AuthorImage attributes={props.attributes} /> }
+							{ <AuthorImageNew attributes={props.attributes} /> }
 							{ author !== "" && <AuthorText attributes={props.attributes} setAttributes = "not_set" props = { props } /> }
 								</div>
 							{ enableTweet &&  <TweetButtonCTA attributes={props.attributes} /> }
