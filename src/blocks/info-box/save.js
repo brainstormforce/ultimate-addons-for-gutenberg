@@ -11,7 +11,7 @@ import Icon from "./components/Icon"
 import InfoBoxPositionClasses from "./classes"
 import InfoBoxSeparator from "./components/InfoBoxSeparator"
 import CallToAction from "./components/CallToAction"
-import InfoBoxIconImage from "./components/IconImage"
+import InfoBoxIconImage from "./components/IconImageV23_3"
 
 const {
 	RichText

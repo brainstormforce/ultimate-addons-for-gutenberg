@@ -369,6 +369,27 @@ registerBlockType( "uagb/google-map", {
 			},
 		},
 		{ 
+			attributes : {
+				block_id: {
+					type: "string"
+				},
+				address: {
+					type: "string",
+					default: "Brainstorm Force"
+				},
+				height: {
+					type: "number",
+					default: 300
+				},
+				zoom: {
+					type: "number",
+					default: 12
+				},		
+				language: {
+					type: "string",
+					default: "en",
+				},
+			},
 			save: function( props ) {
 			const {
 				block_id,

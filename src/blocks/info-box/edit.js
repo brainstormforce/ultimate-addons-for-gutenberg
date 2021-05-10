@@ -13,7 +13,7 @@ import InfoBoxPositionClasses from "./classes"
 import InfoBoxSeparator from "./components/InfoBoxSeparator"
 import CallToAction from "./components/CallToAction"
 import InfoBoxStyle from "./inline-styles"
-import InfoBoxIconImage from "./components/IconImage"
+import InfoBoxIconImage from "./components/IconImageV23_3"
 import renderSVG from "@Controls/renderIcon"
 import UAGB_Block_Icons from "@Controls/block-icons"
 

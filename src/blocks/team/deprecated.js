@@ -18,7 +18,12 @@ function social_html( icon, link, target ) {
 		<li className="uagb-team__social-icon"><a href={link} target={target_value} title="" rel ="noopener noreferrer">{renderSVG(icon)}</a></li>
 	)
 }
-
+function social_icon_html( icon, link, target ) {
+	let target_value =  ( target ) ? "_blank" : "_self"
+	return (
+		<li className="uagb-team__social-icon"><a href={link} aria-label={ icon } target={target_value} title="" rel ="noopener noreferrer">{renderSVG(icon)}</a></li>
+	)
+}
 function deprecated_social_html( icon, link, target ) {
 	let target_value =  ( target ) ? "_blank" : "_self"
 	return (
@@ -376,6 +381,7 @@ const deprecated = [
 	{
 		attributes,
 		save: function( props ) {
+			
 			const {
 				block_id,
 				align,
@@ -399,10 +405,10 @@ const deprecated = [
 				socialEnable,
 				stack
 			} = props.attributes
-		
+
 			let size = ""
 			let img_url = ""
-		
+
 			if ( image ) {
 				size = image.sizes
 				if ( image.sizes ) {
@@ -411,9 +417,9 @@ const deprecated = [
 					img_url = image.url
 				}
 			}
-		
+
 			let image_html = ""
-		
+
 			if ( "" != img_url ) {
 				image_html = (
 					<div
@@ -429,7 +435,7 @@ const deprecated = [
 					</div>
 				)
 			}
-		
+
 			return (
 				<div
 					className = { classnames(
@@ -442,13 +448,13 @@ const deprecated = [
 						`uagb-block-${ block_id }`
 					) }>
 					<div className = "uagb-team__wrap">
-		
+
 						{ ( imgPosition == "left") && image_html }
-		
+
 						<div className = "uagb-team__content">
-		
+
 							{  imgPosition == "above" && image_html }
-		
+
 							<div className = "uagb-team__title-wrap">
 								<RichText.Content
 									tagName= { tag }
@@ -461,7 +467,7 @@ const deprecated = [
 									className='uagb-team__prefix'
 								/>
 							</div>
-		
+
 							<div className = "uagb-team__desc-wrap">
 								<RichText.Content
 									tagName='p'
@@ -472,16 +478,16 @@ const deprecated = [
 							{ socialEnable &&
 								<div className="uagb-team__social-icon-wrap">
 									<ul className="uagb-team__social-list">
-										{ "" != twitterIcon && social_html( twitterIcon, twitterLink, socialTarget ) }
-										{ "" != fbIcon && social_html( fbIcon, fbLink, socialTarget ) }
-										{ "" != linkedinIcon && social_html( linkedinIcon, linkedinLink, socialTarget ) }
-										{ "" != pinIcon && social_html( pinIcon, pinLink, socialTarget ) }
+										{ "" != twitterIcon && social_icon_html( twitterIcon, twitterLink, socialTarget ) }
+										{ "" != fbIcon && social_icon_html( fbIcon, fbLink, socialTarget ) }
+										{ "" != linkedinIcon && social_icon_html( linkedinIcon, linkedinLink, socialTarget ) }
+										{ "" != pinIcon && social_icon_html( pinIcon, pinLink, socialTarget ) }
 									</ul>
 								</div>
 							}
-		
+
 						</div>
-		
+
 						{ ( imgPosition == "right") && image_html }
 					</div>
 				</div>

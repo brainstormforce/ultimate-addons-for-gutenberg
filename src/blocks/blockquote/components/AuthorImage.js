@@ -25,8 +25,7 @@ class AuthorImage extends React.Component {
 					<img
 						className =""
 						src = { url }                        
-						alt = { attributes.authorImage.alt }     
-						width="640" height="360"               
+						alt = { attributes.authorImage.alt }   
 					/>						
 				</div>				                 
 			)

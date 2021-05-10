@@ -7,9 +7,13 @@ import classnames from "classnames"
 import attributes from "./attributes"
 
 const {
-	RichText
+	RichText,
+	InnerBlocks
 } = wp.blockEditor
 
+const {  
+	Fragment 
+} = wp.element
 const deprecated = [
 	{
         attributes,
