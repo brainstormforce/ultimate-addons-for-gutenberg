@@ -178,7 +178,7 @@ array_multisort(
 						<span class="dashicons dashicons-admin-customizer"></span>
 						<span><?php esc_html_e( 'Free Theme for Gutenberg', 'ultimate-addons-for-gutenberg' ); ?></span>
 					</h2>
-					<img class="uagb-ast-img" src="<?php echo esc_url( UAGB_URL . 'admin/assets/images/welcome-screen-astra.jpg' ); ?>">
+					<img class="uagb-ast-img" src="<?php echo esc_url( UAGB_URL . 'admin/assets/images/welcome-screen-astra.jpg' ); ?>" width="640" height="360">
 					<div class="inside">
 						<p><?php esc_html_e( 'Join over 1+ million active users empowering their websites with Astra! From beginners to industry leaders, everyone loves the Astra theme.', 'ultimate-addons-for-gutenberg' ); ?></p>
 						<h4><?php esc_html_e( 'Why Astra Theme?', 'ultimate-addons-for-gutenberg' ); ?></h4>

@@ -70,6 +70,7 @@ export default function save( props ) {
 					className =""
 					src = { img_url }
 					alt = { ( image.alt ) ? image.alt : "" }
+					width="640" height="360"
 				/>
 			</div>
 		)

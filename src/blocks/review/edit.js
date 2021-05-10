@@ -313,7 +313,7 @@ class UAGBRatingEdit extends Component {
 
 		if ( mainimage && mainimage.url ) {
 
-			image_icon_html = <img className="uagb-review__source-image" src={url} title={title}/>
+			image_icon_html = <img className="uagb-review__source-image" src={url} title={title} width="640" height="360"/>
 
 		}
 

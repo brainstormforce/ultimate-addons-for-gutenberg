@@ -174,7 +174,8 @@ class UAGBGoogleMap extends Component {
 						className="uagb-google-map__iframe"
 						title = { __( "Google Map for " + address ) }
 						src={url}
-						style={{height: height}}></iframe>
+						style={{height: height}}
+						width="640" height="360"></iframe>
 				</div>
 			</Fragment>
 		)
@@ -239,6 +240,7 @@ registerBlockType( "uagb/google-map", {
 					className="uagb-google-map__iframe"
 					title = { __( "Google Map for " + address ) }
 					src={url}
+					width="640" height="360"
 					style={{height: height}}></iframe>
 			</div>
 		)
@@ -366,5 +368,32 @@ registerBlockType( "uagb/google-map", {
 				)
 			},
 		},
+		{ 
+			save: function( props ) {
+			const {
+				block_id,
+				height,
+				zoom,
+				address,
+				language
+			} = props.attributes
+			
+			let encoded_address = encodeURI( address )
+	
+			var lang_par = (language) ? language : "en";
+	
+			let url = `https://www.google.com/maps/embed/v1/place?key=${api_key}&q=${encoded_address}&zoom=${zoom}&language=${lang_par}`
+	
+			return (
+				<div className={ classnames( props.className, "uagb-google-map__wrap", `uagb-block-${block_id}` ) }>
+					<iframe
+						className="uagb-google-map__iframe"
+						title = { __( "Google Map for " + address ) }
+						src={url}
+						style={{height: height}}></iframe>
+				</div>
+			)
+		}
+		}
 	]
 } )

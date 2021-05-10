@@ -33,7 +33,8 @@ class InfoBoxIconImage extends React.Component {
 							<img
 								className ="uagb-ifb-img-src"
 								src = { url }                        
-								alt = { attributes.iconImage.alt }                    
+								alt = { attributes.iconImage.alt }    
+								width="640" height="360"                
 							/>
 						</div>
 					</div>

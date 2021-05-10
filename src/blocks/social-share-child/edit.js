@@ -238,7 +238,7 @@ class UAGBSocialShareChild extends Component {
 									}
 								} else {
 									if ( image && image.url ) {
-										image_icon_html = <img className="uagb-ss__source-image" src={image.url} />
+										image_icon_html = <img className="uagb-ss__source-image" src={image.url} width="640" height="360"/>
 									}
 								}
 

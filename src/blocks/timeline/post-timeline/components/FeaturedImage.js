@@ -24,6 +24,7 @@ class FeaturedImage extends React.Component {
 					}}	>
 						<img
 							src={ src[0] }
+							width="640" height="360"
 							alt={ decodeEntities( post.title.rendered.trim() ) || __( "(Untitled)" ) }
 						/>
 					</a>

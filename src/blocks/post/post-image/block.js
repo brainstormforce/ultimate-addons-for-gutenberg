@@ -5,6 +5,7 @@
 // Import block dependencies and components
 import {PostImage} from "./edit"
 import save from "./save"
+import deprecated from "./deprecated"
 import UAGB_Block_Icons from "@Controls/block-icons"
 import "./editor.scss"
 // Components
@@ -27,5 +28,6 @@ registerBlockType( "uagb/post-image", {
 	],
 	PostImage,
 	example: {},
-	save
+	save,
+	deprecated
 } )

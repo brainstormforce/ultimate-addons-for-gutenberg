@@ -34,7 +34,7 @@ export default function save( props ) {
 		}
 	} else {
 		if ( image && image.url ) {
-			image_icon_html = <img className="uagb-icon-list__source-image" src={image.url} />
+			image_icon_html = <img className="uagb-icon-list__source-image" src={image.url} width="640" height="360"/>
 		}
 	}
 

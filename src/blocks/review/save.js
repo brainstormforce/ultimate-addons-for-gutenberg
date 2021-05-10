@@ -65,7 +65,7 @@ export default function save( props ) {
 
 	if ( mainimage && mainimage.url ) {
 
-		image_icon_html = <img className="uagb-howto__source-image" src={url} title={title}/>
+		image_icon_html = <img className="uagb-howto__source-image" src={url} title={title} width="640" height="360"/>
 
 	}
 

@@ -19,7 +19,7 @@ export const PostImage = (props) =>  {
 				<div className='uagb-post__image'>
 					<a href={ post.link } target={ target } rel ="noopener noreferrer">
 						<img
-							src={ src[0] }
+							src={ src[0] } width="640" height="360"
 							alt={ decodeEntities( post.title.rendered.trim() ) || __( "(Untitled)" ) }
 						/>
 					</a>

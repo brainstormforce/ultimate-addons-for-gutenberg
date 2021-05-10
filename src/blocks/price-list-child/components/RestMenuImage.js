@@ -46,7 +46,8 @@ class RestMenuImage extends React.Component {
 							<img
 								className =""
 								src = { url }                        
-								alt = { image.alt }                    
+								alt = { image.alt }  
+								width="640" height="360"                  
 							/>                        
 						</div>  
 					</div>                                 
