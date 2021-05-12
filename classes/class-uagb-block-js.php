@@ -259,6 +259,7 @@ if ( ! class_exists( 'UAGB_Block_JS' ) ) {
 				'confirmationType'        => $attr['confirmationType'],
 				'hidereCaptchaBatch'      => $attr['hidereCaptchaBatch'],
 				'captchaMessage'          => $attr['captchaMessage'],
+				'captchaKeyError'          => $attr['captchaKeyError'],
 				'confirmationUrl'         => $attr['confirmationUrl'],
 			);
 			ob_start();

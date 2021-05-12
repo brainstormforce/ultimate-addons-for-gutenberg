@@ -2787,6 +2787,7 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 							'reCaptchaSecretKeyV3'       => '',
 							'hidereCaptchaBatch'         => false,
 							'captchaMessage'             => __( 'Please fill up the above captcha.', 'ultimate-addons-for-gutenberg' ),
+							'captchaKeyError'             => __( 'Invalid Site Key Please Verify.', 'ultimate-addons-for-gutenberg' ),
 						),
 					),
 					'uagb/forms-name'             => array(
