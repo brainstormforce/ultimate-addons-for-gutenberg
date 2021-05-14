@@ -255,9 +255,7 @@
 				type: "POST",
 				data: data,
 				success: function(data){
-					if(id === 'how-to'){
-						$( "#info-box" ).find(".uagb-activate-widget").text(uagb.deactivate)
-					}
+
 					// Add active class.
 					$( "#" + id ).addClass("activate").removeClass( "deactivate" )
 					// Change button classes & text.
@@ -287,7 +285,7 @@
 			if ( button.hasClass( "updating-message" ) ) {
 				return
 			}
-			
+
 			$( button ).addClass("updating-message")
 
 			UAGBAjaxQueue.add({
@@ -295,7 +293,7 @@
 				type: "POST",
 				data: data,
 				success: function(data){
-					
+
 					// Remove active class.
 					$( "#" + id ).addClass( "deactivate" ).removeClass("activate")
 
@@ -307,9 +305,9 @@
 						.removeClass("updating-message")
 				}
 			})
-			
 			e.preventDefault()
 		},
+
 
 		/**
 		 * Activate Success
