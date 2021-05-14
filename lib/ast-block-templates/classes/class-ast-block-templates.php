@@ -383,7 +383,7 @@ if ( ! class_exists( 'Ast_Block_Templates' ) ) :
 						'white_label_name'        => '',
 						'allBlocks'               => $this->get_all_blocks(),
 						'allSites'                => $this->get_all_sites(),
-						'allCategories'           => get_site_option( 'ast-block-templates-categories', array() ),
+						'allCategories'           => get_option( 'ast-block-templates-categories', array() ),
 						'wpforms_status'          => $this->get_plugin_status( 'wpforms-lite/wpforms.php' ),
 						'gutenberg_status'        => $this->get_plugin_status( 'gutenberg/gutenberg.php' ),
 						'_ajax_nonce'             => wp_create_nonce( 'ast-block-templates-ajax-nonce' ),
