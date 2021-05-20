@@ -22,3 +22,15 @@
 .uagb-light-font-weight {
 	font-weight: 400;
 }
+
+
+.block-editor-block-list__block .wp-block-uagb-table-of-contents {
+	ol.uagb-toc__list li.uagb-toc__list ul,
+	ol.uagb-toc__list ul.uagb-toc__list ul {
+		list-style-type: circle;
+	}
+	ol.uagb-toc__list > ul,
+	ol.uagb-toc__list > li {
+		list-style-type: disc;
+	}
+}

@@ -23,7 +23,6 @@ $uagb_support_link      = apply_filters( 'uagb_support_link', $support_url );
 $uagb_support_link_text = apply_filters( 'uagb_support_link_text', __( 'Submit a Ticket »', 'ultimate-addons-for-gutenberg' ) );
 $has_write_permission   = UAGB_Helper::is_uag_dir_has_write_permissions();
 
-
 array_multisort(
 	array_map(
 		function( $element ) {
@@ -116,6 +115,7 @@ array_multisort(
 									'restaurant-menu-child',
 									'content-timeline-child',
 									'tabs-child',
+									'info-box',
 								);
 
 								if ( array_key_exists( 'extension', $info ) && $info['extension'] ) {
@@ -178,7 +178,7 @@ array_multisort(
 						<span class="dashicons dashicons-admin-customizer"></span>
 						<span><?php esc_html_e( 'Free Theme for Gutenberg', 'ultimate-addons-for-gutenberg' ); ?></span>
 					</h2>
-					<img class="uagb-ast-img" src="<?php echo esc_url( UAGB_URL . 'admin/assets/images/welcome-screen-astra.jpg' ); ?>" width="640" height="360">
+					<img class="uagb-ast-img" alt="" src="<?php echo esc_url( UAGB_URL . 'admin/assets/images/welcome-screen-astra.jpg' ); ?>" width="640" height="360">
 					<div class="inside">
 						<p><?php esc_html_e( 'Join over 1+ million active users empowering their websites with Astra! From beginners to industry leaders, everyone loves the Astra theme.', 'ultimate-addons-for-gutenberg' ); ?></p>
 						<h4><?php esc_html_e( 'Why Astra Theme?', 'ultimate-addons-for-gutenberg' ); ?></h4>
@@ -235,7 +235,7 @@ array_multisort(
 								$val                    = 'disabled';
 								$file_generation_string = __( 'Inadequate File Permission', 'ultimate-addons-for-gutenberg' );
 								$button_disabled        = 'disabled';
-								$file_perm_notice       = __( 'Please update your file permissions for "wp-content/uploads" folder in order to use the File Generation feature.', 'ultimate-addons-for-gutenberg' );
+								$file_perm_notice       = true;
 
 							} else {
 								$val                    = 'disabled';
@@ -244,7 +244,20 @@ array_multisort(
 
 							if ( $file_perm_notice ) {
 								?>
-							<div class="uag-file-permissions-notice"> <?php echo esc_html( $file_perm_notice ); ?></div>
+							<div class="uag-file-permissions-notice">
+								<?php
+								$file_permission_doc_link = esc_url( 'https://ultimategutenberg.com/docs/update-uag-file-permissions/?utm_source=uag-dashboard&utm_medium=link&utm_campaign=uag-dashboard' );
+								$a_tag_open               = '<a target="_blank" rel="noopener" href="' . $file_permission_doc_link . '">';
+								$a_tag_close              = '</a>';
+
+								printf(
+									/* translators: %1$s: a tag open. */
+									esc_html__( 'Please update the %1$sfile permissions%2$s for "wp-content/uploads" folder in order to use the File Generation feature.', 'ultimate-addons-for-gutenberg' ),
+									wp_kses_post( $a_tag_open ),
+									wp_kses_post( $a_tag_close )
+								);
+								?>
+							</div>
 							<?php } ?>
 							<button class="button astra-beta-updates uag-file-generation" id="uag_file_generation" data-value="<?php echo esc_attr( $val ); ?>" <?php echo esc_attr( $button_disabled ); ?> >
 								<?php echo esc_html( $file_generation_string ); ?>

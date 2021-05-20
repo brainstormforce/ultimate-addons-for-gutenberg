@@ -69,6 +69,7 @@ class UAGBTableOfContentsEdit extends Component {
 		if( null !== element && undefined !== element ) {
 			element.innerHTML = styling( this.props )
 		}
+
 	}
 
 	componentDidMount() {
@@ -90,6 +91,7 @@ class UAGBTableOfContentsEdit extends Component {
 		if( this.props.attributes.heading && '' !== this.props.attributes.heading ){
 			this.props.setAttributes( { headingTitle: this.props.attributes.heading } )
 		}
+		
 	}
 
 	render() {

@@ -1417,6 +1417,29 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 		/**
 		 * Render Post Excerpt HTML.
 		 *
+		 * @param int $post_id post id.
+		 * @param int $length lenght of the excerpt.
+		 *
+		 * @since 1.23.0
+		 */
+		public function get_excerpt_by_id( $post_id, $length ) {
+			$the_post    = get_post( $post_id ); // Gets post ID.
+			$the_excerpt = ( $the_post ? $the_post->post_content : null ); // Gets post_content to be used as a basis for the excerpt.
+			$the_excerpt = wp_strip_all_tags( strip_shortcodes( $the_excerpt ) ); // Strips tags and images.
+			$words       = explode( ' ', $the_excerpt, $length + 1 );
+
+			if ( count( $words ) > $length ) :
+				array_pop( $words );
+				array_push( $words, '…' );
+				$the_excerpt = implode( ' ', $words );
+			endif;
+
+			return $the_excerpt;
+		}
+
+		/**
+		 * Render Post Excerpt HTML.
+		 *
 		 * @param array $attributes Array of block attributes.
 		 *
 		 * @since 0.0.1
@@ -1428,14 +1451,12 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 
 			global $post;
 
-			$post_excerpt = ( '' === $post->post_excerpt ) ? get_the_content() : $post->post_excerpt;
-
 			$length = ( isset( $attributes['excerptLength'] ) ) ? $attributes['excerptLength'] : 25;
 
 			if ( 'full_post' === $attributes['displayPostContentRadio'] ) {
 				$excerpt = get_the_content();
 			} else {
-				$excerpt = wp_trim_words( $post_excerpt, $length );
+				$excerpt = $this->get_excerpt_by_id( $post->ID, $length );
 			}
 
 			if ( ! $excerpt ) {

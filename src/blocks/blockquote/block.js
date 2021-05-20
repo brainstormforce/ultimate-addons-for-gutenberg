@@ -33,8 +33,8 @@ const {
  *                             registered; otherwise `undefined`.
  */
 registerBlockType( "uagb/blockquote", {
-	title: uagb_blocks_info.blocks["uagb/blockquote"]["title"],
-	description: uagb_blocks_info.blocks["uagb/blockquote"]["description"],
+	title: __( 'Blockquote', 'ultimate-addons-for-gutenberg' ),
+	description: __( 'This block allows you to display your Blockquote.', 'ultimate-addons-for-gutenberg' ),
 	icon: UAGB_Block_Icons.blockquote,
 	keywords: [
 		__( "blockquote", 'ultimate-addons-for-gutenberg' ),

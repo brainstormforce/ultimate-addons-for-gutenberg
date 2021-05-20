@@ -48,8 +48,10 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 
 			add_action( 'wp_ajax_uagb_file_regeneration', __CLASS__ . '::file_regeneration' );
 
+			add_action( 'wp_ajax_uagb_beta_updates', __CLASS__ . '::uagb_beta_updates' );
+
 			// Enqueue admin scripts.
-			if ( isset( $_GET['page'] ) && UAGB_SLUG === $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			if ( isset( $_GET['page'] ) && ( UAGB_SLUG === $_GET['page'] || 'uag-tools' === $_GET['page'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles_scripts' );
 
 				self::save_settings();
@@ -58,6 +60,15 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 			add_filter( 'rank_math/researches/toc_plugins', __CLASS__ . '::toc_plugin' );
 			// Activation hook.
 			add_action( 'admin_init', __CLASS__ . '::activation_redirect' );
+
+			add_action( 'admin_post_uag_rollback', array( __CLASS__, 'post_uagb_rollback' ) );
+
+			add_action( 'admin_footer', array( __CLASS__, 'rollback_version_popup' ) );
+
+			if ( ! is_customize_preview() ) {
+				add_action( 'admin_head', array( __CLASS__, 'admin_submenu_css' ) );
+			}
+
 		}
 
 		/**
@@ -185,7 +196,18 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 				UAGB_PLUGIN_SHORT_NAME,
 				'manage_options',
 				UAGB_SLUG,
-				__CLASS__ . '::render'
+				__CLASS__ . '::render',
+				10
+			);
+
+			add_submenu_page(
+				'options-general.php',
+				__( 'Tools', 'ultimate-addons-for-gutenberg' ),
+				__( 'Tools', 'ultimate-addons-for-gutenberg' ),
+				'manage_options',
+				'uag-tools',
+				__CLASS__ . '::render',
+				11
 			);
 		}
 
@@ -221,6 +243,11 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 			}
 
 			$action = ( isset( $_GET['action'] ) ) ? sanitize_text_field( $_GET['action'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+			if ( isset( $_GET['page'] ) && 'uag-tools' === $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				$action = 'tools';
+			}
+
 			$action = ( ! empty( $action ) && '' !== $action ) ? $action : 'general';
 			$action = str_replace( '_', '-', $action );
 
@@ -313,10 +340,13 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 
 			check_ajax_referer( 'uagb-block-nonce', 'nonce' );
 
-			$block_id            = sanitize_text_field( $_POST['block_id'] );
-			$blocks              = UAGB_Admin_Helper::get_admin_settings_option( '_uagb_blocks', array() );
+			$block_id = sanitize_text_field( $_POST['block_id'] );
+
+			$blocks = UAGB_Admin_Helper::get_admin_settings_option( '_uagb_blocks', array() );
+
 			$blocks[ $block_id ] = $block_id;
-			$blocks              = array_map( 'esc_attr', $blocks );
+
+			$blocks = array_map( 'esc_attr', $blocks );
 
 			// Update blocks.
 			UAGB_Admin_Helper::update_admin_settings_option( '_uagb_blocks', $blocks );
@@ -412,7 +442,31 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 
 			wp_send_json_success();
 		}
+		/**
+		 * Update the Beta updates flag.
+		 *
+		 * @since 1.23.0
+		 */
+		public static function uagb_beta_updates() {
 
+			if ( ! current_user_can( 'install_plugins' ) ) {
+				wp_send_json_error(
+					array(
+						'success' => false,
+						'message' => __( 'Access Denied. You don\'t have enough capabilities to execute this action.', 'ultimate-addons-for-gutenberg' ),
+					)
+				);
+			}
+
+			check_ajax_referer( 'uagb-block-nonce', 'nonce' );
+
+			wp_send_json_success(
+				array(
+					'success' => true,
+					'message' => update_option( 'uagb_beta', sanitize_text_field( $_POST['value'] ) ),
+				)
+			);
+		}
 		/**
 		 * File Generation Flag
 		 *
@@ -446,7 +500,7 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 		/**
 		 * File Regeneration Flag
 		 *
-		 * @since x.x.x
+		 * @since 1.23.0
 		 */
 		public static function file_regeneration() {
 
@@ -526,6 +580,105 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 		public static function toc_plugin( $plugins ) {
 			$plugins['ultimate-addons-for-gutenberg/ultimate-addons-for-gutenberg.php'] = 'Ultimate Addons for Gutenberg';
 			return $plugins;
+		}
+
+		/**
+		 * UAG version rollback.
+		 *
+		 * Rollback to previous UAG version.
+		 *
+		 * Fired by `admin_post_uag_rollback` action.
+		 *
+		 * @since 1.23.0
+		 * @access public
+		 */
+		public static function post_uagb_rollback() {
+
+			if ( ! current_user_can( 'install_plugins' ) ) {
+				wp_die(
+					esc_html__( 'You do not have permission to access this page.', 'ultimate-addons-for-gutenberg' ),
+					esc_html__( 'Rollback to Previous Version', 'ultimate-addons-for-gutenberg' ),
+					array(
+						'response' => 200,
+					)
+				);
+			}
+
+			check_admin_referer( 'uag_rollback' );
+
+			$rollback_versions = UAGB_Admin_Helper::get_instance()->get_rollback_versions();
+			$update_version    = sanitize_text_field( $_GET['version'] );
+
+			if ( empty( $update_version ) || ! in_array( $update_version, $rollback_versions ) ) { //phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
+				wp_die( esc_html__( 'Error occurred, The version selected is invalid. Try selecting different version.', 'ultimate-addons-for-gutenberg' ) );
+			}
+
+			$plugin_slug = basename( UAGB_FILE, '.php' );
+
+			$rollback = new UAGB_Rollback(
+				array(
+					'version'     => $update_version,
+					'plugin_name' => UAGB_BASE,
+					'plugin_slug' => $plugin_slug,
+					'package_url' => sprintf( 'https://downloads.wordpress.org/plugin/%s.%s.zip', $plugin_slug, $update_version ),
+				)
+			);
+
+			$rollback->run();
+
+			wp_die(
+				'',
+				esc_html__( 'Rollback to Previous Version', 'ultimate-addons-for-gutenberg' ),
+				array(
+					'response' => 200,
+				)
+			);
+		}
+		/**
+		 * UAG version rollback popup.
+		 *
+		 * Rollback to previous UAG version Popup.
+		 *
+		 * Fired by `admin_post_uag_rollback` action.
+		 *
+		 * @since 1.23.0
+		 * @access public
+		 */
+		public static function rollback_version_popup() {
+
+			$current_screen = get_current_screen();
+
+			if ( $current_screen && 'settings_page_uag-tools' !== $current_screen->id ) {
+				return;
+			}
+
+			?>
+			<div class="uagb-confirm-rollback-popup">
+				<div class="uagb-confirm-rollback-popup-content">
+					<div class="uagb-confirm-rollback-popup-header">Rollback to Previous Version</div>
+					<div class="uagb-confirm-rollback-popup-message">Are you sure you want to reinstall previous version?</div>
+					<div class="uagb-confirm-rollback-popup-buttons-wrapper">
+						<button class="uagb-confirm-rollback-popup-button confirm-cancel">Cancel</button>
+						<button class="uagb-confirm-rollback-popup-button confirm-ok">Continue</button>
+					</div>
+				</div>
+			</div>
+			<?php
+		}
+		/**
+		 * Renders Admin Submenu CSS.
+		 *
+		 * @since 1.23.0
+		 * @return void
+		 */
+		public static function admin_submenu_css() {
+			echo '<style class="uag-menu-appearance-style">
+				#adminmenu a[href="options-general.php?page=uag-tools"]:before {
+					content: "\21B3";
+					margin-right: 0.5em;
+					opacity: 0.5;
+				}
+			</style>';
 		}
 	}
 

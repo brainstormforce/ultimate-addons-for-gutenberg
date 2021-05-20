@@ -253,7 +253,7 @@ if ( ! class_exists( 'Ast_Block_Templates_Image_Importer' ) ) :
 				return false;
 			}
 
-			if ( preg_match( '/^((https?:\/\/)|(www\.))([a-z0-9-].?)+(:[0-9]+)?\/[\w\-]+\.(jpg|png|svg|gif|jpeg)\/?$/i', $url ) ) {
+			if ( ast_block_templates_is_valid_image( $url ) ) {
 				return true;
 			}
 

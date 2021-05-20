@@ -89,6 +89,10 @@ if ( ! class_exists( 'UAGB_Block_JS' ) ) {
 
 			$attr = array_merge( $defaults, (array) $attr );
 
+			if ( ! $attr['enableTweet'] ) {
+				return '';
+			}
+
 			$target = $attr['iconTargetUrl'];
 
 			$url = '';
@@ -108,12 +112,19 @@ if ( ! class_exists( 'UAGB_Block_JS' ) ) {
 			ob_start();
 			?>
 			var selector = document.querySelectorAll( '<?php echo esc_attr( $selector ); ?>' );
-			var blockquote__tweet = selector[0].getElementsByClassName("uagb-blockquote__tweet-button");
-			blockquote__tweet[0].addEventListener("click",function(){
-				var content = selector[0].getElementsByClassName("uagb-blockquote__content")[0].innerText;
-				var request_url = "https://twitter.com/share?url="+ encodeURIComponent("' . <?php $url; ?>. '")+"&text="+content+"&via="+("' . <?php $via; ?> . '"); 
-				window.open( request_url ); 
-			});
+			if ( selector.length > 0 ) {
+
+				var blockquote__tweet = selector[0].getElementsByClassName("uagb-blockquote__tweet-button");
+
+				if ( blockquote__tweet.length > 0 ) {
+
+					blockquote__tweet[0].addEventListener("click",function(){
+						var content = selector[0].getElementsByClassName("uagb-blockquote__content")[0].innerText;
+						var request_url = "https://twitter.com/share?url="+ encodeURIComponent("<?php echo esc_url( $url ); ?>")+"&text="+content+"&via="+("<?php echo esc_html( $via ); ?>"); 
+						window.open( request_url ); 
+					});
+				}
+			}
 			<?php
 			return ob_get_clean();
 
@@ -178,10 +189,15 @@ if ( ! class_exists( 'UAGB_Block_JS' ) ) {
 			$base_selector = ( isset( $attr['classMigrate'] ) && $attr['classMigrate'] ) ? '.uagb-block-' : '#uagb-toc-';
 			$selector      = $base_selector . $id;
 
+			$attrs_needed_in_js = array(
+				'mappingHeaders' => $attr['mappingHeaders'],
+				'scrollToTop'    => $attr['scrollToTop'],
+			);
+
 			ob_start();
 			?>
 			jQuery( document ).ready(function() {
-				UAGBTableOfContents._run( <?php echo wp_json_encode( $attr ); ?>, '<?php echo esc_attr( $selector ); ?>' );
+				UAGBTableOfContents._run( <?php echo wp_json_encode( $attrs_needed_in_js ); ?>, '<?php echo esc_attr( $selector ); ?>' );
 			});
 			<?php
 			return ob_get_clean();

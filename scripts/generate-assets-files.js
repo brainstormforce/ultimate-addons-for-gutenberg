@@ -37,7 +37,7 @@ fs.readdir(paths.pluginSrc + "/blocks", function(error, items) {
 
 // Copy generated style file content to custom style file
 // source to copy content
-const src = paths.pluginDist + "/build/style-blocks.css";
+const src = paths.pluginDist + "/style-blocks.css";
 // destination for copied content
 const dest = paths.pluginDir + "/assets/css/custom-style-blocks.css";
 

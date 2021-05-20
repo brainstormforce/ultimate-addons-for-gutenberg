@@ -318,7 +318,7 @@ hr.uagb-editor__separator {
 }
 
 .uag-typography-font-family-options .components-base-control__field {
-	display: flex;
+	display: block;
     align-items: center;
 }
 
@@ -3371,4 +3371,8 @@ label.wp-block-uagb-blockquote__via-label svg {
 
 button.components-button.uagb-review-select-btn.is-secondary {
     margin-bottom:10px;
+}
+
+.uag-typography-font-family-options{
+    margin-top: 24px;
 }

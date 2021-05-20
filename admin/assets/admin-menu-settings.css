@@ -48,7 +48,8 @@
 	padding: 20px;
 }
 
-.uagb-intro-section .uagb-intro-icon {
+.uagb-intro-section .uagb-intro-icon,
+.uagb-intro-section .uagb-gen-icon {
 	margin-right: 8px;
 	width: 25px;
 	height: 25px;
@@ -199,7 +200,8 @@
 	animation: rotation 2s infinite linear;
 }
 
-.settings_page_uag  #wpcontent{
+.settings_page_uag  #wpcontent,
+.settings_page_uag-tools  #wpcontent {
 	padding: 0;
 }
 
@@ -294,4 +296,76 @@
 	background: #dcdcdead;
     margin-bottom: 15px;
     padding: 5px;
+}
+.uagb-confirm-rollback-popup {
+	position: fixed;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	display: none;
+}
+.uagb-confirm-rollback-popup-content {
+	top: 151px;
+    left: 532.5px;
+	margin: auto;
+    width: 375px;
+	background-color: #fff;
+    position: absolute;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 2px 8px 23px 3px rgb(0 0 0 / 20%);
+    box-shadow: 2px 8px 23px 3px rgb(0 0 0 / 20%);
+    overflow: hidden;
+}
+.uagb-confirm-rollback-popup-header {
+	font-size: 15px;
+    color: #495157;
+    padding: 30px 0 10px;
+    font-weight: 500;
+	text-align: center;
+}
+.uagb-confirm-rollback-popup-message {
+	font-size: 12px;
+    line-height: 1.5;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	padding: 0 30px 30px;
+    min-height: 50px;
+	text-align: center;
+}
+.uagb-confirm-rollback-popup-buttons-wrapper {
+	border-top: 1px solid #e6e9ec;
+    text-align: center;
+	display: inline-flex;
+    width: 100%;
+}
+.uagb-confirm-rollback-popup-button {
+	font-family: Roboto, Arial, Helvetica, Verdana, sans-serif;
+    width: 50%;
+    border: none;
+    background: none;
+    color: #6d7882;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 13px 0;
+    outline: 0;
+}
+.uagb-confirm-rollback-popup-button:hover {
+	background:#e6e9ec6b
+}
+.uagb-confirm-rollback-popup-button.confirm-cancel {
+	border-right: 1px solid #e6e9ec;
+}
+.uagb-confirm-rollback-popup-button.confirm-ok {
+	color: rgb(74, 0, 224);
+}
+.uagb-confirm-rollback-popup.show {
+	display: block;
 }

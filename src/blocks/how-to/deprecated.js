@@ -8,7 +8,7 @@ import attributes from "./attributes"
 
 const {
 	RichText,
-	InnerBlocks
+    InnerBlocks
 } = wp.blockEditor
 
 const {  

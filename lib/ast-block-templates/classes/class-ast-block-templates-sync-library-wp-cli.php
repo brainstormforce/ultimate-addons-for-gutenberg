@@ -31,8 +31,15 @@ if ( ! class_exists( 'Ast_Block_Templates_Sync_Library_WP_CLI' ) && class_exists
 			// Start Sync.
 			WP_CLI::line( 'Sync Started' );
 
-			// Check sync status.
-			Ast_Block_Templates_Sync_Library::get_instance()->check_sync_status();
+			$force = isset( $assoc_args['force'] ) ? true : false;
+
+			if ( ! $force ) {
+				// Check sync status.
+				Ast_Block_Templates_Sync_Library::get_instance()->check_sync_status();
+			}
+
+			// Categories.
+			Ast_Block_Templates_Sync_Library::get_instance()->import_categories();
 
 			// Get Blocks Count.
 			$total_blocks_requests = Ast_Block_Templates_Sync_Library::get_instance()->get_total_blocks_requests();

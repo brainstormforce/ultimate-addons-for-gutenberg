@@ -9,15 +9,12 @@ import save from "./save"
 import deprecated from "./deprecated"
 import "./style.scss"
 import { __ } from '@wordpress/i18n';
+import { registerBlockType, createBlock } from '@wordpress/blocks';
 
-const {
-	registerBlockType ,createBlock
-} = wp.blocks
 
 registerBlockType( "uagb/advanced-heading", {
-
-	title: uagb_blocks_info.blocks["uagb/advanced-heading"]["title"],
-	description: uagb_blocks_info.blocks["uagb/advanced-heading"]["description"],
+	title: __( 'Advanced Heading', 'ultimate-addons-for-gutenberg' ),
+	description: __( 'This block lets you add a combination of a heading and a sub-heading with a separator in between.', 'ultimate-addons-for-gutenberg' ),
 	icon: UAGB_Block_Icons.advanced_heading,
 	keywords: [
 		__( "advanced heading", 'ultimate-addons-for-gutenberg' ),

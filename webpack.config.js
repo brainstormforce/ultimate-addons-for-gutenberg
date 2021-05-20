@@ -18,6 +18,6 @@ module.exports = {
 	output: {
 		filename: "[name].js",
 		// eslint-disable-next-line no-undef
-		path:  __dirname + "/dist/build"
+		path:  __dirname + "/dist"
 	}
 }

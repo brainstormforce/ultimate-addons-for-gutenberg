@@ -1,10 +1,10 @@
 ( function( $ ) {
 
-	var scroll = true
-	var scroll_offset = 30
-	var scroll_delay = 800
-	var scroll_to_top = false
-	var scroll_element = null
+	var scroll = true;
+	var scroll_offset = 30;
+	var scroll_delay = 800;
+	var scroll_to_top = false;
+	var scroll_element = null;
 
 	var parseTocSlug = function( slug ) {
 
@@ -32,16 +32,16 @@
 
 		init: function() {
 
-			$( document ).on( "click",".uagb-toc__list a", UAGBTableOfContents._scroll )
-			$( document ).on( "click",".uagb-toc__scroll-top", UAGBTableOfContents._scrollTop )
-			$( document ).on( "click",'.uagb-toc__title-wrap', UAGBTableOfContents._toggleCollapse )
-			$( document ).on( "scroll", UAGBTableOfContents._showHideScroll  )
+			$( document ).on( "click",".uagb-toc__list a", UAGBTableOfContents._scroll );
+			$( document ).on( "click",".uagb-toc__scroll-top", UAGBTableOfContents._scrollTop );
+			$( document ).on( "click",'.uagb-toc__title-wrap', UAGBTableOfContents._toggleCollapse );
+			$( document ).on( "scroll", UAGBTableOfContents._showHideScroll  );
 
 		},
 
 		_toggleCollapse: function( e ) {
 			if ( $( this ).find( '.uag-toc__collapsible-wrap' ).length > 0 ) {
-				let $root = $( this ).closest( '.wp-block-uagb-table-of-contents' )
+				let $root = $( this ).closest( '.wp-block-uagb-table-of-contents' );
 
 				if ( $root.hasClass( 'uagb-toc__collapse' ) ) {
 					$root.removeClass( 'uagb-toc__collapse' );
@@ -57,12 +57,12 @@
 
 				if ( jQuery( window ).scrollTop() > 300 ) {
 					if ( scroll_to_top ) {
-						scroll_element.addClass( "uagb-toc__show-scroll" )
+						scroll_element.addClass( "uagb-toc__show-scroll" );
 					} else {
-						scroll_element.removeClass( "uagb-toc__show-scroll" )
+						scroll_element.removeClass( "uagb-toc__show-scroll" );
 					}
 				} else {
-					scroll_element.removeClass( "uagb-toc__show-scroll" )
+					scroll_element.removeClass( "uagb-toc__show-scroll" );
 				}
 			}
 		},
@@ -85,16 +85,16 @@
 
 			if ( this.hash !== "" ) {
 
-				var hash = this.hash
-				var node = $( this ). closest( '.wp-block-uagb-table-of-contents' )
+				var hash = this.hash;
+				var node = $( this ). closest( '.wp-block-uagb-table-of-contents' );
 
-				scroll = node.data( 'scroll' )
-				scroll_offset = node.data( 'offset' )
-				scroll_delay = node.data( 'delay' )
+				scroll = node.data( 'scroll' );
+				scroll_offset = node.data( 'offset' );
+				scroll_delay = node.data( 'delay' );
 
 				if ( scroll ) {
 
-					var offset = $( decodeURIComponent( hash ) ).offset()
+					var offset = $( decodeURIComponent( hash ) ).offset();
 
 					if ( "undefined" != typeof offset ) {
 
@@ -129,96 +129,36 @@
 			}
 
 			var all_header = ( undefined !== allowed_h_tags_str && '' !== allowed_h_tags_str ) ? $( 'body' ).find( allowed_h_tags_str ) : $( 'body' ).find('h1, h2, h3, h4, h5, h6' );
-			var headerTable = '';
-			var level = 0;
 
 			if ( 0 !== all_header.length ) {
 	
-				all_header.each( function (){
+				all_header.each( function (index,value){
 					let header = $( this );
 					let header_text = parseTocSlug(header.text());
 					$( this ).before('<span id="'+ header_text +'" class="uag-toc__heading-anchor"></span>');					
 				});				
 			}
-			let blockId = attr.block_id;
-			var headerArray = $("div.uag-toc__entry-content").parent().find( all_header )
-			if ( 0 !== headerArray.length && ( headerMappingHeaders > 0 && undefined !== attr.mappingHeaders )  ) {
-			headerArray.each( function (index,value){
-				let header = $( this );
-				let excludeHeading ;
-				
-				if ( value.className.includes('uagb-toc-hide-heading') ) {
-					excludeHeading = true;
-				} else if ( 0 < header.parents('.uagb-toc-hide-heading').length ) {
-					excludeHeading = true;
-				} else {
-					excludeHeading = false;
-				}
-				
-				let headerText = parseTocSlug(header.text());
 
-				if ( !excludeHeading ) {
-					
-					let openLevel = header[0].localName.replace(/^h+/, '');
-					let titleText = header.text();
-					
-					if (openLevel > level) {
-						let arrayOpenLevel = new Array(openLevel - level + 1)
-						if( 2 == (arrayOpenLevel).length ){
-							headerTable += (arrayOpenLevel).join("<ul class='uagb-toc__list'>");
-						} else{
-							headerTable += "<ul class='uagb-toc__list'>"
-						}
+			scroll_to_top = attr.scrollToTop;
 
-					} else if (openLevel < level) {
-						let arrayLevel = new Array(level - openLevel + 1)
-						if( 0 !== (arrayLevel).length ){
-							headerTable += (arrayLevel).join("</ul>");
-						} else{
-							headerTable += "</ul>"
-						}
-						
-					}
-					level = parseInt(openLevel);
-					headerTable +=  "<li><a href='#" + headerText + "'>" + titleText + "</a></li>";
-					
-				}					
-			});
-
-			$(".uagb_table-of-contents-placeholder").remove();
-
-			$(`.uagb-block-${blockId} .uagb-toc__list-wrap`).prepend(headerTable);
-
-			} else{
-
-				headerTable +=  attr.emptyHeadingTeaxt;
-
-				$(`.uagb-block-${blockId} .uagb-toc__list-wrap`).remove();
-				
-				$(".uagb_table-of-contents-placeholder").prepend(headerTable);
-			
-			}
-
-			scroll_to_top = attr.scrollToTop
-
-			scroll_element = $( ".uagb-toc__scroll-top" )
+			scroll_element = $( ".uagb-toc__scroll-top" );
 			if ( 0 == scroll_element.length ) {
-				$( "body" ).append( "<div class=\"uagb-toc__scroll-top dashicons dashicons-arrow-up-alt2\"></div>" )
-				scroll_element = $( ".uagb-toc__scroll-top" )
+				$( "body" ).append( "<div class=\"uagb-toc__scroll-top dashicons dashicons-arrow-up-alt2\"></div>" );
+				scroll_element = $( ".uagb-toc__scroll-top" );
 			}
 
 			if ( scroll_to_top ) {
-				scroll_element.addClass( "uagb-toc__show-scroll" )
+				scroll_element.addClass( "uagb-toc__show-scroll" );
 			} else {
-				scroll_element.removeClass( "uagb-toc__show-scroll" )
+				scroll_element.removeClass( "uagb-toc__show-scroll" );
 			}
 
-			UAGBTableOfContents._showHideScroll()
+			UAGBTableOfContents._showHideScroll();
 		},
 	}
 
 	$( document ).ready(function() {
-		UAGBTableOfContents.init()
+		UAGBTableOfContents.init();
 	})
 
 } )( jQuery )

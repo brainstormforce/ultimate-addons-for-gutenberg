@@ -430,6 +430,143 @@ class UAGBColumnEdit extends Component {
 							/>
 						</Fragment>
 					)}
+					<hr className="uagb-editor__separator" />
+					<Columnresponsive/>
+					{ "Desktop" === deviceType && (
+						<Fragment>
+						<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
+								<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ desktopMarginType === "px" } aria-pressed={ desktopMarginType === "px" } onClick={ () => setAttributes( { desktopMarginType: "px" } ) }>{ "px" }</Button>
+								<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ desktopMarginType === "%" } aria-pressed={ desktopMarginType === "%" } onClick={ () => setAttributes( { desktopMarginType: "%" } ) }>{ "%" }</Button>
+							</ButtonGroup>
+						<h2>{ __( "Margin", 'ultimate-addons-for-gutenberg' ) }</h2>
+						<RangeControl
+							label={ UAGB_Block_Icons.top_margin }
+							className={ "uagb-margin-control" }
+							value={ topMargin }
+							onChange={ ( value ) => setAttributes( { topMargin: value } ) }
+							min={ -2000 }
+							max={ 2000 }
+							allowReset
+						/>
+						<RangeControl
+							label={ UAGB_Block_Icons.bottom_margin }
+							className={ "uagb-margin-control" }
+							value={ bottomMargin }
+							onChange={ ( value ) => setAttributes( { bottomMargin: value } ) }
+							min={ -2000 }
+							max={ 2000 }
+							allowReset
+						/>
+						<RangeControl
+							label={ UAGB_Block_Icons.left_margin }
+							className={ "uagb-margin-control" }
+							value={ leftMargin }
+							onChange={ ( value ) => setAttributes( { leftMargin: value } ) }
+							min={ -2000 }
+							max={ 2000 }
+							allowReset
+						/>
+						<RangeControl
+							label={ UAGB_Block_Icons.right_margin }
+							className={ "uagb-margin-control" }
+							value={ rightMargin }
+							onChange={ ( value ) => setAttributes( { rightMargin: value } ) }
+							min={ -2000 }
+							max={ 2000 }
+							allowReset
+						/>
+					</Fragment>
+					)}
+					{ "Tablet" === deviceType && (
+						<Fragment>
+						<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type" ) }>
+							<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ tabletMarginType === "px" } aria-pressed={ tabletMarginType === "px" } onClick={ () => setAttributes( { tabletMarginType: "px" } ) }>{ "px" }</Button>
+							<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ tabletMarginType === "%" } aria-pressed={ tabletMarginType === "%" } onClick={ () => setAttributes( { tabletMarginType: "%" } ) }>{ "%" }</Button>
+						</ButtonGroup>
+						<h2>{ __( "Margin Tablet", 'ultimate-addons-for-gutenberg' ) }</h2>
+						<RangeControl
+							label={ UAGB_Block_Icons.top_margin }
+							className={ "uagb-margin-control" }
+							value={ topMarginTablet }
+							onChange={ ( value ) => setAttributes( { topMarginTablet: value } ) }
+							min={ -2000 }
+							max={ 2000 }
+							allowReset
+						/>
+						<RangeControl
+							label={ UAGB_Block_Icons.bottom_margin }
+							className={ "uagb-margin-control" }
+							value={ bottomMarginTablet }
+							onChange={ ( value ) => setAttributes( { bottomMarginTablet: value } ) }
+							min={ -2000 }
+							max={ 2000 }
+							allowReset
+						/>
+						<RangeControl
+							label={ UAGB_Block_Icons.left_margin }
+							className={ "uagb-margin-control" }
+							value={ leftMarginTablet }
+							onChange={ ( value ) => setAttributes( { leftMarginTablet: value } ) }
+							min={ -2000 }
+							max={ 2000 }
+							allowReset
+						/>
+						<RangeControl
+							label={ UAGB_Block_Icons.right_margin }
+							className={ "uagb-margin-control" }
+							value={ rightMarginTablet }
+							onChange={ ( value ) => setAttributes( { rightMarginTablet: value } ) }
+							min={ -2000 }
+							max={ 2000 }
+							allowReset
+						/>
+					</Fragment>
+					)}
+					{ "Mobile" === deviceType && (
+						<Fragment>
+						<ButtonGroup className="uagb-size-type-field" aria-label={ __( "Size Type", 'ultimate-addons-for-gutenberg' ) }>
+							<Button key={ "px" } className="uagb-size-btn" isSmall isPrimary={ mobileMarginType === "px" } aria-pressed={ mobileMarginType === "px" } onClick={ () => setAttributes( { mobileMarginType: "px" } ) }>{ "px" }</Button>
+							<Button key={ "%" } className="uagb-size-btn" isSmall isPrimary={ mobileMarginType === "%" } aria-pressed={ mobileMarginType === "%" } onClick={ () => setAttributes( { mobileMarginType: "%" } ) }>{ "%" }</Button>
+						</ButtonGroup>
+						<h2>{ __( "Margin Mobile", 'ultimate-addons-for-gutenberg' ) }</h2>
+						<RangeControl
+							label={ UAGB_Block_Icons.top_margin }
+							className={ "uagb-margin-control" }
+							value={ topMarginMobile }
+							onChange={ ( value ) => setAttributes( { topMarginMobile: value } ) }
+							min={ -2000 }
+							max={ 2000 }
+							allowReset
+						/>
+						<RangeControl
+							label={ UAGB_Block_Icons.bottom_margin }
+							className={ "uagb-margin-control" }
+							value={ bottomMarginMobile }
+							onChange={ ( value ) => setAttributes( { bottomMarginMobile: value } ) }
+							min={ -2000 }
+							max={ 2000 }
+							allowReset
+						/>
+						<RangeControl
+							label={ UAGB_Block_Icons.left_margin }
+							className={ "uagb-margin-control" }
+							value={ leftMarginMobile }
+							onChange={ ( value ) => setAttributes( { leftMarginMobile: value } ) }
+							min={ -2000 }
+							max={ 2000 }
+							allowReset
+						/>
+						<RangeControl
+							label={ UAGB_Block_Icons.right_margin }
+							className={ "uagb-margin-control" }
+							value={ rightMarginMobile }
+							onChange={ ( value ) => setAttributes( { rightMarginMobile: value } ) }
+							min={ -2000 }
+							max={ 2000 }
+							allowReset
+						/>
+					</Fragment>
+					)}
 				</PanelBody>
 				<PanelBody title={ __( "Background", 'ultimate-addons-for-gutenberg' ) } initialOpen={ false }>
 					<SelectControl

@@ -34,7 +34,7 @@ class UAGB_Filesystem {
 	/**
 	 * Get an instance of WP_Filesystem.
 	 *
-	 * @since x.x.x
+	 * @since 1.23.0
 	 */
 	public function get_filesystem() {
 
@@ -75,7 +75,7 @@ class UAGB_Filesystem {
 	/**
 	 * Method to direct.
 	 *
-	 * @since x.x.x
+	 * @since 1.23.0
 	 */
 	public function filesystem_method() {
 		return 'direct';
@@ -84,7 +84,7 @@ class UAGB_Filesystem {
 	/**
 	 * Sets credentials to true.
 	 *
-	 * @since x.x.x
+	 * @since 1.23.0
 	 */
 	public function request_filesystem_credentials() {
 		return true;
@@ -100,7 +100,7 @@ UAGB_Filesystem::get_instance();
 /**
  * Filesystem class
  *
- * @since x.x.x
+ * @since 1.23.0
  */
 function uagb_filesystem() {
 	return UAGB_Filesystem::get_instance()->get_filesystem();

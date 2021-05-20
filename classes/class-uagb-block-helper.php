@@ -4618,13 +4618,13 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				' .uagb-toc__list-wrap > ul.uagb-toc__list > li:first-child' => array(
 					'padding-top' => 0,
 				),
-				' .uagb-toc__list-wrap > ul.uagb-toc__list li' => array(
+				' .uagb-toc__list-wrap > ol.uagb-toc__list li' => array(
 					'color' => $attr['bulletColor'],
 				),
 				' .uagb-toc__list-wrap > li'       => array(
 					'color' => $attr['bulletColor'],
 				),
-				' .uagb-toc__list-wrap ul.uagb-toc__list:first-child' => array(
+				' .uagb-toc__list-wrap ol.uagb-toc__list:first-child' => array(
 					'margin-left'   => UAGB_Helper::get_css_value( $attr['hMarginDesktop'], $attr['marginTypeDesktop'] ),
 					'margin-right'  => UAGB_Helper::get_css_value( $attr['hMarginDesktop'], $attr['marginTypeDesktop'] ),
 					'margin-top'    => UAGB_Helper::get_css_value( $attr['vMarginDesktop'], $attr['marginTypeDesktop'] ),
@@ -4720,7 +4720,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 			);
 
 			$combined_selectors = UAGB_Helper::get_typography_css( $attr, 'heading', ' .uagb-toc__title', $combined_selectors );
-			$combined_selectors = UAGB_Helper::get_typography_css( $attr, '', ' .uagb-toc__list-wrap ul li a', $combined_selectors );
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, '', ' .uagb-toc__list-wrap ol li a', $combined_selectors );
 
 			$base_selector = ( $attr['classMigrate'] ) ? '.uagb-block-' : '#uagb-toc-';
 

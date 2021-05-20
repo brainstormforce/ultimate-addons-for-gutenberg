@@ -93,7 +93,7 @@ function styling( props ) {
 	var alignment = ( headingAlignment == "left" ) ? "flex-start" : ( ( headingAlignment == "right" ) ? "flex-end" : "center" )
 
 	selectors = {
-		" .uagb-toc__list-wrap ul li a" : {
+		" .uagb-toc__list-wrap ol li a" : {
 			"font-size" : generateCSSUnit( fontSize, fontSizeType ),
 			"line-height" : generateCSSUnit( lineHeight, lineHeightType ),
 			"font-family": fontFamily,
@@ -111,7 +111,7 @@ function styling( props ) {
 			"font-weight": headingFontWeight,
 			"color": headingColor,
 		},
-		" .uagb-toc__list-wrap ul li a:hover" : {
+		" .uagb-toc__list-wrap ol li a:hover" : {
 			"color": linkHoverColor,
 		},
 		" .uagb-toc__wrap" : {
@@ -125,16 +125,16 @@ function styling( props ) {
 			"padding-bottom": generateCSSUnit( vPaddingDesktop, paddingTypeDesktop ),
 			"background": backgroundColor
 		},
-		" .uagb-toc__list-wrap ul.uagb-toc__list:first-child" : {
+		" .uagb-toc__list-wrap ol.uagb-toc__list:first-child" : {
 			"margin-left": generateCSSUnit( hMarginDesktop, marginTypeDesktop ),
 			"margin-right": generateCSSUnit( hMarginDesktop, marginTypeDesktop ),
 			"margin-top": generateCSSUnit( vMarginDesktop, marginTypeDesktop ),
 			"margin-bottom": generateCSSUnit( vMarginDesktop, marginTypeDesktop ),
 		},
-		" .uagb-toc__list-wrap > ul.uagb-toc__list > li:first-child" : {
+		" .uagb-toc__list-wrap > ol.uagb-toc__list > li:first-child" : {
 			"padding-top": 0
 		},
-		" .uagb-toc__list-wrap > ul.uagb-toc__list li" : {
+		" .uagb-toc__list-wrap > ol.uagb-toc__list li" : {
 			"color" : bulletColor
 		},
 		" .uagb-toc__list-wrap ul.uagb-toc__list:last-child > li:last-child" : {
@@ -170,7 +170,7 @@ function styling( props ) {
 	}
 
 	tablet_selectors = {
-		" .uagb-toc__list-wrap ul li a" : {
+		" .uagb-toc__list-wrap ol li a" : {
 			"font-size": generateCSSUnit( fontSizeTablet, fontSizeType ),
 			"line-height": generateCSSUnit( lineHeightTablet, lineHeightType ),
 		},
@@ -196,7 +196,7 @@ function styling( props ) {
 			'overflow': 'hidden'
 		},
 
-		" .uagb-toc__list-wrap > ul.uagb-toc__list > li:first-child" : {
+		" .uagb-toc__list-wrap > ol.uagb-toc__list > li:first-child" : {
 			"padding-top": generateCSSUnit( contentPaddingTablet, contentPaddingTypeTablet )
 		},
 		" .uagb-toc__list-wrap ul.uagb-toc__list:last-child > li:last-child" : {
@@ -209,7 +209,7 @@ function styling( props ) {
 	}
 
 	mobile_selectors = {
-		" .uagb-toc__list-wrap ul li a" : {
+		" .uagb-toc__list-wrap ol li a" : {
 			"font-size": generateCSSUnit( fontSizeMobile, fontSizeType ),
 			"line-height": generateCSSUnit( lineHeightMobile, lineHeightType ),
 		},
@@ -234,7 +234,7 @@ function styling( props ) {
 			'column-count': tColumnsMobile,
 			'overflow': 'hidden'
 		},		
-		" .uagb-toc__list-wrap > ul.uagb-toc__list > li:first-child" : {
+		" .uagb-toc__list-wrap > ol.uagb-toc__list > li:first-child" : {
 		    "padding-top": generateCSSUnit( contentPaddingMobile, contentPaddingTypeMobile )
 		},
 		" .uagb-toc__list-wrap ul.uagb-toc__list:last-child > li:last-child" : {

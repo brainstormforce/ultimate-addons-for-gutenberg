@@ -21,6 +21,7 @@ module.exports = function(grunt) {
 					"!package.json",
 					"!package-lock.json",
 					"!.gitignore",
+					"!.gitattributes",
 					"!*.zip",
 					"!Optimization.txt",
 					"!composer.json",

@@ -10,7 +10,8 @@
 		display: inline-block;
 	}
 
-	ul.uagb-toc__list {
+	ul.uagb-toc__list,
+	ol.uagb-toc__list {
 		margin-left:2.2em;
 		padding-left: 0px;
 		margin-bottom:0;
@@ -60,10 +61,14 @@
 	}
 }
 
-.uagb-toc__list ul {
+ol.uagb-toc__list li.uagb-toc__list ul,
+ol.uagb-toc__list ul.uagb-toc__list ul {
 	list-style-type: circle;
 }
-
+ol.uagb-toc__list > ul,
+ol.uagb-toc__list > li {
+	list-style-type: disc;
+}
 .uagb-toc__scroll-top {
 
 	&.dashicons {

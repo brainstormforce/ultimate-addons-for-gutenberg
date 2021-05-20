@@ -95,30 +95,26 @@ function styling( props ) {
 		"" : style
 	}
 
-	tablet_selectors = {
-		"" : {
-			"padding-top": generateCSSUnit( topPaddingTablet, tabletPaddingType ),
-			"padding-bottom": generateCSSUnit( bottomPaddingTablet, tabletPaddingType ),
-			"padding-left": generateCSSUnit( leftPaddingTablet, tabletPaddingType ),
-			"padding-right": generateCSSUnit( rightPaddingTablet, tabletPaddingType ),
-			"margin-top": generateCSSUnit( topMarginTablet, tabletMarginType ),
-			"margin-bottom": generateCSSUnit( bottomMarginTablet, tabletMarginType ),
-			"margin-left": generateCSSUnit( leftMarginTablet, tabletMarginType ),
-			"margin-right": generateCSSUnit( rightMarginTablet, tabletMarginType ),
-		}
+	tablet_selectors[" .uagb-editor-preview-mode-tablet"] = {
+		"padding-top": generateCSSUnit( topPaddingTablet, tabletPaddingType ),
+		"padding-bottom": generateCSSUnit( bottomPaddingTablet, tabletPaddingType ),
+		"padding-left": generateCSSUnit( leftPaddingTablet, tabletPaddingType ),
+		"padding-right": generateCSSUnit( rightPaddingTablet, tabletPaddingType ),
+		"margin-top": generateCSSUnit( topMarginTablet, tabletMarginType ),
+		"margin-bottom": generateCSSUnit( bottomMarginTablet, tabletMarginType ),
+		"margin-left": generateCSSUnit( leftMarginTablet, tabletMarginType ),
+		"margin-right": generateCSSUnit( rightMarginTablet, tabletMarginType ),
 	}
 
-	mobile_selectors = {
-		"" : {
-			"padding-top": generateCSSUnit( topPaddingMobile, mobilePaddingType ),
-			"padding-bottom": generateCSSUnit( bottomPaddingMobile, mobilePaddingType ),
-			"padding-left": generateCSSUnit( leftPaddingMobile, mobilePaddingType ),
-			"padding-right": generateCSSUnit( rightPaddingMobile, mobilePaddingType ),
-			"margin-top": generateCSSUnit( topMarginMobile, mobileMarginType ),
-			"margin-bottom": generateCSSUnit( bottomMarginMobile, mobileMarginType ),
-			"margin-left": generateCSSUnit( leftMarginMobile, mobileMarginType ),
-			"margin-right": generateCSSUnit( rightMarginMobile, mobileMarginType ),
-		}
+	mobile_selectors[" .uagb-editor-preview-mode-mobile"] ={
+		"padding-top": generateCSSUnit( topPaddingMobile, mobilePaddingType ),
+		"padding-bottom": generateCSSUnit( bottomPaddingMobile, mobilePaddingType ),
+		"padding-left": generateCSSUnit( leftPaddingMobile, mobilePaddingType ),
+		"padding-right": generateCSSUnit( rightPaddingMobile, mobilePaddingType ),
+		"margin-top": generateCSSUnit( topMarginMobile, mobileMarginType ),
+		"margin-bottom": generateCSSUnit( bottomMarginMobile, mobileMarginType ),
+		"margin-left": generateCSSUnit( leftMarginMobile, mobileMarginType ),
+		"margin-right": generateCSSUnit( rightMarginMobile, mobileMarginType ),
 	}
 
 	if ( colWidth != "" && colWidth != 0 ) {
@@ -139,9 +135,9 @@ function styling( props ) {
 
 	styling_css = generateCSS( selectors, id )
 
-	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" )
+	styling_css += generateCSS( tablet_selectors, id, true, "tablet" )
 
-	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" )
+	styling_css += generateCSS( mobile_selectors, id, true, "mobile" )
 
 	return styling_css
 }

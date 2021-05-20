@@ -2,20 +2,21 @@
 # This file is distributed under the same license as the Ultimate Addons for Gutenberg plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Gutenberg 1.22.3\n"
+"Project-Id-Version: Ultimate Addons for Gutenberg 1.23.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ultimate-addons-for-gutenberg\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-28T12:52:25+00:00\n"
+"POT-Creation-Date: 2021-05-18T12:44:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0-alpha-59d879d\n"
+"X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: ultimate-addons-for-gutenberg\n"
 
 #. Plugin Name of the plugin
-#: admin/uagb-general.php:44
+#: admin/uagb-general.php:43
+#: admin/uagb-tools.php:26
 msgid "Ultimate Addons for Gutenberg"
 msgstr ""
 
@@ -80,81 +81,83 @@ msgid "View Demos"
 msgstr ""
 
 #: admin/uagb-general.php:23
+#: admin/uagb-tools.php:18
 msgid "Submit a Ticket »"
 msgstr ""
 
-#: admin/uagb-general.php:50
+#: admin/uagb-general.php:49
 msgid "Welcome to the Ultimate Addons for Gutenberg!"
 msgstr ""
 
-#: admin/uagb-general.php:52
+#: admin/uagb-general.php:51
 msgid "Thank you for choosing Ultimate Addons for Gutenberg - the most comprehensive library of advanced and creative blocks to build a stunning website and blog faster than ever before!"
 msgstr ""
 
-#: admin/uagb-general.php:53
+#: admin/uagb-general.php:52
 msgid "How to use the Ultimate Addons for Gutenberg Blocks »"
 msgstr ""
 
-#: admin/uagb-general.php:54
+#: admin/uagb-general.php:53
 msgid "Ready-to-use Full Demo Websites - "
 msgstr ""
 
-#: admin/uagb-general.php:54
+#: admin/uagb-general.php:53
 msgid "Get professionally designed 20+ pre-built FREE starter sites built using Gutenberg, Ultimate Addons for Gutenberg and the Astra theme. These can be imported in just a few clicks. Tweak them easily and build awesome websites in minutes!"
 msgstr ""
 
-#: admin/uagb-general.php:55
+#: admin/uagb-general.php:54
 msgid "Know More »"
 msgstr ""
 
-#: admin/uagb-general.php:64
+#: admin/uagb-general.php:63
 msgid "Ever-growing Library of Gutenberg Blocks"
 msgstr ""
 
-#: admin/uagb-general.php:66
+#: admin/uagb-general.php:65
 msgid "The easy-to-use and extremely powerful blocks of the Ultimate Addons for Gutenberg (UAG) are now available within your Gutenberg Editor. Search for \"UAG\" in the block inserter and see all the Ultimate Addons for Gutenberg blocks listed below. Simply click on the block you wish to add on your page or post."
 msgstr ""
 
-#: admin/uagb-general.php:67
+#: admin/uagb-general.php:66
 msgid "Wish to see some real design implementations with these blocks?"
 msgstr ""
 
-#: admin/uagb-general.php:68
+#: admin/uagb-general.php:67
 msgid "See Demos »"
 msgstr ""
 
-#: admin/uagb-general.php:69
+#: admin/uagb-general.php:68
 msgid "Check out the detailed knowledge base articles that will help you understand the working of each block."
 msgstr ""
 
-#: admin/uagb-general.php:70
-#: admin/uagb-general.php:278
+#: admin/uagb-general.php:69
+#: admin/uagb-general.php:291
+#: admin/uagb-tools.php:112
 msgid "Visit Knowledge Base »"
 msgstr ""
 
-#: admin/uagb-general.php:75
+#: admin/uagb-general.php:74
 msgid "Blocks"
 msgstr ""
 
-#: admin/uagb-general.php:77
+#: admin/uagb-general.php:76
 msgid "Activate All"
 msgstr ""
 
-#: admin/uagb-general.php:78
+#: admin/uagb-general.php:77
 msgid "Deactivate All"
 msgstr ""
 
-#: admin/uagb-general.php:79
+#: admin/uagb-general.php:78
 msgid "Reusable Blocks"
 msgstr ""
 
 #: admin/uagb-general.php:135
-#: classes/class-uagb-admin.php:265
+#: classes/class-uagb-admin.php:292
 msgid "Activate"
 msgstr ""
 
 #: admin/uagb-general.php:142
-#: classes/class-uagb-admin.php:266
+#: classes/class-uagb-admin.php:293
 msgid "Deactivate"
 msgstr ""
 
@@ -223,46 +226,93 @@ msgstr ""
 msgid "Inadequate File Permission"
 msgstr ""
 
-#: admin/uagb-general.php:238
-msgid "Please update your file permissions for \"wp-content/uploads\" folder in order to use the File Generation feature."
-msgstr ""
-
 #: admin/uagb-general.php:242
 msgid "Disable File Generation"
 msgstr ""
 
-#: admin/uagb-general.php:258
-#: admin/uagb-general.php:265
+#. translators: %1$s: a tag open.
+#: admin/uagb-general.php:255
+msgid "Please update the %1$sfile permissions%2$s for \"wp-content/uploads\" folder in order to use the File Generation feature."
+msgstr ""
+
+#: admin/uagb-general.php:271
+#: admin/uagb-general.php:278
 msgid "Regenerate Assets"
 msgstr ""
 
-#: admin/uagb-general.php:262
+#: admin/uagb-general.php:275
 msgid "You can regenerate your CSS & Javascript assets here."
 msgstr ""
 
-#: admin/uagb-general.php:272
+#: admin/uagb-general.php:285
+#: admin/uagb-tools.php:106
 msgid "Knowledge Base"
 msgstr ""
 
-#: admin/uagb-general.php:276
+#: admin/uagb-general.php:289
+#: admin/uagb-tools.php:110
 msgid "Not sure how something works? Take a peek at the knowledge base and learn."
 msgstr ""
 
-#: admin/uagb-general.php:284
+#: admin/uagb-general.php:297
+#: admin/uagb-tools.php:118
 msgid "Five Star Support"
 msgstr ""
 
 #. translators: %1$s: uagb name.
-#: admin/uagb-general.php:291
+#: admin/uagb-general.php:304
+#: admin/uagb-tools.php:125
 msgid "Got a question? Get in touch with %1$s developers. We're happy to help!"
+msgstr ""
+
+#: admin/uagb-tools.php:33
+#: admin/uagb-tools.php:47
+#: classes/class-uagb-admin.php:294
+msgid "Enable Beta Updates"
+msgstr ""
+
+#: admin/uagb-tools.php:39
+#: classes/class-uagb-admin.php:295
+msgid "Disable Beta Updates"
+msgstr ""
+
+#: admin/uagb-tools.php:51
+msgid "Enable this option to turn on beta updates & get notified when a new beta version of Ultimate Addons for Gutenberg is available."
+msgstr ""
+
+#: admin/uagb-tools.php:53
+msgid "The beta version will not install automatically. You will always have the option to ignore it."
+msgstr ""
+
+#: admin/uagb-tools.php:60
+msgid "Note: We do not recommend updating to a beta version on production site."
+msgstr ""
+
+#: admin/uagb-tools.php:71
+#: classes/class-uagb-admin.php:600
+#: classes/class-uagb-admin.php:631
+msgid "Rollback to Previous Version"
+msgstr ""
+
+#. translators: %s: UAG version
+#: admin/uagb-tools.php:77
+msgid "Experiencing an issue with Ultimate Addons for Gutenberg version %s? Rollback to a previous version before the issue appeared."
+msgstr ""
+
+#: admin/uagb-tools.php:92
+msgid "Reinstall "
+msgstr ""
+
+#: admin/uagb-tools.php:94
+msgid "Warning: Please backup your database before making the rollback."
 msgstr ""
 
 #: blocks-config/post-timeline/class-uagb-post-timeline.php:447
 #: blocks-config/post/class-uagb-post.php:445
-#: blocks-config/post/class-uagb-post.php:1469
-#: classes/class-uagb-config.php:1467
-#: classes/class-uagb-config.php:1563
-#: classes/class-uagb-config.php:1677
+#: blocks-config/post/class-uagb-post.php:1490
+#: classes/class-uagb-config.php:1468
+#: classes/class-uagb-config.php:1564
+#: classes/class-uagb-config.php:1678
 msgid "Read More"
 msgstr ""
 
@@ -274,88 +324,95 @@ msgstr ""
 msgid "Untitled"
 msgstr ""
 
-#: blocks-config/table-of-content/class-uagb-table-of-content.php:110
-#: blocks-config/table-of-content/class-uagb-table-of-content.php:114
-#: classes/class-uagb-config.php:2274
-#: dist/build/blocks.js:9
+#: blocks-config/table-of-content/class-uagb-table-of-content.php:517
+#: blocks-config/table-of-content/class-uagb-table-of-content.php:521
+#: classes/class-uagb-config.php:2275
+#: dist/blocks.js:9
 msgid "Table Of Contents"
 msgstr ""
 
-#: blocks-config/table-of-content/class-uagb-table-of-content.php:378
-#: classes/class-uagb-config.php:2275
-#: dist/build/blocks.js:9
+#: blocks-config/table-of-content/class-uagb-table-of-content.php:785
+#: classes/class-uagb-config.php:2276
+#: dist/blocks.js:9
 msgid "Add a header to begin generating the table of contents"
 msgstr ""
 
 #: blocks-config/taxonomy-list/class-uagb-taxonomy-list.php:113
-#: classes/class-uagb-config.php:2678
+#: classes/class-uagb-config.php:2679
 msgid "Taxonomy Not Available."
 msgstr ""
 
-#: classes/class-uagb-admin.php:131
+#: classes/class-uagb-admin.php:142
 msgid "Wow! The Ultimate Addons for Gutenberg has already powered over 5 pages on your website!"
 msgstr ""
 
-#: classes/class-uagb-admin.php:132
+#: classes/class-uagb-admin.php:143
 msgid "Would you please mind sharing your views and give it a 5 star rating on the WordPress repository?"
 msgstr ""
 
-#: classes/class-uagb-admin.php:134
+#: classes/class-uagb-admin.php:145
 msgid "Ok, you deserve it"
 msgstr ""
 
-#: classes/class-uagb-admin.php:136
+#: classes/class-uagb-admin.php:147
 msgid "Nope, maybe later"
 msgstr ""
 
-#: classes/class-uagb-admin.php:137
+#: classes/class-uagb-admin.php:148
 msgid "I already did"
 msgstr ""
 
 #. translators: %s: html tags
-#: classes/class-uagb-admin.php:156
+#: classes/class-uagb-admin.php:167
 msgid "Ultimate Addons for Gutenberg requires&nbsp;%3$sBlock Editor%4$s. You can change your editor settings to Block Editor from&nbsp;%1$shere%2$s. Plugin is currently NOT RUNNING."
 msgstr ""
 
-#: classes/class-uagb-admin.php:267
-msgid "Enable Beta Updates"
+#: classes/class-uagb-admin.php:205
+#: classes/class-uagb-admin.php:206
+msgid "Tools"
 msgstr ""
 
-#: classes/class-uagb-admin.php:268
-msgid "Disable Beta Updates"
-msgstr ""
-
-#: classes/class-uagb-admin.php:269
+#: classes/class-uagb-admin.php:296
 msgid "Installing Astra"
 msgstr ""
 
-#: classes/class-uagb-admin.php:270
+#: classes/class-uagb-admin.php:297
 msgid "Activating Astra"
 msgstr ""
 
-#: classes/class-uagb-admin.php:271
+#: classes/class-uagb-admin.php:298
 msgid "Astra Activated!"
 msgstr ""
 
-#: classes/class-uagb-admin.php:427
-#: classes/class-uagb-admin.php:457
+#: classes/class-uagb-admin.php:456
+#: classes/class-uagb-admin.php:481
+#: classes/class-uagb-admin.php:511
 msgid "Access Denied. You don't have enough capabilities to execute this action."
 msgstr ""
 
-#: classes/class-uagb-admin.php:497
+#: classes/class-uagb-admin.php:551
 msgid "No Theme specified"
 msgstr ""
 
-#: classes/class-uagb-admin.php:516
+#: classes/class-uagb-admin.php:570
 msgid "Theme Successfully Activated"
 msgstr ""
 
+#: classes/class-uagb-admin.php:599
+msgid "You do not have permission to access this page."
+msgstr ""
+
+#: classes/class-uagb-admin.php:613
+msgid "Error occurred, The version selected is invalid. Try selecting different version."
+msgstr ""
+
 #: classes/class-uagb-config.php:55
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Advanced Heading"
 msgstr ""
 
 #: classes/class-uagb-config.php:56
+#: dist/blocks.js:1
 msgid "This block lets you add a combination of a heading and a sub-heading with a separator in between."
 msgstr ""
 
@@ -376,15 +433,17 @@ msgid "This block is an immediate child of Advanced Columns."
 msgstr ""
 
 #: classes/class-uagb-config.php:263
+#: dist/blocks.js:9
 msgid "Blockquote"
 msgstr ""
 
 #: classes/class-uagb-config.php:264
+#: dist/blocks.js:9
 msgid "This block allows you to display your Blockquote."
 msgstr ""
 
 #: classes/class-uagb-config.php:359
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Call To Action"
 msgstr ""
 
@@ -401,7 +460,7 @@ msgid "This block allows you to add and style your Contact Form 7 forms right in
 msgstr ""
 
 #: classes/class-uagb-config.php:569
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Content Timeline"
 msgstr ""
 
@@ -460,7 +519,7 @@ msgstr ""
 
 #: classes/class-uagb-config.php:1020
 #: classes/class-uagb-config.php:1074
-#: classes/class-uagb-config.php:2176
+#: classes/class-uagb-config.php:2177
 msgid "This block allows you to place an image or icon in a list format."
 msgstr ""
 
@@ -469,8 +528,8 @@ msgid "Label #1"
 msgstr ""
 
 #: classes/class-uagb-config.php:1073
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Icon"
 msgstr ""
 
@@ -507,8 +566,8 @@ msgid "This block allows you to add multiple buttons with a single block."
 msgstr ""
 
 #: classes/class-uagb-config.php:1345
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Button"
 msgstr ""
 
@@ -516,335 +575,335 @@ msgstr ""
 msgid "This block allows you to style button."
 msgstr ""
 
-#: classes/class-uagb-config.php:1382
+#: classes/class-uagb-config.php:1383
 msgid "Post Carousel"
 msgstr ""
 
-#: classes/class-uagb-config.php:1383
+#: classes/class-uagb-config.php:1384
 msgid "This block fetches the blog posts you may have on your website and displays them in a carousel layout."
 msgstr ""
 
-#: classes/class-uagb-config.php:1485
+#: classes/class-uagb-config.php:1486
 msgid "Post Grid"
 msgstr ""
 
-#: classes/class-uagb-config.php:1486
+#: classes/class-uagb-config.php:1487
 msgid "This block fetches the blog posts you may have on your website and displays them in a grid layout."
 msgstr ""
 
-#: classes/class-uagb-config.php:1597
+#: classes/class-uagb-config.php:1598
 msgid "Post Masonry"
 msgstr ""
 
-#: classes/class-uagb-config.php:1598
+#: classes/class-uagb-config.php:1599
 msgid "This block fetches the blog posts you may have on your website and displays them in a masonry layout."
 msgstr ""
 
-#: classes/class-uagb-config.php:1718
+#: classes/class-uagb-config.php:1719
 msgid "Post Title"
 msgstr ""
 
-#: classes/class-uagb-config.php:1719
+#: classes/class-uagb-config.php:1720
 msgid "This block fetches the blog title."
 msgstr ""
 
-#: classes/class-uagb-config.php:1725
+#: classes/class-uagb-config.php:1726
 msgid "Post Button"
 msgstr ""
 
-#: classes/class-uagb-config.php:1726
+#: classes/class-uagb-config.php:1727
 msgid "This block display's a call to action button which links to the blogs page."
 msgstr ""
 
-#: classes/class-uagb-config.php:1732
+#: classes/class-uagb-config.php:1733
 msgid "Post Excerpt"
 msgstr ""
 
-#: classes/class-uagb-config.php:1733
+#: classes/class-uagb-config.php:1734
 msgid "This block fetches short description about a post."
 msgstr ""
 
-#: classes/class-uagb-config.php:1739
+#: classes/class-uagb-config.php:1740
 msgid "Post Meta"
 msgstr ""
 
-#: classes/class-uagb-config.php:1740
+#: classes/class-uagb-config.php:1741
 msgid "This block fetches post comments, author, publish date and categories data."
 msgstr ""
 
-#: classes/class-uagb-config.php:1746
+#: classes/class-uagb-config.php:1747
 msgid "Post Image"
 msgstr ""
 
-#: classes/class-uagb-config.php:1747
+#: classes/class-uagb-config.php:1748
 msgid "This block fetches posts feature image."
 msgstr ""
 
-#: classes/class-uagb-config.php:1753
+#: classes/class-uagb-config.php:1754
 msgid "Post Timeline"
 msgstr ""
 
-#: classes/class-uagb-config.php:1754
+#: classes/class-uagb-config.php:1755
 msgid "The Timeline block lets you create beautiful timelines of Posts on your website."
 msgstr ""
 
-#: classes/class-uagb-config.php:1855
+#: classes/class-uagb-config.php:1856
 msgid "Price List"
 msgstr ""
 
-#: classes/class-uagb-config.php:1856
-#: classes/class-uagb-config.php:2025
+#: classes/class-uagb-config.php:1857
+#: classes/class-uagb-config.php:2026
 msgid "This block allows you to add attractive Price List."
 msgstr ""
 
-#: classes/class-uagb-config.php:1929
+#: classes/class-uagb-config.php:1930
 msgid "Review Schema"
 msgstr ""
 
-#: classes/class-uagb-config.php:1930
+#: classes/class-uagb-config.php:1931
 msgid "This block helps you to add a review for various items with schema support."
 msgstr ""
 
-#: classes/class-uagb-config.php:2024
+#: classes/class-uagb-config.php:2025
 msgid "Price List-Child"
 msgstr ""
 
-#: classes/class-uagb-config.php:2055
+#: classes/class-uagb-config.php:2056
 msgid "Section"
 msgstr ""
 
-#: classes/class-uagb-config.php:2056
+#: classes/class-uagb-config.php:2057
 msgid "This block is an outer wrap section that allows you to add other blocks within it."
 msgstr ""
 
-#: classes/class-uagb-config.php:2138
+#: classes/class-uagb-config.php:2139
 msgid "Social Share"
 msgstr ""
 
-#: classes/class-uagb-config.php:2139
+#: classes/class-uagb-config.php:2140
 msgid "This block allows you to let users share your content across various social networking sites."
 msgstr ""
 
-#: classes/class-uagb-config.php:2175
+#: classes/class-uagb-config.php:2176
 msgid "Social Share Child"
 msgstr ""
 
-#: classes/class-uagb-config.php:2193
+#: classes/class-uagb-config.php:2194
 msgid "Tabs"
 msgstr ""
 
-#: classes/class-uagb-config.php:2194
-#: classes/class-uagb-config.php:2252
+#: classes/class-uagb-config.php:2195
+#: classes/class-uagb-config.php:2253
 msgid "This block allows you to display your content in tabs layout."
 msgstr ""
 
-#: classes/class-uagb-config.php:2251
+#: classes/class-uagb-config.php:2252
 msgid "Tabs child"
 msgstr ""
 
-#: classes/class-uagb-config.php:2266
+#: classes/class-uagb-config.php:2267
 msgid "Table of Contents"
 msgstr ""
 
-#: classes/class-uagb-config.php:2267
+#: classes/class-uagb-config.php:2268
 msgid "This block allows you to place a Table of Contents for Pages/Posts."
 msgstr ""
 
-#: classes/class-uagb-config.php:2368
+#: classes/class-uagb-config.php:2369
 msgid "Team"
 msgstr ""
 
-#: classes/class-uagb-config.php:2369
+#: classes/class-uagb-config.php:2370
 msgid "This block allows you to display your team. Add their picture, name, what they do and links to their social profiles."
 msgstr ""
 
-#: classes/class-uagb-config.php:2441
-#: dist/build/blocks.js:1
+#: classes/class-uagb-config.php:2442
+#: dist/blocks.js:1
 msgid "Testimonial"
 msgstr ""
 
-#: classes/class-uagb-config.php:2442
+#: classes/class-uagb-config.php:2443
 msgid "This block helps your display some amazing client feedback within your website."
 msgstr ""
 
-#: classes/class-uagb-config.php:2527
+#: classes/class-uagb-config.php:2528
 msgid "WP - Search"
 msgstr ""
 
-#: classes/class-uagb-config.php:2528
+#: classes/class-uagb-config.php:2529
 msgid "This block helps you add a Search field."
 msgstr ""
 
-#: classes/class-uagb-config.php:2596
+#: classes/class-uagb-config.php:2597
 msgid "Taxonomy List"
 msgstr ""
 
-#: classes/class-uagb-config.php:2597
+#: classes/class-uagb-config.php:2598
 msgid "This block helps you to display content categorization for various post types"
 msgstr ""
 
-#: classes/class-uagb-config.php:2687
+#: classes/class-uagb-config.php:2688
 msgid "Forms"
 msgstr ""
 
-#: classes/class-uagb-config.php:2688
+#: classes/class-uagb-config.php:2689
 msgid "This block allow you to create interactive contact form, newsletter, suggestion, etc easily."
 msgstr ""
 
-#: classes/class-uagb-config.php:2693
-#: dist/build/blocks.js:9
+#: classes/class-uagb-config.php:2694
+#: dist/blocks.js:9
 msgid "Submit"
 msgstr ""
 
-#: classes/class-uagb-config.php:2694
-#: dist/build/blocks.js:9
+#: classes/class-uagb-config.php:2695
+#: dist/blocks.js:9
 msgid "UAG Form"
 msgstr ""
 
-#: classes/class-uagb-config.php:2697
+#: classes/class-uagb-config.php:2698
 msgid "The form has been submitted Successfully!"
 msgstr ""
 
-#: classes/class-uagb-config.php:2720
-#: dist/build/blocks.js:9
+#: classes/class-uagb-config.php:2721
+#: dist/blocks.js:9
 msgid "Form Submission"
 msgstr ""
 
-#: classes/class-uagb-config.php:2776
-#: dist/build/blocks.js:9
+#: classes/class-uagb-config.php:2777
+#: dist/blocks.js:9
 msgid "There has been some error while submitting the form. Please verify all form fields again."
 msgstr ""
 
-#: classes/class-uagb-config.php:2789
-#: dist/build/blocks.js:9
+#: classes/class-uagb-config.php:2790
+#: dist/blocks.js:9
 msgid "Please fill up the above captcha."
 msgstr ""
 
-#: classes/class-uagb-config.php:2794
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: classes/class-uagb-config.php:2795
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Name"
 msgstr ""
 
-#: classes/class-uagb-config.php:2795
+#: classes/class-uagb-config.php:2796
 msgid "This block helps to add Name field."
 msgstr ""
 
-#: classes/class-uagb-config.php:2801
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: classes/class-uagb-config.php:2803
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Email"
 msgstr ""
 
-#: classes/class-uagb-config.php:2802
+#: classes/class-uagb-config.php:2804
 msgid "This block helps to add Email field."
 msgstr ""
 
-#: classes/class-uagb-config.php:2808
+#: classes/class-uagb-config.php:2811
 msgid "Hidden"
 msgstr ""
 
-#: classes/class-uagb-config.php:2809
+#: classes/class-uagb-config.php:2812
 msgid "This block helps to add Hidden field."
 msgstr ""
 
-#: classes/class-uagb-config.php:2813
-#: dist/build/blocks.js:9
+#: classes/class-uagb-config.php:2817
+#: dist/blocks.js:9
 msgid "Hidden Field Name"
 msgstr ""
 
-#: classes/class-uagb-config.php:2820
-#: dist/build/blocks.js:9
+#: classes/class-uagb-config.php:2824
+#: dist/blocks.js:9
 msgid "Phone"
 msgstr ""
 
-#: classes/class-uagb-config.php:2821
+#: classes/class-uagb-config.php:2825
 msgid "This block helps to add Phone field."
 msgstr ""
 
-#: classes/class-uagb-config.php:2827
+#: classes/class-uagb-config.php:2832
 msgid "Textarea"
 msgstr ""
 
-#: classes/class-uagb-config.php:2828
+#: classes/class-uagb-config.php:2833
 msgid "This block helps to add Textarea field."
 msgstr ""
 
-#: classes/class-uagb-config.php:2832
-#: dist/build/blocks.js:9
+#: classes/class-uagb-config.php:2838
+#: dist/blocks.js:9
 msgid "Message"
 msgstr ""
 
-#: classes/class-uagb-config.php:2838
+#: classes/class-uagb-config.php:2844
 msgid "Checkbox"
 msgstr ""
 
-#: classes/class-uagb-config.php:2839
+#: classes/class-uagb-config.php:2845
 msgid "This block helps to add Checkbox field."
 msgstr ""
 
-#: classes/class-uagb-config.php:2845
+#: classes/class-uagb-config.php:2852
 msgid "Radio"
 msgstr ""
 
-#: classes/class-uagb-config.php:2846
+#: classes/class-uagb-config.php:2853
 msgid "This block helps to add Radio field."
 msgstr ""
 
-#: classes/class-uagb-config.php:2852
-#: classes/class-uagb-config.php:2857
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: classes/class-uagb-config.php:2860
+#: classes/class-uagb-config.php:2866
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "URL"
 msgstr ""
 
-#: classes/class-uagb-config.php:2853
+#: classes/class-uagb-config.php:2861
 msgid "This block helps to add URL field."
 msgstr ""
 
-#: classes/class-uagb-config.php:2862
+#: classes/class-uagb-config.php:2871
 msgid "Select"
 msgstr ""
 
-#: classes/class-uagb-config.php:2863
+#: classes/class-uagb-config.php:2872
 msgid "This block helps to add Select field."
 msgstr ""
 
-#: classes/class-uagb-config.php:2869
+#: classes/class-uagb-config.php:2879
 msgid "Toggle"
 msgstr ""
 
-#: classes/class-uagb-config.php:2870
+#: classes/class-uagb-config.php:2880
 msgid "This block helps to add Toggle field."
 msgstr ""
 
-#: classes/class-uagb-config.php:2876
+#: classes/class-uagb-config.php:2887
 msgid "Datepicker"
 msgstr ""
 
-#: classes/class-uagb-config.php:2877
+#: classes/class-uagb-config.php:2888
 msgid "This block helps to add Datepicker field."
 msgstr ""
 
-#: classes/class-uagb-config.php:2883
+#: classes/class-uagb-config.php:2895
 msgid "Accept"
 msgstr ""
 
-#: classes/class-uagb-config.php:2884
+#: classes/class-uagb-config.php:2896
 msgid "This block helps to add Accept field."
 msgstr ""
 
-#: classes/class-uagb-config.php:2890
-#: dist/build/blocks.js:9
+#: classes/class-uagb-config.php:2902
+#: dist/blocks.js:9
 msgid "Lottie"
 msgstr ""
 
-#: classes/class-uagb-config.php:2891
+#: classes/class-uagb-config.php:2903
 msgid "This block helps you add Lottie animation and customize it as required."
 msgstr ""
 
 #: classes/class-uagb-helper.php:370
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Full"
 msgstr ""
 
@@ -860,33 +919,37 @@ msgstr ""
 msgid "Ultimate Addons Blocks"
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:543
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: classes/class-uagb-init-blocks.php:533
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "None"
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:572
-#: classes/class-uagb-init-blocks.php:605
-#: dist/build/blocks.js:9
+#: classes/class-uagb-init-blocks.php:562
+#: classes/class-uagb-init-blocks.php:595
+#: dist/blocks.js:9
 msgid "Select Form"
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:586
+#: classes/class-uagb-init-blocks.php:576
 msgid "You have not added any Contact Form 7 yet."
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:619
+#: classes/class-uagb-init-blocks.php:609
 msgid "You have not added any Gravity Forms yet."
 msgstr ""
 
 #. translators: %s: html tags
-#: classes/class-uagb-loader.php:168
+#: classes/class-uagb-loader.php:173
 msgid "The %1$sUltimate Addon for Gutenberg%2$s plugin requires %1$sGutenberg%2$s plugin installed & activated."
 msgstr ""
 
-#: classes/class-uagb-loader.php:171
+#: classes/class-uagb-loader.php:176
 msgid "Install Gutenberg"
+msgstr ""
+
+#: classes/class-uagb-rollback.php:165
+msgid "Ultimate Addons for Gutenberg <p>Rollback to Previous Version</p>"
 msgstr ""
 
 #: lib/notices/class-astra-notices.php:120
@@ -903,4701 +966,4704 @@ msgstr ""
 msgid "Ultimate Addons for Gutenberg requires WordPress version %s+. Because you are using an earlier version, the plugin is currently NOT RUNNING."
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Default"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Font Family"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Font Weight"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Font Subset"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "px"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "em"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Size Type"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Device"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Hide Advanced"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Advanced"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Line Height"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Font Size"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Heading"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Heading Tag"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "H1"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "H2"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "H3"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "H4"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "H5"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "H6"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Typography"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Heading Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Sub-Heading"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Sub Heading Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Separator"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Style"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Solid"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Double"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Dashed"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Dotted"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Thickness (px)"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Width"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Separator Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Heading Bottom Spacing (px)"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Separator Bottom Spacing (px)"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Write a Heading"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Write a Description"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "advanced heading"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "uag"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "heading"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Background Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Border Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Background Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Border Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "All"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "General"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Post Type"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Taxonomy"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Exclude Current Post"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Posts Per Page"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Date"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Title"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Random"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Menu Order"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Descending"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Ascending"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Equal Height"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Post Pagination"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Page Limit"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "If Posts Not Found"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Display Message"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Inherit Styling from Theme"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "This will inherit all the Typography and colors for Title, Meta, Excerpt and Read More button from the theme."
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Pagination"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Pagination Layout"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Border"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Filled"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Pagination Alignment"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Background Active Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Border Size"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Border Radius"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Border Active Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Text Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Text Active Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "This spacing is between the Post Grid and the Pagination"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Previous Text"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Next Text"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Image"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Show Featured Image"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image Sizes"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Image Position"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Top"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Background"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Background Overlay Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Overlay Opacity"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Link Complete Box"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Content"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Show Title"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Show Author"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Show Date"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Show Comment"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Show Taxonomy"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Show Excerpt"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Show:"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Excerpt"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Full post"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Max number of words in excerpt"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Read More Link"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Show Read More Link"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Open links in New Tab"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Button Text"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Text"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Button Border"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Rounded Corner"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Button Padding (px)"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Button Colors"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Normal"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Hover"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Title Tag"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "span"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "p"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Meta"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Colors"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Blog Background Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Title Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Meta Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Excerpt Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Vertical Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Horizontal Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Content Padding"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Content Padding (Mobile)"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image Bottom Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Title Bottom Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Meta Bottom Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Excerpt Bottom Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "post"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "grid"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Order By"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Order"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Infinite"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Infinite Load Event"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Scroll"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Alignment"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Font Size (px) "
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Padding"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Rounded Corners (px)"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid " Loader Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Loader Size"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Row Gap"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Column Gap"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "masonry"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Carousel"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Pause On Hover"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Autoplay"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Autoplay Speed (ms)"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Infinite Loop"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Transition Speed (ms)"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Arrows & Dots"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Show Arrows & Dots"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Only Arrows"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Only Dots"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Both Arrows & Dots"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Arrow Size"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Arrow Border Size"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Arrow Border Radius"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "CTA Tag"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Arrows & Dots Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Gap Between Posts & Dots"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "carousel"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Inset"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Outset"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Color Settings"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Overlay Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Layout"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Content Width"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Boxed"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Full Width"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Inherit Inner Width from Theme"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Inner Width"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "HTML Tag"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "div"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "header"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "footer"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "main"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "article"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "section"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "aside"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "nav"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Background Type"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Gradient"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Video"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Background Image"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Select Background Image"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Replace image"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Top Left"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Top Center"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Top Right"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Center Left"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Center Center"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Center Right"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Bottom Left"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Bottom Center"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Bottom Right"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Attachment"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Fixed"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Repeat"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "No Repeat"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Repeat-x"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Repeat-y"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Size"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Auto"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Cover"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Contain"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image Overlay Type"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Image Overlay Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Color 1"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Location 1"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Color 2"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Location 2"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Type"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Linear"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Radial"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Angle"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Background Video"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Select Background Video"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Replace Video"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Opacity"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Border Style"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Groove"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Ridge"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Border Width"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Box Shadow"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Horizontal"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Vertical"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Blur"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Spread"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Position"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "wrapper"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Gap Between Buttons"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Note: The gap between the buttons will seem larger in the editor, for better user edit experience. But at frontend the gap will be exactly what is set from here."
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Stack on"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Desktop"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Tablet"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Mobile"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Note: Choose on what breakpoint the buttons will stack."
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "buttons"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "multi buttons"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Select Icon"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Button Settings"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Inherit from Theme"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Button Icon"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Icon Position"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Before Text"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "After Text"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Icon Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid " Color Settings"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Text Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Padding (px)"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Thickness"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Rounded Corners"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Thumbnail"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:5
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:5
+#: dist/blocks.js:9
 msgid "Medium"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:7
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:7
+#: dist/blocks.js:9
 msgid "Large"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Icon Size"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Icon Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Icon Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "After Icon/Image"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "After Prefix"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "After Title"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "After Description"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Complete Box"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Link"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Open in new Window"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Button Padding"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Enable Prefix"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Prefix Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Enable Title"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Enable Description"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Description Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Prefix Bottom Margin"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Title Bottom Margin"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Separator Bottom Margin"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Description Bottom Margin"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image/Icon Margin (px)"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Select Image"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Replace Image"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Remove Image"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image Size"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Custom Width"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Turn this off to inherit the natural width of Image."
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Width (px)"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image/Icon"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Select Position"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Above Title"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Below Title"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Left of Title"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Right of Title"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Left of Text and Title"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Right of Text and Title"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Note: Choose on what breakpoint the Info Box will stack."
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Select Source"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Vertical Alignment"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Middle"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "info box"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Author Name"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Company Name"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Write Description"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Company"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Testimonial Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Name Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Company Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Arrow & Dots Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Gap Between Content & Dots"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Testimonial Bottom Margin"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Name Bottom Margin"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image Horizontal Padding"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image Vertical Padding"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Number of Testimonials"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Columns"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Settings"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Bottom"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Left"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Right"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Vertical ALignment"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image Style"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Circle"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Square"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "testimonial"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Write a Title"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Enter Prefix"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Write a Designation"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Team Member Image"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Above"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Social Links"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Enable Social Links"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Open Links in New Window"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Twitter"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Enter Twitter URL"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Facebook"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Enter Facebook URL"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "LinkedIn"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Enter LinkedIn URL"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Pinterest"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Enter Pinterest URL"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Prefix"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Description"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Social Icons"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Designation Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Social Icon Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Social Icon Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Designation Bottom Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Description Bottom Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Inter Social Icon Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image Margin (px)"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "team"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "members"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Note: Choose on what breakpoint the Icons will stack."
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Background Size"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Note: Background Size option is useful when one adds background color to the icons."
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Note: Border Radius option is useful when one adds background color to the icons."
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Gap between Items"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Note: The gap between the items will seem larger in the editor, for better user edit experience. But at frontend the gap will be exactly what is set from here."
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "social share"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "icon"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Social Share Settings"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Google Currents"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Digg"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Blogger"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Reddit"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "StumbleUpon"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Tumblr"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Myspace"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Pocket"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "VK"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Odnoklassniki"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Skype"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Telegram"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "WhatsApp"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Xing"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Buffer"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image / Icon"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Icon Color Settings"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image Background Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image Background Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Icon Background Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Icon Background Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "This block uses Ultimate Addon for Gutenberg's API key to display the map. You don't need to create your own API key or worry about renewing it."
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Address"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Type the address"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Zoom"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Height"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Language"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Afrikaans"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Albanian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Amharic"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Arabic"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Armenian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Azerbaijani"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Basque"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Belarusian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Bengali"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Bosnian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Bulgarian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Burmese"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Catalan"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Chinese"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Croatian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Czech"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Danish"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Dutch"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "English"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Estonian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Farsi"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Finnish"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "French"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Galician"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Georgian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "German"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Greek"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Gujarati"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Hebrew"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Hindi"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Hungarian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Icelandic"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Indonesian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Italian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Japanese"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Kannada"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Kazakh"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Khmer"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Korean"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Kyrgyz"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Lao"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Latvian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Lithuanian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Macedonian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Malay"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Malayalam"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Marathi"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Mongolian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Nepali"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Norwegian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Polish"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Portuguese"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Punjabi"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Romanian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Russian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Serbian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Sinhalese"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Slovak"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Slovenian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Spanish"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Swahili"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Swedish"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Tamil"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Telugu"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Thai"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Turkish"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Ukrainian"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Urdu"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Uzbek"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Vietnamese"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Zulu"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "google map"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "map"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Hide Labels"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Note: For better editing experience, the gap between items might look larger than applied.  Viewing in frontend will show the actual results."
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Gap between Icon and Label"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Icon Alignment"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Note: This manages the Icon Position with respect to the Label."
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Note: Border option is useful when one adds border color to the icons."
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "icon list"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "image list"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Icon Settings"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "List Item Link"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Disable Link"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Enter URL"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Open in New Tab"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image Border Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Image Border Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Icon Border Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Icon Border Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Label Name"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Timeline Heading "
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "This is Timeline description, you can change me anytime click here "
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Line Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Connector Color Settings"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Focus"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Timeline Item"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "P"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "SPAN"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Content Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Orientation"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Center"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Arrow Alignment"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Note: Choose on what breakpoint the Content Timeline will stack. It will be visible on front end only."
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Display Date"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Date Format"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Normal Text"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Date Bottom Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Content Tag"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Date Typography"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Date Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Horizontal Space"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Vertical Space"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Heading Bottom Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Connector"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Icon Background Size"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Connector Width"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Timeline"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Author Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "CTA Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "CTA Background Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Query"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Note: Choose on what breakpoint the Post Timeline will stack."
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Display Featured Image"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Featured Image Style"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Display Post Author"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Display Post Date"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Display Post Excerpt"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Excerpt Length"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Display Continue Reading Link"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "CTA Text"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Author"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "CTA"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Block Padding"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Author Bottom Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Content Bottom Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "timeline"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "CTA Text Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "CTA Text Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "Tag"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Heading Bottom Margin"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Content Left Margin"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Content Right Margin"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Button Position"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Stack"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Note: Choose on what breakpoint the CTA button will stack."
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Content Width (%)"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "Verticle Alignment"
 msgstr ""
 
-#: dist/build/blocks.js:1
-#: dist/build/blocks.js:9
+#: dist/blocks.js:1
+#: dist/blocks.js:9
 msgid "cta"
 msgstr ""
 
-#: dist/build/blocks.js:1
+#: dist/blocks.js:1
 msgid "call to action"
 msgstr ""
 
+#: dist/blocks.js:1
+#: dist/blocks.js:9
+msgid "Margin"
+msgstr ""
+
+#: dist/blocks.js:1
+#: dist/blocks.js:9
+msgid "Margin Tablet"
+msgstr ""
+
+#: dist/blocks.js:1
+#: dist/blocks.js:9
+msgid "Margin Mobile"
+msgstr ""
+
 #. translators: abbreviation for small size
-#: dist/build/blocks.js:3
-#: dist/build/blocks.js:9
+#: dist/blocks.js:3
+#: dist/blocks.js:9
 msgid "S"
 msgstr ""
 
-#: dist/build/blocks.js:3
-#: dist/build/blocks.js:9
+#: dist/blocks.js:3
+#: dist/blocks.js:9
 msgid "Small"
 msgstr ""
 
 #. translators: abbreviation for medium size
-#: dist/build/blocks.js:5
-#: dist/build/blocks.js:9
+#: dist/blocks.js:5
+#: dist/blocks.js:9
 msgid "M"
 msgstr ""
 
 #. translators: abbreviation for large size
-#: dist/build/blocks.js:7
-#: dist/build/blocks.js:9
+#: dist/blocks.js:7
+#: dist/blocks.js:9
 msgid "L"
 msgstr ""
 
 #. translators: abbreviation for extra large size
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "XL"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Extra Large"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tilt"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Mountains"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Wave Brush"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Waves"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Waves Pattern"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Triangle"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Drops"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Clouds"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "ZigZag"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Pyramids"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Triangle Asymmetrical"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tilt Opacity"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Fan Opacity"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Curve"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Curve Asymmetrical"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Curve Reverse"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Curve Asymmetrical Reverse"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Arrow"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Arrow Split"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Book"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Flip"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Bring To Front"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tablet & Mobile"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Note: Choose on what breakpoint the columns will stack."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Container Width"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Theme Container Width"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Custom"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Default (10px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "No Gap (0px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Narrow (5px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Extended (15px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Wide (20px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Wider (30px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Note: The individual Column Gap can be managed from Column Settings."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Reverse Columns (Tablet & Mobile)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Reverse Columns (Mobile)"
 msgstr ""
 
-#: dist/build/blocks.js:9
-msgid "Margin"
-msgstr ""
-
-#: dist/build/blocks.js:9
-msgid "Margin Tablet"
-msgstr ""
-
-#: dist/build/blocks.js:9
-msgid "Margin Mobile"
-msgstr ""
-
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Remove Video"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Video Overlay Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Shape Dividers"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Select a variation to start with."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "One column"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Two columns; equal split"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Two columns; one-third, two-thirds split"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Two columns; two-thirds, one-third split"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Three columns; equal split"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Three columns; wide center column"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Four columns; equal split"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "columns"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "rows"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Field Style & Border"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Field Style"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Box"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Underline"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Border Width (px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Active Border Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Label"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Input"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Field Background Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Select a Contact Form 7"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Submit Button"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Button Alignment"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Justified"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Button Font"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Label & Input Space"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Fields Space"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Field Padding (px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Radio & Checkbox"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Override Current Style"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Radio & Checkbox Label"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Label Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Selected Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Success / Error Message"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Note: This styling can be only seen at frontend"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Field Validation"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Validation Message Position"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Bottom Right Side of Field"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Validation Font"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Validation Message Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Message Background Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Highlight Borders"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Highlight Border Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Form Success / Error Validation"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Success Message"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Message Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Message Border Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Error Message"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Message Border Width (px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Message Border Radius"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Message Padding (px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Loading"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "CF7 styler"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "contact form styler"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "TextArea Height"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tab Index"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Form Title & Description"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Hide"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Form Title & Description Alignment"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Select a Gravity Form"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Note: This styling can be only seen on frontend"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Advanced Settings"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Form Error Validation"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Error Message Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Error Message Background Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Form Success Validation"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Success Message Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Success Message Typography"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "GF styler"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "gravity form styler"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Write a Quote"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Modern Layout - Styling"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Quote Border Style"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Quotation Layout - Styling"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Quote Icon Size"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Quote Icon Border Radius (%)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Modern"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Quotation"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Quote Icon Colors"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Note: Choose on what breakpoint the elements will stack."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Author Image"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Author Image Position"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Author Image Size"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Author Image Width"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Author Image Rounded Corners"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Quote"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Quote Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tweet Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tweet Background Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tweet Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tweet Background Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Quote Icon Margin (px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Gap Between Border and Quote"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Quote Bottom Spacing"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Vertical Padding"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Twitter Icon"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enable Twitter Icon"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Icon View"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Icon & Text"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Icon Style"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Classic"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Bubble"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Target URL"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Current Page"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Custom URL"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Space between Tweet Icon and Text"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Normal Quote"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Inline Quote"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Twitter Username"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Username"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "blockquote"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "quote"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "uagb"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Text Alignment"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Title Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Description Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Button Background"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Transparent"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Add Button Title…"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Add Button Description…"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "marketing button"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Select the heading to consider when generating the table"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Smooth Scroll"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "This will be in Action only in Front End."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Smooth Scroll Offset (px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Scroll Animation Delay (ms)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show Scroll To Top"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "This will add a Scroll to Top arrow at the bottom of page."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Bottom Space"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Collapsible"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Make Content Collapsible"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Keep Collapsed Initially"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Disable Bullet Points"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Bullet Points Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Content Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Table's width will be auto if this is kept off."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "table of contents"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "table"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "- A Computer."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "- A WordPress Website."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Required Tools:"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Things Needed?"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Steps to configure the How-to Schema:"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Total Cost:"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Total Time Needed :"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid " Minutes"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "How To Configure How-To Schema In Ultimate Addons For Gutenberg?"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "So to get started, you will just need to drag-n-drop the How-to Schema block in the Gutenberg editor. The How-to Schema block can be used on pages that contain a How-to in their title and describe steps to achieve certain requirements."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Years"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Year"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid " Months "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid " Month "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid " Days "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid " Day "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Hours "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid " Hour "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid " Minutes "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid " Minute "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Primary Heading"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show Total Time"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Note: Time is recommended field for schema. It should be ON"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Time"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Months"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Days"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Hours"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Minutes"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show Estimated Cost"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Note: Cost is recommended field for schema.It should be ON"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Click here to find your countrys ISO code."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show Tools"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Note: This is recommended field for schema.It should be ON"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Number of Tools"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show Materials"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Number of Materials"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Secondary Heading"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Time Margin"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Cost Margin"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Gap Between Steps"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "How to configure HowTo Schema in UAG?"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "So to get started, you will just need to drag-n-drop the How-to Schema block in the Gutenberg editor. The How-to Schema block can be used on pages which contain a How-to in their title and describe steps to achieve certain requirements."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Total Time Needed ( Minutes ):"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "30"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "USD"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "requirements tools:"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Requirements Tools:"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "requirements materials:"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Requirements Materials:"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "requirements Steps:"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "how to"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "schema"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Accordion"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Grid"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Collapse other items"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Expand First Item"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enable Toggle"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enable Schema Support"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Mobile Columns"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tab Columns"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Desktop Columns"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Expand"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Collapse"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Rows Gap (px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Columns Gap (px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enable Separator"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Gap between Icon and Question"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Expand Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Collapse Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Question"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Question Tag"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Span"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Text Active/Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Answer"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "faq"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "accordion"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "What is FAQ?"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Allow Always"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Allow to Dismiss"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Highlight width"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Notice Display"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enable Cookies"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show Closed Notice After (Days)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Highlight Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Content Background Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Dismiss Icon Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Title Padding (px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Content Padding (px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Notice Title"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Add notice text..."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "inline notice"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "notice"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Minimal"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Placeholder"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Input Width"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Input Box"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Search"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "search"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "wp"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing merchant-specific identifier for product ( SKU )"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing brand of the product"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing offer Type"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing offer currency of a product"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing offer price of a product"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing offer expiry of a product"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing global identifiers"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing ISBN number of a book"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing author of the book"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing released date of the movie"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing director name of the movie"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing provider of the course"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing type of application (Application Category)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing operating system(s) required"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing Offer Type"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing offer price of the application"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing offer currency of the application"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing title of the review"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing review description"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing review Image"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing url field"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing review author name"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing review publisher"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Missing date of publish"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "It seems that the following fields are empty. This may generate Schema errors / warnings for your Page, we recommend you to fill these fields."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "P.S. Note that this notice is visible only in the editor. This will not be visible in frontend. Also, once the required fields are added, this notice will go away."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Read more."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Title of the review"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Review Description"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Review Author"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Title of the summary goes here"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Summary of the review goes here"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Audio book"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Individual Product"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Product Collection"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Product Group"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Product Model"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Some Products"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Vehicle"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Mobile Application"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Video Game"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Web Application"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "ISBN"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Note: This is a mandatory field for the Review schema"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Book author name"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Provider"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Application Category"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Operating System"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Director Name"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Review Title"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Open in new window"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show review description"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Note: This is a mandatory field for the Review schema."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show review author"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show review image"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show ratings"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Note: Add feature/section ratings separately."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enable schema support"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Schema"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Item type"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Course"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Movie"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Product"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Software Application"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Item subtype"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Review publisher"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Date of publish"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Brand"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "SKU"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Identifier"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Identifier type"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Offer Currency"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Offer Price"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Discontinued"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "In Stock"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "In Store Only"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Limited Availability"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Online Only"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Out Of Stock"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Pre Order"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Pre Sale"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Sold Out"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Price Valid Until"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Title Typography"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Description Typography"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Summary Typography"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Summary Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Active Star Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Inactive Star Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Star Outline Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Overall Padding (px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "ratings"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "review"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Select Taxonomy"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Bullet/Numbers Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Bullet/Numbers Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Div"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "List"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "If Taxonomy Not Found"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Display Style"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show Empty Taxonomy"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show Posts Count"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show Count of taxonomy "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show Hierarchy"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Show Hierarchy of taxonomy "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "List Style"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Count Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Bottom Margin"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Title "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Count "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Border Thickness"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Separator Style"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Separator Width (%)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Separator Thickness"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "List "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "taxonomy"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "The form has been submitted successfully!"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Hidden Field Label"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Underlined"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Overall Alignment"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Confirmation Type"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enter a message you want to display after successfull form submission"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Error Message "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enter a message you want to display after unsuccessfull form submission"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Success Redirect URL"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enter a URL you want to redirect your page to after form Submission"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Button Size"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Submit Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Submit Hover Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "submitTextloadGoogleFonts"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "submitTextFontFamily"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "submitTextFontWeight"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "submitTextFontSubset"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "submitTextFontSizeType"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "submitTextFontSize"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "submitTextFontSizeMobile"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "submitTextFontSizeTablet"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "submitTextLineHeightType"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "submitTextLineHeight"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "submitTextLineHeightMobile"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "submitTextLineHeightTablet"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "To"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "CC"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "BCC"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Subject"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Design"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Label Typography"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "labelloadGoogleFonts"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "labelFontFamily"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "labelFontWeight"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "labelFontSubset"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "labelFontSizeType"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "labelFontSize"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "labelFontSizeMobile"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "labelFontSizeTablet"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "labelLineHeightType"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "labelLineHeight"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "labelLineHeightMobile"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "labelLineHeightTablet"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Input Typography"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "inputloadGoogleFonts"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "inputFontFamily"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "inputFontWeight"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "inputFontSubset"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "inputFontSizeType"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "inputFontSize"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "inputFontSizeMobile"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "inputFontSizeTablet"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "inputLineHeightType"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "inputLineHeight"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "inputLineHeightMobile"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "inputLineHeightTablet"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Checkbox/Radio Size"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Toggle Width"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Toggle Height"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Toggle Active Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Input Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Field Placeholder Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Field Active Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Spacing between fields (px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Google reCAPTCHA"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "P.S. Note that If you are using two forms on the same page with the different reCAPTCHA versions (V2 checkbox and V3), it will create conflicts between the versions. Kindly avoid using different versions on same page. "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enable reCAPTCHA "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Select Version"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "V2"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "V3"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Site Key"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enter v2 Keys"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Secret Key"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enter v3 Keys"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Hide reCAPTCHA Badge"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Know More"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Get Keys"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid " | Documentation"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Simple Contact Form"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "First Name"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "John"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Last Name"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Doe"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Newsletter Form"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Suggestion Form"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Option Name 1"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Option Value 1"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Option Name 2"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Option Value 2"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Option Name 3"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Option Value 3"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Option Name 4"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Option Value 4"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enter your subject"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "forms"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "John Doe"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "required"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Required"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "example@mail.com"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Value"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "[0-9]{3}-[0-9]{3}-[0-9]{4}"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "123-45-678"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "123-456-6789"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "[0-9]{3}-[0-9]{2}-[0-9]{3}"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Phone Name"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enter your message"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Number of lines"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Textarea Name"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Checkbox Title"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid " + Add Option "
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "RadioBox Title"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Radio Title"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "https://example.com"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "URL Name"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Select Title"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Leaving the toggle in On/Off state will set it as a default value on page load for the user."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Default State"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "ON State"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "OFF State"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "True State"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "False State"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Round"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Additional Validation"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Helps to set range of calender"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "I have read and agree to the Privacy Policy."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Privacy Policy"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "_blank"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "_self"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Acceptance Text"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enable Privacy Link"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Link Label"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enter a valid link."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Open in new tab"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Below setting will only take effect once you are on the live page, and not while you're editing."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tab 1"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tab 2"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tab 3"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tabs Style"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Desktop Style"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Horizontal Style 1"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Horizontal Style 2"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Horizontal Style 3"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Horizontal Style 4"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Horizontal Style 5"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Vertical Style 6"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Vertical Style 7"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Vertical Style 8"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Vertical Style 9"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Vertical Style 10"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tablet Style"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Mobile Style"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Stack Style 11"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Stack Style 12"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Stack Style 13"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Stack Style 14"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tabs Title Settings"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Initial Open Tab"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tab Alignment"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tab Text Alignment"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Enable Icon"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Active Icon Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tab Title Margin (px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Title Padding"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Title Background Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Title Text Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Active Tab Background Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Active Tab Text Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tabs Body Settings"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Body Background Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Body Text Color"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Tab Body Margin (px)"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Body Padding"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Border Settings"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Border width"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Move Item Back"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Move Item Forward"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Remove tab"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Title…"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Add tab"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "tabs"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Controls"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Play On"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "On Hover"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "On Click"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Viewport"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "This setting will only take effect once you are on the live page, and not while you're editing."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Loop"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Speed"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Reverse"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Direction of animation."
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Lottie block requires the file type JSON to be uploaded to media files. Seems like your website has disabled this file type. Please refer"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "Allows you to add fancy animation i.e Lottie to your website. You can see sample Lottie animations"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "lottie"
 msgstr ""
 
-#: dist/build/blocks.js:9
+#: dist/blocks.js:9
 msgid "animation"
 msgstr ""

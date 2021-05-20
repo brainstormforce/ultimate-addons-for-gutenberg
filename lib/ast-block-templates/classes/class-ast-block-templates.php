@@ -96,7 +96,7 @@ if ( ! class_exists( 'Ast_Block_Templates' ) ) :
 						$ext = strtolower( pathinfo( $file_path['data']['file'], PATHINFO_EXTENSION ) );
 
 						if ( 'json' === $ext ) {
-							$forms = json_decode( uagb_filesystem()->get_contents( $file_path['data']['file'] ), true );
+							$forms = json_decode( ast_block_templates_get_filesystem()->get_contents( $file_path['data']['file'] ), true );
 
 							if ( ! empty( $forms ) ) {
 
@@ -383,6 +383,7 @@ if ( ! class_exists( 'Ast_Block_Templates' ) ) :
 						'white_label_name'        => '',
 						'allBlocks'               => $this->get_all_blocks(),
 						'allSites'                => $this->get_all_sites(),
+						'allCategories'           => get_site_option( 'ast-block-templates-categories', array() ),
 						'wpforms_status'          => $this->get_plugin_status( 'wpforms-lite/wpforms.php' ),
 						'gutenberg_status'        => $this->get_plugin_status( 'gutenberg/gutenberg.php' ),
 						'_ajax_nonce'             => wp_create_nonce( 'ast-block-templates-ajax-nonce' ),
