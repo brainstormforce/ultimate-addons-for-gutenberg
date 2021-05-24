@@ -195,13 +195,31 @@ const attributes = {
 		type: "number",
 		default : 10,
 	},
+	headSpaceTablet: {
+		type: "number"
+	},
+	headSpaceMobile: {
+		type: "number"
+	},
 	subHeadSpace: {
 		type: "number",
 		default : 10,
 	},
+	subHeadSpaceTablet: {
+		type: "number"
+	},
+	subHeadSpaceMobile: {
+		type: "number"
+	},
 	seperatorSpace:{
 		type: "number",
 		default : 10,
+	},
+	seperatorSpaceTablet: {
+		type: "number"
+	},
+	seperatorSpaceMobile: {
+		type: "number"
 	},
 	iconimgBorderRadius: {
 		type: "number",
@@ -350,6 +368,12 @@ const attributes = {
 		type: "number",
 		default: 5,
 	},
+	prefixSpaceTablet :{
+		type: "number"
+	},
+	prefixSpaceMobile :{
+		type: "number"
+	},
 	iconLeftMargin :{
 		type: "number",
 		default: 10,
@@ -380,6 +404,12 @@ const attributes = {
 	imageWidth :{
 		type: "number",
 		default: 120,
+	},
+	imageWidthTablet :{
+		type: "number"
+	},
+	imageWidthMobile :{
+		type: "number"
 	},
 	imageWidthType : {
 		type    : "boolean",

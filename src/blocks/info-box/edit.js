@@ -17,6 +17,9 @@ import InfoBoxIconImage from "./components/IconImage"
 import renderSVG from "@Controls/renderIcon"
 import UAGB_Block_Icons from "@Controls/block-icons"
 
+const { withSelect } = wp.data
+import Columnresponsive from "../../components/typography/column-responsive"
+
 // Import all of our Text Options requirements.
 import TypographyControl from "../../components/typography"
 
@@ -143,10 +146,12 @@ class UAGBinfoBox extends Component {
 
 	render() {
 
-		const { className, setAttributes, attributes } = this.props
+		const { className, setAttributes, attributes, deviceType } = this.props
 
 		// Setup the attributes.
 		const {
+			imageWidthTablet,
+			imageWidthMobile,
 			headingAlign,
 			headingColor,
 			subHeadingColor,
@@ -190,8 +195,14 @@ class UAGBinfoBox extends Component {
 			subHeadLoadGoogleFonts,
 			separatorWidthType,
 			seperatorSpace,
+			seperatorSpaceTablet,
+			seperatorSpaceMobile,
 			headSpace,
+			headSpaceTablet,
+			headSpaceMobile,
 			subHeadSpace,
+			subHeadSpaceTablet,
+			subHeadSpaceMobile,
 			icon,
 			iconColor,
 			iconSize,
@@ -233,6 +244,8 @@ class UAGBinfoBox extends Component {
 			ctaBorderWidth,
 			ctaBorderRadius,
 			prefixSpace,
+			prefixSpaceTablet,
+			prefixSpaceMobile,
 			iconLeftMargin,
 			iconRightMargin,
 			iconTopMargin,
@@ -870,48 +883,157 @@ class UAGBinfoBox extends Component {
 		const marginSettings = (
 			<PanelBody	title={ __( "Spacing", 'ultimate-addons-for-gutenberg' ) } initialOpen={ false }	>
 				{ showPrefix &&
-					<RangeControl
-						label={ __( "Prefix Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
-						value={ prefixSpace }
-						onChange={ ( value ) => setAttributes( { prefixSpace: value } ) }
-						min={ 0 }
-						max={ 50 }
-						beforeIcon=""
-						allowReset
-					/>
+					<Fragment>
+						<Columnresponsive/>
+						{ "Desktop" === deviceType && (
+							<RangeControl
+								label={ __( "Prefix Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+								value={ prefixSpace }
+								onChange={ ( value ) => setAttributes( { prefixSpace: value } ) }
+								min={ 0 }
+								max={ 50 }
+								beforeIcon=""
+								allowReset
+							/>
+						)}
+						{ "Tablet" === deviceType && (
+							<RangeControl
+								label={ __( "Prefix Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+								value={ prefixSpaceTablet }
+								onChange={ ( value ) => setAttributes( { prefixSpaceTablet: value } ) }
+								min={ 0 }
+								max={ 50 }
+								beforeIcon=""
+								allowReset
+							/>
+						)}
+						{ "Mobile" === deviceType && (
+							<RangeControl
+								label={ __( "Prefix Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+								value={ prefixSpaceMobile }
+								onChange={ ( value ) => setAttributes( { prefixSpaceMobile: value } ) }
+								min={ 0 }
+								max={ 50 }
+								beforeIcon=""
+								allowReset
+							/>
+						)}
+					</Fragment>
 				}
 				{ showTitle &&
-					<RangeControl
-						label={ __( "Title Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
-						value={ headSpace }
-						onChange={ ( value ) => setAttributes( { headSpace: value } ) }
-						min={ 0 }
-						max={ 50 }
-						beforeIcon=""
-						allowReset
-					/>
+					<Fragment>
+					<Columnresponsive/>
+					{ "Desktop" === deviceType && (
+						<RangeControl
+							label={ __( "Title Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+							value={ headSpace }
+							onChange={ ( value ) => setAttributes( { headSpace: value } ) }
+							min={ 0 }
+							max={ 50 }
+							beforeIcon=""
+							allowReset
+						/>
+					)}
+					{ "Tablet" === deviceType && (
+						<RangeControl
+							label={ __( "Title Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+							value={ headSpaceTablet }
+							onChange={ ( value ) => setAttributes( { headSpaceTablet: value } ) }
+							min={ 0 }
+							max={ 50 }
+							beforeIcon=""
+							allowReset
+						/>
+					)}
+					{ "Mobile" === deviceType && (
+						<RangeControl
+							label={ __( "Title Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+							value={ headSpaceMobile }
+							onChange={ ( value ) => setAttributes( { headSpaceMobile: value } ) }
+							min={ 0 }
+							max={ 50 }
+							beforeIcon=""
+							allowReset
+						/>
+					)}
+				</Fragment>
 				}
-				{ "none" !== seperatorStyle &&
+				{ "none" !== seperatorStyle &&	
+					<Fragment>
+					<Columnresponsive/>
+					{ "Desktop" === deviceType && (
+						<RangeControl
+							label={ __( "Separator Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+							value={ seperatorSpace }
+							onChange={ ( value ) => setAttributes( { seperatorSpace: value } ) }
+							min={ 0 }
+							max={ 50 }
+							beforeIcon=""
+							allowReset
+						/>
+					)}
+					{ "Tablet" === deviceType && (
 					<RangeControl
-						label={ __( "Separator Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
-						value={ seperatorSpace }
-						onChange={ ( value ) => setAttributes( { seperatorSpace: value } ) }
-						min={ 0 }
-						max={ 50 }
-						beforeIcon=""
-						allowReset
-					/>							
+							label={ __( "Separator Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+							value={ seperatorSpaceTablet }
+							onChange={ ( value ) => setAttributes( { seperatorSpaceTablet: value } ) }
+							min={ 0 }
+							max={ 50 }
+							beforeIcon=""
+							allowReset
+						/>
+					)}
+					{ "Mobile" === deviceType && (
+						<RangeControl
+							label={ __( "Separator Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+							value={ seperatorSpaceMobile }
+							onChange={ ( value ) => setAttributes( { seperatorSpaceMobile: value } ) }
+							min={ 0 }
+							max={ 50 }
+							beforeIcon=""
+							allowReset
+						/>
+					)}
+				</Fragment>
+									
 				}
 				{ showDesc &&
-					<RangeControl
-						label={ __( "Description Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
-						value={ subHeadSpace }
-						onChange={ ( value ) => setAttributes( { subHeadSpace: value } ) }
-						min={ 0 }
-						max={ 50 }
-						beforeIcon=""
-						allowReset
-					/>
+					<Fragment>
+					<Columnresponsive/>
+					{ "Desktop" === deviceType && (
+						<RangeControl
+							label={ __( "Description Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+							value={ subHeadSpace }
+							onChange={ ( value ) => setAttributes( { subHeadSpace: value } ) }
+							min={ 0 }
+							max={ 50 }
+							beforeIcon=""
+							allowReset
+						/>
+					)}
+					{ "Tablet" === deviceType && (
+						<RangeControl
+							label={ __( "Description Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+							value={ subHeadSpaceTablet }
+							onChange={ ( value ) => setAttributes( { subHeadSpaceTablet: value } ) }
+							min={ 0 }
+							max={ 50 }
+							beforeIcon=""
+							allowReset
+						/>
+					)}
+					{ "Mobile" === deviceType && (
+						<RangeControl
+							label={ __( "Description Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+							value={ subHeadSpaceMobile }
+							onChange={ ( value ) => setAttributes( { subHeadSpaceMobile: value } ) }
+							min={ 0 }
+							max={ 50 }
+							beforeIcon=""
+							allowReset
+						/>
+					)}
+				</Fragment>
 				}
 				<hr className="uagb-editor__separator" />
 				<h2>{ __( "Image/Icon Margin (px)", 'ultimate-addons-for-gutenberg' ) }</h2>
@@ -999,15 +1121,48 @@ class UAGBinfoBox extends Component {
 							help={ __( "Turn this off to inherit the natural width of Image.", 'ultimate-addons-for-gutenberg' ) }
 						/>
 						{ imageWidthType &&
-							<RangeControl
-								label={ __( "Width (px)", 'ultimate-addons-for-gutenberg' ) }
-								value={ imageWidth }
-								onChange={ ( value ) => setAttributes( { imageWidth: value } ) }
-								min={ 0 }
-								max={ 500 }
-								beforeIcon=""
-								allowReset
-							/>
+							<Fragment>
+								<Columnresponsive/>
+								{ "Desktop" === deviceType && (
+									<Fragment>
+										<RangeControl
+											label={ __( "Width (px)", 'ultimate-addons-for-gutenberg' ) }
+											value={ imageWidth }
+											onChange={ ( value ) => setAttributes( { imageWidth: value } ) }
+											min={ 0 }
+											max={ 500 }
+											beforeIcon=""
+											allowReset
+										/>
+									</Fragment>
+								)}
+								{ "Tablet" === deviceType && (
+									<Fragment>
+										<RangeControl
+											label={ __( "Width (px)", 'ultimate-addons-for-gutenberg' ) }
+											value={ imageWidthTablet }
+											onChange={ ( value ) => setAttributes( { imageWidthTablet: value } ) }
+											min={ 0 }
+											max={ 500 }
+											beforeIcon=""
+											allowReset
+										/>
+									</Fragment>
+								)}
+								{ "Mobile" === deviceType && (
+									<Fragment>
+										<RangeControl
+											label={ __( "Width (px)", 'ultimate-addons-for-gutenberg' ) }
+											value={ imageWidthMobile }
+											onChange={ ( value ) => setAttributes( { imageWidthMobile: value } ) }
+											min={ 0 }
+											max={ 500 }
+											beforeIcon=""
+											allowReset
+										/>
+									</Fragment>
+								)}
+							</Fragment>
 						}
 						<RangeControl
 							label = { __( "Rounded Corners (px)", 'ultimate-addons-for-gutenberg' ) }
@@ -1215,7 +1370,8 @@ class UAGBinfoBox extends Component {
 				<div className={ classnames(
 					className,
 					"uagb-infobox__outer-wrap",
-					`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`
+					`uagb-block-${ this.props.clientId.substr( 0, 8 ) }`,
+					`uagb-editor-preview-mode-${ deviceType.toLowerCase() }`,
 				) }
 				>
 					{ ( ctaType == "all") &&<Fragment>
@@ -1254,5 +1410,11 @@ class UAGBinfoBox extends Component {
 		document.head.appendChild( $style )
 	}
 }
+export default withSelect( ( select, props ) => {
+	const { __experimentalGetPreviewDeviceType = null } = select( 'core/edit-post' );
+	let deviceType = __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : null;
 
-export default UAGBinfoBox
+	return {
+		deviceType: deviceType,
+	}
+} )( UAGBinfoBox )

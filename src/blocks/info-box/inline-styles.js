@@ -44,7 +44,11 @@ function InfoBoxStyle( props ) {
 		subHeadLineHeightMobile,
 		separatorWidthType,
 		headSpace,
+		headSpaceMobile,
+		headSpaceTablet,
 		subHeadSpace,
+		subHeadSpaceMobile,
+		subHeadSpaceTablet,
 		iconColor,
 		iconSize,
 		iconimgPosition,
@@ -55,6 +59,8 @@ function InfoBoxStyle( props ) {
 		seperatorColor,
 		seperatorThickness,
 		seperatorSpace,
+		seperatorSpaceMobile,
+		seperatorSpaceTablet,
 		ctaLinkColor,
 		ctaFontSize,
 		ctaFontSizeType,
@@ -71,11 +77,15 @@ function InfoBoxStyle( props ) {
 		ctaBorderWidth,
 		ctaBorderRadius,
 		prefixSpace,
+		prefixSpaceMobile,
+		prefixSpaceTablet,
 		iconLeftMargin,
 		iconRightMargin,
 		iconTopMargin,
 		iconBottomMargin,
 		imageWidth,
+		imageWidthTablet,
+		imageWidthMobile,
 		imageWidthType,
 		ctaLinkHoverColor,
 		ctaBgHoverColor,
@@ -177,6 +187,8 @@ function InfoBoxStyle( props ) {
 			"font-weight": prefixFontWeight,
 			"line-height": generateCSSUnit( prefixLineHeight, prefixLineHeightType ),
 			"color": prefixColor,
+		},
+		".uagb-editor-preview-mode-desktop .block-editor-rich-text__editable.uagb-ifb-title-prefix":{
 			"margin-bottom": generateCSSUnit( prefixSpace, "px" ),
 		},
 		// Title Style
@@ -188,7 +200,9 @@ function InfoBoxStyle( props ) {
 			"font-family": headFontFamily,
 			"font-weight": headFontWeight,
 			"line-height": generateCSSUnit( headLineHeight, headLineHeightType ),
-			"color": headingColor,
+			"color": headingColor
+		},
+		".uagb-editor-preview-mode-desktop .block-editor-rich-text__editable.uagb-ifb-title":{
 			"margin-bottom": generateCSSUnit( headSpace, "px" ),
 		},
 		// Description Style
@@ -197,7 +211,9 @@ function InfoBoxStyle( props ) {
 			"font-family": subHeadFontFamily,
 			"font-weight": subHeadFontWeight,
 			"line-height": generateCSSUnit( subHeadLineHeight, subHeadLineHeightType ),
-			"color": subHeadingColor,
+			"color": subHeadingColor
+		},
+		".uagb-editor-preview-mode-desktop .block-editor-rich-text__editable.uagb-ifb-desc":{
 			"margin-bottom": generateCSSUnit( subHeadSpace, "px" ),
 		},
 		// Seperator
@@ -207,8 +223,8 @@ function InfoBoxStyle( props ) {
 			"border-top-color": seperatorColor,
 			"border-top-style": seperatorStyle,
 		},
-		" .uagb-ifb-separator-parent" : {
-			"margin-bottom": generateCSSUnit( seperatorSpace, "px" )
+		".uagb-editor-preview-mode-desktop .uagb-ifb-separator-parent":{
+			"margin-bottom": generateCSSUnit( seperatorSpace, "px" ),
 		},
 		" .uagb-ifb-content" : {
 			"padding": ( typeof blockPadding != "undefined" ) ? blockPadding+"px": "inherit"
@@ -219,20 +235,6 @@ function InfoBoxStyle( props ) {
 		" .uagb-ifb-align-icon-before" : {
 			"margin-right" : generateCSSUnit( ctaIconSpace, "px" ),
 		},
-	}
-
-	if ( imageWidthType ) {
-		// Image
-		selectors[" .uagb-ifb-image-content img"] = {
-			"width": generateCSSUnit( imageWidth, "px" ),
-			"max-width": generateCSSUnit( imageWidth, "px" ),
-		}
-	}
-
-	if( iconimgPosition == "above-title" ||  iconimgPosition == "below-title" ){
-		selectors[" .uagb-infobox__content-wrap"] = {
-			"text-align" : headingAlign,
-		}
 	}
 
 	var tablet_selectors = {
@@ -262,7 +264,19 @@ function InfoBoxStyle( props ) {
 			"height": generateCSSUnit( ctaFontSizeTablet, ctaFontSizeType ),
 			"line-height": generateCSSUnit( ctaFontSizeTablet, ctaFontSizeType ),
 			"width": generateCSSUnit( ctaFontSizeTablet, ctaFontSizeType ),
-		}
+		},
+		".uagb-editor-preview-mode-tablet .uagb-ifb-title" :{
+			"margin-bottom": generateCSSUnit( headSpaceTablet, "px" ),
+		},
+		".uagb-editor-preview-mode-tablet .uagb-ifb-desc" :{
+			"margin-bottom": generateCSSUnit( subHeadSpaceTablet, "px" ),
+		},
+		".uagb-editor-preview-mode-tablet .uagb-ifb-separator-parent" : {
+			"margin-bottom": generateCSSUnit( seperatorSpaceTablet, "px" )
+		},
+		".uagb-editor-preview-mode-tablet .uagb-ifb-title-prefix" : {
+			"margin-bottom": generateCSSUnit( prefixSpaceTablet, "px" )
+		},
 	}
 
 	var mobile_selectors = {
@@ -292,9 +306,42 @@ function InfoBoxStyle( props ) {
 			"height": generateCSSUnit( ctaFontSizeMobile, ctaFontSizeType ),
 			"line-height": generateCSSUnit( ctaFontSizeMobile, ctaFontSizeType ),
 			"width": generateCSSUnit( ctaFontSizeMobile, ctaFontSizeType ),
+		},
+		".uagb-editor-preview-mode-mobile .uagb-ifb-title" :{
+			"margin-bottom": generateCSSUnit( headSpaceMobile, "px" ),
+		},
+		".uagb-editor-preview-mode-mobile .uagb-ifb-desc" :{
+			"margin-bottom": generateCSSUnit( subHeadSpaceMobile, "px" ),
+		},
+		".uagb-editor-preview-mode-mobile .uagb-ifb-separator-parent" : {
+			"margin-bottom": generateCSSUnit( seperatorSpaceMobile, "px" )
+		},
+		".uagb-editor-preview-mode-mobile .uagb-ifb-title-prefix" : {
+			"margin-bottom": generateCSSUnit( prefixSpaceMobile, "px" )
+		},
+	}
+
+	if ( imageWidthType ) {
+		// Image
+		selectors[".uagb-editor-preview-mode-desktop .uagb-ifb-image-content img"] = {
+			"width": generateCSSUnit( imageWidth, "px" ),
+			"max-width": generateCSSUnit( imageWidth, "px" ),
+		}
+		tablet_selectors[".uagb-editor-preview-mode-tablet .uagb-ifb-image-content img"] = {
+			"width": generateCSSUnit( imageWidthTablet, "px" ),
+			"max-width": generateCSSUnit( imageWidthTablet, "px" ),
+		}
+		mobile_selectors[".uagb-editor-preview-mode-mobile .uagb-ifb-image-content img"] = {
+			"width": generateCSSUnit( imageWidthMobile, "px" ),
+			"max-width": generateCSSUnit( imageWidthMobile, "px" ),
 		}
 	}
 
+	if( iconimgPosition == "above-title" ||  iconimgPosition == "below-title" ){
+		selectors[" .uagb-infobox__content-wrap"] = {
+			"text-align" : headingAlign,
+		}
+	}
 	var id = `.block-editor-page #wpwrap .uagb-block-${ props.clientId.substr( 0, 8 ) }`
 	var styling_css = generateCSS( selectors, id )
 
