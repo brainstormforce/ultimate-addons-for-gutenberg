@@ -1310,7 +1310,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				' .uagb-ifb-text-wrap .uagb-ifb-desc'   => array(
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['subHeadSpaceMobile'], 'px' ),
 				),
-                ' .uagb-ifb-separator-parent'           => array(
+				' .uagb-ifb-separator-parent'           => array(
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['seperatorSpaceMobile'], 'px' ),
 				),
 			);
@@ -1337,13 +1337,13 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				' .uagb-ifb-text-wrap .uagb-ifb-desc'   => array(
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['subHeadSpaceTablet'], 'px' ),
 				),
-                ' .uagb-ifb-separator-parent'           => array(
+				' .uagb-ifb-separator-parent'           => array(
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['seperatorSpaceTablet'], 'px' ),
 				),
 			);
 			if ( $attr['imageWidthType'] ) {
 				// Image.
-				$selectors[' .uagb-ifb-image-content > img'] = array(
+				$selectors[' .uagb-ifb-image-content > img']   = array(
 					'width'     => UAGB_Helper::get_css_value( $attr['imageWidth'], 'px' ),
 					'max-width' => UAGB_Helper::get_css_value( $attr['imageWidth'], 'px' ),
 				);
