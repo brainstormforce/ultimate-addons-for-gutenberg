@@ -175,7 +175,7 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 * Improvement: Improved the Dynamic Assets loading functionality for better performance.
 * Improvement: Static CSS Optimized by loading only used blocks' CSS on a Page.
 * Improvement: Table of content - Optimized headings rendering to remove CLS impact.
-* Improvement: Info-Box - Added Responsive Option for spacing and Image Width.
+* Improvement: Info-Box - Added responsive option for bottom spacing and image width.
 * Fix: Blockquote - Tweet link showing an empty page link and username.
 * Fix: Block condition - Conflicting with Real Media Library plugin.
 * Fix: Inline Notice and Review Schema block UI broken if Gutenberg plugin is activated.
