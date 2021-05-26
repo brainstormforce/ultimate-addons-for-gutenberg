@@ -319,31 +319,33 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				'padding-left'   => UAGB_Helper::get_css_value( $attr['leftPadding'], $attr['desktopPaddingType'] ),
 				'padding-right'  => UAGB_Helper::get_css_value( $attr['rightPadding'], $attr['desktopPaddingType'] ),
 				'border-radius'  => UAGB_Helper::get_css_value( $attr['borderRadius'], 'px' ),
+				'margin-top'     => UAGB_Helper::get_css_value( $attr['topMargin'], $attr['desktopMarginType'] ),
+				'margin-bottom'  => UAGB_Helper::get_css_value( $attr['bottomMargin'], $attr['desktopMarginType'] ),
+
 			);
 
 			$m_selectors = array();
 			$t_selectors = array();
-
-			if ( 'right' === $attr['align'] ) {
-				$style['margin-right']  = UAGB_Helper::get_css_value( $attr['rightMargin'], $attr['desktopMarginType'] );
-				$style['margin-left']   = 'auto';
-				$style['margin-top']    = UAGB_Helper::get_css_value( $attr['topMargin'], $attr['desktopMarginType'] );
-				$style['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMargin'], $attr['desktopMarginType'] );
-			} elseif ( 'left' === $attr['align'] ) {
-				$style['margin-right']  = 'auto';
-				$style['margin-left']   = UAGB_Helper::get_css_value( $attr['leftMargin'], $attr['desktopMarginType'] );
-				$style['margin-top']    = UAGB_Helper::get_css_value( $attr['topMargin'], $attr['desktopMarginType'] );
-				$style['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMargin'], $attr['desktopMarginType'] );
-			} elseif ( 'center' === $attr['align'] ) {
-				$style['margin-right']  = 'auto';
-				$style['margin-left']   = 'auto';
-				$style['margin-top']    = UAGB_Helper::get_css_value( $attr['topMargin'], $attr['desktopMarginType'] );
-				$style['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMargin'], $attr['desktopMarginType'] );
-			} else {
-				$style['margin-top']    = UAGB_Helper::get_css_value( $attr['topMargin'], $attr['desktopMarginType'] );
-				$style['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMargin'], $attr['desktopMarginType'] );
+			if ( 'boxed' === $attr['contentWidth'] ) {
+				switch ( $attr['align'] ) {
+					case 'right':
+						$style['margin-right'] = UAGB_Helper::get_css_value( $attr['rightMargin'], $attr['desktopMarginType'] );
+						$style['margin-left']  = 'auto';
+						break;
+					case 'left':
+						$style['margin-right'] = 'auto';
+						$style['margin-left']  = UAGB_Helper::get_css_value( $attr['leftMargin'], $attr['desktopMarginType'] );
+						break;
+					case 'center':
+						$style['margin-right'] = 'auto';
+						$style['margin-left']  = 'auto';
+						break;
+				}
 			}
-
+			if ( 'full_width' === $attr['contentWidth'] ) {
+				$style['margin-right'] = UAGB_Helper::get_css_value( $attr['rightMargin'], $attr['desktopMarginType'] );
+				$style['margin-left']  = UAGB_Helper::get_css_value( $attr['leftMargin'], $attr['desktopMarginType'] );
+			}
 			if ( 'none' !== $attr['borderStyle'] ) {
 				$style['border-style'] = $attr['borderStyle'];
 				$style['border-width'] = UAGB_Helper::get_css_value( $attr['borderWidth'], 'px' );
@@ -454,7 +456,7 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				),
 			);
 
-			$t_selectors = array(
+			$t_selectors                                      = array(
 				'.uagb-section__wrap' => array(
 					'padding-top'    => UAGB_Helper::get_css_value( $attr['topPaddingTablet'], $attr['tabletPaddingType'] ),
 					'padding-bottom' => UAGB_Helper::get_css_value( $attr['bottomPaddingTablet'], $attr['tabletPaddingType'] ),
@@ -462,29 +464,18 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'padding-right'  => UAGB_Helper::get_css_value( $attr['rightPaddingTablet'], $attr['tabletPaddingType'] ),
 				),
 			);
-
-			if ( 'right' === $attr['align'] ) {
-				$t_selectors['.uagb-section__wrap']['margin-right']  = UAGB_Helper::get_css_value( $attr['rightMarginTablet'], $attr['tabletMarginType'] );
-				$t_selectors['.uagb-section__wrap']['margin-top']    = UAGB_Helper::get_css_value( $attr['topMarginTablet'], $attr['tabletMarginType'] );
-				$t_selectors['.uagb-section__wrap']['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMarginTablet'], $attr['tabletMarginType'] );
-
-				$m_selectors['.uagb-section__wrap']['margin-right']  = UAGB_Helper::get_css_value( $attr['rightMarginMobile'], $attr['mobileMarginType'] );
-				$m_selectors['.uagb-section__wrap']['margin-top']    = UAGB_Helper::get_css_value( $attr['topMarginMobile'], $attr['mobileMarginType'] );
-				$m_selectors['.uagb-section__wrap']['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMarginMobile'], $attr['mobileMarginType'] );
-			} elseif ( 'left' === $attr['align'] ) {
-				$t_selectors['.uagb-section__wrap']['margin-left']   = UAGB_Helper::get_css_value( $attr['leftMarginTablet'], $attr['tabletMarginType'] );
-				$t_selectors['.uagb-section__wrap']['margin-top']    = UAGB_Helper::get_css_value( $attr['topMarginTablet'], $attr['tabletMarginType'] );
-				$t_selectors['.uagb-section__wrap']['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMarginTablet'], $attr['tabletMarginType'] );
-
-				$m_selectors['.uagb-section__wrap']['margin-left']   = UAGB_Helper::get_css_value( $attr['leftMarginMobile'], $attr['mobileMarginType'] );
-				$m_selectors['.uagb-section__wrap']['margin-top']    = UAGB_Helper::get_css_value( $attr['topMarginMobile'], $attr['mobileMarginType'] );
-				$m_selectors['.uagb-section__wrap']['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMarginMobile'], $attr['mobileMarginType'] );
-			} else {
-				$t_selectors['.uagb-section__wrap']['margin-top']    = UAGB_Helper::get_css_value( $attr['topMarginTablet'], $attr['tabletMarginType'] );
-				$t_selectors['.uagb-section__wrap']['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMarginTablet'], $attr['tabletMarginType'] );
-
-				$m_selectors['.uagb-section__wrap']['margin-top']    = UAGB_Helper::get_css_value( $attr['topMarginMobile'], $attr['mobileMarginType'] );
-				$m_selectors['.uagb-section__wrap']['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMarginMobile'], $attr['mobileMarginType'] );
+			$m_selectors['.uagb-section__wrap']['margin-top'] = UAGB_Helper::get_css_value( $attr['topMarginMobile'], $attr['mobileMarginType'] );
+			$m_selectors['.uagb-section__wrap']['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMarginMobile'], $attr['mobileMarginType'] );
+			$t_selectors['.uagb-section__wrap']['margin-top']    = UAGB_Helper::get_css_value( $attr['topMarginTablet'], $attr['tabletMarginType'] );
+			$t_selectors['.uagb-section__wrap']['margin-bottom'] = UAGB_Helper::get_css_value( $attr['bottomMarginTablet'], $attr['tabletMarginType'] );
+			if ( 'boxed' === $attr['contentWidth'] ) {
+				if ( 'right' === $attr['align'] ) {
+					$t_selectors['.uagb-section__wrap']['margin-right'] = UAGB_Helper::get_css_value( $attr['rightMarginTablet'], $attr['tabletMarginType'] );
+					$m_selectors['.uagb-section__wrap']['margin-right'] = UAGB_Helper::get_css_value( $attr['rightMarginMobile'], $attr['mobileMarginType'] );
+				} elseif ( 'left' === $attr['align'] ) {
+					$t_selectors['.uagb-section__wrap']['margin-left'] = UAGB_Helper::get_css_value( $attr['leftMarginTablet'], $attr['tabletMarginType'] );
+					$m_selectors['.uagb-section__wrap']['margin-left'] = UAGB_Helper::get_css_value( $attr['leftMarginMobile'], $attr['mobileMarginType'] );
+				}
 			}
 
 			$combined_selectors = array(
@@ -5494,9 +5485,17 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'width'            => UAGB_Helper::get_css_value( $attr['width'], 'px' ),
 					'height'           => UAGB_Helper::get_css_value( $attr['height'], 'px' ),
 					'overflow'         => 'hidden',
-					'margin'           => '0px auto',
 					'outline'          => 'none',
 					'background-color' => $attr['backgroundColor'],
+				),
+				'.uagb-lottie__left'       => array(
+					'margin-right' => 'auto',
+				),
+				'.uagb-lottie__right'      => array(
+					'margin-left' => 'auto',
+				),
+				'.uagb-lottie__center'     => array(
+					'margin' => '0 auto',
 				),
 			);
 			$selectors['.uagb-lottie__outer-wrap:hover'] = array(

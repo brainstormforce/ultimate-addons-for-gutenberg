@@ -171,20 +171,26 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 = 1.23.0 =
 * New: Added an option to rollback to a previous version.
 * New: Added an option to get update notifications for beta versions.
+* New: Lottie - Added alignment Option.
 * Improvement: Frontend optimization by reducing one request of CSS.
 * Improvement: Improved the Dynamic Assets loading functionality for better performance.
 * Improvement: Static CSS Optimized by loading only used blocks' CSS on a Page.
 * Improvement: Table of content - Optimized headings rendering to remove CLS impact.
 * Improvement: Info-Box - Added responsive option for bottom spacing and image width.
+* Fix: Advanced Column - Column Gap Setting overlapping issue.
+* Fix: Advanced Column - Column Gap Setting not working in the Editor issue.
+* Fix: Advanced Column - Stack on tablet and mobile in preview mode.
 * Fix: Blockquote - Tweet link showing an empty page link and username.
 * Fix: Block condition - Conflicting with Real Media Library plugin.
+* Fix: Blocks throwing an error when deactivate all the UAG blocks except the Multi Buttons, Forms & How To.
 * Fix: Inline Notice and Review Schema block UI broken if Gutenberg plugin is activated.
-* Fix: Table of content - HTML validation issue.
+* Fix: Lottie - Settings conflict issue.
+* Fix: Lottie - Alignment issue in the editor.
 * Fix: Post Grid - Link to complete box redirect to the last post when image background set to Top.
 * Fix: Post Layout - Conflicting with the Envira Gallery plugin.
-* Fix: Blocks throwing an error when deactivate all the UAG blocks except the Multi Buttons, Forms & How To.
-* Fix: Settings conflict issue in Lottie block.
-* Fix: Fixed Alignment issue in the editor in Lottie block.
+* Fix: Section - Margin Left/Right not working issue.
+* Fix: Table of content - HTML validation issue.
+
 
 = 1.22.4 =
 * Fix: Advanced Columns - Margin option missing in spacing setting for inner column.
