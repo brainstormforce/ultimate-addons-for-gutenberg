@@ -5,7 +5,7 @@
 **Requires at least:** 4.7  
 **Requires PHP:** 5.6  
 **Tested up to:** 5.7  
-**Stable tag:** 1.23.0-beta.1  
+**Stable tag:** 1.23.0  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -167,6 +167,9 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 1. /assets/screenshots/1.png
 
 ## Changelog ##
+
+### 1.23.0 ###
+* Fix: Blockquote - Special char encoding for content.
 
 ### 1.23.0-beta.1 ###
 * New: Added an option to rollback to a previous version.
