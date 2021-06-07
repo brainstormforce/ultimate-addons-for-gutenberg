@@ -64,7 +64,7 @@ const Render = (props) => {
 		title = props.attributes.mainimage.title;
 	}
 
-	let url = '';
+	let imgUrl = '';
 	if ( '' !== urlChk ) {
 		const size = props.attributes.mainimage.sizes;
 		const imageSize = props.attributes.imgSize;
@@ -73,9 +73,9 @@ const Render = (props) => {
 			'undefined' !== typeof size &&
 			'undefined' !== typeof size[ imageSize ]
 		) {
-			url = size[ imageSize ].url;
+			imgUrl = size[ imageSize ].url;
 		} else {
-			url = urlChk;
+			imgUrl = urlChk;
 		}
 	}
 
@@ -85,7 +85,7 @@ const Render = (props) => {
 		imageIconHtml = (
 			<img
 				className="uagb-review__source-image"
-				src={ url }
+				src={ imgUrl }
 				title={ title }
 			/>
 		);
@@ -117,7 +117,7 @@ const Render = (props) => {
 				headingTag={ headingTag }
 				mainimage={ mainimage }
 				imgSize={ imgSize }
-				imageIconHtml={ imageIconHtml }
+				image_icon_html={ imageIconHtml }
 				isSelected={ isSelected }
 				authorName={ authorName }
 				itemName={ itemName }

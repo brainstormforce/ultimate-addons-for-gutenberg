@@ -13,6 +13,7 @@ import {
 // Extend component
 import { Fragment } from '@wordpress/element'
 
+import { useSelect, useDispatch } from '@wordpress/data';
 /**
  * Build the Measure controls
  * @returns {object} Measure settings.
