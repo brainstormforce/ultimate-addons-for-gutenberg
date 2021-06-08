@@ -2,7 +2,7 @@
  * BLOCK: Post Grid - Settings.
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import React, { lazy, Suspense } from 'react';
 import lazyLoader from '@Controls/lazy-loader';
 import ColumnResponsive from '@Components/typography/column-responsive';
@@ -1287,7 +1287,7 @@ const Settings = ( props ) => {
 									) }
 								</h2>
 								<RangeControl
-									label={ UAGB_Block_Icons.vertical_spacing }
+									label={ wp.UAGBBlockIcons.vertical_spacing }
 									className={ 'uagb-margin-control' }
 									value={ btnVPadding }
 									onChange={ ( value ) =>
@@ -1299,7 +1299,7 @@ const Settings = ( props ) => {
 								/>
 								<RangeControl
 									label={
-										UAGB_Block_Icons.horizontal_spacing
+										wp.UAGBBlockIcons.horizontal_spacing
 									}
 									className={ 'uagb-margin-control' }
 									value={ btnHPadding }

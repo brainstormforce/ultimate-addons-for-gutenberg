@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import PositionClasses from './classes';
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import React, { lazy, Suspense, useLayoutEffect } from 'react';
 import lazyLoader from '@Controls/lazy-loader';
 import TestimonialImage from './components/Image';
@@ -59,7 +59,7 @@ const Render = ( props ) => {
 					borderWidth: arrowBorderSize,
 				} }
 			>
-				{ UAGB_Block_Icons.carousel_right }
+				{ wp.UAGBBlockIcons.carousel_right }
 			</button>
 		);
 	};
@@ -78,7 +78,7 @@ const Render = ( props ) => {
 					borderWidth: arrowBorderSize,
 				} }
 			>
-				{ UAGB_Block_Icons.carousel_left }
+				{ wp.UAGBBlockIcons.carousel_left }
 			</button>
 		);
 	};

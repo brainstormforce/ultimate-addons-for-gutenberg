@@ -2,7 +2,7 @@
  * BLOCK: Social Share Child
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import attributes from './attributes';
 import edit from './edit';
 import save from './save';
@@ -15,7 +15,7 @@ registerBlockType( 'uagb/social-share-child', {
 	title: uagb_blocks_info.blocks[ 'uagb/social-share-child' ].title,
 	description:
 		uagb_blocks_info.blocks[ 'uagb/social-share-child' ].description,
-	icon: UAGB_Block_Icons.social_share_child,
+	icon: wp.UAGBBlockIcons.social_share_child,
 	category: uagb_blocks_info.category,
 	parent: [ 'uagb/social-share' ],
 	keywords: [

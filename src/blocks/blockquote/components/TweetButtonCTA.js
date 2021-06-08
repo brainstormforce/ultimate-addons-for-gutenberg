@@ -1,4 +1,3 @@
-import UAGB_Block_Icons from '@Controls/block-icons';
 
 function TweetButtonCTA( props ) {
 	const { attributes } = props;
@@ -13,7 +12,7 @@ function TweetButtonCTA( props ) {
 		>
 			{ attributes.iconView === 'icon_text' && (
 				<>
-					{ UAGB_Block_Icons.quote_tweet_icon }
+					{ wp.UAGBBlockIcons.quote_tweet_icon }
 					<span className="uagb-blockquote__tweet-label">
 						{ attributes.iconLabel }
 					</span>
@@ -21,7 +20,7 @@ function TweetButtonCTA( props ) {
 			) }
 
 			{ attributes.iconView === 'icon' && (
-				<>{ UAGB_Block_Icons.quote_tweet_icon }</>
+				<>{ wp.UAGBBlockIcons.quote_tweet_icon }</>
 			) }
 
 			{ attributes.iconView === 'text' && (

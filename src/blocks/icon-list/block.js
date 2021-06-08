@@ -2,7 +2,7 @@
  * BLOCK: Icon List
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import attributes from './attributes';
 import edit from './edit';
 import save from './save';
@@ -16,7 +16,7 @@ import { registerBlockType } from '@wordpress/blocks';
 registerBlockType( 'uagb/icon-list', {
 	title: uagb_blocks_info.blocks[ 'uagb/icon-list' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/icon-list' ].description,
-	icon: UAGB_Block_Icons.icon_list,
+	icon: wp.UAGBBlockIcons.icon_list,
 	category: uagb_blocks_info.category,
 	keywords: [
 		__( 'icon list', 'ultimate-addons-for-gutenberg' ),

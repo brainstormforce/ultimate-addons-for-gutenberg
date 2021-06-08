@@ -10,7 +10,7 @@
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 //  Import CSS.
 import '.././style.scss';
 import './style.scss';
@@ -59,7 +59,7 @@ registerBlockType( 'uagb/content-timeline', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 	title: uagb_blocks_info.blocks[ 'uagb/content-timeline' ].title, // Block title.
 	description: uagb_blocks_info.blocks[ 'uagb/content-timeline' ].description, // Block description.
-	icon: UAGB_Block_Icons.content_timeline, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	icon: wp.UAGBBlockIcons.content_timeline, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: uagb_blocks_info.category,
 	keywords: [
 		__( 'Content Timeline', 'ultimate-addons-for-gutenberg' ),

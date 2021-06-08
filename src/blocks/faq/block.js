@@ -2,7 +2,7 @@
  * BLOCK: FAQ - Schema
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import attributes from './attributes';
 import edit from './edit';
 import save from './save';
@@ -43,7 +43,7 @@ const withFaq = createHigherOrderComponent( ( BlockEdit ) => {
 registerBlockType( 'uagb/faq', {
 	title: uagb_blocks_info.blocks[ 'uagb/faq' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/faq' ].description,
-	icon: UAGB_Block_Icons.faq,
+	icon: wp.UAGBBlockIcons.faq,
 	category: uagb_blocks_info.category,
 	keywords: [
 		__( 'faq', 'ultimate-addons-for-gutenberg' ),

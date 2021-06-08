@@ -2,7 +2,7 @@
  * BLOCK: Section
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import './style.scss';
 import attributes from './attributes';
 import edit from './edit';
@@ -15,7 +15,7 @@ const { registerBlockType } = wp.blocks;
 registerBlockType( 'uagb/section', {
 	title: uagb_blocks_info.blocks[ 'uagb/section' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/section' ].description,
-	icon: UAGB_Block_Icons.section,
+	icon: wp.UAGBBlockIcons.section,
 	category: uagb_blocks_info.category,
 	keywords: [
 		__( 'section', 'ultimate-addons-for-gutenberg' ),

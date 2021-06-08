@@ -2,7 +2,7 @@
  * BLOCK: Multi Buttons
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import attributes from './attributes';
 import edit from './edit';
 import deprecated from './deprecated';
@@ -14,7 +14,7 @@ import { registerBlockType } from '@wordpress/blocks';
 registerBlockType( 'uagb/buttons', {
 	title: uagb_blocks_info.blocks[ 'uagb/buttons' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/buttons' ].description,
-	icon: UAGB_Block_Icons.buttons,
+	icon: wp.UAGBBlockIcons.buttons,
 	category: uagb_blocks_info.category,
 	keywords: [
 		__( 'buttons', 'ultimate-addons-for-gutenberg' ),

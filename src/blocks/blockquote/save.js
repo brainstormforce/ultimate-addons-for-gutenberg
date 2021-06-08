@@ -3,7 +3,6 @@
  */
 
 import classnames from 'classnames';
-import UAGB_Block_Icons from '@Controls/block-icons';
 import TweetButtonCTA from './components/TweetButtonCTA';
 import Description from './components/Description';
 import AuthorText from './components/AuthorText';
@@ -53,7 +52,7 @@ export default function save( props ) {
 					{ skinStyle === 'quotation' && (
 						<div className="uagb-blockquote__icon-wrap">
 							<span className="uagb-blockquote__icon">
-								{ UAGB_Block_Icons.quote_inline_icon }
+								{ wp.UAGBBlockIcons.quote_inline_icon }
 							</span>
 						</div>
 					) }

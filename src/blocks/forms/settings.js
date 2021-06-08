@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import { __ } from '@wordpress/i18n';
 import lazyLoader from '@Controls/lazy-loader';
 import TypographyControl from '@Components/typography';
@@ -751,7 +751,7 @@ const Settings = ( props ) => {
 						) }
 					</h2>
 					<RangeControl
-						label={ UAGB_Block_Icons.vertical_spacing }
+						label={ wp.UAGBBlockIcons.vertical_spacing }
 						className={ 'uagb-padding-control submit-btn-control' }
 						value={ vPaddingSubmit }
 						onChange={ ( value ) =>
@@ -763,7 +763,7 @@ const Settings = ( props ) => {
 						max={ 100 }
 					/>
 					<RangeControl
-						label={ UAGB_Block_Icons.horizontal_spacing }
+						label={ wp.UAGBBlockIcons.horizontal_spacing }
 						className={ 'uagb-padding-control submit-btn-control' }
 						value={ hPaddingSubmit }
 						onChange={ ( value ) =>
@@ -1848,7 +1848,7 @@ const Settings = ( props ) => {
 					) }
 				</h2>
 				<RangeControl
-					label={ UAGB_Block_Icons.vertical_spacing }
+					label={ wp.UAGBBlockIcons.vertical_spacing }
 					className={ 'uagb-padding-control' }
 					value={ vPaddingField }
 					onChange={ ( value ) =>
@@ -1860,7 +1860,7 @@ const Settings = ( props ) => {
 					max={ 100 }
 				/>
 				<RangeControl
-					label={ UAGB_Block_Icons.horizontal_spacing }
+					label={ wp.UAGBBlockIcons.horizontal_spacing }
 					className={ 'uagb-padding-control' }
 					value={ hPaddingField }
 					onChange={ ( value ) =>

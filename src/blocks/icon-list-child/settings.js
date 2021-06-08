@@ -1,5 +1,4 @@
 import renderSVG from '@Controls/renderIcon';
-import UAGBIcon from '@Controls/UAGBIcon.json';
 import FontIconPicker from '@fonticonpicker/react-fonticonpicker';
 import React from 'react';
 import { __ } from '@wordpress/i18n';
@@ -17,8 +16,6 @@ import {
 	ToggleControl,
 	TabPanel,
 } from '@wordpress/components';
-
-const svgIcons = Object.keys( UAGBIcon );
 
 const Settings = ( props ) => {
 	props = props.parentProps;
@@ -426,7 +423,7 @@ const Settings = ( props ) => {
 								) }
 							</p>
 							<FontIconPicker
-								icons={ svgIcons }
+								icons={ wp.UAGBSvgIcons }
 								renderFunc={ renderSVG }
 								theme="default"
 								value={ icon }

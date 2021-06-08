@@ -1,8 +1,7 @@
 import FontIconPicker from '@fonticonpicker/react-fonticonpicker';
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import { __ } from '@wordpress/i18n';
 import renderSVG from '@Controls/renderIcon';
-import UAGBIcon from '@Controls/UAGBIcon.json';
 import React, { Suspense } from 'react';
 import lazyLoader from '@Controls/lazy-loader';
 import TypographyControl from '@Components/typography';
@@ -22,8 +21,6 @@ import {
 	ToggleControl,
 	TextControl,
 } from '@wordpress/components';
-
-const svgIcons = Object.keys( UAGBIcon );
 
 const Settings = ( props ) => {
 	props = props.parentProps;
@@ -147,7 +144,7 @@ const Settings = ( props ) => {
 
 	// Icon properties.
 	const ctaIconProps = {
-		icons: svgIcons,
+		icons: wp.UAGBSvgIcons,
 		value: ctaIcon,
 		onChange: ( value ) => {
 			setAttributes( { ctaIcon: value } );
@@ -365,7 +362,7 @@ const Settings = ( props ) => {
 							) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.vertical_spacing }
+							label={ wp.UAGBBlockIcons.vertical_spacing }
 							className={ 'uagb-margin-control' }
 							value={ ctaBtnVertPadding }
 							onChange={ ( value ) =>
@@ -377,7 +374,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.horizontal_spacing }
+							label={ wp.UAGBBlockIcons.horizontal_spacing }
 							className={ 'uagb-margin-control' }
 							value={ ctaBtnHrPadding }
 							onChange={ ( value ) =>

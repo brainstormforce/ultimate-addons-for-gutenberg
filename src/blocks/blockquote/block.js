@@ -2,7 +2,6 @@
  * BLOCK: Quote
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
 import edit from './edit';
 import save from './save';
 import './style.scss';
@@ -31,7 +30,7 @@ registerBlockType( 'uagb/blockquote', {
 		'This block allows you to display your Blockquote.',
 		'ultimate-addons-for-gutenberg'
 	),
-	icon: UAGB_Block_Icons.blockquote,
+	icon: wp.UAGBBlockIcons.blockquote,
 	keywords: [
 		__( 'blockquote', 'ultimate-addons-for-gutenberg' ),
 		__( 'quote', 'ultimate-addons-for-gutenberg' ),

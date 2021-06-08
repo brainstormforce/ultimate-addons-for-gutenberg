@@ -5,7 +5,7 @@
 // Import block dependencies and components
 import { PostExcerpt } from './edit';
 import save from './save';
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 //  Import CSS.
 import './style.scss';
 // Components
@@ -18,7 +18,7 @@ const { registerBlockType } = wp.blocks;
 registerBlockType( 'uagb/post-excerpt', {
 	title: uagb_blocks_info.blocks[ 'uagb/post-excerpt' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/post-excerpt' ].description,
-	icon: UAGB_Block_Icons.post_grid,
+	icon: wp.UAGBBlockIcons.post_grid,
 	category: uagb_blocks_info.category,
 	parent: [ 'uagb/post-grid', 'uagb/post-masonry', 'uagb/post-carousel' ],
 	keywords: [ __( 'post' ), __( 'excerpt' ), __( 'uag' ) ],

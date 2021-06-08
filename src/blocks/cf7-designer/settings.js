@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 
 import { __ } from '@wordpress/i18n';
-import UAGB_Block_Icons from '@Controls/block-icons';
 import lazyLoader from '@Controls/lazy-loader';
 import WebfontLoader from '@Components/typography/fontloader';
 import TypographyControl from '@Components/typography';
@@ -1422,7 +1421,7 @@ const Settings = ( props ) => {
 				) }
 			</h2>
 			<RangeControl
-				label={ UAGB_Block_Icons.vertical_spacing }
+				label={ wp.UAGBBlockIcons.vertical_spacing }
 				className={ 'uagb-margin-control' }
 				value={ msgVrPadding }
 				onChange={ ( value ) =>
@@ -1433,7 +1432,7 @@ const Settings = ( props ) => {
 				allowReset
 			/>
 			<RangeControl
-				label={ UAGB_Block_Icons.horizontal_spacing }
+				label={ wp.UAGBBlockIcons.horizontal_spacing }
 				className={ 'uagb-margin-control' }
 				value={ msgHrPadding }
 				onChange={ ( value ) =>
@@ -1566,7 +1565,7 @@ const Settings = ( props ) => {
 				{ __( 'Button Padding (px)', 'ultimate-addons-for-gutenberg' ) }
 			</h2>
 			<RangeControl
-				label={ UAGB_Block_Icons.vertical_spacing }
+				label={ wp.UAGBBlockIcons.vertical_spacing }
 				className={ 'uagb-margin-control' }
 				value={ buttonVrPadding }
 				onChange={ ( value ) =>
@@ -1577,7 +1576,7 @@ const Settings = ( props ) => {
 				initialPosition={ 10 }
 			/>
 			<RangeControl
-				label={ UAGB_Block_Icons.horizontal_spacing }
+				label={ wp.UAGBBlockIcons.horizontal_spacing }
 				className={ 'uagb-margin-control' }
 				value={ buttonHrPadding }
 				onChange={ ( value ) =>
@@ -1625,7 +1624,7 @@ const Settings = ( props ) => {
 				{ __( 'Field Padding (px)', 'ultimate-addons-for-gutenberg' ) }
 			</h2>
 			<RangeControl
-				label={ UAGB_Block_Icons.vertical_spacing }
+				label={ wp.UAGBBlockIcons.vertical_spacing }
 				className={ 'uagb-margin-control' }
 				value={ fieldVrPadding }
 				onChange={ ( value ) =>
@@ -1636,7 +1635,7 @@ const Settings = ( props ) => {
 				initialPosition={ 10 }
 			/>
 			<RangeControl
-				label={ UAGB_Block_Icons.horizontal_spacing }
+				label={ wp.UAGBBlockIcons.horizontal_spacing }
 				className={ 'uagb-margin-control' }
 				value={ fieldHrPadding }
 				onChange={ ( value ) =>

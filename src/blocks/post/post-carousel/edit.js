@@ -2,7 +2,7 @@
  * External dependencies
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import styling from '.././styling';
 import { compose } from '@wordpress/compose';
 import { __ } from '@wordpress/i18n';
@@ -1150,7 +1150,7 @@ const UAGBPostCarousel = ( props ) => {
 									) }
 								</h2>
 								<RangeControl
-									label={ UAGB_Block_Icons.vertical_spacing }
+									label={ wp.UAGBBlockIcons.vertical_spacing }
 									className={ 'uagb-margin-control' }
 									value={ btnVPadding }
 									onChange={ ( value ) =>
@@ -1164,7 +1164,7 @@ const UAGBPostCarousel = ( props ) => {
 								/>
 								<RangeControl
 									label={
-										UAGB_Block_Icons.horizontal_spacing
+										wp.UAGBBlockIcons.horizontal_spacing
 									}
 									className={ 'uagb-margin-control' }
 									value={ btnHPadding }

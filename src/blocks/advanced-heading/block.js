@@ -2,7 +2,6 @@
  * BLOCK: Advanced Heading
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
 import attributes from './attributes';
 import edit from './edit';
 import save from './save';
@@ -17,7 +16,7 @@ registerBlockType( 'uagb/advanced-heading', {
 		'This block lets you add a combination of a heading and a sub-heading with a separator in between.',
 		'ultimate-addons-for-gutenberg'
 	),
-	icon: UAGB_Block_Icons.advanced_heading,
+	icon: wp.UAGBBlockIcons.advanced_heading,
 	keywords: [
 		__( 'advanced heading', 'ultimate-addons-for-gutenberg' ),
 		__( 'uag', 'ultimate-addons-for-gutenberg' ),

@@ -6,7 +6,7 @@ import './style.scss';
 import save from './save';
 import edit from './edit';
 import attributes from './attributes';
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 
 import { __ } from '@wordpress/i18n';
 
@@ -15,7 +15,7 @@ const { registerBlockType } = wp.blocks;
 registerBlockType( 'uagb/wp-search', {
 	title: uagb_blocks_info.blocks[ 'uagb/wp-search' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/wp-search' ].description,
-	icon: UAGB_Block_Icons.wp_search,
+	icon: wp.UAGBBlockIcons.wp_search,
 	keywords: [
 		__( 'search', 'ultimate-addons-for-gutenberg' ),
 		__( 'wp', 'ultimate-addons-for-gutenberg' ),

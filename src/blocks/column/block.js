@@ -2,7 +2,7 @@
  * BLOCK: Column
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import edit from './edit';
 import save from './save';
 import deprecated from './deprecated';
@@ -13,7 +13,7 @@ import { registerBlockType } from '@wordpress/blocks';
 registerBlockType( 'uagb/column', {
 	title: uagb_blocks_info.blocks[ 'uagb/column' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/column' ].description,
-	icon: UAGB_Block_Icons.column,
+	icon: wp.UAGBBlockIcons.column,
 	category: uagb_blocks_info.category,
 	parent: [ 'uagb/columns' ],
 	supports: {

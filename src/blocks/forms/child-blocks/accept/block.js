@@ -2,7 +2,7 @@
  * BLOCK: Forms - Accept
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import attributes from './attributes';
 import edit from './edit';
 import save from './save';
@@ -12,7 +12,7 @@ const { registerBlockType } = wp.blocks;
 registerBlockType( 'uagb/forms-accept', {
 	title: uagb_blocks_info.blocks[ 'uagb/forms-accept' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/forms-accept' ].description,
-	icon: UAGB_Block_Icons.accept,
+	icon: wp.UAGBBlockIcons.accept,
 	category: uagb_blocks_info.category,
 	parent: [ 'uagb/forms' ],
 	attributes,

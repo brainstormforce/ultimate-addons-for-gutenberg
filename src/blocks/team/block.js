@@ -2,7 +2,7 @@
  * BLOCK: Team
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import edit from './edit';
 import save from './save';
 import deprecated from './deprecated';
@@ -16,7 +16,7 @@ import { registerBlockType } from '@wordpress/blocks';
 registerBlockType( 'uagb/team', {
 	title: uagb_blocks_info.blocks[ 'uagb/team' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/team' ].description,
-	icon: UAGB_Block_Icons.team,
+	icon: wp.UAGBBlockIcons.team,
 	keywords: [
 		__( 'team', 'ultimate-addons-for-gutenberg' ),
 		__( 'members', 'ultimate-addons-for-gutenberg' ),

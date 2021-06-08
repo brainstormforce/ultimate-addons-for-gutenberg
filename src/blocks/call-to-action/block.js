@@ -3,7 +3,7 @@
  */
 
 // Import block dependencies and components.
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 
 // Import icon.
 import edit from './edit';
@@ -19,7 +19,7 @@ import { registerBlockType } from '@wordpress/blocks';
 registerBlockType( 'uagb/call-to-action', {
 	title: uagb_blocks_info.blocks[ 'uagb/call-to-action' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/call-to-action' ].description,
-	icon: UAGB_Block_Icons.call_to_action,
+	icon: wp.UAGBBlockIcons.call_to_action,
 	keywords: [
 		__( 'cta', 'ultimate-addons-for-gutenberg' ),
 		__( 'call to action', 'ultimate-addons-for-gutenberg' ),

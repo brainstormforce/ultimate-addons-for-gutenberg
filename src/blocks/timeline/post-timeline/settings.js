@@ -1,4 +1,3 @@
-import UAGBIcon from '@Controls/UAGBIcon.json';
 import FontIconPicker from '@fonticonpicker/react-fonticonpicker';
 import renderSVG from '@Controls/renderIcon';
 import TypographyControl from '@Components/typography';
@@ -23,8 +22,6 @@ import {
 	BlockControls,
 	PanelColorSettings,
 } from '@wordpress/block-editor';
-
-const svgIcons = Object.keys( UAGBIcon );
 
 const Settings = ( props ) => {
 	props = props.parentProps;
@@ -271,7 +268,7 @@ const Settings = ( props ) => {
 	const today = new Date();
 	// Parameters for FontIconPicker.
 	const iconProps = {
-		icons: svgIcons,
+		icons: wp.UAGBSvgIcons,
 		value: icon,
 		onChange: getTimelineicon,
 		isMulti: false,

@@ -2,7 +2,7 @@
  * BLOCK: Forms - Block
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import attributes from './attributes';
 import edit from './edit';
 import save from './save';
@@ -16,7 +16,7 @@ const { registerBlockType } = wp.blocks;
 registerBlockType( 'uagb/forms', {
 	title: uagb_blocks_info.blocks[ 'uagb/forms' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/forms' ].description,
-	icon: UAGB_Block_Icons.forms,
+	icon: wp.UAGBBlockIcons.forms,
 	category: uagb_blocks_info.category,
 	keywords: [
 		__( 'forms', 'ultimate-addons-for-gutenberg' ),

@@ -5,7 +5,7 @@
 // Import classes
 
 import styling from './styling';
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import { __ } from '@wordpress/i18n';
 
 import React, { useEffect, lazy, Suspense } from 'react';
@@ -90,7 +90,7 @@ const columnsComponent = ( props ) => {
 	if ( ! hasInnerBlocks ) {
 		return (
 			<__experimentalBlockVariationPicker
-				icon={ UAGB_Block_Icons.columns }
+				icon={ wp.UAGBBlockIcons.columns }
 				label={ uagb_blocks_info.blocks[ 'uagb/columns' ].title }
 				instructions={ __(
 					'Select a variation to start with.',

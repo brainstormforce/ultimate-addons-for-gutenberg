@@ -1,4 +1,4 @@
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import TypographyControl from '@Components/typography';
 import WebfontLoader from '@Components/typography/fontloader';
 import { __ } from '@wordpress/i18n';
@@ -531,7 +531,7 @@ const Settings = ( props ) => {
 					) }
 				</h2>
 				<RangeControl
-					label={ UAGB_Block_Icons.vertical_spacing }
+					label={ wp.UAGBBlockIcons.vertical_spacing }
 					className={ 'uagb-margin-control' }
 					value={ contentVrPadding }
 					onChange={ ( value ) =>
@@ -542,7 +542,7 @@ const Settings = ( props ) => {
 					allowReset
 				/>
 				<RangeControl
-					label={ UAGB_Block_Icons.horizontal_spacing }
+					label={ wp.UAGBBlockIcons.horizontal_spacing }
 					className={ 'uagb-margin-control' }
 					value={ contentHrPadding }
 					onChange={ ( value ) =>

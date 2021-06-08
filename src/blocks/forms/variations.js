@@ -3,7 +3,7 @@
  */
 
 import { __ } from '@wordpress/i18n';
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 /**
  * Template option choices for predefined form layouts.
  *
@@ -14,7 +14,7 @@ const variations = [
 	{
 		name: 'simple-contact-form',
 		label: __( 'Simple Contact Form', 'ultimate-addons-for-gutenberg' ),
-		icon: UAGB_Block_Icons.form1,
+		icon: wp.UAGBBlockIcons.form1,
 		title: __( 'Simple Contact Form', 'ultimate-addons-for-gutenberg' ),
 		attributes: {},
 		isDefault: true,
@@ -43,7 +43,7 @@ const variations = [
 	{
 		name: 'newsletter-form',
 		label: __( 'Newsletter Form', 'ultimate-addons-for-gutenberg' ),
-		icon: UAGB_Block_Icons.form2,
+		icon: wp.UAGBBlockIcons.form2,
 		title: __( 'Newsletter Form', 'ultimate-addons-for-gutenberg' ),
 		attributes: {},
 		innerBlocks: [
@@ -55,7 +55,7 @@ const variations = [
 	{
 		name: 'suggestion-form',
 		label: __( 'Suggestion Form', 'ultimate-addons-for-gutenberg' ),
-		icon: UAGB_Block_Icons.form3,
+		icon: wp.UAGBBlockIcons.form3,
 		title: __( 'Suggestion Form', 'ultimate-addons-for-gutenberg' ),
 		attributes: {},
 		innerBlocks: [

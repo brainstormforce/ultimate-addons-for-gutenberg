@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { __ } from '@wordpress/i18n';
 import lazyLoader from '@Controls/lazy-loader';
@@ -519,7 +519,7 @@ const UAGBPostMasonry = ( props ) => {
 												</h2>
 												<RangeControl
 													label={
-														UAGB_Block_Icons.vertical_spacing
+														wp.UAGBBlockIcons.vertical_spacing
 													}
 													className={
 														'uagb-margin-control'
@@ -538,7 +538,7 @@ const UAGBPostMasonry = ( props ) => {
 												/>
 												<RangeControl
 													label={
-														UAGB_Block_Icons.horizontal_spacing
+														wp.UAGBBlockIcons.horizontal_spacing
 													}
 													className={
 														'uagb-margin-control'
@@ -618,7 +618,7 @@ const UAGBPostMasonry = ( props ) => {
 												</h2>
 												<RangeControl
 													label={
-														UAGB_Block_Icons.vertical_spacing
+														wp.UAGBBlockIcons.vertical_spacing
 													}
 													className={
 														'uagb-margin-control'
@@ -637,7 +637,7 @@ const UAGBPostMasonry = ( props ) => {
 												/>
 												<RangeControl
 													label={
-														UAGB_Block_Icons.horizontal_spacing
+														wp.UAGBBlockIcons.horizontal_spacing
 													}
 													className={
 														'uagb-margin-control'
@@ -717,7 +717,7 @@ const UAGBPostMasonry = ( props ) => {
 												</h2>
 												<RangeControl
 													label={
-														UAGB_Block_Icons.vertical_spacing
+														wp.UAGBBlockIcons.vertical_spacing
 													}
 													className={
 														'uagb-margin-control'
@@ -736,7 +736,7 @@ const UAGBPostMasonry = ( props ) => {
 												/>
 												<RangeControl
 													label={
-														UAGB_Block_Icons.horizontal_spacing
+														wp.UAGBBlockIcons.horizontal_spacing
 													}
 													className={
 														'uagb-margin-control'
@@ -1769,7 +1769,7 @@ const UAGBPostMasonry = ( props ) => {
 									</h2>
 									<RangeControl
 										label={
-											UAGB_Block_Icons.vertical_spacing
+											wp.UAGBBlockIcons.vertical_spacing
 										}
 										className={ 'uagb-margin-control' }
 										value={ btnVPadding }
@@ -1784,7 +1784,7 @@ const UAGBPostMasonry = ( props ) => {
 									/>
 									<RangeControl
 										label={
-											UAGB_Block_Icons.horizontal_spacing
+											wp.UAGBBlockIcons.horizontal_spacing
 										}
 										className={ 'uagb-margin-control' }
 										value={ btnHPadding }

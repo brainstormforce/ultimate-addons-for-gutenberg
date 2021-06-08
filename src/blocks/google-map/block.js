@@ -2,7 +2,7 @@
  * BLOCK: Google Map
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import './style.scss';
 import edit from './edit';
 import save from './save';
@@ -17,7 +17,7 @@ wp.uagb_google_api_key = 'AIzaSyAsd_d46higiozY-zNqtr7zdA81Soswje4';
 registerBlockType( 'uagb/google-map', {
 	title: uagb_blocks_info.blocks[ 'uagb/google-map' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/google-map' ].description,
-	icon: UAGB_Block_Icons.google_map,
+	icon: wp.UAGBBlockIcons.google_map,
 	keywords: [
 		__( 'google map', 'ultimate-addons-for-gutenberg' ),
 		__( 'uag', 'ultimate-addons-for-gutenberg' ),

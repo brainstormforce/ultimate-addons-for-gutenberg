@@ -1,7 +1,7 @@
 /**
  * BLOCK: Columns - Settings.
  */
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import { __ } from '@wordpress/i18n';
 import React, { lazy, Suspense } from 'react';
 import lazyLoader from '@Controls/lazy-loader';
@@ -496,7 +496,7 @@ const Settings = ( props ) => {
 						</ButtonGroup>
 						<h2>{ __( 'Padding' ) }</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.top_margin }
+							label={ wp.UAGBBlockIcons.top_margin }
 							className={ 'uagb-margin-control' }
 							value={ topPadding }
 							onChange={ ( value ) =>
@@ -507,7 +507,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.bottom_margin }
+							label={ wp.UAGBBlockIcons.bottom_margin }
 							className={ 'uagb-margin-control' }
 							value={ bottomPadding }
 							onChange={ ( value ) =>
@@ -518,7 +518,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.left_margin }
+							label={ wp.UAGBBlockIcons.left_margin }
 							className={ 'uagb-margin-control' }
 							value={ leftPadding }
 							onChange={ ( value ) =>
@@ -529,7 +529,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.right_margin }
+							label={ wp.UAGBBlockIcons.right_margin }
 							className={ 'uagb-margin-control' }
 							value={ rightPadding }
 							onChange={ ( value ) =>
@@ -579,7 +579,7 @@ const Settings = ( props ) => {
 							{ __( 'Padding', 'ultimate-addons-for-gutenberg' ) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.top_margin }
+							label={ wp.UAGBBlockIcons.top_margin }
 							className={ 'uagb-margin-control' }
 							value={ topPaddingTablet }
 							onChange={ ( value ) =>
@@ -590,7 +590,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.bottom_margin }
+							label={ wp.UAGBBlockIcons.bottom_margin }
 							className={ 'uagb-margin-control' }
 							value={ bottomPaddingTablet }
 							onChange={ ( value ) =>
@@ -601,7 +601,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.left_margin }
+							label={ wp.UAGBBlockIcons.left_margin }
 							className={ 'uagb-margin-control' }
 							value={ leftPaddingTablet }
 							onChange={ ( value ) =>
@@ -612,7 +612,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.right_margin }
+							label={ wp.UAGBBlockIcons.right_margin }
 							className={ 'uagb-margin-control' }
 							value={ rightPaddingTablet }
 							onChange={ ( value ) =>
@@ -662,7 +662,7 @@ const Settings = ( props ) => {
 							{ __( 'Padding', 'ultimate-addons-for-gutenberg' ) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.top_margin }
+							label={ wp.UAGBBlockIcons.top_margin }
 							className={ 'uagb-margin-control' }
 							value={ topPaddingMobile }
 							onChange={ ( value ) =>
@@ -673,7 +673,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.bottom_margin }
+							label={ wp.UAGBBlockIcons.bottom_margin }
 							className={ 'uagb-margin-control' }
 							value={ bottomPaddingMobile }
 							onChange={ ( value ) =>
@@ -684,7 +684,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.left_margin }
+							label={ wp.UAGBBlockIcons.left_margin }
 							className={ 'uagb-margin-control' }
 							value={ leftPaddingMobile }
 							onChange={ ( value ) =>
@@ -695,7 +695,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.right_margin }
+							label={ wp.UAGBBlockIcons.right_margin }
 							className={ 'uagb-margin-control' }
 							value={ rightPaddingMobile }
 							onChange={ ( value ) =>
@@ -744,7 +744,7 @@ const Settings = ( props ) => {
 							{ __( 'Margin', 'ultimate-addons-for-gutenberg' ) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.top_margin }
+							label={ wp.UAGBBlockIcons.top_margin }
 							className={ 'uagb-margin-control' }
 							value={ topMargin }
 							onChange={ ( value ) =>
@@ -755,7 +755,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.bottom_margin }
+							label={ wp.UAGBBlockIcons.bottom_margin }
 							className={ 'uagb-margin-control' }
 							value={ bottomMargin }
 							onChange={ ( value ) =>
@@ -808,7 +808,7 @@ const Settings = ( props ) => {
 							) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.top_margin }
+							label={ wp.UAGBBlockIcons.top_margin }
 							className={ 'uagb-margin-control' }
 							value={ topMarginTablet }
 							onChange={ ( value ) =>
@@ -819,7 +819,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.bottom_margin }
+							label={ wp.UAGBBlockIcons.bottom_margin }
 							className={ 'uagb-margin-control' }
 							value={ bottomMarginTablet }
 							onChange={ ( value ) =>
@@ -872,7 +872,7 @@ const Settings = ( props ) => {
 							) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.top_margin }
+							label={ wp.UAGBBlockIcons.top_margin }
 							className={ 'uagb-margin-control' }
 							value={ topMarginMobile }
 							onChange={ ( value ) =>
@@ -883,7 +883,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.bottom_margin }
+							label={ wp.UAGBBlockIcons.bottom_margin }
 							className={ 'uagb-margin-control' }
 							value={ bottomMarginMobile }
 							onChange={ ( value ) =>

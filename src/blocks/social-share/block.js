@@ -2,7 +2,7 @@
  * BLOCK: Social Share
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import './style.scss';
 import transform from './transform';
 import attributes from './attributes';
@@ -15,7 +15,7 @@ import { registerBlockType } from '@wordpress/blocks';
 registerBlockType( 'uagb/social-share', {
 	title: uagb_blocks_info.blocks[ 'uagb/social-share' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/social-share' ].description,
-	icon: UAGB_Block_Icons.social_share,
+	icon: wp.UAGBBlockIcons.social_share,
 	category: uagb_blocks_info.category,
 	keywords: [
 		__( 'social share', 'ultimate-addons-for-gutenberg' ),

@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import {
 	InnerBlockLayoutContextProvider,
 	renderPostLayout,
@@ -57,7 +57,7 @@ function Blog( props ) {
 					borderWidth: arrowBorderSize,
 				} }
 			>
-				{ UAGB_Block_Icons.carousel_right }
+				{ wp.UAGBBlockIcons.carousel_right }
 			</button>
 		);
 	}
@@ -77,7 +77,7 @@ function Blog( props ) {
 					borderWidth: arrowBorderSize,
 				} }
 			>
-				{ UAGB_Block_Icons.carousel_left }
+				{ wp.UAGBBlockIcons.carousel_left }
 			</button>
 		);
 	}

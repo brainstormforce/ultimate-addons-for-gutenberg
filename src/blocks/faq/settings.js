@@ -2,10 +2,9 @@
  * BLOCK: FAQ
  */
 
-import UAGBIcon from '@Controls/UAGBIcon.json';
 import renderSVG from '@Controls/renderIcon';
 import FontIconPicker from '@fonticonpicker/react-fonticonpicker';
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import React, { lazy, Suspense } from 'react';
 import lazyLoader from '@Controls/lazy-loader';
 import ColumnResponsive from '@Components/typography/column-responsive';
@@ -28,8 +27,6 @@ import {
 	Dashicon,
 	ToggleControl,
 } from '@wordpress/components';
-
-const svgIcons = Object.keys( UAGBIcon );
 
 const Settings = ( props ) => {
 	props = props.parentProps;
@@ -750,7 +747,7 @@ const Settings = ( props ) => {
 					{ __( 'Expand', 'ultimate-addons-for-gutenberg' ) }
 				</p>
 				<FontIconPicker
-					icons={ svgIcons }
+					icons={ wp.UAGBSvgIcons }
 					renderFunc={ renderSVG }
 					theme="default"
 					value={ icon }
@@ -765,7 +762,7 @@ const Settings = ( props ) => {
 					{ __( 'Collapse', 'ultimate-addons-for-gutenberg' ) }
 				</p>
 				<FontIconPicker
-					icons={ svgIcons }
+					icons={ wp.UAGBSvgIcons }
 					renderFunc={ renderSVG }
 					theme="default"
 					value={ iconActive }
@@ -993,7 +990,7 @@ const Settings = ( props ) => {
 						</ButtonGroup>
 						<h2>{ __( 'Padding' ) }</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.left_margin }
+							label={ wp.UAGBBlockIcons.left_margin }
 							className={ 'uagb-margin-control' }
 							value={ questionLeftPaddingDesktop }
 							onChange={ ( value ) =>
@@ -1006,7 +1003,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.right_margin }
+							label={ wp.UAGBBlockIcons.right_margin }
 							className={ 'uagb-margin-control' }
 							value={ hquestionPaddingDesktop }
 							onChange={ ( value ) =>
@@ -1019,7 +1016,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.top_margin }
+							label={ wp.UAGBBlockIcons.top_margin }
 							className={ 'uagb-margin-control' }
 							value={ vquestionPaddingDesktop }
 							onChange={ ( value ) =>
@@ -1032,7 +1029,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.bottom_margin }
+							label={ wp.UAGBBlockIcons.bottom_margin }
 							className={ 'uagb-margin-control' }
 							value={ questionBottomPaddingDesktop }
 							onChange={ ( value ) =>
@@ -1094,7 +1091,7 @@ const Settings = ( props ) => {
 							{ __( 'Padding', 'ultimate-addons-for-gutenberg' ) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.left_margin }
+							label={ wp.UAGBBlockIcons.left_margin }
 							className={ 'uagb-margin-control' }
 							value={ questionLeftPaddingTablet }
 							onChange={ ( value ) =>
@@ -1107,7 +1104,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.right_margin }
+							label={ wp.UAGBBlockIcons.right_margin }
 							className={ 'uagb-margin-control' }
 							value={ hquestionPaddingTablet }
 							onChange={ ( value ) =>
@@ -1120,7 +1117,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.top_margin }
+							label={ wp.UAGBBlockIcons.top_margin }
 							className={ 'uagb-margin-control' }
 							value={ vquestionPaddingTablet }
 							onChange={ ( value ) =>
@@ -1133,7 +1130,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.bottom_margin }
+							label={ wp.UAGBBlockIcons.bottom_margin }
 							className={ 'uagb-margin-control' }
 							value={ questionBottomPaddingTablet }
 							onChange={ ( value ) =>
@@ -1195,7 +1192,7 @@ const Settings = ( props ) => {
 							{ __( 'Padding', 'ultimate-addons-for-gutenberg' ) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.left_margin }
+							label={ wp.UAGBBlockIcons.left_margin }
 							className={ 'uagb-margin-control' }
 							value={ questionLeftPaddingMobile }
 							onChange={ ( value ) =>
@@ -1208,7 +1205,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.right_margin }
+							label={ wp.UAGBBlockIcons.right_margin }
 							className={ 'uagb-margin-control' }
 							value={ hquestionPaddingMobile }
 							onChange={ ( value ) =>
@@ -1221,7 +1218,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.top_margin }
+							label={ wp.UAGBBlockIcons.top_margin }
 							className={ 'uagb-margin-control' }
 							value={ vquestionPaddingMobile }
 							onChange={ ( value ) =>
@@ -1234,7 +1231,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.bottom_margin }
+							label={ wp.UAGBBlockIcons.bottom_margin }
 							className={ 'uagb-margin-control' }
 							value={ questionBottomPaddingMobile }
 							onChange={ ( value ) =>
@@ -1377,7 +1374,7 @@ const Settings = ( props ) => {
 							{ __( 'Padding', 'ultimate-addons-for-gutenberg' ) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.vertical_spacing }
+							label={ wp.UAGBBlockIcons.vertical_spacing }
 							className={ 'uagb-margin-control' }
 							value={ vanswerPaddingDesktop }
 							onChange={ ( value ) =>
@@ -1390,7 +1387,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.horizontal_spacing }
+							label={ wp.UAGBBlockIcons.horizontal_spacing }
 							className={ 'uagb-margin-control' }
 							value={ hanswerPaddingDesktop }
 							onChange={ ( value ) =>
@@ -1450,7 +1447,7 @@ const Settings = ( props ) => {
 							{ __( 'Padding', 'ultimate-addons-for-gutenberg' ) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.vertical_spacing }
+							label={ wp.UAGBBlockIcons.vertical_spacing }
 							className={ 'uagb-margin-control' }
 							value={ vanswerPaddingTablet }
 							onChange={ ( value ) =>
@@ -1461,7 +1458,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.horizontal_spacing }
+							label={ wp.UAGBBlockIcons.horizontal_spacing }
 							className={ 'uagb-margin-control' }
 							value={ hanswerPaddingTablet }
 							onChange={ ( value ) =>
@@ -1519,7 +1516,7 @@ const Settings = ( props ) => {
 							{ __( 'Padding', 'ultimate-addons-for-gutenberg' ) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.vertical_spacing }
+							label={ wp.UAGBBlockIcons.vertical_spacing }
 							className={ 'uagb-margin-control' }
 							value={ vanswerPaddingMobile }
 							onChange={ ( value ) =>
@@ -1530,7 +1527,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.horizontal_spacing }
+							label={ wp.UAGBBlockIcons.horizontal_spacing }
 							className={ 'uagb-margin-control' }
 							value={ hanswerPaddingMobile }
 							onChange={ ( value ) =>

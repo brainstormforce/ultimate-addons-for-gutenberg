@@ -8,10 +8,10 @@ const wp_rules = defaultConfig.module.rules.filter(function(item){
 		return true;
 	}
 
-	if(String(item.test) === String(/\.(sc|sa)ss$/)) {
-		item['exclude'] = [/node_modules/, /editor/];
-		return true;
-	}
+	// if(String(item.test) === String(/\.(sc|sa)ss$/)) {
+	// 	item['exclude'] = [/node_modules/, /editor/];
+	// 	return true;
+	// }
 
 });
 
@@ -51,6 +51,10 @@ module.exports = {
 					'css-loader',
 					'sass-loader',
 				],
+			},
+			{
+				test: /\.(scss|css)$/,
+				loader: 'ignore-loader'
 			},
 		],
 	},

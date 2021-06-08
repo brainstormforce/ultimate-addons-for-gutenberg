@@ -4,7 +4,7 @@
 
 import React, { useEffect, useCallback, Suspense, lazy } from 'react';
 import styling from './styling';
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 
 const Settings = lazy( () =>
 	import( /* webpackChunkName: "chunks/form/settings" */ './settings' )
@@ -169,7 +169,7 @@ const UAGBFormsEdit = ( props ) => {
 		return (
 			<>
 				<__experimentalBlockVariationPicker
-					icon={ UAGB_Block_Icons.columns }
+					icon={ wp.UAGBBlockIcons.columns }
 					label={ uagb_blocks_info.blocks[ 'uagb/forms' ].title }
 					instructions={ __(
 						'Select a variation to start with.',

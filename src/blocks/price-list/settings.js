@@ -3,7 +3,7 @@ import lazyLoader from '@Controls/lazy-loader';
 import TypographyControl from '@Components/typography';
 import WebfontLoader from '@Components/typography/fontloader';
 import ColumnResponsive from '@Components/typography/column-responsive';
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import { __ } from '@wordpress/i18n';
 import { select } from '@wordpress/data';
 const maxColumns = 3;
@@ -228,7 +228,7 @@ const Settings = ( props ) => {
 				<hr className="uagb-editor__separator" />
 				<h2>{ __( 'Item Padding (px)' ) }</h2>
 				<RangeControl
-					label={ UAGB_Block_Icons.vertical_spacing }
+					label={ wp.UAGBBlockIcons.vertical_spacing }
 					className={ 'uagb-margin-control' }
 					value={ contentVrPadding }
 					onChange={ ( value ) =>
@@ -239,7 +239,7 @@ const Settings = ( props ) => {
 					allowReset
 				/>
 				<RangeControl
-					label={ UAGB_Block_Icons.horizontal_spacing }
+					label={ wp.UAGBBlockIcons.horizontal_spacing }
 					className={ 'uagb-margin-control' }
 					value={ contentHrPadding }
 					onChange={ ( value ) =>
@@ -253,7 +253,7 @@ const Settings = ( props ) => {
 					<hr className="uagb-editor__separator" />
 					<h2>{ __( 'Image Padding (px)' ) }</h2>
 					<RangeControl
-						label={ UAGB_Block_Icons.vertical_spacing }
+						label={ wp.UAGBBlockIcons.vertical_spacing }
 						className={ 'uagb-margin-control' }
 						value={ imgVrPadding }
 						onChange={ ( value ) =>
@@ -264,7 +264,7 @@ const Settings = ( props ) => {
 						allowReset
 					/>
 					<RangeControl
-						label={ UAGB_Block_Icons.horizontal_spacing }
+						label={ wp.UAGBBlockIcons.horizontal_spacing }
 						className={ 'uagb-margin-control' }
 						value={ imgHrPadding }
 						onChange={ ( value ) =>

@@ -2,7 +2,7 @@
  * BLOCK: Price List
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import edit from './edit';
 import save from './save';
 import deprecated from './deprecated';
@@ -17,7 +17,7 @@ registerBlockType( 'uagb/restaurant-menu-child', {
 	title: uagb_blocks_info.blocks[ 'uagb/restaurant-menu-child' ].title, // Block title.
 	description:
 		uagb_blocks_info.blocks[ 'uagb/restaurant-menu-child' ].description, // Block description.
-	icon: UAGB_Block_Icons.restaurant_menu, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	icon: wp.UAGBBlockIcons.restaurant_menu, // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	keywords: [ __( 'pricelist' ), __( 'menu' ), __( 'uag' ) ],
 	supports: {
 		anchor: true,

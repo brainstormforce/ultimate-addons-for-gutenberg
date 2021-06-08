@@ -2,7 +2,7 @@
  * BLOCK: Tabs Child Block
  */
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import './style.scss';
 import attributes from './attributes';
 import edit from './edit';
@@ -17,7 +17,7 @@ registerBlockType( 'uagb/tabs-child', {
 	title: uagb_blocks_info.blocks[ 'uagb/tabs-child' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/tabs-child' ].description,
 	parent: [ 'uagb/tabs' ],
-	icon: UAGB_Block_Icons.tabs,
+	icon: wp.UAGBBlockIcons.tabs,
 	category: uagb_blocks_info.category,
 	keywords: [
 		__( 'tabs', 'ultimate-addons-for-gutenberg' ),

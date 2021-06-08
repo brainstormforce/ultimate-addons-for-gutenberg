@@ -2,11 +2,8 @@
  * BLOCK: Content Timeline.
  */
 
-import UAGBIcon from '@Controls/UAGBIcon.json';
 import FontIconPicker from '@fonticonpicker/react-fonticonpicker';
 import renderSVG from '@Controls/renderIcon';
-import React, { lazy, Suspense } from 'react';
-import lazyLoader from '@Controls/lazy-loader';
 import TypographyControl from '@Components/typography';
 import WebfontLoader from '@Components/typography/fontloader';
 
@@ -31,7 +28,6 @@ import {
 
 import { select } from '@wordpress/data';
 
-const svg_icons = Object.keys( UAGBIcon );
 
 const Settings = ( props ) => {
 	props = props.parentProps;
@@ -671,7 +667,7 @@ const Settings = ( props ) => {
 				initialOpen={ false }
 			>
 				<FontIconPicker
-					icons={ svg_icons }
+					icons={ wp.UAGBSvgIcons }
 					value={ icon }
 					onChange={ getTimelineicon }
 					isMulti={ false }
@@ -1033,7 +1029,7 @@ const Settings = ( props ) => {
 		);
 	}
 	return (
-		<Suspense fallback={ lazyLoader() }>
+		<>
 			{ blockControls() }
 			<InspectorControls>
 				{ generalSettings() }
@@ -1046,7 +1042,7 @@ const Settings = ( props ) => {
 			{ loadHeadGoogleFonts }
 			{ loadSubHeadGoogleFonts }
 			{ loadDateGoogleFonts }
-		</Suspense>
+		</>
 	);
 };
 

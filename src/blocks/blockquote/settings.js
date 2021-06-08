@@ -1,5 +1,4 @@
 import classnames from 'classnames';
-import UAGB_Block_Icons from '@Controls/block-icons';
 import React from 'react';
 import WebfontLoader from '@Components/typography/fontloader';
 import TypographyControl from '@Components/typography';
@@ -1067,7 +1066,7 @@ const Settings = ( props ) => {
 						) }
 					</h2>
 					<RangeControl
-						label={ UAGB_Block_Icons.vertical_spacing }
+						label={ wp.UAGBBlockIcons.vertical_spacing }
 						className={ 'uagb-margin-control' }
 						value={ tweetBtnVrPadding }
 						onChange={ ( value ) =>
@@ -1079,7 +1078,7 @@ const Settings = ( props ) => {
 						initialPosition={ 5 }
 					/>
 					<RangeControl
-						label={ UAGB_Block_Icons.horizontal_spacing }
+						label={ wp.UAGBBlockIcons.horizontal_spacing }
 						className={ 'uagb-margin-control' }
 						value={ tweetBtnHrPadding }
 						onChange={ ( value ) =>
@@ -1165,7 +1164,7 @@ const Settings = ( props ) => {
 						) }
 					</h2>
 					<RangeControl
-						label={ UAGB_Block_Icons.top_margin }
+						label={ wp.UAGBBlockIcons.top_margin }
 						className={ 'uagb-margin-control' }
 						value={ quoteTopMargin }
 						onChange={ ( value ) =>
@@ -1176,7 +1175,7 @@ const Settings = ( props ) => {
 						allowReset
 					/>
 					<RangeControl
-						label={ UAGB_Block_Icons.bottom_margin }
+						label={ wp.UAGBBlockIcons.bottom_margin }
 						className={ 'uagb-margin-control' }
 						value={ quoteBottomMargin }
 						onChange={ ( value ) =>
@@ -1187,7 +1186,7 @@ const Settings = ( props ) => {
 						allowReset
 					/>
 					<RangeControl
-						label={ UAGB_Block_Icons.left_margin }
+						label={ wp.UAGBBlockIcons.left_margin }
 						className={ 'uagb-margin-control' }
 						value={ quoteLeftMargin }
 						onChange={ ( value ) =>
@@ -1198,7 +1197,7 @@ const Settings = ( props ) => {
 						allowReset
 					/>
 					<RangeControl
-						label={ UAGB_Block_Icons.right_margin }
+						label={ wp.UAGBBlockIcons.right_margin }
 						className={ 'uagb-margin-control' }
 						value={ quoteRightMargin }
 						onChange={ ( value ) =>
@@ -1265,7 +1264,7 @@ const Settings = ( props ) => {
 						) }
 					</h2>
 					<RangeControl
-						label={ UAGB_Block_Icons.vertical_spacing }
+						label={ wp.UAGBBlockIcons.vertical_spacing }
 						className={ 'uagb-margin-control' }
 						value={ verticalPadding }
 						onChange={ ( value ) =>
@@ -1636,7 +1635,7 @@ const Settings = ( props ) => {
 						htmlFor={ `${ className }__via` }
 					>
 						{ ' ' }
-						{ UAGB_Block_Icons.at_the_rate }
+						{ wp.UAGBBlockIcons.at_the_rate }
 					</label>
 					<input
 						aria-label={ __(
@@ -1695,7 +1694,7 @@ const Settings = ( props ) => {
 								} )
 							}
 						>
-							{ UAGB_Block_Icons.quote_1 }
+							{ wp.UAGBBlockIcons.quote_1 }
 						</Button>
 					</Tooltip>
 				</Toolbar>
@@ -1721,7 +1720,7 @@ const Settings = ( props ) => {
 								} )
 							}
 						>
-							{ UAGB_Block_Icons.quote_2 }
+							{ wp.UAGBBlockIcons.quote_2 }
 						</Button>
 					</Tooltip>
 				</Toolbar>

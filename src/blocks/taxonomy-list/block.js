@@ -3,7 +3,7 @@
  */
 
 // Import block dependencies and components
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 
 //  Import CSS.
 import './style.scss';
@@ -19,7 +19,7 @@ import { registerBlockType } from '@wordpress/blocks';
 registerBlockType( 'uagb/taxonomy-list', {
 	title: uagb_blocks_info.blocks[ 'uagb/taxonomy-list' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/taxonomy-list' ].description,
-	icon: UAGB_Block_Icons.taxonomy_list,
+	icon: wp.UAGBBlockIcons.taxonomy_list,
 	category: uagb_blocks_info.category,
 	keywords: [
 		__( 'post', 'ultimate-addons-for-gutenberg' ),

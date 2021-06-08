@@ -1,7 +1,7 @@
 /**
  * BLOCK: Inline Notice Block.
  */
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import attributes from './attributes';
 import edit from './edit';
 import save from './save';
@@ -14,7 +14,7 @@ import { registerBlockType } from '@wordpress/blocks';
 registerBlockType( 'uagb/inline-notice', {
 	title: uagb_blocks_info.blocks[ 'uagb/inline-notice' ].title,
 	description: uagb_blocks_info.blocks[ 'uagb/inline-notice' ].description,
-	icon: UAGB_Block_Icons.inline_notice,
+	icon: wp.UAGBBlockIcons.inline_notice,
 	category: uagb_blocks_info.category,
 	keywords: [
 		__( 'inline notice', 'ultimate-addons-for-gutenberg' ),

@@ -1,8 +1,7 @@
 import { __ } from '@wordpress/i18n';
 
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import renderSVG from '@Controls/renderIcon';
-import UAGBIcon from '@Controls/UAGBIcon.json';
 import React, { lazy, Suspense } from 'react';
 import lazyLoader from '@Controls/lazy-loader';
 import TypographyControl from '@Components/typography';
@@ -123,7 +122,7 @@ const Settings = ( props ) => {
 	};
 
 	const iconProps = {
-		icons: Object.keys( UAGBIcon ),
+		icons: wp.UAGBSvgIcons,
 		value: icon,
 		onChange: getIcon,
 		isMulti: false,
@@ -1064,7 +1063,7 @@ const Settings = ( props ) => {
 						</ButtonGroup>
 						<h2>{ __( 'Padding' ) }</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.vertical_spacing }
+							label={ wp.UAGBBlockIcons.vertical_spacing }
 							className={ 'uagb-margin-control' }
 							value={ vPaddingDesktop }
 							onChange={ ( value ) =>
@@ -1075,7 +1074,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.horizontal_spacing }
+							label={ wp.UAGBBlockIcons.horizontal_spacing }
 							className={ 'uagb-margin-control' }
 							value={ hPaddingDesktop }
 							onChange={ ( value ) =>
@@ -1124,7 +1123,7 @@ const Settings = ( props ) => {
 						</ButtonGroup>
 						<h2>{ __( 'Padding' ) }</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.vertical_spacing }
+							label={ wp.UAGBBlockIcons.vertical_spacing }
 							className={ 'uagb-margin-control' }
 							value={ vPaddingTablet }
 							onChange={ ( value ) =>
@@ -1135,7 +1134,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.horizontal_spacing }
+							label={ wp.UAGBBlockIcons.horizontal_spacing }
 							className={ 'uagb-margin-control' }
 							value={ hPaddingTablet }
 							onChange={ ( value ) =>
@@ -1184,7 +1183,7 @@ const Settings = ( props ) => {
 						</ButtonGroup>
 						<h2>{ __( 'Padding' ) }</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.vertical_spacing }
+							label={ wp.UAGBBlockIcons.vertical_spacing }
 							className={ 'uagb-margin-control' }
 							value={ vPaddingMobile }
 							onChange={ ( value ) =>
@@ -1195,7 +1194,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.horizontal_spacing }
+							label={ wp.UAGBBlockIcons.horizontal_spacing }
 							className={ 'uagb-margin-control' }
 							value={ hPaddingMobile }
 							onChange={ ( value ) =>
@@ -1245,7 +1244,7 @@ const Settings = ( props ) => {
 						</ButtonGroup>
 						<h2>{ __( 'List Margin' ) }</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.vertical_spacing }
+							label={ wp.UAGBBlockIcons.vertical_spacing }
 							className={ 'uagb-margin-control' }
 							value={ vMarginDesktop }
 							onChange={ ( value ) =>
@@ -1256,7 +1255,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.horizontal_spacing }
+							label={ wp.UAGBBlockIcons.horizontal_spacing }
 							className={ 'uagb-margin-control' }
 							value={ hMarginDesktop }
 							onChange={ ( value ) =>
@@ -1305,7 +1304,7 @@ const Settings = ( props ) => {
 						</ButtonGroup>
 						<h2>{ __( 'List Margin' ) }</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.vertical_spacing }
+							label={ wp.UAGBBlockIcons.vertical_spacing }
 							className={ 'uagb-margin-control' }
 							value={ vMarginTablet }
 							onChange={ ( value ) =>
@@ -1316,7 +1315,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.horizontal_spacing }
+							label={ wp.UAGBBlockIcons.horizontal_spacing }
 							className={ 'uagb-margin-control' }
 							value={ hMarginTablet }
 							onChange={ ( value ) =>
@@ -1365,7 +1364,7 @@ const Settings = ( props ) => {
 						</ButtonGroup>
 						<h2>{ __( 'List Margin' ) }</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.vertical_spacing }
+							label={ wp.UAGBBlockIcons.vertical_spacing }
 							className={ 'uagb-margin-control' }
 							value={ vMarginMobile }
 							onChange={ ( value ) =>
@@ -1376,7 +1375,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.horizontal_spacing }
+							label={ wp.UAGBBlockIcons.horizontal_spacing }
 							className={ 'uagb-margin-control' }
 							value={ hMarginMobile }
 							onChange={ ( value ) =>

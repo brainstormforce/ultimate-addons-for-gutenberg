@@ -3,16 +3,13 @@
  */
 
 // Import classes
-import UAGB_Block_Icons from '@Controls/block-icons';
-import UAGBIcon from '@Controls/UAGBIcon.json';
+
 import FontIconPicker from '@fonticonpicker/react-fonticonpicker';
 import renderSVG from '@Controls/renderIcon';
 import { __ } from '@wordpress/i18n';
 import lazyLoader from '@Controls/lazy-loader';
 import React, { Suspense } from 'react';
 import ColumnResponsive from '@Components/typography/column-responsive';
-
-const svgIcons = Object.keys( UAGBIcon );
 
 import {
 	BlockControls,
@@ -93,7 +90,7 @@ const Settings = ( props ) => {
 
 	const buttonSettings = () => {
 		const icon_props = {
-			icons: svgIcons,
+			icons: wp.svgIcons,
 			value: icon,
 			onChange: ( value ) => setAttributes( { icon: value } ),
 			isMulti: false,
@@ -365,7 +362,7 @@ const Settings = ( props ) => {
 							) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.vertical_spacing }
+							label={ wp.UAGBBlockIcons.vertical_spacing }
 							className={ 'uagb-margin-control' }
 							value={ vPadding }
 							onChange={ ( value ) => {
@@ -375,7 +372,7 @@ const Settings = ( props ) => {
 							max={ 100 }
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.horizontal_spacing }
+							label={ wp.UAGBBlockIcons.horizontal_spacing }
 							className={ 'uagb-margin-control' }
 							value={ hPadding }
 							onChange={ ( value ) => {

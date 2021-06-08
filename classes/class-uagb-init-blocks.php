@@ -310,14 +310,6 @@ class UAGB_Init_Blocks {
 
 		wp_set_script_translations( 'uagb-block-editor-js', 'ultimate-addons-for-gutenberg' );
 
-		// Styles.
-		wp_enqueue_style(
-			'uagb-block-editor-css', // Handle.
-			UAGB_URL . 'dist/blocks.css', // Block editor CSS.
-			array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
-			UAGB_VER
-		);
-
 		// Common Editor style.
 		wp_enqueue_style(
 			'uagb-block-common-editor-css', // Handle.
@@ -398,6 +390,7 @@ class UAGB_Init_Blocks {
 				'uagb_mime_type'         => UAGB_Helper::get_mime_type(),
 				'uagb_site_url'          => UAGB_URI,
 				'uagb_display_condition' => apply_filters( 'enable_block_condition', true ),
+				'uagb_svg_icons'         => UAGB_Helper::backend_load_font_awesome_icons()
 			)
 		);
 

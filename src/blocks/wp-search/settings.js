@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import UAGB_Block_Icons from '@Controls/block-icons';
+
 import ColumnResponsive from '@Components/typography/column-responsive';
 import TypographyControl from '@Components/typography';
 import BoxShadowControl from '@Components/box-shadow';
@@ -379,7 +379,7 @@ const Settings = ( props ) => {
 							{ __( 'Padding', 'ultimate-addons-for-gutenberg' ) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.vertical_spacing }
+							label={ wp.UAGBBlockIcons.vertical_spacing }
 							className={ 'uagb-margin-control' }
 							value={ vinputPaddingDesktop }
 							onChange={ ( value ) =>
@@ -392,7 +392,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.horizontal_spacing }
+							label={ wp.UAGBBlockIcons.horizontal_spacing }
 							className={ 'uagb-margin-control' }
 							value={ hinputPaddingDesktop }
 							onChange={ ( value ) =>
@@ -450,7 +450,7 @@ const Settings = ( props ) => {
 							{ __( 'Padding', 'ultimate-addons-for-gutenberg' ) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.vertical_spacing }
+							label={ wp.UAGBBlockIcons.vertical_spacing }
 							className={ 'uagb-margin-control' }
 							value={ vinputPaddingTablet }
 							onChange={ ( value ) =>
@@ -463,7 +463,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.horizontal_spacing }
+							label={ wp.UAGBBlockIcons.horizontal_spacing }
 							className={ 'uagb-margin-control' }
 							value={ hinputPaddingTablet }
 							onChange={ ( value ) =>
@@ -521,7 +521,7 @@ const Settings = ( props ) => {
 							{ __( 'Padding', 'ultimate-addons-for-gutenberg' ) }
 						</h2>
 						<RangeControl
-							label={ UAGB_Block_Icons.vertical_spacing }
+							label={ wp.UAGBBlockIcons.vertical_spacing }
 							className={ 'uagb-margin-control' }
 							value={ vinputPaddingMobile }
 							onChange={ ( value ) =>
@@ -534,7 +534,7 @@ const Settings = ( props ) => {
 							allowReset
 						/>
 						<RangeControl
-							label={ UAGB_Block_Icons.horizontal_spacing }
+							label={ wp.UAGBBlockIcons.horizontal_spacing }
 							className={ 'uagb-margin-control' }
 							value={ hinputPaddingMobile }
 							onChange={ ( value ) =>
