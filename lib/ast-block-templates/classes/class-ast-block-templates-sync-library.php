@@ -54,6 +54,43 @@ if ( ! class_exists( 'Ast_Block_Templates_Sync_Library' ) ) :
 		}
 
 		/**
+		 * Auto Sync the library
+		 *
+		 * @since 1.0.6
+		 * @return void
+		 */
+		public function auto_sync() {
+
+			// Flush the data to the browsers.
+			if ( function_exists( 'fastcgi_finish_request' ) ) {
+				/**
+				 *
+				 * Any kind of output flush after fastcgi_finish_request is treated as exit;
+				 * Hence, If any PHP Warnings/Notices after this can also terminate the execution.
+				 * ignore_user_abort disables this and does not terminate the script on PHP Warnings/Notices.
+				 * https://stackoverflow.com/questions/14191947/php-fpm-fastcgi-finish-request-reliable
+				 */
+				ignore_user_abort( true );
+				fastcgi_finish_request();
+			}
+			ast_block_templates_log( 'Sync process for Gutenberg Blocks has started.' );
+			$this->import_categories();
+			$blocks = $this->get_total_blocks_requests();
+
+			for ( $i = 1; $i <= $blocks; $i++ ) {
+				$sites_and_pages = $this->import_blocks( $i );
+			}
+
+			$sites = $this->get_total_sites_count();
+
+			for ( $i = 1; $i <= $sites; $i++ ) {
+				$sites_and_pages = $this->import_sites( $i );
+			}
+			ast_block_templates_log( 'Sync process for Gutenberg Blocks is done.' );
+			$this->update_latest_checksums();
+		}
+
+		/**
 		 * Start Importer
 		 *
 		 * @since 1.0.0
@@ -61,6 +98,8 @@ if ( ! class_exists( 'Ast_Block_Templates_Sync_Library' ) ) :
 		 */
 		public function setup_templates() {
 			$is_fresh_site = get_site_option( 'ast_block_templates_fresh_site', 'yes' );
+
+			$this->process_sync();
 
 			if ( 'no' === $is_fresh_site ) {
 				return;
@@ -89,6 +128,34 @@ if ( ! class_exists( 'Ast_Block_Templates_Sync_Library' ) ) :
 				}
 			}
 
+		}
+
+		/**
+		 * Process Import
+		 *
+		 * @since 1.0.6
+		 *
+		 * @return mixed Null if process is already started.
+		 */
+		public function process_sync() {
+
+			// Check if last sync and this sync has a gap of 24 hours.
+			$last_check_time = get_site_option( 'ast-block-templates-last-export-checksums-time', 0 );
+			if ( ( time() - $last_check_time ) < 86400 ) {
+				return;
+			}
+
+			$current_screen = get_current_screen();
+
+			// Bail if not on Blok editor screen.
+			if ( true !== $current_screen->is_block_editor ) {
+				return;
+			}
+
+			// Process sync.
+			if ( 'yes' === $this->get_last_export_checksums() ) {
+				add_action( 'shutdown', array( $this, 'auto_sync' ) );
+			}
 		}
 
 		/**
@@ -249,6 +316,7 @@ if ( ! class_exists( 'Ast_Block_Templates_Sync_Library' ) ) :
 		public function update_latest_checksums() {
 			$latest_checksums = get_site_option( 'ast-block-templates-last-export-checksums-latest', '' );
 			update_site_option( 'ast-block-templates-last-export-checksums', $latest_checksums, 'no' );
+			update_site_option( 'ast-block-templates-last-export-checksums-time', time(), 'no' );
 		}
 
 		/**

@@ -31,7 +31,7 @@ function styling( props ) {
 			"background": backgroundHColor
 		}
 	}
-
+	
 	tablet_selectors[".uagb-lottie__outer-wrap"] = {
 		"width": generateCSSUnit( widthTablet, 'px' ),
 		"height": generateCSSUnit( heightTablet, 'px' ),

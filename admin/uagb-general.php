@@ -115,7 +115,6 @@ array_multisort(
 									'restaurant-menu-child',
 									'content-timeline-child',
 									'tabs-child',
-									'info-box',
 								);
 
 								if ( array_key_exists( 'extension', $info ) && $info['extension'] ) {

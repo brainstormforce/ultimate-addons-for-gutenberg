@@ -47,9 +47,9 @@ if ( ! class_exists( 'UAGB_Twenty_Seventeen_Compatibility' ) ) {
 		 */
 		public function generate_stylesheet() {
 
-			$panel_count = twentyseventeen_panel_count();
-
-			$all_posts = array();
+			$panel_count     = twentyseventeen_panel_count();
+			$post_assets_obj = uagb_get_front_post_assets();
+			$all_posts       = array();
 
 			for ( $i = 1; $i <= $panel_count; $i++ ) {
 				$mod_key = 'panel_' . $i;
@@ -59,11 +59,7 @@ if ( ! class_exists( 'UAGB_Twenty_Seventeen_Compatibility' ) ) {
 			}
 
 			foreach ( $all_posts as $post ) {
-
-				UAGB_Frontend::get_instance()->prepare_assets( $post );
-			}
-			if ( 'enabled' === UAGB_Helper::$file_generation ) {
-				UAGB_Frontend::file_write( UAGB_Frontend::$stylesheet, 'css' );
+				$post_assets_obj->prepare_assets( $post );
 			}
 		}
 	}

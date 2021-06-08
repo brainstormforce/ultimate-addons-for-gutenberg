@@ -1,6 +1,6 @@
 const { select, subscribe } = wp.data;
 import { Component } from 'react';
-import { __ } from '@wordpress/i18n';;
+import { __ } from '@wordpress/i18n';
 const striptags = require('striptags');
 
 class TableOfContents extends Component {

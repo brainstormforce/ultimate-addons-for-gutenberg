@@ -1,5 +1,5 @@
 const { RichText} = wp.blockEditor || wp.editor;
-import { __ } from '@wordpress/i18n';;
+import { __ } from '@wordpress/i18n';
 import { Component } from "react";
 
 export class Stars extends Component {

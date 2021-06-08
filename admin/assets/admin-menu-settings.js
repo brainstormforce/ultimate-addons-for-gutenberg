@@ -342,14 +342,19 @@
 				type: "POST",
 				data: data,
 				success: function(data){
-					// Add active class.
-					$( "#" + id ).addClass("activate").removeClass( "deactivate" )
-					// Change button classes & text.
-					$( "#" + id ).find(".uagb-activate-widget")
-						.addClass("uagb-deactivate-widget")
-						.text(uagb.deactivate)
-						.removeClass("uagb-activate-widget")
-						.removeClass("updating-message")
+					
+					if ( data.success ) {
+						// Add active class.
+						$( "#" + id ).addClass("activate").removeClass( "deactivate" )
+						// Change button classes & text.
+						$( "#" + id ).find(".uagb-activate-widget")
+							.addClass("uagb-deactivate-widget")
+							.text(uagb.deactivate)
+							.removeClass("uagb-activate-widget")
+							.removeClass("updating-message")
+					} else {
+						$( "#" + id ).find(".uagb-activate-widget").removeClass("updating-message")
+					}
 				}
 			})
 
@@ -379,16 +384,20 @@
 				type: "POST",
 				data: data,
 				success: function(data){
-					
-					// Remove active class.
-					$( "#" + id ).addClass( "deactivate" ).removeClass("activate")
 
-					// Change button classes & text.
-					$( "#" + id ).find(".uagb-deactivate-widget")
-						.addClass("uagb-activate-widget")
-						.text(uagb.activate)
-						.removeClass("uagb-deactivate-widget")
-						.removeClass("updating-message")
+					if ( data.success ) {
+						// Remove active class.
+						$( "#" + id ).addClass( "deactivate" ).removeClass("activate")
+
+						// Change button classes & text.
+						$( "#" + id ).find(".uagb-deactivate-widget")
+							.addClass("uagb-activate-widget")
+							.text(uagb.activate)
+							.removeClass("uagb-deactivate-widget")
+							.removeClass("updating-message")
+					} else {
+						$( "#" + id ).find(".uagb-deactivate-widget").removeClass("updating-message")
+					}
 				}
 			})
 			

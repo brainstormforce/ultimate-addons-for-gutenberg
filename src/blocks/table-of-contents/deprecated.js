@@ -5,7 +5,7 @@
 import classnames from "classnames"
 import TableOfContents from './deprecated/components';
 import TOC from './deprecated/table-of-contents';
-import TableOfContent from './toc';
+import TableOfContent from './deprecated/toc';
 import attributes from "./attributes"
 import renderSVG from "@Controls/renderIcon"
 

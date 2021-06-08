@@ -4,7 +4,9 @@
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
-
+ .components-button-group{
+	 z-index: 0;
+ }
 .uagb-columns__wrap:before {
 	content: '';
 	position: absolute;
@@ -39,14 +41,6 @@
 .uagb-columns__inner-wrap > .block-editor-block-list__layout {
 	width: 100%;
 }
-
-.uagb-columns__columns-1 .block-editor-block-list__block[data-type="uagb/column"] { width: 100%; }
-.uagb-columns__columns-2 .block-editor-block-list__block[data-type="uagb/column"] { width: 50%; }
-.uagb-columns__columns-3 .block-editor-block-list__block[data-type="uagb/column"] { width: 33.33%; }
-.uagb-columns__columns-4 .block-editor-block-list__block[data-type="uagb/column"] { width: 25%; }
-.uagb-columns__columns-5 .block-editor-block-list__block[data-type="uagb/column"] { width: 20%; }
-.uagb-columns__columns-6 .block-editor-block-list__block[data-type="uagb/column"] { width: 16.66%; }
-
 .wp-block-uagb-columns .block-editor-block-list__layout {
 	margin-left: 0;
 	margin-right: 0;
@@ -129,7 +123,21 @@
 	padding-left: 15px;
     padding-right: 15px;
 }
+/* for editor preview */
+.uagb-editor-preview-mode-mobile.uagb-columns__stack-mobile,
+.uagb-editor-preview-mode-tablet.uagb-columns__stack-tablet,
+.uagb-editor-preview-mode-mobile.uagb-columns__stack-tablet{
+	> .uagb-columns__inner-wrap>.block-editor-inner-blocks>.block-editor-block-list__layout,
+	> .uagb-columns__inner-wrap>.block-editor-inner-blocks>.block-editor-block-list__layout,
+	> .uagb-columns__inner-wrap>.block-editor-inner-blocks>.block-editor-block-list__layout
+	{
+		display:block;
+		> .block-editor-block-list__block[data-type="uagb/column"]{
+			width: 100%!important;
+		}
+	}
 
+}
 .wp-block-uagb-columns {
 	display: block;
 	position: relative;
@@ -159,6 +167,12 @@
 		}
 	}
 }
+.uagb-columns__columns-1 .block-editor-block-list__block[data-type="uagb/column"] { width: 100%; }
+.uagb-columns__columns-2 .block-editor-block-list__block[data-type="uagb/column"] { width: 50%; }
+.uagb-columns__columns-3 .block-editor-block-list__block[data-type="uagb/column"] { width: 33.33%; }
+.uagb-columns__columns-4 .block-editor-block-list__block[data-type="uagb/column"] { width: 25%; }
+.uagb-columns__columns-5 .block-editor-block-list__block[data-type="uagb/column"] { width: 20%; }
+.uagb-columns__columns-6 .block-editor-block-list__block[data-type="uagb/column"] { width: 16.66%; }
 
 .wp-block-uagb-columns.uagb-columns__valign-center > .uagb-columns__inner-wrap {
 	justify-content: center;

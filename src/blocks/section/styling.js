@@ -162,31 +162,24 @@ function styling( props ) {
 			"padding-right": generateCSSUnit( rightPaddingMobile, mobilePaddingType ),
 		}
 	}
+	tablet_selectors[".uagb-section__wrap"]["margin-top"] = generateCSSUnit( topMarginTablet, tabletMarginType )
+	tablet_selectors[".uagb-section__wrap"]["margin-bottom"] =  generateCSSUnit( bottomMarginTablet, tabletMarginType )
+	mobile_selectors[".uagb-section__wrap"]["margin-top"] = generateCSSUnit( topMarginMobile,mobileMarginType )
+	mobile_selectors[".uagb-section__wrap"]["margin-bottom"] =  generateCSSUnit( bottomMarginMobile,mobileMarginType )
 
-	if ( "right" == align ) {
-		mobile_selectors[".uagb-section__wrap"]["margin-top"] = generateCSSUnit( topMarginMobile,mobileMarginType )
-		mobile_selectors[".uagb-section__wrap"]["margin-bottom"] =  generateCSSUnit( bottomMarginMobile,mobileMarginType )
+	if ( "right" == align && 'boxed' == contentWidth) {
 		mobile_selectors[".uagb-section__wrap"]["margin-right"] =  generateCSSUnit( rightMarginMobile,mobileMarginType )
-
-		tablet_selectors[".uagb-section__wrap"]["margin-top"] = generateCSSUnit( topMarginTablet, tabletMarginType )
-		tablet_selectors[".uagb-section__wrap"]["margin-bottom"] =  generateCSSUnit( bottomMarginTablet, tabletMarginType )
 		tablet_selectors[".uagb-section__wrap"]["margin-right"] =  generateCSSUnit( rightMarginTablet, tabletMarginType )
-	} else if ( "left" == align ) {
-		mobile_selectors[".uagb-section__wrap"]["margin-top"] = generateCSSUnit( topMarginMobile,mobileMarginType )
-		mobile_selectors[".uagb-section__wrap"]["margin-bottom"] =  generateCSSUnit( bottomMarginMobile,mobileMarginType )
+	} else if ( "left" == align  && 'boxed' == contentWidth ) {
 		mobile_selectors[".uagb-section__wrap"]["margin-left"] =  generateCSSUnit( leftMarginMobile,mobileMarginType )
-
-		tablet_selectors[".uagb-section__wrap"]["margin-top"] = generateCSSUnit( topMarginTablet, tabletMarginType )
-		tablet_selectors[".uagb-section__wrap"]["margin-bottom"] =  generateCSSUnit( bottomMarginTablet, tabletMarginType )
 		tablet_selectors[".uagb-section__wrap"]["margin-left"] =  generateCSSUnit( leftMarginTablet, tabletMarginType )
-	} else {
-		mobile_selectors[".uagb-section__wrap"]["margin-top"] = generateCSSUnit( topMarginMobile,mobileMarginType )
-		mobile_selectors[".uagb-section__wrap"]["margin-bottom"] =  generateCSSUnit( bottomMarginMobile,mobileMarginType )
-
-		tablet_selectors[".uagb-section__wrap"]["margin-top"] = generateCSSUnit( topMarginTablet, tabletMarginType )
-		tablet_selectors[".uagb-section__wrap"]["margin-bottom"] =  generateCSSUnit( bottomMarginTablet, tabletMarginType )
 	}
-
+	if("full_width" == contentWidth){
+		tablet_selectors[".uagb-section__wrap"]["margin-left"] =  generateCSSUnit( leftMarginTablet, tabletMarginType )
+		tablet_selectors[".uagb-section__wrap"]["margin-right"] =  generateCSSUnit( rightMarginTablet, tabletMarginType )
+		mobile_selectors[".uagb-section__wrap"]["margin-left"] =  generateCSSUnit( leftMarginMobile,mobileMarginType )
+		mobile_selectors[".uagb-section__wrap"]["margin-right"] =  generateCSSUnit( rightMarginMobile,mobileMarginType )
+	}
 	var styling_css = ""
 	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
 

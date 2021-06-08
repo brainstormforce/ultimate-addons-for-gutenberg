@@ -41,8 +41,6 @@ class UAGB_Init_Blocks {
 	 * Constructor
 	 */
 	public function __construct() {
-		// Hook: Frontend assets.
-		add_action( 'enqueue_block_assets', array( $this, 'block_assets' ) );
 
 		// Hook: Editor assets.
 		add_action( 'enqueue_block_editor_assets', array( $this, 'editor_assets' ) );
@@ -284,118 +282,6 @@ class UAGB_Init_Blocks {
 	}
 
 	/**
-	 * Enqueue Gutenberg block assets for both frontend + backend.
-	 *
-	 * @since 1.0.0
-	 */
-	public function block_assets() {
-
-		/* In editor, we don't check uag-flag condition */
-		if ( ! is_admin() && false === UAGB_Frontend::$uag_flag ) {
-				return;
-		}
-
-		if ( is_rtl() ) {
-			wp_enqueue_style(
-				'uagb-style-rtl', // Handle.
-				UAGB_URL . 'assets/css/style-blocks.rtl.css', // RTL style CSS.
-				array(),
-				UAGB_VER
-			);
-		}
-
-		$blocks          = UAGB_Config::get_block_attributes();
-		$disabled_blocks = UAGB_Admin_Helper::get_admin_settings_option( '_uagb_blocks', array() );
-		$block_assets    = UAGB_Config::get_block_assets();
-
-		// We have removed the option to activate/deactivate the Info box Block so to handle backward compatibility for the users who may have deactivated the Info Box block we are activating the block for them.
-
-		// We can remove this code after 2-3 releases.
-
-		if ( isset( $disabled_blocks['info-box'] ) && 'disabled' === $disabled_blocks['info-box'] ) {
-
-			$disabled_blocks['info-box'] = 'info-box';
-
-			// Update blocks.
-			UAGB_Admin_Helper::update_admin_settings_option( '_uagb_blocks', $disabled_blocks );
-			UAGB_Admin_Helper::create_specific_stylesheet();
-		}
-
-		foreach ( $blocks as $slug => $value ) {
-			$_slug = str_replace( 'uagb/', '', $slug );
-
-			if ( ! ( isset( $disabled_blocks[ $_slug ] ) && 'disabled' === $disabled_blocks[ $_slug ] ) ) {
-
-				$js_assets = ( isset( $blocks[ $slug ]['js_assets'] ) ) ? $blocks[ $slug ]['js_assets'] : array();
-
-				$css_assets = ( isset( $blocks[ $slug ]['css_assets'] ) ) ? $blocks[ $slug ]['css_assets'] : array();
-
-				if ( 'cf7-styler' === $_slug ) {
-					if ( ! wp_script_is( 'contact-form-7', 'enqueued' ) ) {
-						wp_enqueue_script( 'contact-form-7' );
-					}
-
-					if ( ! wp_script_is( ' wpcf7-admin', 'enqueued' ) ) {
-						wp_enqueue_script( ' wpcf7-admin' );
-					}
-				}
-
-				foreach ( $js_assets as $asset_handle => $val ) {
-					// Scripts.
-					wp_register_script(
-						$val, // Handle.
-						$block_assets[ $val ]['src'],
-						$block_assets[ $val ]['dep'],
-						UAGB_VER,
-						true
-					);
-
-					$skip_editor = isset( $block_assets[ $val ]['skipEditor'] ) ? $block_assets[ $val ]['skipEditor'] : false;
-
-					if ( is_admin() && false === $skip_editor ) {
-						wp_enqueue_script( $val );
-					}
-				}
-
-				foreach ( $css_assets as $asset_handle => $val ) {
-					// Styles.
-					wp_register_style(
-						$val, // Handle.
-						$block_assets[ $val ]['src'],
-						$block_assets[ $val ]['dep'],
-						UAGB_VER
-					);
-
-					if ( is_admin() ) {
-						wp_enqueue_style( $val );
-					}
-				}
-			}
-		}
-
-		$uagb_masonry_ajax_nonce = wp_create_nonce( 'uagb_masonry_ajax_nonce' );
-		wp_localize_script(
-			'uagb-post-js',
-			'uagb_data',
-			array(
-				'ajax_url'                => admin_url( 'admin-ajax.php' ),
-				'uagb_masonry_ajax_nonce' => $uagb_masonry_ajax_nonce,
-			)
-		);
-
-		$uagb_forms_ajax_nonce = wp_create_nonce( 'uagb_forms_ajax_nonce' );
-		wp_localize_script(
-			'uagb-forms-js',
-			'uagb_forms_data',
-			array(
-				'ajax_url'              => admin_url( 'admin-ajax.php' ),
-				'uagb_forms_ajax_nonce' => $uagb_forms_ajax_nonce,
-			)
-		);
-
-	} // End function editor_assets().
-
-	/**
 	 * Enqueue Gutenberg block assets for backend editor.
 	 *
 	 * @since 1.0.0
@@ -439,22 +325,6 @@ class UAGB_Init_Blocks {
 			array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
 			UAGB_VER
 		);
-
-		if ( file_exists( UAGB_DIR . 'assets/css/custom-style-blocks.css' ) ) {
-			wp_enqueue_style(
-				'uagb-block-css', // Handle.
-				UAGB_URL . 'assets/css/custom-style-blocks.css', // Block style CSS.
-				array(),
-				UAGB_VER
-			);
-		} else {
-			wp_enqueue_style(
-				'uagb-block-css', // Handle.
-				UAGB_URL . 'dist/style-blocks.css', // Block style CSS.
-				array(),
-				UAGB_VER
-			);
-		}
 
 		wp_enqueue_script( 'uagb-deactivate-block-js', UAGB_URL . 'admin/assets/blocks-deactivate.js', array( 'wp-blocks' ), UAGB_VER, true );
 
@@ -514,7 +384,16 @@ class UAGB_Init_Blocks {
 				'uagb_display_condition' => apply_filters( 'enable_block_condition', true ),
 			)
 		);
-	} // End function editor_assets().
+
+		// To match the editor with frontend.
+		// Scripts Dependency.
+		UAGB_Scripts_Utils::enqueue_blocks_dependency_both();
+		// Style.
+		UAGB_Scripts_Utils::enqueue_blocks_styles();
+		// RTL Styles.
+		UAGB_Scripts_Utils::enqueue_blocks_rtl_styles();
+	}
+
 	/**
 	 *  Get the User Roles
 	 *

@@ -44,29 +44,31 @@ function inlineStyles( props, isEditor ) {
 		"padding-bottom": generateCSSUnit( bottomPadding, desktopPaddingType),
 		"padding-left": generateCSSUnit( leftPadding, desktopPaddingType),
 		"padding-right": generateCSSUnit( rightPadding, desktopPaddingType),
-		"border-radius": generateCSSUnit( borderRadius, "px")
+		"border-radius": generateCSSUnit( borderRadius, "px"),
+		"margin-top":generateCSSUnit( topMargin, desktopMarginType),
+		"margin-bottom": generateCSSUnit( bottomMargin, desktopMarginType)
+	}
+	if( 'boxed' === contentWidth){ 
+		switch( align ){
+			case  'right' :
+				style["margin-left"] = "auto"
+				style["margin-right"] =  generateCSSUnit( rightMargin, desktopMarginType)
+				break;
+			case 'left' :
+				style["margin-right"] = "auto"
+				style["margin-left"] =  generateCSSUnit( leftMargin, desktopMarginType)
+				break;
+			case 'center' :
+				style["margin-right"] = "auto"
+				style["margin-left"] = "auto"
+				break;
+		}
 	}
 
-	if ( "right" == align ) {
-		style["margin-left"] = "auto"
-		style["margin-top"] = generateCSSUnit( topMargin, desktopMarginType)
-		style["margin-bottom"] =  generateCSSUnit( bottomMargin, desktopMarginType)
-		style["margin-right"] =  generateCSSUnit( rightMargin, desktopMarginType)
-	} else if ( "left" == align ) {
-		style["margin-right"] = "auto"
-		style["margin-top"] = generateCSSUnit( topMargin, desktopMarginType)
-		style["margin-bottom"] =  generateCSSUnit( bottomMargin, desktopMarginType)
+	if("full_width" == contentWidth){
 		style["margin-left"] =  generateCSSUnit( leftMargin, desktopMarginType)
-	} else if ( "center" == align ) {
-		style["margin-right"] = "auto"
-		style["margin-left"] = "auto"
-		style["margin-top"] = generateCSSUnit( topMargin, desktopMarginType)
-		style["margin-bottom"] =  generateCSSUnit( bottomMargin, desktopMarginType)
-	} else {
-		style["margin-top"] = generateCSSUnit( topMargin, desktopMarginType)
-		style["margin-bottom"] =  generateCSSUnit( bottomMargin, desktopMarginType)
+		style["margin-right"] =  generateCSSUnit( rightMargin, desktopMarginType)
 	}
-
 	if ( borderStyle != "none" ) {
 		style["border-style"] = borderStyle
 		style["border-width"] = generateCSSUnit( borderWidth, "px")

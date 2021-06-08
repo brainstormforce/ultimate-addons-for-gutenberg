@@ -44,7 +44,33 @@ if ( ! class_exists( 'UAGB_Table_Of_Content' ) ) {
 		 */
 		public function __construct() {
 			add_action( 'init', array( $this, 'register_table_of_contents' ) );
-			add_action( 'save_post', array( $this, 'update_toc_meta' ), 10, 3 );
+			add_action( 'save_post', array( $this, 'delete_toc_meta' ), 10, 3 );
+			add_filter( 'render_block_data', array( $this, 'update_toc_title' ) );
+		}
+
+		/**
+		 * Update Toc tile if old title is set.
+		 *
+		 * @access public
+		 *
+		 * @since 1.23.0
+		 * @param array $parsed_block Parsed Block.
+		 */
+		public function update_toc_title( $parsed_block ) {
+
+			if ( 'uagb/table-of-contents' === $parsed_block['blockName'] && ! isset( $parsed_block['attrs']['headingTitle'] ) ) {
+
+				$content = $parsed_block['innerHTML'];
+				$matches = array();
+
+				preg_match( '/<div class=\"uagb-toc__title\">([^`]*?)<\/div>/', $content, $matches );
+
+				if ( ! empty( $matches[1] ) ) {
+					$parsed_block['attrs']['headingTitle'] = $matches[1];
+				}
+			}
+
+			return $parsed_block;
 		}
 
 		/**
@@ -57,7 +83,7 @@ if ( ! class_exists( 'UAGB_Table_Of_Content' ) ) {
 		 * @param object  $post Post object.
 		 * @param boolean $update Whether this is an existing post being updated.
 		 */
-		public function update_toc_meta( $post_id, $post, $update ) {
+		public function delete_toc_meta( $post_id, $post, $update ) {
 			delete_post_meta( $post_id, '_uagb_toc_heading_content' );
 		}
 

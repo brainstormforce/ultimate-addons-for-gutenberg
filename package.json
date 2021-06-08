@@ -62,7 +62,7 @@
     "lint:css": "wp-scripts lint-style",
     "lint:pkg-json": "wp-scripts lint-pkg-json",
     "check-engines": "wp-scripts check-engines",
-    "makepot": "vendor/bin/wp i18n make-pot . --skip-audit --exclude='.dev,.github,.wordpress-org,docs,src,node_modules,vendor,wordpress,block-icons.js,blocks-deactivate.js' languages/ultimate-addons-for-gutenberg.pot",
+    "makepot": "wp i18n make-pot . --skip-audit --exclude='.dev,.github,.wordpress-org,docs,src,node_modules,vendor,wordpress,block-icons.js,blocks-deactivate.js' languages/ultimate-addons-for-gutenberg.pot",
     "package": "rm *.zip && wp dist-archive . ultimate-addons-for-gutenberg",
     "packages-update": "wp-scripts packages-update"
   }

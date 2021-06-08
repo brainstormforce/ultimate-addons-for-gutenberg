@@ -140,6 +140,10 @@ function styling( props ) {
 		" .uagb-toc__list-wrap ul.uagb-toc__list:last-child > li:last-child" : {
 			"padding-bottom": 0
 		},
+		" .uagb-toc__list-wrap ol.uagb-toc__list > li" : {
+			"padding-top": "calc( " + generateCSSUnit( contentPaddingDesktop, contentPaddingTypeDesktop ) + " / 2 )",
+			"padding-bottom": "calc( " + generateCSSUnit( contentPaddingDesktop, contentPaddingTypeDesktop ) + " / 2 )"
+		},
 		" .uagb-toc__list-wrap ul.uagb-toc__list > li" : {
 			"padding-top": "calc( " + generateCSSUnit( contentPaddingDesktop, contentPaddingTypeDesktop ) + " / 2 )",
 			"padding-bottom": "calc( " + generateCSSUnit( contentPaddingDesktop, contentPaddingTypeDesktop ) + " / 2 )"
@@ -161,6 +165,9 @@ function styling( props ) {
 	}
 
 	if ( disableBullets ) {
+		selectors[".wp-block-uagb-table-of-contents ol.uagb-toc__list>li"] = {
+			'list-style-type': 'none'
+		}
 		selectors[" .uagb-toc__list"] = {
 			'list-style-type': 'none'
 		}
@@ -202,6 +209,10 @@ function styling( props ) {
 		" .uagb-toc__list-wrap ul.uagb-toc__list:last-child > li:last-child" : {
 		    "padding-bottom": generateCSSUnit( contentPaddingTablet, contentPaddingTypeTablet )
 		},
+		" .uagb-toc__list-wrap ol.uagb-toc__list > li" : {
+		    "padding-top": "calc( " + generateCSSUnit( contentPaddingTablet, contentPaddingTypeTablet ) + " / 2 )",
+		    "padding-bottom": "calc( " + generateCSSUnit( contentPaddingTablet, contentPaddingTypeTablet ) + " / 2 )"
+		},
 		" .uagb-toc__list-wrap ul.uagb-toc__list > li" : {
 		    "padding-top": "calc( " + generateCSSUnit( contentPaddingTablet, contentPaddingTypeTablet ) + " / 2 )",
 		    "padding-bottom": "calc( " + generateCSSUnit( contentPaddingTablet, contentPaddingTypeTablet ) + " / 2 )"
@@ -239,6 +250,10 @@ function styling( props ) {
 		},
 		" .uagb-toc__list-wrap ul.uagb-toc__list:last-child > li:last-child" : {
 		    "padding-bottom": generateCSSUnit( contentPaddingMobile, contentPaddingTypeMobile )
+		},
+		" .uagb-toc__list-wrap ol.uagb-toc__list > li" : {
+		    "padding-top": "calc( " + generateCSSUnit( contentPaddingMobile, contentPaddingTypeMobile ) + " / 2 )",
+		    "padding-bottom": "calc( " + generateCSSUnit( contentPaddingMobile, contentPaddingTypeMobile ) + " / 2 )"
 		},
 		" .uagb-toc__list-wrap ul.uagb-toc__list > li" : {
 		    "padding-top": "calc( " + generateCSSUnit( contentPaddingMobile, contentPaddingTypeMobile ) + " / 2 )",

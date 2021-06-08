@@ -69,6 +69,8 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 				add_action( 'admin_head', array( __CLASS__, 'admin_submenu_css' ) );
 			}
 
+			add_action( 'save_post', array( __CLASS__, 'delete_page_assets' ), 10, 1 );
+
 		}
 
 		/**
@@ -348,6 +350,11 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 
 			$blocks = array_map( 'esc_attr', $blocks );
 
+			if ( 'how-to' === $block_id && 'disabled' === $blocks['info-box'] ) {
+				$blocks['info-box'] = 'info-box';
+				$blocks             = array_map( 'esc_attr', $blocks );
+			}
+
 			// Update blocks.
 			UAGB_Admin_Helper::update_admin_settings_option( '_uagb_blocks', $blocks );
 			UAGB_Admin_Helper::create_specific_stylesheet();
@@ -366,6 +373,10 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 			$blocks              = UAGB_Admin_Helper::get_admin_settings_option( '_uagb_blocks', array() );
 			$blocks[ $block_id ] = 'disabled';
 			$blocks              = array_map( 'esc_attr', $blocks );
+
+			if ( 'info-box' === $block_id && 'how-to' === $blocks['how-to'] ) {
+				wp_send_json_error();
+			}
 
 			// Update blocks.
 			UAGB_Admin_Helper::update_admin_settings_option( '_uagb_blocks', $blocks );
@@ -486,7 +497,7 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 			check_ajax_referer( 'uagb-block-nonce', 'nonce' );
 
 			if ( 'disabled' === $_POST['value'] ) {
-				UAGB_Helper::delete_upload_dir();
+				UAGB_Helper::delete_all_uag_dir_files();
 			}
 
 			wp_send_json_success(
@@ -679,6 +690,35 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 					opacity: 0.5;
 				}
 			</style>';
+		}
+
+		/**
+		 * This function deletes the Page assets from the Page Meta Key.
+		 *
+		 * @param int $post_id Post Id.
+		 * @since 1.23.0
+		 */
+		public static function delete_page_assets( $post_id ) {
+
+			if ( 'enabled' === UAGB_Helper::$file_generation ) {
+
+				$css_asset_info = UAGB_Scripts_Utils::get_asset_info( 'css', $post_id );
+				$js_asset_info  = UAGB_Scripts_Utils::get_asset_info( 'js', $post_id );
+
+				$css_file_path = $css_asset_info['css'];
+				$js_file_path  = $js_asset_info['js'];
+
+				if ( file_exists( $css_file_path ) ) {
+					wp_delete_file( $css_file_path );
+				}
+				if ( file_exists( $js_file_path ) ) {
+					wp_delete_file( $js_file_path );
+				}
+			}
+
+			delete_post_meta( $post_id, '_uag_page_assets' );
+			delete_post_meta( $post_id, '_uag_css_file_name' );
+			delete_post_meta( $post_id, '_uag_js_file_name' );
 		}
 	}
 

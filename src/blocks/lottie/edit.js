@@ -9,6 +9,7 @@ import Lottie from 'react-lottie';
 import { __ } from '@wordpress/i18n';
 
 const {
+	BlockAlignmentToolbar,
 	InspectorControls,
     ColorPalette,
     MediaPlaceholder,
@@ -100,6 +101,7 @@ class UAGBLottie extends Component {
         const { className, setAttributes, attributes } = this.props
         
         const {
+            align,
             height,
             heightTablet,
             heightMob,
@@ -285,6 +287,18 @@ class UAGBLottie extends Component {
                     }
                 </TabPanel>          
                 <br></br>
+                <h2>{ __( "Alignment"  , 'ultimate-addons-for-gutenberg') }</h2>
+                <BlockAlignmentToolbar
+                    value={ align }
+                    onChange={ ( value ) =>
+                        setAttributes( {
+                            align: value,
+                        } )
+                    }
+                    controls={ [ 'left', 'center', 'right' ] }
+                    isCollapsed={ false }
+                />	
+                <br></br>
                     <p className="uagb-setting-label">{ __( "Background Color", 'ultimate-addons-for-gutenberg' ) }<span className="components-base-control__label"><span className="component-color-indicator" style={{ backgroundColor: backgroundColor }} ></span></span></p>
                     <ColorPalette
                         value={ backgroundColor }
@@ -383,6 +397,7 @@ class UAGBLottie extends Component {
                     className,
                     `uagb-block-${this.props.clientId.substr( 0, 8 )}`,
                     "uagb-lottie__outer-wrap",
+                    `uagb-lottie__${align}`
                 ) }
                 onMouseEnter={ 'hover' === playOn ? handleLottieMouseEnter : ()=> play_animation = true }
                 onMouseLeave={ 'hover' === playOn ? handleLottieMouseLeave : ()=> play_animation = true } 

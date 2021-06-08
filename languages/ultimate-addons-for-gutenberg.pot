@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-05-18T12:44:17+00:00\n"
+"POT-Creation-Date: 2021-06-08T06:52:06+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.4.0\n"
+"X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: ultimate-addons-for-gutenberg\n"
 
 #. Plugin Name of the plugin
@@ -130,7 +130,7 @@ msgid "Check out the detailed knowledge base articles that will help you underst
 msgstr ""
 
 #: admin/uagb-general.php:69
-#: admin/uagb-general.php:291
+#: admin/uagb-general.php:290
 #: admin/uagb-tools.php:112
 msgid "Visit Knowledge Base »"
 msgstr ""
@@ -151,128 +151,128 @@ msgstr ""
 msgid "Reusable Blocks"
 msgstr ""
 
-#: admin/uagb-general.php:135
-#: classes/class-uagb-admin.php:292
+#: admin/uagb-general.php:134
+#: classes/class-uagb-admin.php:294
 msgid "Activate"
 msgstr ""
 
-#: admin/uagb-general.php:142
-#: classes/class-uagb-admin.php:293
+#: admin/uagb-general.php:141
+#: classes/class-uagb-admin.php:295
 msgid "Deactivate"
 msgstr ""
 
-#: admin/uagb-general.php:179
+#: admin/uagb-general.php:178
 msgid "Free Theme for Gutenberg"
 msgstr ""
 
-#: admin/uagb-general.php:183
+#: admin/uagb-general.php:182
 msgid "Join over 1+ million active users empowering their websites with Astra! From beginners to industry leaders, everyone loves the Astra theme."
 msgstr ""
 
-#: admin/uagb-general.php:184
+#: admin/uagb-general.php:183
 msgid "Why Astra Theme?"
 msgstr ""
 
-#: admin/uagb-general.php:185
+#: admin/uagb-general.php:184
 msgid "Faster Performance - "
 msgstr ""
 
-#: admin/uagb-general.php:185
+#: admin/uagb-general.php:184
 msgid "Built with speed and performance in mind, Astra follows the best coding standards and lets you build faster loading and better performing websites."
 msgstr ""
 
-#: admin/uagb-general.php:186
+#: admin/uagb-general.php:185
 msgid "Easy Customization - "
 msgstr ""
 
-#: admin/uagb-general.php:186
+#: admin/uagb-general.php:185
 msgid "With all the settings managed through the customizer, Astra keeps it simple and gives you lots of options to customize everything with a few clicks."
 msgstr ""
 
-#: admin/uagb-general.php:187
+#: admin/uagb-general.php:186
 msgid "Pixel Perfect Design - "
 msgstr ""
 
-#: admin/uagb-general.php:187
+#: admin/uagb-general.php:186
 msgid "Astra reduces your design time by giving you pixel-perfect FREE ready-to-use websites demos within a huge library of starter sites."
 msgstr ""
 
-#: admin/uagb-general.php:192
+#: admin/uagb-general.php:191
 msgid "Install Astra Now!"
 msgstr ""
 
-#: admin/uagb-general.php:194
+#: admin/uagb-general.php:193
 msgid "Activate Astra Now!"
 msgstr ""
 
-#: admin/uagb-general.php:205
+#: admin/uagb-general.php:204
 msgid "CSS & JS File Generation"
 msgstr ""
 
-#: admin/uagb-general.php:211
+#: admin/uagb-general.php:210
 msgid "Enabling this option will generate CSS & JS files for Ultimate Addons for Gutenberg block styling instead of loading the CSS & JS inline on page."
 msgstr ""
 
 #. translators: %1$s: a tag open.
-#: admin/uagb-general.php:220
+#: admin/uagb-general.php:219
 msgid "Please read %1$s this article %2$s to know more."
 msgstr ""
 
-#: admin/uagb-general.php:232
+#: admin/uagb-general.php:231
 msgid "Enable File Generation"
 msgstr ""
 
-#: admin/uagb-general.php:236
+#: admin/uagb-general.php:235
 msgid "Inadequate File Permission"
 msgstr ""
 
-#: admin/uagb-general.php:242
+#: admin/uagb-general.php:241
 msgid "Disable File Generation"
 msgstr ""
 
 #. translators: %1$s: a tag open.
-#: admin/uagb-general.php:255
+#: admin/uagb-general.php:254
 msgid "Please update the %1$sfile permissions%2$s for \"wp-content/uploads\" folder in order to use the File Generation feature."
 msgstr ""
 
-#: admin/uagb-general.php:271
-#: admin/uagb-general.php:278
+#: admin/uagb-general.php:270
+#: admin/uagb-general.php:277
 msgid "Regenerate Assets"
 msgstr ""
 
-#: admin/uagb-general.php:275
+#: admin/uagb-general.php:274
 msgid "You can regenerate your CSS & Javascript assets here."
 msgstr ""
 
-#: admin/uagb-general.php:285
+#: admin/uagb-general.php:284
 #: admin/uagb-tools.php:106
 msgid "Knowledge Base"
 msgstr ""
 
-#: admin/uagb-general.php:289
+#: admin/uagb-general.php:288
 #: admin/uagb-tools.php:110
 msgid "Not sure how something works? Take a peek at the knowledge base and learn."
 msgstr ""
 
-#: admin/uagb-general.php:297
+#: admin/uagb-general.php:296
 #: admin/uagb-tools.php:118
 msgid "Five Star Support"
 msgstr ""
 
 #. translators: %1$s: uagb name.
-#: admin/uagb-general.php:304
+#: admin/uagb-general.php:303
 #: admin/uagb-tools.php:125
 msgid "Got a question? Get in touch with %1$s developers. We're happy to help!"
 msgstr ""
 
 #: admin/uagb-tools.php:33
 #: admin/uagb-tools.php:47
-#: classes/class-uagb-admin.php:294
+#: classes/class-uagb-admin.php:296
 msgid "Enable Beta Updates"
 msgstr ""
 
 #: admin/uagb-tools.php:39
-#: classes/class-uagb-admin.php:295
+#: classes/class-uagb-admin.php:297
 msgid "Disable Beta Updates"
 msgstr ""
 
@@ -289,8 +289,8 @@ msgid "Note: We do not recommend updating to a beta version on production site."
 msgstr ""
 
 #: admin/uagb-tools.php:71
-#: classes/class-uagb-admin.php:600
-#: classes/class-uagb-admin.php:631
+#: classes/class-uagb-admin.php:611
+#: classes/class-uagb-admin.php:642
 msgid "Rollback to Previous Version"
 msgstr ""
 
@@ -308,8 +308,8 @@ msgid "Warning: Please backup your database before making the rollback."
 msgstr ""
 
 #: blocks-config/post-timeline/class-uagb-post-timeline.php:447
-#: blocks-config/post/class-uagb-post.php:445
-#: blocks-config/post/class-uagb-post.php:1490
+#: blocks-config/post/class-uagb-post.php:446
+#: blocks-config/post/class-uagb-post.php:1491
 #: classes/class-uagb-config.php:1468
 #: classes/class-uagb-config.php:1564
 #: classes/class-uagb-config.php:1678
@@ -324,14 +324,14 @@ msgstr ""
 msgid "Untitled"
 msgstr ""
 
-#: blocks-config/table-of-content/class-uagb-table-of-content.php:517
-#: blocks-config/table-of-content/class-uagb-table-of-content.php:521
+#: blocks-config/table-of-content/class-uagb-table-of-content.php:543
+#: blocks-config/table-of-content/class-uagb-table-of-content.php:547
 #: classes/class-uagb-config.php:2275
 #: dist/blocks.js:9
 msgid "Table Of Contents"
 msgstr ""
 
-#: blocks-config/table-of-content/class-uagb-table-of-content.php:785
+#: blocks-config/table-of-content/class-uagb-table-of-content.php:811
 #: classes/class-uagb-config.php:2276
 #: dist/blocks.js:9
 msgid "Add a header to begin generating the table of contents"
@@ -342,67 +342,67 @@ msgstr ""
 msgid "Taxonomy Not Available."
 msgstr ""
 
-#: classes/class-uagb-admin.php:142
+#: classes/class-uagb-admin.php:144
 msgid "Wow! The Ultimate Addons for Gutenberg has already powered over 5 pages on your website!"
 msgstr ""
 
-#: classes/class-uagb-admin.php:143
+#: classes/class-uagb-admin.php:145
 msgid "Would you please mind sharing your views and give it a 5 star rating on the WordPress repository?"
 msgstr ""
 
-#: classes/class-uagb-admin.php:145
+#: classes/class-uagb-admin.php:147
 msgid "Ok, you deserve it"
 msgstr ""
 
-#: classes/class-uagb-admin.php:147
+#: classes/class-uagb-admin.php:149
 msgid "Nope, maybe later"
 msgstr ""
 
-#: classes/class-uagb-admin.php:148
+#: classes/class-uagb-admin.php:150
 msgid "I already did"
 msgstr ""
 
 #. translators: %s: html tags
-#: classes/class-uagb-admin.php:167
+#: classes/class-uagb-admin.php:169
 msgid "Ultimate Addons for Gutenberg requires&nbsp;%3$sBlock Editor%4$s. You can change your editor settings to Block Editor from&nbsp;%1$shere%2$s. Plugin is currently NOT RUNNING."
 msgstr ""
 
-#: classes/class-uagb-admin.php:205
-#: classes/class-uagb-admin.php:206
+#: classes/class-uagb-admin.php:207
+#: classes/class-uagb-admin.php:208
 msgid "Tools"
 msgstr ""
 
-#: classes/class-uagb-admin.php:296
+#: classes/class-uagb-admin.php:298
 msgid "Installing Astra"
 msgstr ""
 
-#: classes/class-uagb-admin.php:297
+#: classes/class-uagb-admin.php:299
 msgid "Activating Astra"
 msgstr ""
 
-#: classes/class-uagb-admin.php:298
+#: classes/class-uagb-admin.php:300
 msgid "Astra Activated!"
 msgstr ""
 
-#: classes/class-uagb-admin.php:456
-#: classes/class-uagb-admin.php:481
-#: classes/class-uagb-admin.php:511
+#: classes/class-uagb-admin.php:467
+#: classes/class-uagb-admin.php:492
+#: classes/class-uagb-admin.php:522
 msgid "Access Denied. You don't have enough capabilities to execute this action."
 msgstr ""
 
-#: classes/class-uagb-admin.php:551
+#: classes/class-uagb-admin.php:562
 msgid "No Theme specified"
 msgstr ""
 
-#: classes/class-uagb-admin.php:570
+#: classes/class-uagb-admin.php:581
 msgid "Theme Successfully Activated"
 msgstr ""
 
-#: classes/class-uagb-admin.php:599
+#: classes/class-uagb-admin.php:610
 msgid "You do not have permission to access this page."
 msgstr ""
 
-#: classes/class-uagb-admin.php:613
+#: classes/class-uagb-admin.php:624
 msgid "Error occurred, The version selected is invalid. Try selecting different version."
 msgstr ""
 
@@ -902,49 +902,49 @@ msgstr ""
 msgid "This block helps you add Lottie animation and customize it as required."
 msgstr ""
 
-#: classes/class-uagb-helper.php:370
+#: classes/class-uagb-helper.php:433
 #: dist/blocks.js:9
 msgid "Full"
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:243
+#: classes/class-uagb-init-blocks.php:241
 msgid "Please select a valid Gravity Form."
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:262
+#: classes/class-uagb-init-blocks.php:260
 msgid "Please select a valid Contact Form 7."
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:280
+#: classes/class-uagb-init-blocks.php:278
 msgid "Ultimate Addons Blocks"
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:533
+#: classes/class-uagb-init-blocks.php:412
 #: dist/blocks.js:1
 #: dist/blocks.js:9
 msgid "None"
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:562
-#: classes/class-uagb-init-blocks.php:595
+#: classes/class-uagb-init-blocks.php:441
+#: classes/class-uagb-init-blocks.php:474
 #: dist/blocks.js:9
 msgid "Select Form"
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:576
+#: classes/class-uagb-init-blocks.php:455
 msgid "You have not added any Contact Form 7 yet."
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:609
+#: classes/class-uagb-init-blocks.php:488
 msgid "You have not added any Gravity Forms yet."
 msgstr ""
 
 #. translators: %s: html tags
-#: classes/class-uagb-loader.php:173
+#: classes/class-uagb-loader.php:182
 msgid "The %1$sUltimate Addon for Gutenberg%2$s plugin requires %1$sGutenberg%2$s plugin installed & activated."
 msgstr ""
 
-#: classes/class-uagb-loader.php:176
+#: classes/class-uagb-loader.php:185
 msgid "Install Gutenberg"
 msgstr ""
 
