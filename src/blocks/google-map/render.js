@@ -42,6 +42,8 @@ const Render = ( props ) => {
 				style={ {
 					height,
 				} }
+				width="640" height="360"
+				loading="lazy"
 			></iframe>
 		</div>
 	);

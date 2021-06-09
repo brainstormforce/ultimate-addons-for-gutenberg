@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import UAGB_Block_Icons from '@Controls/block-icons';
 import React, { useLayoutEffect } from 'react';
 import Description from './components/Description';
-import AuthorImage from './components/AuthorImage';
+import AuthorImage from './components/AuthorImageNew';
 import AuthorText from './components/AuthorText';
 import TweetButtonCTA from './components/TweetButtonCTA';
 import styles from './editor.lazy.scss';

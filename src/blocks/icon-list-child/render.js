@@ -45,6 +45,8 @@ const Render = ( props ) => {
 				className="uagb-icon-list__source-image"
 				alt=""
 				src={ image.url }
+				width="640" height="360" 
+				loading="lazy"
 			/>
 		);
 	}

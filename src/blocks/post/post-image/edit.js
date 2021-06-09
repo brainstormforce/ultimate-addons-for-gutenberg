@@ -38,6 +38,8 @@ export const PostImage = ( props ) => {
 							decodeEntities( post.title.rendered.trim() ) ||
 							__( '(Untitled)' )
 						}
+						width="640" height="360"
+						loading="lazy"
 					/>
 				</a>
 			</div>

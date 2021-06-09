@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="uagb-title">
 					<a href="<?php echo esc_url( $uagb_visit_site_url ); ?>" target="_blank" rel="noopener" >
 					<?php if ( $uagb_icon ) { ?>
-						<img src="<?php echo esc_url( UAGB_URL . 'admin/assets/images/uagb_logo.svg' ); ?>" class="uagb-header-icon" alt="<?php echo esc_attr( UAGB_PLUGIN_NAME ); ?> " >
+						<img src="<?php echo esc_url( UAGB_URL . 'admin/assets/images/uagb_logo.svg' ); ?>" class="uagb-header-icon" alt="<?php echo esc_attr( UAGB_PLUGIN_NAME ); ?> "  width="640" height="360" loading="lazy">
 						<?php
 					} else {
 						echo sprintf( '<h4>%s</h4>', esc_html( UAGB_PLUGIN_NAME ) );

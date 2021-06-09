@@ -197,6 +197,8 @@ const Render = ( props ) => {
 					className=""
 					src={ imgUrl }
 					alt={ image.alt ? image.alt : '' }
+					width="640" height="360"
+					loading="lazy"
 				/>
 			</div>
 		);

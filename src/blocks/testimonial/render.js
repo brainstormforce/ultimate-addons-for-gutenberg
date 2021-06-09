@@ -3,7 +3,7 @@ import PositionClasses from './classes';
 import UAGB_Block_Icons from '@Controls/block-icons';
 import React, { lazy, Suspense, useLayoutEffect } from 'react';
 import lazyLoader from '@Controls/lazy-loader';
-import TestimonialImage from './components/Image';
+import TestimonialImage from './components/TestimonialImageNew';
 import AuthorName from './components/AuthorName';
 import Company from './components/Company';
 import Description from './components/Description';

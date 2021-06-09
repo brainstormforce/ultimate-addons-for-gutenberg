@@ -8,7 +8,7 @@ import save from './save';
 import UAGB_Block_Icons from '@Controls/block-icons';
 // Components
 import { __ } from '@wordpress/i18n';
-
+import deprecated from "./deprecated"
 // Register block controls
 const { registerBlockType } = wp.blocks;
 
@@ -23,4 +23,5 @@ registerBlockType( 'uagb/post-image', {
 	PostImage,
 	example: {},
 	save,
+	deprecated
 } );

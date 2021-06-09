@@ -6,7 +6,7 @@ import InfoBoxDesc from './components/InfoBoxDesc';
 import CallToAction from './components/CallToAction';
 import InfoBoxSeparator from './components/InfoBoxSeparator';
 import Icon from './components/Icon';
-import InfoBoxIconImage from './components/InfoBoxIconImage';
+import InfoBoxIconImage from './components/Image';
 import Prefix from './components/Prefix';
 import styles from './editor.lazy.scss';
 

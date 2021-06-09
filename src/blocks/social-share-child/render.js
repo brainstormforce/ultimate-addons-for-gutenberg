@@ -35,7 +35,7 @@ const Render = ( props ) => {
 		}
 	} else if ( image && image.url ) {
 		imageIconHtml = (
-			<img className="uagb-ss__source-image" src={ image.url } />
+			<img className="uagb-ss__source-image" src={ image.url } width="640" height="360"/>
 		);
 	}
 

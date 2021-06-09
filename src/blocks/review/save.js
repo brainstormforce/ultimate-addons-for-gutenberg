@@ -75,6 +75,8 @@ export default function save( props ) {
 				className="uagb-howto__source-image"
 				src={ url }
 				title={ title }
+				width="640" height="360"
+				loading="lazy"
 			/>
 		);
 	}

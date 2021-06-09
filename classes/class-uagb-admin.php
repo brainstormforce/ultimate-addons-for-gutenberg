@@ -120,7 +120,7 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 					'type'                       => '',
 					'message'                    => sprintf(
 						'<div class="notice-image">
-							<img src="%1$s" class="custom-logo" alt="Ultimate Addons for Gutenberg" itemprop="logo"></div>
+							<img src="%1$s" class="custom-logo" alt="Ultimate Addons for Gutenberg" itemprop="logo"  width="640" height="360" loading="lazy"></div>
 							<div class="notice-content">
 								<div class="notice-heading">
 									%2$s

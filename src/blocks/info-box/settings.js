@@ -185,6 +185,7 @@ const Settings = ( props ) => {
 	if ( iconImage && iconImage.sizes ) {
 		imageSizeOptions = getImageSize( iconImage.sizes );
 	}
+	console.log(iconImage);
 	let imageName = __( 'Select Image', 'ultimate-addons-for-gutenberg' );
 	if ( iconImage ) {
 		if ( iconImage.url == null || iconImage.url == '' ) {

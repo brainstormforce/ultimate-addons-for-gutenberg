@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import PositionClasses from '../price-list/classes';
 import React, { lazy, Suspense } from 'react';
 import lazyLoader from '@Controls/lazy-loader';
-import RestMenuImage from './components/RestMenuImage';
+import RestMenuImage from './components/Image';
 import Title from './components/Title';
 import Price from './components/Price';
 import Description from './components/Description';

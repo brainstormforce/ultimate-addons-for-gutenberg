@@ -7,7 +7,7 @@ import UAGB_Block_Icons from '@Controls/block-icons';
 import TweetButtonCTA from './components/TweetButtonCTA';
 import Description from './components/Description';
 import AuthorText from './components/AuthorText';
-import AuthorImage from './components/AuthorImage';
+import AuthorImage from './components/AuthorImageNew';
 
 export default function save( props ) {
 	const {
