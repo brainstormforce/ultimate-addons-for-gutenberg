@@ -1278,20 +1278,6 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				);
 			}
 
-			if ( $attr['imageWidthType'] ) {
-				// Image.
-				$selectors[' .uagb-ifb-image-content > img'] = array(
-					'width'     => UAGB_Helper::get_css_value( $attr['imageWidth'], 'px' ),
-					'max-width' => UAGB_Helper::get_css_value( $attr['imageWidth'], 'px' ),
-				);
-			}
-
-			if ( 'above-title' === $attr['iconimgPosition'] || 'below-title' === $attr['iconimgPosition'] ) {
-				$selectors[' .uagb-infobox__content-wrap'] = array(
-					'text-align' => $attr['headingAlign'],
-				);
-			}
-
 			$m_selectors = array(
 				' .uagb-infobox-cta-link .uagb-ifb-button-icon' => array(
 					'font-size'   => $m_cta_icon_size,
@@ -1304,6 +1290,18 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'height'      => $m_cta_icon_size,
 					'width'       => $m_cta_icon_size,
 					'line-height' => $m_cta_icon_size,
+				),
+				' .uagb-ifb-title-prefix'               => array(
+					'margin-bottom' => UAGB_Helper::get_css_value( $attr['prefixSpaceMobile'], 'px' ),
+				),
+				' .uagb-ifb-title-wrap .uagb-ifb-title' => array(
+					'margin-bottom' => $attr['headSpaceMobile'] . 'px',
+				),
+				' .uagb-ifb-text-wrap .uagb-ifb-desc'   => array(
+					'margin-bottom' => UAGB_Helper::get_css_value( $attr['subHeadSpaceMobile'], 'px' ),
+				),
+				' .uagb-ifb-separator-parent'           => array(
+					'margin-bottom' => UAGB_Helper::get_css_value( $attr['seperatorSpaceMobile'], 'px' ),
 				),
 			);
 
@@ -1320,8 +1318,40 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'width'       => $t_cta_icon_size,
 					'line-height' => $t_cta_icon_size,
 				),
+				' .uagb-ifb-title-prefix'               => array(
+					'margin-bottom' => UAGB_Helper::get_css_value( $attr['prefixSpaceTablet'], 'px' ),
+				),
+				' .uagb-ifb-title-wrap .uagb-ifb-title' => array(
+					'margin-bottom' => $attr['headSpaceTablet'] . 'px',
+				),
+				' .uagb-ifb-text-wrap .uagb-ifb-desc'   => array(
+					'margin-bottom' => UAGB_Helper::get_css_value( $attr['subHeadSpaceTablet'], 'px' ),
+				),
+				' .uagb-ifb-separator-parent'           => array(
+					'margin-bottom' => UAGB_Helper::get_css_value( $attr['seperatorSpaceTablet'], 'px' ),
+				),
 			);
+			if ( $attr['imageWidthType'] ) {
+				// Image.
+				$selectors[' .uagb-ifb-image-content > img']   = array(
+					'width'     => UAGB_Helper::get_css_value( $attr['imageWidth'], 'px' ),
+					'max-width' => UAGB_Helper::get_css_value( $attr['imageWidth'], 'px' ),
+				);
+				$m_selectors[' .uagb-ifb-image-content > img'] = array(
+					'width'     => UAGB_Helper::get_css_value( $attr['imageWidthMobile'], 'px' ),
+					'max-width' => UAGB_Helper::get_css_value( $attr['imageWidthMobile'], 'px' ),
+				);
+				$t_selectors[' .uagb-ifb-image-content > img'] = array(
+					'width'     => UAGB_Helper::get_css_value( $attr['imageWidthTablet'], 'px' ),
+					'max-width' => UAGB_Helper::get_css_value( $attr['imageWidthTablet'], 'px' ),
+				);
+			}
 
+			if ( 'above-title' === $attr['iconimgPosition'] || 'below-title' === $attr['iconimgPosition'] ) {
+				$selectors[' .uagb-infobox__content-wrap'] = array(
+					'text-align' => $attr['headingAlign'],
+				);
+			}
 			$combined_selectors = array(
 				'desktop' => $selectors,
 				'tablet'  => $t_selectors,

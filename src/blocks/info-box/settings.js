@@ -6,6 +6,7 @@ import React, { Suspense } from 'react';
 import lazyLoader from '@Controls/lazy-loader';
 import TypographyControl from '@Components/typography';
 import WebfontLoader from '@Components/typography/fontloader';
+import ColumnResponsive from '@Components/typography/column-responsive';
 
 $ = jQuery;
 
@@ -40,7 +41,7 @@ let imageSizeOptions = [
 
 const Settings = ( props ) => {
 	props = props.parentProps;
-	const { setAttributes, attributes } = props;
+	const { setAttributes, attributes, deviceType } = props;
 
 	// Setup the attributes.
 	const {
@@ -138,11 +139,21 @@ const Settings = ( props ) => {
 		imageSize,
 		imageWidth,
 		imageWidthType,
+		imageWidthMobile,
+		imageWidthTablet,
 		stack,
 		showPrefix,
 		showTitle,
 		showDesc,
 		inheritFromTheme,
+		seperatorSpaceMobile,
+		seperatorSpaceTablet,
+		prefixSpaceMobile,
+		prefixSpaceTablet,
+		subHeadSpaceMobile,
+		subHeadSpaceTablet,
+		headSpaceMobile,
+		headSpaceTablet,
 	} = attributes;
 
 	/*
@@ -624,22 +635,42 @@ const Settings = ( props ) => {
 										) }
 									/>
 									{ imageWidthType && (
-										<RangeControl
-											label={ __(
-												'Width (px)',
-												'ultimate-addons-for-gutenberg'
-											) }
-											value={ imageWidth }
-											onChange={ ( value ) =>
-												setAttributes( {
-													imageWidth: value,
-												} )
-											}
-											min={ 0 }
-											max={ 500 }
-											beforeIcon=""
-											allowReset
-										/>
+										<>
+										<ColumnResponsive/>
+										{ "Desktop" === deviceType && (
+											<RangeControl
+												label={ __( "Width (px)", 'ultimate-addons-for-gutenberg' ) }
+												value={ imageWidth }
+												onChange={ ( value ) => setAttributes( { imageWidth: value } ) }
+												min={ 0 }
+												max={ 500 }
+												beforeIcon=""
+												allowReset
+											/>
+										)}
+										{ "Tablet" === deviceType && (
+											<RangeControl
+												label={ __( "Width (px)", 'ultimate-addons-for-gutenberg' ) }
+												value={ imageWidthTablet }
+												onChange={ ( value ) => setAttributes( { imageWidthTablet: value } ) }
+												min={ 0 }
+												max={ 500 }
+												beforeIcon=""
+												allowReset
+											/>
+										)}
+										{ "Mobile" === deviceType && (
+												<RangeControl
+													label={ __( "Width (px)", 'ultimate-addons-for-gutenberg' ) }
+													value={ imageWidthMobile }
+													onChange={ ( value ) => setAttributes( { imageWidthMobile: value } ) }
+													min={ 0 }
+													max={ 500 }
+													beforeIcon=""
+													allowReset
+												/>
+										)}
+									</>
 									) }
 									<RangeControl
 										label={ __(
@@ -1148,132 +1179,216 @@ const Settings = ( props ) => {
 			</PanelBody>
 		);
 	};
-
+	
 	// Margin Settings.
 	const marginSettings = () => {
 		return (
-			<PanelBody
-				title={ __( 'Spacing', 'ultimate-addons-for-gutenberg' ) }
-				initialOpen={ false }
-			>
-				{ showPrefix && (
+		<PanelBody	title={ __( "Spacing", 'ultimate-addons-for-gutenberg' ) } initialOpen={ false }	>
+			{ showPrefix &&
+				<>
+					<ColumnResponsive/>
+					{ "Desktop" === deviceType && (
+						<RangeControl
+							label={ __( "Prefix Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+							value={ prefixSpace }
+							onChange={ ( value ) => setAttributes( { prefixSpace: value } ) }
+							min={ 0 }
+							max={ 50 }
+							beforeIcon=""
+							allowReset
+						/>
+					)}
+					{ "Tablet" === deviceType && (
+						<RangeControl
+							label={ __( "Prefix Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+							value={ prefixSpaceTablet }
+							onChange={ ( value ) => setAttributes( { prefixSpaceTablet: value } ) }
+							min={ 0 }
+							max={ 50 }
+							beforeIcon=""
+							allowReset
+						/>
+					)}
+					{ "Mobile" === deviceType && (
+						<RangeControl
+							label={ __( "Prefix Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+							value={ prefixSpaceMobile }
+							onChange={ ( value ) => setAttributes( { prefixSpaceMobile: value } ) }
+							min={ 0 }
+							max={ 50 }
+							beforeIcon=""
+							allowReset
+						/>
+					)}
+				</>
+			}
+			{ showTitle &&
+				<>
+				<ColumnResponsive/>
+				{ "Desktop" === deviceType && (
 					<RangeControl
-						label={ __(
-							'Prefix Bottom Margin',
-							'ultimate-addons-for-gutenberg'
-						) }
-						value={ prefixSpace }
-						onChange={ ( value ) =>
-							setAttributes( { prefixSpace: value } )
-						}
-						min={ 0 }
-						max={ 50 }
-						beforeIcon=""
-						allowReset
-					/>
-				) }
-				{ showTitle && (
-					<RangeControl
-						label={ __(
-							'Title Bottom Margin',
-							'ultimate-addons-for-gutenberg'
-						) }
+						label={ __( "Title Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
 						value={ headSpace }
-						onChange={ ( value ) =>
-							setAttributes( { headSpace: value } )
-						}
+						onChange={ ( value ) => setAttributes( { headSpace: value } ) }
 						min={ 0 }
 						max={ 50 }
 						beforeIcon=""
 						allowReset
 					/>
-				) }
-				{ 'none' !== seperatorStyle && (
+				)}
+				{ "Tablet" === deviceType && (
 					<RangeControl
-						label={ __(
-							'Separator Bottom Margin',
-							'ultimate-addons-for-gutenberg'
-						) }
+						label={ __( "Title Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+						value={ headSpaceTablet }
+						onChange={ ( value ) => setAttributes( { headSpaceTablet: value } ) }
+						min={ 0 }
+						max={ 50 }
+						beforeIcon=""
+						allowReset
+					/>
+				)}
+				{ "Mobile" === deviceType && (
+					<RangeControl
+						label={ __( "Title Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+						value={ headSpaceMobile }
+						onChange={ ( value ) => setAttributes( { headSpaceMobile: value } ) }
+						min={ 0 }
+						max={ 50 }
+						beforeIcon=""
+						allowReset
+					/>
+				)}
+			</>
+			}
+			{ "none" !== seperatorStyle &&	
+				<>
+				<ColumnResponsive/>
+				{ "Desktop" === deviceType && (
+					<RangeControl
+						label={ __( "Separator Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
 						value={ seperatorSpace }
-						onChange={ ( value ) =>
-							setAttributes( { seperatorSpace: value } )
-						}
+						onChange={ ( value ) => setAttributes( { seperatorSpace: value } ) }
 						min={ 0 }
 						max={ 50 }
 						beforeIcon=""
 						allowReset
 					/>
-				) }
-				{ showDesc && (
+				)}
+				{ "Tablet" === deviceType && (
+				<RangeControl
+						label={ __( "Separator Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+						value={ seperatorSpaceTablet }
+						onChange={ ( value ) => setAttributes( { seperatorSpaceTablet: value } ) }
+						min={ 0 }
+						max={ 50 }
+						beforeIcon=""
+						allowReset
+					/>
+				)}
+				{ "Mobile" === deviceType && (
 					<RangeControl
-						label={ __(
-							'Description Bottom Margin',
-							'ultimate-addons-for-gutenberg'
-						) }
-						value={ subHeadSpace }
-						onChange={ ( value ) =>
-							setAttributes( { subHeadSpace: value } )
-						}
+						label={ __( "Separator Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+						value={ seperatorSpaceMobile }
+						onChange={ ( value ) => setAttributes( { seperatorSpaceMobile: value } ) }
 						min={ 0 }
 						max={ 50 }
 						beforeIcon=""
 						allowReset
 					/>
-				) }
-				<hr className="uagb-editor__separator" />
-				<h2>
-					{ __(
-						'Image/Icon Margin (px)',
-						'ultimate-addons-for-gutenberg'
-					) }
-				</h2>
-				<RangeControl
-					label={ UAGB_Block_Icons.left_margin }
-					className={ 'uagb-margin-control' }
-					value={ iconLeftMargin }
-					onChange={ ( value ) =>
-						setAttributes( { iconLeftMargin: value } )
-					}
-					min={ 0 }
-					max={ 50 }
-					allowReset
-				/>
-				<RangeControl
-					label={ UAGB_Block_Icons.right_margin }
-					className={ 'uagb-margin-control' }
-					value={ iconRightMargin }
-					onChange={ ( value ) =>
-						setAttributes( { iconRightMargin: value } )
-					}
-					min={ 0 }
-					max={ 50 }
-					allowReset
-				/>
-				<RangeControl
-					label={ UAGB_Block_Icons.top_margin }
-					className={ 'uagb-margin-control' }
-					value={ iconTopMargin }
-					onChange={ ( value ) =>
-						setAttributes( { iconTopMargin: value } )
-					}
-					min={ 0 }
-					max={ 50 }
-					allowReset
-				/>
-				<RangeControl
-					label={ UAGB_Block_Icons.bottom_margin }
-					className={ 'uagb-margin-control' }
-					value={ iconBottomMargin }
-					onChange={ ( value ) =>
-						setAttributes( { iconBottomMargin: value } )
-					}
-					min={ 0 }
-					max={ 50 }
-					allowReset
-				/>
-			</PanelBody>
-		);
-	};
+				)}
+			</>
+								
+			}
+			{ showDesc &&
+				<>
+				<ColumnResponsive/>
+				{ "Desktop" === deviceType && (
+					<RangeControl
+						label={ __( "Description Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+						value={ subHeadSpace }
+						onChange={ ( value ) => setAttributes( { subHeadSpace: value } ) }
+						min={ 0 }
+						max={ 50 }
+						beforeIcon=""
+						allowReset
+					/>
+				)}
+				{ "Tablet" === deviceType && (
+					<RangeControl
+						label={ __( "Description Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+						value={ subHeadSpaceTablet }
+						onChange={ ( value ) => setAttributes( { subHeadSpaceTablet: value } ) }
+						min={ 0 }
+						max={ 50 }
+						beforeIcon=""
+						allowReset
+					/>
+				)}
+				{ "Mobile" === deviceType && (
+					<RangeControl
+						label={ __( "Description Bottom Margin", 'ultimate-addons-for-gutenberg' ) }
+						value={ subHeadSpaceMobile }
+						onChange={ ( value ) => setAttributes( { subHeadSpaceMobile: value } ) }
+						min={ 0 }
+						max={ 50 }
+						beforeIcon=""
+						allowReset
+					/>
+				)}
+			</>
+			}
+			<hr className="uagb-editor__separator" />
+			<h2>{ __( "Image/Icon Margin (px)", 'ultimate-addons-for-gutenberg' ) }</h2>
+			<RangeControl
+				label={ UAGB_Block_Icons.left_margin }
+				className={ "uagb-margin-control" }
+				value={ iconLeftMargin }
+				onChange={ ( value ) => setAttributes( { iconLeftMargin: value } ) }
+				min={ 0 }
+				max={ 50 }
+				allowReset
+			/>
+			<RangeControl
+				label={ UAGB_Block_Icons.right_margin }
+				className={ "uagb-margin-control" }
+				value={ iconRightMargin }
+				onChange={ ( value ) => setAttributes( { iconRightMargin: value } ) }
+				min={ 0 }
+				max={ 50 }
+				allowReset
+			/>
+			<RangeControl
+				label={ UAGB_Block_Icons.top_margin }
+				className={ "uagb-margin-control" }
+				value={ iconTopMargin }
+				onChange={ ( value ) => setAttributes( { iconTopMargin: value } ) }
+				min={ 0 }
+				max={ 50 }
+				allowReset
+			/>
+			<RangeControl
+				label={ UAGB_Block_Icons.bottom_margin }
+				className={ "uagb-margin-control" }
+				value={ iconBottomMargin }
+				onChange={ ( value ) => setAttributes( { iconBottomMargin: value } ) }
+				min={ 0 }
+				max={ 50 }
+				allowReset
+			/>
+		</PanelBody>
+		)	
+	}
+
+	let image_name = __( "Select Image", 'ultimate-addons-for-gutenberg' )
+	if(iconImage){
+		if(iconImage.url == null || iconImage.url == "" ){
+			image_name = __( "Select Image", 'ultimate-addons-for-gutenberg' )
+		}else{
+			image_name = __( "Replace Image", 'ultimate-addons-for-gutenberg' )
+		}
+	}
+
+
 	const ctaSettings = () => {
 		return (
 			<PanelBody

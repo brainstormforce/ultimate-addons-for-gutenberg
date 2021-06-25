@@ -402,6 +402,36 @@ const attributes = {
 		type: 'boolean',
 		default: true,
 	},
+	headSpaceTablet: {
+		type: "number"
+	},
+	headSpaceMobile: {
+		type: "number"
+	},
+	subHeadSpaceTablet: {
+		type: "number"
+	},
+	subHeadSpaceMobile: {
+		type: "number"
+	},
+	seperatorSpaceTablet: {
+		type: "number"
+	},
+	seperatorSpaceMobile: {
+		type: "number"
+	},
+	prefixSpaceTablet :{
+		type: "number"
+	},
+	prefixSpaceMobile :{
+		type: "number"
+	},
+	imageWidthTablet :{
+		type: "number"
+	},
+	imageWidthMobile :{
+		type: "number"
+	},
 };
 
 export default attributes;

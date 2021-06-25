@@ -20,7 +20,7 @@ const Render = ( props ) => {
 	}, [] );
 
 	props = props.parentProps;
-	const { className, attributes, setAttributes } = props;
+	const { className, attributes, setAttributes, deviceType } = props;
 
 	// Setup the attributes.
 	const {
@@ -195,7 +195,8 @@ const Render = ( props ) => {
 			className={ classnames(
 				className,
 				'uagb-infobox__outer-wrap',
-				`uagb-block-${ block_id }`
+				`uagb-block-${ block_id }`,
+				`uagb-editor-preview-mode-${ deviceType.toLowerCase() }`,
 			) }
 		>
 			{ ctaType == 'all' && (

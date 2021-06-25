@@ -11,6 +11,8 @@ const Settings = lazy( () =>
 	import( /* webpackChunkName: "chunks/info-box/settings" */ './settings' )
 );
 
+import { withSelect } from '@wordpress/data';
+
 const UAGBInfoBox = ( props ) => {
 	useEffect( () => {
 		// Assigning block_id in the attribute.
@@ -47,4 +49,11 @@ const UAGBInfoBox = ( props ) => {
 		</>
 	);
 };
-export default UAGBInfoBox;
+export default withSelect( ( select ) => {
+	const { __experimentalGetPreviewDeviceType = null } = select( 'core/edit-post' );
+	let deviceType = __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : null;
+
+	return {
+		deviceType: deviceType,
+	}
+} )( UAGBInfoBox )
