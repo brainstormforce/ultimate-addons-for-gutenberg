@@ -2,350 +2,345 @@
  * BLOCK: Testimonial - Attributes
  */
 
-const ITEM_COUNT = 3
+const itemCount = 3;
 
-const testimonial_block = []
+const testimonialBlock = [];
 
-for (var i = 1; i <= ITEM_COUNT; i++) {
-	var desc_text = "I have been working with these guys since years now! With lots of hard work and timely communication they made sure they delivered the best to me. Highly recommended!"
-	var author_text    = "John Doe "
-	var company_text    = "Company"+i
-	testimonial_block.push(
-		{
-			"description": desc_text,
-			"name": author_text,
-			"company": company_text,
-			"image": "",
-		}
-	)
+for ( let i = 1; i <= itemCount; i++ ) {
+	const descText =
+		'I have been working with these guys since years now! With lots of hard work and timely communication they made sure they delivered the best to me. Highly recommended!';
+	const authorText = 'John Doe ';
+	const companyText = 'Company' + i;
+	testimonialBlock.push( {
+		description: descText,
+		name: authorText,
+		company: companyText,
+		image: '',
+	} );
 }
 
 const attributes = {
 	test_item_count: {
-		type: "number",
-		default: ITEM_COUNT
+		type: 'number',
+		default: itemCount,
 	},
 	classMigrate: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	test_block: {
-		type: "array",
-		default : testimonial_block,
+		type: 'array',
+		default: testimonialBlock,
 	},
 	headingAlign: {
-		type: "string",
-		default: "center",
+		type: 'string',
+		default: 'center',
 	},
 	descColor: {
-		type: "string",
-		default: "#333"
+		type: 'string',
+		default: '#333',
 	},
 	companyColor: {
-		type: "string",
-		default: "#888888"
+		type: 'string',
+		default: '#888888',
 	},
 	authorColor: {
-		type: "string",
-		default: "#333"
+		type: 'string',
+		default: '#333',
 	},
 	iconimgStyle: {
-		type: "string",
-		default: "circle"
+		type: 'string',
+		default: 'circle',
 	},
-	imagePosition:{
-		type: "string",
-		default: "bottom"
+	imagePosition: {
+		type: 'string',
+		default: 'bottom',
 	},
-	imageAlignment:{
-		type: "string",
-		default: "top"
+	imageAlignment: {
+		type: 'string',
+		default: 'top',
 	},
 
 	nameFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	nameFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	nameFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	nameFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	nameFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	nameFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	nameFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	nameLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	nameLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	nameLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	nameLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	nameLoadGoogleFonts: {
-		type: "boolean",
-		default: false	
+		type: 'boolean',
+		default: false,
 	},
 
 	companyFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	companyFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	companyFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	companyFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	companyFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	companyFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	companyFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	companyLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	companyLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	companyLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	companyLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	companyLoadGoogleFonts: {
-		type: "boolean",
-		default: false	
+		type: 'boolean',
+		default: false,
 	},
 
 	descFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	descFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	descFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	descFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	descFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	descFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	descFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	descLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	descLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	descLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	descLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	descLoadGoogleFonts: {
-		type: "boolean",
-		default: false	
+		type: 'boolean',
+		default: false,
 	},
 
 	nameSpace: {
-		type: "number",
-		default : 5
-	},
-	descSpace: {
-		type: "number",
-		default : 15
-	},
-	block_id :{
-		type : "string",
-		default : "not_set"
-	},
-	authorSpace :{
-		type: "number",
+		type: 'number',
 		default: 5,
 	},
-	imgVrPadding :{
-		type: "number",
+	descSpace: {
+		type: 'number',
+		default: 15,
+	},
+	block_id: {
+		type: 'string',
+		default: 'not_set',
+	},
+	authorSpace: {
+		type: 'number',
+		default: 5,
+	},
+	imgVrPadding: {
+		type: 'number',
 		default: 10,
 	},
-	imgHrPadding :{
-		type: "number",
+	imgHrPadding: {
+		type: 'number',
 		default: 10,
 	},
-	imgTopPadding :{
-		type: "number",
+	imgTopPadding: {
+		type: 'number',
 		default: 10,
 	},
-	imgBottomPadding :{
-		type: "number",
+	imgBottomPadding: {
+		type: 'number',
 		default: 10,
 	},
 	iconImage: {
-		type: "object",
-		default:{
-			"url": "",
-			"alt": "InfoBox placeholder img",
-		}
+		type: 'object',
+		default: {
+			url: '',
+			alt: 'InfoBox placeholder img',
+		},
 	},
-	imageSize:{
-		type: "string",
-		default: "thumbnail",
+	imageSize: {
+		type: 'string',
+		default: 'thumbnail',
 	},
-	imageWidth :{
-		type: "number",
+	imageWidth: {
+		type: 'number',
 		default: 60,
 	},
-	columns :{
-		type: "number",
+	columns: {
+		type: 'number',
 		default: 1,
 	},
-	tcolumns :{
-		type: "number",
+	tcolumns: {
+		type: 'number',
 		default: 1,
 	},
-	mcolumns :{
-		type: "number",
+	mcolumns: {
+		type: 'number',
 		default: 1,
 	},
 	pauseOnHover: {
-		type: "boolean",
+		type: 'boolean',
 		default: true,
 	},
 	infiniteLoop: {
-		type: "boolean",
+		type: 'boolean',
 		default: true,
 	},
-	transitionSpeed :{
-		type: "number",
+	transitionSpeed: {
+		type: 'number',
 		default: 500,
 	},
 	autoplay: {
-		type: "boolean",
+		type: 'boolean',
 		default: true,
 	},
-	autoplaySpeed :{
-		type: "number",
+	autoplaySpeed: {
+		type: 'number',
 		default: 2000,
 	},
-	arrowDots : {
-		type : "string",
-		default : "arrows_dots"
+	arrowDots: {
+		type: 'string',
+		default: 'arrows_dots',
 	},
-	arrowSize :{
-		type: "number",
+	arrowSize: {
+		type: 'number',
 		default: 20,
 	},
-	arrowBorderSize : {
-		type: "number",
-		default : 1,
+	arrowBorderSize: {
+		type: 'number',
+		default: 1,
 	},
-	arrowBorderRadius : {
-		type: "number",
-		default : 0,
+	arrowBorderRadius: {
+		type: 'number',
+		default: 0,
 	},
-	arrowColor :{
-		type: "string",
-		default: "#aaaaaa",
+	arrowColor: {
+		type: 'string',
+		default: '#333',
 	},
 	rowGap: {
-		type: "number",
-		default : 10
+		type: 'number',
+		default: 10,
 	},
 	columnGap: {
-		type: "number",
-		default : 10
+		type: 'number',
+		default: 10,
 	},
 	contentPadding: {
-		type: "number",
-		default : 5
+		type: 'number',
+		default: 5,
 	},
 	backgroundType: {
-		type: "string",
+		type: 'string',
 	},
 	backgroundImage: {
-		type: "object",
+		type: 'object',
 	},
 	backgroundPosition: {
-		type: "string",
-		default: "center-center"
+		type: 'string',
+		default: 'center-center',
 	},
 	backgroundSize: {
-		type: "string",
-		default: "cover"
+		type: 'string',
+		default: 'cover',
 	},
 	backgroundRepeat: {
-		type: "string",
-		default: "no-repeat"
+		type: 'string',
+		default: 'no-repeat',
 	},
-	backgroundColor:{
-		type: "string"
+	backgroundColor: {
+		type: 'string',
 	},
 	backgroundImageColor: {
-		type: "string"
+		type: 'string',
 	},
-	borderStyle : {
-		type: "string",
-		default: "none"
+	borderStyle: {
+		type: 'string',
+		default: 'none',
 	},
-	borderWidth : {
-		type: "number",
-		default: "1"
+	borderWidth: {
+		type: 'number',
+		default: '1',
 	},
-	borderRadius : {
-		type: "number"
+	borderRadius: {
+		type: 'number',
 	},
-	borderColor : {
-		type: "string"
+	borderColor: {
+		type: 'string',
 	},
-	backgroundOpacity:{
-		type: "number",
-		default: 50
-	},
-	arrowColor:{
-		type: "string",
-		default: "#333"
+	backgroundOpacity: {
+		type: 'number',
+		default: 50,
 	},
 	stack: {
-		type: "string",
-		default: "tablet"
-	}
-}
+		type: 'string',
+		default: 'tablet',
+	},
+};
 
-export default attributes
+export default attributes;

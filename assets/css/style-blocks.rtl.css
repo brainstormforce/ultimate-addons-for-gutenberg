@@ -1,1 +1,87 @@
-.rtl .uagb-blockquote__skin-border blockquote.uagb-blockquote{border-left-width:0}.rtl .uagb_review_block .uagb_review_entry{display:unset}.rtl .uagb-timeline__left-block .uagb-timeline__line{left:auto;right:calc(2em / 2)}.rtl .uagb-timeline__left-block .uagb-timeline__day-right .uagb-timeline__arrow:after{border-left:13px solid #eee;border-right:none}.rtl .uagb-timeline__left-block .uagb-timeline__day-left .uagb-timeline__arrow:after{border-left:13px solid #eee;border-right:none}.rtl .uagb-timeline__right-block .uagb-timeline__line{left:calc(2em / 2);right:auto}.uagb-timeline__day-right .uagb-timeline__arrow:after{right:970px}.uagb-timeline__day-left .uagb-timeline__arrow:after{right:-970px}.rtl .uagb-timeline__right-block .uagb-timeline__day-left .uagb-timeline__arrow:after{border-left:none;border-right:13px solid #eee}.rtl .uagb-timeline__center-block .uagb-timeline__day-right .uagb-timeline__arrow:after{border-right:13px solid #eee;border-left:none}.uagb-timeline__left-block .uagb-timeline__day-left .uagb-timeline__arrow:after{right:-970px}.rtl .uagb-timeline__center-block .uagb-timeline__line{right:50%!important;left:auto}.uagb-timeline__center-block .uagb-timeline__day-left .uagb-timeline__arrow:after{border-left:13px solid #eee;border-right:none}.rtl .uagb-timeline__center-block .uagb-timeline__day-right .uagb-timeline__arrow:after{right:470px}.rtl .uagb-timeline__left-block .uagb-timeline__day-right .uagb-timeline__arrow:after{right:470px}.rtl .uagb-timeline__center-block .uagb-timeline__day-left .uagb-timeline__arrow:after{right:-470px}.rtl .uagb-post-grid .uagb-post__text{text-align:right}.rtl .uagb-icon-list__outer-wrap:not(.uagb-icon-list__no-label) .uagb-icon-list__source-wrap{margin-left:15px}.rtl .uagb-faq__outer-wrap.uagb-faq-icon-row .uagb-faq-item .uagb-faq-icon-wrap{margin-left:10px}.rtl .uagb-rm__content{text-align:right}
+.rtl .uagb-blockquote__skin-border blockquote.uagb-blockquote {
+	border-left-width: 0;
+}
+
+.rtl .uagb_review_block .uagb_review_entry {
+	display: unset;
+}
+
+.rtl .uagb-timeline__left-block .uagb-timeline__line {
+	left: auto;
+	right: calc(2em / 2);
+}
+
+.rtl .uagb-timeline__left-block .uagb-timeline__day-right .uagb-timeline__arrow::after {
+	border-left: 13px solid #eee;
+	border-right: none;
+}
+
+.rtl .uagb-timeline__left-block .uagb-timeline__day-left .uagb-timeline__arrow::after {
+	border-left: 13px solid #eee;
+	border-right: none;
+}
+
+.rtl .uagb-timeline__right-block .uagb-timeline__line {
+	left: calc(2em / 2);
+	right: auto;
+}
+
+.uagb-timeline__day-right .uagb-timeline__arrow::after {
+	right: 970px;
+}
+
+.uagb-timeline__day-left .uagb-timeline__arrow::after {
+	right: -970px;
+}
+
+.rtl .uagb-timeline__right-block .uagb-timeline__day-left .uagb-timeline__arrow::after {
+	border-left: none;
+	border-right: 13px solid #eee;
+}
+
+.rtl .uagb-timeline__center-block .uagb-timeline__day-right .uagb-timeline__arrow::after {
+	border-right: 13px solid #eee;
+	border-left: none;
+}
+
+.uagb-timeline__left-block .uagb-timeline__day-left .uagb-timeline__arrow::after {
+	right: -970px;
+}
+
+.rtl .uagb-timeline__center-block .uagb-timeline__line {
+	right: 50% !important;
+	left: auto;
+}
+
+.uagb-timeline__center-block .uagb-timeline__day-left .uagb-timeline__arrow::after {
+	border-left: 13px solid #eee;
+	border-right: none;
+}
+
+.rtl .uagb-timeline__center-block .uagb-timeline__day-right .uagb-timeline__arrow::after {
+	right: 470px;
+}
+
+.rtl .uagb-timeline__left-block .uagb-timeline__day-right .uagb-timeline__arrow::after {
+	right: 470px;
+}
+
+.rtl .uagb-timeline__center-block .uagb-timeline__day-left .uagb-timeline__arrow::after {
+	right: -470px;
+}
+
+.rtl .uagb-post-grid .uagb-post__text {
+	text-align: right;
+}
+
+.rtl .uagb-icon-list__outer-wrap:not(.uagb-icon-list__no-label) .uagb-icon-list__source-wrap {
+	margin-left: 15px;
+}
+
+.rtl .uagb-faq__outer-wrap.uagb-faq-icon-row .uagb-faq-item .uagb-faq-icon-wrap {
+	margin-left: 10px;
+}
+
+.rtl .uagb-rm__content {
+	text-align: right;
+}

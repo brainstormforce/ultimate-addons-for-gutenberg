@@ -1,5 +1,4 @@
-( function( $ ) {
-
+( function ( $ ) {
 	/**
 	 * AJAX Request Queue
 	 *
@@ -10,29 +9,29 @@
 	 *
 	 * @since 1.2.0.8
 	 */
-	var UAGBAjaxQueue = (function() {
-
-		var requests = []
+	const UAGBAjaxQueue = ( function () {
+		let requests = [];
 
 		return {
-
 			/**
 			 * Add AJAX request
 			 *
+			 * @param opt
 			 * @since 1.2.0.8
 			 */
-			add:  function(opt) {
-			    requests.push(opt)
+			add( opt ) {
+				requests.push( opt );
 			},
 
 			/**
 			 * Remove AJAX request
 			 *
+			 * @param opt
 			 * @since 1.2.0.8
 			 */
-			remove:  function(opt) {
-			    if( jQuery.inArray(opt, requests) > -1 )
-			        requests.splice($.inArray(opt, requests), 1)
+			remove( opt ) {
+				if ( jQuery.inArray( opt, requests ) > -1 )
+					requests.splice( $.inArray( opt, requests ), 1 );
 			},
 
 			/**
@@ -40,27 +39,25 @@
 			 *
 			 * @since 1.2.0.8
 			 */
-			run: function() {
-			    var self = this,
-			        oriSuc
+			run() {
+				let self = this,
+					oriSuc;
 
-			    if( requests.length ) {
-			        oriSuc = requests[0].complete
+				if ( requests.length ) {
+					oriSuc = requests[ 0 ].complete;
 
-			        requests[0].complete = function() {
-			             if( typeof(oriSuc) === "function" ) oriSuc()
-			             requests.shift()
-			             self.run.apply(self, [])
-			        }
+					requests[ 0 ].complete = function () {
+						if ( typeof oriSuc === 'function' ) oriSuc();
+						requests.shift();
+						self.run.apply( self, [] );
+					};
 
-			        jQuery.ajax(requests[0])
-
-			    } else {
-
-			      self.tid = setTimeout(function() {
-			         self.run.apply(self, [])
-			      }, 1000)
-			    }
+					jQuery.ajax( requests[ 0 ] );
+				} else {
+					self.tid = setTimeout( function () {
+						self.run.apply( self, [] );
+					}, 1000 );
+				}
 			},
 
 			/**
@@ -68,416 +65,491 @@
 			 *
 			 * @since 1.2.0.8
 			 */
-			stop:  function() {
-
-			    requests = []
-			    clearTimeout(this.tid)
-			}
-		}
-
-	}())
+			stop() {
+				requests = [];
+				clearTimeout( this.tid );
+			},
+		};
+	} )();
 
 	UAGBAdmin = {
-
-		init: function() {
+		init() {
 			/**
 			 * Run / Process AJAX request
 			 */
-			UAGBAjaxQueue.run()
+			UAGBAjaxQueue.run();
 
-			$( document ).on( "click",".uagb-activate-widget", UAGBAdmin._activate_widget )
-			$( document ).on( "click",".uagb-deactivate-widget", UAGBAdmin._deactivate_widget )
+			$( document ).on(
+				'click',
+				'.uagb-activate-widget',
+				UAGBAdmin._activate_widget
+			);
+			$( document ).on(
+				'click',
+				'.uagb-deactivate-widget',
+				UAGBAdmin._deactivate_widget
+			);
 
-			$( document ).on( "click",".uagb-activate-all", UAGBAdmin._bulk_activate_widgets )
-			$( document ).on( "click",".uagb-deactivate-all", UAGBAdmin._bulk_deactivate_widgets )
+			$( document ).on(
+				'click',
+				'.uagb-activate-all',
+				UAGBAdmin._bulk_activate_widgets
+			);
+			$( document ).on(
+				'click',
+				'.uagb-deactivate-all',
+				UAGBAdmin._bulk_deactivate_widgets
+			);
 
-			$( document ).on( "click",".uag-install-theme", UAGBAdmin._installNow )
-			$( document ).on( "click",".uag-activate-theme", UAGBAdmin._activateTheme)
+			$( document ).on(
+				'click',
+				'.uag-install-theme',
+				UAGBAdmin._installNow
+			);
+			$( document ).on(
+				'click',
+				'.uag-activate-theme',
+				UAGBAdmin._activateTheme
+			);
 
-			$( document ).on( "click",".uag-file-generation", UAGBAdmin._fileGeneration )
+			$( document ).on(
+				'click',
+				'.uag-file-generation',
+				UAGBAdmin._fileGeneration
+			);
 
-			$( document ).on( "click",".uag-file-regeneration", UAGBAdmin._fileReGeneration )
+			$( document ).on(
+				'click',
+				'.uag-file-regeneration',
+				UAGBAdmin._fileReGeneration
+			);
 
-			$( document ).on( "click",".uag-beta-updates", UAGBAdmin._betaUpdates )
+			$( document ).on(
+				'click',
+				'.uag-beta-updates',
+				UAGBAdmin._betaUpdates
+			);
 
-			$( document ).on( "change",".uagb-rollback-select", UAGBAdmin._selectRollbackVersion ).trigger('change');
+			$( document )
+				.on(
+					'change',
+					'.uagb-rollback-select',
+					UAGBAdmin._selectRollbackVersion
+				)
+				.trigger( 'change' );
 
-			$( document ).on( "click",".uagb-rollback-button", UAGBAdmin._onRollbackClick )
+			$( document ).on(
+				'click',
+				'.uagb-rollback-button',
+				UAGBAdmin._onRollbackClick
+			);
 
-			$( document ).on( "click",".uagb-confirm-rollback-popup-button.confirm-ok", UAGBAdmin._onConfirmClick )
+			$( document ).on(
+				'click',
+				'.uagb-confirm-rollback-popup-button.confirm-ok',
+				UAGBAdmin._onConfirmClick
+			);
 
-			$( document ).on( "click",".uagb-confirm-rollback-popup-button.confirm-cancel", UAGBAdmin._closeRollbackPopup )
+			$( document ).on(
+				'click',
+				'.uagb-confirm-rollback-popup-button.confirm-cancel',
+				UAGBAdmin._closeRollbackPopup
+			);
 
-			$( document ).on( "keyup", UAGBAdmin._onEscPressed )
+			$( document ).on( 'keyup', UAGBAdmin._onEscPressed );
 
-			$( document ).on( "click", UAGBAdmin._onOutsidePopupClick )
-
+			$( document ).on( 'click', UAGBAdmin._onOutsidePopupClick );
 		},
-		_onRollbackClick: function ( e ) {
-			
+		_onRollbackClick( e ) {
 			e.preventDefault();
 
-			$( '.uagb-confirm-rollback-popup' ).addClass('show');
+			$( '.uagb-confirm-rollback-popup' ).addClass( 'show' );
 		},
-		_onConfirmClick: function ( e ) {
-			
+		_onConfirmClick( e ) {
 			e.preventDefault();
 
-			location.href = $( '.uagb-rollback-button' ).attr('href');
+			location.href = $( '.uagb-rollback-button' ).attr( 'href' );
 
 			UAGBAdmin._closeRollbackPopup( e );
 		},
-		_onEscPressed: function ( e ) {
-			
+		_onEscPressed( e ) {
 			// 27 is keymap for esc key.
 			if ( e.keyCode === 27 ) {
-
-				UAGBAdmin._closeRollbackPopup( e );
-			}
-			
-		},
-		_onOutsidePopupClick: function ( e ) {
-			var target = e.target,
-			    popup = $( '.uagb-confirm-rollback-popup.show' );
-			
-			if ( target === popup[0] ) {
 				UAGBAdmin._closeRollbackPopup( e );
 			}
 		},
-		_closeRollbackPopup: function ( e ) {
+		_onOutsidePopupClick( e ) {
+			const target = e.target,
+				popup = $( '.uagb-confirm-rollback-popup.show' );
+
+			if ( target === popup[ 0 ] ) {
+				UAGBAdmin._closeRollbackPopup( e );
+			}
+		},
+		_closeRollbackPopup( e ) {
 			e.preventDefault();
-			$( '.uagb-confirm-rollback-popup' ).removeClass('show');
-		},		
-		_selectRollbackVersion: function ( e ) {
-
-			var $this = $( this ),
-				rollbackButton = $this.next('.uagb-rollback-button'),
-				placeholderText = rollbackButton.data('placeholder-text'),
-				placeholderUrl = rollbackButton.data('placeholder-url');
-
-			rollbackButton.html(placeholderText.replace('{VERSION}', $this.val()));
-			rollbackButton.attr('href', placeholderUrl.replace('VERSION', $this.val()));
+			$( '.uagb-confirm-rollback-popup' ).removeClass( 'show' );
 		},
-		_betaUpdates: function( e ) {
-			
-			e.preventDefault();
+		_selectRollbackVersion( e ) {
+			const $this = $( this ),
+				rollbackButton = $this.next( '.uagb-rollback-button' ),
+				placeholderText = rollbackButton.data( 'placeholder-text' ),
+				placeholderUrl = rollbackButton.data( 'placeholder-url' );
 
-			var button = $( this ),
-				value  = button.data("value")
-
-			var data = {
-				value : value,
-				action: "uagb_beta_updates",
-				nonce: uagb.ajax_nonce,
-			}
-
-			if ( button.hasClass( "updating-message" ) ) {
-				return
-			}
-
-			$( button ).addClass("updating-message")
-
-			UAGBAjaxQueue.add({
-				url: ajaxurl,
-				type: "POST",
-				data: data,
-				success: function(data){
-					console.log(data);
-					location.reload();
-				}
-			})
+			rollbackButton.html(
+				placeholderText.replace( '{VERSION}', $this.val() )
+			);
+			rollbackButton.attr(
+				'href',
+				placeholderUrl.replace( 'VERSION', $this.val() )
+			);
 		},
-		_fileGeneration: function( e ) {
-
-			e.preventDefault()
-			var button = $( this ),
-				value  = button.data("value")
-
-			var data = {
-				value : value,
-				action: "uagb_file_generation",
-				nonce: uagb.ajax_nonce,
-			}
-
-			if ( button.hasClass( "updating-message" ) ) {
-				return
-			}
-
-			$( button ).addClass("updating-message")
-
-			UAGBAjaxQueue.add({
-				url: ajaxurl,
-				type: "POST",
-				data: data,
-				success: function(data){
-					console.log(data);
-					location.reload();
-				}
-			})
-
-		},
-
-		_fileReGeneration: function( e ) {
-
+		_betaUpdates( e ) {
 			e.preventDefault();
 
-			var button = $( this );
+			const button = $( this ),
+				value = button.data( 'value' );
 
-			var data = {
-				action: "uagb_file_regeneration",
+			const data = {
+				value,
+				action: 'uagb_beta_updates',
 				nonce: uagb.ajax_nonce,
+			};
+
+			if ( button.hasClass( 'updating-message' ) ) {
+				return;
 			}
 
-			if ( button.hasClass( "updating-message" ) ) {
-				return
-			}
+			$( button ).addClass( 'updating-message' );
 
-			$( button ).addClass("updating-message")
-
-			UAGBAjaxQueue.add({
+			UAGBAjaxQueue.add( {
 				url: ajaxurl,
-				type: "POST",
-				data: data,
-				success: function(data){
-					console.log(data);
+				type: 'POST',
+				data,
+				success( data ) {
+					console.log( data );
 					location.reload();
-				}
-			})
+				},
+			} );
+		},
+		_fileGeneration( e ) {
+			e.preventDefault();
+			const button = $( this ),
+				value = button.data( 'value' );
 
+			const data = {
+				value,
+				action: 'uagb_file_generation',
+				nonce: uagb.ajax_nonce,
+			};
+
+			if ( button.hasClass( 'updating-message' ) ) {
+				return;
+			}
+
+			$( button ).addClass( 'updating-message' );
+
+			UAGBAjaxQueue.add( {
+				url: ajaxurl,
+				type: 'POST',
+				data,
+				success( data ) {
+					console.log( data );
+					location.reload();
+				},
+			} );
+		},
+
+		_fileReGeneration( e ) {
+			e.preventDefault();
+
+			const button = $( this );
+
+			const data = {
+				action: 'uagb_file_regeneration',
+				nonce: uagb.ajax_nonce,
+			};
+
+			if ( button.hasClass( 'updating-message' ) ) {
+				return;
+			}
+
+			$( button ).addClass( 'updating-message' );
+
+			UAGBAjaxQueue.add( {
+				url: ajaxurl,
+				type: 'POST',
+				data,
+				success( data ) {
+					console.log( data );
+					location.reload();
+				},
+			} );
 		},
 
 		/**
 		 * Activate All Widgets.
+		 *
+		 * @param e
 		 */
-		_bulk_activate_widgets: function( e ) {
-			var button = $( this )
+		_bulk_activate_widgets( e ) {
+			const button = $( this );
 
-			var data = {
-				action: "uagb_bulk_activate_widgets",
+			const data = {
+				action: 'uagb_bulk_activate_widgets',
 				nonce: uagb.ajax_nonce,
+			};
+
+			if ( button.hasClass( 'updating-message' ) ) {
+				return;
 			}
 
-			if ( button.hasClass( "updating-message" ) ) {
-				return
-			}
+			$( button ).addClass( 'updating-message' );
 
-			$( button ).addClass("updating-message")
-
-			UAGBAjaxQueue.add({
+			UAGBAjaxQueue.add( {
 				url: ajaxurl,
-				type: "POST",
-				data: data,
-				success: function(data){
-
-					console.log( data )
+				type: 'POST',
+				data,
+				success( data ) {
+					console.log( data );
 
 					// Bulk add or remove classes to all modules.
-					$(".uagb-widget-list").children( "li" ).addClass( "activate" ).removeClass( "deactivate" )
-					$(".uagb-widget-list").children( "li" ).find(".uagb-activate-widget")
-						.addClass("uagb-deactivate-widget")
-						.text(uagb.deactivate)
-						.removeClass("uagb-activate-widget")
-					$( button ).removeClass("updating-message")
-				}
-			})
-			e.preventDefault()
+					$( '.uagb-widget-list' )
+						.children( 'li' )
+						.addClass( 'activate' )
+						.removeClass( 'deactivate' );
+					$( '.uagb-widget-list' )
+						.children( 'li' )
+						.find( '.uagb-activate-widget' )
+						.addClass( 'uagb-deactivate-widget' )
+						.text( uagb.deactivate )
+						.removeClass( 'uagb-activate-widget' );
+					$( button ).removeClass( 'updating-message' );
+				},
+			} );
+			e.preventDefault();
 		},
 
 		/**
 		 * Deactivate All Widgets.
+		 *
+		 * @param e
 		 */
-		_bulk_deactivate_widgets: function( e ) {
-			var button = $( this )
+		_bulk_deactivate_widgets( e ) {
+			const button = $( this );
 
-			var data = {
-				action: "uagb_bulk_deactivate_widgets",
+			const data = {
+				action: 'uagb_bulk_deactivate_widgets',
 				nonce: uagb.ajax_nonce,
-			}
+			};
 
-			if ( button.hasClass( "updating-message" ) ) {
-				return
+			if ( button.hasClass( 'updating-message' ) ) {
+				return;
 			}
-			$( button ).addClass("updating-message")
+			$( button ).addClass( 'updating-message' );
 
-			UAGBAjaxQueue.add({
+			UAGBAjaxQueue.add( {
 				url: ajaxurl,
-				type: "POST",
-				data: data,
-				success: function(data){
-
-					console.log( data )
+				type: 'POST',
+				data,
+				success( data ) {
+					console.log( data );
 					// Bulk add or remove classes to all modules.
-					$(".uagb-widget-list").children( "li" ).addClass( "deactivate" ).removeClass( "activate" )
-					$(".uagb-widget-list").children( "li" ).find(".uagb-deactivate-widget")
-						.addClass("uagb-activate-widget")
-						.text(uagb.activate)
-						.removeClass("uagb-deactivate-widget")
-					$( button ).removeClass("updating-message")
-				}
-			})
-			e.preventDefault()
+					$( '.uagb-widget-list' )
+						.children( 'li' )
+						.addClass( 'deactivate' )
+						.removeClass( 'activate' );
+					$( '.uagb-widget-list' )
+						.children( 'li' )
+						.find( '.uagb-deactivate-widget' )
+						.addClass( 'uagb-activate-widget' )
+						.text( uagb.activate )
+						.removeClass( 'uagb-deactivate-widget' );
+					$( button ).removeClass( 'updating-message' );
+				},
+			} );
+			e.preventDefault();
 		},
 
 		/**
 		 * Activate Module.
+		 *
+		 * @param e
 		 */
-		_activate_widget: function( e ) {
-			var button = $( this ),
-				id     = button.parents("li").attr("id")
+		_activate_widget( e ) {
+			const button = $( this ),
+				id = button.parents( 'li' ).attr( 'id' );
 
-			var data = {
-				block_id : id,
-				action: "uagb_activate_widget",
+			const data = {
+				block_id: id,
+				action: 'uagb_activate_widget',
 				nonce: uagb.ajax_nonce,
+			};
+
+			if ( button.hasClass( 'updating-message' ) ) {
+				return;
 			}
 
-			if ( button.hasClass( "updating-message" ) ) {
-				return
-			}
+			$( button ).addClass( 'updating-message' );
 
-			$( button ).addClass("updating-message")
-
-			UAGBAjaxQueue.add({
+			UAGBAjaxQueue.add( {
 				url: ajaxurl,
-				type: "POST",
-				data: data,
-				success: function(data){
-					
+				type: 'POST',
+				data,
+				success( data ) {
 					if ( data.success ) {
 						// Add active class.
-						$( "#" + id ).addClass("activate").removeClass( "deactivate" )
+						$( '#' + id )
+							.addClass( 'activate' )
+							.removeClass( 'deactivate' );
 						// Change button classes & text.
-						$( "#" + id ).find(".uagb-activate-widget")
-							.addClass("uagb-deactivate-widget")
-							.text(uagb.deactivate)
-							.removeClass("uagb-activate-widget")
-							.removeClass("updating-message")
+						$( '#' + id )
+							.find( '.uagb-activate-widget' )
+							.addClass( 'uagb-deactivate-widget' )
+							.text( uagb.deactivate )
+							.removeClass( 'uagb-activate-widget' )
+							.removeClass( 'updating-message' );
 					} else {
-						$( "#" + id ).find(".uagb-activate-widget").removeClass("updating-message")
+						$( '#' + id )
+							.find( '.uagb-activate-widget' )
+							.removeClass( 'updating-message' );
 					}
-				}
-			})
+				},
+			} );
 
-			e.preventDefault()
+			e.preventDefault();
 		},
 
 		/**
 		 * Deactivate Module.
+		 *
+		 * @param e
 		 */
-		_deactivate_widget: function( e ) {
-			var button = $( this ),
-				id     = button.parents("li").attr("id")
-			var data = {
+		_deactivate_widget( e ) {
+			const button = $( this ),
+				id = button.parents( 'li' ).attr( 'id' );
+			const data = {
 				block_id: id,
-				action: "uagb_deactivate_widget",
+				action: 'uagb_deactivate_widget',
 				nonce: uagb.ajax_nonce,
+			};
+
+			if ( button.hasClass( 'updating-message' ) ) {
+				return;
 			}
 
-			if ( button.hasClass( "updating-message" ) ) {
-				return
-			}
-			
-			$( button ).addClass("updating-message")
+			$( button ).addClass( 'updating-message' );
 
-			UAGBAjaxQueue.add({
+			UAGBAjaxQueue.add( {
 				url: ajaxurl,
-				type: "POST",
-				data: data,
-				success: function(data){
-
+				type: 'POST',
+				data,
+				success( data ) {
 					if ( data.success ) {
 						// Remove active class.
-						$( "#" + id ).addClass( "deactivate" ).removeClass("activate")
+						$( '#' + id )
+							.addClass( 'deactivate' )
+							.removeClass( 'activate' );
 
 						// Change button classes & text.
-						$( "#" + id ).find(".uagb-deactivate-widget")
-							.addClass("uagb-activate-widget")
-							.text(uagb.activate)
-							.removeClass("uagb-deactivate-widget")
-							.removeClass("updating-message")
+						$( '#' + id )
+							.find( '.uagb-deactivate-widget' )
+							.addClass( 'uagb-activate-widget' )
+							.text( uagb.activate )
+							.removeClass( 'uagb-deactivate-widget' )
+							.removeClass( 'updating-message' );
 					} else {
-						$( "#" + id ).find(".uagb-deactivate-widget").removeClass("updating-message")
+						$( '#' + id )
+							.find( '.uagb-deactivate-widget' )
+							.removeClass( 'updating-message' );
 					}
-				}
-			})
-			
-			e.preventDefault()
+				},
+			} );
+
+			e.preventDefault();
 		},
 
 		/**
 		 * Activate Success
+		 *
+		 * @param event
+		 * @param response
 		 */
-		_activateTheme: function( event, response ) {
+		_activateTheme( event, response ) {
+			event.preventDefault();
 
-			event.preventDefault()
+			const $button = jQuery( event.target );
 
-			var $button = jQuery(event.target)
+			const $slug = $button.data( 'slug' );
 
-			var $slug = $button.data("slug")
-
-			$button.text( uagb.activating_text ).addClass( "updating-message" )
+			$button.text( uagb.activating_text ).addClass( 'updating-message' );
 
 			// WordPress adds "Activate" button after waiting for 1000ms. So we will run our activation after that.
-			setTimeout( function() {
-				
-				$.ajax({
+			setTimeout( function () {
+				$.ajax( {
 					url: uagb.ajax_url,
-					type: "POST",
+					type: 'POST',
 					data: {
-						"action" : "uag-theme-activate",
-						"slug"   : $slug,
-						"nonce"  : uagb.ajax_nonce,
+						action: 'uag-theme-activate',
+						slug: $slug,
+						nonce: uagb.ajax_nonce,
 					},
-				})
-					.done(function (result) {
-					
-						if( result.success ) {
-							$button.text( uagb.activated_text ).removeClass( "updating-message" )
+				} ).done( function ( result ) {
+					if ( result.success ) {
+						$button
+							.text( uagb.activated_text )
+							.removeClass( 'updating-message' );
 
-							setTimeout( function() {
-								$button.parents( ".uagb-sidebar" ).find( ".uagb-astra-sidebar" ).slideUp()
-							}, 1200 )
-						}
-
-					})
-
-			}, 1200 )
-
+						setTimeout( function () {
+							$button
+								.parents( '.uagb-sidebar' )
+								.find( '.uagb-astra-sidebar' )
+								.slideUp();
+						}, 1200 );
+					}
+				} );
+			}, 1200 );
 		},
 
 		/**
 		 * Install Now
+		 *
+		 * @param event
 		 */
-		_installNow: function(event)
-		{
-			event.preventDefault()
+		_installNow( event ) {
+			event.preventDefault();
 
-			var $button 	= jQuery( event.target ),
-				$document   = jQuery(document)
+			const $button = jQuery( event.target ),
+				$document = jQuery( document );
 
-			$button.text( uagb.installing_text ).addClass( "updating-message" )
+			$button.text( uagb.installing_text ).addClass( 'updating-message' );
 
-			if ( wp.updates.shouldRequestFilesystemCredentials && ! wp.updates.ajaxLocked ) {
-				wp.updates.requestFilesystemCredentials( event )
+			if (
+				wp.updates.shouldRequestFilesystemCredentials &&
+				! wp.updates.ajaxLocked
+			) {
+				wp.updates.requestFilesystemCredentials( event );
 
-				$document.on( "credential-modal-cancel", function() {
-					$button.text( wp.updates.l10n.installNow )
-					wp.a11y.speak( wp.updates.l10n.updateCancel, "polite" )
-				} )
+				$document.on( 'credential-modal-cancel', function () {
+					$button.text( wp.updates.l10n.installNow );
+					wp.a11y.speak( wp.updates.l10n.updateCancel, 'polite' );
+				} );
 			}
-			
-			wp.updates.installTheme( {
-				slug:    $button.data( "slug" )
-			}).then(function(e){
-				$button.removeClass( "uag-install-theme updating-message" ).addClass( "uag-activate-theme" ).text( "Activate Astra Now!" )
-			})
+
+			wp.updates
+				.installTheme( {
+					slug: $button.data( 'slug' ),
+				} )
+				.then( function ( e ) {
+					$button
+						.removeClass( 'uag-install-theme updating-message' )
+						.addClass( 'uag-activate-theme' )
+						.text( 'Activate Astra Now!' );
+				} );
 		},
+	};
 
-	}
-
-	$( document ).ready(function() {
-		UAGBAdmin.init()
-	})
-
-
-} )( jQuery )
+	$( document ).ready( function () {
+		UAGBAdmin.init();
+	} );
+} )( jQuery );

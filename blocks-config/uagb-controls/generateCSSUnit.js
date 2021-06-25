@@ -1,12 +1,11 @@
-function generateCSSUnit ( value, unit ) {
+function generateCSSUnit( value, unit ) {
+	let css = '';
 
-	var css = ""
-
-	if( typeof value != "undefined" ) {
-		css += value + unit
+	if ( typeof value !== 'undefined' ) {
+		css += value + unit;
 	}
-	
-	return css
+
+	return css;
 }
 
-export default generateCSSUnit
+export default generateCSSUnit;

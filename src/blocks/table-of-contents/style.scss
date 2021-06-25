@@ -12,9 +12,10 @@
 
 	ul.uagb-toc__list,
 	ol.uagb-toc__list {
-		margin-left:2.2em;
-		padding-left: 0px;
-		margin-bottom:0;
+		padding-left: 0;
+		margin-bottom: 0;
+		margin-left: 2.2em;
+
 		li {
 			margin: 0;
 		}
@@ -51,8 +52,8 @@
 	}
 
 	.uag-toc__collapsible-wrap {
-		margin-left: 10px;
 		display: flex;
+		margin-left: 10px;
 		cursor: pointer;
 	}
 
@@ -65,25 +66,28 @@ ol.uagb-toc__list li.uagb-toc__list ul,
 ol.uagb-toc__list ul.uagb-toc__list ul {
 	list-style-type: circle;
 }
+
 ol.uagb-toc__list > ul,
 ol.uagb-toc__list > li {
 	list-style-type: disc;
 }
+
 .uagb-toc__scroll-top {
-	display: none;
 	position: fixed;
-	bottom: 50px;
 	right: 50px;
+	bottom: 50px;
+	display: none;
 	padding: 10px;
 	background: #ccd0d4;
 	cursor: pointer;
 	font-size: 1rem;
 	line-height: 1.85714285714286;
+
 	svg {
-		margin-left: 0px;
-		transform: translate(0, -20%) rotate(180deg);
 		width: 1.6em;
-		height: .6em;
+		height: 0.6em;
+		margin-left: 0;
+		transform: translate(0, -20%) rotate(180deg);
 		fill: currentColor;
 	}
 

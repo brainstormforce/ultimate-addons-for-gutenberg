@@ -1,27 +1,16 @@
-import renderSVG from "@Controls/renderIcon"
+import renderSVG from '@Controls/renderIcon';
 
-const {
-	RichText,
-} = wp.blockEditor
+const Icon = ( props ) => {
+	const { attributes } = props;
 
-import { __ } from '@wordpress/i18n';
-
-class Icon extends React.Component {
-
-	render() {
-
-		const { attributes } = this.props
-
-		return (
-			<div className="uagb-ifb-image-icon-content uagb-ifb-imgicon-wrap" >
-				<div className="uagb-ifb-icon-wrap">
-					<span className="uagb-ifb-icon">
-						{ renderSVG(attributes.icon) }
-					</span>
-				</div>
+	return (
+		<div className="uagb-ifb-image-icon-content uagb-ifb-imgicon-wrap">
+			<div className="uagb-ifb-icon-wrap">
+				<span className="uagb-ifb-icon">
+					{ renderSVG( attributes.icon ) }
+				</span>
 			</div>
-		)
-	}
-}
-
-export default Icon
+		</div>
+	);
+};
+export default Icon;

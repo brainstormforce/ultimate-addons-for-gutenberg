@@ -1,8 +1,14 @@
 **/*.min.js
 **/node_modules/**
 **/vendor/**
+admin/bsf-analytics/
+assets/css/blocks/
+lib/
+dist/
 build
 coverage
 cypress
 node_modules
 vendor
+*.css
+*.scss

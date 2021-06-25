@@ -2,30 +2,27 @@
  * BLOCK: Lottie
  */
 
-import "./editor.scss"
-import edit from "./edit"
-import UAGB_Block_Icons from "@Controls/block-icons"
+import edit from './edit';
+import UAGB_Block_Icons from '@Controls/block-icons';
 
 import { __ } from '@wordpress/i18n';
 
-const {
-	registerBlockType,
-} = wp.blocks
+import { registerBlockType } from '@wordpress/blocks';
 
-registerBlockType( "uagb/lottie", {
-	title: uagb_blocks_info.blocks["uagb/lottie"]["title"],
-	description: uagb_blocks_info.blocks["uagb/lottie"]["description"],
+registerBlockType( 'uagb/lottie', {
+	title: uagb_blocks_info.blocks[ 'uagb/lottie' ].title,
+	description: uagb_blocks_info.blocks[ 'uagb/lottie' ].description,
 	icon: UAGB_Block_Icons.lottie,
 	keywords: [
-		__( "lottie", 'ultimate-addons-for-gutenberg' ),
-		__( "animation", 'ultimate-addons-for-gutenberg' ),
-		__( "uag", 'ultimate-addons-for-gutenberg' ),
+		__( 'lottie', 'ultimate-addons-for-gutenberg' ),
+		__( 'animation', 'ultimate-addons-for-gutenberg' ),
+		__( 'uag', 'ultimate-addons-for-gutenberg' ),
 	],
-	example:{},
+	example: {},
 	category: uagb_blocks_info.category,
 	edit,
 	// Render via PHP
 	save() {
-		return null
+		return null;
 	},
-} )
+} );

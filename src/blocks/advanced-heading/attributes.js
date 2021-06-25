@@ -1,146 +1,146 @@
 const attributes = {
 	block_id: {
-		type: "string"
+		type: 'string',
 	},
 	classMigrate: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	headingTitle: {
-		source: "html",
-		selector: "h1,h2,h3,h4,h5,h6",
+		source: 'html',
+		selector: 'h1,h2,h3,h4,h5,h6',
 	},
 	headingId: {
-		type: "string",				
+		type: 'string',
 	},
 	headingDesc: {
-		source: "html",
-		selector: "p",
-		default: "",
+		source: 'html',
+		selector: 'p',
+		default: '',
 	},
 	headingAlign: {
-		type: "string",
-		default: "center",
+		type: 'string',
+		default: 'center',
 	},
 	headingColor: {
-		type: "string",
+		type: 'string',
 	},
 	subHeadingColor: {
-		type: "string",
+		type: 'string',
 	},
 	separatorColor: {
-		type: "string",
+		type: 'string',
 	},
 	headingTag: {
-		type: "string",
-		default: "h2"
+		type: 'string',
+		default: 'h2',
 	},
 	level: {
-		type: "number",
-		default: 2
+		type: 'number',
+		default: 2,
 	},
 	seperatorStyle: {
-		type: "string",
-		default: "solid",
+		type: 'string',
+		default: 'solid',
 	},
 	separatorHeight: {
-		type: "number"
+		type: 'number',
 	},
 	separatorWidth: {
-		type: "number"
+		type: 'number',
 	},
-	separatorWidthType : {
-		type: "string",
-		default: "%"
+	separatorWidthType: {
+		type: 'string',
+		default: '%',
 	},
 	headSpace: {
-		type: "number",
-		default: 15
+		type: 'number',
+		default: 15,
 	},
 	headFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	headFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	headFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	headFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	headLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	headFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	headFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	headFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	headLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	headLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	headLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadFontFamily: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	subHeadFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	subHeadFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	subHeadFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	subHeadFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	subHeadLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	separatorSpace: {
-		type: "number",
-		default: 15
+		type: 'number',
+		default: 15,
 	},
 	headLoadGoogleFonts: {
-		type: "boolean",
-		default: false	
+		type: 'boolean',
+		default: false,
 	},
 	subHeadLoadGoogleFonts: {
-		type: "boolean",
-		default: false	
-	}
-}
+		type: 'boolean',
+		default: false,
+	},
+};
 
-export default attributes
+export default attributes;

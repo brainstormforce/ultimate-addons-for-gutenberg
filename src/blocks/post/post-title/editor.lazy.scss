@@ -1,0 +1,42 @@
+.uagb-post__title {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	word-break: break-word;
+}
+
+.uagb-post__title a {
+	box-shadow: none;
+	color: inherit;
+	text-decoration: none;
+	transition: 0.3s ease;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:focus {
+		text-decoration: none;
+	}
+
+	&:active {
+		text-decoration: none;
+	}
+}
+
+.uagb-post__title a,
+.uagb-post__title a:focus,
+.uagb-post__title a:active {
+	color: inherit;
+	font-size: inherit;
+}
+
+.uagb-post__image-position-background {
+
+	.uagb-post__text {
+		position: relative;
+		z-index: 10;
+		width: 100%;
+		opacity: 1;
+		overflow: hidden;
+	}
+}

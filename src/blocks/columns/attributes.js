@@ -4,307 +4,306 @@
 
 const attributes = {
 	block_id: {
-		type: "string",
+		type: 'string',
 	},
 	classMigrate: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	columns: {
-		type: "number",
-		default: 2
+		type: 'number',
+		default: 2,
 	},
 	align: {
-		type: "string"
+		type: 'string',
 	},
 	vAlign: {
-		type: "string"
+		type: 'string',
 	},
 	stack: {
-		type: "string",
-		default: "mobile"
+		type: 'string',
+		default: 'mobile',
 	},
 	columnGap: {
-		type: "string",
-		default: "10"
+		type: 'string',
+		default: '10',
 	},
 	topPadding: {
-		type: "number",
-		default: 20
+		type: 'number',
+		default: 20,
 	},
 	bottomPadding: {
-		type: "number",
-		default: 20
+		type: 'number',
+		default: 20,
 	},
 	leftPadding: {
-		type: "number",
-		default: 20
+		type: 'number',
+		default: 20,
 	},
 	rightPadding: {
-		type: "number",
-		default: 20
+		type: 'number',
+		default: 20,
 	},
 	topPaddingTablet: {
-		type: "number"
+		type: 'number',
 	},
 	bottomPaddingTablet: {
-		type: "number"
+		type: 'number',
 	},
 	leftPaddingTablet: {
-		type: "number"
+		type: 'number',
 	},
 	rightPaddingTablet: {
-		type: "number"
+		type: 'number',
 	},
 	topPaddingMobile: {
-		type: "number"
+		type: 'number',
 	},
 	bottomPaddingMobile: {
-		type: "number"
+		type: 'number',
 	},
 	leftPaddingMobile: {
-		type: "number"
+		type: 'number',
 	},
 	rightPaddingMobile: {
-		type: "number"
+		type: 'number',
 	},
 	topMargin: {
-		type: "number",
-		default: 0
+		type: 'number',
+		default: 0,
 	},
 	bottomMargin: {
-		type: "number",
-		default: 0
+		type: 'number',
+		default: 0,
 	},
 	topMarginMobile: {
-		type: "number"
+		type: 'number',
 	},
 	bottomMarginMobile: {
-		type: "number"
+		type: 'number',
 	},
 	topMarginTablet: {
-		type: "number"
+		type: 'number',
 	},
 	bottomMarginTablet: {
-		type: "number"
+		type: 'number',
 	},
 	contentWidth: {
-		type: "string",
-		default: "theme"
+		type: 'string',
+		default: 'theme',
 	},
 	width: {
-		type: "number",
-		default: 900
+		type: 'number',
+		default: 900,
 	},
 	widthType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	tag: {
-		type: "string",
-		default: "section"
+		type: 'string',
+		default: 'section',
 	},
 	backgroundType: {
-		type: "string",
+		type: 'string',
 	},
 	backgroundImage: {
-		type: "object",
+		type: 'object',
 	},
 	backgroundPosition: {
-		type: "string",
-		default: "center-center"
+		type: 'string',
+		default: 'center-center',
 	},
 	backgroundSize: {
-		type: "string",
-		default: "cover"
+		type: 'string',
+		default: 'cover',
 	},
 	backgroundRepeat: {
-		type: "string",
-		default: "no-repeat"
+		type: 'string',
+		default: 'no-repeat',
 	},
 	backgroundAttachment: {
-		type: "string",
-		default: "scroll"
+		type: 'string',
+		default: 'scroll',
 	},
 	backgroundVideo: {
-		type: "object",
+		type: 'object',
 	},
 	backgroundColor: {
-		type: "string",
+		type: 'string',
 	},
 	gradientColor1: {
-		type: "string",
+		type: 'string',
 	},
 	gradientColor2: {
-		type: "string",
+		type: 'string',
 	},
 	gradientType: {
-		type: "string",
-		default: "linear"
+		type: 'string',
+		default: 'linear',
 	},
 	gradientLocation1: {
-		type: "number",
-		default: 0
+		type: 'number',
+		default: 0,
 	},
 	gradientLocation2: {
-		type: "number",
-		default: 100
+		type: 'number',
+		default: 100,
 	},
 	gradientAngle: {
-		type: "number",
-		default: 0
+		type: 'number',
+		default: 0,
 	},
 	gradientPosition: {
-		type: "string",
-		default: "center center"
+		type: 'string',
+		default: 'center center',
 	},
 	backgroundOpacity: {
-		type: "number",
+		type: 'number',
 	},
 	backgroundVideoOpacity: {
-		type: "number",
-		default: 50
+		type: 'number',
+		default: 50,
 	},
 	backgroundVideoColor: {
-		type: "string",
+		type: 'string',
 	},
 	backgroundImageColor: {
-		type: "string"
+		type: 'string',
 	},
-	borderStyle : {
-		type: "string",
-		default: "none"
+	borderStyle: {
+		type: 'string',
+		default: 'none',
 	},
-	borderWidth : {
-		type: "number",
-		default: 1
+	borderWidth: {
+		type: 'number',
+		default: 1,
 	},
-	borderRadius : {
-		type: "number"
+	borderRadius: {
+		type: 'number',
 	},
-	borderColor : {
-		type: "string"
+	borderColor: {
+		type: 'string',
 	},
-	bottomType : {
-		type: "string",
-		default : "none"
+	bottomType: {
+		type: 'string',
+		default: 'none',
 	},
-	bottomColor : {
-		type: "string"
+	bottomColor: {
+		type: 'string',
 	},
-	bottomHeight : {
-		type: "number"
+	bottomHeight: {
+		type: 'number',
 	},
-	bottomHeightTablet : {
-		type: "number"
+	bottomHeightTablet: {
+		type: 'number',
 	},
-	bottomHeightMobile : {
-		type: "number"
+	bottomHeightMobile: {
+		type: 'number',
 	},
-	bottomWidth : {
-		type: "number"
+	bottomWidth: {
+		type: 'number',
 	},
-	topType : {
-		type: "string",
-		default : "none"
+	topType: {
+		type: 'string',
+		default: 'none',
 	},
-	topColor : {
-		type: "string"
+	topColor: {
+		type: 'string',
 	},
-	topHeight : {
-		type: "number"
+	topHeight: {
+		type: 'number',
 	},
-	topHeightTablet : {
-		type: "number"
+	topHeightTablet: {
+		type: 'number',
 	},
-	topHeightMobile : {
-		type: "number"
+	topHeightMobile: {
+		type: 'number',
 	},
-	topWidth : {
-		type: "number"
+	topWidth: {
+		type: 'number',
 	},
 	topFlip: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	bottomFlip: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	reverseTablet: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	reverseMobile: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
-	topDividerOpacity : {
-		type: "number",
-		default: 100
+	topDividerOpacity: {
+		type: 'number',
+		default: 100,
 	},
-	bottomDividerOpacity : {
-		type: "number",
-		default: 100
+	bottomDividerOpacity: {
+		type: 'number',
+		default: 100,
 	},
 	topContentAboveShape: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	bottomContentAboveShape: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	mobileMarginType: {
-		type: "string",
-		default: 'px'
+		type: 'string',
+		default: 'px',
 	},
 	tabletMarginType: {
-		type: "string",
-		default: 'px'
+		type: 'string',
+		default: 'px',
 	},
 	desktopMarginType: {
-		type: "string",
-		default: 'px'
+		type: 'string',
+		default: 'px',
 	},
 	mobilePaddingType: {
-		type: "string",
-		default: 'px'
+		type: 'string',
+		default: 'px',
 	},
 	tabletPaddingType: {
-		type: "string",
-		default: 'px'
+		type: 'string',
+		default: 'px',
 	},
 	desktopPaddingType: {
-		type: "string",
-		default: 'px'
+		type: 'string',
+		default: 'px',
 	},
 	boxShadowColor: {
-		type: "string"
+		type: 'string',
 	},
-	boxShadowHOffset : {
-		type: "number",
-		default: 0
+	boxShadowHOffset: {
+		type: 'number',
+		default: 0,
 	},
-	boxShadowVOffset : {
-		type: "number",
-		default: 0
+	boxShadowVOffset: {
+		type: 'number',
+		default: 0,
 	},
-	boxShadowBlur : {
-		type: "number"
+	boxShadowBlur: {
+		type: 'number',
 	},
-	boxShadowSpread : {
-		type: "number"
+	boxShadowSpread: {
+		type: 'number',
 	},
 	boxShadowPosition: {
-		type: "string",
-		default: "outset"
+		type: 'string',
+		default: 'outset',
 	},
 	gradientValue: {
-		type: "string",
-		default:"",
+		type: 'string',
+		default: '',
 	},
+};
 
-}
-
-export default attributes
+export default attributes;

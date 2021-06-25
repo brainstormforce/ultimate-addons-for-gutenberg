@@ -27,7 +27,6 @@
     "@wordpress/element": "^3.1.1",
     "@wordpress/icons": "^2.10.1",
     "classnames": "^2.2.6",
-    "memize": "^1.0.5",
     "prop-types": "^15.6.2",
     "re-resizable": "^4.7.1",
     "react-color": "^2.18.0",
@@ -42,8 +41,9 @@
     "striptags": "^3.2.0"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@wordpress/eslint-plugin": "^7.1.0",
-    "@wordpress/scripts": "^12.1.1",
+    "@wordpress/scripts": "^16.1.1",
     "grunt": "^1.4.0",
     "grunt-bumpup": "^0.6.3",
     "grunt-contrib-clean": "^2.0.0",
@@ -55,16 +55,19 @@
     "install": "^0.13.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^6.0.6",
+    "style-loader": "^2.0.0",
     "webpack": "^4.46.0"
   },
   "scripts": {
     "start": "wp-scripts start",
     "build": "wp-scripts build && node scripts/generate-assets-files.js",
+    "build:assets": "wp-scripts build && node scripts/generate-assets-files.js",
     "build:placeholder": "node scripts/generate-blocks-placeholder.js",
     "format:js": "wp-scripts format-js",
     "lint:js": "wp-scripts lint-js",
     "lint:js:fix": "wp-scripts lint-js --fix",
     "lint:css": "wp-scripts lint-style",
+    "lint:css:fix": "wp-scripts lint-style --fix",
     "lint:pkg-json": "wp-scripts lint-pkg-json",
     "check-engines": "wp-scripts check-engines",
     "makepot": "wp i18n make-pot . --skip-audit --exclude='.dev,.github,.wordpress-org,docs,src,node_modules,vendor,wordpress,block-icons.js,blocks-deactivate.js' languages/ultimate-addons-for-gutenberg.pot",

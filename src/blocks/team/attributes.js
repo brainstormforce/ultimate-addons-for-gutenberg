@@ -3,282 +3,283 @@
  */
 
 const attributes = {
-	block_id :{
-		type : "string"
+	block_id: {
+		type: 'string',
 	},
 	classMigrate: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	align: {
-		type: "string",
-		default: "center",
+		type: 'string',
+		default: 'center',
 	},
-	tag :{
-		type: "string",
-		default: "h3"
+	tag: {
+		type: 'string',
+		default: 'h3',
 	},
 	title: {
-		selector: "h1,h2,h3,h4,h5,h6",
-		default: "John Doe",
+		selector: 'h1,h2,h3,h4,h5,h6',
+		default: 'John Doe',
 	},
 	prefix: {
-		selector: "div.uagb-team__prefix",
-		default: "Designation",
+		selector: 'div.uagb-team__prefix',
+		default: 'Designation',
 	},
 	description_text: {
-		selector: "p",
-		default: "Click here to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+		selector: 'p',
+		default:
+			'Click here to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
 	},
 	titleColor: {
-		type: "string",
+		type: 'string',
 	},
 	prefixColor: {
-		type: "string",
-		default: "#888888"
+		type: 'string',
+		default: '#888888',
 	},
 	descColor: {
-		type: "string",
+		type: 'string',
 	},
 	socialColor: {
-		type: "string",
-		default: "#333"
+		type: 'string',
+		default: '#333',
 	},
 	socialHoverColor: {
-		type: "string"
+		type: 'string',
 	},
 	titleFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	titleFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	titleFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	titleFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	titleLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	titleFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	titleFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	titleFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	titleLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	titleLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	titleLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	prefixFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	prefixFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	prefixFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	prefixFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	prefixLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	prefixFontSize: {
-		type: "number",
-		default: 15	
+		type: 'number',
+		default: 15,
 	},
 	prefixFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	prefixFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	prefixLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	prefixLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	prefixLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	descFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	descFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	descFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	descFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	descLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	descFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	descFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	descFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	descLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	descLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	descLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	socialFontSize: {
-		type: "number",
-		default: 20
+		type: 'number',
+		default: 20,
 	},
 	socialFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	socialFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	socialFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	image: {
-		type: "object",
+		type: 'object',
 	},
 	imgStyle: {
-		type: "string",
-		default: "normal"
+		type: 'string',
+		default: 'normal',
 	},
 	imgPosition: {
-		type: "string",
-		default: "above"
+		type: 'string',
+		default: 'above',
 	},
-	imgAlign:{
-		type : "string",
-		default : "top"
+	imgAlign: {
+		type: 'string',
+		default: 'top',
 	},
-	imgSize:{
-		type: "string",
-		default: "thumbnail",
+	imgSize: {
+		type: 'string',
+		default: 'thumbnail',
 	},
-	imgWidth :{
-		type: "number",
+	imgWidth: {
+		type: 'number',
 		default: 120,
 	},
 	titleSpace: {
-		type: "number",
+		type: 'number',
 	},
 	prefixSpace: {
-		type: "number",
+		type: 'number',
 	},
-	descSpace :{
-		type: "number",
+	descSpace: {
+		type: 'number',
 		default: 10,
 	},
-	imgLeftMargin :{
-		type: "number",
+	imgLeftMargin: {
+		type: 'number',
 		default: 20,
 	},
-	imgRightMargin :{
-		type: "number",
+	imgRightMargin: {
+		type: 'number',
 		default: 20,
 	},
-	imgTopMargin :{
-		type: "number",
+	imgTopMargin: {
+		type: 'number',
 		default: 15,
 	},
-	imgBottomMargin :{
-		type: "number",
+	imgBottomMargin: {
+		type: 'number',
 		default: 15,
 	},
 	socialEnable: {
-		type: "boolean",
-		default: true
+		type: 'boolean',
+		default: true,
 	},
-	socialSpace :{
-		type: "number",
+	socialSpace: {
+		type: 'number',
 		default: 20,
 	},
 	socialTarget: {
-		type: "boolean",
+		type: 'boolean',
 		default: false,
 	},
-	twitterIcon : {
-		type : "string",
-		default : "fab fa-twitter"
+	twitterIcon: {
+		type: 'string',
+		default: 'fab fa-twitter',
 	},
-	fbIcon : {
-		type : "string",
-		default : "fab fa-facebook"
+	fbIcon: {
+		type: 'string',
+		default: 'fab fa-facebook',
 	},
-	linkedinIcon : {
-		type : "string",
-		default : "fab fa-linkedin"
+	linkedinIcon: {
+		type: 'string',
+		default: 'fab fa-linkedin',
 	},
-	pinIcon : {
-		type : "string",
-		default : "fab fa-pinterest"
+	pinIcon: {
+		type: 'string',
+		default: 'fab fa-pinterest',
 	},
 	twitterLink: {
-		type: "string",
-		default : "#"
+		type: 'string',
+		default: '#',
 	},
 	fbLink: {
-		type: "string",
-		default : "#"
+		type: 'string',
+		default: '#',
 	},
 	linkedinLink: {
-		type: "string",
-		default : "#"
+		type: 'string',
+		default: '#',
 	},
 	pinLink: {
-		type: "string",
-		default : "#"
+		type: 'string',
+		default: '#',
 	},
 	stack: {
-		type: "string",
-		default: "tablet"
+		type: 'string',
+		default: 'tablet',
 	},
 	titleLoadGoogleFonts: {
-		type: "boolean",
-		default: false	
+		type: 'boolean',
+		default: false,
 	},
 	prefixLoadGoogleFonts: {
-		type: "boolean",
-		default: false	
+		type: 'boolean',
+		default: false,
 	},
 	descLoadGoogleFonts: {
-		type: "boolean",
-		default: false	
-	}
-}
+		type: 'boolean',
+		default: false,
+	},
+};
 
-export default attributes
+export default attributes;

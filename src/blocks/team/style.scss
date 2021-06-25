@@ -4,24 +4,24 @@
  * CSS for both Frontend+Backend.
  */
 
- .uagb-team__outer-wrap {
+.uagb-team__outer-wrap {
 
 	.uagb-team__prefix {
+		color: #888;
 		font-size: 15px;
 		font-style: italic;
-		color: #888;
 	}
 
 	.uagb-team__image-wrap img {
 		display: inline;
+		width: inherit;
 		height: auto !important;
 		max-width: 100%;
-		width: inherit;
+		box-sizing: content-box;
+		border-radius: inherit;
 		-webkit-box-sizing: content-box;
 		-moz-box-sizing: content-box;
-		box-sizing: content-box;
 		-webkit-border-radius: inherit;
-		border-radius: inherit;
 	}
 
 	.uagb-team__image-wrap.uagb-team__image-crop-circle img {
@@ -35,32 +35,34 @@
 	}
 
 	.uagb-team__social-icon-wrap ul {
-		list-style: none;
 		display: flex;
+		list-style: none;
 	}
 
 	.uagb-team__social-icon a span,
-	.uagb-team__social-icon a span:before {
+	.uagb-team__social-icon a span::before {
+		width: inherit;
+		height: inherit;
 		color: inherit;
 		font-size: inherit;
-		height: inherit;
-		width: inherit;
 	}
 
 	.uagb-team__social-icon a {
-		font-size: 20px;
+		display: block;
 		width: 20px;
 		height: 20px;
 		color: #333;
-		display: block;
+		font-size: 20px;
 	}
+
 	.uagb-team__social-icon {
 		margin-right: 20px;
 		margin-left: 0;
 	}
+
 	.uagb-team__social-list {
-		margin: 0;
 		padding: 0;
+		margin: 0;
 	}
 }
 
@@ -97,14 +99,14 @@
 
 .uagb-team__image-position-left .uagb-team__social-icon-wrap ul {
 	justify-content: flex-start;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
 
 .uagb-team__image-position-right .uagb-team__social-icon-wrap ul {
 	justify-content: flex-end;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
 
 .uagb-team__image-position-left li {
@@ -132,6 +134,7 @@
 }
 
 @media only screen and (max-width: 976px) {
+
 	.uagb-team__stack-tablet,
 	.uagb-team__stack-tablet .uagb-team__content {
 		text-align: center;
@@ -142,8 +145,8 @@
 	}
 
 	.uagb-team__stack-tablet .uagb-team__image-wrap {
-		margin-left: auto !important;
 		margin-right: auto !important;
+		margin-left: auto !important;
 	}
 
 	.uagb-team__stack-tablet .uagb-team__social-icon-wrap ul {
@@ -152,6 +155,7 @@
 }
 
 @media screen and (max-width: 767px) {
+
 	.uagb-team__stack-mobile,
 	.uagb-team__stack-mobile .uagb-team__content {
 		text-align: center;
@@ -162,8 +166,8 @@
 	}
 
 	.uagb-team__stack-mobile .uagb-team__image-wrap {
-		margin-left: auto !important;
 		margin-right: auto !important;
+		margin-left: auto !important;
 	}
 
 	.uagb-team__stack-mobile .uagb-team__social-icon-wrap ul {

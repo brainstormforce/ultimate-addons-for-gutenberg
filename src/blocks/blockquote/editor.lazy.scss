@@ -1,0 +1,49 @@
+/**
+ * Editor styles for the admin
+ */
+
+#wpwrap .edit-post-visual-editor {
+
+	.uagb-blockquote__skin-quotation blockquote.uagb-blockquote {
+		vertical-align: baseline;
+		padding: 0;
+		margin: 0;
+		background: transparent;
+		border: 0 none;
+		outline: 0;
+		font-size: 100%;
+		font-style: normal;
+		quotes: none;
+	}
+
+	blockquote.uagb-blockquote {
+		padding: 0;
+		margin: 0;
+	}
+
+	.uagb-blockquote__skin-border blockquote {
+		padding-left: 10px;
+	}
+
+	.uagb-blockquote__content,
+	cite.uagb-blockquote__author,
+	.uagb-blockquote__author {
+		font-style: normal;
+	}
+
+	.uagb-blockquote a {
+		box-shadow: none;
+		color: #1da1f2;
+		text-decoration: none;
+		-webkit-box-shadow: none;
+	}
+
+	.uagb-blockquote__tweet-style-classic a.uagb-blockquote__tweet-button,
+	.uagb-blockquote__tweet-style-bubble a.uagb-blockquote__tweet-button {
+		color: #fff;
+	}
+
+	.uagb-blockquote__align-center a.uagb-blockquote__tweet-button {
+		margin: 0 auto;
+	}
+}

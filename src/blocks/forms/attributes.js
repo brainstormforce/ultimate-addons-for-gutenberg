@@ -1,388 +1,395 @@
 import { __ } from '@wordpress/i18n';
 
 const attributes = {
-	block_id : {
-		type: "string"
+	block_id: {
+		type: 'string',
 	},
-	submitButtonText : {
-		type: "string",
-		default: __( "Submit" , "ultimate-addons-for-gutenberg" )
+	submitButtonText: {
+		type: 'string',
+		default: __( 'Submit', 'ultimate-addons-for-gutenberg' ),
 	},
-	formLabel : {
-		type: "string",
-		default: __( "UAG Form" , "ultimate-addons-for-gutenberg" )
+	formLabel: {
+		type: 'string',
+		default: __( 'UAG Form', 'ultimate-addons-for-gutenberg' ),
 	},
-	buttonAlign : {
-		type: "string",
-		default:  'left' 
+	buttonAlign: {
+		type: 'string',
+		default: 'left',
 	},
-	confirmationType : {
-		type: "string",
-		default:  'message',
+	confirmationType: {
+		type: 'string',
+		default: 'message',
 	},
-	confirmationMessage : {
-		type: "string",
-		default: __( 'The form has been submitted successfully!' , 'ultimate-addons-for-gutenberg' )
+	confirmationMessage: {
+		type: 'string',
+		default: __(
+			'The form has been submitted successfully!',
+			'ultimate-addons-for-gutenberg'
+		),
 	},
-	failedMessage : {
-		type: "string",
-		default: __( 'There has been some error while submitting the form. Please verify all form fields again.' ,'ultimate-addons-for-gutenberg' )
+	failedMessage: {
+		type: 'string',
+		default: __(
+			'There has been some error while submitting the form. Please verify all form fields again.',
+			'ultimate-addons-for-gutenberg'
+		),
 	},
-	confirmationUrl : {
-		type: "string",
+	confirmationUrl: {
+		type: 'string',
 	},
-	sendAfterSubmitEmail : {
-		type: "boolean",
-		default:true,
-	},	
-	afterSubmitToEmail : {
-		type: "string",
-		default:'',
+	sendAfterSubmitEmail: {
+		type: 'boolean',
+		default: true,
 	},
-	afterSubmitCcEmail : {
-		type: "string",
-		default:'',
+	afterSubmitToEmail: {
+		type: 'string',
+		default: '',
 	},
-	afterSubmitBccEmail : {
-		type: "string",
-		default:'',
+	afterSubmitCcEmail: {
+		type: 'string',
+		default: '',
 	},
-	afterSubmitEmailSubject : {
-		type: "string",
-		default:__( "Form Submission" , "ultimate-addons-for-gutenberg" )
-	},	
-	submitColor : {
-		type: "string",
-		default:"#ffffff"
+	afterSubmitBccEmail: {
+		type: 'string',
+		default: '',
 	},
-	submitColorHover : {
-		type: "string",
-		default:"#000000"
+	afterSubmitEmailSubject: {
+		type: 'string',
+		default: __( 'Form Submission', 'ultimate-addons-for-gutenberg' ),
 	},
-	submitBgColor : {
-		type: "string",
-		default:"#000000"
+	submitColor: {
+		type: 'string',
+		default: '#ffffff',
 	},
-	submitBgColorHover : {
-		type: "string",
-		default:"#ffffff"
+	submitColorHover: {
+		type: 'string',
+		default: '#000000',
 	},
-	buttonSize : {
-		type: "string",
-		default: 'medium'
+	submitBgColor: {
+		type: 'string',
+		default: '#000000',
+	},
+	submitBgColorHover: {
+		type: 'string',
+		default: '#ffffff',
+	},
+	buttonSize: {
+		type: 'string',
+		default: 'medium',
 	},
 	// Border
-	submitborderStyle : {
-		type: "string",
+	submitborderStyle: {
+		type: 'string',
 	},
-	submitborderWidth : {
-		type: "number",
+	submitborderWidth: {
+		type: 'number',
 	},
-	submitborderRadius : {
-		type: "number",
-		default: 3
+	submitborderRadius: {
+		type: 'number',
+		default: 3,
 	},
-	submitborderColor : {
-		type: "string",
+	submitborderColor: {
+		type: 'string',
 	},
-	submitborderHoverColor : {
-		type: "string"
+	submitborderHoverColor: {
+		type: 'string',
 	},
-	hPaddingSubmit : {
-		type: "number",
+	hPaddingSubmit: {
+		type: 'number',
 	},
-	vPaddingSubmit : {
-		type: "number",
+	vPaddingSubmit: {
+		type: 'number',
 	},
 	// Submit text Typography
-	
+
 	submitTextloadGoogleFonts: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	submitTextFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	submitTextFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	submitTextFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	// submitText Font Size
 	submitTextFontSize: {
-		type: "number",
-		default: 15
+		type: 'number',
+		default: 15,
 	},
 	submitTextFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	submitTextFontSizeTablet: {
-		type: "number",
-		default: 15
+		type: 'number',
+		default: 15,
 	},
 	submitTextFontSizeMobile: {
-		type: "number",
-		default: 15
+		type: 'number',
+		default: 15,
 	},
 	// submitText Line Height
 	submitTextLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	submitTextLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	submitTextLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	submitTextLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 
 	// Label Font Family
-	
+
 	labelloadGoogleFonts: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	labelFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	labelFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	labelFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	// label Font Size
 	labelFontSize: {
-		type: "number",
-		default: 15
+		type: 'number',
+		default: 15,
 	},
 	labelFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	labelFontSizeTablet: {
-		type: "number",
-		default: 15
+		type: 'number',
+		default: 15,
 	},
 	labelFontSizeMobile: {
-		type: "number",
-		default: 15
+		type: 'number',
+		default: 15,
 	},
 	// label Line Height
 	labelLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	labelLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	labelLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	labelLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
-	
 
 	// Input Font Family
-	
+
 	inputloadGoogleFonts: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	inputFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	inputFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	inputFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	// input Font Size
 	inputFontSize: {
-		type: "number"
+		type: 'number',
 	},
 	inputFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	inputFontSizeTablet: {
-		type: "number",
-		default: 15
+		type: 'number',
+		default: 15,
 	},
 	inputFontSizeMobile: {
-		type: "number",
-		default: 15
+		type: 'number',
+		default: 15,
 	},
 	// input Line Height
 	inputLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	inputLineHeight: {
-		type: "number",
+		type: 'number',
 	},
-	toggleSize:{
-		type: "number",
-		default:15
+	toggleSize: {
+		type: 'number',
+		default: 15,
 	},
-	toggleWidthSize:{
-		type: "number",
-		default:0
+	toggleWidthSize: {
+		type: 'number',
+		default: 0,
 	},
-	toggleActiveColor:{
-		type: "string",
-		default:"#000000"
+	toggleActiveColor: {
+		type: 'string',
+		default: '#000000',
 	},
-	toggleHeightSize:{
-		type: "number",
-		default:0
+	toggleHeightSize: {
+		type: 'number',
+		default: 0,
 	},
 	inputLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	inputLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 
 	//Color.
-	labelColor : {
-		type: "string",
-		default:"#000000"
+	labelColor: {
+		type: 'string',
+		default: '#000000',
 	},
-	inputColor : {
-		type: "string",
-		default:"#000000"
+	inputColor: {
+		type: 'string',
+		default: '#000000',
 	},
-	bgColor : {
-		type: "string",
+	bgColor: {
+		type: 'string',
 	},
-	inputplaceholderColor : {
-		type: "string",
-		default:"#abb8c3"
+	inputplaceholderColor: {
+		type: 'string',
+		default: '#abb8c3',
 	},
-	inputactiveColor : {
-		type: "string",
-		default:"#000000"
+	inputactiveColor: {
+		type: 'string',
+		default: '#000000',
 	},
-	
 
 	// InputBorder
-	inputborderStyle : {
-		type: "string",
-		default: "solid"
+	inputborderStyle: {
+		type: 'string',
+		default: 'solid',
 	},
-	inputborderWidth : {
-		type: "number",
-		default: 1
+	inputborderWidth: {
+		type: 'number',
+		default: 1,
 	},
-	inputborderRadius : {
-		type: "number",
-		default: 3
+	inputborderRadius: {
+		type: 'number',
+		default: 3,
 	},
-	inputborderColor : {
-		type: "string",
-		default: "#BDBDBD"
+	inputborderColor: {
+		type: 'string',
+		default: '#BDBDBD',
 	},
-	inputborderHoverColor : {
-		type: "string"
+	inputborderHoverColor: {
+		type: 'string',
 	},
-	hPaddingField : {
-		type: "number",
-		default: 10
+	hPaddingField: {
+		type: 'number',
+		default: 10,
 	},
-	vPaddingField : {
-		type: "number",
-		default: 10
+	vPaddingField: {
+		type: 'number',
+		default: 10,
 	},
-	fieldGap : {
-		type: "number",
-		default: 20
+	fieldGap: {
+		type: 'number',
+		default: 20,
 	},
 
-	formStyle : {
-		type: "string",
-		default: "boxed"
+	formStyle: {
+		type: 'string',
+		default: 'boxed',
 	},
-	overallAlignment : {
-		type: "string",
-		default:'left'
+	overallAlignment: {
+		type: 'string',
+		default: 'left',
 	},
 
 	//recaptha.
 	reCaptchaEnable: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
-	reCaptchaType : {
-		type: "string",
-		default: "v2",
+	reCaptchaType: {
+		type: 'string',
+		default: 'v2',
 	},
-	reCaptchaSiteKeyV2 : {
-		type: "string",
-		default: "",
+	reCaptchaSiteKeyV2: {
+		type: 'string',
+		default: '',
 	},
-	reCaptchaSecretKeyV2 : {
-		type: "string",
-		default: "",
-	},	
-	reCaptchaSiteKeyV3 : {
-		type: "string",
-		default: "",
+	reCaptchaSecretKeyV2: {
+		type: 'string',
+		default: '',
 	},
-	reCaptchaSecretKeyV3 : {
-		type: "string",
-		default: "",
+	reCaptchaSiteKeyV3: {
+		type: 'string',
+		default: '',
+	},
+	reCaptchaSecretKeyV3: {
+		type: 'string',
+		default: '',
 	},
 	hidereCaptchaBatch: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	//message attributes
-	successMessageTextColor : {
-		type: "string",
-		default:"#000000",
+	successMessageTextColor: {
+		type: 'string',
+		default: '#000000',
 	},
-	successMessageBGColor : {
-		type: "string",
-		default:"#00800030",
+	successMessageBGColor: {
+		type: 'string',
+		default: '#00800030',
 	},
-	successMessageBorderColor : {
-		type: "string",
-		default:"green",
+	successMessageBorderColor: {
+		type: 'string',
+		default: 'green',
 	},
-	successMessageBorderStyle :{
-		type: "string",
-		default:"solid",
+	successMessageBorderStyle: {
+		type: 'string',
+		default: 'solid',
 	},
-	successMessageBorderWidth:{
-		type: "string",
-		default:"2",
+	successMessageBorderWidth: {
+		type: 'string',
+		default: '2',
 	},
-	failedMessageTextColor : {
-		type: "string",
-		default:"#000000",
+	failedMessageTextColor: {
+		type: 'string',
+		default: '#000000',
 	},
-	failedMessageBorderColor : {
-		type: "string",
-		default:"red",
+	failedMessageBorderColor: {
+		type: 'string',
+		default: 'red',
 	},
-	failedMessageBGColor : {
-		type: "string",
-		default:"#f5f5f5",
+	failedMessageBGColor: {
+		type: 'string',
+		default: '#f5f5f5',
 	},
-	captchaMessage:{
-		type:"string",
-		default:__("Please fill up the above captcha." , 'ultimate-addons-for-gutenberg')
-	}
-}
-export default attributes
+	captchaMessage: {
+		type: 'string',
+		default: __(
+			'Please fill up the above captcha.',
+			'ultimate-addons-for-gutenberg'
+		),
+	},
+};
+export default attributes;

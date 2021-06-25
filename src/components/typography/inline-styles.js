@@ -1,11 +1,11 @@
 /**
  * Set inline styles.
- * @param {object} props - The block object.
- * @return {object} The inline text color CSS.
+ *
+ * @param {Object} props - The block object.
+ * @return {Object} The inline text color CSS.
  */
 function TypographyStyles( props ) {
-	return {
-	}
+	return {};
 }
 
-export default TypographyStyles
+export default TypographyStyles;

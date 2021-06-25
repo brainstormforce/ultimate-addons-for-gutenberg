@@ -1,57 +1,53 @@
-const {
-	RichText,
-} = wp.blockEditor
+import { RichText } from '@wordpress/block-editor';
 
 import { __ } from '@wordpress/i18n';
 
-const {
-	createBlock
-} = wp.blocks
+import { createBlock } from '@wordpress/blocks';
 
-class InfoBoxDesc extends React.Component {
+const InfoBoxDesc = ( props ) => {
+	const {
+		attributes,
+		setAttributes,
+		mergeBlocks,
+		insertBlocksAfter,
+		onReplace,
+	} = props;
 
-	render() {
-
-		//const { attributes, setAttributes } = this.props;
-		const {
-			attributes,
-			setAttributes ,
-			props
-		} = this.props
-
-		if( setAttributes !== "not_set" ){
-			return (
-				<RichText
-	                tagName='p'
-	                value={ attributes.headingDesc }
-	                placeholder={ __( "Write a Description" ) }
-	                className='uagb-ifb-desc'
-	                onChange={ ( value ) => setAttributes( { headingDesc: value } ) }
-	                onMerge = { props.mergeBlocks }
-	                onSplit = {
-						props.insertBlocksAfter ?
-							( before, after, ...blocks ) => {
-								setAttributes( { content: before } )
-								props.insertBlocksAfter( [
+	if ( setAttributes !== 'not_set' ) {
+		return (
+			<RichText
+				tagName="p"
+				value={ attributes.headingDesc }
+				placeholder={ __( 'Write a Description' ) }
+				className="uagb-ifb-desc"
+				onChange={ ( value ) =>
+					setAttributes( { headingDesc: value } )
+				}
+				onMerge={ mergeBlocks }
+				onSplit={
+					insertBlocksAfter
+						? ( before, after, ...blocks ) => {
+								setAttributes( { content: before } );
+								insertBlocksAfter( [
 									...blocks,
-									createBlock( "core/paragraph", { content: after } ),
-								] )
-							} :
-							undefined
-					}
-					onRemove={ () => props.onReplace( [] ) }
-	            />
-			)
-		}else{
-			return (
-				<RichText.Content
-	                tagName='p'
-	                value={ attributes.headingDesc }
-	                className='uagb-ifb-desc'
-	            />
-			)
-		}
+									createBlock( 'core/paragraph', {
+										content: after,
+									} ),
+								] );
+						  }
+						: undefined
+				}
+				onRemove={ () => onReplace( [] ) }
+			/>
+		);
 	}
-}
+	return (
+		<RichText.Content
+			tagName="p"
+			value={ attributes.headingDesc }
+			className="uagb-ifb-desc"
+		/>
+	);
+};
 
-export default InfoBoxDesc
+export default InfoBoxDesc;

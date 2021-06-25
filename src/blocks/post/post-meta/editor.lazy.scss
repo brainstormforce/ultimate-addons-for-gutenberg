@@ -1,0 +1,48 @@
+.uagb-post-grid-byline {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+	font-size: 11px;
+	letter-spacing: 1px;
+
+	.uagb-post__author,
+	.uagb-post__date {
+		display: inline-block;
+		word-break: break-all;
+
+		&:not(:last-child)::after {
+			vertical-align: middle;
+			margin: 0 5px;
+			line-height: 1;
+			content: "\B7";
+		}
+	}
+
+	.uagb-post__author a {
+		box-shadow: none;
+
+		&:hover {
+			box-shadow: 0 -1px 0 inset;
+			color: inherit;
+		}
+	}
+
+	.uagb-post__author span,
+	.uagb-post__comment span,
+	.uagb-post__taxonomy span,
+	.uagb-post__date span {
+		width: inherit;
+		height: inherit;
+		margin-right: 4px;
+		font-size: inherit;
+		line-height: inherit;
+	}
+}
+
+.uagb-post-grid-byline a,
+.uagb-post-grid-byline a:focus,
+.uagb-post-grid-byline a:active {
+	color: inherit;
+	font-size: inherit;
+}
+

@@ -2,32 +2,32 @@
 .uagb-slick-carousel .slick-slider,
 .uagb-slick-carousel .slick-track {
 	position: relative;
-	display: block
+	display: block;
 }
 
 .uagb-slick-carousel .slick-loading .slick-slide,
 .uagb-slick-carousel .slick-loading .slick-track {
-	visibility: hidden
+	visibility: hidden;
 }
 
 .uagb-slick-carousel .slick-slider {
 	box-sizing: border-box;
-	-webkit-tap-highlight-color: transparent
+	-webkit-tap-highlight-color: transparent;
 }
 
 .uagb-slick-carousel .slick-list {
 	overflow: hidden;
 	margin: 0;
-	padding: 0
+	padding: 0;
 }
 
 .uagb-slick-carousel .slick-list:focus {
-	outline: 0
+	outline: 0;
 }
 
 .uagb-slick-carousel .slick-list.dragging {
 	cursor: pointer;
-	cursor: hand
+	cursor: hand;
 }
 
 .uagb-slick-carousel .slick-slider .slick-list,
@@ -36,59 +36,59 @@
 	-moz-transform: translate3d(0, 0, 0);
 	-ms-transform: translate3d(0, 0, 0);
 	-o-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0)
+	transform: translate3d(0, 0, 0);
 }
 
 .uagb-slick-carousel .slick-track {
 	top: 0;
-	right: 0
+	right: 0;
 }
 
-.uagb-slick-carousel .slick-track:after,
-.uagb-slick-carousel .slick-track:before {
+.uagb-slick-carousel .slick-track::after,
+.uagb-slick-carousel .slick-track::before {
 	display: table;
-	content: ''
+	content: "";
 }
 
-.uagb-slick-carousel .slick-track:after {
-	clear: both
+.uagb-slick-carousel .slick-track::after {
+	clear: both;
 }
 
 .uagb-slick-carousel .slick-slide {
 	display: none;
 	float: right;
 	height: 100%;
-	min-height: 1px
+	min-height: 1px;
 }
 
-[dir=rtl] .uagb-slick-carousel .slick-slide {
-	float: left
+[dir="rtl"] .uagb-slick-carousel .slick-slide {
+	float: left;
 }
 
 .uagb-slick-carousel .slick-slide img {
-	display: block
+	display: block;
 }
 
 .uagb-slick-carousel .slick-slide.slick-loading img {
-	display: none
+	display: none;
 }
 
 .uagb-slick-carousel .slick-slide.dragging img {
-	pointer-events: none
+	pointer-events: none;
 }
 
 .uagb-slick-carousel .slick-initialized .slick-slide {
-	display: block
+	display: block;
 }
 
 .uagb-slick-carousel .slick-vertical .slick-slide {
 	display: block;
 	height: auto;
-	border: 1px solid transparent
+	border: 1px solid transparent;
 }
 
 .uagb-slick-carousel .slick-arrow.slick-hidden {
-	display: none
+	display: none;
 }
 
 .uagb-slick-carousel {
@@ -115,21 +115,21 @@
 	border-radius: 0;
 }
 
-.uagb-slick-carousel .slick-prev:before,
-.uagb-slick-carousel .slick-next:before {
+.uagb-slick-carousel .slick-prev::before,
+.uagb-slick-carousel .slick-next::before {
 	font-size: 35px;
 	line-height: 1;
-	opacity: .75;
+	opacity: 0.75;
 	color: #000;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.uagb-slick-carousel .slick-prev:before,
-[dir="rtl"] .uagb-slick-carousel .slick-prev:before,
-.uagb-slick-carousel .slick-next:before,
-[dir="rtl"] .uagb-slick-carousel .slick-next:before {
-	content: '';
+.uagb-slick-carousel .slick-prev::before,
+[dir="rtl"] .uagb-slick-carousel .slick-prev::before,
+.uagb-slick-carousel .slick-next::before,
+[dir="rtl"] .uagb-slick-carousel .slick-next::before {
+	content: "";
 	font-size: 0;
 	line-height: 0;
 }
@@ -137,7 +137,7 @@
 .uagb-slick-carousel .slick-prev {
 	right: -45px;
 	z-index: 1;
-	border-radius:0;
+	border-radius: 0;
 }
 
 [dir="rtl"] .uagb-tm__arrow-outside.uagb-slick-carousel .slick-prev {
@@ -189,8 +189,8 @@
 	cursor: pointer;
 }
 
-.uagb-slick-carousel ul.slick-dots li.slick-active button:before {
-	opacity: .75;
+.uagb-slick-carousel ul.slick-dots li.slick-active button::before {
+	opacity: 0.75;
 	color: black;
 }
 
@@ -208,24 +208,25 @@
 	background: transparent;
 }
 
-.uagb-slick-carousel ul.slick-dots li button:before {
+.uagb-slick-carousel ul.slick-dots li button::before {
 	font-family: none;
-    font-size: 30px;
-    line-height: 20px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    content: '•';
-    text-align: center;
-    opacity: .25;
-    color: black;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	font-size: 30px;
+	line-height: 20px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 20px;
+	height: 20px;
+	content: "•";
+	text-align: center;
+	opacity: 0.25;
+	color: black;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 @media only screen and (max-width: 976px) {
+
 	.uagb-slick-carousel {
 		padding: 0;
 	}

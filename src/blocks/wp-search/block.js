@@ -2,27 +2,24 @@
  * BLOCK: WP-Search
  */
 
-import "./style.scss"
-import "./editor.scss"
-import save from "./save"
-import edit from "./edit"
-import attributes from "./attributes"
-import UAGB_Block_Icons from "@Controls/block-icons"
+import './style.scss';
+import save from './save';
+import edit from './edit';
+import attributes from './attributes';
+import UAGB_Block_Icons from '@Controls/block-icons';
 
 import { __ } from '@wordpress/i18n';
 
-const {
-	registerBlockType,
-} = wp.blocks
+import { registerBlockType } from '@wordpress/blocks';
 
-registerBlockType( "uagb/wp-search", {
-	title: uagb_blocks_info.blocks["uagb/wp-search"]["title"],
-	description: uagb_blocks_info.blocks["uagb/wp-search"]["description"],
+registerBlockType( 'uagb/wp-search', {
+	title: uagb_blocks_info.blocks[ 'uagb/wp-search' ].title,
+	description: uagb_blocks_info.blocks[ 'uagb/wp-search' ].description,
 	icon: UAGB_Block_Icons.wp_search,
 	keywords: [
-		__( "search",'ultimate-addons-for-gutenberg' ),
-		__( "wp",'ultimate-addons-for-gutenberg' ),
-		__( "uag",'ultimate-addons-for-gutenberg' ),
+		__( 'search', 'ultimate-addons-for-gutenberg' ),
+		__( 'wp', 'ultimate-addons-for-gutenberg' ),
+		__( 'uag', 'ultimate-addons-for-gutenberg' ),
 	],
 	supports: {
 		anchor: true,
@@ -32,4 +29,4 @@ registerBlockType( "uagb/wp-search", {
 	edit,
 	save,
 	example: {},
-} )
+} );

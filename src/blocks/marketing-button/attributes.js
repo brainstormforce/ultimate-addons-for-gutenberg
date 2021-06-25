@@ -1,285 +1,280 @@
-import { __ } from '@wordpress/i18n';
-
 const attributes = {
 	block_id: {
-		type: "string"
+		type: 'string',
 	},
 	classMigrate: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	align: {
-		type: "string",
-		default: "center"
+		type: 'string',
+		default: 'center',
 	},
 	textAlign: {
-		type: "string",
-		default: "center"
+		type: 'string',
+		default: 'center',
 	},
 	link: {
-		type: "string",
-		default: "#"
+		type: 'string',
+		default: '#',
 	},
 	linkTarget: {
-		type: "boolean",
+		type: 'boolean',
 		default: false,
 	},
 	titleSpace: {
-		type: "number",
-		default: 0
+		type: 'number',
+		default: 0,
 	},
 
 	// Border
-	borderStyle : {
-		type: "string",
-		default: "solid"
+	borderStyle: {
+		type: 'string',
+		default: 'solid',
 	},
-	borderWidth : {
-		type: "number",
-		default: 1
+	borderWidth: {
+		type: 'number',
+		default: 1,
 	},
-	borderRadius : {
-		type: "number"
+	borderRadius: {
+		type: 'number',
 	},
-	borderColor : {
-		type: "string",
-		default: "#333"
+	borderColor: {
+		type: 'string',
+		default: '#333',
 	},
-	borderHoverColor : {
-		type: "string"
+	borderHoverColor: {
+		type: 'string',
 	},
 
 	// Background
-	vPadding :{
-		type: "number",
+	vPadding: {
+		type: 'number',
 		default: 8,
 	},
-	hPadding :{
-		type: "number",
+	hPadding: {
+		type: 'number',
 		default: 20,
 	},
-	vPaddingTablet :{
-		type: "number"
+	vPaddingTablet: {
+		type: 'number',
 	},
-	hPaddingTablet :{
-		type: "number"
+	hPaddingTablet: {
+		type: 'number',
 	},
-	vPaddingMobile :{
-		type: "number"
+	vPaddingMobile: {
+		type: 'number',
 	},
-	hPaddingMobile :{
-		type: "number"
+	hPaddingMobile: {
+		type: 'number',
 	},
-	paddingType :{
-		type: "string",
-		default: "px",
+	paddingType: {
+		type: 'string',
+		default: 'px',
 	},
 	backgroundType: {
-		type: "string",
-		default: "color"
+		type: 'string',
+		default: 'color',
 	},
 	backgroundColor: {
-		type: "string",
-		default: "#eeeeee"
+		type: 'string',
+		default: '#eeeeee',
 	},
 	backgroundHoverColor: {
-		type: "string",
+		type: 'string',
 	},
 	gradientColor1: {
-		type: "string",
+		type: 'string',
 	},
 	gradientColor2: {
-		type: "string",
+		type: 'string',
 	},
 	gradientType: {
-		type: "string",
-		default: "linear"
+		type: 'string',
+		default: 'linear',
 	},
 	gradientLocation1: {
-		type: "number",
-		default: 0
+		type: 'number',
+		default: 0,
 	},
 	gradientLocation2: {
-		type: "number",
-		default: 100
+		type: 'number',
+		default: 100,
 	},
 	gradientAngle: {
-		type: "number",
-		default: 0
+		type: 'number',
+		default: 0,
 	},
 	backgroundOpacity: {
-		type: "number",
+		type: 'number',
 	},
 	backgroundHoverOpacity: {
-		type: "number",
+		type: 'number',
 	},
 
 	//Colors
 	titleColor: {
-		type: "string",
-		default: "#333"
+		type: 'string',
+		default: '#333',
 	},
 	titleHoverColor: {
-		type: "string"
+		type: 'string',
 	},
 	iconColor: {
-		type: "string",
-		default: "#333"
+		type: 'string',
+		default: '#333',
 	},
 	iconHoverColor: {
-		type: "string"
+		type: 'string',
 	},
 	prefixColor: {
-		type: "string",
-		default: "#333"
+		type: 'string',
+		default: '#333',
 	},
 	prefixHoverColor: {
-		type: "string"
+		type: 'string',
 	},
-
 
 	// Label and Sub Label
 	heading: {
-		source: "html",
-		selector: "h1,h2,h3,h4,h5,h6,p,span",
-		default: "Subscribe Now"
+		source: 'html',
+		selector: 'h1,h2,h3,h4,h5,h6,p,span',
+		default: 'Subscribe Now',
 	},
 	prefix: {
-		source: "html",
-		selector: "p",
-		default: "Get access to Premium Features for FREE for a year!"
+		source: 'html',
+		selector: 'p',
+		default: 'Get access to Premium Features for FREE for a year!',
 	},
-
 
 	// Icon attributes
-	icon : {
-		type : "string",
-		default : "external-link-alt"
+	icon: {
+		type: 'string',
+		default: 'external-link-alt',
 	},
 	iconPosition: {
-		type: "string",
-		default: "before"
+		type: 'string',
+		default: 'before',
 	},
-	iconSpace : {
-		type: "number",
-		default: 10
+	iconSpace: {
+		type: 'number',
+		default: 10,
 	},
-
 
 	// Typography
 	// Title Font Family
 	titleLoadGoogleFonts: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	titleFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	titleFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	titleFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	// Title Font Size
 	titleFontSize: {
-		type: "number",
-		default: 20
+		type: 'number',
+		default: 20,
 	},
 	titleFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	titleFontSizeTablet: {
-		type: "number",
-		default: 20
+		type: 'number',
+		default: 20,
 	},
 	titleFontSizeMobile: {
-		type: "number",
-		default: 20
+		type: 'number',
+		default: 20,
 	},
 	// Title Line Height
 	titleLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	titleLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	titleLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	titleLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	titleTag: {
-		type: "string",
-		default: "h6"
+		type: 'string',
+		default: 'h6',
 	},
 	// Prefix Font Family
 	prefixLoadGoogleFonts: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	prefixFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	prefixFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	prefixFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	// Prefix Font Size
 	prefixFontSize: {
-		type: "number",
-		default: 14
+		type: 'number',
+		default: 14,
 	},
 	prefixFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	prefixFontSizeTablet: {
-		type: "number",
-		default: 14
+		type: 'number',
+		default: 14,
 	},
 	prefixFontSizeMobile: {
-		type: "number",
-		default: 14
+		type: 'number',
+		default: 14,
 	},
 	// Prefix Line Height
 	prefixLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	prefixLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	prefixLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	prefixLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	// Icon Font Size
 	iconFontSize: {
-		type: "number",
-		default: 20
+		type: 'number',
+		default: 20,
 	},
 	iconFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	iconFontSizeTablet: {
-		type: "number",
-		default: 20
+		type: 'number',
+		default: 20,
 	},
 	iconFontSizeMobile: {
-		type: "number",
-		default: 20
-	}
-}
+		type: 'number',
+		default: 20,
+	},
+};
 
-export default attributes
+export default attributes;

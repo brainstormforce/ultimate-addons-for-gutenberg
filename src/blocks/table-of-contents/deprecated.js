@@ -15,7 +15,7 @@ const {
 
 const deprecated = [
 	{
-		attributes,			
+		attributes,
 		save: function( props ) {
 
 			const { className } = props
@@ -37,7 +37,7 @@ const deprecated = [
 					`uagb-toc__align-${align}`,
 					`uagb-toc__columns-${tColumns}`
 				) }
-				id={ `uagb-toc-${ block_id }` }>
+					 id={ `uagb-toc-${ block_id }` }>
 					<div className="uagb-toc__wrap">
 
 						<RichText.Content
@@ -59,7 +59,7 @@ const deprecated = [
 		},
 	},
 	{
-		attributes,			
+		attributes,
 		save: function( props ) {
 
 			const { className } = props
@@ -85,7 +85,7 @@ const deprecated = [
 			if ( makeCollapsible && icon ) {
 				icon_html = (
 					<span className="uag-toc__collapsible-wrap">{renderSVG(icon)}</span>
-				)	
+				)
 			}
 
 			return (
@@ -96,10 +96,10 @@ const deprecated = [
 					`uagb-toc__columns-${tColumns}`,
 					( initialCollapse ) ? `uagb-toc__collapse` : ''
 				) }
-				data-scroll={smoothScroll}
-				data-offset={smoothScrollOffset}
-				data-delay={smoothScrollDelay}
-				id={ `uagb-toc-${ block_id }` }>
+					 data-scroll={smoothScroll}
+					 data-offset={smoothScrollOffset}
+					 data-delay={smoothScrollDelay}
+					 id={ `uagb-toc-${ block_id }` }>
 					<div className="uagb-toc__wrap">
 						<div className="uagb-toc__title-wrap">
 							<RichText.Content
@@ -123,7 +123,7 @@ const deprecated = [
 		},
 	},
 	{
-		attributes,			
+		attributes,
 		save: function( props ) {
 
 			const { className } = props
@@ -148,21 +148,21 @@ const deprecated = [
 			if ( makeCollapsible && icon ) {
 				icon_html = (
 					<span className="uag-toc__collapsible-wrap">{renderSVG(icon)}</span>
-				)	
+				)
 			}
 
 			return (
 
 				<div className={ classnames(
-						className,
-						`uagb-toc__align-${align}`,
-						`uagb-toc__columns-${tColumns}`,
-						( initialCollapse ) ? `uagb-toc__collapse` : '',
-						`uagb-block-${ block_id }`
-					) }
-					data-scroll={smoothScroll}
-					data-offset={smoothScrollOffset}
-					data-delay={smoothScrollDelay}
+					className,
+					`uagb-toc__align-${align}`,
+					`uagb-toc__columns-${tColumns}`,
+					( initialCollapse ) ? `uagb-toc__collapse` : '',
+					`uagb-block-${ block_id }`
+				) }
+					 data-scroll={smoothScroll}
+					 data-offset={smoothScrollOffset}
+					 data-delay={smoothScrollDelay}
 				>
 					<div className="uagb-toc__wrap">
 						<div className="uagb-toc__title-wrap">
@@ -183,11 +183,11 @@ const deprecated = [
 		},
 	},
 	{
-		attributes,			
+		attributes,
 		save: function( props ) {
-	
+
 			const { className } = props
-		
+
 			const {
 				align,
 				block_id,
@@ -202,27 +202,27 @@ const deprecated = [
 				smoothScrollOffset,
 				smoothScrollDelay,
 			} = props.attributes
-		
+
 			let icon_html = ''
-		
+
 			if ( makeCollapsible && icon ) {
 				icon_html = (
 					<span className="uag-toc__collapsible-wrap">{renderSVG(icon)}</span>
-				)	
+				)
 			}
-		
+
 			return (
-		
+
 				<div className={ classnames(
-						className,
-						`uagb-toc__align-${align}`,
-						`uagb-toc__columns-${tColumns}`,
-						( initialCollapse ) ? `uagb-toc__collapse` : '',
-						`uagb-block-${ block_id }`
-					) }
-					data-scroll={smoothScroll}
-					data-offset={smoothScrollOffset}
-					data-delay={smoothScrollDelay}
+					className,
+					`uagb-toc__align-${align}`,
+					`uagb-toc__columns-${tColumns}`,
+					( initialCollapse ) ? `uagb-toc__collapse` : '',
+					`uagb-block-${ block_id }`
+				) }
+					 data-scroll={smoothScroll}
+					 data-offset={smoothScrollOffset}
+					 data-delay={smoothScrollDelay}
 				>
 					<div className="uagb-toc__wrap">
 						<div className="uagb-toc__title-wrap">

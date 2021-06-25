@@ -1,19 +1,16 @@
 /**
  * WordPress dependencies
  */
- const {
- 	Component,
- 	Fragment,
- } = wp.element
+import { Component, Fragment } from '@wordpress/element';
 
- const {
+import {
 	BaseControl,
 	Button,
 	ButtonGroup,
 	PanelRow,
 	RangeControl,
 	Tooltip,
-} = wp.components
+} from '@wordpress/components';
 
 import { __ } from '@wordpress/i18n';
 
@@ -22,35 +19,35 @@ import { __ } from '@wordpress/i18n';
  */
 const DEFAULT_OPTIONS = [
 	{
-		value: "5",
+		value: '5',
 		/* translators: abbreviation for small size */
-		label: __( 'S','ultimate-addons-for-gutenberg' ),
-		tooltip: __( 'Small','ultimate-addons-for-gutenberg' ),
+		label: __( 'S', 'ultimate-addons-for-gutenberg' ),
+		tooltip: __( 'Small', 'ultimate-addons-for-gutenberg' ),
 	},
 	{
-		value: "15",
+		value: '15',
 		/* translators: abbreviation for medium size */
-		label: __( 'M','ultimate-addons-for-gutenberg' ),
-		tooltip: __( 'Medium','ultimate-addons-for-gutenberg' ),
+		label: __( 'M', 'ultimate-addons-for-gutenberg' ),
+		tooltip: __( 'Medium', 'ultimate-addons-for-gutenberg' ),
 	},
 	{
-		value: "20",
+		value: '20',
 		/* translators: abbreviation for large size */
-		label: __( 'L','ultimate-addons-for-gutenberg' ),
-		tooltip: __( 'Large','ultimate-addons-for-gutenberg' ),
+		label: __( 'L', 'ultimate-addons-for-gutenberg' ),
+		tooltip: __( 'Large', 'ultimate-addons-for-gutenberg' ),
 	},
 	{
-		value: "30",
+		value: '30',
 		/* translators: abbreviation for extra large size */
-		label: __( 'XL','ultimate-addons-for-gutenberg' ),
-		tooltip: __( 'Extra Large','ultimate-addons-for-gutenberg' ),
+		label: __( 'XL', 'ultimate-addons-for-gutenberg' ),
+		tooltip: __( 'Extra Large', 'ultimate-addons-for-gutenberg' ),
 	},
 ];
 
 const NONE_OPTION = {
-	value: "0",
-	label: __( 'None','ultimate-addons-for-gutenberg' ),
-	tooltip: __( 'None','ultimate-addons-for-gutenberg' ),
+	value: '0',
+	label: __( 'None', 'ultimate-addons-for-gutenberg' ),
+	tooltip: __( 'None', 'ultimate-addons-for-gutenberg' ),
 };
 
 export default class OptionSelectorControl extends Component {
@@ -73,40 +70,44 @@ export default class OptionSelectorControl extends Component {
 			buttons = [ NONE_OPTION, ...buttons ];
 		}
 
-		return ( showAdvancedControls && ( advancedMinValue !== false && advancedMaxValue !== false ) ?
-
+		return showAdvancedControls &&
+			advancedMinValue !== false &&
+			advancedMaxValue !== false ? (
 			<RangeControl
 				label={ label }
 				value={ currentOption }
 				onChange={ ( value ) => onChange( value ) }
 				min={ advancedMinValue }
 				max={ advancedMaxValue }
-			/> :
-
-			<BaseControl id={ `uagb-option-selector-${ label }` } label={ label }>
+			/>
+		) : (
+			<BaseControl
+				id={ `uagb-option-selector-${ label }` }
+				label={ label }
+			>
 				<PanelRow>
 					<ButtonGroup aria-label={ label }>
-
 						{ buttons.map( ( option ) => (
 							<Tooltip
 								key={ `option-${ option.value }` }
-								text={ option.tooltip }>
-
+								text={ option.tooltip }
+							>
 								<Button
 									isLarge
-									isSecondary={ currentOption !== option.value }
+									isSecondary={
+										currentOption !== option.value
+									}
 									isPrimary={ currentOption === option.value }
-									aria-pressed={ currentOption === option.value }
+									aria-pressed={
+										currentOption === option.value
+									}
 									onClick={ () => onChange( option.value ) }
-									aria-label={ option.tooltip }>
-
+									aria-label={ option.tooltip }
+								>
 									{ showIcons ? option.icon : option.label }
-
 								</Button>
-
 							</Tooltip>
 						) ) }
-
 					</ButtonGroup>
 				</PanelRow>
 			</BaseControl>

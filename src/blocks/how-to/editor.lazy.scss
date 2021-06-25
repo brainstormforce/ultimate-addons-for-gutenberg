@@ -1,0 +1,56 @@
+.editor-styles-wrapper [data-type="uagb/how-to"] {
+
+	.how-to-schema-notices {
+		padding: 8px 10px;
+		background-color: #fff8e5;
+		border-left: 5px solid #ffb901;
+		color: #32373c;
+		font-size: 13px;
+		line-height: 20px;
+
+		ul {
+			padding-bottom: 0;
+			margin: 0;
+		}
+
+		h6 {
+			margin: 0;
+			font-size: inherit;
+			line-height: inherit;
+		}
+
+		p {
+			margin: 15px 0 0;
+			color: #555d66;
+			font-size: inherit;
+		}
+	}
+
+}
+
+.wp-block-uagb-how-to {
+
+	.block-editor-button-block-appender {
+		width: 10%;
+		margin-top: 0;
+		margin-left: 20px;
+	}
+}
+
+.editor-styles-wrapper {
+
+	.uagb-howto__time-wrap,
+	.uagb-howto__cost-wrap,
+	.uagb-how-to-tools__wrap,
+	.uagb-how-to-steps__wrap {
+
+		h3 {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		p {
+			margin-top: 25px;
+		}
+	}
+}

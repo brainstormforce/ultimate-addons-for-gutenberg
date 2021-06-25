@@ -4,30 +4,20 @@
  * CSS for both Frontend+Backend.
  */
 
-.wp-block-uagb-advanced-heading  {
+.wp-block-uagb-advanced-heading {
 	padding: 0;
 	margin: 0 auto;
 
-	.uagb-heading-text {
-		margin: 0;
-		text-align : center;
-	}
-
-	.uagb-separator-wrap {
-		font-size: 0;
-		text-align : center;
+	.uagb-heading-text{
+		margin:0;
 	}
 
 	.uagb-separator {
-	    border-top-style: solid;
-	    display: inline-block;
-	    border-top-width: 2px;
-	    width: 5%;
-	    margin: 0px 0px 10px 0px;
-	}
-
-	.uagb-desc-text {
-		margin: 0;
-		text-align : center;
+		font-size: 0;
+		border-top-style: solid;
+		display: inline-block;
+		border-top-width: 2px;
+		width: 5%;
+		margin: 0 0 10px 0;
 	}
 }

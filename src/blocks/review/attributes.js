@@ -1,466 +1,466 @@
 /**
  * BLOCK: UAGB Review Block Attributes
  */
-  import { __ } from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 
- const attributes = {
+const attributes = {
 	ID: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	itemType: {
-		type: "string",
-		default:  __( "Product" ),
+		type: 'string',
+		default: __( 'Product' ),
 	},
 	itemSubtype: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	reviewPublisher: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	bookAuthorName: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	isbn: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	provider: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	appCategory: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	operatingSystem: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	datecreated: {
-		type: "string",
-		default: 'Dec 19 2020'
+		type: 'string',
+		default: 'Dec 19 2020',
 	},
 	directorname: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	overallAlignment: {
-		type: "string",
-		default: "left",
+		type: 'string',
+		default: 'left',
 	},
 	schema: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	rTitle: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	rContent: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	rAuthor: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	headingTag: {
-		type: "string",
-		default: "h3"
+		type: 'string',
+		default: 'h3',
 	},
 	block_id: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	mainimage: {
-		type: "object",
-		default:{
-			"url": "",
-		}
+		type: 'object',
+		default: {
+			url: '',
+		},
 	},
-	imgSize:{
-		type: "string",
-		default: "thumbnail",
+	imgSize: {
+		type: 'string',
+		default: 'thumbnail',
 	},
 	authorName: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	itemName: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	items: {
-		type: "string",
+		type: 'string',
 		default: '[{"label":"","value":0}]',
 	},
 	description: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	descriptionAlign: {
-		type: "string",
-		default: "left",
+		type: 'string',
+		default: 'left',
 	},
 	imgURL: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	imgID: {
-		type: "number",
+		type: 'number',
 	},
 	imgAlt: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	parts: {
-		type: "array",
-		default: [{ label: "", value: 0 }],
+		type: 'array',
+		default: [ { label: '', value: 0 } ],
 	},
 	starCount: {
-		type: "number",
+		type: 'number',
 		default: 5,
 	},
 	summaryTitle: {
-		type: "string",
-		default:  __( "Summary" ),
+		type: 'string',
+		default: __( 'Summary' ),
 	},
 	summaryDescription: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	callToActionText: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	ctaLink: {
-		type: "string",
-		default: "#",
+		type: 'string',
+		default: '#',
 	},
 	callToActionBackColor: {
-		type: "string",
-		default: "#f63d3d",
+		type: 'string',
+		default: '#f63d3d',
 	},
 	callToActionForeColor: {
-		type: "string",
-		default: "#ffffff",
+		type: 'string',
+		default: '#ffffff',
 	},
 	inactiveStarColor: {
-		type: "string",
-		default: "#888888",
+		type: 'string',
+		default: '#888888',
 	},
 	activeStarColor: {
-		type: "string",
-		default: "#eeee00",
+		type: 'string',
+		default: '#eeee00',
 	},
 	authorColor: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
-	summaryColor:{
-		type: "string",
-		default: "",
+	summaryColor: {
+		type: 'string',
+		default: '',
 	},
 	titleAlign: {
-		type: "string",
-		default: "left",
+		type: 'string',
+		default: 'left',
 	},
 	authorAlign: {
-		type: "string",
-		default: "left",
+		type: 'string',
+		default: 'left',
 	},
 	enableCTA: {
-		type: "boolean",
+		type: 'boolean',
 		default: true,
 	},
 	ctaNoFollow: {
-		type: "boolean",
+		type: 'boolean',
 		default: true,
 	},
 	ctaOpenInNewTab: {
-		type: "boolean",
+		type: 'boolean',
 		default: true,
 	},
 	enableReviewSchema: {
-		type: "boolean",
+		type: 'boolean',
 		default: true,
 	},
 	enableImage: {
-		type: "boolean",
+		type: 'boolean',
 		default: true,
 	},
 	enableDescription: {
-		type: "boolean",
+		type: 'boolean',
 		default: true,
 	},
-	enableSchema:{
-		type: "boolean",
+	enableSchema: {
+		type: 'boolean',
 		default: true,
 	},
 	starOutlineColor: {
-		type: "string",
-		default: "#000000",
+		type: 'string',
+		default: '#000000',
 	},
 	starActiveColor: {
-		type: "string",
-		default: "#000000",
+		type: 'string',
+		default: '#000000',
 	},
 	imageSize: {
-		type: "number",
+		type: 'number',
 		default: 100, //range: 0-200
 	},
 	brand: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	sku: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	identifier: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	identifierType: {
-		type: "string",
-		default: "gtin",
+		type: 'string',
+		default: 'gtin',
 	},
 	ctaTarget: {
-		type: "boolean",
+		type: 'boolean',
 		default: false,
 	},
 	offerType: {
-		type: "string",
-		default: "Offer",
+		type: 'string',
+		default: 'Offer',
 	},
 	offerStatus: {
-		type: "string",
-		default: "", 
+		type: 'string',
+		default: '',
 	},
 	offerPrice: {
-		type: "string",
+		type: 'string',
 		default: 0,
 	},
 	offerCurrency: {
-		type: "string",
-		default: "USD",
+		type: 'string',
+		default: 'USD',
 	},
 	offerExpiry: {
-		type: "string",
-		default: 'Dec 19 2020'
+		type: 'string',
+		default: 'Dec 19 2020',
 	},
 	datepublish: {
-		type: "string",
-		default: 'Dec 19 2020'
+		type: 'string',
+		default: 'Dec 19 2020',
 	},
-	featuresTitle : {
-		type: "string",
-		default : __( "List Of Features:" ),
+	featuresTitle: {
+		type: 'string',
+		default: __( 'List Of Features:' ),
 	},
-	featuresAvgText : {
-		type: "string",
-		default : __( "Average Ratings" ),
+	featuresAvgText: {
+		type: 'string',
+		default: __( 'Average Ratings' ),
 	},
 	feature_count: {
-		type: "number",
-		default: 1
+		type: 'number',
+		default: 1,
 	},
 	showFeature: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	showAuthor: {
-		type: "boolean",
-		default: true
+		type: 'boolean',
+		default: true,
 	},
 	starSize: {
-		type: "number",
+		type: 'number',
 		default: 20,
 	},
 	starColor: {
-		type: "string",
-		default: "#ffff00",
+		type: 'string',
+		default: '#ffff00',
 	},
 	selectedStars: {
-		type: "number",
+		type: 'number',
 		default: 0,
 	},
 	starAlign: {
-		type: "string",
-		default: "left",
+		type: 'string',
+		default: 'left',
 	},
 	descColor: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	titleColor: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	pricevalue: {
-		type: "string",
-		default: "US$65"
+		type: 'string',
+		default: 'US$65',
 	},
 	pricetext: {
-		type: "string",
-		default: "Price"
+		type: 'string',
+		default: 'Price',
 	},
 	availabilityvalue: {
-		type: "string",
-		default:  __( "Instock" ),
+		type: 'string',
+		default: __( 'Instock' ),
 	},
 	availabilitytext: {
-		type: "string",
-		default:  __( "Availability" ),
+		type: 'string',
+		default: __( 'Availability' ),
 	},
 	contentVrPadding: {
-		type: "number",
-		default : 15
+		type: 'number',
+		default: 15,
 	},
 	contentHrPadding: {
-		type: "number",
-		default : 50
+		type: 'number',
+		default: 50,
 	},
 	star_gap: {
-		type: "number",
-		default: 100
+		type: 'number',
+		default: 100,
 	},
 	contentColor: {
-		type: "string",
-		default: ""
+		type: 'string',
+		default: '',
 	},
 	author: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	headFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	headFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	headFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	headFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	headLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	headFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	headFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	headFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	headLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	headLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	headLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadFontFamily: {
-		type: "string",
-		default: "",
+		type: 'string',
+		default: '',
 	},
 	subHeadFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	subHeadFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	subHeadFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	subHeadFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	subHeadLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	separatorSpace: {
-		type: "number",
-		default: 15
+		type: 'number',
+		default: 15,
 	},
 	headLoadGoogleFonts: {
-		type: "boolean",
-		default: false	
+		type: 'boolean',
+		default: false,
 	},
 	subHeadLoadGoogleFonts: {
-		type: "boolean",
-		default: false	
+		type: 'boolean',
+		default: false,
 	},
 	contentFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	contentLoadGoogleFonts: {
-		type: "boolean",
-		default: false	
+		type: 'boolean',
+		default: false,
 	},
 	contentFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	contentFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	contentFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	contentFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	contentFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	contentFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	contentLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	contentLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	contentLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	contentLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 };
 
-export default attributes
+export default attributes;

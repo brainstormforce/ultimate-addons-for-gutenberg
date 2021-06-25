@@ -3,12 +3,12 @@
  *
  * CSS for both Frontend+Backend.
  */
- 
-.wp-block-uagb-social-share .uagb-social-share__wrap .uagb-social-share__wrapper {
+
+.wp-block-uagb-social-share .uagb-social-share__wrapper {
 	text-decoration: none;
 }
 
-.uagb-social-share__wrap .uagb-social-share__wrapper {
+.uagb-social-share__wrapper {
 	box-shadow: none;
 }
 
@@ -16,7 +16,7 @@
 	margin-right: 15px;
 }
 
-.uagb-social-share__outer-wrap.uagb-social-share__icon-at-top .uagb-social-share__source-wrap{
+.uagb-social-share__outer-wrap.uagb-social-share__icon-at-top .uagb-social-share__source-wrap {
 	-ms-flex-item-align: flex-start;
 	align-self: flex-start;
 	margin-top: 5px;

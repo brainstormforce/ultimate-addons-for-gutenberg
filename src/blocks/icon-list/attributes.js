@@ -2,147 +2,145 @@
  * BLOCK: Icon List - Attributes
  */
 
-const ITEM_COUNT = 1
+const itemCount = 1;
 
-const icons = []
+const icons = [];
 
-for ( var i = 1; i <= ITEM_COUNT; i++ ) {
-	icons.push(
-		{
-			"label": "#Label",
-			"image_icon": "icon",
-			"icon": "fab fa-arrow-circle-right",
-			"image": "",
-			"icon_color": "#3a3a3a",
-			"label_color": "",
-			"icon_hover_color": "",
-			"label_hover_color": "",
-			"icon_bg_color": "",
-			"icon_bg_hover_color": "",
-			"icon_border_color": "",
-			"icon_border_hover_color": "",
-			"link": "#",
-			"target": false,
-			"disableLink": true,
-			"hideLabel" : false
-		}
-	)
+for ( let i = 1; i <= itemCount; i++ ) {
+	icons.push( {
+		label: '#Label',
+		image_icon: 'icon',
+		icon: 'fab fa-arrow-circle-right',
+		image: '',
+		icon_color: '#3a3a3a',
+		label_color: '',
+		icon_hover_color: '',
+		label_hover_color: '',
+		icon_bg_color: '',
+		icon_bg_hover_color: '',
+		icon_border_color: '',
+		icon_border_hover_color: '',
+		link: '#',
+		target: false,
+		disableLink: true,
+		hideLabel: false,
+	} );
 }
 
 const attributes = {
 	block_id: {
-		type: "string"
+		type: 'string',
 	},
 	classMigrate: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	childMigrate: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	align: {
-		type: "string",
-		default: "left"
+		type: 'string',
+		default: 'left',
 	},
 	icon_count: {
-		type: "number",
-		default: ITEM_COUNT
+		type: 'number',
+		default: itemCount,
 	},
 	icons: {
-		type: "array",
-		default : icons,
+		type: 'array',
+		default: icons,
 	},
 	gap: {
-		type: "number",
-		default: 10
+		type: 'number',
+		default: 10,
 	},
 	inner_gap: {
-		type: "number",
-		default: 15
+		type: 'number',
+		default: 15,
 	},
 	iconPosition: {
-		type: "string",
-		default: "middle"
+		type: 'string',
+		default: 'middle',
 	},
 	size: {
-		type: "number",
-		default: 16
+		type: 'number',
+		default: 16,
 	},
 	sizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	sizeMobile: {
-		type: "number"
+		type: 'number',
 	},
 	sizeTablet: {
-		type: "number"
+		type: 'number',
 	},
 	bgSize: {
-		type: "number",
-		default: 0
+		type: 'number',
+		default: 0,
 	},
 	border: {
-		type: "number",
-		default: 0
+		type: 'number',
+		default: 0,
 	},
 	borderRadius: {
-		type: "number",
-		default: 0
+		type: 'number',
+		default: 0,
 	},
 	hideLabel: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	fontSize: {
-		type: "number"
+		type: 'number',
 	},
 	fontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	fontSizeMobile: {
-		type: "number"
+		type: 'number',
 	},
 	fontSizeTablet: {
-		type: "number"
+		type: 'number',
 	},
 	fontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	fontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	fontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	lineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	lineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	lineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	lineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	loadGoogleFonts: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	icon_layout: {
-		type: "string",
-		default: "vertical"
+		type: 'string',
+		default: 'vertical',
 	},
 	stack: {
-		type: "string",
-		default: "none"
-	}
-}
+		type: 'string',
+		default: 'none',
+	},
+};
 
-export default attributes
+export default attributes;

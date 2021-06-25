@@ -1,53 +1,42 @@
-const {
-	RichText,
-} = wp.blockEditor
+import { RichText } from '@wordpress/block-editor';
 
 import { __ } from '@wordpress/i18n';
 
-class Price extends React.Component {
+const Price = ( props ) => {
+	const { attributes, setAttributes, index_value } = props;
 
-	render() {
-
-		const {	
-			attributes, 
-			setAttributes , 
-			index_value	
-		} = this.props
-
-		let price = ""
-		if( typeof index_value !== "undefined" ){
-			const rest_arr = attributes.rest_menu_item_arr[index_value];
-			if( rest_arr ){
-				if( typeof rest_arr !== "undefined" ){		
-					price = rest_arr["price"]	
-				}
+	let price = '';
+	if ( typeof index_value !== 'undefined' ) {
+		const restArray = attributes.rest_menu_item_arr[ index_value ];
+		if ( restArray ) {
+			if ( typeof restArray !== 'undefined' ) {
+				price = restArray.price;
 			}
-		}else{
-			price = attributes.price
 		}
-
-		if( setAttributes !== "not_set" ){
-			return (
-				<RichText
-	                tagName= 'div'
-	                value={ price }
-	                className = 'uagb-rm__price'
-	                placeholder={ __( "Price" ) }
-	                onChange={ ( value ) => { 
-						setAttributes( { "price": value } )	                	
-	                } }                   
-	            />			
-			)
-		}else{
-			return (
-				<RichText.Content
-	                tagName= 'span'
-	                value={ price }
-	                className='uagb-rm__price'
-	            />			
-			)
-		}
+	} else {
+		price = attributes.price;
 	}
-}
 
-export default Price
+	if ( setAttributes !== 'not_set' ) {
+		return (
+			<RichText
+				tagName="div"
+				value={ price }
+				className="uagb-rm__price"
+				placeholder={ __( 'Price' ) }
+				onChange={ ( value ) => {
+					setAttributes( { price: value } );
+				} }
+			/>
+		);
+	}
+	return (
+		<RichText.Content
+			tagName="span"
+			value={ price }
+			className="uagb-rm__price"
+		/>
+	);
+};
+
+export default Price;

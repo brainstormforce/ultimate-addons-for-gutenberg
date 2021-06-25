@@ -2,118 +2,129 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "@Controls/generateCSS"
-import generateCSSUnit from "@Controls/generateCSSUnit"
+import generateCSS from '@Controls/generateCSS';
+import generateCSSUnit from '@Controls/generateCSSUnit';
 
 function styling( props ) {
+	const { fontFamily, fontWeight, gap, stack, align } = props.attributes;
 
-	const {
-		fontFamily,
-		fontWeight,
-		gap,
-		stack,
-		align
-	} = props.attributes
+	const selectors = {};
+	const tabletSelectors = {};
+	const mobileSelectors = {};
 
-	var selectors = {}
-	var tablet_selectors = {}
-	var mobile_selectors = {}
+	selectors[ ' .uagb-buttons-repeater:not(.wp-block-button__link)' ] = {
+		'font-family': fontFamily,
+		'font-weight': fontWeight,
+	};
 
-	selectors[" .uagb-buttons-repeater:not(.wp-block-button__link)"] = {
-		"font-family": fontFamily,
-		"font-weight": fontWeight,
+	selectors[ ' .uagb-button__wrapper' ] = {
+		'margin-left': generateCSSUnit( gap / 2, 'px' ),
+		'margin-right': generateCSSUnit( gap / 2, 'px' ),
+	};
+
+	if ( 'desktop' == stack ) {
+		selectors[ ' .uagb-button__wrapper' ][ 'margin-left' ] = 0;
+		selectors[ ' .uagb-button__wrapper' ][ 'margin-right' ] = 0;
+		selectors[ ' .uagb-button__wrapper' ][
+			'margin-bottom'
+		] = generateCSSUnit( gap, 'px' );
+
+		selectors[
+			' .block-editor-block-list__layout'
+		] = {
+			'flex-direction': 'column',
+		};
+	} else if ( 'tablet' == stack ) {
+		tabletSelectors[ '.uagb-editor-preview-mode-tablet .uagb-button__wrapper' ] = {
+			'margin-left': 0,
+			'margin-right': 0,
+			'margin-bottom': generateCSSUnit( gap, 'px' ),
+		};
+		mobileSelectors[ '.uagb-editor-preview-mode-mobile .uagb-button__wrapper' ] = {
+			'margin-left': 0,
+			'margin-right': 0,
+			'margin-bottom': generateCSSUnit( gap, 'px' ),
+		};
+		tabletSelectors[ '.uagb-editor-preview-mode-tablet .block-editor-block-list__layout' ] = {
+			'flex-direction': 'column',
+		};
+		mobileSelectors[ '.uagb-editor-preview-mode-mobile .block-editor-block-list__layout' ] = {
+			'flex-direction': 'column',
+		};
+	} else if ( 'mobile' == stack ) {
+		mobileSelectors[ '.uagb-editor-preview-mode-mobile .uagb-button__wrapper' ] = {
+			'margin-left': 0,
+			'margin-right': 0,
+			'margin-bottom': generateCSSUnit( gap, 'px' ),
+		};
+
+		mobileSelectors[ '.uagb-editor-preview-mode-mobile .block-editor-block-list__layout' ] = {
+			'flex-direction': 'column',
+		};
 	}
 
-	selectors[" .uagb-button__wrapper"] = {
-		"margin-left" : generateCSSUnit( ( gap/2 ), "px" ),
-		"margin-right" : generateCSSUnit( ( gap/2 ), "px" )
+	let alignment = '';
+	if ( align == 'left' ) {
+		alignment = 'flex-start';
+	} else if ( align == 'right' ) {
+		alignment = 'flex-end';
+	} else {
+		alignment = 'center';
 	}
 
-	if ( "desktop" == stack ) {
+	if ( align !== 'full' ) {
+		selectors[ ' .uagb-buttons__wrap' ] = {
+			'justify-content': alignment,
+			'-webkit-box-pack': alignment,
+			'-ms-flex-pack': alignment,
+		};
 
-		selectors[" .uagb-button__wrapper"]["margin-left"] = 0;
-		selectors[" .uagb-button__wrapper"]["margin-right"] = 0;
-		selectors[" .uagb-button__wrapper"]["margin-bottom"] = generateCSSUnit( gap, "px" );
+		selectors[
+			' .uagb-buttons-stack-desktop .block-editor-block-list__layout'
+		] = {
+			'align-items': alignment,
+		};
 
-		selectors[" .block-editor-block-list__layout"] = {
-				"flex-direction": "column"
+		if ( align === 'left' ) {
+			selectors[
+				" .wp-block[data-type='uagb/buttons-child']:first-child .uagb-button__wrapper"
+			] = {
+				'margin-left': 0,
+			};
 		}
 
-	} else if ( "tablet" == stack ) {
-
-		tablet_selectors[" .uagb-button__wrapper"] = {
-			"margin-left" : 0,
-			"margin-right" : 0,
-			"margin-bottom" : generateCSSUnit( gap, "px" )
-		}
-
-		tablet_selectors[" .block-editor-block-list__layout"] = {
-			"flex-direction": "column"
-		}
-
-		mobile_selectors[" .block-editor-block-list__layout"] = {
-			"flex-direction": "column"
-		}
-
-	} else if ( "mobile" == stack ) {
-
-		mobile_selectors[" .uagb-button__wrapper"] = {
-			"margin-left" : 0,
-			"margin-right" : 0,
-			"margin-bottom" : generateCSSUnit( gap, "px" )
-		}
-
-		mobile_selectors[" .block-editor-block-list__layout"] = {
-			"flex-direction": "column"
-		}
-	}
-
-	var alignment = ( align == "left" ) ? "flex-start" : ( ( align == "right" ) ? "flex-end" : "center" )
-
-	if( align !== "full" ) { 
-		selectors[" .uagb-buttons__wrap"] = {
-			"justify-content" : alignment,
-			"-webkit-box-pack": alignment,
-			"-ms-flex-pack": alignment,
-		}
-
-		selectors[" .uagb-buttons-stack-desktop .block-editor-block-list__layout"] = {
-			"align-items" : alignment
-		}
-
-		if ( align === "left" ) {
-			selectors[" .wp-block[data-type='uagb/buttons-child']:first-child .uagb-button__wrapper"] = {
-				"margin-left" : 0
-			}
-		}
-
-		if ( align === "right" ) {
-			selectors[" .wp-block[data-type='uagb/buttons-child']:last-child .uagb-button__wrapper"] = {
-				"margin-right" : 0
-			}
+		if ( align === 'right' ) {
+			selectors[
+				" .wp-block[data-type='uagb/buttons-child']:last-child .uagb-button__wrapper"
+			] = {
+				'margin-right': 0,
+			};
 		}
 	} else {
-		selectors[" .uagb-button__wrapper"]["justify-content"] = "center";
-		selectors[" .uagb-buttons-repeater"] = {
-			"width" : "100%",
-		}
-		selectors[" .wp-block[data-type='uagb/buttons-child']:first-child .uagb-button__wrapper"] = {
-			"margin-left" : 0
-		}
-		selectors[" .wp-block[data-type='uagb/buttons-child']:last-child .uagb-button__wrapper"] = {
-			"margin-right" : 0
-		}
+		selectors[ ' .uagb-button__wrapper' ][ 'justify-content' ] = 'center';
+		selectors[ ' .uagb-buttons-repeater' ] = {
+			width: '100%',
+		};
+		selectors[
+			" .wp-block[data-type='uagb/buttons-child']:first-child .uagb-button__wrapper"
+		] = {
+			'margin-left': 0,
+		};
+		selectors[
+			" .wp-block[data-type='uagb/buttons-child']:last-child .uagb-button__wrapper"
+		] = {
+			'margin-right': 0,
+		};
 	}
 
-	var id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`
-	var styling_css = generateCSS( selectors, id )
+	const id = `.uagb-block-${ props.clientId.substr( 0, 8 ) }`;
+	let stylingCss = generateCSS( selectors, id );
 
-	styling_css += generateCSS( tablet_selectors, `${id}.uagb-editor-preview-mode-tablet`, true, "tablet" )
+	stylingCss += generateCSS( tabletSelectors, id, true, 'tablet' );
 
-	styling_css += generateCSS( mobile_selectors, `${id}.uagb-editor-preview-mode-mobile`, true, "mobile" )
+	stylingCss += generateCSS( mobileSelectors, id, true, 'mobile' );
 
-
-	return styling_css
+	return stylingCss;
 }
 
-export default styling
+export default styling;

@@ -4,39 +4,39 @@
 
 const attributes = {
 	block_id: {
-		type: "string"
+		type: 'string',
 	},
 	type: {
-		type: "string",
-		default: "facebook"
+		type: 'string',
+		default: 'facebook',
 	},
 	image_icon: {
-		type: "string",
-		default: "icon"
+		type: 'string',
+		default: 'icon',
 	},
 	current_url: {
-		type: "string"
+		type: 'string',
 	},
 	icon: {
-		type: "string",
-		default: "fab fa-facebook"
+		type: 'string',
+		default: 'fab fa-facebook',
 	},
 	image: {
-		type: "object",
+		type: 'object',
 	},
 	icon_color: {
-		type: "string",
-		default: "#3a3a3a"
+		type: 'string',
+		default: '#3a3a3a',
 	},
 	icon_hover_color: {
-		type: "string"
+		type: 'string',
 	},
 	icon_bg_color: {
-		type: "string"
+		type: 'string',
 	},
 	icon_bg_hover_color: {
-		type: "string"
-	},	
-}
+		type: 'string',
+	},
+};
 
-export default attributes
+export default attributes;

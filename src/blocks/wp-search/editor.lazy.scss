@@ -1,0 +1,43 @@
+[data-type="uagb/wp-search"] {
+
+	.uagb-layout-input-button {
+
+		.uagb-search-submit {
+			border: none;
+			border-radius: 0;
+			color: #fff;
+		}
+
+		svg {
+			fill: currentColor;
+		}
+	}
+
+	.uagb-layout-input {
+
+		.uagb-wp-search-icon-wrap {
+			display: flex;
+			align-items: center;
+		}
+
+		svg {
+			fill: currentColor;
+			opacity: 0.6;
+		}
+	}
+
+	.uagb-wp-search__outer-wrap {
+		width: 100%;
+		min-height: 20px;
+
+		.uagb-search-wrapper .uagb-search-form__container {
+
+			display: flex;
+			overflow: hidden;
+
+			.uagb-search-form__input {
+				width: 100%;
+			}
+		}
+	}
+}

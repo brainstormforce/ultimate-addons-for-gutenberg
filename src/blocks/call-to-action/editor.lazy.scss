@@ -1,0 +1,33 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+
+.uagb-cta__content-wrap.uagb-cta__icon-position-above-title {
+	text-align: center;
+}
+
+.block-editor-page #wpwrap .edit-post-visual-editor a.uagb-cta__block-link-wrap {
+	color: inherit;
+}
+
+.block-editor-page #wpwrap .uagb-cta__title,
+.block-editor-page #wpwrap .uagb-cta-separator-parent,
+.block-editor-page #wpwrap .uagb-cta__desc {
+	margin-bottom: 10px;
+}
+
+.block-editor-page #wpwrap .uagb-cta__desc {
+	margin: 0;
+}
+
+.block-editor-page #wpwrap .uagb-cta__block-link i {
+	font-style: normal;
+}
+
+.wp-block-uagb-call-to-action.uagb-cta__outer-wrap a.uagb-cta__link-to-all {
+	z-index: 0;
+}

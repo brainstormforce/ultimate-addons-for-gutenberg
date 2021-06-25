@@ -1,0 +1,36 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.uagb-section__wrap::before {
+	position: absolute;
+	top: -1px;
+	right: -1px;
+	bottom: -1px;
+	left: -1px;
+	z-index: 0;
+	border: 1px dashed #03ddff;
+	content: "";
+}
+
+.uagb-section__edit-active.uagb-section__wrap::before {
+	border-color: #035cff;
+}
+
+.editor-bg-image-control .components-button,
+.editor-bg-video-control .components-button {
+	vertical-align: middle;
+}
+
+.editor-bg-image-control .components-button:last-child,
+.editor-bg-video-control .components-button:last-child {
+	margin-left: 10px;
+}
+
+.editor-block-list__layout .editor-block-list__block[data-align="full"][data-type="uagb/section"] {
+	margin-right: 0;
+	margin-left: 0;
+}

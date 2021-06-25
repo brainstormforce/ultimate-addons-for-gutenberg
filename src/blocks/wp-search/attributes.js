@@ -1,221 +1,221 @@
 /**
  * BLOCK: WP Search Block Attributes
  */
- 
+
 const attributes = {
-	block_id : {
-		type : "string"
-    },
-    layout : {
-        type : "string",
-        default: "input-button"
-    },
-    placeholder : {
-        type : "string",
-        default: "Type & Hit Enter"
-    },
-    inputSize : {
-        type : "number",
-        default: 100
-    },
-    textColor : {
-        type : "string",
-    },
-    inputBgColor : {
-		type : "string",
-		default: "#ECEEEF"
-    },
-    boxShadowColor: {
-		type: "string"
+	block_id: {
+		type: 'string',
 	},
-	boxShadowHOffset : {
-		type: "number",
-		default: 0
+	layout: {
+		type: 'string',
+		default: 'input-button',
 	},
-	boxShadowVOffset : {
-		type: "number",
-		default: 0
+	placeholder: {
+		type: 'string',
+		default: 'Type & Hit Enter',
 	},
-	boxShadowBlur : {
-		type: "number"
+	inputSize: {
+		type: 'number',
+		default: 100,
 	},
-	boxShadowSpread : {
-		type: "number"
+	textColor: {
+		type: 'string',
+	},
+	inputBgColor: {
+		type: 'string',
+		default: '#ECEEEF',
+	},
+	boxShadowColor: {
+		type: 'string',
+	},
+	boxShadowHOffset: {
+		type: 'number',
+		default: 0,
+	},
+	boxShadowVOffset: {
+		type: 'number',
+		default: 0,
+	},
+	boxShadowBlur: {
+		type: 'number',
+	},
+	boxShadowSpread: {
+		type: 'number',
 	},
 	boxShadowPosition: {
-		type: "string",
-		default: "outset"
-    },
-    borderStyle: {
-		type: "string",
-		default : "none"
+		type: 'string',
+		default: 'outset',
+	},
+	borderStyle: {
+		type: 'string',
+		default: 'none',
 	},
 	borderWidth: {
-		type: "number",
+		type: 'number',
 	},
 	borderRadius: {
-		type: "number",
-		default : 3
+		type: 'number',
+		default: 3,
 	},
 	borderColor: {
-		type: "string",
-    },
-    buttonBgColor: {
-		type: "string",
-		default: "#9d9d9d"
-    },
-    buttonBgHoverColor: {
-		type: "string",
-    },
-    buttonIconColor: {
-		type: "string",
-    },
-    buttonIconHoverColor: {
-		type: "string",
+		type: 'string',
 	},
-    buttonWidth: {
-		type: "number",
-		default : 55
-    },
-    buttonIconSize: {
-		type: "number",
-		default : 17
-	},    
-    iconColor: {
-		type: "string",
-		default: ""
-    },
-    iconSize: {
-		type: "number",
-		default : 17
+	buttonBgColor: {
+		type: 'string',
+		default: '#9d9d9d',
+	},
+	buttonBgHoverColor: {
+		type: 'string',
+	},
+	buttonIconColor: {
+		type: 'string',
+	},
+	buttonIconHoverColor: {
+		type: 'string',
+	},
+	buttonWidth: {
+		type: 'number',
+		default: 55,
+	},
+	buttonIconSize: {
+		type: 'number',
+		default: 17,
+	},
+	iconColor: {
+		type: 'string',
+		default: '',
+	},
+	iconSize: {
+		type: 'number',
+		default: 17,
 	},
 	inputloadGoogleFonts: {
-		type: "boolean",
-		default: false	
+		type: 'boolean',
+		default: false,
 	},
 	inputFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	inputFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	inputFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	inputFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	inputFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	inputFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	inputFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	inputLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	inputLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	inputLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	inputLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	inputPaddingTypeDesktop: {
-		type: "string",
-		default : "px"
+		type: 'string',
+		default: 'px',
 	},
 	vinputPaddingMobile: {
-		type: "number",
-		default : 15
+		type: 'number',
+		default: 15,
 	},
 	vinputPaddingTablet: {
-		type: "number",
-		default : 15
+		type: 'number',
+		default: 15,
 	},
 	vinputPaddingDesktop: {
-		type: "number",
-		default : 15
+		type: 'number',
+		default: 15,
 	},
 	hinputPaddingMobile: {
-		type: "number",
-		default : 13
+		type: 'number',
+		default: 13,
 	},
 	hinputPaddingTablet: {
-		type: "number",
-		default : 13
+		type: 'number',
+		default: 13,
 	},
 	hinputPaddingDesktop: {
-		type: "number",
-		default : 13
+		type: 'number',
+		default: 13,
 	},
 	buttonType: {
-		type: "string",
-		default: "icon"
+		type: 'string',
+		default: 'icon',
 	},
 	buttonText: {
-		type: "string",
-		default: "Search"
+		type: 'string',
+		default: 'Search',
 	},
 	buttonloadGoogleFonts: {
-		type: "boolean",
-		default: false	
+		type: 'boolean',
+		default: false,
 	},
 	buttonFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	buttonFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	buttonFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	buttonFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	buttonFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	buttonFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	buttonFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	buttonLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	buttonLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	buttonLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	buttonLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	buttonTextColor: {
-		type: "string",
-		default: "#313131"
-    },
-    buttonTextHoverColor: {
-		type: "string",
+		type: 'string',
+		default: '#313131',
 	},
-	inputSizeType : {
-		type:"string",
-		default: "%"
-	}
-}
+	buttonTextHoverColor: {
+		type: 'string',
+	},
+	inputSizeType: {
+		type: 'string',
+		default: '%',
+	},
+};
 
-export default attributes
+export default attributes;

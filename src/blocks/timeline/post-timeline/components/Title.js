@@ -1,28 +1,29 @@
-const { decodeEntities } = wp.htmlEntities
+import { decodeEntities } from '@wordpress/html-entities';
 import { __ } from '@wordpress/i18n';
+import React from 'react';
+const Title = ( props ) => {
+	const Tag = props.attributes.headingTag;
 
-class Title extends React.Component {
+	const { post, attributes } = props;
 
-	render() {
-
-		const Tag = this.props.attributes.headingTag
-
-		const { post, attributes } = this.props
-
-		let target ="_self"
-		if( attributes.linkTarget ){
-			target ="_blank"
-		}
-		return (			
-			<div className="uagb-timeline__heading-text"> 
-				<Tag  className='uagb-timeline__heading'>
-					<a href={ post.link } target= { target} rel ="noopener noreferrer" >   
-						{ decodeEntities( post.title.rendered.trim() ) || __( "(Untitled)" ) }                                                                    
-					</a>
-				</Tag>
-			</div>
-		)
+	let target = '_self';
+	if ( attributes.linkTarget ) {
+		target = '_blank';
 	}
-}
+	return (
+		<div className="uagb-timeline__heading-text">
+			<Tag className="uagb-timeline__heading">
+				<a
+					href={ post.link }
+					target={ target }
+					rel="noopener noreferrer"
+				>
+					{ decodeEntities( post.title.rendered.trim() ) ||
+						__( '(Untitled)' ) }
+				</a>
+			</Tag>
+		</div>
+	);
+};
 
-export default Title
+export default React.memo( Title );

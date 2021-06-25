@@ -3,12 +3,16 @@
  */
 import { __ } from '@wordpress/i18n';
 const attributes = {
-	block_id :{
-		type : "string"
+	block_id: {
+		type: 'string',
 	},
 	tabHeaders: {
 		type: 'array',
-		default: [__('Tab 1' , 'ultimate-addons-for-gutenberg' ),__('Tab 2','ultimate-addons-for-gutenberg'),__('Tab 3','ultimate-addons-for-gutenberg')]
+		default: [
+			__( 'Tab 1', 'ultimate-addons-for-gutenberg' ),
+			__( 'Tab 2', 'ultimate-addons-for-gutenberg' ),
+			__( 'Tab 3', 'ultimate-addons-for-gutenberg' ),
+		],
 	},
 	tabActive: {
 		type: 'number',
@@ -20,22 +24,22 @@ const attributes = {
 	},
 	tabsStyleD: {
 		type: 'string',
-		default: 'hstyle1'
+		default: 'hstyle1',
 	},
 	tabsStyleT: {
 		type: 'string',
-		default: 'vstyle6'
+		default: 'vstyle6',
 	},
 	tabsStyleM: {
 		type: 'string',
-		default: 'vstyle6'
+		default: 'vstyle6',
 	},
 	headerBgColor: {
-		type: 'string', 
+		type: 'string',
 	},
 	headerTextColor: {
 		type: 'string',
-		default:"#007cba"
+		default: '#007cba',
 	},
 	bodyBgColor: {
 		type: 'string',
@@ -45,130 +49,129 @@ const attributes = {
 	},
 	borderWidth: {
 		type: 'number',
-		default:1
+		default: 1,
 	},
 	borderColor: {
 		type: 'string',
-		default:"#e0e0e0"
+		default: '#e0e0e0',
 	},
 	activeTabBgColor: {
 		type: 'string',
-		default:"#007cba"
+		default: '#007cba',
 	},
 	activeTabTextColor: {
 		type: 'string',
-		default:"#fff"
+		default: '#fff',
 	},
-	tabTitleLeftMargin :{
-		type: "number",
+	tabTitleLeftMargin: {
+		type: 'number',
 	},
-	tabTitleRightMargin :{
-		type: "number",
+	tabTitleRightMargin: {
+		type: 'number',
 	},
-	tabTitleTopMargin :{
-		type: "number",
+	tabTitleTopMargin: {
+		type: 'number',
 	},
-	tabTitleBottomMargin :{
-		type: "number",
+	tabTitleBottomMargin: {
+		type: 'number',
 	},
-	tabBodyLeftMargin :{
-		type: "number",
+	tabBodyLeftMargin: {
+		type: 'number',
 	},
-	tabBodyRightMargin :{
-		type: "number",
+	tabBodyRightMargin: {
+		type: 'number',
 	},
-	tabBodyTopMargin :{
-		type: "number",
+	tabBodyTopMargin: {
+		type: 'number',
 	},
-	tabBodyBottomMargin :{
-		type: "number",
+	tabBodyBottomMargin: {
+		type: 'number',
 	},
-	tabBodyVertPadding :{
-		type: "number",
+	tabBodyVertPadding: {
+		type: 'number',
 	},
-	tabBodyHrPadding :{
-		type: "number",
+	tabBodyHrPadding: {
+		type: 'number',
 	},
-	tabTitleVertPadding :{
-		type: "number",
+	tabTitleVertPadding: {
+		type: 'number',
 	},
-	tabTitleHrPadding :{
-		type: "number",
+	tabTitleHrPadding: {
+		type: 'number',
 	},
 	titleFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	titleFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	titleFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	titleFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	titleFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	titleFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	titleFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	titleLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	titleLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	titleLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	titleLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	titleLoadGoogleFonts: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	tabAlign: {
-		type: "string",
-		default: "left"
+		type: 'string',
+		default: 'left',
 	},
 	titleAlign: {
-		type: "string",
-		default: "center"
+		type: 'string',
+		default: 'center',
 	},
 	showIcon: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	icon: {
-		type: "string",
+		type: 'string',
 	},
 	iconPosition: {
-		type: "string",
-		default: "left"
+		type: 'string',
+		default: 'left',
 	},
-	iconSpacing:{
-		type: "string",
-		default: 10
+	iconSpacing: {
+		type: 'string',
+		default: 10,
 	},
-	iconColor:{
-		type: "string",
+	iconColor: {
+		type: 'string',
 	},
-	iconSize:{
-		type: "number",
+	iconSize: {
+		type: 'number',
 		default: 12,
 	},
-	activeiconColor:{
-		type: "string",
+	activeiconColor: {
+		type: 'string',
 	},
+};
 
-}
-
-export default attributes
+export default attributes;

@@ -1,22 +1,23 @@
 .uagb-buttons-repeater {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-    a.uagb-button__link {
-        display: flex;
-        justify-content: center;
-    }
-    .uagb-button__icon {
-        font-size: inherit;
-        display: flex;
-        align-items: center;
-        width: 15px;
+	a.uagb-button__link {
+		display: flex;
+		justify-content: center;
+	}
 
-        svg {
-            fill: currentColor;
-            width: inherit;
-            height: inherit;
-        }
-    }
+	.uagb-button__icon {
+		font-size: inherit;
+		display: flex;
+		align-items: center;
+		width: 15px;
+
+		svg {
+			fill: currentColor;
+			width: inherit;
+			height: inherit;
+		}
+	}
 }

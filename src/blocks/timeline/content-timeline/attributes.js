@@ -4,318 +4,316 @@
 
 import { __ } from '@wordpress/i18n';
 
-const ITEM_COUNT = 5
+const itemCount = 5;
 
-const item = []
-const date_arr = []
+const item = [];
+const dateArr = [];
 
-for (var i = 1; i <= ITEM_COUNT; i++) {
+for ( let i = 1; i <= itemCount; i++ ) {
+	item.push( {
+		time_heading:
+			__( 'Timeline Heading ', 'ultimate-addons-for-gutenberg' ) + i,
+		time_desc: __(
+			'This is Timeline description, you can change me anytime click here ',
+			'ultimate-addons-for-gutenberg'
+		),
+	} );
 
-	item.push(
-		{
-			"time_heading": __( "Timeline Heading ",'ultimate-addons-for-gutenberg' ) + i ,
-			"time_desc": __( "This is Timeline description, you can change me anytime click here ",'ultimate-addons-for-gutenberg' ),
-		}
-	)
+	const j = i - 1;
+	let today = new Date( '1/1/2019' );
+	let dd = today.getDate();
+	let mm = today.getMonth() + 1; //January is 0!
+	const yyyy = today.getFullYear() - j;
 
-	var j = i - 1
-	var today = new Date( "1/1/2019" )
-	var dd = today.getDate()
-	var mm = today.getMonth()+1 //January is 0!
-	var yyyy = today.getFullYear()-j
-
-	if( dd < 10 ) {
-		dd = "0" + dd
+	if ( dd < 10 ) {
+		dd = '0' + dd;
 	}
 
-	if( mm < 10 ) {
-		mm = "0" + mm
+	if ( mm < 10 ) {
+		mm = '0' + mm;
 	}
 
-	today = mm + "/" + dd + "/" + yyyy
-	var p = { "title" : today }
+	today = mm + '/' + dd + '/' + yyyy;
 
-	date_arr.push(
-		{
-			"title": today,
-		}
-	)
+	dateArr.push( {
+		title: today,
+	} );
 }
 
 const attributes = {
 	content_class: {
-		type : "string",
+		type: 'string',
 	},
 	tm_content: {
-		type: "array",
-		default : item,
+		type: 'array',
+		default: item,
 	},
 	classMigrate: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	childMigrate: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
 	dateFormat: {
-		type: "string",
-		default: "F j, Y"
+		type: 'string',
+		default: 'F j, Y',
 	},
-	align : {
-		type : "string",
-		default : "center",
+	align: {
+		type: 'string',
+		default: 'center',
 	},
-	headingColor : {
-		type : "string",
+	headingColor: {
+		type: 'string',
 	},
-	subHeadingColor : {
-		type : "string",
+	subHeadingColor: {
+		type: 'string',
 	},
-	separatorBg : {
-		type : "string",
-		default : "#eee",
+	separatorBg: {
+		type: 'string',
+		default: '#eee',
 	},
-	backgroundColor : {
-		type : "string",
-		default : "#eee",
+	backgroundColor: {
+		type: 'string',
+		default: '#eee',
 	},
-	separatorColor : {
-		type : "string",
-		default : "#eee",
+	separatorColor: {
+		type: 'string',
+		default: '#eee',
 	},
-	separatorFillColor : {
-		type : "string",
-		default : "#61ce70",
+	separatorFillColor: {
+		type: 'string',
+		default: '#61ce70',
 	},
-	separatorBorder : {
-		type : "string",
-		default : "#eee",
+	separatorBorder: {
+		type: 'string',
+		default: '#eee',
 	},
-	borderFocus : {
-		type : "string",
-		default : "#5cb85c",
+	borderFocus: {
+		type: 'string',
+		default: '#5cb85c',
 	},
-	headingTag : {
-		type : "string",
-		default : "h4",
+	headingTag: {
+		type: 'string',
+		default: 'h4',
 	},
-	horizontalSpace : {
-		type : "number",
-		default : 10,
+	horizontalSpace: {
+		type: 'number',
+		default: 10,
 	},
-	verticalSpace : {
-		type : "number",
-		default : 15,
+	verticalSpace: {
+		type: 'number',
+		default: 15,
 	},
-	headFontSize : {
-		type : "number",
+	headFontSize: {
+		type: 'number',
 	},
 	headFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	headFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	headFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	headFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	headFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	headFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	headLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	headLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	headLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	headLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	headLoadGoogleFonts: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
-	timelinAlignment : {
-		type : "string",
-		default : "center",
+	timelinAlignment: {
+		type: 'string',
+		default: 'center',
 	},
-	arrowlinAlignment : {
-		type : "string",
-		default : "center",
+	arrowlinAlignment: {
+		type: 'string',
+		default: 'center',
 	},
 	subHeadFontSizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	subHeadFontSize: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadFontSizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadFontSizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	subHeadFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	subHeadFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	subHeadLineHeightType: {
-		type: "string",
-		default: "em",
+		type: 'string',
+		default: 'em',
 	},
 	subHeadLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	subHeadLoadGoogleFonts: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
-	headSpace : {
-		type : "number",
-		default : 5,
+	headSpace: {
+		type: 'number',
+		default: 5,
 	},
-	separatorwidth : {
-		type : "number",
-		default : 3,
+	separatorwidth: {
+		type: 'number',
+		default: 3,
 	},
-	borderwidth : {
-		type : "number",
-		default : 0,
+	borderwidth: {
+		type: 'number',
+		default: 0,
 	},
-	iconColor : {
-		type : "string",
-		default : "#333",
+	iconColor: {
+		type: 'string',
+		default: '#333',
 	},
-	iconFocus : {
-		type : "string",
-		default : "#fff",
+	iconFocus: {
+		type: 'string',
+		default: '#fff',
 	},
-	iconBgFocus : {
-		type : "string",
-		default : "#61ce70",
+	iconBgFocus: {
+		type: 'string',
+		default: '#61ce70',
 	},
-	dateColor : {
-		type : "string",
-		default : "#333",
+	dateColor: {
+		type: 'string',
+		default: '#333',
 	},
 	dateFontsizeType: {
-		type: "string",
-		default: "px"
+		type: 'string',
+		default: 'px',
 	},
 	dateFontsize: {
-		type: "number",
+		type: 'number',
 	},
 	dateFontsizeTablet: {
-		type: "number",
+		type: 'number',
 	},
 	dateFontsizeMobile: {
-		type: "number",
+		type: 'number',
 	},
 	dateFontFamily: {
-		type: "string",
-		default: "Default",
+		type: 'string',
+		default: 'Default',
 	},
 	dateFontWeight: {
-		type: "string",
+		type: 'string',
 	},
 	dateFontSubset: {
-		type: "string",
+		type: 'string',
 	},
 	dateLineHeightType: {
-		type: "string",
-		default: "em"
+		type: 'string',
+		default: 'em',
 	},
 	dateLineHeight: {
-		type: "number",
+		type: 'number',
 	},
 	dateLineHeightTablet: {
-		type: "number",
+		type: 'number',
 	},
 	dateLineHeightMobile: {
-		type: "number",
+		type: 'number',
 	},
 	dateLoadGoogleFonts: {
-		type: "boolean",
-		default: false
+		type: 'boolean',
+		default: false,
 	},
-	connectorBgsize : {
-		type : "number",
-		default : 35,
+	connectorBgsize: {
+		type: 'number',
+		default: 35,
 	},
-	subHeadSpace : {
-		type : "number",
-		default : 5,
+	subHeadSpace: {
+		type: 'number',
+		default: 5,
 	},
-	dateBottomspace : {
-		type : "number",
-		default : 5,
+	dateBottomspace: {
+		type: 'number',
+		default: 5,
 	},
-	block_id  : {
-		type : "string",
-		default : "0",
+	block_id: {
+		type: 'string',
+		default: '0',
 	},
-	timelineItem :{
-		type : "number",
-		default : ITEM_COUNT,
+	timelineItem: {
+		type: 'number',
+		default: itemCount,
 	},
-	tm_client_id  : {
-		type : "string",
-		default : "not_set",
+	tm_client_id: {
+		type: 'string',
+		default: 'not_set',
 	},
-	borderRadius : {
-		type : "number",
-		default : 2,
+	borderRadius: {
+		type: 'number',
+		default: 2,
 	},
-	bgPadding : {
-		type : "number",
-		default : 20,
+	bgPadding: {
+		type: 'number',
+		default: 20,
 	},
-	iconSize : {
-		type : "number",
-		default : 12,
+	iconSize: {
+		type: 'number',
+		default: 12,
 	},
-	icon : {
-		type : "string",
-		default : "fab fa fa-calendar-alt"
+	icon: {
+		type: 'string',
+		default: 'fab fa fa-calendar-alt',
 	},
-	t_date : {
-		type: "array",
-		default: date_arr,
+	t_date: {
+		type: 'array',
+		default: dateArr,
 	},
-	displayPostDate:{
-		type: "boolean",
+	displayPostDate: {
+		type: 'boolean',
 		default: true,
 	},
 	stack: {
-		type: "string",
-		default: "tablet"
+		type: 'string',
+		default: 'tablet',
 	},
-}
+};
 
-export default attributes
+export default attributes;

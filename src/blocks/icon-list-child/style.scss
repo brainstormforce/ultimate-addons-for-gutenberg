@@ -1,14 +1,15 @@
 .wp-block-uagb-icon-list-child {
-    position: relative;
-    > a {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
+	position: relative;
+
+	> a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
 }
 
 img.uagb-icon-list__source-image {
-    max-width: unset;
+	max-width: unset;
 }

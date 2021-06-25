@@ -536,21 +536,25 @@ if ( ! class_exists( 'UAGB_Post_Timeline' ) ) {
 
 			ob_start();
 			?>
-			<div class = "<?php echo esc_attr( implode( ' ', $main_classes ) ); ?>" >
-				<div  class = "<?php echo esc_html( $this->get_classes( $attributes ) ); ?>" >
-					<div class = "uagb-timeline-wrapper">
-						<div class = "uagb-timeline__main">
-							<?php
-							if ( empty( $recent_posts ) ) {
-								esc_html_e( 'No posts found', 'ultimate-addons-for-gutenberg' );
-							} else {
-								$this->get_post_html( $attributes, $recent_posts );
-							}
-							?>
-							<div class = "uagb-timeline__line" >
-								<div class = "uagb-timeline__line__inner"></div>
-							</div>
-						</div>
+			<div class = "
+			<?php
+			echo esc_attr( implode( ' ', $main_classes ) );
+			echo esc_html( $this->get_classes( $attributes ) );
+			?>
+			<?php
+			echo esc_html( $this->get_classes( $attributes ) );
+			?>
+			" >
+				<div class = "uagb-timeline__main">
+					<?php
+					if ( empty( $recent_posts ) ) {
+						esc_html_e( 'No posts found', 'ultimate-addons-for-gutenberg' );
+					} else {
+						$this->get_post_html( $attributes, $recent_posts );
+					}
+					?>
+					<div class = "uagb-timeline__line" >
+						<div class = "uagb-timeline__line__inner"></div>
 					</div>
 				</div>
 			</div>
@@ -603,23 +607,21 @@ if ( ! class_exists( 'UAGB_Post_Timeline' ) ) {
 				<div class = "<?php echo esc_html( $content_align_class ); ?>">
 					<?php $this->get_icon( $attributes ); ?>
 					<div class = "<?php echo esc_html( $day_align_class ); ?>" >
-						<div class = "uagb-timeline__events-new">
-							<div class ="uagb-timeline__events-inner-new">
-								<div class = "uagb-timeline__date-hide uagb-timeline__date-inner" >
-									<?php $this->get_date( $attributes, 'uagb-timeline__inner-date-new' ); ?>
-								</div>
+						<div class ="uagb-timeline__events-inner-new">
+							<div class = "uagb-timeline__date-hide uagb-timeline__date-inner" >
+								<?php $this->get_date( $attributes, 'uagb-timeline__inner-date-new' ); ?>
+							</div>
 
-								<?php ( $attributes['displayPostImage'] ) ? $this->get_image( $attributes ) : ''; ?>
+							<?php ( $attributes['displayPostImage'] ) ? $this->get_image( $attributes ) : ''; ?>
 
-								<div class = "uagb-content" >
-									<?php
-										$this->get_title( $attributes );
-										$this->get_author( $attributes, $post->post_author );
-										$this->get_excerpt( $attributes );
-										$this->get_cta( $attributes );
-									?>
-									<div class = "uagb-timeline__arrow"></div>
-								</div>
+							<div class = "uagb-content" >
+								<?php
+									$this->get_title( $attributes );
+									$this->get_author( $attributes, $post->post_author );
+									$this->get_excerpt( $attributes );
+									$this->get_cta( $attributes );
+								?>
+								<div class = "uagb-timeline__arrow"></div>
 							</div>
 						</div>
 					</div>

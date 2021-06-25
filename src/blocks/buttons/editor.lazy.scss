@@ -1,0 +1,58 @@
+/**
+ * Editor styles for the admin
+ */
+
+.uagb-buttons__outer-wrap {
+
+	.uagb-buttons__wrap.uagb-buttons-stack-desktop .block-list-appender {
+		width: 60px;
+	}
+
+	.block-list-appender {
+		margin-top: 24px;
+		margin-bottom: 24px;
+		margin-left: 10px;
+	}
+
+	.uagb-button__wrapper {
+		display: flex;
+
+		div {
+			display: inline-flex;
+		}
+	}
+}
+
+[data-type="uagb/buttons"] .block-editor-inner-blocks > .block-editor-block-list__layout {
+	display: flex;
+}
+
+.wp-block[data-type="uagb/buttons"][data-btn-width="full"] {
+
+	.block-editor-inner-blocks,
+	.wp-block[data-type="uagb/buttons-child"] {
+		width: 100%;
+	}
+
+	.block-editor-block-list__layout {
+		flex-grow: 1;
+		justify-content: space-between;
+	}
+
+	.uagb-buttons-repeater {
+		justify-content: center;
+
+		.block-editor-rich-text__editable {
+			justify-content: center;
+			text-align: center;
+		}
+	}
+}
+
+[data-type="uagb/buttons"] .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block {
+	width: auto;
+	padding-right: 0;
+	padding-left: 0;
+	margin-right: 10px;
+	margin-left: 10px;
+}

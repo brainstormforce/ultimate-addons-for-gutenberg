@@ -1,0 +1,58 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block[data-type="uagb/column"]::before {
+	content: "";
+	position: absolute;
+	border: 1px dashed #a3aeb6;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.is-selected.wp-block[data-type="uagb/column"]::before {
+	border-color: #59646c;
+}
+
+.editor-bg-image-control .components-button,
+.editor-bg-video-control .components-button {
+	vertical-align: middle;
+}
+
+.editor-bg-image-control .components-button:last-child,
+.editor-bg-video-control .components-button:last-child {
+	margin-left: 10px;
+}
+
+.wp-block[data-type="uagb/column"] .block-editor-block-list__block-edit {
+	height: 100%;
+}
+
+.uagb-column__inner-wrap .block-editor-block-list__block {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.wp-block-uagb-column.uagb-column__wrap .uagb-column__inner-wrap {
+	width: 100%;
+}
+
+.edit-post-visual-editor .uagb-column__inner-wrap .block-editor-block-list__block > .editor-block-mover {
+	left: -30px;
+}
+
+@media (max-width: 449px) {
+
+	.block-editor-page #wpwrap .uagb-columns__inner-wrap .block-editor-block-list__block {
+		background-attachment: scroll !important;
+	}
+}
+

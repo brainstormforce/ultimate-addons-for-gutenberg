@@ -1,0 +1,89 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.uagb-rm__desk-column-3 [data-type="uagb/restaurant-menu-child"],
+.uagb-rm__desk-column-2 [data-type="uagb/restaurant-menu-child"],
+.uagb-rm__desk-column-1 [data-type="uagb/restaurant-menu-child"] {
+	display: inline-block;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.uagb-rm__desk-column-3 [data-type="uagb/restaurant-menu-child"] {
+	width: calc(100% / 3);
+}
+
+.uagb-rm__desk-column-2 [data-type="uagb/restaurant-menu-child"] {
+	width: calc(100% / 2);
+}
+
+.uagb-rm__desk-column-1 [data-type="uagb/restaurant-menu-child"] {
+	width: 100%;
+}
+
+.uagb-rm__desc,
+.editor-block-list__layout .uagb-rm__desc.block-editor-rich-text__editable {
+	margin-bottom: 15px;
+}
+
+.block-editor-page #wpwrap .uagb-rm__separator-parent {
+	margin-bottom: 10px;
+}
+
+.uagb-editor_imgpos_group {
+
+	&.components-button-group {
+		margin-bottom: 15px;
+	}
+}
+
+.block-editor-page #wpwrap .wp-block-uagb-restaurant-menu .block-editor-block-list__block {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/*
+/* Responsive for price-list on tablet in editor
+*/
+.uagb-editor-preview-mode-tablet {
+	float: left;
+	padding-right: 10px;
+	padding-left: 10px;
+
+	&.uagb-rm__tablet-column-3 [data-type="uagb/restaurant-menu-child"] {
+		width: 33%;
+	}
+
+	&.uagb-rm__tablet-column-2 [data-type="uagb/restaurant-menu-child"] {
+		width: 50%;
+	}
+
+	&.uagb-rm__tablet-column-1 [data-type="uagb/restaurant-menu-child"] {
+		width: 100%;
+	}
+}
+
+/*
+/* Responsive for price-list on mobile in editor
+*/
+.uagb-editor-preview-mode-mobile {
+
+	float: left;
+	padding-right: 10px;
+	padding-left: 10px;
+
+	&.uagb-rm__mobile-column-3 [data-type="uagb/restaurant-menu-child"] {
+		width: 33%;
+	}
+
+	&.uagb-rm__mobile-column-2 [data-type="uagb/restaurant-menu-child"] {
+		width: 50%;
+	}
+
+	&.uagb-rm__mobile-column-1 [data-type="uagb/restaurant-menu-child"] {
+		width: 100%;
+	}
+}

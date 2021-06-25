@@ -6,7 +6,7 @@ import { PostMeta } from './post-meta/edit';
 import { PostImage } from './post-image/edit';
 import { PostExcerpt } from './post-excerpt/edit';
 import { PostButton } from './post-button/edit';
-const { createContext, useContext , Suspense } = wp.element;
+import { createContext, useContext, Suspense } from '@wordpress/element';
 const InnerBlockLayoutContext = createContext( {
 	parentName: '',
 	parentClassName: '',
@@ -51,10 +51,8 @@ export const renderPostLayout = (
 	}
 
 	const blockMap = getBlockMap( blockName );
-
-	return layoutConfig.map( ( [ name, props = {} ], index ) => {
-		let children = [];
-
+	let children = [];
+	return layoutConfig.map( ( [ name, props = {} ] ) => {
 		if ( !! props.children && props.children.length > 0 ) {
 			children = renderPostLayout(
 				blockName,
@@ -71,14 +69,12 @@ export const renderPostLayout = (
 		}
 
 		return (
-			<Suspense
-				fallback={ <div className="wc-block-placeholder" /> }
-			>
+			<Suspense fallback={ <div className="wc-block-placeholder" /> }>
 				<LayoutComponent
 					{ ...props }
 					post={ post }
-					attributes = {attributes}
-					categoriesList = {categoriesList}
+					attributes={ attributes }
+					categoriesList={ categoriesList }
 				/>
 			</Suspense>
 		);
@@ -133,39 +129,39 @@ const assertOption = ( options, optionName, expectedType ) => {
 
 registerBlockComponent( {
 	blockName: 'uagb/post-title',
-	component: PostTitle
+	component: PostTitle,
 } );
 
 registerBlockComponent( {
 	blockName: 'uagb/post-image',
-	component: PostImage
+	component: PostImage,
 } );
 
 registerBlockComponent( {
 	blockName: 'uagb/post-meta',
-	component: PostMeta
+	component: PostMeta,
 } );
 
 registerBlockComponent( {
 	blockName: 'uagb/post-excerpt',
-	component: PostExcerpt
+	component: PostExcerpt,
 } );
 
 registerBlockComponent( {
 	blockName: 'uagb/post-button',
-	component: PostButton
+	component: PostButton,
 } );
 
-export const getBlockMap = ( blockName ) => getRegisteredBlockComponents( blockName );
+export const getBlockMap = ( blockName ) =>
+	getRegisteredBlockComponents( blockName );
 
 export function getRegisteredBlockComponents( context ) {
-
 	const parentInnerBlocks =
 		typeof registeredBlockComponents[ context ] === 'object' &&
 		Object.keys( registeredBlockComponents[ context ] ).length > 0
 			? registeredBlockComponents[ context ]
 			: {};
-		
+
 	return {
 		...parentInnerBlocks,
 		...registeredBlockComponents.any,

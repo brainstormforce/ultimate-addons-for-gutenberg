@@ -4,17 +4,21 @@ import { __ } from '@wordpress/i18n';
 import React from 'react';
 
 const Render = ( props ) => {
-
+    props = props.parentProps;
     const {
-		title,
-		rating,
-		range,
-	} = props.attributes
+        setAttributes,
+        attributes: {
+            className,
+            title,
+            rating,
+            range,
+        }
+	} = props
 	
 	let range_value = parseInt(range);
     var stars = [];
     for (var i = 1; i <= range_value; i++) {
-        stars.push(<i class="uag-star">★</i>);
+        stars.push(<i key={i} class="uag-star">★</i>);
     }
     return (
         <div

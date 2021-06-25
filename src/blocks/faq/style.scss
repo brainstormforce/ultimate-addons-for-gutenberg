@@ -1,12 +1,14 @@
 .wp-block-uagb-faq {
-    &.uagb-faq-layout-accordion .uagb-faq-child__outer-wrap .uagb-faq-questions-button {
-        cursor: pointer;
-    }
+
+	&.uagb-faq-layout-accordion .uagb-faq-child__outer-wrap .uagb-faq-questions-button {
+		cursor: pointer;
+	}
 }
+
 .uagb-faq-layout-grid.uagb-faq-equal-height .uagb-faq__wrap {
-    .uagb-faq-child__outer-wrap,
-    .uagb-faq-child__wrapper,
-    .uagb-faq-item {
-        height: 100%;
-    }
+
+	.uagb-faq-child__outer-wrap,
+	.uagb-faq-item {
+		height: 100%;
+	}
 }

@@ -1,0 +1,30 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.gutenberg-editor-page #wpwrap ul.slick-dots {
+	margin: 0 auto;
+}
+
+#wpwrap .edit-post-visual-editor button.slick-arrow {
+	line-height: 16px;
+}
+
+.uagb-tm__desc,
+.editor-block-list__layout .uagb-tm__desc.block-editor-rich-text__editable {
+	margin-bottom: 15px;
+}
+
+.uagb-tm__author-name,
+.editor-block-list__layout .uagb-tm__author-name.block-editor-rich-text__editable {
+	margin-bottom: 5px;
+	font-size: 30px;
+	line-height: 16px;
+}
+
+#wpwrap .edit-post-visual-editor ul.slick-dots {
+	margin: 0;
+}

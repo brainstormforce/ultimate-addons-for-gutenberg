@@ -3,8 +3,9 @@ import lazyLoader from '@Controls/lazy-loader';
 import TypographyControl from '@Components/typography';
 import WebfontLoader from '@Components/typography/fontloader';
 import { __ } from '@wordpress/i18n';
-import { InspectorControls, ColorPalette } from '@wordpress/block-editor';
-import { PanelBody, SelectControl, RangeControl } from '@wordpress/components';
+import { InspectorControls, ColorPalette, BlockAlignmentToolbar } from '@wordpress/block-editor';
+import { PanelBody, SelectControl, RangeControl, BaseControl } from '@wordpress/components';
+import { Fragment } from '@wordpress/element';
 
 const Settings = ( props ) => {
 	props = props.parentProps;

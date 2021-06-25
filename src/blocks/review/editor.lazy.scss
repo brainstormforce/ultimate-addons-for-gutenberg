@@ -1,0 +1,43 @@
+.editor-styles-wrapper [data-type="uagb/review"] {
+
+	.rating-schema-notices {
+		padding: 8px 10px;
+		background-color: #fff8e5;
+		border-left: 5px solid #ffb901;
+		color: #32373c;
+		font-size: 13px;
+		line-height: 20px;
+
+		ul {
+			padding-bottom: 0;
+			margin: 0;
+		}
+
+		h6 {
+			margin: 0;
+			font-size: inherit;
+			line-height: inherit;
+		}
+
+		p {
+			margin: 15px 0 0;
+			color: #555d66;
+			font-size: inherit;
+		}
+	}
+
+}
+
+.dashicons.dashicons-plus-alt {
+	left: 50%;
+	width: 100%;
+}
+
+.dashicons.dashicons-trash {
+	margin-left: 50px;
+}
+
+.uagb_review_average_stars,
+.uagb_review_entry .dashicons-trash {
+	float: right;
+}

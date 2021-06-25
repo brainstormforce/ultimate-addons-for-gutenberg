@@ -1,33 +1,29 @@
 /**
  * WordPress dependencies
  */
- import { __ } from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 
-const {
-	ButtonGroup,
-	Button,
-	Dashicon,
-} = wp.components
+import { ButtonGroup, Button, Dashicon } from '@wordpress/components';
 
 // Extend component
-const { Fragment } = wp.element
-const { useSelect, useDispatch } = wp.data;
-import map from 'lodash/map';
+import { useSelect, useDispatch } from '@wordpress/data';
 
 /**
  * Build the Measure controls
- * @returns {object} Measure settings.
+ *
+ * @param props
+ * @return {Object} Measure settings.
  */
-export default function Columnresponsive ( props ) {
+export default function ColumnResponsive( props ) {
 	const deviceType = useSelect( ( select ) => {
 		return select( 'core/edit-post' ).__experimentalGetPreviewDeviceType();
-    }, [] );
+	}, [] );
 	const {
 		__experimentalSetPreviewDeviceType: setPreviewDeviceType,
 	} = useDispatch( 'core/edit-post' );
 	const customSetPreviewDeviceType = ( device ) => {
 		setPreviewDeviceType( device );
-    };
+	};
 	const devices = [
 		{
 			name: 'Desktop',
@@ -47,23 +43,25 @@ export default function Columnresponsive ( props ) {
 		},
 	];
 	const output = {};
-	output.Desktop = (
-        <Fragment></Fragment>
-	);
-	output.Tablet = (
-        <Fragment></Fragment>
-	);
-	output.Mobile = (
-        <Fragment></Fragment>
-	);
+	output.Desktop = <></>;
+	output.Tablet = <></>;
+	output.Mobile = <></>;
 	return (
 		<div className={ 'uag-typography-range-options' }>
 			<div className="uagb-size-type-field-tabs">
-				<ButtonGroup className="components-tab-panel__tabs" aria-label={ __( 'Device', 'ultimate-addons-for-gutenberg' ) }>
-					{ map( devices, ( { name, key, title, itemClass } ) => (
+				<ButtonGroup
+					className="components-tab-panel__tabs"
+					aria-label={ __(
+						'Device',
+						'ultimate-addons-for-gutenberg'
+					) }
+				>
+					{ devices.map( ( { name, key, title, itemClass } ) => (
 						<Button
 							key={ key }
-							className={ `components-button components-tab-panel__tabs-item ${ itemClass }${ name === deviceType ? ' active-tab' : '' }` }
+							className={ `components-button components-tab-panel__tabs-item ${ itemClass }${
+								name === deviceType ? ' active-tab' : ''
+							}` }
 							aria-pressed={ deviceType === name }
 							onClick={ () => customSetPreviewDeviceType( name ) }
 						>
@@ -72,7 +70,9 @@ export default function Columnresponsive ( props ) {
 					) ) }
 				</ButtonGroup>
 				<div className="uagb-responsive-control-inner">
-				{ ( output[ deviceType ] ? output[ deviceType ] : output.Desktop ) }
+					{ output[ deviceType ]
+						? output[ deviceType ]
+						: output.Desktop }
 				</div>
 			</div>
 		</div>

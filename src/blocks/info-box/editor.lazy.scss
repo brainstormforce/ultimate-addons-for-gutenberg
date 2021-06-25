@@ -1,0 +1,15 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.block-editor-page #wpwrap {
+
+	.edit-post-visual-editor a.uagb-infobox-link-wrap {
+		z-index: -1;
+		color: inherit;
+	}
+}
+

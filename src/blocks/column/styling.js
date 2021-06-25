@@ -2,12 +2,11 @@
  * Returns Dynamic Generated CSS
  */
 
-import inlineStyles from "./inline-styles"
-import generateCSS from "@Controls/generateCSS"
-import generateCSSUnit from "@Controls/generateCSSUnit"
+import inlineStyles from './inline-styles';
+import generateCSS from '@Controls/generateCSS';
+import generateCSSUnit from '@Controls/generateCSSUnit';
 
 function styling( props ) {
-
 	const {
 		colWidth,
 		colWidthTablet,
@@ -56,90 +55,152 @@ function styling( props ) {
 		mobilePaddingType,
 		tabletPaddingType,
 		desktopPaddingType,
-	} = props.attributes
+	} = props.attributes;
 
-	var position = backgroundPosition.replace( "-", " " )
-	var tablet_selectors = {}
-	var mobile_selectors = {}
+	const position = backgroundPosition.replace( '-', ' ' );
+	let tabletSelectors = {};
+	let mobileSelectors = {};
 
-	var style = {
-		"padding-top": generateCSSUnit( topPadding, desktopPaddingType ),
-		"padding-bottom": generateCSSUnit( bottomPadding, desktopPaddingType ),
-		"padding-left": generateCSSUnit( leftPadding, desktopPaddingType ),
-		"padding-right": generateCSSUnit( rightPadding, desktopPaddingType ),
-		"margin-top": generateCSSUnit( topMargin, desktopMarginType ),
-		"margin-bottom": generateCSSUnit( bottomMargin, desktopMarginType ),
-		"margin-left": generateCSSUnit( leftMargin, desktopMarginType ),
-		"margin-right": generateCSSUnit( rightMargin, desktopMarginType ),
-		"border-radius": generateCSSUnit( borderRadius, desktopMarginType ),
+	const style = {
+		'padding-top': generateCSSUnit( topPadding, desktopPaddingType ),
+		'padding-bottom': generateCSSUnit( bottomPadding, desktopPaddingType ),
+		'padding-left': generateCSSUnit( leftPadding, desktopPaddingType ),
+		'padding-right': generateCSSUnit( rightPadding, desktopPaddingType ),
+		'margin-top': generateCSSUnit( topMargin, desktopMarginType ),
+		'margin-bottom': generateCSSUnit( bottomMargin, desktopMarginType ),
+		'margin-left': generateCSSUnit( leftMargin, desktopMarginType ),
+		'margin-right': generateCSSUnit( rightMargin, desktopMarginType ),
+		'border-radius': generateCSSUnit( borderRadius, desktopMarginType ),
+	};
+
+	if ( borderStyle != 'none' ) {
+		style[ 'border-style' ] = borderStyle;
+		style[ 'border-width' ] = generateCSSUnit( borderWidth, 'px' );
+		style[ 'border-color' ] = borderColor;
 	}
 
-	if ( borderStyle != "none" ) {
-		style["border-style"] = borderStyle
-		style["border-width"] = generateCSSUnit( borderWidth, "px" )
-		style["border-color"] =  borderColor
+	if ( 'image' === backgroundType ) {
+		style[ 'background-image' ] = backgroundImage
+			? `url(${ backgroundImage.url })`
+			: null;
+		style[ 'background-position' ] = position;
+		style[ 'background-attachment' ] = backgroundAttachment;
+		style[ 'background-repeat' ] = backgroundRepeat;
+		style[ 'background-size' ] = backgroundSize;
 	}
 
-	if ( "image" === backgroundType ) {
+	const selectors = {
+		':before': inlineStyles( props ),
+		'': style,
+	};
 
-		style["background-image"] = ( backgroundImage ) ? `url(${ backgroundImage.url })` : null
-		style["background-position"] = position
-		style["background-attachment"] = backgroundAttachment
-		style["background-repeat"] = backgroundRepeat
-		style["background-size"] = backgroundSize
+	tabletSelectors = {
+		'': {
+			'padding-top': generateCSSUnit(
+				topPaddingTablet,
+				tabletPaddingType
+			),
+			'padding-bottom': generateCSSUnit(
+				bottomPaddingTablet,
+				tabletPaddingType
+			),
+			'padding-left': generateCSSUnit(
+				leftPaddingTablet,
+				tabletPaddingType
+			),
+			'padding-right': generateCSSUnit(
+				rightPaddingTablet,
+				tabletPaddingType
+			),
+			'margin-top': generateCSSUnit( topMarginTablet, tabletMarginType ),
+			'margin-bottom': generateCSSUnit(
+				bottomMarginTablet,
+				tabletMarginType
+			),
+			'margin-left': generateCSSUnit(
+				leftMarginTablet,
+				tabletMarginType
+			),
+			'margin-right': generateCSSUnit(
+				rightMarginTablet,
+				tabletMarginType
+			),
+		},
+	};
 
+	mobileSelectors = {
+		'': {
+			'padding-top': generateCSSUnit(
+				topPaddingMobile,
+				mobilePaddingType
+			),
+			'padding-bottom': generateCSSUnit(
+				bottomPaddingMobile,
+				mobilePaddingType
+			),
+			'padding-left': generateCSSUnit(
+				leftPaddingMobile,
+				mobilePaddingType
+			),
+			'padding-right': generateCSSUnit(
+				rightPaddingMobile,
+				mobilePaddingType
+			),
+			'margin-top': generateCSSUnit( topMarginMobile, mobileMarginType ),
+			'margin-bottom': generateCSSUnit(
+				bottomMarginMobile,
+				mobileMarginType
+			),
+			'margin-left': generateCSSUnit(
+				leftMarginMobile,
+				mobileMarginType
+			),
+			'margin-right': generateCSSUnit(
+				rightMarginMobile,
+				mobileMarginType
+			),
+		},
+	};
+
+	if ( colWidth != '' && colWidth != 0 ) {
+		selectors[ '.block-editor-block-list__block' ] = {
+			width: colWidth + '%',
+		};
 	}
 
-	var selectors = {
-		":before" : inlineStyles( props ),
-		"" : style
+	if ( colWidthTablet != '' && colWidthTablet != 0 ) {
+		tabletSelectors[ '.block-editor-block-list__block' ] = {
+			width: colWidthTablet + '%',
+		};
 	}
 
-	tablet_selectors[" .uagb-editor-preview-mode-tablet"] = {
-		"padding-top": generateCSSUnit( topPaddingTablet, tabletPaddingType ),
-		"padding-bottom": generateCSSUnit( bottomPaddingTablet, tabletPaddingType ),
-		"padding-left": generateCSSUnit( leftPaddingTablet, tabletPaddingType ),
-		"padding-right": generateCSSUnit( rightPaddingTablet, tabletPaddingType ),
-		"margin-top": generateCSSUnit( topMarginTablet, tabletMarginType ),
-		"margin-bottom": generateCSSUnit( bottomMarginTablet, tabletMarginType ),
-		"margin-left": generateCSSUnit( leftMarginTablet, tabletMarginType ),
-		"margin-right": generateCSSUnit( rightMarginTablet, tabletMarginType ),
+	if ( colWidthMobile != '' && colWidthMobile != 0 ) {
+		mobileSelectors[ '.block-editor-block-list__block' ] = {
+			width: colWidthMobile + '%',
+		};
 	}
 
-	mobile_selectors[" .uagb-editor-preview-mode-mobile"] ={
-		"padding-top": generateCSSUnit( topPaddingMobile, mobilePaddingType ),
-		"padding-bottom": generateCSSUnit( bottomPaddingMobile, mobilePaddingType ),
-		"padding-left": generateCSSUnit( leftPaddingMobile, mobilePaddingType ),
-		"padding-right": generateCSSUnit( rightPaddingMobile, mobilePaddingType ),
-		"margin-top": generateCSSUnit( topMarginMobile, mobileMarginType ),
-		"margin-bottom": generateCSSUnit( bottomMarginMobile, mobileMarginType ),
-		"margin-left": generateCSSUnit( leftMarginMobile, mobileMarginType ),
-		"margin-right": generateCSSUnit( rightMarginMobile, mobileMarginType ),
-	}
+	let stylingCss = '';
 
-	if ( colWidth != "" && colWidth != 0 ) {
-		selectors[".block-editor-block-list__block"] = { "width" : colWidth + "%" }
-	}
+	const id = `#wpwrap .edit-post-visual-editor #block-${ props.clientId }`;
 
-	if ( colWidthTablet != "" && colWidthTablet != 0 ) {
-		tablet_selectors[".block-editor-block-list__block"] = { "width" : colWidthTablet + "%" }
-	}
+	stylingCss = generateCSS( selectors, id );
 
-	if ( colWidthMobile != "" && colWidthMobile != 0 ) {
-		mobile_selectors[".block-editor-block-list__block"] = { "width" : colWidthMobile + "%" }
-	}
+	stylingCss += generateCSS(
+		tabletSelectors,
+		`${ id }.uagb-editor-preview-mode-tablet`,
+		true,
+		'tablet'
+	);
 
-	var styling_css = ""
+	stylingCss += generateCSS(
+		mobileSelectors,
+		`${ id }.uagb-editor-preview-mode-mobile`,
+		true,
+		'mobile'
+	);
 
-	var id = `#wpwrap .edit-post-visual-editor #block-${ props.clientId }`
-
-	styling_css = generateCSS( selectors, id )
-
-	styling_css += generateCSS( tablet_selectors, id, true, "tablet" )
-
-	styling_css += generateCSS( mobile_selectors, id, true, "mobile" )
-
-	return styling_css
+	return stylingCss;
 }
 
-export default styling
+export default styling;

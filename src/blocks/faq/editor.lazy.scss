@@ -1,0 +1,28 @@
+[data-type="uagb/faq"] {
+
+	.block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block {
+		width: auto;
+		padding-right: 0;
+		padding-left: 0;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.block-editor-inner-blocks > .block-editor-block-list__layout {
+
+		display: block;
+	}
+
+	.uagb-faq-layout-grid .block-editor-inner-blocks > .block-editor-block-list__layout {
+		display: grid;
+	}
+
+	.uagb-faq-layout-grid.uagb-faq-equal-height .block-editor-inner-blocks > .block-editor-block-list__layout {
+
+		.block-editor-block-list__block,
+		.uagb-faq-child__outer-wrap,
+		.uagb-faq-item {
+			height: 100%;
+		}
+	}
+}

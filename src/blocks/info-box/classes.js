@@ -3,46 +3,59 @@
  */
 
 function InfoBoxPositionClasses( attributes ) {
-
-	var sourceClass = "uagb-infobox-has-image"
-	if( attributes.source_type == "icon" ){
-		sourceClass = "uagb-infobox-has-icon"
+	let sourceClass = 'uagb-infobox-has-image';
+	if ( attributes.source_type == 'icon' ) {
+		sourceClass = 'uagb-infobox-has-icon';
 	}
 
-	var iconimgStyle_class = ""
+	let iconimgStyleClass = '';
 
-	iconimgStyle_class += "uagb-infobox"+ " "
-	iconimgStyle_class += sourceClass+ " "
-	iconimgStyle_class += "uagb-infobox-icon-"+attributes.iconimgPosition+ " "
+	iconimgStyleClass += 'uagb-infobox' + ' ';
+	iconimgStyleClass += sourceClass + ' ';
+	iconimgStyleClass +=
+		'uagb-infobox-icon-' + attributes.iconimgPosition + ' ';
 
-	if( attributes.iconimgPosition === "left" || attributes.iconimgPosition === "left-title"  ){
-		iconimgStyle_class +="uagb-infobox-left"+ " "
+	if (
+		attributes.iconimgPosition === 'left' ||
+		attributes.iconimgPosition === 'left-title'
+	) {
+		iconimgStyleClass += 'uagb-infobox-left' + ' ';
 	}
 
-	if( attributes.iconimgPosition === "right" || attributes.iconimgPosition === "right-title"  ){
-		iconimgStyle_class +="uagb-infobox-right"+ " "
+	if (
+		attributes.iconimgPosition === 'right' ||
+		attributes.iconimgPosition === 'right-title'
+	) {
+		iconimgStyleClass += 'uagb-infobox-right' + ' ';
 	}
 
-	if( ( attributes.iconimgPosition === "left" || attributes.iconimgPosition === "right" ) && attributes.stack !== "none"  ){
-		iconimgStyle_class +="uagb-infobox-stacked-"+attributes.stack+ " "
-		if( attributes.iconimgPosition === "right" ){
-			iconimgStyle_class += "uagb-infobox-reverse-order-"+attributes.stack+ " "
+	if (
+		( attributes.iconimgPosition === 'left' ||
+			attributes.iconimgPosition === 'right' ) &&
+		attributes.stack !== 'none'
+	) {
+		iconimgStyleClass += 'uagb-infobox-stacked-' + attributes.stack + ' ';
+		if ( attributes.iconimgPosition === 'right' ) {
+			iconimgStyleClass +=
+				'uagb-infobox-reverse-order-' + attributes.stack + ' ';
 		}
 	}
 
-	if( attributes.iconimgPosition !== "above-title" || attributes.iconimgPosition !== "below-title"  ){
-		iconimgStyle_class += "uagb-infobox-image-valign-"+attributes.sourceAlign+ " "
+	if (
+		attributes.iconimgPosition !== 'above-title' ||
+		attributes.iconimgPosition !== 'below-title'
+	) {
+		iconimgStyleClass +=
+			'uagb-infobox-image-valign-' + attributes.sourceAlign + ' ';
 	}
 
-	if( attributes.enableBorder ){
-		iconimgStyle_class += "uagb-infobox-enable-border"+ " "
+	if ( attributes.enableBorder ) {
+		iconimgStyleClass += 'uagb-infobox-enable-border' + ' ';
 	}
 
-	iconimgStyle_class += "uagb-infobox-enable-border-radius"+ " "
+	iconimgStyleClass += 'uagb-infobox-enable-border-radius' + ' ';
 
-	return [
-		iconimgStyle_class
-	]
+	return [ iconimgStyleClass ];
 }
 
-export default InfoBoxPositionClasses
+export default InfoBoxPositionClasses;

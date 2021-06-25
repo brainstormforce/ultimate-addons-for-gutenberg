@@ -23,10 +23,7 @@
 	}
 
 	.uagb-marketing-btn__link {
-		z-index : 1;
-	}
-
-	.uagb-marketing-btn__link {
+		z-index: 1;
 		display: inline-block;
 		position: relative;
 		-webkit-transition: all 0.2s;
@@ -51,8 +48,8 @@
 		display: -ms-flexbox;
 		display: flex;
 		-webkit-box-align: center;
-		  -ms-flex-align: center;
-		      align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
 	}
 
 	&.uagb-marketing-btn__align-center .uagb-marketing-btn__wrap,
@@ -95,12 +92,13 @@
 	&.uagb-marketing-btn__icon-after .uagb-marketing-btn__title-wrap {
 		-webkit-box-orient: horizontal;
 		-webkit-box-direction: reverse;
-		  -ms-flex-direction: row-reverse;
-		      flex-direction: row-reverse;
+		-ms-flex-direction: row-reverse;
+		flex-direction: row-reverse;
 	}
 }
 
 .entry-content {
+
 	.wp-block-uagb-marketing-button .uagb-marketing-btn__link {
 		text-decoration: none;
 	}

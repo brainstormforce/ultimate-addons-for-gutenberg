@@ -2,11 +2,10 @@
  * Returns Dynamic Generated CSS
  */
 
-import generateCSS from "@Controls/generateCSS"
-import generateCSSUnit from "@Controls/generateCSSUnit"
+import generateCSS from '@Controls/generateCSS';
+import generateCSSUnit from '@Controls/generateCSSUnit';
 
 function styling( props ) {
-
 	const {
 		block_id,
 		textColor,
@@ -41,19 +40,18 @@ function styling( props ) {
 		noticeDismiss,
 		noticeAlignment,
 		layout,
-		highlightWidth
-	} = props.attributes
-
+		highlightWidth,
+	} = props.attributes;
 
 	let lPadding;
 	let rPadding;
 
 	if ( noticeDismiss ) {
-		if( 'left' === noticeAlignment || 'center' === noticeAlignment ){
-			rPadding = ( titleHrPadding + 13 ) ;
+		if ( 'left' === noticeAlignment || 'center' === noticeAlignment ) {
+			rPadding = titleHrPadding + 13;
 			lPadding = titleHrPadding;
-		}else{
-			lPadding = ( titleHrPadding + 13 ) ;
+		} else {
+			lPadding = titleHrPadding + 13;
 			rPadding = titleHrPadding;
 		}
 	} else {
@@ -61,99 +59,145 @@ function styling( props ) {
 		rPadding = titleHrPadding;
 	}
 
-	var tablet_selectors = {}
-	var mobile_selectors = {}
+	let tabletSelectors = {};
+	let mobileSelectors = {};
 
-	var selectors = {
-
-		" .rich-text.block-editor-rich-text__editable.uagb-notice-title" : {
-			"font-size": generateCSSUnit( titleFontSize, titleFontSizeType ),
-			"font-weight": titleFontWeight,
-			"font-family": titleFontFamily,
-			"line-height": generateCSSUnit( titleLineHeight, titleLineHeightType ),
-			"color": titleColor,
-			"padding-left" : generateCSSUnit( lPadding, "px" ),
-			"padding-right" : generateCSSUnit( rPadding, "px" ),
-			"padding-top" : generateCSSUnit( titleVrPadding, "px" ),
-			"padding-bottom" : generateCSSUnit( titleVrPadding, "px" ),
-			
+	const selectors = {
+		' .rich-text.block-editor-rich-text__editable.uagb-notice-title': {
+			'font-size': generateCSSUnit( titleFontSize, titleFontSizeType ),
+			'font-weight': titleFontWeight,
+			'font-family': titleFontFamily,
+			'line-height': generateCSSUnit(
+				titleLineHeight,
+				titleLineHeightType
+			),
+			color: titleColor,
+			'padding-left': generateCSSUnit( lPadding, 'px' ),
+			'padding-right': generateCSSUnit( rPadding, 'px' ),
+			'padding-top': generateCSSUnit( titleVrPadding, 'px' ),
+			'padding-bottom': generateCSSUnit( titleVrPadding, 'px' ),
 		},
 
-		" .rich-text.block-editor-rich-text__editable.uagb-notice-text" : {
-			"padding-left" : generateCSSUnit( contentHrPadding, "px" ),
-			"padding-right" : generateCSSUnit( contentHrPadding, "px" ),
-			"padding-top" : generateCSSUnit( contentVrPadding, "px" ),
-			"padding-bottom" : generateCSSUnit( contentVrPadding, "px" ),
-			
+		' .rich-text.block-editor-rich-text__editable.uagb-notice-text': {
+			'padding-left': generateCSSUnit( contentHrPadding, 'px' ),
+			'padding-right': generateCSSUnit( contentHrPadding, 'px' ),
+			'padding-top': generateCSSUnit( contentVrPadding, 'px' ),
+			'padding-bottom': generateCSSUnit( contentVrPadding, 'px' ),
 		},
-		
-		" .rich-text.block-editor-rich-text__editable.uagb-notice-text p" : {
-			"font-size": generateCSSUnit( descFontSize, descFontSizeType ),
-		    "font-weight": descFontWeight,
-		    "font-family": descFontFamily,
-		    "line-height": generateCSSUnit( descLineHeight, descLineHeightType ),
-		    "color": textColor,
+
+		' .rich-text.block-editor-rich-text__editable.uagb-notice-text p': {
+			'font-size': generateCSSUnit( descFontSize, descFontSizeType ),
+			'font-weight': descFontWeight,
+			'font-family': descFontFamily,
+			'line-height': generateCSSUnit(
+				descLineHeight,
+				descLineHeightType
+			),
+			color: textColor,
 		},
-		
-		" span.uagb-notice-dismiss" : {
-			"fill": noticeDismissColor,
+
+		' span.uagb-notice-dismiss': {
+			fill: noticeDismissColor,
 		},
+	};
+
+	if ( 'modern' == layout ) {
+		selectors[
+			' .rich-text.block-editor-rich-text__editable.uagb-notice-title'
+		][ 'background-color' ] = noticeColor;
+		selectors[
+			' .rich-text.block-editor-rich-text__editable.uagb-notice-title'
+		][ 'border-top-right-radius' ] = '3px';
+		selectors[
+			' .rich-text.block-editor-rich-text__editable.uagb-notice-title'
+		][ 'border-top-left-radius' ] = '3px';
+
+		selectors[
+			' .rich-text.block-editor-rich-text__editable.uagb-notice-text'
+		][ 'background-color' ] = contentBgColor;
+		selectors[
+			' .rich-text.block-editor-rich-text__editable.uagb-notice-text'
+		].border = '2px solid' + noticeColor;
+		selectors[
+			' .rich-text.block-editor-rich-text__editable.uagb-notice-text'
+		][ 'border-bottom-left-radius' ] = '3px';
+		selectors[
+			' .rich-text.block-editor-rich-text__editable.uagb-notice-text'
+		][ 'border-bottom-right-radius' ] = '3px';
+	} else if ( 'simple' == layout ) {
+		selectors[
+			' .rich-text.block-editor-rich-text__editable.uagb-notice-title'
+		][ 'background-color' ] = contentBgColor;
+		selectors[
+			' .rich-text.block-editor-rich-text__editable.uagb-notice-title'
+		][ 'border-left' ] =
+			generateCSSUnit( highlightWidth, 'px' ) + ' solid ' + noticeColor;
+
+		selectors[
+			' .rich-text.block-editor-rich-text__editable.uagb-notice-text'
+		][ 'background-color' ] = contentBgColor;
+		selectors[
+			' .rich-text.block-editor-rich-text__editable.uagb-notice-text'
+		][ 'border-left' ] =
+			generateCSSUnit( highlightWidth, 'px' ) + ' solid ' + noticeColor;
 	}
-	
-	if("modern" == layout){	
-
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title"]["background-color"] = noticeColor
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title"]["border-top-right-radius"] = "3px"
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title"]["border-top-left-radius"] = "3px"
-
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["background-color"] = contentBgColor
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["border"] = "2px solid" + noticeColor
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["border-bottom-left-radius"] = "3px"
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["border-bottom-right-radius"] = "3px"
-
-
-	}else if("simple" == layout){	
-		
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title"]["background-color"] = contentBgColor
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-title"]["border-left"] =  generateCSSUnit( highlightWidth, "px" ) +" solid " + noticeColor
-
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["background-color"] = contentBgColor
-		selectors[" .rich-text.block-editor-rich-text__editable.uagb-notice-text"]["border-left"] =  generateCSSUnit( highlightWidth, "px" ) +" solid " + noticeColor
-		
-	}
-	mobile_selectors = {
-		" .rich-text.block-editor-rich-text__editable.uagb-notice-title" : {
-			"font-size": generateCSSUnit( titleFontSizeMobile, titleFontSizeType ),
-			"line-height": generateCSSUnit( titleLineHeightMobile, titleLineHeightType ),
+	mobileSelectors = {
+		' .rich-text.block-editor-rich-text__editable.uagb-notice-title': {
+			'font-size': generateCSSUnit(
+				titleFontSizeMobile,
+				titleFontSizeType
+			),
+			'line-height': generateCSSUnit(
+				titleLineHeightMobile,
+				titleLineHeightType
+			),
 		},
-		
-		" .rich-text.block-editor-rich-text__editable.uagb-notice-text p" : {
-			"font-size": generateCSSUnit( descFontSizeMobile, descFontSizeType ),
-			"line-height": generateCSSUnit( descLineHeightMobile, descLineHeightType ),
+
+		' .rich-text.block-editor-rich-text__editable.uagb-notice-text p': {
+			'font-size': generateCSSUnit(
+				descFontSizeMobile,
+				descFontSizeType
+			),
+			'line-height': generateCSSUnit(
+				descLineHeightMobile,
+				descLineHeightType
+			),
 		},
-	}
+	};
 
-	tablet_selectors = { 
-			" .rich-text.block-editor-rich-text__editable.uagb-notice-title" : {
-				"font-size": generateCSSUnit( titleFontSizeTablet, titleFontSizeType ),
-				"line-height": generateCSSUnit( titleLineHeightTablet, titleLineHeightType ),
-			},
+	tabletSelectors = {
+		' .rich-text.block-editor-rich-text__editable.uagb-notice-title': {
+			'font-size': generateCSSUnit(
+				titleFontSizeTablet,
+				titleFontSizeType
+			),
+			'line-height': generateCSSUnit(
+				titleLineHeightTablet,
+				titleLineHeightType
+			),
+		},
 
-			" .rich-text.block-editor-rich-text__editable.uagb-notice-text p" : {
-			    "font-size": generateCSSUnit( descFontSizeTablet, descFontSizeType ),
-			    "line-height": generateCSSUnit( descLineHeightTablet, descLineHeightType ),
-			},
-	}
+		' .rich-text.block-editor-rich-text__editable.uagb-notice-text p': {
+			'font-size': generateCSSUnit(
+				descFontSizeTablet,
+				descFontSizeType
+			),
+			'line-height': generateCSSUnit(
+				descLineHeightTablet,
+				descLineHeightType
+			),
+		},
+	};
 
-	var base_selector = `.block-editor-page #wpwrap .uagb-block-${ block_id }`
+	const baseSelector = `.block-editor-page #wpwrap .uagb-block-${ block_id }`;
 
-	var styling_css = generateCSS( selectors, base_selector )
+	let stylingCss = generateCSS( selectors, baseSelector );
 
-	styling_css += generateCSS( tablet_selectors, base_selector, true, "tablet" )
+	stylingCss += generateCSS( tabletSelectors, baseSelector, true, 'tablet' );
 
-	styling_css += generateCSS( mobile_selectors, base_selector, true, "mobile" )
+	stylingCss += generateCSS( mobileSelectors, baseSelector, true, 'mobile' );
 
-	return styling_css
+	return stylingCss;
 }
 
-export default styling
+export default styling;

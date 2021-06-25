@@ -1,0 +1,27 @@
+.uagb-icon-list__wrap > .block-editor-inner-blocks {
+	width: 100%;
+}
+
+.wp-block.block-editor-block-list__block[data-type="uagb/icon-list-child"] {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.uagb-icon-list__layout-vertical {
+
+	.uagb-icon-list__wrap .block-list-appender {
+		margin-top: 28px;
+		width: 60px;
+	}
+}
+
+.uagb-icon-list__layout-horizontal {
+
+	.uagb-icon-list__wrap .block-list-appender {
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-left: 20px;
+		width: 52px;
+		height: 52px;
+	}
+}

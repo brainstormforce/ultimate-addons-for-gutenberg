@@ -1,58 +1,54 @@
-const {
-	RichText,
-} = wp.blockEditor
-
-const {
-	createBlock
-} = wp.blocks
+import { RichText } from '@wordpress/block-editor';
 
 import { __ } from '@wordpress/i18n';
 
-class Title extends React.Component {
+import { createBlock } from '@wordpress/blocks';
 
-	render() {
+const Title = ( props ) => {
+	const {
+		attributes,
+		setAttributes,
+		mergeBlocks,
+		insertBlocksAfter,
+		onReplace,
+	} = props;
 
-		//const { attributes, setAttributes , props } = this.props;
-		const {
-			attributes,
-			setAttributes ,
-			props
-		} = this.props
-
-		if( setAttributes !== "not_set" ){
-			return (
-				<RichText
-	                tagName= { attributes.headingTag }
-	                placeholder={ __( "Write a Heading" ) }
-	                value={ attributes.infoBoxTitle }
-	                className = 'uagb-ifb-title'
-	                onChange = { ( value ) => setAttributes( { infoBoxTitle: value } ) }
-	                multiline={ false }
-	                onMerge = { props.mergeBlocks }
-	                onSplit = {
-						props.insertBlocksAfter ?
-							( before, after, ...blocks ) => {
-								setAttributes( { content: before } )
-								props.insertBlocksAfter( [
+	if ( setAttributes !== 'not_set' ) {
+		return (
+			<RichText
+				tagName={ attributes.headingTag }
+				placeholder={ __( 'Write a Heading' ) }
+				value={ attributes.infoBoxTitle }
+				className="uagb-ifb-title"
+				onChange={ ( value ) =>
+					setAttributes( { infoBoxTitle: value } )
+				}
+				multiline={ false }
+				onMerge={ mergeBlocks }
+				onSplit={
+					insertBlocksAfter
+						? ( before, after, ...blocks ) => {
+								setAttributes( { content: before } );
+								insertBlocksAfter( [
 									...blocks,
-									createBlock( "core/paragraph", { content: after } ),
-								] )
-							} :
-							undefined
-					}
-					onRemove={ () => props.onReplace( [] ) }
-	            />
-			)
-		}else{
-			return (
-				<RichText.Content
-	                tagName= { attributes.headingTag }
-	                value={ attributes.infoBoxTitle }
-	                className='uagb-ifb-title'
-	            />
-			)
-		}
+									createBlock( 'core/paragraph', {
+										content: after,
+									} ),
+								] );
+						  }
+						: undefined
+				}
+				onRemove={ () => onReplace( [] ) }
+			/>
+		);
 	}
-}
+	return (
+		<RichText.Content
+			tagName={ attributes.headingTag }
+			value={ attributes.infoBoxTitle }
+			className="uagb-ifb-title"
+		/>
+	);
+};
 
-export default Title
+export default Title;

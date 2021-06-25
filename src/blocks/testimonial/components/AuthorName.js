@@ -1,69 +1,72 @@
-const {
-	RichText,
-} = wp.blockEditor
+import { RichText } from '@wordpress/block-editor';
 
 import { __ } from '@wordpress/i18n';
 
-const {
-	createBlock
-} = wp.blocks
+import { createBlock } from '@wordpress/blocks';
 
-class AuthorName extends React.Component {
+const AuthorName = ( props ) => {
+	const {
+		attributes,
+		setAttributes,
+		index_value,
+		mergeBlocks,
+		insertBlocksAfter,
+		onReplace,
+	} = props;
 
-	render() {
-
-		const {
-			attributes,
-			setAttributes ,
-			props,
-			index_value
-		} = this.props
-
-		const test_arr = attributes.test_block[index_value]
-		let author_name = ""
-		if( test_arr && typeof test_arr !== "undefined"){
-			author_name = test_arr["name"]			
-		}
-
-		var data_copy = [...attributes.test_block]
-
-		if( setAttributes !== "not_set" ){
-			return (
-				<RichText
-	                tagName="div"
-	                value={ author_name }
-	                placeholder={ __( "Author Name",'ultimate-addons-for-gutenberg' ) }
-	                className='uagb-tm__author-name'
-	                onChange={ ( value ) => { 
-	                	var new_content = { "description" : data_copy[index_value]["description"], "name":value, "company" : data_copy[index_value]["company"], "image" : data_copy[index_value]["image"]  }
-						data_copy[index_value] = new_content
-						setAttributes( { "test_block": data_copy } )	                	
-	                } }     
-	                onMerge = { props.mergeBlocks }
-	                onSplit = {
-						props.insertBlocksAfter ?
-							( before, after, ...blocks ) => {
-								setAttributes( { content: before } )
-								props.insertBlocksAfter( [
-									...blocks,
-									createBlock( "core/paragraph", { content: after } ),
-								] )
-							} :
-							undefined
-					}
-					onRemove={ () => props.onReplace( [] ) }
-	            />
-			)
-		}else{
-			return (
-				<RichText.Content
-	                tagName="span"
-	                value={ author_name }
-	                className='uagb-tm__author-name'
-	            />
-			)
-		}
+	const testArray = attributes.test_block[ index_value ];
+	let authorName = '';
+	if ( testArray && typeof testArray !== 'undefined' ) {
+		authorName = testArray.name;
 	}
-}
 
-export default AuthorName
+	const dataCopy = [ ...attributes.test_block ];
+
+	if ( setAttributes !== 'not_set' ) {
+		return (
+			<RichText
+				tagName="div"
+				value={ authorName }
+				placeholder={ __(
+					'Author Name',
+					'ultimate-addons-for-gutenberg'
+				) }
+				className="uagb-tm__author-name"
+				onChange={ ( value ) => {
+					const new_content = {
+						description: dataCopy[ index_value ].description,
+						name: value,
+						company: dataCopy[ index_value ].company,
+						image: dataCopy[ index_value ].image,
+					};
+					dataCopy[ index_value ] = new_content;
+					setAttributes( { test_block: dataCopy } );
+				} }
+				onMerge={ mergeBlocks }
+				onSplit={
+					insertBlocksAfter
+						? ( before, after, ...blocks ) => {
+								setAttributes( { content: before } );
+								insertBlocksAfter( [
+									...blocks,
+									createBlock( 'core/paragraph', {
+										content: after,
+									} ),
+								] );
+						  }
+						: undefined
+				}
+				onRemove={ () => onReplace( [] ) }
+			/>
+		);
+	}
+	return (
+		<RichText.Content
+			tagName="span"
+			value={ authorName }
+			className="uagb-tm__author-name"
+		/>
+	);
+};
+
+export default AuthorName;

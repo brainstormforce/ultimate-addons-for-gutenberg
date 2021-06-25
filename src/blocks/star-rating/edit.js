@@ -55,7 +55,6 @@ const UAGBStarRating = ( props ) => {
 			<Suspense fallback={ lazyLoader() }>
 				<Settings parentProps={ props } />
 				<Render parentProps={ props } />
-				{ loadTitleGoogleFonts }
 			</Suspense>
 		</>
 	);

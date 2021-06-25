@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-const { createBlock, getBlockAttributes } = wp.blocks;
+import { createBlock, getBlockAttributes } from '@wordpress/blocks';
 
 /**
  * Internal dependencies
@@ -21,7 +21,10 @@ const transform = {
 				},
 			} ),
 			transform( node ) {
-				const attributes = getBlockAttributes( 'uagb/social-share', node.outerHTML );
+				const attributes = getBlockAttributes(
+					'uagb/social-share',
+					node.outerHTML
+				);
 				const { textAlign } = node.style || {};
 
 				if (
