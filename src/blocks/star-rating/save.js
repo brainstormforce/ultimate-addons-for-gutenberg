@@ -17,7 +17,7 @@ export default function save( props ) {
 	let range_value = parseInt(range);
 	var stars = [];
 	for (var i = 1; i <= range_value; i++) {
-		stars.push(<i class="uag-star">★</i>);
+		stars.push(<span class="uag-star">★</span>);
 	}
 	return (
 		<div

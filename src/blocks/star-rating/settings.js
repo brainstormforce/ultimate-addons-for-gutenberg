@@ -77,6 +77,7 @@ const Settings = ( props ) => {
                     max={ range }
                     beforeIcon=""
                     allowReset
+                    step={ 0.1 }
                     initialPosition={0}
                 />
                 <hr/>

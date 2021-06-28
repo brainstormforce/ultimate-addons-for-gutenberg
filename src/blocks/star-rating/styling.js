@@ -8,6 +8,7 @@ import generateCSSUnit from "@Controls/generateCSSUnit"
 function styling( props ) {
 
 	const {
+		range,
 		rating,
 		size,
 		align,
@@ -37,12 +38,15 @@ function styling( props ) {
 		if ( 'full' === align ) 
 			alignment = 'space-between';
 	}
+
+	let remainder = ( rating % 1 ).toFixed(1);
+	let width = remainder * 100;
 	
 	var selectors = {
 		" .uag-star-rating": {
 			"font-size": generateCSSUnit( size, 'px' ),
 		},
-		" .uag-star-rating > i": {
+		" .uag-star-rating > span": {
 			"margin-right": generateCSSUnit( gap, 'px' ),
 			"color": unmarkedColor
 		},
@@ -59,7 +63,21 @@ function styling( props ) {
 		}
 	}
 
-	selectors[" .uag-star:nth-child(-n+" + rating + ")"] = {
+	if ( 0 !== width ) {
+		selectors[" .uag-star:nth-child(" + Math.ceil( rating ) + "):before"] = {
+			"color": color,
+			"width": generateCSSUnit( width, "%" ),
+			"position" : "absolute",
+			"content" : "'★'",
+			"overflow" : "hidden"
+		}
+
+		selectors[" .uag-star:nth-child(" + Math.ceil( rating ) + ")"] = {
+			"position" : "relative",
+		}
+	}
+
+	selectors[" .uag-star:nth-child(-n+" + Math.floor( rating ) + ")"] = {
 		"color": color,
 	}
 

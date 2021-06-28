@@ -18,7 +18,7 @@ const Render = ( props ) => {
 	let range_value = parseInt(range);
     var stars = [];
     for (var i = 1; i <= range_value; i++) {
-        stars.push(<i key={i} class="uag-star">★</i>);
+        stars.push(<span key={i} class="uag-star">★</span>);
     }
     return (
         <div

@@ -50,11 +50,11 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 				' .uag-star-rating'         => array(
 					'font-size' => UAGB_Helper::get_css_value( $attr['size'], 'px' ),
 				),
-				' .uag-star-rating > i'     => array(
+				' .uag-star-rating > span'  => array(
 					'margin-right' => UAGB_Helper::get_css_value( $attr['gap'], 'px' ),
 					'color'        => $attr['unmarkedColor'],
 				),
-				' .uag-star:nth-child(-n+' . $attr['rating'] . ')' => array(
+				' .uag-star:nth-child(-n+' . floor( $attr['rating'] ) . ')' => array(
 					'color' => $attr['color'],
 				),
 				' .uag-star-rating__title'  => array(
@@ -69,6 +69,23 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'justify-content' => $alignment,
 				),
 			);
+
+			$remainder = ( $attr['rating'] - floor( $attr['rating'] ) );
+			$width     = $remainder * 100;
+
+			if ( 0 !== $width ) {
+				$selectors[ ' .uag-star:nth-child(' . ceil( $attr['rating'] ) . '):before' ] = array(
+					'color'    => $attr['color'],
+					'width'    => UAGB_Helper::get_css_value( $width, '%' ),
+					'position' => 'absolute',
+					'content'  => "'★'",
+					'overflow' => 'hidden',
+				);
+
+				$selectors[ ' .uag-star:nth-child(' . ceil( $attr['rating'] ) . ')' ] = array(
+					'position' => 'relative',
+				);
+			}
 
 			$combined_selectors = array(
 				'desktop' => $selectors,
