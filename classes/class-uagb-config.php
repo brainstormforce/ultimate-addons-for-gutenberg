@@ -3128,6 +3128,9 @@ if ( ! class_exists( 'UAGB_Config' ) ) {
 					'uagb/section'                => array(
 						'name' => 'section',
 					),
+					'uagb/star-rating'                => array(
+						'name' => 'star-rating',
+					),
 					'uagb/social-share-child'     => array(
 						'name' => 'social-share-child',
 					),
