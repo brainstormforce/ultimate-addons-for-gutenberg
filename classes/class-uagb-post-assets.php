@@ -872,6 +872,13 @@ class UAGB_Post_Assets {
 					$css = $block_assets['css'];
 
 					if ( ! empty( $css['common'] ) ) {
+						/**
+						 * Action that is triggered when the common single block CSS has been composed.
+						 *
+						 * @param string $common_css The composed common CSS.
+						 * @param array  $block      The block related information.
+						 */
+						do_action( 'uagb_single_block_common_css_composed', $css['common'], $block );
 						$desktop .= $css['common'];
 					}
 
