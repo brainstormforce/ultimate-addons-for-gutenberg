@@ -50,6 +50,9 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 		 */
 		public function __construct() {
 
+			global $excerpt_length;
+			$excerpt_length = 0;
+
 			add_action( 'init', array( $this, 'register_blocks' ) );
 			add_action( 'wp_ajax_uagb_post_pagination', array( $this, 'post_pagination' ) );
 			add_action( 'wp_ajax_nopriv_uagb_post_pagination', array( $this, 'post_pagination' ) );
@@ -57,6 +60,18 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 			add_action( 'wp_ajax_nopriv_uagb_get_posts', array( $this, 'masonry_pagination' ) );
 			add_action( 'wp_footer', array( $this, 'add_post_dynamic_script' ), 1000 );
 			add_filter( 'redirect_canonical', array( $this, 'override_canonical' ), 1, 2 );
+		}
+
+		/**
+		 * Callback for the excerpt_length filter used by
+		 * the Posts block at render time.
+		 *
+		 * @return int Returns the global $excerpt_length variable
+		 *             to allow the excerpt_length filter respect the Latest Block setting.
+		 */
+		public function get_excerpt_length() {
+			global $excerpt_length;
+			return $excerpt_length;
 		}
 
 		/**
@@ -764,6 +779,11 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 		 */
 		public function post_grid_callback( $attributes ) {
 
+			global $excerpt_length;
+
+			$excerpt_length = $attributes['excerptLength'];
+			add_filter( 'excerpt_length', array( $this, 'get_excerpt_length' ), 20 );
+
 			// Render query.
 			$query = UAGB_Helper::get_query( $attributes, 'grid' );
 
@@ -1446,6 +1466,7 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 		 * @since 0.0.1
 		 */
 		public function render_excerpt( $attributes ) {
+
 			if ( ! $attributes['displayPostExcerpt'] ) {
 				return;
 			}
@@ -1455,14 +1476,17 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 			$length = ( isset( $attributes['excerptLength'] ) ) ? $attributes['excerptLength'] : 25;
 
 			if ( 'full_post' === $attributes['displayPostContentRadio'] ) {
-				$excerpt = get_the_content();
+
+				$excerpt = wp_kses_post( html_entity_decode( $post->post_content, ENT_QUOTES, get_option( 'blog_charset' ) ) );
 			} else {
-				$excerpt = $this->get_excerpt_by_id( $post->ID, $length );
+				$excerpt = get_the_excerpt( $post );
 			}
 
 			if ( ! $excerpt ) {
 				$excerpt = null;
 			}
+
+			remove_filter( 'excerpt_length', array( $this, 'get_excerpt_length' ), 20 );
 
 			$excerpt = apply_filters( "uagb_single_post_excerpt_{$attributes['post_type']}", $excerpt, get_the_ID(), $attributes );
 			do_action( "uagb_single_post_before_excerpt_{$attributes['post_type']}", get_the_ID(), $attributes );
