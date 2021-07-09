@@ -101,7 +101,7 @@ $uagb_support_link_text = apply_filters( 'uagb_support_link_text', __( 'Submit a
 		<div class="postbox-container uagb-sidebar" id="postbox-container-1">
 			<div id="side-sortables">
 				<div class="postbox">
-					<h2 class="hndle uagb-normal-cusror">
+					<h2 class="handle uagb-normal-cusror">
 						<span class="dashicons dashicons-book"></span>
 						<span><?php esc_html_e( 'Knowledge Base', 'ultimate-addons-for-gutenberg' ); ?></span>
 					</h2>
@@ -113,7 +113,7 @@ $uagb_support_link_text = apply_filters( 'uagb_support_link_text', __( 'Submit a
 					</div>
 				</div>
 				<div class="postbox">
-					<h2 class="hndle uagb-normal-cusror">
+					<h2 class="handle uagb-normal-cusror">
 						<span class="dashicons dashicons-awards"></span>
 						<span><?php esc_html_e( 'Five Star Support', 'ultimate-addons-for-gutenberg' ); ?></span>
 					</h2>

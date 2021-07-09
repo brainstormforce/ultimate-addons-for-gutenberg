@@ -381,7 +381,7 @@ class UAGB_Init_Blocks {
 				'uagb_url'               => UAGB_URL,
 				'uagb_mime_type'         => UAGB_Helper::get_mime_type(),
 				'uagb_site_url'          => UAGB_URI,
-				'uagb_display_condition' => apply_filters( 'enable_block_condition', true ),
+				'uagb_display_condition' => apply_filters( 'enable_block_condition', ! in_array( 'uagb/display-conditions', $blocks, true ) ),
 			)
 		);
 

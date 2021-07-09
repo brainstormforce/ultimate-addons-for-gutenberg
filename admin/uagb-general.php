@@ -33,6 +33,36 @@ array_multisort(
 	SORT_ASC,
 	$blocks
 );
+
+$child_blocks = array(
+	'column',
+	'icon-list-child',
+	'social-share-child',
+	'buttons-child',
+	'faq-child',
+	'forms-name',
+	'forms-email',
+	'forms-hidden',
+	'forms-phone',
+	'forms-textarea',
+	'forms-url',
+	'forms-select',
+	'forms-radio',
+	'forms-checkbox',
+	'forms-upload',
+	'forms-toggle',
+	'forms-date',
+	'forms-accept',
+	'post-title',
+	'post-image',
+	'post-button',
+	'post-excerpt',
+	'post-meta',
+	'restaurant-menu-child',
+	'content-timeline-child',
+	'tabs-child',
+);
+$extensions   = array();
 ?>
 
 <div class="uagb-container uagb-general">
@@ -71,7 +101,7 @@ array_multisort(
 				</div>
 			</div>
 			<div class="widgets postbox">
-				<h2 class="hndle uagb-flex uagb-widgets-heading"><span><?php esc_html_e( 'Blocks', 'ultimate-addons-for-gutenberg' ); ?></span>
+				<h2 class="handle uagb-flex uagb-widgets-heading"><span><?php esc_html_e( 'Blocks', 'ultimate-addons-for-gutenberg' ); ?></span>
 					<div class="uagb-bulk-actions-wrap">
 						<a class="bulk-action uagb-activate-all button"> <?php esc_html_e( 'Activate All', 'ultimate-addons-for-gutenberg' ); ?> </a>
 						<a class="bulk-action uagb-deactivate-all button"> <?php esc_html_e( 'Deactivate All', 'ultimate-addons-for-gutenberg' ); ?> </a>
@@ -88,36 +118,8 @@ array_multisort(
 
 								$addon = str_replace( 'uagb/', '', $addon );
 
-								$child_blocks = array(
-									'column',
-									'icon-list-child',
-									'social-share-child',
-									'buttons-child',
-									'faq-child',
-									'forms-name',
-									'forms-email',
-									'forms-hidden',
-									'forms-phone',
-									'forms-textarea',
-									'forms-url',
-									'forms-select',
-									'forms-radio',
-									'forms-checkbox',
-									'forms-upload',
-									'forms-toggle',
-									'forms-date',
-									'forms-accept',
-									'post-title',
-									'post-image',
-									'post-button',
-									'post-excerpt',
-									'post-meta',
-									'restaurant-menu-child',
-									'content-timeline-child',
-									'tabs-child',
-								);
-
 								if ( array_key_exists( 'extension', $info ) && $info['extension'] ) {
+									$extensions[ $addon ] = $info;
 									continue;
 								}
 
@@ -168,12 +170,69 @@ array_multisort(
 					<?php endif; ?>
 				</div>
 			</div>
+			<?php if ( is_array( $extensions ) && ! empty( $extensions ) ) : ?>
+			<div class="widgets postbox">
+				<h2 class="handle uagb-flex uagb-widgets-heading"><span><?php esc_html_e( 'Extensions', 'ultimate-addons-for-gutenberg' ); ?></span>
+					<div class="uagb-bulk-actions-wrap">
+					</div>
+				</h2>
+				<div class="uagb-list-section">
+					<ul class="uagb-widget-list">
+						<?php
+						foreach ( $extensions as $addon => $info ) {
+
+							$addon = str_replace( 'uagb/', '', $addon );
+
+							$title_url     = ( isset( $info['title_url'] ) && ! empty( $info['title_url'] ) ) ? 'href="' . esc_url( $info['title_url'] ) . '"' : '';
+							$anchor_target = ( isset( $info['title_url'] ) && ! empty( $info['title_url'] ) ) ? "target='_blank' rel='noopener'" : '';
+
+							$class = 'deactivate';
+
+							$uagb_link = array(
+								'link_class' => 'uagb-activate-widget',
+								'link_text'  => __( 'Activate', 'ultimate-addons-for-gutenberg' ),
+							);
+
+							if ( $info['is_activate'] ) {
+								$class     = 'activate';
+								$uagb_link = array(
+									'link_class' => 'uagb-deactivate-widget',
+									'link_text'  => __( 'Deactivate', 'ultimate-addons-for-gutenberg' ),
+								);
+							}
+
+							echo '<li id="' . esc_attr( $addon ) . '"  class="' . esc_attr( $class ) . '"><a class="uagb-widget-title"' . esc_url( $title_url ) . esc_url( $anchor_target ) . ' >' . esc_html( $info['title'] ) . '</a><div class="uagb-widget-link-wrapper">';
+
+							printf(
+								'<a href="%1$s" class="%2$s"> %3$s </a>',
+								( isset( $uagb_link['link_url'] ) && ! empty( $uagb_link['link_url'] ) ) ? esc_url( $uagb_link['link_url'] ) : '#',
+								esc_attr( $uagb_link['link_class'] ),
+								esc_html( $uagb_link['link_text'] )
+							);
+
+							if ( $info['is_activate'] && isset( $info['setting_url'] ) ) {
+
+								printf(
+									'<a href="%1$s" class="%2$s"> %3$s </a>',
+									esc_url( $info['setting_url'] ),
+									esc_attr( 'uagb-advanced-settings' ),
+									esc_html( $info['setting_text'] )
+								);
+							}
+
+							echo '</div></li>';
+						}
+						?>
+					</ul>
+				</div>
+			</div>
+			<?php endif; ?>
 		</div>
 		<div class="postbox-container uagb-sidebar" id="postbox-container-1">
 			<div id="side-sortables">
 				<?php if ( ! defined( 'ASTRA_THEME_VERSION' ) ) { ?>
 				<div class="postbox uagb-astra-sidebar">
-					<h2 class="hndle uagb-normal-cusror">
+					<h2 class="handle uagb-normal-cusror">
 						<span class="dashicons dashicons-admin-customizer"></span>
 						<span><?php esc_html_e( 'Free Theme for Gutenberg', 'ultimate-addons-for-gutenberg' ); ?></span>
 					</h2>
@@ -198,7 +257,7 @@ array_multisort(
 				</div>
 				<?php } ?>
 				<div class="postbox">
-					<h2 class="hndle ast-normal-cusror">
+					<h2 class="handle ast-normal-cusror">
 						<span class="dashicons dashicons-admin-page"></span>
 						<span>
 							<?php printf( esc_html__( 'CSS & JS File Generation', 'ultimate-addons-for-gutenberg' ) ); ?>
@@ -265,7 +324,7 @@ array_multisort(
 					</div>
 				</div>
 				<div class="postbox">
-					<h2 class="hndle uagb-normal-cusror">
+					<h2 class="handle uagb-normal-cusror">
 						<span class="dashicons dashicons-controls-repeat"></span>
 						<span><?php esc_html_e( 'Regenerate Assets', 'ultimate-addons-for-gutenberg' ); ?></span>
 					</h2>
@@ -279,7 +338,7 @@ array_multisort(
 					</div>
 				</div>
 				<div class="postbox">
-					<h2 class="hndle uagb-normal-cusror">
+					<h2 class="handle uagb-normal-cusror">
 						<span class="dashicons dashicons-book"></span>
 						<span><?php esc_html_e( 'Knowledge Base', 'ultimate-addons-for-gutenberg' ); ?></span>
 					</h2>
@@ -291,7 +350,7 @@ array_multisort(
 					</div>
 				</div>
 				<div class="postbox">
-					<h2 class="hndle uagb-normal-cusror">
+					<h2 class="handle uagb-normal-cusror">
 						<span class="dashicons dashicons-awards"></span>
 						<span><?php esc_html_e( 'Five Star Support', 'ultimate-addons-for-gutenberg' ); ?></span>
 					</h2>
