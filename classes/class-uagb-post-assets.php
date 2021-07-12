@@ -247,8 +247,9 @@ class UAGB_Post_Assets {
 	 */
 	public function enqueue_scripts() {
 
-		if ( class_exists( 'WooCommerce' ) ) {
-			$this_post = UAGB_Helper::get_woocommerce_obj();
+		$this_post = UAGB_Helper::get_woocommerce_post_object();
+
+		if ( class_exists( 'WooCommerce' ) && ! empty( $this_post ) && is_object( $this_post ) ) {
 			// Assets Required for woocommerce pages.
 			if ( has_blocks( $this_post ) ) {
 				/* Print conditional css for all blocks */

@@ -1545,7 +1545,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 			if ( class_exists( 'WooCommerce' ) ) {
 
-				$this_post = self::get_woocommerce_obj();
+				$this_post = self::get_woocommerce_post_object();
 
 				if ( is_object( $this_post ) ) {
 					$this->get_generated_stylesheet( $this_post );
@@ -1587,7 +1587,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 * @since x.x.x
 		 * @deprecated x.x.x
 		 */
-		public static function get_woocommerce_obj() {
+		public static function get_woocommerce_post_object() {
 
 			$this_post = array();
 

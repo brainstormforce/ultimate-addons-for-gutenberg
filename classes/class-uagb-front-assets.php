@@ -81,7 +81,7 @@ class UAGB_Front_Assets {
 
 		if ( class_exists( 'WooCommerce' ) ) {
 
-			$this_post = UAGB_Helper::get_woocommerce_obj();
+			$this_post = UAGB_Helper::get_woocommerce_post_object();
 
 			if ( ! empty( $this_post ) && is_object( $this_post ) ) {
 				$this->post_assets->prepare_assets( $this_post );
