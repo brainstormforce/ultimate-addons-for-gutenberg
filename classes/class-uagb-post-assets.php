@@ -248,19 +248,13 @@ class UAGB_Post_Assets {
 	public function enqueue_scripts() {
 
 		$this_post = UAGB_Helper::get_woocommerce_post_object();
-
-		if ( class_exists( 'WooCommerce' ) && ! empty( $this_post ) && is_object( $this_post ) ) {
-			// Assets Required for woocommerce pages.
-			if ( has_blocks( $this_post ) ) {
-				/* Print conditional css for all blocks */
-				add_action( 'wp_head', array( $this, 'print_conditional_css' ), 80 );
-			}
-		} else {
-			// Global Required assets.
-			if ( has_blocks( $this->post_id ) ) {
-				/* Print conditional css for all blocks */
-				add_action( 'wp_head', array( $this, 'print_conditional_css' ), 80 );
-			}
+		// Global Required assets.
+		if ( class_exists( 'WooCommerce' ) && ! empty( $this_post ) && is_object( $this_post ) && has_blocks( $this_post ) ) {
+			/* Print conditional css for all blocks */
+			add_action( 'wp_head', array( $this, 'print_conditional_css' ), 80 );
+		} elseif ( has_blocks( $this->post_id ) ) {
+			/* Print conditional css for all blocks */
+			add_action( 'wp_head', array( $this, 'print_conditional_css' ), 80 );
 		}
 
 		// UAG Flag specific.
