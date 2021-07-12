@@ -81,31 +81,7 @@ class UAGB_Front_Assets {
 
 		if ( class_exists( 'WooCommerce' ) ) {
 
-			if ( is_cart() ) {
-
-				$id        = get_option( 'woocommerce_cart_page_id' );
-				$this_post = get_post( $id );
-
-			} elseif ( is_account_page() ) {
-
-				$id        = get_option( 'woocommerce_myaccount_page_id' );
-				$this_post = get_post( $id );
-
-			} elseif ( is_checkout() ) {
-
-				$id        = get_option( 'woocommerce_checkout_page_id' );
-				$this_post = get_post( $id );
-
-			} elseif ( is_checkout_pay_page() ) {
-
-				$id        = get_option( 'woocommerce_pay_page_id' );
-				$this_post = get_post( $id );
-
-			} elseif ( is_shop() ) {
-
-				$id        = get_option( 'woocommerce_shop_page_id' );
-				$this_post = get_post( $id );
-			}
+			$this_post = UAGB_Helper::get_woocommerce_obj();
 
 			if ( ! empty( $this_post ) && is_object( $this_post ) ) {
 				$this->post_assets->prepare_assets( $this_post );

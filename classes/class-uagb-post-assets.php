@@ -247,10 +247,19 @@ class UAGB_Post_Assets {
 	 */
 	public function enqueue_scripts() {
 
-		// Global Required assets.
-		if ( has_blocks( $this->post_id ) ) {
-			/* Print conditional css for all blocks */
-			add_action( 'wp_head', array( $this, 'print_conditional_css' ), 80 );
+		if ( class_exists( 'WooCommerce' ) ) {
+			$this_post = UAGB_Helper::get_woocommerce_obj();
+			// Assets Required for woocommerce pages.
+			if ( has_blocks( $this_post ) ) {
+				/* Print conditional css for all blocks */
+				add_action( 'wp_head', array( $this, 'print_conditional_css' ), 80 );
+			}
+		} else {
+			// Global Required assets.
+			if ( has_blocks( $this->post_id ) ) {
+				/* Print conditional css for all blocks */
+				add_action( 'wp_head', array( $this, 'print_conditional_css' ), 80 );
+			}
 		}
 
 		// UAG Flag specific.
