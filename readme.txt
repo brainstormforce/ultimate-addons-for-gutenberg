@@ -172,7 +172,7 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 * Fix: Assets Generation issue on frontend when Twenty Twentyone theme is active.
 * Fix: Assets not regenerated for frontend when post conatining reusable blocks is updated.
 * Fix: Post Grid: The Block shifts to left on frontend when Twenty Twenty theme is active.
-* Fix: Responsive visibility not working on woocommerce pages. 
+* Fix: Dislay Conditions not working on Woocommerce Pages on Frontend.
 
 = 1.23.4 =
 * Fix: Advanced column - Shape Divider issue when using with the Astra Custom Layout.
