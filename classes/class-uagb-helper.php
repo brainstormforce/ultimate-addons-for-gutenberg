@@ -1585,7 +1585,6 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 * Check is it woocommerce object or not.
 		 *
 		 * @since x.x.x
-		 * @deprecated x.x.x
 		 */
 		public static function get_woocommerce_post_object() {
 
