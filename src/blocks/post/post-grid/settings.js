@@ -9,7 +9,7 @@ import ColumnResponsive from '@Components/typography/column-responsive';
 import WebfontLoader from '@Components/typography/fontloader';
 import TypographyControl from '@Components/typography';
 import { __ } from '@wordpress/i18n';
-
+import { decodeEntities } from '@wordpress/html-entities';
 const MAX_POSTS_COLUMNS = 8;
 
 import {
@@ -206,7 +206,7 @@ const Settings = ( props ) => {
 		Object.keys( taxonomyList ).map( ( item ) => {
 			return taxonomyListOptions.push( {
 				value: taxonomyList[ item ].name,
-				label: taxonomyList[ item ].label,
+				label: decodeEntities(taxonomyList[ item ].label),
 			} );
 		} );
 	}
@@ -215,7 +215,7 @@ const Settings = ( props ) => {
 		Object.keys( categoriesList ).map( ( item ) => {
 			return categoryListOptions.push( {
 				value: categoriesList[ item ].id,
-				label: categoriesList[ item ].name,
+				label: decodeEntities(categoriesList[ item ].name),
 			} );
 		} );
 	}

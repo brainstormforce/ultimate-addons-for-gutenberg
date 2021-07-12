@@ -3,6 +3,7 @@ import { __ } from '@wordpress/i18n';
 import React from 'react';
 import { BlockAlignmentToolbar, BlockControls } from '@wordpress/block-editor';
 import { ToolbarGroup } from '@wordpress/components';
+import { decodeEntities } from '@wordpress/html-entities';
 
 const Settings = ( props ) => {
 	const { state, togglePreview, inspectorControls } = props;
@@ -119,7 +120,7 @@ const Settings = ( props ) => {
 		Object.keys( taxonomyList ).map( ( item ) => {
 			return taxonomyListOptions.push( {
 				value: taxonomyList[ item ].name,
-				label: taxonomyList[ item ].label,
+				label: decodeEntities(taxonomyList[ item ].label),
 			} );
 		} );
 	}
@@ -128,7 +129,7 @@ const Settings = ( props ) => {
 		Object.keys( categoriesList ).map( ( item ) => {
 			return categoryListOptions.push( {
 				value: categoriesList[ item ].id,
-				label: categoriesList[ item ].name,
+				label: decodeEntities(categoriesList[ item ].name),
 			} );
 		} );
 	}

@@ -10,7 +10,7 @@ import React, { useState, useEffect, Suspense, lazy } from 'react';
 import lazyLoader from '@Controls/lazy-loader';
 import ColumnResponsive from '@Components/typography/column-responsive';
 import TypographyControl from '@Components/typography';
-
+import { decodeEntities } from '@wordpress/html-entities';
 const MAX_POSTS_COLUMNS = 8;
 
 const Settings = lazy( () =>
@@ -231,7 +231,7 @@ const UAGBPostCarousel = ( props ) => {
 		Object.keys( taxonomyList ).map( ( item ) => {
 			return taxonomyListOptions.push( {
 				value: taxonomyList[ item ].name,
-				label: taxonomyList[ item ].label,
+				label: decodeEntities(taxonomyList[ item ].label),
 			} );
 		} );
 	}
@@ -240,7 +240,7 @@ const UAGBPostCarousel = ( props ) => {
 		Object.keys( categoriesList ).map( ( item ) => {
 			return categoryListOptions.push( {
 				value: categoriesList[ item ].id,
-				label: categoriesList[ item ].name,
+				label: decodeEntities(categoriesList[ item ].name),
 			} );
 		} );
 	}
