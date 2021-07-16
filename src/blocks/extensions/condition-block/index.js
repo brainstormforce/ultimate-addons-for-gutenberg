@@ -26,7 +26,7 @@ const UserConditionOptions = ( props ) => {
     return(
         <Fragment>
             <SelectControl
-				label={ __( "Display Conditions" ) }
+				label={ __( "UAG - Display Conditions" ) }
 				value={ UAGDisplayConditions }
 				onChange={ ( value ) => setAttributes( { UAGDisplayConditions: value } ) }
 				options={ [
