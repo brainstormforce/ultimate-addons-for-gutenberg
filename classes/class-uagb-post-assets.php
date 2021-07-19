@@ -435,6 +435,10 @@ class UAGB_Post_Assets {
 
 		$conditional_block_css = UAGB_Block_Helper::get_condition_block_css();
 
+		if ( in_array( 'uagb/masonry-gallery', $this->current_block_list, true ) ) {
+			$conditional_block_css .= UAGB_Block_Helper::get_masonry_gallery_css();
+		}
+
 		echo '<style id="uagb-style-conditional-extension">' . $conditional_block_css . '</style>'; //phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 
 		self::$conditional_blocks_printed = true;
@@ -518,6 +522,12 @@ class UAGB_Post_Assets {
 		}
 
 		$this->current_block_list[] = $name;
+
+		if ( 'core/gallery' === $name && isset( $block['attrs']['masonry'] ) && true === $block['attrs']['masonry'] ) {
+			$this->current_block_list[] = 'uagb/masonry-gallery';
+			$this->uag_flag             = true;
+			$css                       += UAGB_Block_Helper::get_gallery_css( $blockattr, $block_id );
+		}
 
 		if ( strpos( $name, 'uagb/' ) !== false ) {
 			$this->uag_flag = true;
@@ -707,6 +717,10 @@ class UAGB_Post_Assets {
 			case 'uagb/lottie':
 				$css += UAGB_Block_Helper::get_lottie_css( $blockattr, $block_id );
 				$js  .= UAGB_Block_JS::get_lottie_js( $blockattr, $block_id );
+				break;
+
+			case 'uagb/star-rating':
+				$css += UAGB_Block_Helper::get_star_rating_css( $blockattr, $block_id );
 				break;
 
 			default:

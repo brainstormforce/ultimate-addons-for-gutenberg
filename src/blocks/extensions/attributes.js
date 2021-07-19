@@ -1,3 +1,5 @@
+const { enableMasonryGallery } = uagb_blocks_info;
+
 function addAttributes( settings ) {
 	const excludeBlock = ['wpforms/form-selector','formidable/simple-form','formidable/calculator','llms/lesson-navigation','llms/pricing-table','llms/course-syllabus','llms/instructors','core/archives','core/calendar','core/latest-comments','core/tag-cloud','core/rss','real-media-library/gallery'];
 	
@@ -48,3 +50,33 @@ wp.hooks.addFilter(
 	'uagb/advanced-control-block',
     addAttributes
 );
+
+if ( "1" === enableMasonryGallery ) {
+	function addMasonryAttribute( settings ) {
+		const blockType = [ 'core/gallery' ];
+		if( blockType.includes(settings.name) ){
+			
+			if ( settings.attributes ) {
+				settings.attributes = Object.assign( settings.attributes, {
+					masonry:{
+						type: "boolean",
+						default: false
+					},
+					masonryGutter: {
+						type: "number",
+					},
+					block_id : {
+						type: "string"
+					}
+				} );		
+			}
+		}
+		return settings;
+	}
+	
+	wp.hooks.addFilter(
+		'blocks.registerBlockType',
+		'uagb/masonry-gallery',
+		addMasonryAttribute
+	);
+}

@@ -36,7 +36,7 @@ if ( ! class_exists( 'UAGB_Admin' ) ) {
 
 			add_action( 'uagb_render_admin_content', __CLASS__ . '::render_content' );
 
-			add_action( 'admin_notices', __CLASS__ . '::register_notices' );
+			add_action( 'admin_init', __CLASS__ . '::register_notices' );
 
 			add_filter( 'wp_kses_allowed_html', __CLASS__ . '::add_data_attributes', 10, 2 );
 

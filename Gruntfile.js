@@ -143,7 +143,7 @@ module.exports = function(grunt) {
 				]
 			},
 
-			
+
 		},
 		wp_readme_to_markdown: {
 			your_target: {
@@ -171,6 +171,7 @@ module.exports = function(grunt) {
 	/* Register task started */
 	grunt.registerTask("release", ["clean:zip", "copy","compress","clean:main"])
 	grunt.registerTask('release-no-clean', ['clean:zip', 'copy']);
+	grunt.registerTask( 'textdomain', [ 'addtextdomain' ] );
 	grunt.registerTask("i18n", ["addtextdomain", "makepot"])
 
 	// Default

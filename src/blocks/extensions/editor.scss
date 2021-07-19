@@ -1,0 +1,15 @@
+.wp-block-gallery.uag-masonry {
+    ul.blocks-gallery-grid {
+        column-count: 4;
+        column-gap: 1em;
+        display: block;
+        li.blocks-gallery-item {
+            margin: 0;
+            display: block;
+            grid-template-rows: 1fr auto;
+            margin-bottom: 1em;
+            break-inside: avoid;
+            width: unset;
+        }
+    }
+}

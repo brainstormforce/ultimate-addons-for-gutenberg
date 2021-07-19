@@ -17,6 +17,97 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 	class UAGB_Block_Helper {
 
 		/**
+		 * Get Star Rating block CSS
+		 *
+		 * @since 1.24.0
+		 * @param array  $attr The block attributes.
+		 * @param string $id The selector ID.
+		 * @return array The Widget List.
+		 */
+		public static function get_star_rating_css( $attr, $id ) {
+			$defaults = UAGB_Helper::$block_list['uagb/star-rating']['attributes'];
+
+			$attr = array_merge( $defaults, $attr );
+
+			$t_selectors = array();
+			$m_selectors = array();
+			$selectors   = array();
+
+			$alignment       = 'flex-start';
+			$stack_alignment = $attr['align'];
+			if ( '' !== $attr['align'] ) {
+				if ( 'right' === $attr['align'] ) {
+					$alignment = 'flex-end';
+				}
+				if ( 'center' === $attr['align'] ) {
+					$alignment = 'center';
+				}
+				if ( 'full' === $attr['align'] ) {
+					$alignment       = 'space-between';
+					$stack_alignment = 'left';
+				}
+			}
+
+			$selectors = array(
+				' .uag-star-rating'         => array(
+					'font-size' => UAGB_Helper::get_css_value( $attr['size'], 'px' ),
+				),
+				' .uag-star-rating > span'  => array(
+					'margin-right' => UAGB_Helper::get_css_value( $attr['gap'], 'px' ),
+					'color'        => $attr['unmarkedColor'],
+				),
+				' .uag-star:nth-child(-n+' . floor( $attr['rating'] ) . ')' => array(
+					'color' => $attr['color'],
+				),
+				' .uag-star-rating__title'  => array(
+					'font-size'   => UAGB_Helper::get_css_value( $attr['fontSize'], $attr['fontSizeType'] ),
+					'font-family' => $attr['fontFamily'],
+					'font-weight' => $attr['fontWeight'],
+					'line-height' => UAGB_Helper::get_css_value( $attr['lineHeight'], $attr['lineHeightType'] ),
+					'color'       => $attr['titleColor'],
+				),
+				'.uag-star-rating__wrapper' => array(
+					'justify-content' => $alignment,
+					'text-align'      => $stack_alignment,
+				),
+			);
+
+			$index = 'margin-right';
+			if ( 'stack' === $attr['layout'] ) {
+				$index = 'margin-bottom';
+			}
+
+			$selectors[' .uag-star-rating__title'][ $index ] = UAGB_Helper::get_css_value( $attr['titleGap'], 'px' );
+
+			$remainder = ( $attr['rating'] - floor( $attr['rating'] ) );
+			$width     = $remainder * 100;
+
+			if ( 0 !== $width ) {
+				$selectors[ ' .uag-star:nth-child(' . ceil( $attr['rating'] ) . '):before' ] = array(
+					'color'    => $attr['color'],
+					'width'    => UAGB_Helper::get_css_value( $width, '%' ),
+					'position' => 'absolute',
+					'content'  => "'★'",
+					'overflow' => 'hidden',
+				);
+
+				$selectors[ ' .uag-star:nth-child(' . ceil( $attr['rating'] ) . ')' ] = array(
+					'position' => 'relative',
+				);
+			}
+
+			$combined_selectors = array(
+				'desktop' => $selectors,
+				'tablet'  => $t_selectors,
+				'mobile'  => $m_selectors,
+			);
+
+			$combined_selectors = UAGB_Helper::get_typography_css( $attr, '', ' .uag-star-rating__title', $combined_selectors );
+
+			return UAGB_Helper::generate_all_css( $combined_selectors, ' .uagb-block-' . substr( $attr['block_id'], 0, 8 ) );
+		}
+
+		/**
 		 * Get review block CSS
 		 *
 		 * @since 1.19.0
@@ -5513,6 +5604,132 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 		public static function get_condition_block_css() {
 
 			return '@media (min-width: 1025px){body .uag-hide-desktop.uagb-google-map__wrap,body .uag-hide-desktop{display:none}}@media (min-width: 768px) and (max-width: 1024px){body .uag-hide-tab.uagb-google-map__wrap,body .uag-hide-tab{display:none}}@media (max-width: 767px){body .uag-hide-mob.uagb-google-map__wrap,body .uag-hide-mob{display:none}}';
+		}
+
+		/**
+		 * Get Masonry Gallery CSS.
+		 *
+		 * @since 1.24.0
+		 * @param array  $attr The block attributes.
+		 * @param string $id The selector ID.
+		 */
+		public static function get_gallery_css( $attr, $id ) {
+			if ( isset( $attr['masonry'] ) && true === $attr['masonry'] ) {
+				$col_count = ( isset( $attr['columns'] ) ) ? $attr['columns'] : 3;
+				$selectors = array();
+				if ( isset( $attr['masonryGutter'] ) && '' !== $attr['masonryGutter'] ) {
+					$selectors = array(
+						'.wp-block-gallery.columns-' . $col_count . ' ul.blocks-gallery-grid' => array(
+							'column-gap' => UAGB_Helper::get_css_value( $attr['masonryGutter'], 'px' ),
+						),
+						'.wp-block-gallery ul.blocks-gallery-grid li.blocks-gallery-item' => array(
+							'margin-bottom' => UAGB_Helper::get_css_value( $attr['masonryGutter'], 'px' ),
+						),
+					);
+				}
+				$t_selectors = array();
+				if ( $col_count > 3 ) {
+					$t_selectors = array(
+						'.wp-block-gallery.columns-' . $col_count . ' .blocks-gallery-grid' => array(
+							'column-count' => '3',
+						),
+					);
+				}
+			}
+			$combined_selectors = array(
+				'desktop' => $selectors,
+				'tablet'  => $t_selectors,
+				'mobile'  => array(),
+			);
+
+			return UAGB_Helper::generate_all_css( $combined_selectors, '.uagb-block-' . $id );
+		}
+
+		/**
+		 * Get Masonry Gallery CSS.
+		 *
+		 * @since 1.24.0
+		 */
+		public static function get_masonry_gallery_css() {
+
+			$selectors = array(
+				' .blocks-gallery-grid .blocks-gallery-item' => array(
+					'margin'             => 0,
+					'display'            => 'block',
+					'grid-template-rows' => '1fr auto',
+					'margin-bottom'      => '1em',
+					'break-inside'       => 'avoid',
+					'width'              => 'unset',
+				),
+				'.wp-block-gallery .blocks-gallery-grid' => array(
+					'column-gap' => '1em',
+					'display'    => 'unset',
+				),
+				'.columns-1 .blocks-gallery-grid'        => array(
+					'column-count' => '1',
+				),
+				'.columns-2 .blocks-gallery-grid'        => array(
+					'column-count' => '2',
+				),
+				'.columns-3 .blocks-gallery-grid'        => array(
+					'column-count' => '3',
+				),
+				'.columns-4 .blocks-gallery-grid'        => array(
+					'column-count' => '4',
+				),
+				'.columns-5 .blocks-gallery-grid'        => array(
+					'column-count' => '5',
+				),
+				'.columns-6 .blocks-gallery-grid'        => array(
+					'column-count' => '6',
+				),
+				'.columns-7 .blocks-gallery-grid'        => array(
+					'column-count' => '7',
+				),
+				'.columns-8 .blocks-gallery-grid'        => array(
+					'column-count' => '8',
+				),
+			);
+
+			$m_selectors = array(
+				'.wp-block-gallery[class*="columns-"] .blocks-gallery-grid' => array(
+					'column-count' => '2',
+					'column-gap'   => '1em',
+					'display'      => 'unset',
+				),
+				'.wp-block-gallery.columns-1 .blocks-gallery-grid'        => array(
+					'column-count' => '1',
+				),
+			);
+
+			$combined_selectors = array(
+				'desktop' => $selectors,
+				'tablet'  => array(),
+				'mobile'  => $m_selectors,
+			);
+
+			$css = UAGB_Helper::generate_all_css( $combined_selectors, '.uag-masonry' );
+
+			$desktop = $css['desktop'];
+			$tablet  = $css['tablet'];
+			$mobile  = $css['mobile'];
+
+			$tab_styling_css = '';
+			$mob_styling_css = '';
+
+			if ( ! empty( $tablet ) ) {
+				$tab_styling_css .= '@media only screen and (max-width: ' . UAGB_TABLET_BREAKPOINT . 'px) {';
+				$tab_styling_css .= $tablet;
+				$tab_styling_css .= '}';
+			}
+
+			if ( ! empty( $mobile ) ) {
+				$mob_styling_css .= '@media only screen and (max-width: ' . UAGB_MOBILE_BREAKPOINT . 'px) {';
+				$mob_styling_css .= $mobile;
+				$mob_styling_css .= '}';
+			}
+
+			return $desktop . $tab_styling_css . $mob_styling_css;
 		}
 	}
 }

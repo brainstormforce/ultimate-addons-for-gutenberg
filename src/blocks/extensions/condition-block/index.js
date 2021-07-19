@@ -1,9 +1,8 @@
-const {
-    ToggleControl,
-    SelectControl
-} = wp.components
-
+import { ToggleControl, SelectControl } from "@wordpress/components"
 import { __ } from '@wordpress/i18n';
+import { createHigherOrderComponent } from "@wordpress/compose";
+import { addFilter } from "@wordpress/hooks";
+const { enableConditions } = uagb_blocks_info;
 
 const UserConditionOptions = ( props ) => {
     
@@ -20,8 +19,6 @@ const UserConditionOptions = ( props ) => {
         UAGBrowser,
         UAGUserRole
     } = attributes;
- 
-    const user_role = uagb_blocks_info.user_role;
 
     return(
         <Fragment>
@@ -123,4 +120,70 @@ const UserConditionOptions = ( props ) => {
     );
 }
 
-export default UserConditionOptions;
+const AdvancedControlsBlock = createHigherOrderComponent((BlockEdit) => {
+
+	return (props) => {
+		
+		const { Fragment } = wp.element;
+		
+		const { InspectorAdvancedControls } = wp.blockEditor;
+		
+		const { isSelected } = props;
+		
+		const blockName = props.name;
+		
+		const blockType = ['uagb/buttons-child','uagb/faq-child', 'uagb/icon-list-child', 'uagb/social-share-child', 'uagb/restaurant-menu-child', 'wpforms/form-selector','formidable/simple-form','formidable/calculator','llms/lesson-navigation','llms/pricing-table','llms/course-syllabus','llms/instructors','core/archives','core/calendar','core/latest-comments','core/tag-cloud','core/rss','real-media-library/gallery'];
+		return (
+			<Fragment>
+				<BlockEdit {...props} />
+				{isSelected && ! blockType.includes(blockName) &&
+					<InspectorAdvancedControls>
+						<p className="components-base-control__help">{ __( "Below setting will only take effect once you are on the live page, and not while you're editing.", 'ultimate-addons-for-gutenberg' ) }</p> 
+						{ UserConditionOptions( props ) }						
+					</InspectorAdvancedControls>
+				}
+			</Fragment>
+		);
+	};
+}, 'AdvancedControlsBlock');
+
+function ApplyExtraClass(extraProps, blockType, attributes) {
+
+	const { 
+		UAGHideDesktop,
+		UAGHideTab,
+		UAGHideMob,
+		UAGDisplayConditions,
+	} = attributes;
+
+	if ( 'responsiveVisibility' === UAGDisplayConditions ) {
+		if ( UAGHideDesktop ) {
+			extraProps.className = extraProps.className + ' uag-hide-desktop';
+		}
+	
+		if ( UAGHideTab ) {	
+			extraProps.className = extraProps.className + ' uag-hide-tab';
+		}
+	
+		if ( UAGHideMob ) {	
+			extraProps.className = extraProps.className + ' uag-hide-mob';
+		}
+		
+	}
+
+	return extraProps;
+}
+
+if( '1' === enableConditions ){
+	addFilter(
+		'editor.BlockEdit',
+		'uagb/advanced-control-block',
+		AdvancedControlsBlock,
+	);
+
+    addFilter(
+        'blocks.getSaveContent.extraProps',
+        'uagb/apply-extra-class',
+        ApplyExtraClass,
+    );
+}

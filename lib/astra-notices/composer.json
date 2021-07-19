@@ -1,0 +1,29 @@
+{
+    "name": "brainstormforce/astra-notices",
+    "type": "wordpress-plugin",
+    "description": "Easily create admin notices",
+    "version": "1.1.8",
+    "license": "GPL v3",
+    "authors": [
+        {
+            "name": "Brainstorm Force",
+            "email": "hello@bsf.io"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.11"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+        "phpcompatibility/phpcompatibility-wp": "^2.1",
+        "phpunit/phpunit": "^5.7 || ^6.5 || ^7.5",
+        "wp-cli/dist-archive-command": "^2.0",
+        "wp-coding-standards/wpcs": "^2.3"
+    },
+    "minimum-stability": "stable",
+    "scripts": {
+        "format": "vendor/bin/phpcbf",
+        "lint": "vendor/bin/phpcs",
+        "test": "vendor/bin/phpunit"
+    }
+}

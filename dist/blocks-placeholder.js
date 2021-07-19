@@ -8,3 +8,4 @@
 
 registerBlockType( 'uagb/advanced-heading', { title: __( 'Advanced Heading', 'ultimate-addons-for-gutenberg' ) } );
 registerBlockType( 'uagb/blockquote', { title: __( 'Blockquote', 'ultimate-addons-for-gutenberg' ) } );
+registerBlockType( 'uagb/star-rating', { title: __( 'Star Rating', 'ultimate-addons-for-gutenberg' ) } );

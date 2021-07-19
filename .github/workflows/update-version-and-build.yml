@@ -54,8 +54,6 @@ jobs:
         run: |
           cat <<< $(jq --tab --arg version "${VERSION}" '.version = $version' package.json) > package.json
           cat <<< $(jq --tab --arg version "${VERSION}" '.version = $version' package-lock.json) > package-lock.json
-          sed -i "s/${{ steps.get_version.outputs.old_version }}/${VERSION}/g" ultimate-addons-for-gutenberg.php
-          sed -i "s/${{ steps.get_version.outputs.old_version }}/${VERSION}/g" readme.txt
 
       - name: Cache node modules
         id: cache-node
@@ -68,6 +66,12 @@ jobs:
 
       - name: Install dependencies and build
         run: npm install
+
+      - name: Bump version
+        run: grunt bump-version --ver=${{ steps.get_version.outputs.new_version }}
+
+      - name: Update README.md
+        run: grunt readme
 
       - name: Run build
         run: npm run build
