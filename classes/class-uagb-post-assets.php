@@ -278,13 +278,15 @@ class UAGB_Post_Assets {
 				$this->enqueue_file_generation_assets();
 			}
 
-			// Print Dynamic CSS.
-			if ( 'disabled' === $this->file_generation || $this->fallback_css ) {
-				add_action( 'wp_head', array( $this, 'print_stylesheet' ), 80 );
-			}
-			// Print Dynamic JS.
-			if ( 'disabled' === $this->file_generation || $this->fallback_js ) {
-				add_action( 'wp_footer', array( $this, 'print_script' ), 1000 );
+			if ( empty( $_REQUEST['preview'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				// Print Dynamic CSS.
+				if ( 'disabled' === $this->file_generation || $this->fallback_css ) {
+					add_action( 'wp_head', array( $this, 'print_stylesheet' ), 80 );
+				}
+				// Print Dynamic JS.
+				if ( 'disabled' === $this->file_generation || $this->fallback_js ) {
+					add_action( 'wp_footer', array( $this, 'print_script' ), 1000 );
+				}
 			}
 		}
 	}

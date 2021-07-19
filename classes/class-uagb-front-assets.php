@@ -132,6 +132,11 @@ class UAGB_Front_Assets {
 	 */
 	public function enqueue_asset_files() {
 
+		if ( isset( $_REQUEST['preview'], $_REQUEST['preview_nonce'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			add_action( 'wp_head', array( $this, 'print_preview_stylesheet' ) );
+			add_action( 'wp_footer', array( $this, 'print_preview_script' ) );
+		}
+
 		if ( $this->post_assets ) {
 			$this->post_assets->enqueue_scripts();
 		}
@@ -150,6 +155,38 @@ class UAGB_Front_Assets {
 
 			}
 		}
+	}
+
+	/**
+	 * Print the frontend preview stylesheet in header.
+	 *
+	 * @since x.x.x
+	 */
+	public function print_preview_stylesheet() {
+
+		$post_assets_instance = new UAGB_Post_Assets( null );
+
+		if ( empty( $post_assets_instance->stylesheet ) ) {
+			return;
+		}
+
+		echo '<style id="uagb-frontend-preview-style">' . $post_assets_instance->stylesheet . '</style>'; //phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+	}
+
+	/**
+	 * Print the frontend preview Script in footer.
+	 *
+	 * @since x.x.x
+	 */
+	public function print_preview_script() {
+
+		$post_assets_instance = new UAGB_Post_Assets( null );
+
+		if ( empty( $post_assets_instance->script ) ) {
+			return;
+		}
+
+		echo '<script type="text/javascript" id="uagb-frontend-preview-script">' . $post_assets_instance->script . '</script>'; //phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
