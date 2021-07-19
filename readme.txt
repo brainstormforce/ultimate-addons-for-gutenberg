@@ -5,7 +5,7 @@ Tags: gutenberg, blocks, gutenberg blocks, editor, block
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 5.8
-Stable tag: 1.23.5
+Stable tag: 1.99.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -168,7 +168,7 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 
 == Changelog ==
 
-= 1.23.5 =
+= 1.99.0 =
 * Improvement: Added compatibility with WordPress v5.8.
 * Fix: Assets generation issue on frontend when Twenty Twenty-one theme was active.
 * Fix: Assets were not regenerated on the frontend when the post containing reusable blocks is updated.
