@@ -3,8 +3,9 @@ import { NormalButton } from '@Fields';
 import ReactHtmlParser from 'react-html-parser';
 import { useStateValue } from '@Utils/StateProvider';
 import { __ } from '@wordpress/i18n';
+import apiFetch from '@wordpress/api-fetch';
 
-function TemplatesButton( props ) {
+function TemplatesButton( ) {
 	const [ { globaldata, options }, dispatch ] = useStateValue();
 	const [ savingState, setssavingState ] = useState( false );
 
@@ -33,22 +34,23 @@ function TemplatesButton( props ) {
 			name: '_uag_common[enable_templates_button]',
 			value: status,
 		} );
-		const data = {
-			action: 'uag_enable_templates_button',
-			security: uag_react.enable_templates_button_nonce,
-			value: status,
-		};
+		
+		var action = 'uag_enable_templates_button',
+		nonce = uag_react.enable_templates_button_nonce;
 
-		jQuery
-			.ajax( {
-				type: 'POST',
-				data,
-				url: uag_react.ajax_url,
-				success() {
-					setssavingState( false );
-				},
-			} )
-			.done( function () {} );
+		let formData = new window.FormData();
+
+		formData.append( 'action', action );
+		formData.append( 'security', nonce );
+		formData.append( 'value', status );
+
+		apiFetch( {
+			url: uag_react.ajax_url,
+			method: 'POST',
+			body: formData,
+		} ).then( ( data ) => {
+			setssavingState( false );
+		} );
 	};
 	return (
 		<>
@@ -59,10 +61,7 @@ function TemplatesButton( props ) {
 				<div className="uag-version-control__element">
 					<h3>{ ReactHtmlParser( enableTemplatesButtonlabel ) }</h3>
 					<p>
-						{ __(
-							'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-							'ultimate-addons-for-gutenberg'
-						) }
+						{ ReactHtmlParser(enableTemplatesButtondesc)}
 					</p>
 					<div className="uag-version-control-button">
 						<NormalButton

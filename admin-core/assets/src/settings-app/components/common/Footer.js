@@ -39,15 +39,15 @@ function Footer() {
 	return (
 		<div className="uag-global-footer">
 			<p>
-				Please rate UAG Blocks { stars } on{ ' ' }
+				Please rate UAG Blocks { stars } on {' '}
 				<a
 					target="_blank"
 					href="https://wordpress.org/plugins/ultimate-addons-for-gutenberg/"
 					rel="noreferrer"
 				>
 					WordPress.org
-				</a>{ ' ' }
-				If this product helped you.
+				</a>
+				{' '}If this product helped you.
 			</p>
 			<p>Thank you for your support!</p>
 		</div>

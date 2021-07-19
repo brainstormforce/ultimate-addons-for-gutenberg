@@ -10,33 +10,33 @@ function SettingsRoute() {
 	const query = new URLSearchParams( useLocation().search );
 	const page = query.get( 'page' );
 	const path = query.get( 'path' );
-	const current_event = query.get( 'event' );
+	const currentEvent = query.get( 'event' );
 
-	let route_page = <p>Default route fallback</p>;
+	let routePage = <p>Default route fallback</p>;
 
 	if ( uag_react.home_slug === page ) {
-		if ( 'getting-started' === current_event ) {
-			route_page = <WelcomePage />;
+		if ( 'getting-started' === currentEvent ) {
+			routePage = <HomePage />;
 		} else {
 			switch ( path ) {
 				case 'blocks':
-					route_page = <BlocksPage />;
+					routePage = <BlocksPage />;
 					break;
 				case 'tools':
-					route_page = <ToolsPage />;
+					routePage = <ToolsPage />;
 					break;
 				case 'settings':
-					route_page = <SettingsPage />;
+					routePage = <SettingsPage />;
 					break;
 				default:
-					route_page = <HomePage />;
+					routePage = <HomePage />;
 					break;
 			}
 		}
 		uagWpNavMenuChange( path );
 	}
 
-	return <>{ route_page }</>;
+	return <>{ routePage }</>;
 }
 
 export default SettingsRoute;

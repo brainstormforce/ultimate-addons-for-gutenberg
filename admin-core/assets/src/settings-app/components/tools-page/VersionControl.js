@@ -6,11 +6,11 @@ import ReactHtmlParser from 'react-html-parser';
 import SettingTable from '../common/SettingTable';
 import React, { useState } from 'react';
 import ConfirmPopup from './ConfirmPopup';
-
+import apiFetch from '@wordpress/api-fetch';
 function VersionControl( props ) {
 	const [ { globaldata, options }, dispatch ] = useStateValue();
 
-	const [ savingState, setssavingState ] = useState( false );
+	const [ savingState, setsavingState ] = useState( false );
 
 	const [ showPopup, setshowPopup ] = useState( false );
 
@@ -32,6 +32,7 @@ function VersionControl( props ) {
 			.label;
 	const enableBetaUpdatesdesc =
 		globaldata.settings.enable_beta_updates.fields.enable_beta_updates.desc;
+
 	const handleRollbackVersion = function ( event ) {
 		event.preventDefault();
 		setshowPopup( true );
@@ -51,36 +52,37 @@ function VersionControl( props ) {
 	const cancelPopup = () => {
 		setshowPopup( false );
 	};
-	const enableBetaUpdate = () => {
-		setssavingState( true );
+	const enableBetaUpdate = ( e ) => {
+		e.preventDefault();
+		setsavingState( true );
 		let status;
 		if ( enableBeta == 'no' ) {
 			status = 'yes';
 		} else {
 			status = 'no';
 		}
-		setenableBeta( status );
 		dispatch( {
 			type: 'SET_OPTION',
 			name: '_uag_common[enable_beta_updates]',
 			value: status,
 		} );
-		const data = {
-			action: 'uag_enable_beta_updates',
-			security: uag_react.enable_beta_updates_nonce,
-			value: status,
-		};
+		let formData = new window.FormData();
 
-		jQuery
-			.ajax( {
-				type: 'POST',
-				data,
-				url: uag_react.ajax_url,
-				success() {
-					setssavingState( false );
-				},
-			} )
-			.done( function () {} );
+		formData.append( 'action', 'uag_enable_beta_updates' );
+		formData.append( 'security', uag_react.enable_beta_updates_nonce );
+		formData.append( 'value', status );
+		
+		setenableBeta( status );
+		apiFetch( {
+			url: uag_react.ajax_url,
+			method: 'POST',
+			body: formData,
+		} ).then( ( data ) => {
+			if(data.success){
+				setsavingState( false );
+			}
+		} );
+		
 	};
 
 	return (

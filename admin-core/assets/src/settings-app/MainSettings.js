@@ -26,14 +26,6 @@ function MainSettings() {
 							type: 'SET_SETTINGS',
 							commondata: data,
 						} );
-
-						dispatch( {
-							type: 'SET_PAGE_BUILDER',
-							pagebuilder:
-								data.options[
-									'_uag_common[default_page_builder]'
-								],
-						} );
 					}
 				} );
 			};

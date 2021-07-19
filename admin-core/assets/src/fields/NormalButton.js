@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './NormalButton.scss';
 import ReactHtmlParser from 'react-html-parser';
-import { __ } from '@wordpress/i18n';
 
 const NormalButton = ( props ) => {
 	const { classes, saving, buttonText, desc } = props;

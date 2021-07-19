@@ -1,5 +1,4 @@
 import './ToolsPage.scss';
-import { __ } from '@wordpress/i18n';
 import ToolsPageSkeleton from '@Admin/settings-app/components/tools-page/ToolsPageSkeleton';
 import React, { useEffect } from 'react';
 import apiFetch from '@wordpress/api-fetch';
@@ -38,7 +37,7 @@ function ToolsPage() {
 		};
 	}, [] );
 
-	let current_tab = <p>Default Tab</p>;
+	let currentTab = <p>Default Tab</p>;
 
 	if ( loading ) {
 		return (
@@ -47,9 +46,9 @@ function ToolsPage() {
 			</div>
 		);
 	}
-	current_tab = <VersionControl />;
+	currentTab = <VersionControl />;
 
-	return <div className="uag-global-settings-metabox">{ current_tab }</div>;
+	return <div className="uag-global-settings-metabox">{ currentTab }</div>;
 }
 
 export default ToolsPage;

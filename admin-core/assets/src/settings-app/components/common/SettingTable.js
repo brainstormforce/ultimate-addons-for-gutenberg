@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStateValue } from '@Utils/StateProvider';
 
-import { SelectField, SectionHeadingField, ToggleField } from '@Fields';
+import { SelectField, ToggleField } from '@Fields';
 
 function SettingTable( props ) {
 	const { settings } = props;
@@ -10,16 +10,16 @@ function SettingTable( props ) {
 
 	return (
 		<>
-			{ Object.keys( settings.fields ).map( ( field, i ) => {
+			{ Object.keys( settings.fields ).map( ( field ) => {
 				const data = settings.fields[ field ];
-				const input_type = data.type;
+				const inputType = data.type;
 				let component = '';
 
 				const value = options[ data.name ]
 					? options[ data.name ]
 					: value;
 
-				switch ( input_type ) {
+				switch ( inputType ) {
 					case 'toggle':
 						component = (
 							<ToggleField
@@ -41,14 +41,6 @@ function SettingTable( props ) {
 								options={ data.options }
 								desc={ data.desc }
 								tooltip={ data.tooltip }
-							/>
-						);
-						break;
-					case 'heading':
-						component = (
-							<SectionHeadingField
-								label={ data.label }
-								desc={ data.desc }
 							/>
 						);
 						break;

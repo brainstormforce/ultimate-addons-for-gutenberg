@@ -93,6 +93,9 @@ class GlobalSettings {
 						'type'  => 'toggle',
 						'name'  => '_uag_common[enable_templates_button]',
 						'label' => __( 'Enable Templates Button', 'ultimate-addons-for-gutenberg' ),
+						'desc'  => sprintf(
+							__('Enabling this option will generate CSS & JS files for Ultimate Addons for Gutenberg block styling instead of loading the CSS & JS inline on page.Please read this <a target="_blank" rel="noopener" href="%1$s">article</a> to know more.','ultimate-addons-for-gutenberg'),
+						)
 					),
 				),
 			),

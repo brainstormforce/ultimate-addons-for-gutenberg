@@ -39,11 +39,11 @@ function SelectField( props ) {
 					>
 						{ options &&
 							options.map( ( option, i ) => {
-								let option_label = option.label,
+								let optionLabel = option.label,
 									disabled = false;
 
 								if ( prodata && option.value in prodata ) {
-									option_label = prodata[ option.value ];
+									optionLabel = prodata[ option.value ];
 									disabled = true;
 								}
 
@@ -57,7 +57,7 @@ function SelectField( props ) {
 										disabled={ disabled }
 									>
 										{ ' ' }
-										{ option_label }
+										{ optionLabel }
 									</option>
 								);
 							} ) }

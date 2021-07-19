@@ -1,4 +1,3 @@
-import { __ } from '@wordpress/i18n';
 import SettingsPageSkeleton from '@Admin/settings-app/components/settings-page/SettingsPageSkeleton';
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -41,7 +40,7 @@ function SettingsPage() {
 
 	const location = useLocation();
 	const tab = location.hash;
-	let current_tab = <p>Default Tab</p>;
+	let currentTab = <p>Default Tab</p>;
 
 	if ( loading ) {
 		return (
@@ -52,17 +51,17 @@ function SettingsPage() {
 	}
 	switch ( tab ) {
 		case '#templates_settings':
-			current_tab = <TemplatesButton />;
+			currentTab = <TemplatesButton />;
 			break;
 		default:
-			current_tab = <TemplatesButton />;
+			currentTab = <TemplatesButton />;
 			break;
 	}
 
 	return (
 		<div className="uag-global-settings-metabox">
 			<AssetsGeneration />
-			<>{ current_tab }</>
+			<>{ currentTab }</>
 		</div>
 	);
 }

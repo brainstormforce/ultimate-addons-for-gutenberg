@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import apiFetch from '@wordpress/api-fetch';
 import { useStateValue } from '@Utils/StateProvider';
-import { __ } from '@wordpress/i18n';
 import './BlocksPage.scss';
 import BlocksSettings from '@SettingsApp/components/blocks-page/BlocksSettings';
 import DisplayCondition from '@SettingsApp/components/blocks-page/DisplayCondition';

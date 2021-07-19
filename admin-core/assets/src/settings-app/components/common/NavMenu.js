@@ -55,7 +55,7 @@ function NavMenu() {
 				</Link>
 			</div>
 			<div className="uag-global-nav__items">
-				{ menus.map( ( menu, i ) => (
+				{ menus.map( ( menu ) => (
 					<Link
 						key={ `?page=${ menu.slug }&path=${ menu.path }` }
 						to={ {

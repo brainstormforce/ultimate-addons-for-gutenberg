@@ -31,9 +31,7 @@ function AssetsGeneration( props ) {
 		} ).then( ( data ) => {
 			if ( data.success ) {
 				setssavingState( false );
-			} else {
-				console.log( 'Error' );
-			}
+			} 
 		} );
 	};
 	const handleAssetGeneration = () => {
@@ -50,22 +48,24 @@ function AssetsGeneration( props ) {
 			name: '_uag_common[enable_file_generation]',
 			value: status,
 		} );
-		const data = {
-			action: 'uag_enable_file_generation',
-			security: uag_react.enable_file_generation_nonce,
-			value: status,
-		};
+		
+		var action = 'uag_enable_file_generation',
+		nonce = uag_react.enable_file_generation_nonce;
 
-		jQuery
-			.ajax( {
-				type: 'POST',
-				data,
-				url: uag_react.ajax_url,
-				success() {
-					setssavingAssetGenState( false );
-				},
-			} )
-			.done( function () {} );
+		let formData = new window.FormData();
+
+		formData.append( 'action', action );
+		formData.append( 'security', nonce );
+		formData.append( 'value', status );
+
+		apiFetch( {
+			url: uag_react.ajax_url,
+			method: 'POST',
+			body: formData,
+		} ).then( ( data ) => {
+			setssavingAssetGenState( false );
+		} );
+		
 	};
 	const enableFileGenerationlabel =
 		globaldata.settings.enable_file_generation.fields.enable_file_generation

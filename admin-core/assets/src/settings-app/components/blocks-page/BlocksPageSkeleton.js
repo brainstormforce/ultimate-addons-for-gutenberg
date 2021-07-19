@@ -10,7 +10,7 @@ function FlowRowSkeleton() {
 			<div className="uag-blocks-nav__contents">
 				{ Array( 4 )
 					.fill()
-					.map( ( i, j ) => {
+					.map( () => {
 						return (
 							<>
 								<div className="uag-settings-nav__content">

@@ -5,7 +5,7 @@ import './UserInfoBox.scss';
 import { __ } from '@wordpress/i18n';
 import { NormalButton } from '@Fields';
 
-function UserInfoBox( props ) {
+function UserInfoBox( ) {
 	const onJointheCommunityClick = () => {
 		location.href = 'https://ultimategutenberg.com/';
 	};
